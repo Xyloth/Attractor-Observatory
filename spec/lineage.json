@@ -1,0 +1,110 @@
+{
+  "$schema": "https://attractor-observatory.local/spec-lineage.schema.v1.json",
+  "schema_version": "spec-lineage.v1",
+  "generated_at": "2026-05-01T20:19:21.2715199-04:00",
+  "generated_by": {
+    "role": "Builder",
+    "model_name": "Codex",
+    "model_version": "gpt-5"
+  },
+  "active_spec_id": "spec-v1.2",
+  "hash_algorithm": "sha256",
+  "hash_scope": "raw file bytes as present in this workspace at TASK-001 time",
+  "entries": [
+    {
+      "id": "spec-v1.0",
+      "version": "v1.0",
+      "title": "The Attractor Observatory v1.0",
+      "source_path": "The Attractor Observatory v1.0.txt",
+      "authored_by": "GPT",
+      "role": "Seed ambition substrate",
+      "parents": [],
+      "sha256": "5478d60f7d409ac3b0a6152730a510b36a605f0def7cc13f131478ea2f814762",
+      "byte_size": 39443,
+      "rationale": "Original ambition substrate: north-star claim, world ensemble, trace-first insight, motif mining, atlas, and formal-deficit ladder.",
+      "status": "immutable"
+    },
+    {
+      "id": "spec-v1.1",
+      "version": "v1.1",
+      "title": "The Attractor Observatory v1.1",
+      "source_path": "The Attractor Observatory v1.1.md",
+      "authored_by": "Claude",
+      "role": "Rigor substrate",
+      "parents": [
+        "spec-v1.0"
+      ],
+      "sha256": "24e4ac46c0fb0859ca41ff4994bd1f2ba5b9cbe04a1388fa4bfe69afc7d99d3e",
+      "byte_size": 100735,
+      "rationale": "Implementation-grade expansion: versioned SystemTrace, validation gauntlet, calibration corpora, formal coverage, biology-bias controls, risk register, and task atoms.",
+      "status": "immutable"
+    },
+    {
+      "id": "seed-v1.2",
+      "version": "Seed v1.2",
+      "title": "Seed v1.2",
+      "source_path": "Seed v1.2.txt",
+      "authored_by": "GPT",
+      "role": "Theorist critique and doctrine merge seed",
+      "parents": [
+        "spec-v1.1"
+      ],
+      "sha256": "cc1d73731d5cbe8e0eb0a4886ef9be3ff3636b4c52bfaa5adb804bc449823f12",
+      "byte_size": 27171,
+      "rationale": "Critique that preserves v1.1 rigor while restoring the No Artificial Ceiling Doctrine, exploratory mode, AI-builder telemetry, emergent motifs, biology shadow track, and negative-space outputs.",
+      "status": "immutable"
+    },
+    {
+      "id": "spec-v1.2",
+      "version": "v1.2",
+      "title": "The Attractor Observatory v1.2",
+      "source_path": "The Attractor Observatory v1.2.md",
+      "authored_by": "Claude",
+      "role": "Active canonical synthesis",
+      "parents": [
+        "spec-v1.0",
+        "spec-v1.1",
+        "seed-v1.2"
+      ],
+      "sha256": "492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "byte_size": 77765,
+      "rationale": "Canonical active spec: v1.0 ambition plus v1.1 rigor plus Seed-v1.2 doctrine and AI-operating-system corrections. Wins conflicts with prior versions.",
+      "status": "active"
+    }
+  ],
+  "supporting_context": [
+    {
+      "id": "doctrine",
+      "title": "No Artificial Ceiling Doctrine",
+      "source_path": "NO ARTIFICIAL CEILING DOCTRINE.txt",
+      "sha256": "7c634bab4bbe18cdd01304f581c44c4a370d77d2a74f12ae029c0444bf0b24ba",
+      "byte_size": 1600,
+      "role": "Builder operating doctrine; canonical but not a numbered Observatory spec version."
+    },
+    {
+      "id": "codex-initiation",
+      "title": "Codex initiation message",
+      "source_path": "CODEX_INITIATION.md",
+      "sha256": "1f2cd546de9631b0881ffd48f02c11f290e80219285745def22481b31c8db464",
+      "byte_size": 13226,
+      "role": "Builder handoff and first-campaign instructions; supporting context for TASK-001."
+    }
+  ],
+  "signatures": [
+    {
+      "signature_id": "task-001-builder-self-attestation",
+      "signer_role": "Builder",
+      "signer": "Codex",
+      "signed_at": "2026-05-01T20:19:21.2715199-04:00",
+      "signature_scheme": "sha256-self-attestation",
+      "signature_input": "spec-v1.0:5478d60f7d409ac3b0a6152730a510b36a605f0def7cc13f131478ea2f814762|spec-v1.1:24e4ac46c0fb0859ca41ff4994bd1f2ba5b9cbe04a1388fa4bfe69afc7d99d3e|seed-v1.2:cc1d73731d5cbe8e0eb0a4886ef9be3ff3636b4c52bfaa5adb804bc449823f12|spec-v1.2:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729|active:spec-v1.2|signed_by:Codex Builder|signed_at:2026-05-01T20:19:21.2715199-04:00",
+      "signature_hash": "b08184d68fbea0d785824750a3a686839b2a199fd780c0b5ec6fd2a26920f000",
+      "limitations": "Self-attestation only; no external private key or PI signature was available during TASK-001."
+    }
+  ],
+  "notes": [
+    "This lineage file is the machine-readable source for the active spec version.",
+    "No git repository metadata was present in this workspace when TASK-001 began; file-byte SHA-256 hashes are therefore the current content-addressing source of truth.",
+    "Future contract changes to this lineage schema require a dedicated contract task atom and review."
+  ]
+}

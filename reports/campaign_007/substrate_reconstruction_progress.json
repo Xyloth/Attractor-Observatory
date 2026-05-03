@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "W3R": "reports/campaign_007/w3_reconstruction.json",
+    "W4R": "reports/campaign_007/w4_reconstruction.json",
+    "W5R": "reports/campaign_007/w5_reconstruction.json"
+  },
+  "campaign_id": "campaign-007",
+  "gate_count": 3,
+  "gates": {
+    "W3R": {
+      "comparison": "all_values_meet_or_exceed_thresholds",
+      "gate_id": "W3R",
+      "passed": true,
+      "quantity": "benchmarks_passed_with_substance_and_tests",
+      "threshold": {
+        "benchmarks_passed": 4,
+        "simulation_logic_lines": 800,
+        "test_count": 40
+      },
+      "value": {
+        "benchmarks_passed": 4,
+        "simulation_logic_lines": 897,
+        "test_count": 77
+      }
+    },
+    "W4R": {
+      "comparison": "all_values_meet_or_exceed_thresholds",
+      "gate_id": "W4R",
+      "passed": true,
+      "quantity": "morphogenesis_benchmarks_with_substance_tests_and_event_surface",
+      "threshold": {
+        "benchmarks_passed": 5,
+        "event_surface_scenarios": 4,
+        "simulation_logic_lines": 600,
+        "test_count": 35
+      },
+      "value": {
+        "benchmarks_passed": 5,
+        "event_surface_scenarios": 5,
+        "simulation_logic_lines": 949,
+        "test_count": 38
+      }
+    },
+    "W5R": {
+      "comparison": "all_values_meet_or_exceed_thresholds",
+      "gate_id": "W5R",
+      "passed": true,
+      "quantity": "digital_vm_benchmarks_with_substance_tests_and_instruction_set",
+      "threshold": {
+        "benchmarks_passed": 4,
+        "opcode_count": 20,
+        "required_event_types": 5,
+        "simulation_logic_lines": 800,
+        "test_count": 40
+      },
+      "value": {
+        "benchmarks_passed": 4,
+        "opcode_count": 28,
+        "required_event_types": 6,
+        "simulation_logic_lines": 856,
+        "test_count": 47
+      }
+    }
+  },
+  "passed_gate_count": 3,
+  "pillar": "substrate_reconstruction_progress",
+  "status": "green"
+}

@@ -1,0 +1,34 @@
+{
+  "artifact_count": 3,
+  "bundle_id": "EB-CAMPAIGN_005",
+  "campaign_id": "campaign_005",
+  "claim_status": "candidate",
+  "content_hash": "sha256:a1fc6f22c70dd2024b02243dbc003951edc500eb2dc034101657e8b63d5ada81",
+  "generation_command": "python make_campaign_005.py",
+  "license_class": "cc0",
+  "mode_tag": "exploratory",
+  "retention_class": "indexed",
+  "schema": "EvidenceBundle.application.v1",
+  "source_artifacts": [
+    {
+      "bytes": 34498,
+      "path": "reports\\campaign_005\\full_report.json",
+      "role": "source",
+      "sha256": "sha256:31db3042298d0ab44dda2f7cb7f586c002398a4e7be5a59b9d6ec89f9ec1ce38"
+    },
+    {
+      "bytes": 33535,
+      "path": "reports\\campaign_005\\motif_candidates.jsonl",
+      "role": "source",
+      "sha256": "sha256:d91e623e802dca932509cb191ff152299e9a46acd6ca2f517770c4c42cebc2fc"
+    },
+    {
+      "bytes": 1865,
+      "path": "reports\\campaign_005\\negative_space_entries.jsonl",
+      "role": "source",
+      "sha256": "sha256:5a5c5331956b711606f46f108f2d1d646ca72f54777692807d9ed56ca74db121"
+    }
+  ],
+  "total_bytes": 69898,
+  "trace_ids": []
+}

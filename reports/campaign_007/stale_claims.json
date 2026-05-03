@@ -1,0 +1,783 @@
+{
+  "gate": {
+    "comparison": ">=",
+    "gate_id": "TP3",
+    "passed": true,
+    "quantity": "stale_claims_identified",
+    "threshold": 10,
+    "value": 65
+  },
+  "passed": true,
+  "rows": [
+    {
+      "artifact": "reports\\campaign_002\\full_report.json",
+      "claim_ref": "reports\\campaign_002\\full_report.json:G1",
+      "current_status": "candidate",
+      "dependency": [
+        "K4"
+      ],
+      "gate_id": "G1",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_002\\full_report.json",
+      "claim_ref": "reports\\campaign_002\\full_report.json:G12",
+      "current_status": "candidate",
+      "dependency": [
+        "K9"
+      ],
+      "gate_id": "G12",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:F6_biology_anchor_set",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "F6_biology_anchor_set",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:F7_biology_predicates",
+      "current_status": "exploratory",
+      "dependency": [
+        "K3"
+      ],
+      "gate_id": "F7_biology_predicates",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:F8_schema_pressure",
+      "current_status": "exploratory",
+      "dependency": [
+        "K3"
+      ],
+      "gate_id": "F8_schema_pressure",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:H4_independent_kappa",
+      "current_status": "exploratory",
+      "dependency": [
+        "K9"
+      ],
+      "gate_id": "H4_independent_kappa",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:H5_k3_k4_expansion",
+      "current_status": "exploratory",
+      "dependency": [
+        "K3",
+        "K4"
+      ],
+      "gate_id": "H5_k3_k4_expansion",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:P11_world_trace_movement",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "P11_world_trace_movement",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:P1_w3_field_world",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "P1_w3_field_world",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:P2_w5_digital_world",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "P2_w5_digital_world",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:P3_cross_substrate_transfer",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "P3_cross_substrate_transfer",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "claim_ref": "reports\\campaign_003\\full_report.json:P5_k_corpora_extensions",
+      "current_status": "exploratory",
+      "dependency": [
+        "K3",
+        "K4"
+      ],
+      "gate_id": "P5_k_corpora_extensions",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G14_candidate_artifacts",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G14_candidate_artifacts",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G17_world_usefulness",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G17_world_usefulness",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G19_biology_shadow_pressure",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G19_biology_shadow_pressure",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G1_k5_ambiguous",
+      "current_status": "exploratory",
+      "dependency": [
+        "K5"
+      ],
+      "gate_id": "G1_k5_ambiguous",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G20_method_health_dashboard",
+      "current_status": "exploratory",
+      "dependency": [
+        "K10",
+        "K5"
+      ],
+      "gate_id": "G20_method_health_dashboard",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G2_k6_ood",
+      "current_status": "exploratory",
+      "dependency": [
+        "K6"
+      ],
+      "gate_id": "G2_k6_ood",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G3_k7_multiscale",
+      "current_status": "exploratory",
+      "dependency": [
+        "K7"
+      ],
+      "gate_id": "G3_k7_multiscale",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G4_k8_same_process",
+      "current_status": "exploratory",
+      "dependency": [
+        "K8"
+      ],
+      "gate_id": "G4_k8_same_process",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G5_k10_nonstationary",
+      "current_status": "exploratory",
+      "dependency": [
+        "K10"
+      ],
+      "gate_id": "G5_k10_nonstationary",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G6_k1_k10_registry_complete",
+      "current_status": "exploratory",
+      "dependency": [
+        "K10",
+        "K3",
+        "K4",
+        "K5",
+        "K6",
+        "K7",
+        "K8",
+        "K9"
+      ],
+      "gate_id": "G6_k1_k10_registry_complete",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "claim_ref": "reports\\campaign_004\\full_report.json:G8_candidate_records",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G8_candidate_records",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "claim_ref": "reports\\campaign_005\\full_report.json:G10_novelty_search",
+      "current_status": "exploratory",
+      "dependency": [
+        "W13",
+        "W9"
+      ],
+      "gate_id": "G10_novelty_search",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "claim_ref": "reports\\campaign_005\\full_report.json:G11_qd_archive",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W12",
+        "W13",
+        "W6",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G11_qd_archive",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "claim_ref": "reports\\campaign_005\\full_report.json:G13_coverage_telemetry",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W12",
+        "W13",
+        "W6",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G13_coverage_telemetry",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "claim_ref": "reports\\campaign_005\\full_report.json:G15_candidates_w1_w13",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G15_candidates_w1_w13",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "claim_ref": "reports\\campaign_005\\full_report.json:G16_candidate_strength",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G16_candidate_strength",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "claim_ref": "reports\\campaign_005\\full_report.json:G18_world_usefulness_changed",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G18_world_usefulness_changed",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "claim_ref": "reports\\campaign_005\\full_report.json:G8_world_contracts",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W12",
+        "W13",
+        "W6",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G8_world_contracts",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G11_w12_beta",
+      "current_status": "exploratory",
+      "dependency": [
+        "W12"
+      ],
+      "gate_id": "G11_w12_beta",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G13_w13_beta",
+      "current_status": "exploratory",
+      "dependency": [
+        "W13"
+      ],
+      "gate_id": "G13_w13_beta",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G15_beta_world_contracts",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G15_beta_world_contracts",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G17_three_reference_scenarios",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W12",
+        "W13",
+        "W6",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G17_three_reference_scenarios",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G19_replay_checks",
+      "current_status": "exploratory",
+      "dependency": [
+        "W6",
+        "W7"
+      ],
+      "gate_id": "G19_replay_checks",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G22_success_failure_ambiguous_regions",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W12",
+        "W13",
+        "W6",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G22_success_failure_ambiguous_regions",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G23_basin_width_ci",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W12",
+        "W13",
+        "W6",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G23_basin_width_ci",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G25_adversarial_perturbations",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W13",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G25_adversarial_perturbations",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G27_robustness_vector_dashboard",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11",
+        "W12",
+        "W13",
+        "W6",
+        "W7",
+        "W9"
+      ],
+      "gate_id": "G27_robustness_vector_dashboard",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G28_transfer_matrix",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G28_transfer_matrix",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G29_transfer_motif_coverage",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G29_transfer_motif_coverage",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G33_transfer_failures_analyzed",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G33_transfer_failures_analyzed",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G34_transfer_red_team_decoys",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G34_transfer_red_team_decoys",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G35_candidate_audit_index",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G35_candidate_audit_index",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G38_draft_motif_proposals",
+      "current_status": "exploratory",
+      "dependency": [
+        "K10",
+        "K5",
+        "K6",
+        "K8",
+        "K9"
+      ],
+      "gate_id": "G38_draft_motif_proposals",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G3_w6_beta",
+      "current_status": "exploratory",
+      "dependency": [
+        "W6"
+      ],
+      "gate_id": "G3_w6_beta",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G55_formal_coverage_records",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G55_formal_coverage_records",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G58_biology_shadow_pressure",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G58_biology_shadow_pressure",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G59_biology_negative_space",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G59_biology_negative_space",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G5_w7_beta",
+      "current_status": "exploratory",
+      "dependency": [
+        "W7"
+      ],
+      "gate_id": "G5_w7_beta",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G60_instrument_health_vector",
+      "current_status": "exploratory",
+      "dependency": [
+        "K10"
+      ],
+      "gate_id": "G60_instrument_health_vector",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G62_builder_calibration_health",
+      "current_status": "exploratory",
+      "dependency": [
+        "audit_keyword_dependency"
+      ],
+      "gate_id": "G62_builder_calibration_health",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G7_w9_beta",
+      "current_status": "exploratory",
+      "dependency": [
+        "W9"
+      ],
+      "gate_id": "G7_w9_beta",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "claim_ref": "reports\\campaign_006\\full_report.json:G9_w11_beta",
+      "current_status": "exploratory",
+      "dependency": [
+        "W11"
+      ],
+      "gate_id": "G9_w11_beta",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "reports\\campaign_009\\full_report.json",
+      "claim_ref": "reports\\campaign_009\\full_report.json:BFG8",
+      "current_status": "candidate",
+      "dependency": [
+        "K9"
+      ],
+      "gate_id": "BFG8",
+      "proposed_status": "exploratory",
+      "reason": "Evidence chain passes through stub world, number-generator corpus, or superseded Campaign 007 audit surface."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:1:claim:a0a50700aaeed6515c945fb3a7d7e4b9bf57c9c945145a40e79d6af18f7567ee",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:a0a50700aaeed6515c945fb3a7d7e4b9bf57c9c945145a40e79d6af18f7567ee",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:2:claim:ad55a4d27e58d9e2e308d547ec45d8268395734af710c1f4925310a464a607cd",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:ad55a4d27e58d9e2e308d547ec45d8268395734af710c1f4925310a464a607cd",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:3:claim:f451db56c814b9b58ac19a9e84eb40974b334a97eacf83916e20929d7932f4f9",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:f451db56c814b9b58ac19a9e84eb40974b334a97eacf83916e20929d7932f4f9",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:4:claim:6448dd6c4eac1f8542ed0a0f6f8780193cdc4b75594447a46c8ef267b501afa0",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:6448dd6c4eac1f8542ed0a0f6f8780193cdc4b75594447a46c8ef267b501afa0",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:5:claim:6198c0a5344829d10322c736b803b9860b147e95479219ddebbf7466ea8747cc",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:6198c0a5344829d10322c736b803b9860b147e95479219ddebbf7466ea8747cc",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:6:claim:13c5ecf753d8163c66258db00f5de272a34644d9fa837e3793612cb07b035329",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:13c5ecf753d8163c66258db00f5de272a34644d9fa837e3793612cb07b035329",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:7:claim:ad55a4d27e58d9e2e308d547ec45d8268395734af710c1f4925310a464a607cd",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:ad55a4d27e58d9e2e308d547ec45d8268395734af710c1f4925310a464a607cd",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:8:claim:8107213dc36c903c1a03bb1e68093c88d7779b08c8664ad0ec5fe5352c4eebd9",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:8107213dc36c903c1a03bb1e68093c88d7779b08c8664ad0ec5fe5352c4eebd9",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:9:claim:2c263a06d43202f2912479930693541bdfdf11ab6c456915829d8295cec0b15c",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:2c263a06d43202f2912479930693541bdfdf11ab6c456915829d8295cec0b15c",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    },
+    {
+      "artifact": "validation/claim_ledger/claims.jsonl",
+      "claim_ref": "validation/claim_ledger/claims.jsonl:10:claim:6397f6c10da399f5596bc49983ad5836a03aa104b39e012f5e372042c4df946b",
+      "current_status": "exploratory",
+      "dependency": [
+        "truth_pass_review_required"
+      ],
+      "gate_id": "claim:6397f6c10da399f5596bc49983ad5836a03aa104b39e012f5e372042c4df946b",
+      "proposed_status": "exploratory",
+      "reason": "Pre-truth-pass claim ledger entry requires explicit exploratory status until evidence chain is reconstructed."
+    }
+  ],
+  "schema": "Campaign007StaleClaimAudit.v1"
+}

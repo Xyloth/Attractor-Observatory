@@ -1,0 +1,96 @@
+{
+  "corpora": [
+    "K1",
+    "K2",
+    "K3",
+    "K4"
+  ],
+  "details": [
+    {
+      "corpus_id": "K1",
+      "expected": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "scenario_id": "K1-passive-container",
+      "status": "not_evaluated"
+    },
+    {
+      "corpus_id": "K1",
+      "expected": true,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "scenario_id": "K1-self-maintained-boundary",
+      "status": "not_evaluated"
+    },
+    {
+      "confidence": 0.9,
+      "corpus_id": "K2",
+      "expected": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "passed": true,
+      "scenario_id": "K2-positive-cycle",
+      "status": "evaluated"
+    },
+    {
+      "confidence": 0.9,
+      "corpus_id": "K2",
+      "expected": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "passed": true,
+      "scenario_id": "K2-positive-nested-cycle",
+      "status": "evaluated"
+    },
+    {
+      "confidence": 0.1,
+      "corpus_id": "K2",
+      "expected": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "passed": true,
+      "scenario_id": "K2-decoy-chain",
+      "status": "evaluated"
+    },
+    {
+      "confidence": 0.1,
+      "corpus_id": "K2",
+      "expected": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "passed": true,
+      "scenario_id": "K2-decoy-same-appearance-missing-catalyst",
+      "status": "evaluated"
+    },
+    {
+      "confidence": 0.5,
+      "corpus_id": "K2",
+      "expected": null,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "passed": true,
+      "scenario_id": "K2-ambiguous-weak-cycle",
+      "status": "evaluated"
+    },
+    {
+      "corpus_id": "K3",
+      "expected": true,
+      "motif_id": "motif.externalized_memory.draft",
+      "scenario_id": "K3-environmental-marker-memory",
+      "status": "not_evaluated"
+    },
+    {
+      "corpus_id": "K3",
+      "expected": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "scenario_id": "K3-internal-only-memory",
+      "status": "not_evaluated"
+    },
+    {
+      "confidence": 0.1,
+      "corpus_id": "K4",
+      "expected": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "passed": true,
+      "scenario_id": "K4-environmental-cycle-closure-decoy",
+      "status": "evaluated"
+    }
+  ],
+  "evaluated_count": 6,
+  "pass_rate": 1.0,
+  "passed_count": 6,
+  "scenario_count": 10
+}

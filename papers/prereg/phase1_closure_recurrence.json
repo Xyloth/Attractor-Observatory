@@ -1,0 +1,15 @@
+{
+  "analysis_path": "python observatory_cli.py run-closure-recurrence --out-dir reports/phase1/closure_recurrence",
+  "hypothesis": "The K2 positive autocatalytic cycle is detected recurrently across deterministic CRN seeds and remains above seed-shuffle and network-rewire null baselines.",
+  "nulls": [
+    "N1 seed-shuffle",
+    "N2 network-rewire"
+  ],
+  "prereg_id": "sha256:664a65af4ca72b1dcd61ae0200b9180c65437c214dea74c5931eabdd9fbfcb29",
+  "signature_scheme": "sha256-self-attestation",
+  "signed_by": "Codex Builder self-attestation",
+  "stopping_rule": "Run the declared seed set once; no early stopping.",
+  "test_statistic": "mean detector confidence and Phase-1 gauntlet recurrence/null-margin checks",
+  "threshold": "gauntlet.passed == true",
+  "title": "Phase 1 Closure Recurrence Alpha"
+}

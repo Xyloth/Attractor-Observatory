@@ -1,0 +1,1327 @@
+{
+  "gates": {
+    "G10_w11_eigen_reference": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 15,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G11_w12_beta": {
+      "event_types": [
+        "cheating_event",
+        "engulfment_event",
+        "integration_failure_event",
+        "resource_exchange_event",
+        "vertical_transmission_event"
+      ],
+      "motifs": [
+        "symbiogenesis",
+        "lineage",
+        "resource_exchange",
+        "cheating_collapse"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W12"
+    },
+    "G12_w12_regimes": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 15,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G13_w13_beta": {
+      "event_types": [
+        "cross_scale_composition_event",
+        "downscale_flux_event",
+        "lag_event",
+        "scale_separation_failure_event",
+        "upscale_flux_event"
+      ],
+      "motifs": [
+        "multiscale_flux",
+        "cross_scale_composition",
+        "scale_separation",
+        "feedback"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W13"
+    },
+    "G14_w13_cross_scale": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G15_beta_world_contracts": {
+      "failure_regime_count": 7,
+      "passed": true,
+      "trace_count": 21,
+      "world_count": 7
+    },
+    "G1_w4_beta": {
+      "event_types": [
+        "branching_failure_event",
+        "differentiation_event",
+        "field_diffusion_event",
+        "growth_event",
+        "segmentation_event"
+      ],
+      "motifs": [
+        "morphogenesis",
+        "segmentation",
+        "branching",
+        "lineage"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W4"
+    },
+    "G2_w4_references": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 15,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G3_w6_beta": {
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "disturbance_event",
+        "extinction_event",
+        "niche_construction_event",
+        "recovery_event"
+      ],
+      "motifs": [
+        "ecosystem_niche_construction",
+        "recovery",
+        "oscillation",
+        "extinction"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W6"
+    },
+    "G4_w6_regimes": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G5_w7_beta": {
+      "event_types": [
+        "communication_event",
+        "marker_read_event",
+        "marker_removed_event",
+        "marker_write_event",
+        "movement_event",
+        "obstacle_navigation_event"
+      ],
+      "motifs": [
+        "swarm_coordination",
+        "externalized_memory",
+        "obstacle_navigation",
+        "communication"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W7"
+    },
+    "G6_w7_memory_causality": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G7_w9_beta": {
+      "event_types": [
+        "adsorption_event",
+        "poisoned_surface_event",
+        "side_reaction_event",
+        "surface_catalysis_event",
+        "wetdry_cycle_event"
+      ],
+      "motifs": [
+        "surface_catalysis",
+        "closure",
+        "wetdry_cycle",
+        "poisoned_failure"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W9"
+    },
+    "G8_w9_closure_controls": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G9_w11_beta": {
+      "event_types": [
+        "error_threshold_event",
+        "lineage_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event"
+      ],
+      "motifs": [
+        "quasispecies_cloud",
+        "lineage",
+        "error_threshold",
+        "parasite_pressure"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W11"
+    }
+  },
+  "passed": true,
+  "pillar": "beta_worlds",
+  "rows": [
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "differentiation_event",
+        "field_diffusion_event",
+        "growth_event",
+        "segmentation_event"
+      ],
+      "motif_scores": {
+        "branching": 1.0,
+        "lineage": 0.5322938181818181,
+        "morphogenesis": 0.743022222222222,
+        "regime_success": 1.0,
+        "success_drive": 0.8355999999999999
+      },
+      "reference_checks": [
+        {
+          "check_id": "W4.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W4.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W4.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W4.diffusion_mass_behavior",
+          "passed": true,
+          "tolerance": 1e-09,
+          "value": 0.0
+        },
+        {
+          "check_id": "W4.tissue_boundary_consistency",
+          "expected_failure_allowed": false,
+          "passed": true,
+          "threshold": 0.35,
+          "value": 0.99534
+        }
+      ],
+      "regime": "success",
+      "scenario": "positive",
+      "trace_id": "sha256:985ad8e4bf22c59601e9481e3a793bfc83b247e8c81fdd730f9cce1da3438670",
+      "trace_path": "runs\\campaign006\\W4_positive_6060_base.json",
+      "world_family": "morphogenesis",
+      "world_id": "W4"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "differentiation_event",
+        "field_diffusion_event",
+        "growth_event",
+        "segmentation_event"
+      ],
+      "motif_scores": {
+        "branching": 0.20159999999999986,
+        "lineage": 0.3490210909090909,
+        "morphogenesis": 0.3430222222222221,
+        "regime_success": 0.5,
+        "success_drive": 0.5356
+      },
+      "reference_checks": [
+        {
+          "check_id": "W4.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W4.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W4.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W4.diffusion_mass_behavior",
+          "passed": true,
+          "tolerance": 1e-09,
+          "value": 0.0
+        },
+        {
+          "check_id": "W4.tissue_boundary_consistency",
+          "expected_failure_allowed": false,
+          "passed": true,
+          "threshold": 0.35,
+          "value": 0.69034
+        }
+      ],
+      "regime": "ambiguous",
+      "scenario": "boundary",
+      "trace_id": "sha256:587b8a37628e43baba5c7ea9e471f16122b8969fb9a256ba0555acd2a212172e",
+      "trace_path": "runs\\campaign006\\W4_boundary_6061_base.json",
+      "world_family": "morphogenesis",
+      "world_id": "W4"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "branching_failure_event",
+        "differentiation_event",
+        "field_diffusion_event",
+        "growth_event"
+      ],
+      "motif_scores": {
+        "branching": 0.0,
+        "lineage": 0.21818181818181817,
+        "morphogenesis": 0.0,
+        "regime_success": 0.0,
+        "success_drive": 0.192
+      },
+      "reference_checks": [
+        {
+          "check_id": "W4.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W4.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W4.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W4.diffusion_mass_behavior",
+          "passed": true,
+          "tolerance": 1e-09,
+          "value": 0.0
+        },
+        {
+          "check_id": "W4.tissue_boundary_consistency",
+          "expected_failure_allowed": true,
+          "passed": true,
+          "threshold": 0.35,
+          "value": 0.2588
+        }
+      ],
+      "regime": "failure",
+      "scenario": "failure",
+      "trace_id": "sha256:4624cc0342a215287ed5d548af3133f629adf07372e6c9a683507c8780185a57",
+      "trace_path": "runs\\campaign006\\W4_failure_6062_base.json",
+      "world_family": "morphogenesis",
+      "world_id": "W4"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "disturbance_event",
+        "niche_construction_event",
+        "recovery_event"
+      ],
+      "motif_scores": {
+        "ecosystem_niche_construction": 1.0,
+        "extinction": 0.36062311111111134,
+        "oscillation": 0.8973111111111112,
+        "recovery": 1.0,
+        "regime_success": 1.0,
+        "success_drive": 0.8355999999999999
+      },
+      "reference_checks": [
+        {
+          "check_id": "W6.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W6.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 5
+        },
+        {
+          "check_id": "W6.nonnegative_guilds",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 6.527999999999999
+        },
+        {
+          "check_id": "W6.regime_reference",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 1.0
+        }
+      ],
+      "regime": "success",
+      "scenario": "positive",
+      "trace_id": "sha256:e136126d8c9f91d23d9a1ffe2f02f27777509177485008ed45883f7a31f973da",
+      "trace_path": "runs\\campaign006\\W6_positive_6160_base.json",
+      "world_family": "ecosystem",
+      "world_id": "W6"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "disturbance_event",
+        "extinction_event",
+        "niche_construction_event"
+      ],
+      "motif_scores": {
+        "ecosystem_niche_construction": 0.8107453714285713,
+        "extinction": 0.7946231111111112,
+        "oscillation": 0.5984222222222222,
+        "recovery": 0.8401,
+        "regime_success": 0.5,
+        "success_drive": 0.5356
+      },
+      "reference_checks": [
+        {
+          "check_id": "W6.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W6.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 5
+        },
+        {
+          "check_id": "W6.nonnegative_guilds",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 3.696783999999999
+        },
+        {
+          "check_id": "W6.regime_reference",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.8401
+        }
+      ],
+      "regime": "ambiguous",
+      "scenario": "boundary",
+      "trace_id": "sha256:bcc330c039afb8858b0f5bcfb9517256d6749bbfd79bd5663ea91b9ec0a9963d",
+      "trace_path": "runs\\campaign006\\W6_boundary_6161_base.json",
+      "world_family": "ecosystem",
+      "world_id": "W6"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "disturbance_event",
+        "extinction_event",
+        "niche_construction_event"
+      ],
+      "motif_scores": {
+        "ecosystem_niche_construction": 0.2531108571428572,
+        "extinction": 1.0,
+        "oscillation": 0.21955555555555556,
+        "recovery": 0.32549999999999996,
+        "regime_success": 0.0,
+        "success_drive": 0.192
+      },
+      "reference_checks": [
+        {
+          "check_id": "W6.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W6.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 5
+        },
+        {
+          "check_id": "W6.nonnegative_guilds",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.0
+        },
+        {
+          "check_id": "W6.regime_reference",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.32549999999999996
+        }
+      ],
+      "regime": "failure",
+      "scenario": "failure",
+      "trace_id": "sha256:70420a94de7f024dc551a9ddae2f2f88716889ce83f0a46c9e09b18e908f9d6e",
+      "trace_path": "runs\\campaign006\\W6_failure_6162_base.json",
+      "world_family": "ecosystem",
+      "world_id": "W6"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "communication_event",
+        "marker_read_event",
+        "marker_removed_event",
+        "marker_write_event",
+        "movement_event",
+        "obstacle_navigation_event"
+      ],
+      "motif_scores": {
+        "communication": 1.0,
+        "externalized_memory": 1.0,
+        "regime_success": 1.0,
+        "success_drive": 0.8355999999999999,
+        "swarm_coordination": 0.55674
+      },
+      "reference_checks": [
+        {
+          "check_id": "W7.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W7.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 6
+        },
+        {
+          "check_id": "W7.memory_causality",
+          "passed": true,
+          "threshold": 0.08,
+          "value": 1.0
+        },
+        {
+          "check_id": "W7.agent_count",
+          "passed": true,
+          "threshold": 24.0,
+          "value": 24.0
+        }
+      ],
+      "regime": "success",
+      "scenario": "positive",
+      "trace_id": "sha256:cbab5d74de27bbdff29f5492d068742fd89999f271c323ad831d1a11774e70d8",
+      "trace_path": "runs\\campaign006\\W7_positive_6260_base.json",
+      "world_family": "swarm",
+      "world_id": "W7"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "communication_event",
+        "marker_read_event",
+        "marker_removed_event",
+        "marker_write_event",
+        "movement_event",
+        "obstacle_navigation_event"
+      ],
+      "motif_scores": {
+        "communication": 0.8226815999999998,
+        "externalized_memory": 0.8226815999999999,
+        "regime_success": 0.5,
+        "success_drive": 0.5356,
+        "swarm_coordination": 0.36524
+      },
+      "reference_checks": [
+        {
+          "check_id": "W7.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W7.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 6
+        },
+        {
+          "check_id": "W7.memory_causality",
+          "passed": true,
+          "threshold": 0.08,
+          "value": 0.8226815999999999
+        },
+        {
+          "check_id": "W7.agent_count",
+          "passed": true,
+          "threshold": 24.0,
+          "value": 24.0
+        }
+      ],
+      "regime": "ambiguous",
+      "scenario": "boundary",
+      "trace_id": "sha256:b5173736e67a4a3acdc3274deccec540eace5ba09e8266581041d62ad0a93377",
+      "trace_path": "runs\\campaign006\\W7_boundary_6261_base.json",
+      "world_family": "swarm",
+      "world_id": "W7"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "communication_event",
+        "marker_read_event",
+        "marker_removed_event",
+        "marker_write_event",
+        "movement_event",
+        "obstacle_navigation_event"
+      ],
+      "motif_scores": {
+        "communication": 0.12902400000000003,
+        "externalized_memory": 0.12902400000000003,
+        "regime_success": 0.0,
+        "success_drive": 0.192,
+        "swarm_coordination": 0.12880000000000003
+      },
+      "reference_checks": [
+        {
+          "check_id": "W7.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W7.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 6
+        },
+        {
+          "check_id": "W7.memory_causality",
+          "passed": true,
+          "threshold": 0.08,
+          "value": 0.12902400000000003
+        },
+        {
+          "check_id": "W7.agent_count",
+          "passed": true,
+          "threshold": 24.0,
+          "value": 24.0
+        }
+      ],
+      "regime": "failure",
+      "scenario": "failure",
+      "trace_id": "sha256:165823c673ae2e19441608569544c42195eebd1f65d218665bf266095d9a7cab",
+      "trace_path": "runs\\campaign006\\W7_failure_6262_base.json",
+      "world_family": "swarm",
+      "world_id": "W7"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "adsorption_event",
+        "side_reaction_event",
+        "surface_catalysis_event",
+        "wetdry_cycle_event"
+      ],
+      "motif_scores": {
+        "closure": 1.0,
+        "poisoned_failure": 0.0,
+        "regime_success": 1.0,
+        "success_drive": 0.8355999999999999,
+        "surface_catalysis": 0.894412
+      },
+      "reference_checks": [
+        {
+          "check_id": "W9.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W9.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W9.surface_capacity",
+          "passed": true,
+          "threshold": 1.0,
+          "value": 0.7894319999999999
+        },
+        {
+          "check_id": "W9.closure_depth_reference",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 3.2623999999999995
+        }
+      ],
+      "regime": "success",
+      "scenario": "positive",
+      "trace_id": "sha256:02d2c1e2f81950fadb42fe0882828add29990cd07ca766464eabce06863fdde7",
+      "trace_path": "runs\\campaign006\\W9_positive_6360_base.json",
+      "world_family": "origins_chemistry",
+      "world_id": "W9"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "adsorption_event",
+        "side_reaction_event",
+        "surface_catalysis_event",
+        "wetdry_cycle_event"
+      ],
+      "motif_scores": {
+        "closure": 0.6181333333333333,
+        "poisoned_failure": 0.0,
+        "regime_success": 0.5,
+        "success_drive": 0.5356,
+        "surface_catalysis": 0.535372
+      },
+      "reference_checks": [
+        {
+          "check_id": "W9.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W9.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W9.surface_capacity",
+          "passed": true,
+          "threshold": 1.0,
+          "value": 0.711992
+        },
+        {
+          "check_id": "W9.closure_depth_reference",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 1.8543999999999998
+        }
+      ],
+      "regime": "ambiguous",
+      "scenario": "boundary",
+      "trace_id": "sha256:4d2984c0ef2cbebc744d3e704922339d6f9bb0ada2f918cc2bd1b314dc14697d",
+      "trace_path": "runs\\campaign006\\W9_boundary_6361_base.json",
+      "world_family": "origins_chemistry",
+      "world_id": "W9"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "adsorption_event",
+        "poisoned_surface_event",
+        "side_reaction_event",
+        "surface_catalysis_event",
+        "wetdry_cycle_event"
+      ],
+      "motif_scores": {
+        "closure": 0.0,
+        "poisoned_failure": 0.22999999999999998,
+        "regime_success": 0.0,
+        "success_drive": 0.192,
+        "surface_catalysis": 0.0
+      },
+      "reference_checks": [
+        {
+          "check_id": "W9.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W9.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 5
+        },
+        {
+          "check_id": "W9.surface_capacity",
+          "passed": true,
+          "threshold": 1.0,
+          "value": 0.62056
+        },
+        {
+          "check_id": "W9.closure_depth_reference",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.0
+        }
+      ],
+      "regime": "failure",
+      "scenario": "failure",
+      "trace_id": "sha256:737bf6a18ed2c96ca95f239d995e9e15f5aaa2a44f3059f2aaa8a286e4640bab",
+      "trace_path": "runs\\campaign006\\W9_failure_6362_base.json",
+      "world_family": "origins_chemistry",
+      "world_id": "W9"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "lineage_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event"
+      ],
+      "motif_scores": {
+        "error_threshold": 0.2857142857142857,
+        "lineage": 0.7809,
+        "parasite_pressure": 0.048880000000000035,
+        "quasispecies_cloud": 0.32755555555555554,
+        "regime_success": 1.0,
+        "success_drive": 0.8355999999999999
+      },
+      "reference_checks": [
+        {
+          "check_id": "W11.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W11.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W11.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W11.eigen_threshold_location",
+          "passed": true,
+          "tolerance": 0.45,
+          "value": 0.3
+        },
+        {
+          "check_id": "W11.threshold_event_consistency",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        }
+      ],
+      "regime": "success",
+      "scenario": "positive",
+      "trace_id": "sha256:d5ee6fd62402ac02299fcad31cde78771eacd514882a83a21bf2917f36175a95",
+      "trace_path": "runs\\campaign006\\W11_positive_6460_base.json",
+      "world_family": "quasispecies",
+      "world_id": "W11"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "lineage_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event"
+      ],
+      "motif_scores": {
+        "error_threshold": 0.8095238095238096,
+        "lineage": 0.5079,
+        "parasite_pressure": 0.24088000000000004,
+        "quasispecies_cloud": 0.8262222222222222,
+        "regime_success": 0.5,
+        "success_drive": 0.5356
+      },
+      "reference_checks": [
+        {
+          "check_id": "W11.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W11.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W11.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W11.eigen_threshold_location",
+          "passed": true,
+          "tolerance": 0.45,
+          "value": 0.07999999999999996
+        },
+        {
+          "check_id": "W11.threshold_event_consistency",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        }
+      ],
+      "regime": "ambiguous",
+      "scenario": "boundary",
+      "trace_id": "sha256:db7326f1e017c7b04e8c96b782c27cf35b0f000903ba13cfb19743d2cd60c382",
+      "trace_path": "runs\\campaign006\\W11_boundary_6461_base.json",
+      "world_family": "quasispecies",
+      "world_id": "W11"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "error_threshold_event",
+        "lineage_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event"
+      ],
+      "motif_scores": {
+        "error_threshold": 0.19047619047619035,
+        "lineage": 0.044,
+        "parasite_pressure": 0.5616,
+        "quasispecies_cloud": 1.0,
+        "regime_success": 0.0,
+        "success_drive": 0.192
+      },
+      "reference_checks": [
+        {
+          "check_id": "W11.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W11.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 5
+        },
+        {
+          "check_id": "W11.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W11.eigen_threshold_location",
+          "passed": true,
+          "tolerance": 0.45,
+          "value": 0.34
+        },
+        {
+          "check_id": "W11.threshold_event_consistency",
+          "passed": true,
+          "threshold": 0,
+          "value": 1
+        }
+      ],
+      "regime": "failure",
+      "scenario": "failure",
+      "trace_id": "sha256:d6a82a504a7908cc308ca27c5c5bb8755fe6371ab6c6f24ed43a85433ff73a8e",
+      "trace_path": "runs\\campaign006\\W11_failure_6462_base.json",
+      "world_family": "quasispecies",
+      "world_id": "W11"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "cheating_event",
+        "engulfment_event",
+        "resource_exchange_event",
+        "vertical_transmission_event"
+      ],
+      "motif_scores": {
+        "cheating_collapse": 0.0,
+        "lineage": 1.0,
+        "regime_success": 1.0,
+        "resource_exchange": 0.7466999999999999,
+        "success_drive": 0.8355999999999999,
+        "symbiogenesis": 0.8355999999999999
+      },
+      "reference_checks": [
+        {
+          "check_id": "W12.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W12.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W12.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W12.integration_regime",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.8355999999999999
+        },
+        {
+          "check_id": "W12.vertical_transmission_consistency",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 1.0
+        }
+      ],
+      "regime": "success",
+      "scenario": "positive",
+      "trace_id": "sha256:0da7131170789d568aae4e9a8da5cc922ece3cb487a9b8adeecd04267982b7ba",
+      "trace_path": "runs\\campaign006\\W12_positive_6560_base.json",
+      "world_family": "symbiogenesis",
+      "world_id": "W12"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "cheating_event",
+        "engulfment_event",
+        "resource_exchange_event",
+        "vertical_transmission_event"
+      ],
+      "motif_scores": {
+        "cheating_collapse": 0.015360000000000016,
+        "lineage": 0.9731799999999999,
+        "regime_success": 0.5,
+        "resource_exchange": 0.5170919999999999,
+        "success_drive": 0.5356,
+        "symbiogenesis": 0.5294559999999999
+      },
+      "reference_checks": [
+        {
+          "check_id": "W12.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W12.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W12.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W12.integration_regime",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.5294559999999999
+        },
+        {
+          "check_id": "W12.vertical_transmission_consistency",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.9731799999999999
+        }
+      ],
+      "regime": "ambiguous",
+      "scenario": "boundary",
+      "trace_id": "sha256:85dbda1d95a96b3bf1594eb8855e9cdea165f8fae4b88af9fc5954f999d1e969",
+      "trace_path": "runs\\campaign006\\W12_boundary_6561_base.json",
+      "world_family": "symbiogenesis",
+      "world_id": "W12"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "cheating_event",
+        "engulfment_event",
+        "integration_failure_event",
+        "resource_exchange_event",
+        "vertical_transmission_event"
+      ],
+      "motif_scores": {
+        "cheating_collapse": 0.59904,
+        "lineage": 0.14720000000000003,
+        "regime_success": 0.0,
+        "resource_exchange": 0.084288,
+        "success_drive": 0.192,
+        "symbiogenesis": 0.0
+      },
+      "reference_checks": [
+        {
+          "check_id": "W12.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W12.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 5
+        },
+        {
+          "check_id": "W12.lineage_acyclic",
+          "passed": true,
+          "threshold": 0,
+          "value": 0
+        },
+        {
+          "check_id": "W12.integration_regime",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.0
+        },
+        {
+          "check_id": "W12.vertical_transmission_consistency",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 0.14720000000000003
+        }
+      ],
+      "regime": "failure",
+      "scenario": "failure",
+      "trace_id": "sha256:c3b1a1365874015c3acfefd7b1ca5a087c10aee7b248b4252705abe640c22522",
+      "trace_path": "runs\\campaign006\\W12_failure_6562_base.json",
+      "world_family": "symbiogenesis",
+      "world_id": "W12"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "cross_scale_composition_event",
+        "downscale_flux_event",
+        "lag_event",
+        "upscale_flux_event"
+      ],
+      "motif_scores": {
+        "cross_scale_composition": 1.0,
+        "feedback": 0.5483784063999999,
+        "multiscale_flux": 0.7616923516927998,
+        "regime_success": 1.0,
+        "success_drive": 0.8355999999999999
+      },
+      "reference_checks": [
+        {
+          "check_id": "W13.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W13.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W13.cross_scale_budget",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 91.40308220313598
+        },
+        {
+          "check_id": "W13.lag_phase_telemetry",
+          "passed": true,
+          "threshold": 2.0,
+          "value": 0.2658013333333331
+        }
+      ],
+      "regime": "success",
+      "scenario": "positive",
+      "trace_id": "sha256:b8ed97af356c8c9ada1a4d4f8e9c7a0c0983e11adf455edd9314bb01af7024da",
+      "trace_path": "runs\\campaign006\\W13_positive_6660_base.json",
+      "world_family": "multiscale",
+      "world_id": "W13"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "cross_scale_composition_event",
+        "downscale_flux_event",
+        "lag_event",
+        "upscale_flux_event"
+      ],
+      "motif_scores": {
+        "cross_scale_composition": 0.71712,
+        "feedback": 0.27989593599999996,
+        "multiscale_flux": 0.49445672289279996,
+        "regime_success": 0.5,
+        "success_drive": 0.5356
+      },
+      "reference_checks": [
+        {
+          "check_id": "W13.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W13.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 4
+        },
+        {
+          "check_id": "W13.cross_scale_budget",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 59.33480674713599
+        },
+        {
+          "check_id": "W13.lag_phase_telemetry",
+          "passed": true,
+          "threshold": 2.0,
+          "value": 0.16013466666666662
+        }
+      ],
+      "regime": "ambiguous",
+      "scenario": "boundary",
+      "trace_id": "sha256:2bb4f9963b1e8f50cefbfc7e29f9bd09542b33593fede8ab082042310f8b6f5e",
+      "trace_path": "runs\\campaign006\\W13_boundary_6661_base.json",
+      "world_family": "multiscale",
+      "world_id": "W13"
+    },
+    {
+      "corrupted_reference_passed": false,
+      "event_types": [
+        "cross_scale_composition_event",
+        "downscale_flux_event",
+        "lag_event",
+        "scale_separation_failure_event",
+        "upscale_flux_event"
+      ],
+      "motif_scores": {
+        "cross_scale_composition": 0.26839999999999997,
+        "feedback": 0.070318752,
+        "multiscale_flux": 0.25278046272000004,
+        "regime_success": 0.0,
+        "success_drive": 0.192
+      },
+      "reference_checks": [
+        {
+          "check_id": "W13.independent_budget",
+          "passed": true,
+          "tolerance": 1e-06,
+          "value": 0.0
+        },
+        {
+          "check_id": "W13.event_surface",
+          "passed": true,
+          "threshold": 4,
+          "value": 5
+        },
+        {
+          "check_id": "W13.cross_scale_budget",
+          "passed": true,
+          "threshold": 0.0,
+          "value": 30.333655526400005
+        },
+        {
+          "check_id": "W13.lag_phase_telemetry",
+          "passed": true,
+          "threshold": 2.0,
+          "value": 0.03226000000000003
+        }
+      ],
+      "regime": "failure",
+      "scenario": "failure",
+      "trace_id": "sha256:e08ac6590b29c30f135900146cd6a44de43235ba2aea0e0253cf1d2b9f33826b",
+      "trace_path": "runs\\campaign006\\W13_failure_6662_base.json",
+      "world_family": "multiscale",
+      "world_id": "W13"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+NO ARTIFICIAL CEILING DOCTRINE
+
+Every specification, task description, architecture note, and implementation request given to a coding model must be treated as a seed and a minimum standard, not a ceiling.
+
+Do not constrain the coder to the narrowest interpretation of the task.
+
+Do not ask for the smallest useful implementation unless explicitly required for compatibility or recovery.
+
+Do not over-prescribe structure, file boundaries, abstractions, or scope when the coder can reasonably infer, improve, or extend them.
+
+Assume the coding model is a capable research engineer with strong architectural judgment. Trust it to add worthwhile complexity, nuance, instrumentation, tests, and design improvements when those additions strengthen the project.
+
+The instruction pattern should be:
+
+“This is the minimum success condition. You are encouraged to exceed it where doing so increases rigor, extensibility, observability, correctness, or scientific value. Add complexity only when it earns its weight in code. Do not treat the task boundary as a creativity boundary.”
+
+Creativity, experimentation, and ambitious implementation are encouraged, even when they require later review, refactor, or pruning.
+
+The goal is not to prevent all mistakes.
+
+The goal is to prevent underbuilding.
+
+We would rather review and refine an ambitious implementation than repeatedly receive safe, narrow, prematurely minimized work.
+
+For Attractor Observatory, every coder-facing instruction should preserve this principle:
+
+Seed, not ceiling.
+Minimum, not maximum.
+Trust the builder.

@@ -1,0 +1,42 @@
+{
+  "applications": [
+    {
+      "artifact": "validation\\claim_ledger\\claims.jsonl",
+      "modification": "status=exploratory; public_allowed=false; D11 weakness note",
+      "rows_modified": 10
+    },
+    {
+      "artifact": "reports\\campaign_002\\full_report.json",
+      "modification": "stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass",
+      "rows_modified": 2
+    },
+    {
+      "artifact": "reports\\campaign_003\\full_report.json",
+      "modification": "stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass",
+      "rows_modified": 10
+    },
+    {
+      "artifact": "reports\\campaign_004\\full_report.json",
+      "modification": "stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass",
+      "rows_modified": 11
+    },
+    {
+      "artifact": "reports\\campaign_005\\full_report.json",
+      "modification": "stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass",
+      "rows_modified": 7
+    },
+    {
+      "artifact": "reports\\campaign_006\\full_report.json",
+      "modification": "stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass",
+      "rows_modified": 24
+    },
+    {
+      "artifact": "reports\\campaign_009\\full_report.json",
+      "modification": "stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass",
+      "rows_modified": 1
+    }
+  ],
+  "downgraded_claim_count": 65,
+  "passed": true,
+  "schema": "Campaign007TruthPassApplication.v1"
+}

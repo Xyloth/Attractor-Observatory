@@ -1,0 +1,542 @@
+{
+  "campaign_id": "campaign-007",
+  "d14_audit": "reports/campaign_007/d14_audit.json",
+  "doctrine": {
+    "content_hash": "sha256:1b92be82434fc9a3cfcaadff7d64f757ada567a574f04317b279353eee436b5c",
+    "path": "docs\\doctrine_d14.md",
+    "registry": "docs\\doctrine_registry.json",
+    "signed_by": "Codex Builder"
+  },
+  "falsifiers": [],
+  "gate_count": 9,
+  "gates": {
+    "HE1": {
+      "comparison": "positive==true and disabled==false and sin_overlay_removed",
+      "gate_id": "HE1",
+      "passed": true,
+      "quantity": "segmentation_schedule_positive_and_disabled_control",
+      "threshold": {
+        "disabled_pass": false,
+        "positive_pass": true
+      },
+      "value": {
+        "disabled_pass": false,
+        "positive_pass": true,
+        "sin_overlay_removed": true
+      }
+    },
+    "HE2": {
+      "comparison": "all true",
+      "gate_id": "HE2",
+      "passed": true,
+      "quantity": "branching_follows_rotated_branch_sources",
+      "threshold": {
+        "axis_changed": true,
+        "normal_pass": true,
+        "rotated_pass": true
+      },
+      "value": {
+        "normal_axis": "vertical",
+        "normal_pass": true,
+        "rotated_axis": "horizontal",
+        "rotated_pass": true
+      }
+    },
+    "HE3": {
+      "comparison": "all true",
+      "gate_id": "HE3",
+      "passed": true,
+      "quantity": "radial_and_layered_emerge_without_unconditional_protein_adds",
+      "threshold": {
+        "layered_pass": true,
+        "radial_pass": true
+      },
+      "value": {
+        "layered_pass": true,
+        "radial_pass": true
+      }
+    },
+    "HE4": {
+      "comparison": "==",
+      "gate_id": "HE4",
+      "passed": true,
+      "quantity": "update_identity_benchmark_conditions",
+      "threshold": 0,
+      "value": 0
+    },
+    "HE5": {
+      "comparison": "==",
+      "gate_id": "HE5",
+      "passed": true,
+      "quantity": "division_angle_benchmark_conditions",
+      "threshold": 0,
+      "value": 0
+    },
+    "HE6": {
+      "comparison": "branch_absent and primary_or_multiseed_positive",
+      "gate_id": "HE6",
+      "passed": true,
+      "quantity": "equ_emergence_without_force_insert_branch",
+      "threshold": {
+        "force_insert_branch_present": false,
+        "positive_seed_pass": true
+      },
+      "value": {
+        "force_insert_branch_present": false,
+        "primary_seed_pass": true,
+        "ten_seed_pass_count": 10
+      }
+    },
+    "HE7": {
+      "comparison": "all true",
+      "gate_id": "HE7",
+      "passed": true,
+      "quantity": "real_cahn_hilliard_fourth_order_update",
+      "threshold": {
+        "phase_variance_increased": true,
+        "positive_and_negative_phases": true,
+        "second_laplacian_present": true
+      },
+      "value": {
+        "benchmark_pass": true,
+        "final_phase_variance": 0.009944588981813407,
+        "initial_phase_variance": 0.004805555555555556,
+        "negative_phase_cells": 322.0,
+        "positive_phase_cells": 254.0,
+        "second_laplacian_present": true
+      }
+    },
+    "HE8": {
+      "comparison": "==",
+      "gate_id": "HE8",
+      "passed": true,
+      "quantity": "d14_benchmark_condition_violations",
+      "threshold": 0,
+      "value": 0
+    },
+    "HE9": {
+      "comparison": "==",
+      "gate_id": "HE9",
+      "passed": true,
+      "quantity": "hardcode_excision_regression_report_written",
+      "threshold": 1,
+      "value": 1
+    }
+  },
+  "passed_gate_count": 9,
+  "pillar": "hardcode_excision",
+  "rows": {
+    "w3_cahn_hilliard": {
+      "benchmark": {
+        "expected_regime": "stripe_formation",
+        "observed_regime": "front_formation",
+        "passed": true,
+        "pattern": {
+          "active_cells": 576,
+          "peak": 0.6113778714961492,
+          "regime": "front_formation",
+          "variance": 0.0024861472454533514
+        },
+        "scenario_id": "W3-cahn-hilliard-phase-separation",
+        "summary": {
+          "active_cells": 576.0,
+          "focus_peak": 0.6113778714961492,
+          "focus_variance": 0.0024861472454533514,
+          "negative_phase_cells": 322.0,
+          "pattern_active_cells": 576.0,
+          "phase_variance": 0.009944588981813407,
+          "positive_phase_cells": 254.0,
+          "species_0_mass": -3.840000000000001,
+          "species_1_mass": 286.08,
+          "species_2_mass": 47.94008878347583,
+          "total_energy": 28.800000000000008,
+          "total_mass": 330.1800887834758
+        }
+      },
+      "trace_id": "sha256:1750377655d5b519c1097a0c16d91105060e0ef7b847fb88ae273e7548b80fd4"
+    },
+    "w4_branching": {
+      "normal": {
+        "benchmark": {
+          "benchmark": "branching_tree",
+          "expected_regime": "Bimodal branch morphogen should create at least two tip-rich arms.",
+          "metrics": {
+            "branch_count": 2.0,
+            "cell_count": 15.0,
+            "tip_count": 15.0
+          },
+          "observed_regime": "branching",
+          "passed": true
+        },
+        "event_types": [
+          "birth_event",
+          "differentiation_event",
+          "division_event",
+          "expression_event",
+          "growth_event",
+          "movement_event"
+        ],
+        "final": {
+          "boundary_span": 0.37816124507959714,
+          "branch_count": 2.0,
+          "cell_count": 15.0,
+          "dead_cell_count": 0.0,
+          "energy": 61.41701303438085,
+          "epithelial_count": 0.0,
+          "layer_separation": 0.0,
+          "segment_count": 0.0,
+          "segment_score": 0.0012999396286903317,
+          "stalk_count": 0.0,
+          "tip_count": 15.0,
+          "tissue_mass": 18.574994166104876,
+          "x_span": 0.11072641091541602,
+          "y_span": 0.2674348341641811
+        },
+        "trace_id": "sha256:7e7566374a80000775911bc4d3da6711f6762aa4beac9b0d60d828800219d850"
+      },
+      "rotated_90": {
+        "benchmark": {
+          "benchmark": "branching_tree",
+          "expected_regime": "Bimodal branch morphogen should create at least two tip-rich arms.",
+          "metrics": {
+            "branch_count": 2.0,
+            "cell_count": 12.0,
+            "tip_count": 12.0
+          },
+          "observed_regime": "branching",
+          "passed": true
+        },
+        "event_types": [
+          "birth_event",
+          "differentiation_event",
+          "division_event",
+          "expression_event",
+          "growth_event",
+          "movement_event"
+        ],
+        "final": {
+          "boundary_span": 0.3747850300429544,
+          "branch_count": 2.0,
+          "cell_count": 12.0,
+          "dead_cell_count": 0.0,
+          "energy": 74.96809283424349,
+          "epithelial_count": 0.0,
+          "layer_separation": 0.0,
+          "segment_count": 0.0,
+          "segment_score": 0.004043913444898482,
+          "stalk_count": 0.0,
+          "tip_count": 12.0,
+          "tissue_mass": 24.1315903698532,
+          "x_span": 0.279282952261797,
+          "y_span": 0.09550207778115738
+        },
+        "trace_id": "sha256:c44c990b8b7709f4f5fb28d8f7df67b4e6a6a336255fe73c8304e06d89848324"
+      }
+    },
+    "w4_radial_layered": {
+      "layered": {
+        "benchmark": {
+          "benchmark": "layered_organoid",
+          "expected_regime": "Layer field should separate inner and outer epithelial zones after damage repair.",
+          "metrics": {
+            "cell_count": 30.0,
+            "epithelial_count": 30.0,
+            "layer_separation": 0.5004305460641382
+          },
+          "observed_regime": "layered",
+          "passed": true
+        },
+        "event_types": [
+          "birth_event",
+          "damage_event",
+          "differentiation_event",
+          "division_event",
+          "expression_event",
+          "growth_event",
+          "movement_event",
+          "mutation_event"
+        ],
+        "final": {
+          "boundary_span": 2.105753177178041,
+          "branch_count": 0.0,
+          "cell_count": 30.0,
+          "dead_cell_count": 0.0,
+          "energy": 114.02158289978158,
+          "epithelial_count": 30.0,
+          "layer_separation": 0.5004305460641382,
+          "segment_count": 0.0,
+          "segment_score": 0.002411891167818084,
+          "stalk_count": 0.0,
+          "tip_count": 0.0,
+          "tissue_mass": 30.142818392283896,
+          "x_span": 1.8032590783579798,
+          "y_span": 0.3024940988200614
+        },
+        "trace_id": "sha256:aefa3dfce8ba5c9d958ff6fb6b321010706b1b8fdbe792aaff8f5e08c2c60db9"
+      },
+      "radial": {
+        "benchmark": {
+          "benchmark": "radial_form",
+          "expected_regime": "Radial morphogen should produce broad angular coverage.",
+          "metrics": {
+            "angular_coverage": 0.6666666666666666,
+            "boundary_span": 5.92,
+            "cell_count": 59.0
+          },
+          "observed_regime": "branching",
+          "passed": true
+        },
+        "event_types": [
+          "birth_event",
+          "differentiation_event",
+          "division_event",
+          "expression_event",
+          "growth_event",
+          "movement_event"
+        ],
+        "final": {
+          "boundary_span": 5.92,
+          "branch_count": 4.0,
+          "cell_count": 59.0,
+          "dead_cell_count": 0.0,
+          "energy": 185.30219514146054,
+          "epithelial_count": 0.0,
+          "layer_separation": 0.0,
+          "segment_count": 0.0,
+          "segment_score": 0.021442598826871884,
+          "stalk_count": 0.0,
+          "tip_count": 59.0,
+          "tissue_mass": 55.64520263184157,
+          "x_span": 2.96,
+          "y_span": 2.96
+        },
+        "trace_id": "sha256:56c651f3624bba3c601985b91870e38230966b6f72ce53fe65d28ec3d70822ad"
+      }
+    },
+    "w4_segmented": {
+      "disabled_schedule_control": {
+        "benchmark": {
+          "benchmark": "segmented_body",
+          "expected_regime": "Opposing anterior/posterior fields drive alternating segment bands.",
+          "metrics": {
+            "cell_count": 39.0,
+            "segment_score": 0.001271732446424824,
+            "x_span": 1.3734470268324706
+          },
+          "observed_regime": "branching",
+          "passed": false
+        },
+        "event_types": [
+          "birth_event",
+          "differentiation_event",
+          "division_event",
+          "growth_event",
+          "movement_event",
+          "mutation_event"
+        ],
+        "final": {
+          "boundary_span": 1.5770877755824035,
+          "branch_count": 4.0,
+          "cell_count": 39.0,
+          "dead_cell_count": 0.0,
+          "energy": 136.7312372472115,
+          "epithelial_count": 0.0,
+          "layer_separation": 0.0,
+          "segment_count": 0.0,
+          "segment_score": 0.001271732446424824,
+          "stalk_count": 0.0,
+          "tip_count": 39.0,
+          "tissue_mass": 40.91049986429501,
+          "x_span": 1.3734470268324706,
+          "y_span": 0.20364074874993293
+        },
+        "trace_id": "sha256:4360ea6f131947ee86e11130973f09a0f13424fee6580bf0e2c49d2119f5dbcb"
+      },
+      "positive": {
+        "benchmark": {
+          "benchmark": "segmented_body",
+          "expected_regime": "Opposing anterior/posterior fields drive alternating segment bands.",
+          "metrics": {
+            "cell_count": 42.0,
+            "segment_score": 1.0,
+            "x_span": 1.4522327887714515
+          },
+          "observed_regime": "segmented",
+          "passed": true
+        },
+        "event_types": [
+          "birth_event",
+          "differentiation_event",
+          "division_event",
+          "expression_event",
+          "growth_event",
+          "movement_event",
+          "mutation_event"
+        ],
+        "final": {
+          "boundary_span": 1.632786248542191,
+          "branch_count": 0.0,
+          "cell_count": 42.0,
+          "dead_cell_count": 0.0,
+          "energy": 134.16048919781542,
+          "epithelial_count": 0.0,
+          "layer_separation": 0.0,
+          "segment_count": 30.0,
+          "segment_score": 1.0,
+          "stalk_count": 12.0,
+          "tip_count": 0.0,
+          "tissue_mass": 41.22895890896656,
+          "x_span": 1.4522327887714515,
+          "y_span": 0.18055345977073944
+        },
+        "trace_id": "sha256:28c873a29bf5b4b13339ae95cf75e49c2f81fb1aa05b58fdf35e08ad2ca2b4e2"
+      }
+    },
+    "w5_equ": {
+      "primary": {
+        "benchmark": {
+          "benchmark": "equ_emergence",
+          "expected_regime": "EQU-free logic precursors and random ancestors are selected under a high EQU reward until an EQU-capable lineage appears.",
+          "metrics": {
+            "de_novo_equ_events": 106,
+            "equ_task_count": 106.0,
+            "genome_diversity": 75.0
+          },
+          "observed_regime": "equ_task_lineage",
+          "passed": true
+        },
+        "event_types": [
+          "birth_event",
+          "communication_event",
+          "death_event",
+          "movement_event",
+          "mutation_event",
+          "replication_event",
+          "task_completion_event"
+        ],
+        "final": {
+          "dominant_fraction": 0.3153846153846154,
+          "equ_task_count": 106.0,
+          "genome_diversity": 75.0,
+          "lineage_depth": 2.0,
+          "mean_energy": 509.71567546780864,
+          "mean_fitness": 1196.5772139293472,
+          "mean_genome_length": 27.26923076923077,
+          "nand_task_count": 64650.0,
+          "nor_task_count": 27054.0,
+          "parasite_events": 0.0,
+          "parasites": 0.0,
+          "population": 130.0,
+          "punctuation_score": 2.000462224855942,
+          "replication_events": 1016.0,
+          "replicators": 17.0
+        },
+        "trace_id": "sha256:6a5f9ab55b3bcce011a0c44c0550da42a1dd36a9790b5183d6def597cac77010"
+      },
+      "seed_rows": [
+        {
+          "metrics": {
+            "de_novo_equ_events": 712,
+            "equ_task_count": 712.0,
+            "genome_diversity": 71.0
+          },
+          "passed": true,
+          "seed": 1000,
+          "trace_id": "sha256:a1b90a2550dc7b68eb235eda92bfa939ad2228d5dc1070fca663fbbb40f23cb8"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 4443,
+            "equ_task_count": 4443.0,
+            "genome_diversity": 136.0
+          },
+          "passed": true,
+          "seed": 1001,
+          "trace_id": "sha256:c460f5de37f441d0e62b7390a561ea71f326b9b5254a9fd3101174fe96771c8c"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 511,
+            "equ_task_count": 511.0,
+            "genome_diversity": 80.0
+          },
+          "passed": true,
+          "seed": 1002,
+          "trace_id": "sha256:371201351bc671206d66aef7dca47e2ff3c391a545e041a0a24c55a4f7b61101"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 303,
+            "equ_task_count": 303.0,
+            "genome_diversity": 95.0
+          },
+          "passed": true,
+          "seed": 1003,
+          "trace_id": "sha256:581d850f1403732c9c17261072e5bd83f231c5eda6db2634a2c3b167c077b1e4"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 6151,
+            "equ_task_count": 6151.0,
+            "genome_diversity": 150.0
+          },
+          "passed": true,
+          "seed": 1004,
+          "trace_id": "sha256:2c1d46edd16f9b8b6baf8e5bed3d329b3776a16ef00d371d9b7d6255fba50a07"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 26,
+            "equ_task_count": 26.0,
+            "genome_diversity": 78.0
+          },
+          "passed": true,
+          "seed": 1005,
+          "trace_id": "sha256:669c9cd007f2c9e95e7fdc61ca96ee4985996da8348b077c205d93946ad5b68f"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 77733,
+            "equ_task_count": 77733.0,
+            "genome_diversity": 149.0
+          },
+          "passed": true,
+          "seed": 1006,
+          "trace_id": "sha256:ab3e2a221b542b1c105e6e844118f06911a8193947fbba545b1a7c61a9332c85"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 841,
+            "equ_task_count": 841.0,
+            "genome_diversity": 57.0
+          },
+          "passed": true,
+          "seed": 1007,
+          "trace_id": "sha256:c77ede0c76bf671fc9158d91e7097d83c73487895bfa0db615ac2b88c6d0afdf"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 16,
+            "equ_task_count": 16.0,
+            "genome_diversity": 71.0
+          },
+          "passed": true,
+          "seed": 1008,
+          "trace_id": "sha256:3af8cd40a14f6346fd3f0852a2060065637807c81a502aeb9380d7a4ca192825"
+        },
+        {
+          "metrics": {
+            "de_novo_equ_events": 20013,
+            "equ_task_count": 20013.0,
+            "genome_diversity": 141.0
+          },
+          "passed": true,
+          "seed": 1009,
+          "trace_id": "sha256:aab95c21e798972ca42bf85777aa89ea101f00686230f51c5599a7d1387e4036"
+        }
+      ]
+    }
+  },
+  "schema": "Campaign007HardcodeExcision.v1",
+  "status": "green"
+}

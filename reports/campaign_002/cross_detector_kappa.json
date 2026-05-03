@@ -1,0 +1,79 @@
+{
+  "best_pair": {
+    "detector_a": "closure.graph",
+    "detector_b": "closure.rule_trace",
+    "family": "K2",
+    "kappa": 1.0,
+    "n": 36,
+    "structurally_independent": true
+  },
+  "builder_notes": [
+    "Boundary behavioural and information detectors use different evidence: puncture-recovery events versus inside/outside/boundary time-series coupling.",
+    "Kappa near 1.0 is flagged for review but not silently treated as proof of independence; the report exposes the pair and evidence families."
+  ],
+  "gate_id": "G8",
+  "pairwise": [
+    {
+      "detector_a": "closure.graph",
+      "detector_b": "closure.rule_trace",
+      "family": "K2",
+      "kappa": 1.0,
+      "n": 36,
+      "structurally_independent": true
+    },
+    {
+      "detector_a": "boundary.aggregate",
+      "detector_b": "boundary.conditional_information.v0",
+      "family": "K1",
+      "kappa": 0.35443037974683556,
+      "n": 34,
+      "structurally_independent": true
+    },
+    {
+      "detector_a": "boundary.aggregate",
+      "detector_b": "boundary.puncture_recovery.v0",
+      "family": "K1",
+      "kappa": 1.0,
+      "n": 34,
+      "structurally_independent": true
+    },
+    {
+      "detector_a": "boundary.aggregate",
+      "detector_b": "boundary.topological_persistence.v0",
+      "family": "K1",
+      "kappa": 0.7182320441988951,
+      "n": 34,
+      "structurally_independent": true
+    },
+    {
+      "detector_a": "boundary.conditional_information.v0",
+      "detector_b": "boundary.puncture_recovery.v0",
+      "family": "K1",
+      "kappa": 0.35443037974683556,
+      "n": 34,
+      "structurally_independent": true
+    },
+    {
+      "detector_a": "boundary.conditional_information.v0",
+      "detector_b": "boundary.topological_persistence.v0",
+      "family": "K1",
+      "kappa": 0.21538461538461534,
+      "n": 34,
+      "structurally_independent": true
+    },
+    {
+      "detector_a": "boundary.puncture_recovery.v0",
+      "detector_b": "boundary.topological_persistence.v0",
+      "family": "K1",
+      "kappa": 0.7182320441988951,
+      "n": 34,
+      "structurally_independent": true
+    }
+  ],
+  "passed": true,
+  "scenario_counts": {
+    "K1": 34,
+    "K2_binary": 36
+  },
+  "threshold": 0.8
+}

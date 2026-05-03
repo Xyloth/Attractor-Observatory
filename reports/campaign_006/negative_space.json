@@ -1,0 +1,532 @@
+{
+  "entries": [
+    {
+      "adversarial_outcome": "found",
+      "biology_coverage": {
+        "absence_state": "unobserved",
+        "anchor_overlap": 0.23,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "physical_impossibility"
+      ],
+      "category": "predicted_empty",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-001",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-01-w4-informative",
+      "prediction_strength": 0.63,
+      "search_effort": {
+        "coverage_estimate": 0.515,
+        "evaluations": 215,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "resolved"
+    },
+    {
+      "adversarial_outcome": "confirmed_absent",
+      "biology_coverage": {
+        "absence_state": "not_searched",
+        "anchor_overlap": 0.26,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "historical_contingency"
+      ],
+      "category": "sim_only",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-002",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-02-w4-boundary",
+      "prediction_strength": 0.65,
+      "search_effort": {
+        "coverage_estimate": 0.53,
+        "evaluations": 220,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "open"
+    },
+    {
+      "adversarial_outcome": "confirmed_absent",
+      "biology_coverage": {
+        "absence_state": "absent",
+        "anchor_overlap": 0.29,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "bad_simulator"
+      ],
+      "category": "bio_only",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-003",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-03-w4-structural",
+      "prediction_strength": 0.67,
+      "search_effort": {
+        "coverage_estimate": 0.545,
+        "evaluations": 225,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "open"
+    },
+    {
+      "adversarial_outcome": "found",
+      "biology_coverage": {
+        "absence_state": "unknown",
+        "anchor_overlap": 0.32,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "sampling_gap"
+      ],
+      "category": "math_only",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-004",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-04-w4-informative",
+      "prediction_strength": 0.69,
+      "search_effort": {
+        "coverage_estimate": 0.56,
+        "evaluations": 230,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "resolved"
+    },
+    {
+      "adversarial_outcome": "inconclusive",
+      "biology_coverage": {
+        "absence_state": "unobserved",
+        "anchor_overlap": 0.35,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "physical_impossibility"
+      ],
+      "category": "unexplained_absence",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-005",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-05-w4-boundary",
+      "prediction_strength": 0.71,
+      "search_effort": {
+        "coverage_estimate": 0.575,
+        "evaluations": 235,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "retired"
+    },
+    {
+      "adversarial_outcome": "found",
+      "biology_coverage": {
+        "absence_state": "not_searched",
+        "anchor_overlap": 0.38,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "historical_contingency"
+      ],
+      "category": "predicted_empty",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-006",
+        "regime": "failure",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-06-w4-structural",
+      "prediction_strength": 0.73,
+      "search_effort": {
+        "coverage_estimate": 0.59,
+        "evaluations": 240,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "resolved"
+    },
+    {
+      "adversarial_outcome": "confirmed_absent",
+      "biology_coverage": {
+        "absence_state": "absent",
+        "anchor_overlap": 0.41,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "bad_simulator"
+      ],
+      "category": "sim_only",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-007",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-07-w4-informative",
+      "prediction_strength": 0.75,
+      "search_effort": {
+        "coverage_estimate": 0.605,
+        "evaluations": 245,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "open"
+    },
+    {
+      "adversarial_outcome": "confirmed_absent",
+      "biology_coverage": {
+        "absence_state": "unknown",
+        "anchor_overlap": 0.44,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "sampling_gap"
+      ],
+      "category": "bio_only",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-008",
+        "regime": "failure",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-08-w4-boundary",
+      "prediction_strength": 0.61,
+      "search_effort": {
+        "coverage_estimate": 0.62,
+        "evaluations": 250,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "open"
+    },
+    {
+      "adversarial_outcome": "found",
+      "biology_coverage": {
+        "absence_state": "unobserved",
+        "anchor_overlap": 0.47,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "physical_impossibility"
+      ],
+      "category": "math_only",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-009",
+        "regime": "failure",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-09-w4-structural",
+      "prediction_strength": 0.63,
+      "search_effort": {
+        "coverage_estimate": 0.635,
+        "evaluations": 255,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "resolved"
+    },
+    {
+      "adversarial_outcome": "inconclusive",
+      "biology_coverage": {
+        "absence_state": "not_searched",
+        "anchor_overlap": 0.5,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "historical_contingency"
+      ],
+      "category": "unexplained_absence",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-010",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-10-w4-informative",
+      "prediction_strength": 0.65,
+      "search_effort": {
+        "coverage_estimate": 0.65,
+        "evaluations": 260,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "retired"
+    },
+    {
+      "adversarial_outcome": "confirmed_absent",
+      "biology_coverage": {
+        "absence_state": "absent",
+        "anchor_overlap": 0.53,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "bad_simulator"
+      ],
+      "category": "predicted_empty",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-011",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-11-w4-boundary",
+      "prediction_strength": 0.67,
+      "search_effort": {
+        "coverage_estimate": 0.665,
+        "evaluations": 265,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "open"
+    },
+    {
+      "adversarial_outcome": "found",
+      "biology_coverage": {
+        "absence_state": "unknown",
+        "anchor_overlap": 0.56,
+        "status": "shadow_only"
+      },
+      "candidate_explanations": [
+        "sampling_gap"
+      ],
+      "category": "sim_only",
+      "coordinates": {
+        "failure_artifact": "FAIL-C006-012",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      },
+      "entry_id": "NS-C006-12-w4-structural",
+      "prediction_strength": 0.69,
+      "search_effort": {
+        "coverage_estimate": 0.68,
+        "evaluations": 270,
+        "strategy": "campaign006_targeted_perturbation_transfer"
+      },
+      "source_campaign_ids": [
+        "campaign-006"
+      ],
+      "source_evidence_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+      "status": "resolved"
+    }
+  ],
+  "gates": {
+    "G42_negative_space_merge": {
+      "merged_count": 16,
+      "passed": true
+    },
+    "G43_campaign006_negative_space_entries": {
+      "categories": [
+        "bio_only",
+        "math_only",
+        "predicted_empty",
+        "sim_only",
+        "unexplained_absence"
+      ],
+      "entry_count": 12,
+      "passed": true
+    },
+    "G44_negative_space_fields": {
+      "field_checked": true,
+      "passed": true
+    },
+    "G45_status_mix": {
+      "passed": true,
+      "status_counts": {
+        "open": 5,
+        "resolved": 5,
+        "retired": 2
+      }
+    },
+    "G46_absence_semantics": {
+      "passed": true,
+      "states": [
+        "absent",
+        "not_searched",
+        "unknown",
+        "unobserved"
+      ]
+    },
+    "G47_search_feedback_targets": {
+      "next_targets": [
+        {
+          "entry_id": "NS-C006-02-w4-boundary",
+          "priority": 0.65,
+          "target": {
+            "failure_artifact": "FAIL-C006-002",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-03-w4-structural",
+          "priority": 0.67,
+          "target": {
+            "failure_artifact": "FAIL-C006-003",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-07-w4-informative",
+          "priority": 0.75,
+          "target": {
+            "failure_artifact": "FAIL-C006-007",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-08-w4-boundary",
+          "priority": 0.61,
+          "target": {
+            "failure_artifact": "FAIL-C006-008",
+            "regime": "failure",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-11-w4-boundary",
+          "priority": 0.67,
+          "target": {
+            "failure_artifact": "FAIL-C006-011",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        }
+      ],
+      "passed": true
+    }
+  },
+  "merged_count": 16,
+  "next_targets": [
+    {
+      "entry_id": "NS-C006-02-w4-boundary",
+      "priority": 0.65,
+      "target": {
+        "failure_artifact": "FAIL-C006-002",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      }
+    },
+    {
+      "entry_id": "NS-C006-03-w4-structural",
+      "priority": 0.67,
+      "target": {
+        "failure_artifact": "FAIL-C006-003",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      }
+    },
+    {
+      "entry_id": "NS-C006-07-w4-informative",
+      "priority": 0.75,
+      "target": {
+        "failure_artifact": "FAIL-C006-007",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      }
+    },
+    {
+      "entry_id": "NS-C006-08-w4-boundary",
+      "priority": 0.61,
+      "target": {
+        "failure_artifact": "FAIL-C006-008",
+        "regime": "failure",
+        "world_id": "W4"
+      }
+    },
+    {
+      "entry_id": "NS-C006-11-w4-boundary",
+      "priority": 0.67,
+      "target": {
+        "failure_artifact": "FAIL-C006-011",
+        "regime": "ambiguous",
+        "world_id": "W4"
+      }
+    }
+  ],
+  "passed": true,
+  "pillar": "negative_space",
+  "transfer_failures_used": [
+    {
+      "id": "closure:crn->ecosystem",
+      "in_declared_band": true,
+      "motif": "closure",
+      "source_family": "crn",
+      "target_family": "ecosystem",
+      "transfer_loss": 1.03
+    },
+    {
+      "id": "closure:crn->field",
+      "in_declared_band": true,
+      "motif": "closure",
+      "source_family": "crn",
+      "target_family": "field",
+      "transfer_loss": 1.03
+    },
+    {
+      "id": "closure:crn->hypergraph_reactions",
+      "in_declared_band": true,
+      "motif": "closure",
+      "source_family": "crn",
+      "target_family": "hypergraph_reactions",
+      "transfer_loss": 1.03
+    },
+    {
+      "id": "closure:crn->multiscale",
+      "in_declared_band": true,
+      "motif": "closure",
+      "source_family": "crn",
+      "target_family": "multiscale",
+      "transfer_loss": 1.03
+    },
+    {
+      "id": "closure:crn->protocell",
+      "in_declared_band": true,
+      "motif": "closure",
+      "source_family": "crn",
+      "target_family": "protocell",
+      "transfer_loss": 0.8761538461538462
+    }
+  ]
+}

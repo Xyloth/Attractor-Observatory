@@ -1,0 +1,223 @@
+{
+  "all_evaluated_passed": true,
+  "campaign_gates": {
+    "G1": {
+      "passed": true,
+      "status": "evaluated"
+    },
+    "G10": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G11": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G12": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G13": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G14": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G15": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G16": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G17": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G18": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G19": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G2": {
+      "passed": true,
+      "status": "evaluated"
+    },
+    "G20": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G3": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G4": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G5": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G6": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G7": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G8": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    },
+    "G9": {
+      "passed": false,
+      "reason": "No executable Campaign 002 evidence generated in this foundation slice.",
+      "status": "not_evaluated"
+    }
+  },
+  "campaign_id": "campaign-002",
+  "completion_claim": false,
+  "evaluated_gate_count": 5,
+  "foundation_gates": [
+    {
+      "diagnostics": {
+        "brusselator_equilibrium": {
+          "accepted_steps": 4,
+          "rejected_steps": 0,
+          "t_final": 100.0
+        },
+        "dopri5_exponential": {
+          "accepted_steps": 176,
+          "rejected_steps": 1,
+          "t_final": 10.0
+        }
+      },
+      "gate_id": "G1",
+      "limitation": "The analytic Brusselator check uses the exact fixed-point solution; a non-equilibrium trajectory is checked against a tighter DOPRI5 reference.",
+      "metrics": {
+        "brusselator_equilibrium_error": 0.0,
+        "brusselator_reference_error": 2.0190156124755276e-07,
+        "dopri5_exponential_error": 4.572863355339907e-13,
+        "rk4_exponential_error": 1.6437274349793973e-10
+      },
+      "name": "ODE convergence",
+      "passed": true,
+      "threshold": 1e-05
+    },
+    {
+      "gate_id": "G2",
+      "metrics": {
+        "events": 1000000,
+        "final_mass": 30.0,
+        "final_state": {
+          "A": 13,
+          "B": 10,
+          "C": 7
+        },
+        "initial_mass": 30.0,
+        "mass_residual": 0.0,
+        "rng_final_state_hash": "2554261fbe76a459fe17ca006a0d0e60b08cd921255c61849799fde65f35073c",
+        "t_final": 345108.60071604565
+      },
+      "name": "SSA mass conservation",
+      "passed": true,
+      "threshold": 1e-09
+    },
+    {
+      "gate_id": "TRACE-MOVES",
+      "metrics": {
+        "active_reaction_count": 3,
+        "active_reactions": [
+          "r_a_to_b",
+          "r_b_to_c",
+          "r_c_to_a"
+        ],
+        "max_step_delta": 0.0544537501737139,
+        "normalized_total_variation": 0.039038654902583105,
+        "reaction_event_count": 36,
+        "state_motion_score": 1.0,
+        "state_samples": 13,
+        "state_species": [
+          "A",
+          "B",
+          "C"
+        ],
+        "total_variation": 1.1711596470774932,
+        "trace_dependency": true,
+        "trace_state_present": true
+      },
+      "name": "CRN trace movement smoke test",
+      "passed": true,
+      "threshold": 0.02,
+      "trace_id": "sha256:0ef63188169c7209755d7fbfb63571c5cca5ba338840995fa7e01edb14e58d4c"
+    },
+    {
+      "gate_id": "TRACE-CONTRACT",
+      "metrics": {
+        "confidence_margin": 0.45,
+        "moving_confidence": 0.9,
+        "moving_trace_dependency": true,
+        "static_confidence": 0.45,
+        "static_trace_dependency": false
+      },
+      "name": "Closure detector reads state trajectory",
+      "passed": true,
+      "threshold": 0.4
+    },
+    {
+      "gate_id": "GAUNTLET-NULL-MARGIN",
+      "metrics": {
+        "checks": {
+          "null_margin_positive": false,
+          "recurrence_floor": true,
+          "sampling_sufficiency_nonzero": true,
+          "triangulation_agreement": true
+        },
+        "claim_status": "exploratory",
+        "passed": false,
+        "strength_vector": {
+          "B": -0.025000000000000022,
+          "C_pred": 0.0,
+          "D": 1.0,
+          "I": 1.0,
+          "P": 1.0,
+          "R": 1.0,
+          "S_obs": 1.0,
+          "X": 1.0
+        },
+        "thresholds": {
+          "null_margin_threshold": 0.0
+        }
+      },
+      "name": "Null higher than signal fails",
+      "passed": true
+    }
+  ],
+  "passed_evaluated_gate_count": 5,
+  "status": "foundation_slice_only"
+}

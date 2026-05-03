@@ -1,0 +1,211 @@
+{
+  "campaign_id": "campaign-009",
+  "equivalence_basis": {
+    "abstention_rules": {
+      "abstain_on_basis_hash_mismatch": true,
+      "abstain_on_missing_prereg_hash": true,
+      "min_event_diversity_for_positive": 2,
+      "min_invariant_strength": 0.5,
+      "min_trace_states": 2
+    },
+    "distance_metric_family": {
+      "cognitive": "task-blind representation/state vector + event-surface distance",
+      "crn": "catalytic dependency graph edit + stoichiometric state distance",
+      "digital": "Levenshtein genome distance + opcode histogram + task vector distance",
+      "ecosystem": "trophic/state vector + event-surface distance",
+      "field": "field state distance + event-surface distance",
+      "hypergraph_reactions": "hyperedge/dependency state + event-surface distance",
+      "morphogenesis": "lineage/type distribution + GRN outcome state distance",
+      "multiscale": "component-world state + cross-scale flux profile distance",
+      "origins_chemistry": "surface coverage + pore-network state distance",
+      "protocell": "internal state distance + membrane/boundary composition distance + lineage distance",
+      "quasispecies": "master-sequence/neutral-network state distance",
+      "swarm": "role distribution + field/event-surface distance",
+      "symbiogenesis": "nested constituent state + exchange-channel distance"
+    },
+    "invariant_basis": [
+      {
+        "basis_role": "function_class",
+        "description": "Closure function is preserved when trace-derived closure signal, internal catalytic cause integrity, and invariant pass rate remain within declared tolerance.",
+        "invariant_id": "function.autocatalytic_closure"
+      },
+      {
+        "basis_role": "function_class",
+        "description": "Boundary function is preserved when trace-derived boundary maintenance and recovery signals remain within declared tolerance.",
+        "invariant_id": "function.self_maintained_boundary"
+      },
+      {
+        "basis_role": "function_class",
+        "description": "Replication/lineage function is preserved when trace-derived replication, division, or lineage signals remain within declared tolerance.",
+        "invariant_id": "function.self_replication_or_lineage"
+      },
+      {
+        "basis_role": "function_class",
+        "description": "Memory-floor function is preserved when trace-derived memory, neutral-network, or projection-agreement signals remain within declared tolerance.",
+        "invariant_id": "function.externalized_memory_or_neutral_network"
+      }
+    ],
+    "multiscale_diversity_radii": [
+      0.05,
+      0.08,
+      0.12,
+      0.18,
+      0.27,
+      0.4,
+      0.6
+    ],
+    "perturbation_kind_taxonomy": [
+      "k9_free_pair",
+      "single_coordinate",
+      "synthetic_ensemble",
+      "ablation",
+      "decoy_projection"
+    ],
+    "perturbation_magnitude_policy": {
+      "ensemble_escalation": "only if single-coordinate confidence interval overlaps decision threshold",
+      "k9_free_pairs": {
+        "cost": 0,
+        "magnitude": 1
+      },
+      "single_coordinate": {
+        "large": 0.35,
+        "medium": 0.15,
+        "small": 0.05
+      }
+    },
+    "substrate_erasure_projection": {
+      "allowed_inputs": [
+        "state",
+        "events",
+        "invariant_checks",
+        "measurements",
+        "boundaries",
+        "lineage"
+      ],
+      "projection_id": "bfg-v0-substrate-blind-projection",
+      "removed_fields": [
+        "world_family",
+        "world_implementation_id",
+        "scenario_id",
+        "benchmark",
+        "expected",
+        "expected_same_fiber",
+        "corpus_id",
+        "label"
+      ],
+      "retained_quantities": [
+        "function_signature",
+        "invariant_strength",
+        "cause_integrity",
+        "event_diversity",
+        "state_change_norm"
+      ]
+    }
+  },
+  "expected_nulls": [
+    "N0_seed_shuffle",
+    "N1_reaction_rewire",
+    "N5_substrate_erasure",
+    "N7_lens_permutation",
+    "NF_decoy_floor"
+  ],
+  "expected_outcomes_by_motif": {
+    "motif.autocatalytic_closure.draft": {
+      "expected_falsifier_risk": "medium",
+      "expected_floor": "flat_or_rugged"
+    },
+    "motif.externalized_memory.draft": {
+      "expected_falsifier_risk": "high",
+      "expected_floor": "narrow_or_latent"
+    },
+    "motif.morphogenesis_pattern.draft": {
+      "expected_falsifier_risk": "medium",
+      "expected_floor": "rugged"
+    },
+    "motif.self_maintained_boundary.draft": {
+      "expected_falsifier_risk": "low",
+      "expected_floor": "flat"
+    },
+    "motif.self_replication_lineage.draft": {
+      "expected_falsifier_risk": "medium",
+      "expected_floor": "rugged"
+    }
+  },
+  "falsifier_conditions": [
+    {
+      "condition_id": "point_attractor",
+      "threshold": "D_floor <= 0.05 and H_impl <= 0.10 with CI width <= 0.20"
+    },
+    {
+      "condition_id": "implementation_unique",
+      "threshold": "implementation_diversity entropy curve <= 1.0 + epsilon at all radii"
+    },
+    {
+      "condition_id": "claim_conflict",
+      "threshold": "point-attractor result on a motif used for substrate-neutrality claim"
+    }
+  ],
+  "motifs_in_scope": [
+    "motif.autocatalytic_closure.draft",
+    "motif.self_maintained_boundary.draft",
+    "motif.self_replication_lineage.draft",
+    "motif.externalized_memory.draft",
+    "motif.morphogenesis_pattern.draft"
+  ],
+  "prereg_id": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc",
+  "provenance": {
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "proposal_source": "Proposal #1 v2 - Basin-Floor Geometry.md",
+    "written_at_utc": "2026-05-03T00:00:00Z",
+    "written_by": "motifs.geometry.preregistration.write_preregistration"
+  },
+  "signatories": [
+    {
+      "name": "Codex Builder",
+      "role": "builder",
+      "signature": "sha256-content-hash-attestation"
+    },
+    {
+      "name": "Claude Architect",
+      "role": "architect",
+      "signature": "sha256-content-hash-attestation-from-task-020-directive"
+    },
+    {
+      "name": "PI",
+      "role": "principal_investigator",
+      "signature": null
+    }
+  ],
+  "signed_at": "2026-05-03T00:00:00Z",
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "stopping_rule": {
+    "budget_cap_trace_fragments": 50000,
+    "gate_set": [
+      "BFG-PR",
+      "BFG1",
+      "BFG2",
+      "BFG3",
+      "BFG4",
+      "BFG5",
+      "BFG6",
+      "BFG7",
+      "BFG8",
+      "BFG9",
+      "BFG10",
+      "BFG11",
+      "BFG12"
+    ],
+    "pass_condition": "all gates green; no silent skips; basis changes require superseding preregistration and clean held-out rerun"
+  },
+  "worlds_in_scope": [
+    "crn",
+    "protocell",
+    "morphogenesis",
+    "digital",
+    "ecosystem",
+    "swarm",
+    "cognitive",
+    "quasispecies",
+    "multiscale"
+  ]
+}

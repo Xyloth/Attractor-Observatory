@@ -1,0 +1,384 @@
+{
+  "formal_coverage_row": {
+    "mean_coverage": 0.7777777777777777,
+    "motif_count": 6
+  },
+  "gates": {
+    "F1_three_lenses": {
+      "lens_count": 3,
+      "passed": true
+    },
+    "F2_lens_roundtrip_predict": {
+      "passed": true,
+      "rows": [
+        {
+          "computed_from_trace_ids": {
+            "W1": "sha256:dfe244ecd89700fb2bb8868c7b36185fb21c29d2a7acce5c3f7222abe416189f",
+            "W2": "sha256:beb5fc9cc8d729635e05b7e1b54065630dd7919a5c876b4033f1ae1302970003",
+            "W3": "sha256:5ac1c046295eebce800d4ab2a2dbf72f9c7bdfbacab7f3337904591880b0fa9a",
+            "W5": "sha256:66765ea10c47ce96a4593c0e5c58a5f69b9a8edf12f3ed8d566ab31edea79f0c"
+          },
+          "decode": {
+            "actual_event_types": [
+              "birth_event",
+              "boundary_event",
+              "communication_event",
+              "death_event",
+              "division_event",
+              "field_oscillation_event",
+              "movement_event",
+              "mutation_event",
+              "parasite_event",
+              "reaction_event",
+              "repair_event",
+              "replication_event",
+              "task_completion_event"
+            ],
+            "event_types": [
+              "birth_event",
+              "boundary_event",
+              "communication_event",
+              "division_event",
+              "field_oscillation_event",
+              "movement_event",
+              "mutation_event",
+              "parasite_event",
+              "reaction_event",
+              "repair_event",
+              "replication_event",
+              "task_completion_event"
+            ]
+          },
+          "decode_loss": 0.07692307692307687,
+          "encode": {
+            "components": 2346,
+            "edges": 861,
+            "has_directed_cycle": true,
+            "nodes": 2627,
+            "per_world": {
+              "W1": {
+                "edges": 105,
+                "event_types": [
+                  "reaction_event"
+                ],
+                "has_cycle": true,
+                "nodes": 51
+              },
+              "W2": {
+                "edges": 68,
+                "event_types": [
+                  "birth_event",
+                  "boundary_event",
+                  "death_event",
+                  "division_event",
+                  "repair_event"
+                ],
+                "has_cycle": true,
+                "nodes": 62
+              },
+              "W3": {
+                "edges": 0,
+                "event_types": [
+                  "field_oscillation_event"
+                ],
+                "has_cycle": false,
+                "nodes": 24
+              },
+              "W5": {
+                "edges": 688,
+                "event_types": [
+                  "birth_event",
+                  "communication_event",
+                  "death_event",
+                  "movement_event",
+                  "mutation_event",
+                  "parasite_event",
+                  "replication_event",
+                  "task_completion_event"
+                ],
+                "has_cycle": false,
+                "nodes": 2490
+              }
+            }
+          },
+          "lens_id": "graph",
+          "loss_band": [
+            0.05,
+            0.35
+          ],
+          "operational_roundtrip": {
+            "decoded_surface": "graph-recovered motif event types",
+            "loss": 0.07692307692307687,
+            "source_surface": "event_type_set"
+          },
+          "passed": true,
+          "prediction_count": 6,
+          "predictions": {
+            "boundary": 0.74,
+            "closure": 0.9,
+            "digital_replication": 1.0,
+            "division": 0.75,
+            "field_front": 1.0,
+            "repair": 0.61
+          }
+        },
+        {
+          "computed_from_trace_ids": {
+            "W1": "sha256:dfe244ecd89700fb2bb8868c7b36185fb21c29d2a7acce5c3f7222abe416189f",
+            "W3": "sha256:5ac1c046295eebce800d4ab2a2dbf72f9c7bdfbacab7f3337904591880b0fa9a"
+          },
+          "decode": {
+            "closure_candidate": true,
+            "field_conserved": true,
+            "persistent": true
+          },
+          "decode_loss": 0.25,
+          "encode": {
+            "complexes": 3,
+            "deficiency": 0,
+            "linkage_classes": 1,
+            "persistence_indicator": 1.0,
+            "raf_size": 3,
+            "stoichiometric_rank": 2,
+            "w3_field_conversion": 13.914115546390665,
+            "w3_mass_residual": 5.684341886080802e-14
+          },
+          "lens_id": "crnt",
+          "loss_band": [
+            0.05,
+            0.35
+          ],
+          "operational_roundtrip": {
+            "decoded_surface": "closure/persistence/conservation flags",
+            "loss": 0.25,
+            "source_surface": "reaction-network plus conserved-field abstraction"
+          },
+          "passed": true,
+          "prediction_count": 3,
+          "predictions": {
+            "boundary": 0.42,
+            "closure": 0.9999999999999999,
+            "field_front": 0.9138038515463556,
+            "repair": 0.55
+          }
+        },
+        {
+          "computed_from_trace_ids": {
+            "W1": "sha256:dfe244ecd89700fb2bb8868c7b36185fb21c29d2a7acce5c3f7222abe416189f",
+            "W2": "sha256:beb5fc9cc8d729635e05b7e1b54065630dd7919a5c876b4033f1ae1302970003",
+            "W3": "sha256:5ac1c046295eebce800d4ab2a2dbf72f9c7bdfbacab7f3337904591880b0fa9a",
+            "W5": "sha256:66765ea10c47ce96a4593c0e5c58a5f69b9a8edf12f3ed8d566ab31edea79f0c"
+          },
+          "decode": {
+            "coupled_boundary_repair": true,
+            "digital_lineage_signal": true,
+            "field_predictive_gradient": true
+          },
+          "decode_loss": 0.25,
+          "encode": {
+            "event_entropy_by_world": {
+              "W1": -0.0,
+              "W2": 2.136800520148565,
+              "W3": -0.0,
+              "W5": 2.323278918129612
+            },
+            "mean_transfer_entropy_by_world": {
+              "W1": 0.0,
+              "W2": 0.011436706440912606,
+              "W3": 0.0,
+              "W5": 0.10137826717639882
+            },
+            "predictive_state_count": 26,
+            "transfer_entropy": 0.11281497361731142
+          },
+          "lens_id": "information",
+          "loss_band": [
+            0.05,
+            0.35
+          ],
+          "operational_roundtrip": {
+            "decoded_surface": "coupled repair, lineage, and field-gradient flags",
+            "loss": 0.25,
+            "source_surface": "time-lagged state transitions and event entropy"
+          },
+          "passed": true,
+          "prediction_count": 5,
+          "predictions": {
+            "boundary": 0.7300000000000001,
+            "closure": 0.6256299472346228,
+            "digital_replication": 1.0,
+            "division": 0.6,
+            "field_front": 0.45,
+            "repair": 0.57
+          }
+        }
+      ]
+    },
+    "F3_coverage_score": {
+      "passed": true,
+      "rows": [
+        {
+          "coverage_score": 1.0,
+          "covered_by": [
+            "graph",
+            "crnt",
+            "information"
+          ],
+          "motif": "closure"
+        },
+        {
+          "coverage_score": 0.6666666666666666,
+          "covered_by": [
+            "graph",
+            "information"
+          ],
+          "motif": "boundary"
+        },
+        {
+          "coverage_score": 0.6666666666666666,
+          "covered_by": [
+            "graph",
+            "information"
+          ],
+          "motif": "division"
+        },
+        {
+          "coverage_score": 1.0,
+          "covered_by": [
+            "graph",
+            "crnt",
+            "information"
+          ],
+          "motif": "repair"
+        },
+        {
+          "coverage_score": 0.6666666666666666,
+          "covered_by": [
+            "graph",
+            "crnt"
+          ],
+          "motif": "field_front"
+        },
+        {
+          "coverage_score": 0.6666666666666666,
+          "covered_by": [
+            "graph",
+            "information"
+          ],
+          "motif": "digital_replication"
+        }
+      ]
+    },
+    "F4_residual_structure": {
+      "motif": "closure",
+      "passed": true,
+      "permutation_null_95pct": 0.31,
+      "residual_autocorrelation": 0.12
+    },
+    "F5_lens_permutation_null_N7": {
+      "empirical_p": 0.0,
+      "n": 100,
+      "passed": true
+    },
+    "F6_biology_anchor_set": {
+      "anchor_count": 7,
+      "passed": true
+    },
+    "F7_biology_predicates": {
+      "passed": true,
+      "rows": [
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "trace can represent signal field, receptor state, and behaviour response",
+          "schema_pressure_passed": true,
+          "trait": "photoreception"
+        },
+        {
+          "contract_change_proposal": "docs/contract_proposals/flight.md",
+          "operational_predicate": "current schema lacks aerodynamic force and body-pose contracts",
+          "schema_pressure_passed": false,
+          "trait": "flight"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "trace can represent graph topology and flow events",
+          "schema_pressure_passed": true,
+          "trait": "branching_transport"
+        },
+        {
+          "contract_change_proposal": "docs/contract_proposals/eusociality.md",
+          "operational_predicate": "current schema lacks multi-agent role inheritance contract",
+          "schema_pressure_passed": false,
+          "trait": "eusociality"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "field lineage and boundary schema can represent repeated compartments",
+          "schema_pressure_passed": true,
+          "trait": "segmentation"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "W1 RAF trace directly represents closure",
+          "schema_pressure_passed": true,
+          "trait": "autocatalytic_metabolic_closure"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "K3 marker schema represents environmental memory",
+          "schema_pressure_passed": true,
+          "trait": "externalized_memory"
+        }
+      ]
+    },
+    "F8_schema_pressure": {
+      "passed": true,
+      "rows": [
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "trace can represent signal field, receptor state, and behaviour response",
+          "schema_pressure_passed": true,
+          "trait": "photoreception"
+        },
+        {
+          "contract_change_proposal": "docs/contract_proposals/flight.md",
+          "operational_predicate": "current schema lacks aerodynamic force and body-pose contracts",
+          "schema_pressure_passed": false,
+          "trait": "flight"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "trace can represent graph topology and flow events",
+          "schema_pressure_passed": true,
+          "trait": "branching_transport"
+        },
+        {
+          "contract_change_proposal": "docs/contract_proposals/eusociality.md",
+          "operational_predicate": "current schema lacks multi-agent role inheritance contract",
+          "schema_pressure_passed": false,
+          "trait": "eusociality"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "field lineage and boundary schema can represent repeated compartments",
+          "schema_pressure_passed": true,
+          "trait": "segmentation"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "W1 RAF trace directly represents closure",
+          "schema_pressure_passed": true,
+          "trait": "autocatalytic_metabolic_closure"
+        },
+        {
+          "contract_change_proposal": null,
+          "operational_predicate": "K3 marker schema represents environmental memory",
+          "schema_pressure_passed": true,
+          "trait": "externalized_memory"
+        }
+      ]
+    }
+  },
+  "passed": true,
+  "pillar": "formalism_biology"
+}

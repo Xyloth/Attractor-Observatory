@@ -1,0 +1,153 @@
+{
+  "gate": {
+    "comparison": ">=",
+    "gate_id": "TP2",
+    "passed": true,
+    "quantity": "number_generator_corpora_enumerated",
+    "threshold": 8,
+    "value": 8
+  },
+  "passed": true,
+  "rows": [
+    {
+      "corpus_id": "K3",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 30,
+      "payload_keys": [
+        "agent_internal_memory",
+        "counterfactual_marker_erasure_changes_behavior",
+        "environmental_write_event",
+        "future_behavior_depends_on_marker",
+        "marker_decay_steps",
+        "marker_persists",
+        "memory_kind",
+        "read_after_delay"
+      ],
+      "scenario_count": 30,
+      "world_driven_scenarios": 0
+    },
+    {
+      "corpus_id": "K4",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 30,
+      "payload_keys": [
+        "adversarial_kind",
+        "base_permeability",
+        "boundary_kind",
+        "death_integrity_threshold",
+        "division_fidelity",
+        "division_threshold",
+        "expected_boundary_class",
+        "expected_self_maintained_boundary",
+        "external_repair_rate",
+        "external_repairs_boundary",
+        "external_resource",
+        "food_set",
+        "heritable_boundary_production",
+        "initial_closure_marker",
+        "initial_internal_resource",
+        "initial_membrane_integrity",
+        "initial_membrane_material",
+        "initial_state",
+        "internal_produces_boundary",
+        "puncture_damage",
+        "puncture_permeability_boost",
+        "puncture_time",
+        "reactions",
+        "repair_rate",
+        "scenario_id"
+      ],
+      "scenario_count": 30,
+      "world_driven_scenarios": 0
+    },
+    {
+      "corpus_id": "K5",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 24,
+      "payload_keys": [
+        "boundary_distance",
+        "counter_signal_strength",
+        "expected_confidence_band",
+        "observation_noise",
+        "signal_strength"
+      ],
+      "scenario_count": 24,
+      "world_driven_scenarios": 0
+    },
+    {
+      "corpus_id": "K6",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 16,
+      "payload_keys": [
+        "expected_action",
+        "feature_vector",
+        "ood_kind"
+      ],
+      "scenario_count": 16,
+      "world_driven_scenarios": 0
+    },
+    {
+      "corpus_id": "K7",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 12,
+      "payload_keys": [
+        "composition_operator",
+        "expected_min_composition",
+        "macro_scale_signal",
+        "micro_scale_signal",
+        "scale_coupling"
+      ],
+      "scenario_count": 12,
+      "world_driven_scenarios": 0
+    },
+    {
+      "corpus_id": "K8",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 24,
+      "payload_keys": [
+        "appearance",
+        "pair_id",
+        "process_signature",
+        "world_family_hint"
+      ],
+      "scenario_count": 24,
+      "world_driven_scenarios": 0
+    },
+    {
+      "corpus_id": "K9",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 12,
+      "payload_keys": [
+        "appearance_pair_id",
+        "source_scenario",
+        "surface",
+        "underlying_process"
+      ],
+      "scenario_count": 12,
+      "world_driven_scenarios": 0
+    },
+    {
+      "corpus_id": "K10",
+      "corpus_kind": "number_generator",
+      "detector_contract": "must_consume_trace_not_payload",
+      "number_generator_scenarios": 12,
+      "payload_keys": [
+        "confidence_series",
+        "drift_control_series",
+        "expected_change_points",
+        "phase_labels",
+        "temporal_pattern"
+      ],
+      "scenario_count": 12,
+      "world_driven_scenarios": 0
+    }
+  ],
+  "schema": "Campaign007CorpusReality.v1"
+}

@@ -1,0 +1,59 @@
+{
+  "acceptance_outcome": "pass",
+  "actual_files": 24,
+  "actual_minutes": 53.96666666666667,
+  "actual_tests": 208,
+  "complexity_score": 10,
+  "estimated_files": 30,
+  "estimated_minutes": 60,
+  "estimated_tests": 210,
+  "estimation_delta": 0.8994444444444445,
+  "expansions_planned": [
+    "Close Campaign 008 honestly by deepening W8/W11/W12/W13 against v1.0 section 3 and using D17.5 audits where line floors diverge from spec coverage.",
+    "Keep strict line-floor reporting while allowing content-audited substance gates.",
+    "Read Basin-Floor Geometry v2 and record next-campaign decisions without beginning Campaign 009 early."
+  ],
+  "expansions_realised": [
+    "Deepened W8 with noisy sensors, online prediction, decaying memory, attention allocation, and energy budget.",
+    "Deepened W11 with finite-population sequence space, error-threshold scans, neutral-network coverage, mutation graph diagnostics, and innovation-front telemetry.",
+    "Deepened W12 with nested protocells, hosted sub-CRNs, resource exchange, vertical inheritance, horizontal exchange, and lineage export.",
+    "Deepened W13 with real W1/W2 inner-world hosting, upscale/downscale operators, cross-scale flux ledger, and per-scale invariants.",
+    "Added D17.5 substance audits for W6-W13 and preserved strict line-floor measurements in Campaign 008.",
+    "Caught and repaired the D7 sub-400 risk for W9/W10/W11 before closing the task.",
+    "Updated Truth Pass, closed the SH3 blocker, logged Basin-Floor Geometry decisions, added TASK-019 closure reporting, and ran full regression."
+  ],
+  "initiative_score": 10,
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "notes": "PI supplied actual wall-clock 53m58s (53.9667 min). TASK-019 estimate was 60 min, producing estimation_delta=0.89944. This is the second consecutive calibrated large-task estimate after TASK-018 delta=0.93370. The useful role of timing now shifts to drift detection, not scope control.",
+  "rework_index": 2,
+  "scope_delta": 0.8,
+  "scope_score": 10,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+  ],
+  "substance_audit": [
+    {
+      "gate_count": 35,
+      "module": "Campaign 008",
+      "passed_gate_count": 35,
+      "status": "green"
+    },
+    {
+      "gate_count": 8,
+      "module": "TASK-019 closure",
+      "passed_gate_count": 8,
+      "status": "green"
+    },
+    {
+      "module": "Full regression",
+      "status": "green",
+      "test_count": 208
+    }
+  ],
+  "task_atom_hash": "campaign-008-d17-5-substance-closure-and-bfg-handoff",
+  "task_class": "integration",
+  "task_id": "TASK-019",
+  "underbuild_score": 0
+}

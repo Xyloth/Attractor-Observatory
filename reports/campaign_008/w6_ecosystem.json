@@ -1,0 +1,277 @@
+{
+  "control_rows": [
+    {
+      "control": 0.0,
+      "direction": "higher",
+      "effect_size": 0.37369572840059956,
+      "label": "shock_regime_shift",
+      "passed": true,
+      "positive": 0.37369572840059956,
+      "threshold": 0.05
+    },
+    {
+      "control": 0.07936346766617497,
+      "direction": "higher",
+      "effect_size": 2.142813626986724,
+      "label": "interaction_matrix_transition",
+      "passed": true,
+      "positive": 2.222177094652899,
+      "threshold": 0.4
+    }
+  ],
+  "gates": {
+    "W6C": {
+      "controls": [
+        {
+          "control": 0.0,
+          "direction": "higher",
+          "effect_size": 0.37369572840059956,
+          "label": "shock_regime_shift",
+          "passed": true,
+          "positive": 0.37369572840059956,
+          "threshold": 0.05
+        },
+        {
+          "control": 0.07936346766617497,
+          "direction": "higher",
+          "effect_size": 2.142813626986724,
+          "label": "interaction_matrix_transition",
+          "passed": true,
+          "positive": 2.222177094652899,
+          "threshold": 0.4
+        }
+      ],
+      "passed": true
+    },
+    "W6R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "dispersal_event",
+        "niche_construction_event",
+        "predation_event",
+        "recovery_event",
+        "shock_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 500,
+        "line_floor_met": false,
+        "path": "worlds\\ecosystem\\model.py",
+        "scaffolding_lines": 34,
+        "simulation_logic_lines": 484,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W6.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 484,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 533,
+        "trace_export_lines": 15,
+        "world_id": "W6"
+      }
+    }
+  },
+  "passed": true,
+  "positive_rows": [
+    {
+      "benchmark": "lotka_volterra",
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "niche_construction_event",
+        "predation_event"
+      ],
+      "final_state": {
+        "consumer_pressure": 0.2181518284886951,
+        "decomposers": 7.3024482702128495,
+        "disturbance": 0.0,
+        "disturbance_load": 0.0,
+        "grazer": 18.572602081644614,
+        "grazer_patch_coupling": 0.21815101628494388,
+        "grazers": 18.572602081644614,
+        "hysteresis_area": 0.0,
+        "niche": 20.76477196709244,
+        "patch_evenness": 0.49172206421088605,
+        "phase_lag_steps": 29.0,
+        "population": 111.01117875523259,
+        "predator": 0.0,
+        "predator_coherence": 1.0,
+        "predators": 0.0,
+        "producer": 85.13612840337512,
+        "producers": 85.13612840337512,
+        "recovery_index": 1.0,
+        "refuge_fraction": 0.6,
+        "resource": 849.9920292100518,
+        "spatial_variance": 0.0020702483364989175,
+        "spectral_radius": 0.9659999999999999,
+        "stressed_patch_fraction": 0.0,
+        "trophic_transfer_index": 0.21815101628494388
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "grazer_amplitude": 3.285929399986781,
+        "phase_lag_steps": 29,
+        "producer_amplitude": 33.52915243555604
+      },
+      "observed_regime": "oscillatory",
+      "passed": true,
+      "seed": 8100,
+      "trace_id": "sha256:e4bdaaad9d2936cc2c725135f9c8f8d9a236f1327468a793257cfd91adf9d6d8",
+      "trace_path": "reports\\campaign_008\\traces\\W6\\lotka_volterra_8100_0.json",
+      "world_id": "W6"
+    },
+    {
+      "benchmark": "may_stability",
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "niche_construction_event",
+        "predation_event"
+      ],
+      "final_state": {
+        "consumer_pressure": 0.49178804557221917,
+        "decomposers": 9.186651090294509,
+        "disturbance": 0.0,
+        "disturbance_load": 0.0,
+        "grazer": 11.296077468220957,
+        "grazer_patch_coupling": 0.10543993538862007,
+        "grazers": 11.296077468220957,
+        "hysteresis_area": 0.0,
+        "niche": 21.659667159056163,
+        "patch_evenness": 0.48902065461726835,
+        "phase_lag_steps": 29.0,
+        "population": 131.98345688321788,
+        "predator": 4.364258771033381,
+        "predator_coherence": 0.9946537637135712,
+        "predators": 4.364258771033381,
+        "producer": 107.13646955366903,
+        "producers": 107.13646955366903,
+        "recovery_index": 1.0,
+        "refuge_fraction": 0.42857142857142855,
+        "resource": 967.8563355276598,
+        "spatial_variance": 0.006491039025568591,
+        "spectral_radius": 2.222177094652899,
+        "stressed_patch_fraction": 0.0,
+        "trophic_transfer_index": 0.1461780376754389
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "population": 131.98345688321788,
+        "spectral_radius": 2.222177094652899,
+        "transition_score": 1.0
+      },
+      "observed_regime": "oscillatory",
+      "passed": true,
+      "seed": 8101,
+      "trace_id": "sha256:50a68f96376aef45f1a2b7ee525f6a9e203a51e86214b65226ea10418697e7e4",
+      "trace_path": "reports\\campaign_008\\traces\\W6\\may_stability_8101_0.json",
+      "world_id": "W6"
+    },
+    {
+      "benchmark": "allee_collapse",
+      "event_types": [
+        "niche_construction_event"
+      ],
+      "final_state": {
+        "consumer_pressure": 0.8447929364668774,
+        "decomposers": 5.421663043435963,
+        "disturbance": 0.0,
+        "disturbance_load": 0.0,
+        "grazer": 2.526856635860857,
+        "grazer_patch_coupling": 0.5053713271721714,
+        "grazers": 2.526856635860857,
+        "hysteresis_area": 0.0,
+        "niche": 3.5499464020303355,
+        "patch_evenness": 0.8532823748341549,
+        "phase_lag_steps": 1.0,
+        "population": 12.422719646235096,
+        "predator": 0.5199508204419578,
+        "predator_coherence": 0.9983898917391373,
+        "predators": 0.5199508204419578,
+        "producer": 3.9542491464963185,
+        "producers": 3.9542491464963185,
+        "recovery_index": 1.0,
+        "refuge_fraction": 0.4,
+        "resource": 650.877478002091,
+        "spatial_variance": 0.0005345286650467256,
+        "spectral_radius": 0.9659999999999999,
+        "stressed_patch_fraction": 0.0,
+        "trophic_transfer_index": 0.7712582593894047
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "below_allee": 1.0,
+        "collapse_depth": 0.8352396188959867,
+        "minimum_producer": 3.9542491464963185
+      },
+      "observed_regime": "stable",
+      "passed": true,
+      "seed": 8102,
+      "trace_id": "sha256:6cbc374790091258d2af9fcb1a05476baff48059bfe76f3ef9ce248bf2d677f6",
+      "trace_path": "reports\\campaign_008\\traces\\W6\\allee_collapse_8102_0.json",
+      "world_id": "W6"
+    },
+    {
+      "benchmark": "regime_shift",
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "dispersal_event",
+        "niche_construction_event",
+        "predation_event",
+        "recovery_event",
+        "shock_event"
+      ],
+      "final_state": {
+        "consumer_pressure": 0.4374650036494404,
+        "decomposers": 7.417747703799538,
+        "disturbance": 0.5034585926351332,
+        "disturbance_load": 0.10069171852702663,
+        "grazer": 10.477784910815693,
+        "grazer_patch_coupling": 0.10541543376448877,
+        "grazers": 10.477784910815693,
+        "hysteresis_area": 0.37126351637887983,
+        "niche": 24.081663446108216,
+        "patch_evenness": 0.4658522417550506,
+        "phase_lag_steps": 29.0,
+        "population": 120.33883878850538,
+        "predator": 3.4743869032859784,
+        "predator_coherence": 0.9796538110083702,
+        "predators": 3.4743869032859784,
+        "producer": 98.96891927060418,
+        "producers": 98.96891927060418,
+        "recovery_index": 0.8263935887465058,
+        "refuge_fraction": 0.4,
+        "resource": 841.1763608811048,
+        "spatial_variance": 0.37683105576748854,
+        "spectral_radius": 1.518,
+        "stressed_patch_fraction": 0.2,
+        "trophic_transfer_index": 0.1405137038788058
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "hysteresis_area": 0.37126351637887983,
+        "recovery_time": 130,
+        "shock_applied": 1.0
+      },
+      "observed_regime": "recovering",
+      "passed": true,
+      "seed": 8103,
+      "trace_id": "sha256:006a91420684ff1e723d0b70fe3e23b43a3437f31f67f4c9f98a349d83d60baa",
+      "trace_path": "reports\\campaign_008\\traces\\W6\\regime_shift_8103_0.json",
+      "world_id": "W6"
+    }
+  ],
+  "schema": "Campaign008WorldReport.v1",
+  "world_id": "W6"
+}

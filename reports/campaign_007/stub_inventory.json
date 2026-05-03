@@ -1,0 +1,191 @@
+{
+  "gate": {
+    "comparison": ">=",
+    "gate_id": "TP1",
+    "passed": true,
+    "quantity": "campaign_start_stub_or_scaffold_worlds_enumerated",
+    "threshold": 11,
+    "value": 11
+  },
+  "passed": true,
+  "rows": [
+    {
+      "mode": "substantive",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\field\\model.py",
+        "worlds\\field\\solver.py",
+        "worlds\\field\\scenarios.py",
+        "worlds\\field\\analysis.py"
+      ],
+      "scaffolding_lines": 91,
+      "simulation_logic_lines": 897,
+      "substance_floor": 800,
+      "substantive_lines": 897,
+      "test_count": 77,
+      "total_lines": 1011,
+      "trace_export_lines": 23,
+      "truth_pass_verdict": "eligible_after_reconstruction_tests",
+      "world_id": "W3"
+    },
+    {
+      "mode": "substantive",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\morphogenesis\\model.py"
+      ],
+      "scaffolding_lines": 74,
+      "simulation_logic_lines": 949,
+      "substance_floor": 600,
+      "substantive_lines": 949,
+      "test_count": 38,
+      "total_lines": 1037,
+      "trace_export_lines": 14,
+      "truth_pass_verdict": "eligible_after_reconstruction_tests",
+      "world_id": "W4"
+    },
+    {
+      "mode": "substantive",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\digital\\model.py"
+      ],
+      "scaffolding_lines": 68,
+      "simulation_logic_lines": 856,
+      "substance_floor": 800,
+      "substantive_lines": 856,
+      "test_count": 47,
+      "total_lines": 938,
+      "trace_export_lines": 14,
+      "truth_pass_verdict": "eligible_after_reconstruction_tests",
+      "world_id": "W5"
+    },
+    {
+      "mode": "stub",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\ecosystem\\model.py"
+      ],
+      "scaffolding_lines": 34,
+      "simulation_logic_lines": 484,
+      "substance_floor": 500,
+      "substantive_lines": 484,
+      "test_count": 19,
+      "total_lines": 533,
+      "trace_export_lines": 15,
+      "truth_pass_verdict": "ineligible_for_claim_bearing",
+      "world_id": "W6"
+    },
+    {
+      "mode": "stub",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\swarm\\model.py"
+      ],
+      "scaffolding_lines": 40,
+      "simulation_logic_lines": 478,
+      "substance_floor": 500,
+      "substantive_lines": 478,
+      "test_count": 19,
+      "total_lines": 533,
+      "trace_export_lines": 15,
+      "truth_pass_verdict": "ineligible_for_claim_bearing",
+      "world_id": "W7"
+    },
+    {
+      "mode": "scaffold",
+      "mode_at_campaign_start": "scaffold",
+      "paths": [],
+      "scaffolding_lines": 0,
+      "simulation_logic_lines": 0,
+      "substance_floor": 600,
+      "substantive_lines": 0,
+      "test_count": 16,
+      "total_lines": 0,
+      "trace_export_lines": 0,
+      "truth_pass_verdict": "ineligible_for_claim_bearing",
+      "world_id": "W8"
+    },
+    {
+      "mode": "stub",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\origins_chemistry\\model.py"
+      ],
+      "scaffolding_lines": 33,
+      "simulation_logic_lines": 404,
+      "substance_floor": 500,
+      "substantive_lines": 404,
+      "test_count": 19,
+      "total_lines": 452,
+      "trace_export_lines": 15,
+      "truth_pass_verdict": "ineligible_for_claim_bearing",
+      "world_id": "W9"
+    },
+    {
+      "mode": "substantive",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\hypergraph_reactions\\model.py"
+      ],
+      "scaffolding_lines": 39,
+      "simulation_logic_lines": 443,
+      "substance_floor": 400,
+      "substantive_lines": 443,
+      "test_count": 31,
+      "total_lines": 497,
+      "trace_export_lines": 15,
+      "truth_pass_verdict": "eligible_after_reconstruction_tests",
+      "world_id": "W10"
+    },
+    {
+      "mode": "stub",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\quasispecies\\model.py"
+      ],
+      "scaffolding_lines": 42,
+      "simulation_logic_lines": 428,
+      "substance_floor": 500,
+      "substantive_lines": 428,
+      "test_count": 19,
+      "total_lines": 471,
+      "trace_export_lines": 1,
+      "truth_pass_verdict": "ineligible_for_claim_bearing",
+      "world_id": "W11"
+    },
+    {
+      "mode": "stub",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\symbiogenesis\\model.py"
+      ],
+      "scaffolding_lines": 36,
+      "simulation_logic_lines": 407,
+      "substance_floor": 600,
+      "substantive_lines": 407,
+      "test_count": 19,
+      "total_lines": 444,
+      "trace_export_lines": 1,
+      "truth_pass_verdict": "ineligible_for_claim_bearing",
+      "world_id": "W12"
+    },
+    {
+      "mode": "stub",
+      "mode_at_campaign_start": "stub",
+      "paths": [
+        "worlds\\multiscale\\model.py"
+      ],
+      "scaffolding_lines": 38,
+      "simulation_logic_lines": 442,
+      "substance_floor": 800,
+      "substantive_lines": 442,
+      "test_count": 25,
+      "total_lines": 481,
+      "trace_export_lines": 1,
+      "truth_pass_verdict": "ineligible_for_claim_bearing",
+      "world_id": "W13"
+    }
+  ],
+  "schema": "Campaign007StubInventory.v1"
+}

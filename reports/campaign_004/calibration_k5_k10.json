@@ -1,0 +1,718 @@
+{
+  "gates": {
+    "G1_k5_ambiguous": {
+      "band_pass_rate": 1.0,
+      "passed": true,
+      "rows": [
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.45999999999999996,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-00"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.476,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-01"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.492,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-02"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.508,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-03"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.524,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-04"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.54,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-05"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.45999999999999996,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-06"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.476,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-07"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.492,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-08"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.508,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-09"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.524,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-10"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.54,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-11"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.45999999999999996,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-12"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.476,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-13"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.492,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-14"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.508,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-15"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.524,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-16"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.54,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-17"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.45999999999999996,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-18"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.476,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-19"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.492,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-20"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.508,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-21"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.524,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-22"
+        },
+        {
+          "band": [
+            0.4,
+            0.6
+          ],
+          "confidence": 0.54,
+          "passed": true,
+          "scenario_id": "K5-knife-edge-23"
+        }
+      ],
+      "scenario_count": 24
+    },
+    "G2_k6_ood": {
+      "abstain_or_flag_rate": 1.0,
+      "passed": true,
+      "rows": [
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": true,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unit_mismatch-00"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": true,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-missing_axes-01"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": true
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unknown_event-02"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": true,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-nonphysical_rate-03"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": true,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unit_mismatch-04"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": true,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-missing_axes-05"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": true
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unknown_event-06"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": true,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-nonphysical_rate-07"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": true,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unit_mismatch-08"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": true,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-missing_axes-09"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": true
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unknown_event-10"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": true,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-nonphysical_rate-11"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": true,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unit_mismatch-12"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": true,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-missing_axes-13"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": false,
+            "unknown_event_flag": true
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-unknown_event-14"
+        },
+        {
+          "abstain": true,
+          "flags": {
+            "mass_residual_flag": false,
+            "missing_axes_flag": false,
+            "nonphysical_rate_flag": true,
+            "unknown_event_flag": false
+          },
+          "passed": true,
+          "scenario_id": "K6-ood-nonphysical_rate-15"
+        }
+      ],
+      "scenario_count": 16
+    },
+    "G3_k7_multiscale": {
+      "composition_pass_rate": 1.0,
+      "passed": true,
+      "rows": [
+        {
+          "composition_score": 0.46057494504152086,
+          "passed": true,
+          "scenario_id": "K7-multiscale-00",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.49915728983958546,
+          "passed": true,
+          "scenario_id": "K7-multiscale-01",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.5391180946694333,
+          "passed": true,
+          "scenario_id": "K7-multiscale-02",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.5005388296625947,
+          "passed": true,
+          "scenario_id": "K7-multiscale-03",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.48769039359003163,
+          "passed": true,
+          "scenario_id": "K7-multiscale-04",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.4733686935148964,
+          "passed": true,
+          "scenario_id": "K7-multiscale-05",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.5126480274028176,
+          "passed": true,
+          "scenario_id": "K7-multiscale-06",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.5533054129502079,
+          "passed": true,
+          "scenario_id": "K7-multiscale-07",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.462035842765472,
+          "passed": true,
+          "scenario_id": "K7-multiscale-08",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.5012373489675326,
+          "passed": true,
+          "scenario_id": "K7-multiscale-09",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.486162441988272,
+          "passed": true,
+          "scenario_id": "K7-multiscale-10",
+          "threshold": 0.36
+        },
+        {
+          "composition_score": 0.5261387649660496,
+          "passed": true,
+          "scenario_id": "K7-multiscale-11",
+          "threshold": 0.36
+        }
+      ],
+      "scenario_count": 12
+    },
+    "G4_k8_same_process": {
+      "pair_count": 12,
+      "passed": true,
+      "rows": [
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-00",
+          "passed": true,
+          "similarity": 0.9999186386338584
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-01",
+          "passed": true,
+          "similarity": 0.9999221382662975
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-02",
+          "passed": true,
+          "similarity": 0.9999254659154042
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-03",
+          "passed": true,
+          "similarity": 0.9999222151951173
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-04",
+          "passed": true,
+          "similarity": 0.9999196390870342
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-05",
+          "passed": true,
+          "similarity": 0.9999231216733752
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-06",
+          "passed": true,
+          "similarity": 0.9999237334422447
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-07",
+          "passed": true,
+          "similarity": 0.9999230523932869
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-08",
+          "passed": true,
+          "similarity": 0.9999207117509606
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-09",
+          "passed": true,
+          "similarity": 0.9999212252809082
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-10",
+          "passed": true,
+          "similarity": 0.9999245654342791
+        },
+        {
+          "floor": 0.75,
+          "pair_id": "K8-same-process-11",
+          "passed": true,
+          "similarity": 0.9999239628622376
+        }
+      ],
+      "similarity_pass_rate": 1.0
+    },
+    "G5_k10_nonstationary": {
+      "passed": true,
+      "phase_accuracy": 1.0,
+      "rows": [
+        {
+          "change_points": [
+            3
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-present_then_absent-00",
+          "temporal_pattern": "present_then_absent"
+        },
+        {
+          "change_points": [
+            2
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-absent_then_present-01",
+          "temporal_pattern": "absent_then_present"
+        },
+        {
+          "change_points": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-switching-02",
+          "temporal_pattern": "switching"
+        },
+        {
+          "change_points": [
+            3
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-present_then_absent-03",
+          "temporal_pattern": "present_then_absent"
+        },
+        {
+          "change_points": [
+            2
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-absent_then_present-04",
+          "temporal_pattern": "absent_then_present"
+        },
+        {
+          "change_points": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-switching-05",
+          "temporal_pattern": "switching"
+        },
+        {
+          "change_points": [
+            3
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-present_then_absent-06",
+          "temporal_pattern": "present_then_absent"
+        },
+        {
+          "change_points": [
+            2
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-absent_then_present-07",
+          "temporal_pattern": "absent_then_present"
+        },
+        {
+          "change_points": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-switching-08",
+          "temporal_pattern": "switching"
+        },
+        {
+          "change_points": [
+            3
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-present_then_absent-09",
+          "temporal_pattern": "present_then_absent"
+        },
+        {
+          "change_points": [
+            2
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-absent_then_present-10",
+          "temporal_pattern": "absent_then_present"
+        },
+        {
+          "change_points": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "passed": true,
+          "phase_accuracy": 1.0,
+          "scenario_id": "K10-switching-11",
+          "temporal_pattern": "switching"
+        }
+      ],
+      "trace_count": 12
+    },
+    "G6_k1_k10_registry_complete": {
+      "corpus_counts": {
+        "K1": 34,
+        "K10": 12,
+        "K2": 42,
+        "K3": 30,
+        "K4": 30,
+        "K5": 24,
+        "K6": 16,
+        "K7": 12,
+        "K8": 24,
+        "K9": 12
+      },
+      "passed": true,
+      "scenario_count": 236,
+      "schema_valid_rows": 236
+    }
+  },
+  "passed": true,
+  "pillar": "calibration_k5_k10"
+}

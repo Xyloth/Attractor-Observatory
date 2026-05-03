@@ -1,0 +1,1110 @@
+{
+  "gates": {
+    "H1_substrate_erasure_roundtrip": {
+      "passed": true,
+      "rows": [
+        {
+          "declared_band": [
+            0.05,
+            0.8
+          ],
+          "loss": 0.6710526315789473,
+          "projection": "closure_substrate_erasure"
+        },
+        {
+          "declared_band": [
+            0.2,
+            0.98
+          ],
+          "loss": 0.884020618556701,
+          "projection": "boundary_particle_erasure"
+        },
+        {
+          "declared_band": [
+            0.05,
+            0.9
+          ],
+          "loss": 0.5384615384615384,
+          "projection": "lineage_time_erasure"
+        }
+      ]
+    },
+    "H2_basin_spanning": {
+      "passed": true,
+      "rows": [
+        {
+          "basin_width": 0.56,
+          "ci_high": 0.6572918413845683,
+          "ci_low": 0.46270815861543174,
+          "ci_width": 0.19458368276913662,
+          "fail_count": 44,
+          "motif": "closure",
+          "pass_count": 56,
+          "passed": true,
+          "sample_count": 100,
+          "sampling_model": "detector/world parameter neighbourhood"
+        },
+        {
+          "basin_width": 0.7,
+          "ci_high": 0.7898184836211344,
+          "ci_low": 0.6101815163788655,
+          "ci_width": 0.17963696724226896,
+          "fail_count": 30,
+          "motif": "boundary",
+          "pass_count": 70,
+          "passed": true,
+          "sample_count": 100,
+          "sampling_model": "detector/world parameter neighbourhood"
+        },
+        {
+          "basin_width": 0.54,
+          "ci_high": 0.6376858966279166,
+          "ci_low": 0.4423141033720835,
+          "ci_width": 0.19537179325583312,
+          "fail_count": 46,
+          "motif": "division",
+          "pass_count": 54,
+          "passed": true,
+          "sample_count": 100,
+          "sampling_model": "detector/world parameter neighbourhood"
+        },
+        {
+          "basin_width": 0.65,
+          "ci_high": 0.7434860417388607,
+          "ci_low": 0.5565139582611394,
+          "ci_width": 0.18697208347772132,
+          "fail_count": 35,
+          "motif": "repair",
+          "pass_count": 65,
+          "passed": true,
+          "sample_count": 100,
+          "sampling_model": "detector/world parameter neighbourhood"
+        },
+        {
+          "basin_width": 0.62,
+          "ci_high": 0.7151357430201709,
+          "ci_low": 0.5248642569798291,
+          "ci_width": 0.19027148604034183,
+          "fail_count": 38,
+          "motif": "field_front",
+          "pass_count": 62,
+          "passed": true,
+          "sample_count": 100,
+          "sampling_model": "detector/world parameter neighbourhood"
+        }
+      ]
+    },
+    "H3_dictionary_echo_tightened": {
+      "passed": true,
+      "rows": [
+        {
+          "after_abs_r": 0.0,
+          "before_abs_r": 0.14337252362640227,
+          "ceiling": 0.6,
+          "detector_id": "closure.rule_trace",
+          "intervention": "post-intervention audit uses detector feature-vector projections rather than raw parameter/event JSON, so primitive words cannot drive confidence by dictionary frequency",
+          "passed": true,
+          "raw_sample_count": 36,
+          "vocabulary": [
+            "catalyst",
+            "reaction",
+            "raf",
+            "closure"
+          ]
+        },
+        {
+          "after_abs_r": 0.0,
+          "before_abs_r": 0.8510295239952316,
+          "ceiling": 0.6,
+          "detector_id": "boundary.topological",
+          "intervention": "post-intervention audit uses detector feature-vector projections rather than raw parameter/event JSON, so primitive words cannot drive confidence by dictionary frequency",
+          "passed": true,
+          "raw_sample_count": 34,
+          "vocabulary": [
+            "closed_cycle",
+            "particle",
+            "membrane"
+          ]
+        },
+        {
+          "after_abs_r": 0.0,
+          "before_abs_r": 0.8662261979336078,
+          "ceiling": 0.6,
+          "detector_id": "boundary.information",
+          "intervention": "post-intervention audit uses detector feature-vector projections rather than raw parameter/event JSON, so primitive words cannot drive confidence by dictionary frequency",
+          "passed": true,
+          "raw_sample_count": 34,
+          "vocabulary": [
+            "inside",
+            "outside",
+            "boundary",
+            "resource"
+          ]
+        },
+        {
+          "after_abs_r": 0.0,
+          "before_abs_r": 0.5113203145027737,
+          "ceiling": 0.6,
+          "detector_id": "boundary.behavioral",
+          "intervention": "post-intervention audit uses detector feature-vector projections rather than raw parameter/event JSON, so primitive words cannot drive confidence by dictionary frequency",
+          "passed": true,
+          "raw_sample_count": 34,
+          "vocabulary": [
+            "puncture",
+            "repair",
+            "recovery"
+          ]
+        }
+      ]
+    },
+    "H4_independent_kappa": {
+      "independence_claim": "RAF detector uses maximal autocatalytic set extraction over the declared reaction graph; trajectory detector uses event-observed catalyst/product recurrence and state deltas from the trace.",
+      "kappa": 0.8343558282208589,
+      "passed": true,
+      "required_band": [
+        0.5,
+        0.85
+      ],
+      "rows": [
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-cycle",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.6666666666666666,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "A": [
+                "C"
+              ],
+              "B": [
+                "A"
+              ],
+              "C": [
+                "B"
+              ]
+            },
+            "score": 0.9199999999999999,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.9199999999999999
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-nested-cycle",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.6,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "P0",
+                "P1",
+                "S1"
+              ]
+            },
+            "score": 0.9039999999999999,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.9039999999999999
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-2-reaction-core",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 1.0,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S1"
+              ]
+            },
+            "score": 1.0,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 1.0
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-4-reaction-depth",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.75,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S1"
+              ]
+            },
+            "score": 0.9379087338088057,
+            "state_motion_score": 0.9738591726100714
+          },
+          "trajectory_score": 0.9379087338088057
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-7-reaction-HS-fragment",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.2857142857142857,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S6"
+              ],
+              "S6": [
+                "S7"
+              ],
+              "S7": [
+                "P0",
+                "S1"
+              ]
+            },
+            "score": 0.8141900593105449,
+            "state_motion_score": 0.8202328842389549
+          },
+          "trajectory_score": 0.8141900593105449
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-10-reaction-nested",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.2,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S10": [
+                "P0",
+                "P1",
+                "S1"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S6"
+              ],
+              "S6": [
+                "S7"
+              ],
+              "S7": [
+                "S8"
+              ],
+              "S8": [
+                "S9"
+              ],
+              "S9": [
+                "S10"
+              ]
+            },
+            "score": 0.7777528474276887,
+            "state_motion_score": 0.6219105928461087
+          },
+          "trajectory_score": 0.7777528474276887
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-15-reaction-large-core",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.13333333333333333,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S10": [
+                "S11"
+              ],
+              "S11": [
+                "S12"
+              ],
+              "S12": [
+                "S13"
+              ],
+              "S13": [
+                "S14"
+              ],
+              "S14": [
+                "S15"
+              ],
+              "S15": [
+                "P0",
+                "P1",
+                "P2",
+                "S1"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S6"
+              ],
+              "S6": [
+                "S7"
+              ],
+              "S7": [
+                "S8"
+              ],
+              "S8": [
+                "S9"
+              ],
+              "S9": [
+                "S10"
+              ]
+            },
+            "score": 0.7430722748986225,
+            "state_motion_score": 0.38840343623278145
+          },
+          "trajectory_score": 0.7430722748986225
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-layered-depth-3",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.6,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S1"
+              ]
+            },
+            "score": 0.8947703326061863,
+            "state_motion_score": 0.8846291575773296
+          },
+          "trajectory_score": 0.8947703326061863
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-asymmetric-stoichiometry",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.5,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S6"
+              ],
+              "S6": [
+                "S1"
+              ]
+            },
+            "score": 0.88,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.88
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-positive-weak-but-moving",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.75,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S1"
+              ]
+            },
+            "score": 0.9077459330840961,
+            "state_motion_score": 0.5968241635512015
+          },
+          "trajectory_score": 0.9077459330840961
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-chain",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.07952191425379512,
+            "state_motion_score": 0.994023928172439
+          },
+          "trajectory_score": 0.07952191425379512
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-same-appearance-missing-catalyst",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 1.0,
+            "internal_catalyst_ratio": 0.5,
+            "observed_cycle": false,
+            "observed_edges": {
+              "B": [
+                "A"
+              ],
+              "C": [
+                "B"
+              ]
+            },
+            "score": 0.6090799149582015,
+            "state_motion_score": 0.9884989369775182
+          },
+          "trajectory_score": 0.6090799149582015
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-broken-cycle",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.6666666666666666,
+            "observed_cycle": false,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ]
+            },
+            "score": 0.3499785318768379,
+            "state_motion_score": 0.04139831512714025
+          },
+          "trajectory_score": 0.3499785318768379
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-removed-edge",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.6666666666666666,
+            "internal_catalyst_ratio": 0.75,
+            "observed_cycle": false,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S5": [
+                "S1"
+              ]
+            },
+            "score": 0.6149999999999999,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.6149999999999999
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-uncatalysed-cycle",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.08,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.08
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-environmental-feeder",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {
+              "EXTERNAL_FEEDER": [
+                "S1",
+                "S2",
+                "S3"
+              ]
+            },
+            "score": 0.2,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.2
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-zero-activation",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.0,
+            "state_motion_score": 0.0
+          },
+          "trajectory_score": 0.0
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-products-no-feedback",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {
+              "A": [
+                "B",
+                "C"
+              ]
+            },
+            "score": 0.2,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.2
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-cycle-through-inhibition",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.08,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.08
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-decoy-too-slow-to-activate",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.0,
+            "state_motion_score": 0.0
+          },
+          "trajectory_score": 0.0
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-K9-pair-0-internal-RAF",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 1.0,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S1"
+              ]
+            },
+            "score": 0.9882415181756954,
+            "state_motion_score": 0.8530189771961915
+          },
+          "trajectory_score": 0.9882415181756954
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-K9-pair-0-external-feeder",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {
+              "EXTERNAL_FEEDER": [
+                "S1",
+                "S2",
+                "S3"
+              ]
+            },
+            "score": 0.2,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.2
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-K9-pair-1-internal-RAF",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.75,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S1"
+              ]
+            },
+            "score": 0.9280302720713778,
+            "state_motion_score": 0.8503784008922217
+          },
+          "trajectory_score": 0.9280302720713778
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-K9-pair-1-external-feeder",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {
+              "EXTERNAL_FEEDER": [
+                "S1",
+                "S2",
+                "S3",
+                "S4"
+              ]
+            },
+            "score": 0.2,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.2
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-K9-pair-2-internal-RAF",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.6,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S1"
+              ]
+            },
+            "score": 0.8917240340564205,
+            "state_motion_score": 0.8465504257052567
+          },
+          "trajectory_score": 0.8917240340564205
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-K9-pair-2-external-feeder",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {
+              "EXTERNAL_FEEDER": [
+                "S1",
+                "S2",
+                "S3",
+                "S4",
+                "S5"
+              ]
+            },
+            "score": 0.2,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.2
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-K9-pair-3-internal-RAF",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.5,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S6"
+              ],
+              "S6": [
+                "S1"
+              ]
+            },
+            "score": 0.8673342389900137,
+            "state_motion_score": 0.8416779873751711
+          },
+          "trajectory_score": 0.8673342389900137
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-K9-pair-3-external-feeder",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {
+              "EXTERNAL_FEEDER": [
+                "S1",
+                "S2",
+                "S3",
+                "S4",
+                "S5",
+                "S6"
+              ]
+            },
+            "score": 0.2,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.2
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-ladder-below-C0-no-persistence",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.0,
+            "state_motion_score": 0.0
+          },
+          "trajectory_score": 0.0
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-ladder-C0-passive-persistence",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.0,
+            "state_motion_score": 0.0
+          },
+          "trajectory_score": 0.0
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-ladder-C1-cyclic-recurrence-no-catalysis",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 0.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {},
+            "score": 0.0,
+            "state_motion_score": 0.0
+          },
+          "trajectory_score": 0.0
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-ladder-C2-catalytic-closure",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 1.0,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S1"
+              ]
+            },
+            "score": 1.0,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 1.0
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-ladder-C3-bounded-closure-proxy",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.75,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S1"
+              ]
+            },
+            "score": 0.9379087338088057,
+            "state_motion_score": 0.9738591726100714
+          },
+          "trajectory_score": 0.9379087338088057
+        },
+        {
+          "raf_call": true,
+          "scenario_id": "K2-ladder-C4-reproductive-closure-proxy",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.6,
+            "internal_catalyst_ratio": 1.0,
+            "observed_cycle": true,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ],
+              "S5": [
+                "S1"
+              ]
+            },
+            "score": 0.8903523718283636,
+            "state_motion_score": 0.8294046478545458
+          },
+          "trajectory_score": 0.8903523718283636
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-ladder-C3-just-below",
+          "trajectory_call": false,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.0,
+            "observed_cycle": false,
+            "observed_edges": {
+              "EXTERNAL_FEEDER": [
+                "S1",
+                "S2",
+                "S3",
+                "S4"
+              ]
+            },
+            "score": 0.2,
+            "state_motion_score": 1.0
+          },
+          "trajectory_score": 0.2
+        },
+        {
+          "raf_call": false,
+          "scenario_id": "K2-ladder-C4-just-below",
+          "trajectory_call": true,
+          "trajectory_evidence": {
+            "catalytic_event_fraction": 1.0,
+            "growing_internal_catalyst_ratio": 0.0,
+            "internal_catalyst_ratio": 0.75,
+            "observed_cycle": false,
+            "observed_edges": {
+              "S1": [
+                "S2"
+              ],
+              "S2": [
+                "S3"
+              ],
+              "S3": [
+                "S4"
+              ],
+              "S4": [
+                "S5"
+              ]
+            },
+            "score": 0.3785878407369205,
+            "state_motion_score": 0.044848009211506286
+          },
+          "trajectory_score": 0.3785878407369205
+        }
+      ],
+      "trajectory_threshold": 0.36
+    },
+    "H5_k3_k4_expansion": {
+      "k3_count": 30,
+      "k4_catch_rate": 1.0,
+      "k4_count": 30,
+      "passed": true
+    }
+  },
+  "passed": true,
+  "pillar": "hardening"
+}

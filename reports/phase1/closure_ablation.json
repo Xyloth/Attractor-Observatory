@@ -1,0 +1,40 @@
+{
+  "baseline_evidence": {
+    "all_catalysts_produced": true,
+    "catalyst_edges": {
+      "A": [
+        "C"
+      ],
+      "B": [
+        "A"
+      ],
+      "C": [
+        "B"
+      ]
+    },
+    "catalysts": [
+      "A",
+      "B",
+      "C"
+    ],
+    "cyclic_dependency": true,
+    "produced_species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "viable_catalysts": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "baseline_raw_score": 0.85,
+  "expected_sensitive_features": [
+    "cyclic_dependency",
+    "viable_catalysts",
+    "all_catalysts_produced"
+  ],
+  "remove_cycle_feature_score": 0.15,
+  "remove_viability_feature_score": 0.15
+}

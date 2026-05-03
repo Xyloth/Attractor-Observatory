@@ -1,0 +1,99 @@
+{
+  "gate": {
+    "families": [
+      "crn",
+      "digital",
+      "morphogenesis",
+      "protocell"
+    ],
+    "passed": true
+  },
+  "passed": true,
+  "rows": [
+    {
+      "confidence": 0.55,
+      "outcome": {
+        "confidence": 0.55,
+        "implementation_distance": 0.011804959393332972,
+        "invariant_preserved": true,
+        "magnitude": "medium",
+        "outcome": "O3",
+        "perturbation_kind": "single_coordinate",
+        "provenance": {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "perturbed_trace": "sha256:eebde32af0ffd33f1e856febe92d6852d37ba5dcf25b249647ffbb8d47abd8fc",
+          "source_trace": "sha256:4047c8b64d45403ad3c77ed0e8f8f24ef91270f04fecf9cb34037c79f2ebc720"
+        },
+        "same_fiber_score": 0.6516108805892685,
+        "same_motif": false
+      },
+      "passed": true,
+      "scenario_id": "KF1-000",
+      "world_family": "crn"
+    },
+    {
+      "confidence": 0.8856919061418037,
+      "outcome": {
+        "confidence": 0.8856919061418037,
+        "implementation_distance": 0.1532268459382317,
+        "invariant_preserved": true,
+        "magnitude": "medium",
+        "outcome": "O2",
+        "perturbation_kind": "single_coordinate",
+        "provenance": {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "perturbed_trace": "sha256:fd7ccb70a1d31911c89c4fbed7e90b36cc33d3db1d5b415c42e86ec18d3e038e",
+          "source_trace": "sha256:3f05473eceedbed1b22aa2cccc3778c4dc6bce638b66e902c5b4b2bf5baa7d17"
+        },
+        "same_fiber_score": 0.9427676245672146,
+        "same_motif": true
+      },
+      "passed": true,
+      "scenario_id": "KF1-001",
+      "world_family": "protocell"
+    },
+    {
+      "confidence": 0.8554428042276117,
+      "outcome": {
+        "confidence": 0.8554428042276117,
+        "implementation_distance": 0.6034176081106886,
+        "invariant_preserved": true,
+        "magnitude": "medium",
+        "outcome": "O2",
+        "perturbation_kind": "single_coordinate",
+        "provenance": {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "perturbed_trace": "sha256:10bd9caca8a37102689b2e269248fe9f4fc1caff3f8ff3d8082f906b3f6f1f1a",
+          "source_trace": "sha256:9201c3a28c9ac86be8e8e0032e2f2e73b5cf2dc56686964b3411e6249b6f7137"
+        },
+        "same_fiber_score": 0.8217712169104463,
+        "same_motif": true
+      },
+      "passed": true,
+      "scenario_id": "KF1-002",
+      "world_family": "morphogenesis"
+    },
+    {
+      "confidence": 0.9199998977297952,
+      "outcome": {
+        "confidence": 0.9199998977297952,
+        "implementation_distance": 0.0,
+        "invariant_preserved": true,
+        "magnitude": "medium",
+        "outcome": "O1",
+        "perturbation_kind": "single_coordinate",
+        "provenance": {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "perturbed_trace": "sha256:65e9662d90521b52bd63ed880babe38dd2e2cc05246303799e57dfe0ce834730",
+          "source_trace": "sha256:330d33eb666dafcc995a3040ce3626b78cf3bf35508f7f13759d76b33f01a6c0"
+        },
+        "same_fiber_score": 0.9839998465946926,
+        "same_motif": true
+      },
+      "passed": true,
+      "scenario_id": "KF1-003",
+      "world_family": "digital"
+    }
+  ],
+  "schema": "Campaign009PerturbationOutcomeReport.v1"
+}

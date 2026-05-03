@@ -1,0 +1,212 @@
+{
+  "gates": {
+    "G16_reference_harness": {
+      "passed": true,
+      "scenario_count": 21
+    },
+    "G17_three_reference_scenarios": {
+      "passed": true,
+      "worlds": [
+        "W4",
+        "W6",
+        "W7",
+        "W9",
+        "W11",
+        "W12",
+        "W13"
+      ]
+    },
+    "G18_corrupted_trace_failures": {
+      "corrupted_fail_count": 21,
+      "passed": true
+    },
+    "G19_replay_checks": {
+      "passed": true,
+      "row_count": 21,
+      "rows": [
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "positive",
+          "world_id": "W4"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "boundary",
+          "world_id": "W4"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "failure",
+          "world_id": "W4"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "positive",
+          "world_id": "W6"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "boundary",
+          "world_id": "W6"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "failure",
+          "world_id": "W6"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "positive",
+          "world_id": "W7"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "boundary",
+          "world_id": "W7"
+        }
+      ]
+    },
+    "G20_report_schema_stability": {
+      "passed": true,
+      "reference_key_shapes": 3
+    }
+  },
+  "passed": true,
+  "pillar": "reference_harness",
+  "replay_rows": [
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "positive",
+      "world_id": "W4"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "boundary",
+      "world_id": "W4"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "failure",
+      "world_id": "W4"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "positive",
+      "world_id": "W6"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "boundary",
+      "world_id": "W6"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "failure",
+      "world_id": "W6"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "positive",
+      "world_id": "W7"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "boundary",
+      "world_id": "W7"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "failure",
+      "world_id": "W7"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "positive",
+      "world_id": "W9"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "boundary",
+      "world_id": "W9"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "failure",
+      "world_id": "W9"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "positive",
+      "world_id": "W11"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "boundary",
+      "world_id": "W11"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "failure",
+      "world_id": "W11"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "positive",
+      "world_id": "W12"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "boundary",
+      "world_id": "W12"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "failure",
+      "world_id": "W12"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "positive",
+      "world_id": "W13"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "boundary",
+      "world_id": "W13"
+    },
+    {
+      "event_count_deviation": 0,
+      "max_state_deviation": 0.0,
+      "scenario": "failure",
+      "world_id": "W13"
+    }
+  ]
+}

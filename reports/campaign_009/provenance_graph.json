@@ -1,0 +1,21 @@
+{
+  "edges": [
+    {
+      "relation": "locks",
+      "source": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc",
+      "target": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc",
+      "kind": "BasinFloorPreregistration",
+      "path": "papers/prereg/bfg_v0.signed.json"
+    },
+    {
+      "id": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "kind": "EquivalenceBasis",
+      "path": "papers/prereg/bfg_v0.signed.json#equivalence_basis"
+    }
+  ]
+}

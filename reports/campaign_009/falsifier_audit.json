@@ -1,0 +1,51 @@
+{
+  "falsifier": {
+    "evidence": {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.04943882440251886,
+          "ci_low": 0.006142932742565537,
+          "mean": 0.027790878572542196,
+          "width": 0.04329589165995332
+        },
+        "W_floor": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "mean": 1.0,
+          "width": 0.0
+        }
+      },
+      "max_ci_width": 0.04329589165995332,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nfi": {
+        "Conn": 0.972209121427,
+        "D_floor": 0.027790878573,
+        "H_impl": 0.0,
+        "I_inv": 1.0,
+        "L_func": 0.0,
+        "P_equiv": 1.0,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 1.0,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source": "reports/campaign_008/w13_multiscale.json",
+      "source_pair_count": 4,
+      "world_family": "multiscale"
+    },
+    "is_implementation_unique": true,
+    "is_point_attractor": true,
+    "motif_id": "motif.autocatalytic_closure.draft",
+    "routed_path": "papers/falsifiers/bfg_point_attractor_candidate.md",
+    "status": "falsifier_active",
+    "world_family": "multiscale"
+  },
+  "gate": {
+    "passed": true,
+    "routed_path": "papers/falsifiers/bfg_point_attractor_candidate.md"
+  },
+  "passed": true,
+  "schema": "Campaign009FalsifierAudit.v1"
+}

@@ -1,0 +1,216 @@
+{
+  "detections": [
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 301,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    },
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 302,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    },
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 303,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    },
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 304,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    },
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 305,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    },
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 306,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    },
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 307,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    },
+    {
+      "absence_status": "present",
+      "agreement": true,
+      "component_confidences": {
+        "closure.graph_motif.v0": 0.85,
+        "closure.rule_based.v0": 0.9
+      },
+      "confidence": 0.875,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "seed": 308,
+      "triangulation_basis": [
+        "closure.rule_based.v0",
+        "closure.graph_motif.v0"
+      ]
+    }
+  ],
+  "experiment_id": "phase1.closure_recurrence.alpha",
+  "gauntlet": {
+    "checks": {
+      "null_margin_positive": true,
+      "recurrence_floor": true,
+      "sampling_sufficiency_nonzero": true,
+      "triangulation_agreement": true
+    },
+    "claim_status": "candidate",
+    "passed": true,
+    "strength_vector": {
+      "B": 0.775,
+      "C_pred": 0.0,
+      "D": 1.0,
+      "I": 1.0,
+      "P": 1.0,
+      "R": 1.0,
+      "S_obs": 1.0,
+      "X": 1.0
+    }
+  },
+  "mean_confidence": 0.875,
+  "mean_persistence": 1.0,
+  "network_rewire_null": [
+    {
+      "absence_status": "probably_absent",
+      "confidence": 0.1,
+      "seed": 301
+    },
+    {
+      "absence_status": "probably_absent",
+      "confidence": 0.1,
+      "seed": 302
+    },
+    {
+      "absence_status": "probably_absent",
+      "confidence": 0.1,
+      "seed": 303
+    },
+    {
+      "absence_status": "probably_absent",
+      "confidence": 0.1,
+      "seed": 304
+    }
+  ],
+  "null_mean_confidence": 0.1,
+  "scenario_id": "K2-positive-cycle",
+  "seed_shuffle_mean_confidence": 0.9,
+  "seed_shuffle_null": [
+    {
+      "absence_status": "present",
+      "confidence": 0.9,
+      "seed": 301
+    },
+    {
+      "absence_status": "present",
+      "confidence": 0.9,
+      "seed": 302
+    },
+    {
+      "absence_status": "present",
+      "confidence": 0.9,
+      "seed": 303
+    },
+    {
+      "absence_status": "present",
+      "confidence": 0.9,
+      "seed": 304
+    }
+  ],
+  "seeds": [
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308
+  ],
+  "target_runs": 8,
+  "trace_ids": [
+    "sha256:087f98d50aa3086cf2f7d3910d0790a0d38a3196ef33332e00302c04d30e0257",
+    "sha256:7bdabcecbbf89d2aa4a1c67aed2d86616ba774e6e387105870ec82644502283c",
+    "sha256:919eabfe46a30da12f2c210ab50d751bb77d17658e5d39c935c9526295015832",
+    "sha256:6e5748a6e2889be0ca21c9c8ceac61e235c981c9527168b1bff8ae6ee34a5e58",
+    "sha256:1c6e1ed41f5c17f784d480b64ceed6c8a1dee6ee5d2b01973f6b6b1672138ba0",
+    "sha256:27437e8427a49f32e7947ce66b0885f416ee6d1cdc2932ae4700aa43f225069c",
+    "sha256:93b33e7dd5e57485e0d37e25a8154b1d982bcc83676bcd85dc10d60c28c30daf",
+    "sha256:3ee02015a2cdc43ab8195301b7c496bbb4328cb32bddd88fcdecf22045c0cd95"
+  ],
+  "triangulation_agreement": true
+}

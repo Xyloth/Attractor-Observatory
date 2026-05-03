@@ -1,0 +1,43 @@
+{
+  "calibration_corpus_needs": [
+    "K5",
+    "K6",
+    "K8",
+    "K9",
+    "K10"
+  ],
+  "candidate_id": "MC-C006-01-closure_like_production",
+  "detector_binding_plan": [
+    "candidate_beta.trajectory",
+    "candidate_beta.structure_information"
+  ],
+  "draft_id": "DRAFT-MC-C006-01-closure_like_production",
+  "falsifiers": [
+    "fails heldout beta-world recurrence",
+    "fails substrate-erasure transfer",
+    "high dictionary echo"
+  ],
+  "grammar_sketch": [
+    "production",
+    "feedback",
+    "state_motion"
+  ],
+  "mode_tag": "exploratory",
+  "nulls_contested": [
+    "N1",
+    "N2",
+    "N5",
+    "N7"
+  ],
+  "promotion_status": "draft_motif",
+  "red_team_plan": [
+    "event vocabulary shuffle",
+    "static trace",
+    "same appearance different process"
+  ],
+  "required_reviews": [
+    "Architect",
+    "PI",
+    "Red Team"
+  ]
+}

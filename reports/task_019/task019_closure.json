@@ -1,0 +1,197 @@
+{
+  "gate_count": 8,
+  "gates": {
+    "TF1": {
+      "event_types": [
+        "cross_scale_composition_event",
+        "cross_scale_feedback_event",
+        "downscale_event",
+        "downscale_flux_event",
+        "intervention_event",
+        "macro_boundary_event",
+        "projection_lock_event",
+        "scale_separation_event",
+        "upscale_event",
+        "upscale_flux_event"
+      ],
+      "has_cross_scale_ledger": true,
+      "has_inner_fragments": true,
+      "hosted_inner_world_count_max": 5.0,
+      "invariant_ids": [
+        "multiscale.budget_bounded",
+        "multiscale.cross_scale_flux_ledger",
+        "multiscale.inner_world_invariants",
+        "multiscale.nonnegative"
+      ],
+      "passed": true
+    },
+    "TF2": {
+      "event_types": [
+        "action_event",
+        "attention_allocation_event",
+        "energy_budget_event",
+        "external_mark_event",
+        "homeostasis_event",
+        "learning_gain_event",
+        "memory_read_event",
+        "memory_write_event",
+        "prediction_error_event",
+        "prediction_event",
+        "sensor_event"
+      ],
+      "passed": true,
+      "positive_passes": 4,
+      "required_state": [
+        "attention_entropy",
+        "energy",
+        "memory_size",
+        "prediction_error",
+        "sensor_health_mean"
+      ]
+    },
+    "TF3": {
+      "event_types": [
+        "cheat_event",
+        "encounter_event",
+        "engulfment_event",
+        "horizontal_exchange_event",
+        "integration_event",
+        "mutual_stabilisation_event",
+        "nested_division_event",
+        "nested_exchange_event",
+        "nested_subcrn_event",
+        "resource_exchange_event",
+        "sanction_event",
+        "vertical_inheritance_event"
+      ],
+      "has_exchange_channels": true,
+      "has_nested_lineage": true,
+      "passed": true,
+      "positive_passes": 3
+    },
+    "TF4": {
+      "event_types": [
+        "cloud_connectivity_event",
+        "drift_event",
+        "fitness_recovery_event",
+        "indel_event",
+        "innovation_front_event",
+        "mutation_event",
+        "neutral_percolation_event",
+        "neutral_transition_event",
+        "replication_event",
+        "selection_event",
+        "threshold_event"
+      ],
+      "passed": true,
+      "positive_passes": 3,
+      "required_state": [
+        "critical_mutation_estimate",
+        "effective_population_size",
+        "neutral_component_coverage",
+        "population"
+      ]
+    },
+    "TF5": {
+      "audits": {
+        "W10": {
+          "audit_complete": true,
+          "audit_path": "papers\\methods\\SUBSTANCE_AUDIT_W10.md",
+          "audit_verdict": "meets_spec_with_caveats",
+          "line_floor_met": true,
+          "passed": true,
+          "substance_gate_met": true,
+          "world_id": "W10"
+        },
+        "W6": {
+          "audit_complete": true,
+          "audit_path": "papers\\methods\\SUBSTANCE_AUDIT_W6.md",
+          "audit_verdict": "meets_spec_with_caveats",
+          "line_floor_met": false,
+          "passed": true,
+          "substance_gate_met": true,
+          "world_id": "W6"
+        },
+        "W7": {
+          "audit_complete": true,
+          "audit_path": "papers\\methods\\SUBSTANCE_AUDIT_W7.md",
+          "audit_verdict": "meets_spec_with_caveats",
+          "line_floor_met": false,
+          "passed": true,
+          "substance_gate_met": true,
+          "world_id": "W7"
+        },
+        "W9": {
+          "audit_complete": true,
+          "audit_path": "papers\\methods\\SUBSTANCE_AUDIT_W9.md",
+          "audit_verdict": "meets_spec_with_caveats",
+          "line_floor_met": false,
+          "passed": true,
+          "substance_gate_met": true,
+          "world_id": "W9"
+        }
+      },
+      "passed": true
+    },
+    "TF6": {
+      "campaign008_status": "green",
+      "passed": true,
+      "sh3": true
+    },
+    "TF7": {
+      "d14_zero": true,
+      "passed": true,
+      "regression": {
+        "campaigns": {
+          "campaign_002": {
+            "command": "python make_campaign_002.py",
+            "gate_count": 20,
+            "passed_gate_count": 20,
+            "status": "green"
+          },
+          "campaign_005": {
+            "command": "python make_campaign_005.py",
+            "gate_count": 21,
+            "passed_gate_count": 21,
+            "status": "green"
+          },
+          "campaign_006": {
+            "command": "python make_campaign_006.py",
+            "gate_count": 68,
+            "passed_gate_count": 68,
+            "status": "green"
+          },
+          "campaign_007": {
+            "command": "python make_campaign_007.py",
+            "gate_count": 5,
+            "passed_gate_count": 5,
+            "status": "green"
+          },
+          "campaign_008": {
+            "command": "python observatory_cli.py campaign008 --out reports\\campaign_008\\cli_substrate_completion.json",
+            "gate_count": 35,
+            "passed_gate_count": 35,
+            "status": "green"
+          }
+        },
+        "d14_lint": "zero violations through reports/campaign_008/d14_world_audit.json",
+        "passed": true,
+        "pytest": {
+          "command": "python -m pytest -q",
+          "passed": 208,
+          "status": "green",
+          "wall_seconds": 374.41
+        },
+        "schema": "Task019RegressionVerification.v1"
+      }
+    },
+    "TF8": {
+      "artifact": "papers/methods/TRUTH_PASS.md",
+      "passed": true
+    }
+  },
+  "passed_gate_count": 8,
+  "schema": "Task019ClosureReport.v1",
+  "status": "green",
+  "task_id": "TASK-019"
+}

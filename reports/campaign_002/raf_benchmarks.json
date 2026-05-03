@@ -1,0 +1,196 @@
+{
+  "benchmark_count": 6,
+  "gate_id": "G3",
+  "name": "Hordijk-Steel RAF canonical benchmarks",
+  "passed": true,
+  "passed_count": 6,
+  "rows": [
+    {
+      "benchmark_id": "HS04-2-step-autocatalytic-core",
+      "checks": {
+        "closure_depth": true,
+        "maximal_raf_size": true,
+        "minimal_raf_count": true
+      },
+      "expected": {
+        "closure_depth": 2,
+        "maximal_raf_size": 2,
+        "minimal_raf_count": 1
+      },
+      "notes": "Figure-2-style food-generated RAF core: A -> B -> C, catalysed by produced molecules.",
+      "observed": {
+        "closure_depth": 2,
+        "maximal_raf_size": 2,
+        "minimal_raf_count": 1,
+        "minimal_rafs": [
+          {
+            "closure_depth": 2,
+            "raf_reactions": [
+              "r1",
+              "r2"
+            ],
+            "raf_size": 2
+          }
+        ]
+      },
+      "passed": true,
+      "scenario_id": "RAF-HS04-2-step"
+    },
+    {
+      "benchmark_id": "Mossel-Steel-no-RAF-control",
+      "checks": {
+        "closure_depth": true,
+        "maximal_raf_size": true,
+        "minimal_raf_count": true
+      },
+      "expected": {
+        "closure_depth": 0,
+        "maximal_raf_size": 0,
+        "minimal_raf_count": 0
+      },
+      "notes": "Food-generated chemistry whose catalysts are neither food nor products.",
+      "observed": {
+        "closure_depth": 0,
+        "maximal_raf_size": 0,
+        "minimal_raf_count": 0,
+        "minimal_rafs": []
+      },
+      "passed": true,
+      "scenario_id": "RAF-no-control"
+    },
+    {
+      "benchmark_id": "nested-RAF-depth-4",
+      "checks": {
+        "closure_depth": true,
+        "maximal_raf_size": true,
+        "minimal_raf_count": true
+      },
+      "expected": {
+        "closure_depth": 4,
+        "maximal_raf_size": 4,
+        "minimal_raf_count": 1
+      },
+      "notes": "A two-reaction RAF core unlocks a second dependent RAF layer.",
+      "observed": {
+        "closure_depth": 4,
+        "maximal_raf_size": 4,
+        "minimal_raf_count": 1,
+        "minimal_rafs": [
+          {
+            "closure_depth": 2,
+            "raf_reactions": [
+              "r1",
+              "r2"
+            ],
+            "raf_size": 2
+          }
+        ]
+      },
+      "passed": true,
+      "scenario_id": "RAF-nested-depth-4"
+    },
+    {
+      "benchmark_id": "two-independent-minimal-RAFs",
+      "checks": {
+        "closure_depth": true,
+        "maximal_raf_size": true,
+        "minimal_raf_count": true
+      },
+      "expected": {
+        "closure_depth": 2,
+        "maximal_raf_size": 4,
+        "minimal_raf_count": 2
+      },
+      "notes": "Two disconnected food-generated RAF components in one reaction system.",
+      "observed": {
+        "closure_depth": 2,
+        "maximal_raf_size": 4,
+        "minimal_raf_count": 2,
+        "minimal_rafs": [
+          {
+            "closure_depth": 2,
+            "raf_reactions": [
+              "r1",
+              "r2"
+            ],
+            "raf_size": 2
+          },
+          {
+            "closure_depth": 2,
+            "raf_reactions": [
+              "r3",
+              "r4"
+            ],
+            "raf_size": 2
+          }
+        ]
+      },
+      "passed": true,
+      "scenario_id": "RAF-two-components"
+    },
+    {
+      "benchmark_id": "parasite-resistant-core",
+      "checks": {
+        "closure_depth": true,
+        "maximal_raf_size": true,
+        "minimal_raf_count": true
+      },
+      "expected": {
+        "closure_depth": 2,
+        "maximal_raf_size": 3,
+        "minimal_raf_count": 1
+      },
+      "notes": "The maxRAF includes a parasitic side reaction, while the smallest subRAF excludes it.",
+      "observed": {
+        "closure_depth": 2,
+        "maximal_raf_size": 3,
+        "minimal_raf_count": 1,
+        "minimal_rafs": [
+          {
+            "closure_depth": 2,
+            "raf_reactions": [
+              "r1",
+              "r2"
+            ],
+            "raf_size": 2
+          }
+        ]
+      },
+      "passed": true,
+      "scenario_id": "RAF-parasite-resistant-core"
+    },
+    {
+      "benchmark_id": "HS04-7-reaction-layered-fragment",
+      "checks": {
+        "closure_depth": true,
+        "maximal_raf_size": true,
+        "minimal_raf_count": true
+      },
+      "expected": {
+        "closure_depth": 4,
+        "maximal_raf_size": 7,
+        "minimal_raf_count": 1
+      },
+      "notes": "Small layered binary-polymer-style fragment with a four-hop catalytic dependency chain.",
+      "observed": {
+        "closure_depth": 4,
+        "maximal_raf_size": 7,
+        "minimal_raf_count": 1,
+        "minimal_rafs": [
+          {
+            "closure_depth": 4,
+            "raf_reactions": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ],
+            "raf_size": 4
+          }
+        ]
+      },
+      "passed": true,
+      "scenario_id": "RAF-HS04-7-layered"
+    }
+  ]
+}

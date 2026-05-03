@@ -1,0 +1,134 @@
+{
+  "gate": {
+    "motif_count": 3,
+    "passed": true,
+    "substrates_each_min": 3
+  },
+  "passed": true,
+  "rows": [
+    {
+      "families": [
+        "crn",
+        "origins_chemistry",
+        "hypergraph_reactions"
+      ],
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "passed": true,
+      "signature": {
+        "consistent_under_substrate_blind": true,
+        "matches_above_threshold": [
+          "crn::hypergraph_reactions",
+          "crn::origins_chemistry",
+          "origins_chemistry::hypergraph_reactions"
+        ],
+        "signature_distance": {
+          "crn::hypergraph_reactions": 0.502714295559,
+          "crn::origins_chemistry": 0.50115981015,
+          "origins_chemistry::hypergraph_reactions": 0.001554485409
+        },
+        "similarity_threshold": 0.55,
+        "substrate_blind_signature": {
+          "basis": "substrate_blind_bfg_v0",
+          "motif_id": "motif.autocatalytic_closure.draft"
+        },
+        "substrate_pairs": [
+          [
+            "crn",
+            "origins_chemistry"
+          ],
+          [
+            "crn",
+            "hypergraph_reactions"
+          ],
+          [
+            "origins_chemistry",
+            "hypergraph_reactions"
+          ]
+        ]
+      }
+    },
+    {
+      "families": [
+        "protocell",
+        "cognitive",
+        "multiscale"
+      ],
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "passed": true,
+      "signature": {
+        "consistent_under_substrate_blind": true,
+        "matches_above_threshold": [
+          "cognitive::multiscale",
+          "protocell::cognitive",
+          "protocell::multiscale"
+        ],
+        "signature_distance": {
+          "cognitive::multiscale": 0.12225912221,
+          "protocell::cognitive": 0.275817442317,
+          "protocell::multiscale": 0.217211684433
+        },
+        "similarity_threshold": 0.55,
+        "substrate_blind_signature": {
+          "basis": "substrate_blind_bfg_v0",
+          "motif_id": "motif.self_maintained_boundary.draft"
+        },
+        "substrate_pairs": [
+          [
+            "protocell",
+            "cognitive"
+          ],
+          [
+            "protocell",
+            "multiscale"
+          ],
+          [
+            "cognitive",
+            "multiscale"
+          ]
+        ]
+      }
+    },
+    {
+      "families": [
+        "digital",
+        "quasispecies",
+        "symbiogenesis"
+      ],
+      "motif_id": "motif.self_replication_lineage.draft",
+      "passed": true,
+      "signature": {
+        "consistent_under_substrate_blind": true,
+        "matches_above_threshold": [
+          "digital::quasispecies",
+          "digital::symbiogenesis",
+          "quasispecies::symbiogenesis"
+        ],
+        "signature_distance": {
+          "digital::quasispecies": 0.471929636028,
+          "digital::symbiogenesis": 0.44046466121,
+          "quasispecies::symbiogenesis": 0.190757247405
+        },
+        "similarity_threshold": 0.55,
+        "substrate_blind_signature": {
+          "basis": "substrate_blind_bfg_v0",
+          "motif_id": "motif.self_replication_lineage.draft"
+        },
+        "substrate_pairs": [
+          [
+            "digital",
+            "quasispecies"
+          ],
+          [
+            "digital",
+            "symbiogenesis"
+          ],
+          [
+            "quasispecies",
+            "symbiogenesis"
+          ]
+        ]
+      }
+    }
+  ],
+  "schema": "Campaign009CrossSubstrateSignatures.v1"
+}

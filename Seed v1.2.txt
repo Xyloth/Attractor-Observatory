@@ -1,0 +1,1227 @@
+Seed v1.2
+
+Yes. I reviewed Claude’s v1.1 as the first serious expansion of v1.0, and the verdict is:
+
+# Claude understood the project. But v1.1 is too much “institutional science defense layer” and not enough “ambitious builder doctrine.”
+
+It is good. Very good. It caught many things that v1.0 only gestured at: the reformulated AttractorStrength score, the versioned `SystemTrace`, operational formal-coverage testing, calibration corpora, null-model hierarchy, preregistration, biology-bias correction, risk register, and Codex task atoms. Those are real upgrades and should be preserved. 
+
+But v1.1 has one major flaw:
+
+> It overcorrects toward restriction.
+
+That is exactly the thing you warned about.
+
+Claude took the seed and did what a cautious senior research architect would do: built guardrails, gates, falsifiers, phase exits, red flags, disallowed behaviors, and hard requirements. That is useful for scientific credibility, but if we hand it directly to Codex as-is, it may compress Codex’s ambition into compliance behavior.
+
+So v1.2 should not reject v1.1. It should **reclassify its constraints**.
+
+The move is:
+
+```text
+v1.1 constraints → v1.2 scientific invariants
+v1.1 task limits → v1.2 minimum success floors
+v1.1 red flags → v1.2 review triggers
+v1.1 phase gates → v1.2 claim-upgrade gates, not creativity gates
+```
+
+That distinction matters.
+
+We are not saying “ignore rigor.”
+
+We are saying:
+
+> Rigor protects claims. It should not shrink builders.
+
+---
+
+# My top-level review
+
+Claude’s v1.1 is strongest in five places:
+
+## 1. The trace-first architecture is correct
+
+This sentence from v1.1 is dead-on:
+
+> The trace is the artifact.
+
+That should become canon.
+
+Worlds will evolve. Detectors will be rewritten. Formal lenses will mutate. But the trace/provenance/motif-observation layer is the permanent scientific record.
+
+Keep this completely.
+
+## 2. Calibration corpora are a major upgrade
+
+The positive, negative, drift, and adversarial calibration-world idea is excellent.
+
+This prevents the Observatory from becoming a “pattern finder that finds whatever it was built to find.”
+
+Keep it.
+
+But I would expand it in v1.2 with one more corpus:
+
+```text
+K5 — Ambiguous / knife-edge corpus
+```
+
+Not positive. Not negative. Borderline cases where even the correct answer is graded as uncertain.
+
+This matters because real biology will often be ambiguous. The detector must learn not just “present” and “absent,” but **epistemic humility**.
+
+## 3. Formal coverage as round-trip testing is excellent
+
+Claude correctly turned “graph theory: partial, topology: partial” into an operational test:
+
+```text
+encode → decode → predict
+```
+
+That is much stronger than vibes.
+
+Keep it.
+
+But add a “complexity penalty.” A formal lens should not get full credit if it only succeeds by encoding the whole trace in disguise.
+
+So v1.2 should add:
+
+```text
+Coverage must reward compression, not merely representability.
+```
+
+A lens that says “I can represent anything by storing everything” is not a theory. It is a file format.
+
+## 4. The null-model hierarchy is necessary
+
+This is one of the most reviewer-proof parts of v1.1.
+
+Keep it.
+
+Especially:
+
+```text
+seed-shuffle
+network-rewire
+lineage-shuffle
+phylogenetic block bootstrap
+adversarial-world null
+detector-permutation null
+```
+
+Those are credibility multipliers.
+
+## 5. The biology layer is appropriately suspicious
+
+Claude correctly identifies the killers:
+
+```text
+phylogenetic non-independence
+fossil sampling bias
+occurrence sampling bias
+trait-coding heterogeneity
+absence-as-zero
+look-elsewhere effects
+definition drift
+```
+
+Keep all of this.
+
+The one thing I would change: biology should not wait until Phase 6 to exist. Full biology grounding can be late, but a **biology shadow track** should begin early.
+
+More on that below.
+
+---
+
+# The central correction for v1.2
+
+The most important v1.2 change:
+
+# Add the No Artificial Ceiling Doctrine as an architectural principle
+
+Claude’s v1.1 has task sizing and red flags, but it lacks the doctrine you just made canon.
+
+That doctrine needs to appear near the top of v1.2, before module boundaries, before task atoms, before Codex instructions.
+
+I would insert this as **Section 0.1**:
+
+```text
+0.1 No Artificial Ceiling Doctrine
+
+Every specification, task description, architecture note, and implementation request is a seed and a minimum standard, not a ceiling.
+
+Scientific invariants protect claims; they do not limit implementation ambition.
+
+A coder may exceed the requested scope when doing so improves correctness, observability, extensibility, testing, reproducibility, or scientific value.
+
+Task boundaries define the minimum successful artifact, not the maximum permissible contribution.
+
+Review exists to refine ambitious work, not to prevent it.
+
+The project prefers overbuilt, well-instrumented, creatively rigorous implementations that can be pruned over narrow compliance implementations that must be repeatedly expanded.
+
+Seed, not ceiling.
+Minimum, not maximum.
+Trust the builder.
+```
+
+Then every Codex task atom should include:
+
+```text
+minimum_success:
+builder_expansion_authority:
+suggested_extensions:
+review_triggers:
+claim_safety_invariants:
+```
+
+Not just:
+
+```text
+out_of_scope
+red_flags
+```
+
+Because “out_of_scope” and “red_flags” are psychologically shrinking fields.
+
+Replace them with:
+
+```text
+claim_safety_invariants
+review_triggers
+```
+
+That preserves rigor without capping ambition.
+
+---
+
+# The biggest issue in Claude’s v1.1
+
+## It confuses “phase gates for scientific claims” with “phase gates for building”
+
+Claude says things like:
+
+```text
+No simulation runs in Phase 0.
+Phase exits only when all named artifacts are live.
+There is no “we’ll fix that later.”
+XL tasks are decomposed. Codex never sees an XL.
+```
+
+This is the old regime.
+
+For public scientific claims, yes: gates matter.
+
+For exploration and building, no: gates can become oxygen deprivation.
+
+v1.2 should split the project into two modes:
+
+# 1. Exploratory build mode
+
+Purpose:
+
+```text
+discover
+prototype
+stress test
+invent
+overbuild
+surface unknowns
+```
+
+Rules:
+
+```text
+fast iteration
+ambitious tasks allowed
+messy prototypes allowed if labeled
+creative extensions encouraged
+all artifacts tagged exploratory
+no public claims
+```
+
+# 2. Claim-bearing mode
+
+Purpose:
+
+```text
+publish
+compare
+validate
+make scientific claims
+release atlas entries
+upgrade rung level
+```
+
+Rules:
+
+```text
+pre-registration
+calibration
+nulls
+provenance
+determinism
+bias correction
+review
+```
+
+This solves the contradiction.
+
+Claude’s rigor belongs to **claim-bearing mode**.
+
+Your builder doctrine belongs to **exploratory build mode**.
+
+Both are needed.
+
+v1.2 should say:
+
+```text
+No phase gate may block exploratory implementation.
+Phase gates only block claim promotion.
+```
+
+That is the key sentence.
+
+---
+
+# My v1.2 amendments
+
+Here is what I would add or change.
+
+---
+
+## Amendment 1 — Add “Exploratory / Claim-Bearing” artifact labels
+
+Every output should carry a claim status:
+
+```text
+exploratory
+candidate
+validated
+claim-bearing
+published
+deprecated
+```
+
+This applies to:
+
+```text
+worlds
+detectors
+motifs
+traces
+scores
+formal lenses
+biology mappings
+atlas entries
+figures
+papers
+```
+
+This lets Codex build aggressively without contaminating science.
+
+Example:
+
+```text
+A new swarm-world detector may be brilliant but exploratory.
+It can exist.
+It can be tested.
+It can inspire architecture.
+It just cannot support an L3 claim yet.
+```
+
+That is better than banning it.
+
+---
+
+## Amendment 2 — Change Codex task atoms
+
+Claude’s task atom is good, but too compliance-shaped.
+
+v1.2 task atom should be:
+
+```text
+TaskAtom = {
+  id:
+  title:
+  ambition_class: {foundation, expansion, exploratory, claim-bearing}
+  minimum_success:
+  builder_expansion_authority:
+  suggested_extensions:
+  module:
+  rationale:
+  inputs:
+  expected_outputs:
+  acceptance_tests:
+  optional_stretch_tests:
+  invariants_to_preserve:
+  telemetry_to_emit:
+  review_triggers:
+  known_risks:
+  dependencies:
+  estimated_complexity_1_to_10:
+  estimated_time:
+  actual_time:
+  estimation_delta:
+  scope_delta:
+  builder_notes:
+}
+```
+
+Key additions:
+
+```text
+builder_expansion_authority
+optional_stretch_tests
+estimated vs actual telemetry
+scope_delta
+```
+
+Remove or soften:
+
+```text
+out_of_scope
+red_flags
+Codex never sees XL
+```
+
+Replace with:
+
+```text
+review_triggers
+invariants_to_preserve
+```
+
+That says:
+
+> Build ambitiously, but preserve the scientific invariants.
+
+Not:
+
+> Stay inside this box.
+
+---
+
+## Amendment 3 — Add AI-collaborator telemetry
+
+Claude added audit telemetry, detector telemetry, world telemetry, and sampling telemetry.
+
+Good.
+
+But it missed the obvious telemetry for this actual project:
+
+# AI builder telemetry
+
+This should be first-class.
+
+Track:
+
+```text
+model_name
+task_id
+task_prompt_hash
+spec_version_read
+estimated_complexity
+estimated_time
+actual_time
+files_changed
+tests_added
+tests_passed
+failure_count
+self-reported_confidence
+human_score
+underbuild_score
+overbuild_score
+useful_initiative_score
+regression_count
+revision_count
+final_acceptance
+```
+
+Add derived metrics:
+
+```text
+estimation_delta = actual_time / estimated_time
+scope_delta = actual_files_changed / expected_files_changed
+underbuild_index = human_requested_expansions_after_completion
+initiative_index = useful_unrequested_improvements
+rework_index = revisions_needed / task_size
+```
+
+This directly supports your Codex calibration loop.
+
+Create:
+
+```text
+project_telemetry/ai_builder_tasks.jsonl
+project_telemetry/model_calibration_report.md
+project_telemetry/scope_estimation_deltas.csv
+```
+
+Every future Codex session reads the last N task records and adjusts its sizing.
+
+That is not just management telemetry. It is part of the human-AI research system.
+
+---
+
+## Amendment 4 — Add a Research Memory Ledger
+
+Claude has provenance for artifacts.
+
+It does not yet have enough provenance for **ideas**.
+
+This project will generate conceptual branches constantly. If they are not captured, they will vanish or get rediscovered.
+
+Add:
+
+```text
+research_memory/
+  decision_log.md
+  hypothesis_ledger.md
+  rejected_ideas.md
+  open_questions.md
+  concept_glossary.md
+  motif_candidate_journal.md
+  formal_gap_journal.md
+```
+
+Each entry should include:
+
+```text
+date
+author/model
+spec version
+idea
+why it matters
+status
+evidence
+counterargument
+next action
+linked artifacts
+```
+
+This matters because the Observatory is not only software. It is an evolving research program.
+
+The intellectual trace should be as real as the simulation trace.
+
+---
+
+## Amendment 5 — Add two motif pipelines, not one
+
+Claude’s motif registry is too registry-first.
+
+That works for known motifs:
+
+```text
+closure
+boundary
+branching
+memory
+repair
+replication
+```
+
+But the whole point is to discover things we do not already know how to name.
+
+So v1.2 should define two motif pipelines:
+
+# A. Hypothesis-driven motif pipeline
+
+Uses registered motif grammar.
+
+Good for:
+
+```text
+closure
+boundary
+memory
+branching
+repair
+convergence benchmarks
+```
+
+# B. Emergent motif candidate pipeline
+
+Uses unsupervised / weakly supervised discovery.
+
+Good for:
+
+```text
+unknown recurrent structures
+weird attractor families
+hidden process-forms
+formal-deficit candidates
+```
+
+Emergent candidates should begin as:
+
+```text
+MotifCandidate
+```
+
+not immediately:
+
+```text
+RegisteredMotif
+```
+
+Candidate schema:
+
+```text
+MotifCandidate = {
+  candidate_id:
+  discovered_by:
+  evidence_clusters:
+  recurrence_profile:
+  worlds_present:
+  possible_interpretations:
+  nearest_registered_motifs:
+  novelty_score:
+  compression_gain:
+  human_notes:
+  promotion_status:
+}
+```
+
+Promotion path:
+
+```text
+candidate → audited candidate → registered draft motif → active motif
+```
+
+This is crucial. Otherwise the Observatory will mostly find what its grammar already expects.
+
+---
+
+## Amendment 6 — Biology should start as a shadow track in Phase 0
+
+Claude places full biology grounding in Phase 6. That is fine for major claims.
+
+But waiting until Phase 6 risks building a trace language that is elegant for simulations and awkward for actual biology.
+
+So v1.2 should add:
+
+# Biology Shadow Track
+
+From Phase 0 onward, maintain a tiny biological anchor set:
+
+```text
+photoreception
+flight
+branching transport
+eusociality
+segmentation
+autocatalytic metabolic closure
+externalized memory
+```
+
+Not for claims.
+
+For schema pressure.
+
+At every phase, ask:
+
+```text
+Can our trace/motif schema represent the biological anchor set without hacks?
+Can absence semantics handle it?
+Can confidence represent it?
+Can formal lenses encode it?
+Can the atlas display it?
+```
+
+This prevents the simulation side from drifting into beautiful irrelevance.
+
+---
+
+## Amendment 7 — Add “negative space” as a first-class output
+
+Claude mentions negative space, but v1.2 should elevate it.
+
+The Observatory should not only ask:
+
+```text
+What exists?
+```
+
+It should also ask:
+
+```text
+What should exist but does not?
+What is stable in simulation but absent in biology?
+What is common in biology but hard to generate in simulation?
+What appears in one substrate but never transfers?
+What is mathematically clean but biologically rare?
+What is biologically common but mathematically awkward?
+```
+
+Create a registry:
+
+```text
+negative_space/
+  predicted_empty_basins.md
+  simulation_only_attractors.md
+  biology_only_motifs.md
+  math_only_structures.md
+  unexplained_absences.md
+```
+
+This could become one of the project’s most valuable outputs.
+
+A missing biological example is not necessarily failure. It may be:
+
+```text
+sampling gap
+physical impossibility
+historical contingency
+bad simulator
+bad motif definition
+undiscovered life-form class
+```
+
+That is research fuel.
+
+---
+
+## Amendment 8 — Reframe AttractorStrength as multi-objective first, scalar second
+
+Claude improved the v1.0 product score into a weighted log-additive composite. That is good.
+
+But v1.2 should go one step further:
+
+> The vector is primary. The scalar is a report convenience.
+
+The score should always show:
+
+```text
+R recurrence
+P persistence
+B basin width
+X cross-family transfer
+D implementation diversity
+I detector-ablation invariance
+C_pred predictive contribution
+S_obs sampling sufficiency
+F formal coverage
+G formal gap
+```
+
+But candidate attractors should also be ranked by Pareto status:
+
+```text
+Pareto-dominant
+Pareto-front
+specialist attractor
+weak candidate
+unstable artifact
+```
+
+Reason:
+
+A motif that is low-cross-family but extremely deep in one substrate may still matter.
+
+A motif that is broad but shallow may also matter.
+
+One scalar can hide this.
+
+So v1.2 should say:
+
+```text
+AttractorStrength is reported as a vector and optionally projected to scalar summaries for specific claims.
+No scalar ranking is canonical across all use cases.
+```
+
+---
+
+## Amendment 9 — Add “compression failure” discipline to the formal-math layer
+
+Claude’s Formal Coverage is strong, but v1.2 should sharpen “missing math” further.
+
+A formal deficit should require:
+
+```text
+high motif strength
+high recurrence
+biological relevance or cross-substrate recurrence
+low coverage across existing lenses
+positive compression gain from motif naming
+predictive value not explained by simpler baselines
+failure not due to bad implementation of the lens
+```
+
+Add this test:
+
+# Residual structure test
+
+After the best existing formal lens explains what it can, does the residual still contain recurring structure?
+
+If yes, that is stronger evidence of a formal gap.
+
+If no, then the “gap” was just bad representation.
+
+This matters because the project cannot declare “missing math” merely because current code cannot encode something.
+
+---
+
+## Amendment 10 — Expand calibration corpora
+
+v1.1 has:
+
+```text
+positive
+negative
+drift
+adversarial
+```
+
+Add:
+
+```text
+ambiguous / knife-edge
+out-of-distribution
+multi-scale
+semantically equivalent / syntactically different
+syntactically similar / semantically different
+```
+
+Why?
+
+Because a good detector must distinguish:
+
+```text
+same process, different appearance
+different process, same appearance
+```
+
+That is the heart of substrate-neutrality.
+
+---
+
+## Amendment 11 — Add “exploratory worlds” instead of deferring them away
+
+Claude defers economy/market worlds, LLM-agent worlds, astrophysical worlds.
+
+For claim-bearing science, yes.
+
+But under the No Artificial Ceiling Doctrine, we should not ban them from exploratory work.
+
+v1.2 should define:
+
+```text
+Core Worlds
+Exploratory Worlds
+Quarantined Worlds
+Retired Worlds
+```
+
+Core worlds can support claims.
+
+Exploratory worlds can inspire motifs, stress schemas, and generate candidate patterns.
+
+Quarantined worlds are allowed but cannot affect claim-bearing results.
+
+This lets us explore without contaminating the science.
+
+Example:
+
+```text
+LLM-agent worlds may be quarantined until contamination and anthropomorphic-bias risks are characterized.
+```
+
+That is better than “out of scope.”
+
+---
+
+# The places I disagree with Claude most strongly
+
+## 1. “Codex never sees an XL”
+
+No.
+
+That directly violates the canon.
+
+Better:
+
+```text
+XL tasks may be assigned when they are framed as ambitious build campaigns with clear minimum success, expansion authority, and telemetry. Codex must self-report intended scope, complexity, and estimated duration before beginning, then compare actual execution afterward.
+```
+
+We are not protecting Codex from ambition.
+
+We are calibrating it into ambition.
+
+## 2. “No simulation runs in Phase 0”
+
+For claim-bearing science, fine.
+
+For exploratory architecture, too restrictive.
+
+Better:
+
+```text
+Phase 0 may include non-scientific contract-validation worlds and exploratory throwaway worlds, clearly labeled as non-claim-bearing.
+```
+
+The first code should probably include a “hello-world universe,” but we should also let Codex build a serious vertical slice if it sees a clean path.
+
+## 3. “There is no ‘we’ll fix that later’ between phases”
+
+As written, this invites paralysis.
+
+Better:
+
+```text
+Deferrals are allowed if explicitly logged, assigned a severity, and prevented from supporting claim-bearing outputs until resolved.
+```
+
+That keeps the system honest without freezing it.
+
+## 4. “Casual use of ‘missing math’ is forbidden”
+
+For public artifacts, yes.
+
+For internal brainstorming, no.
+
+Better:
+
+```text
+In public or claim-bearing artifacts, “missing math” is reserved for L5+ claims. In internal exploratory notes, it may be used as a hypothesis label when clearly marked speculative.
+```
+
+You do not want to strangle the conceptual engine.
+
+---
+
+# What v1.1 missed
+
+Here are the overlooked nice-to-haves I would add.
+
+## 1. Model-to-model debate logs
+
+Since you are using Claude, Codex, and me, keep a structured debate trail:
+
+```text
+ai_review/
+  claude_architecture_reviews/
+  gpt_theory_reviews/
+  codex_build_reviews/
+  disagreements/
+  resolved_disagreements/
+```
+
+Each major disagreement gets:
+
+```text
+claim
+Claude position
+GPT position
+Codex position, if relevant
+human decision
+reason
+future revisit trigger
+```
+
+This will prevent silent drift.
+
+## 2. Spec lineage
+
+Every spec should have lineage:
+
+```text
+v1.0 — GPT seed architecture
+v1.1 — Claude expansion
+v1.2 — GPT critique and merge
+v1.3 — Codex implementation feedback
+v1.4 — first build reality correction
+```
+
+Add a changelog:
+
+```text
+spec/CHANGELOG.md
+spec/lineage.json
+```
+
+## 3. Instrument health score
+
+Claude has telemetry dashboards, but add a simple health aggregate:
+
+```text
+InstrumentHealth = {
+  determinism_health
+  calibration_health
+  provenance_health
+  detector_health
+  coverage_health
+  storage_health
+  claim_hygiene_health
+}
+```
+
+This is not scientific evidence. It is “is the observatory itself behaving?”
+
+## 4. Claim ledger
+
+Every claim should be an object.
+
+```text
+Claim = {
+  claim_id:
+  text:
+  rung:
+  status:
+  evidence:
+  nulls_contested:
+  preregistration:
+  supporting_traces:
+  supporting_motifs:
+  falsifiers:
+  known_weaknesses:
+  public_allowed:
+}
+```
+
+This prevents accidental overclaiming.
+
+## 5. World usefulness scoring
+
+Some worlds will be beautiful but unhelpful.
+
+Score worlds by:
+
+```text
+trace quality
+motif yield
+calibration value
+cross-family transfer value
+biological relevance
+formal-lens stress value
+compute cost
+failure insight value
+```
+
+This is not to constrain building. It is to learn which worlds are pulling their weight.
+
+## 6. “Failure artifacts”
+
+Failures should be saved as first-class things:
+
+```text
+failed_runs/
+failed_detectors/
+failed_formal_lenses/
+failed_motifs/
+failed_predictions/
+```
+
+A failed detector that hallucinates closure in noise is not garbage. It is a training signal.
+
+---
+
+# Recommended v1.2 structure
+
+I would produce **Attractor Observatory v1.2** with this structure:
+
+```text
+0. Preamble: v1.2 philosophy
+0.1 No Artificial Ceiling Doctrine
+0.2 Exploratory vs Claim-Bearing Mode
+0.3 Spec lineage and roles
+
+1. Research framing
+1.1 North-star claim
+1.2 Claim ladder
+1.3 Falsifiers
+1.4 Success and dignified failure
+
+2. Architecture
+2.1 Planes
+2.2 Trace-first design
+2.3 Provenance
+2.4 Artifact status labels
+
+3. Human-AI operating system
+3.1 Human PI role
+3.2 Claude architecture role
+3.3 GPT theory/review role
+3.4 Codex builder role
+3.5 AI-builder telemetry
+3.6 Debate and decision logs
+
+4. Data plane
+4.1 SystemTrace
+4.2 MotifObservation
+4.3 Claim objects
+4.4 Research Memory Ledger
+
+5. World ensemble
+5.1 Core worlds
+5.2 Calibration worlds
+5.3 Exploratory/quarantined worlds
+5.4 World usefulness scoring
+
+6. Motif system
+6.1 Registered motif grammar
+6.2 Emergent motif candidate pipeline
+6.3 Detector calibration
+6.4 Cross-detector triangulation
+6.5 Ambiguity handling
+
+7. Scoring
+7.1 AttractorStrength vector
+7.2 Pareto ranking
+7.3 Formal Coverage
+7.4 Formal Gap
+7.5 Residual structure test
+
+8. Search and simulation
+8.1 Sampling strategies
+8.2 Novelty and quality-diversity
+8.3 Negative-space mining
+8.4 Perturbation campaigns
+
+9. Biology grounding
+9.1 Biology shadow track
+9.2 Full grounding layer
+9.3 Bias corrections
+9.4 Held-out clades
+9.5 Negative biological space
+
+10. Validation
+10.1 Calibration corpora
+10.2 Null hierarchy
+10.3 Red-team protocol
+10.4 Preregistration for claim-bearing artifacts
+
+11. Telemetry
+11.1 Scientific telemetry
+11.2 Engineering telemetry
+11.3 AI-builder telemetry
+11.4 Method-health dashboard
+11.5 Instrument health score
+
+12. Roadmap
+12.1 Exploratory build roadmap
+12.2 Claim-bearing roadmap
+12.3 First flagship vertical slice
+
+13. Codex task doctrine
+13.1 Seed-not-ceiling task atoms
+13.2 Minimum success and expansion authority
+13.3 Estimation calibration loop
+13.4 Acceptance and review
+
+14. Risk register
+15. Open questions
+16. Immediate next actions
+```
+
+That would be a better v1.2.
+
+---
+
+# The first build should not be tiny
+
+Claude’s Phase 0 is safe. Too safe.
+
+The first Codex build should be a **serious vertical slice**, not a toy.
+
+I would define the first build campaign as:
+
+# Campaign 001 — Observatory Spine
+
+Minimum success:
+
+```text
+project skeleton
+spec loader
+trace schema draft
+manifest schema
+provenance primitives
+RNG discipline
+telemetry sink
+hello-world world
+CRN mini-world
+K2 closure calibration seed
+closure detector v0
+trace writer/reader
+basic verifier
+task telemetry logger
+first replayable run
+```
+
+Expansion authority:
+
+```text
+Codex may add architecture, tests, dashboards, richer schemas, CLI tooling,
+developer docs, visualization, better calibration scenarios, or improved
+module boundaries if they strengthen the project.
+```
+
+Definition of done:
+
+```text
+One command creates a reproducible CRN trace.
+One command verifies it.
+One command runs closure detection.
+One command emits a MotifObservation.
+One command writes a task telemetry record.
+```
+
+That is not a toy.
+
+That is the first vertebra.
+
+---
+
+# The v1.2 instruction to Claude
+
+I would send Claude this:
+
+```text
+Your v1.1 is strong and mostly accepted as the scientific rigor expansion of v1.0.
+
+However, v1.2 must incorporate the No Artificial Ceiling Doctrine. The project does not want coder-facing constraints that cause underbuilding. Reclassify hard constraints as scientific invariants, review triggers, or claim-upgrade gates. Do not use phase gates to block exploratory implementation. Phase gates should block claim promotion, not builder creativity.
+
+Produce v1.2 by preserving the rigor of v1.1 while adding:
+
+1. No Artificial Ceiling Doctrine as a top-level principle.
+2. Exploratory vs Claim-Bearing artifact modes.
+3. AI-builder telemetry and Codex estimation calibration.
+4. Research Memory Ledger and decision/debate logs.
+5. Emergent motif candidate pipeline separate from registered motifs.
+6. Biology shadow track beginning in Phase 0.
+7. Negative-space registry.
+8. Pareto/vector treatment of AttractorStrength.
+9. Residual structure test for formal deficits.
+10. Expanded calibration corpora including ambiguous/knife-edge and OOD cases.
+11. Exploratory/quarantined worlds rather than hard deferrals.
+12. Revised Codex task atoms with minimum_success and builder_expansion_authority.
+13. First build campaign: Observatory Spine.
+
+Preserve scientific rigor. Remove artificial ceilings. Trust the builder.
+```
+
+---
+
+# My final judgment
+
+Claude’s v1.1 should **not** be thrown away.
+
+It should become the rigor substrate.
+
+But v1.2 needs to restore the thing that makes this project dangerous in the good way:
+
+> We are not building a compliance machine.
+> We are building an observatory that can discover things its designers did not know how to ask for.
+
+So the v1.2 merge principle is:
+
+```text
+Keep Claude’s rigor.
+Add your builder doctrine.
+Separate exploratory freedom from claim-bearing discipline.
+Make the trace permanent.
+Make the AI-collaboration telemetry first-class.
+Create room for discoveries outside the registered grammar.
+```
+
+That gives us the right next version.

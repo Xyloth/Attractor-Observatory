@@ -1,0 +1,162 @@
+{
+  "benchmark_rows": [
+    {
+      "benchmark": "copy_loop",
+      "equ_task_count": 0.0,
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "replication_event",
+        "task_completion_event"
+      ],
+      "expected_regime": "Canonical allocate/copy/divide organisms should replicate with bounded mutation.",
+      "final_population": 8.0,
+      "max_invariant_residual": 0.0,
+      "metrics": {
+        "lineage_depth": 1.0,
+        "population": 8.0,
+        "replication_events": 68.0
+      },
+      "observed_regime": "self_replicating",
+      "opcode_count": 28,
+      "parasite_events": 0.0,
+      "passed": true,
+      "punctuation_score": 2.249706452796225,
+      "replication_events": 68.0,
+      "trace_id": "sha256:f4bcac9e60df74364d03cbcb407aae0442534798f7aa9fd3d3e158d9b246cd84"
+    },
+    {
+      "benchmark": "equ_emergence",
+      "equ_task_count": 297.0,
+      "event_types": [
+        "birth_event",
+        "communication_event",
+        "death_event",
+        "movement_event",
+        "mutation_event",
+        "replication_event",
+        "task_completion_event"
+      ],
+      "expected_regime": "EQU-free logic precursors and random ancestors are selected under a high EQU reward until an EQU-capable lineage appears.",
+      "final_population": 138.0,
+      "max_invariant_residual": 0.0,
+      "metrics": {
+        "de_novo_equ_events": 297,
+        "equ_task_count": 297.0,
+        "genome_diversity": 74.0
+      },
+      "observed_regime": "equ_task_lineage",
+      "opcode_count": 28,
+      "parasite_events": 0.0,
+      "passed": true,
+      "punctuation_score": 2.597135069636665,
+      "replication_events": 1101.0,
+      "trace_id": "sha256:31caecd36f14a4df8c4b6d23b12e5d229b3bc68966dcaf953464aaeeb0efa2e3"
+    },
+    {
+      "benchmark": "parasite_emergence",
+      "equ_task_count": 0.0,
+      "event_types": [
+        "birth_event",
+        "communication_event",
+        "death_event",
+        "movement_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event",
+        "task_completion_event"
+      ],
+      "expected_regime": "Parasites should borrow host buffers and produce parasite events while hosts still replicate.",
+      "final_population": 109.0,
+      "max_invariant_residual": 0.0,
+      "metrics": {
+        "parasite_events": 322.0,
+        "parasites": 109.0,
+        "replication_events": 2728.0
+      },
+      "observed_regime": "host_parasite",
+      "opcode_count": 28,
+      "parasite_events": 322.0,
+      "passed": true,
+      "punctuation_score": 7.1789523247645,
+      "replication_events": 2728.0,
+      "trace_id": "sha256:e6427e1c4e130b4a59c0305713ede115e52798fbac0af875c66d05cc2e6094ff"
+    },
+    {
+      "benchmark": "punctuated_equilibrium",
+      "equ_task_count": 268.0,
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "environment_shift_event",
+        "movement_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event",
+        "task_completion_event"
+      ],
+      "expected_regime": "Reward shifts should create abrupt task and fitness transitions rather than smooth drift.",
+      "final_population": 18.0,
+      "max_invariant_residual": 0.0,
+      "metrics": {
+        "applied_shifts": 2,
+        "equ_task_count": 268.0,
+        "nor_task_count": 0.0,
+        "punctuation_score": 13.089675490278749
+      },
+      "observed_regime": "equ_task_lineage",
+      "opcode_count": 28,
+      "parasite_events": 1.0,
+      "passed": true,
+      "punctuation_score": 13.089675490278749,
+      "replication_events": 245.0,
+      "trace_id": "sha256:9f0468bcc7d8b64fa93b984a6485440923dfd1250b3435934d707e65ff37e721"
+    }
+  ],
+  "gate": {
+    "comparison": "all_values_meet_or_exceed_thresholds",
+    "gate_id": "W5R",
+    "passed": true,
+    "quantity": "digital_vm_benchmarks_with_substance_tests_and_instruction_set",
+    "threshold": {
+      "benchmarks_passed": 4,
+      "opcode_count": 20,
+      "required_event_types": 5,
+      "simulation_logic_lines": 800,
+      "test_count": 40
+    },
+    "value": {
+      "benchmarks_passed": 4,
+      "opcode_count": 28,
+      "required_event_types": 6,
+      "simulation_logic_lines": 856,
+      "test_count": 47
+    }
+  },
+  "passed": true,
+  "required_events": [
+    "birth_event",
+    "death_event",
+    "mutation_event",
+    "parasite_event",
+    "replication_event",
+    "task_completion_event"
+  ],
+  "schema": "Campaign007W5Reconstruction.v1",
+  "world_substance": {
+    "mode": "substantive",
+    "mode_at_campaign_start": "stub",
+    "paths": [
+      "worlds\\digital\\model.py"
+    ],
+    "scaffolding_lines": 68,
+    "simulation_logic_lines": 856,
+    "substance_floor": 800,
+    "substantive_lines": 856,
+    "test_count": 47,
+    "total_lines": 938,
+    "trace_export_lines": 14,
+    "truth_pass_verdict": "eligible_after_reconstruction_tests",
+    "world_id": "W5"
+  }
+}

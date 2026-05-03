@@ -1,0 +1,71 @@
+{
+  "acceptance_outcome": "deferred",
+  "actual_files": 31,
+  "actual_minutes": 48.583333333333336,
+  "actual_tests": 184,
+  "complexity_score": 10,
+  "estimated_files": 120,
+  "estimated_minutes": 180,
+  "estimated_tests": 120,
+  "estimation_delta": 0.26990740740740743,
+  "expansions_planned": [
+    "Continue Campaign 007 under D7-D13: no toys, no number-generator corpora, no hardcoded science, and gates as measurements.",
+    "Land the Truth Pass before new claims so stale prior artifacts cannot remain claim-bearing.",
+    "Reconstruct W3-W5 as substantive worlds with measured line floors, benchmark regimes, traces, and regression tests.",
+    "Keep prior campaigns reproducible after reconstruction instead of allowing new work to silently break historical gates."
+  ],
+  "expansions_realised": [
+    "Truth Pass TP1-TP5 regenerated green with stub inventory, corpus reality inventory, stale-claim audit, D11 downgrades, doctrine D7-D13, and papers/methods/TRUTH_PASS.md.",
+    "W3R is green: production reaction-diffusion field solver, five benchmark regimes, 3D/boundary checks, 839 measured simulation-logic lines, and 53 counted tests.",
+    "W4R is green: replaced the morphogenesis stub with a GRN-driven tissue engine with morphogen diffusion, adhesion/mechanics, lineage, damage, division, differentiation, growth, and five benchmark regimes.",
+    "W5R is green: replaced the digital stub with a 28-opcode VM, executable genomes, allocate/copy/divide replication, mutation, logic-task rewards, communication, parasitism, and environment shifts.",
+    "Added Campaign 007 substrate progress reporting and CLI: reports/campaign_007/substrate_reconstruction_progress.json and observatory_cli.py campaign007-substrate.",
+    "Added 35 W4 reconstruction tests and 41 W5 reconstruction tests covering mechanics, traces, events, invariants, determinism, reports, and CLI/script paths.",
+    "Maintained backward compatibility by preserving W4 growth_event, W5 mutation_occurred replication payloads, legacy W3 field-front basin behaviour, and formal graph/information lens decoding for richer event vocabularies.",
+    "Regenerated Campaigns 002-006 green after the reconstruction and verified the full suite: 184 passed."
+  ],
+  "initiative_score": null,
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "notes": "Progress record for TASK-016, not Campaign 007 completion. Green gates now include TP1-TP5 and W3R/W4R/W5R. Remaining Campaign 007 work includes W6R-W13R, KR, FH, BH, CSR, and RS. PI supplied actual wall-clock 48m35s (48.5833 min), estimation_delta=0.26991. Claude audit found scenario-internal hardcoding in W3/W4/W5; TASK-017 addresses that rework.",
+  "rework_index": 1,
+  "scope_delta": 0.25833333333333336,
+  "scope_score": 10,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+  ],
+  "substance_audit": [
+    {
+      "module": "W3 field",
+      "simulation_logic_lines": 839,
+      "test_count": 53,
+      "gate": "W3R",
+      "status": "green"
+    },
+    {
+      "module": "W4 morphogenesis",
+      "simulation_logic_lines": 923,
+      "test_count": 38,
+      "gate": "W4R",
+      "status": "green"
+    },
+    {
+      "module": "W5 digital",
+      "simulation_logic_lines": 850,
+      "test_count": 47,
+      "gate": "W5R",
+      "status": "green"
+    },
+    {
+      "module": "Campaign 007 Truth Pass",
+      "gate_count": 5,
+      "passed_gate_count": 5,
+      "status": "green"
+    }
+  ],
+  "task_atom_hash": "campaign-007-truth-pass-w3-w5-reconstruction-progress",
+  "task_class": "integration",
+  "task_id": "TASK-016",
+  "underbuild_score": null
+}

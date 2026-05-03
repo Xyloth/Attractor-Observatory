@@ -1,0 +1,187 @@
+{
+  "artifacts": {
+    "falsifier": "reports/campaign_009/falsifier_audit.json",
+    "k9": "reports/campaign_009/floor_seed_calibration.json",
+    "kf": "reports/campaign_009/floor_calibration_full.json",
+    "nfi": "reports/campaign_009/nfi_vectors.json",
+    "prereg": "papers/prereg/bfg_v0.signed.json",
+    "signatures": "reports/campaign_009/cross_substrate_signatures.json"
+  },
+  "campaign_id": "campaign-009",
+  "gate_count": 13,
+  "gates": {
+    "BFG-PR": {
+      "artifact": "papers/prereg/bfg_v0.signed.json",
+      "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "lint": {
+        "checks": {
+          "abstention_rules_declared": true,
+          "adversarial_stable": true,
+          "content_hash_locked": true,
+          "cross_substrate_consistent": true,
+          "distance_metrics_declared": true,
+          "identity_blind": true
+        },
+        "passed": true,
+        "prereg_id": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc",
+        "schema": "BFGPreregistrationLint.v1"
+      },
+      "passed": true,
+      "prereg_id": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc"
+    },
+    "BFG1": {
+      "artifact": "reports/campaign_009/schema_roundtrip.json",
+      "passed": true
+    },
+    "BFG10": {
+      "motif_count": 3,
+      "passed": true,
+      "substrates_each_min": 3
+    },
+    "BFG11": {
+      "passed": true,
+      "routed_path": "papers/falsifiers/bfg_point_attractor_candidate.md"
+    },
+    "BFG12": {
+      "d14_zero": true,
+      "d18_lint": {
+        "checks": {
+          "abstention_rules_declared": true,
+          "adversarial_stable": true,
+          "content_hash_locked": true,
+          "cross_substrate_consistent": true,
+          "distance_metrics_declared": true,
+          "identity_blind": true
+        },
+        "passed": true,
+        "prereg_id": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc",
+        "schema": "BFGPreregistrationLint.v1"
+      },
+      "passed": false,
+      "prior": {
+        "campaign_002": {
+          "gate_count": 20,
+          "passed_gate_count": 20,
+          "status": "green"
+        },
+        "campaign_005": {
+          "gate_count": 21,
+          "passed_gate_count": 21,
+          "status": "green"
+        },
+        "campaign_006": {
+          "gate_count": 68,
+          "passed_gate_count": 68,
+          "status": "green"
+        },
+        "campaign_007": {
+          "gate_count": 5,
+          "passed_gate_count": 5,
+          "status": "green"
+        },
+        "campaign_008": {
+          "gate_count": 35,
+          "passed_gate_count": 35,
+          "status": "green"
+        }
+      },
+      "regression": {
+        "passed": false,
+        "reason": "full pytest verification pending"
+      }
+    },
+    "BFG2": {
+      "families": [
+        "crn",
+        "digital",
+        "morphogenesis",
+        "protocell"
+      ],
+      "passed": true
+    },
+    "BFG3": {
+      "corpora": [
+        {
+          "corpus_id": "KF1",
+          "minimum": 20,
+          "passed": true,
+          "scenario_count": 20,
+          "trace_backed": true,
+          "world_driven": true
+        },
+        {
+          "corpus_id": "KF2",
+          "minimum": 20,
+          "passed": true,
+          "scenario_count": 20,
+          "trace_backed": true,
+          "world_driven": true
+        },
+        {
+          "corpus_id": "KF3",
+          "minimum": 20,
+          "passed": true,
+          "scenario_count": 20,
+          "trace_backed": true,
+          "world_driven": true
+        },
+        {
+          "corpus_id": "KF4",
+          "minimum": 20,
+          "passed": true,
+          "scenario_count": 20,
+          "trace_backed": true,
+          "world_driven": true
+        }
+      ],
+      "passed": true
+    },
+    "BFG4": {
+      "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "passed": true,
+      "roc_auc": 1.0
+    },
+    "BFG5": {
+      "ece": 0.0,
+      "passed": true
+    },
+    "BFG6": {
+      "ece": 0.0,
+      "passed": true,
+      "roc_auc": 0.809375
+    },
+    "BFG7": {
+      "metric_family_count": 11,
+      "passed": true
+    },
+    "BFG8": {
+      "budget": {
+        "adaptive_policy": "no ensemble escalation because K9 and KF confidence intervals do not overlap the decision thresholds",
+        "declared_cap_trace_fragments": 50000,
+        "ensemble_escalation_pairs": 0,
+        "free_k9_pairs": 24,
+        "passed": true,
+        "single_coordinate_pairs": 80,
+        "used_trace_fragments": 208
+      },
+      "claim_status": "exploratory",
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
+    },
+    "BFG9": {
+      "max_ci_width_first5": 0.2,
+      "passed": true,
+      "vector_count": 8
+    }
+  },
+  "passed_gate_count": 12,
+  "schema": "Campaign009FullReport.v1",
+  "status": "in_progress",
+  "truth_pass": {
+    "campaign_007": {
+      "modified_gates": 1,
+      "status": "historical_not_claim_bearing"
+    }
+  }
+}

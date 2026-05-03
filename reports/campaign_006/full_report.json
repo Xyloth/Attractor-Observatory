@@ -1,0 +1,1926 @@
+{
+  "campaign_id": "campaign-006",
+  "elapsed_seconds": 2.151498300023377,
+  "gate_count": 68,
+  "gates": {
+    "G10_w11_eigen_reference": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 15,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G11_w12_beta": {
+      "event_types": [
+        "cheating_event",
+        "engulfment_event",
+        "integration_failure_event",
+        "resource_exchange_event",
+        "vertical_transmission_event"
+      ],
+      "motifs": [
+        "symbiogenesis",
+        "lineage",
+        "resource_exchange",
+        "cheating_collapse"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W12"
+    },
+    "G12_w12_regimes": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 15,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G13_w13_beta": {
+      "event_types": [
+        "cross_scale_composition_event",
+        "downscale_flux_event",
+        "lag_event",
+        "scale_separation_failure_event",
+        "upscale_flux_event"
+      ],
+      "motifs": [
+        "multiscale_flux",
+        "cross_scale_composition",
+        "scale_separation",
+        "feedback"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W13"
+    },
+    "G14_w13_cross_scale": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G15_beta_world_contracts": {
+      "failure_regime_count": 7,
+      "passed": true,
+      "trace_count": 21,
+      "world_count": 7
+    },
+    "G16_reference_harness": {
+      "passed": true,
+      "scenario_count": 21
+    },
+    "G17_three_reference_scenarios": {
+      "passed": true,
+      "worlds": [
+        "W4",
+        "W6",
+        "W7",
+        "W9",
+        "W11",
+        "W12",
+        "W13"
+      ]
+    },
+    "G18_corrupted_trace_failures": {
+      "corrupted_fail_count": 21,
+      "passed": true
+    },
+    "G19_replay_checks": {
+      "passed": true,
+      "row_count": 21,
+      "rows": [
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "positive",
+          "world_id": "W4"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "boundary",
+          "world_id": "W4"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "failure",
+          "world_id": "W4"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "positive",
+          "world_id": "W6"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "boundary",
+          "world_id": "W6"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "failure",
+          "world_id": "W6"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "positive",
+          "world_id": "W7"
+        },
+        {
+          "event_count_deviation": 0,
+          "max_state_deviation": 0.0,
+          "scenario": "boundary",
+          "world_id": "W7"
+        }
+      ]
+    },
+    "G1_w4_beta": {
+      "event_types": [
+        "branching_failure_event",
+        "differentiation_event",
+        "field_diffusion_event",
+        "growth_event",
+        "segmentation_event"
+      ],
+      "motifs": [
+        "morphogenesis",
+        "segmentation",
+        "branching",
+        "lineage"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W4"
+    },
+    "G20_report_schema_stability": {
+      "passed": true,
+      "reference_key_shapes": 3
+    },
+    "G21_perturbation_sweeps": {
+      "passed": true,
+      "scenario_count": 210,
+      "world_count": 7
+    },
+    "G22_success_failure_ambiguous_regions": {
+      "classes_by_world": {
+        "W11": [
+          "ambiguous",
+          "failure",
+          "success"
+        ],
+        "W12": [
+          "ambiguous",
+          "failure",
+          "success"
+        ],
+        "W13": [
+          "ambiguous",
+          "failure",
+          "success"
+        ],
+        "W4": [
+          "ambiguous",
+          "failure",
+          "success"
+        ],
+        "W6": [
+          "ambiguous",
+          "failure",
+          "success"
+        ],
+        "W7": [
+          "ambiguous",
+          "failure",
+          "success"
+        ],
+        "W9": [
+          "ambiguous",
+          "failure",
+          "success"
+        ]
+      },
+      "passed": true
+    },
+    "G23_basin_width_ci": {
+      "passed": true,
+      "rows": [
+        {
+          "bootstrap_ci_width": 0.14313816169468344,
+          "boundary_claimed": true,
+          "motif": "morphogenesis",
+          "samples": 30,
+          "success_fraction": 0.2,
+          "world_id": "W4"
+        },
+        {
+          "bootstrap_ci_width": 0.15135163863836598,
+          "boundary_claimed": true,
+          "motif": "branching",
+          "samples": 30,
+          "success_fraction": 0.23333333333333334,
+          "world_id": "W4"
+        },
+        {
+          "bootstrap_ci_width": 0.1431381616946834,
+          "boundary_claimed": true,
+          "motif": "recovery",
+          "samples": 30,
+          "success_fraction": 0.8,
+          "world_id": "W6"
+        },
+        {
+          "bootstrap_ci_width": 0.1686899413014786,
+          "boundary_claimed": true,
+          "motif": "externalized_memory",
+          "samples": 30,
+          "success_fraction": 0.6666666666666666,
+          "world_id": "W7"
+        },
+        {
+          "bootstrap_ci_width": 0.17852465334471834,
+          "boundary_claimed": true,
+          "motif": "closure",
+          "samples": 30,
+          "success_fraction": 0.5333333333333333,
+          "world_id": "W9"
+        },
+        {
+          "bootstrap_ci_width": 0.17244369988384506,
+          "boundary_claimed": true,
+          "motif": "error_threshold",
+          "samples": 30,
+          "success_fraction": 0.36666666666666664,
+          "world_id": "W11"
+        },
+        {
+          "bootstrap_ci_width": 0.1639853652006788,
+          "boundary_claimed": true,
+          "motif": "symbiogenesis",
+          "samples": 30,
+          "success_fraction": 0.3,
+          "world_id": "W12"
+        },
+        {
+          "bootstrap_ci_width": 0.15824519184082889,
+          "boundary_claimed": true,
+          "motif": "multiscale_flux",
+          "samples": 30,
+          "success_fraction": 0.26666666666666666,
+          "world_id": "W13"
+        }
+      ]
+    },
+    "G24_response_curves": {
+      "axes": [
+        "coupling",
+        "damage",
+        "mutation_pressure",
+        "resource_limit",
+        "signal_noise"
+      ],
+      "passed": true
+    },
+    "G25_adversarial_perturbations": {
+      "passed": true,
+      "rows": [
+        {
+          "motif": "closure",
+          "outcome": "caught",
+          "target": "closure_false_positive",
+          "world_id": "W9"
+        },
+        {
+          "motif": "boundary",
+          "outcome": "caught",
+          "target": "boundary_false_positive",
+          "world_id": "W4"
+        },
+        {
+          "motif": "externalized_memory",
+          "outcome": "caught",
+          "target": "memory_correlation",
+          "world_id": "W7"
+        },
+        {
+          "motif": "lineage",
+          "outcome": "caught",
+          "target": "lineage_surface",
+          "world_id": "W11"
+        },
+        {
+          "motif": "multiscale_flux",
+          "outcome": "caught",
+          "target": "parallel_motion",
+          "world_id": "W13"
+        }
+      ]
+    },
+    "G26_failure_artifacts": {
+      "artifact_count": 153,
+      "passed": true
+    },
+    "G27_robustness_vector_dashboard": {
+      "passed": true,
+      "rows": [
+        {
+          "vector": {
+            "ambiguous_rate": 0.4666666666666667,
+            "failure_rate": 0.26666666666666666,
+            "mean_motif_score": 0.45663751470258135,
+            "success_rate": 0.26666666666666666
+          },
+          "world_id": "W4"
+        },
+        {
+          "vector": {
+            "ambiguous_rate": 0.4666666666666667,
+            "failure_rate": 0.26666666666666666,
+            "mean_motif_score": 0.9254722192592593,
+            "success_rate": 0.26666666666666666
+          },
+          "world_id": "W6"
+        },
+        {
+          "vector": {
+            "ambiguous_rate": 0.4666666666666667,
+            "failure_rate": 0.26666666666666666,
+            "mean_motif_score": 0.6482554350617283,
+            "success_rate": 0.26666666666666666
+          },
+          "world_id": "W7"
+        },
+        {
+          "vector": {
+            "ambiguous_rate": 0.4666666666666667,
+            "failure_rate": 0.26666666666666666,
+            "mean_motif_score": 0.5798344444444444,
+            "success_rate": 0.26666666666666666
+          },
+          "world_id": "W9"
+        },
+        {
+          "vector": {
+            "ambiguous_rate": 0.4,
+            "failure_rate": 0.3,
+            "mean_motif_score": 0.882557037037037,
+            "success_rate": 0.3
+          },
+          "world_id": "W11"
+        },
+        {
+          "vector": {
+            "ambiguous_rate": 0.4666666666666667,
+            "failure_rate": 0.26666666666666666,
+            "mean_motif_score": 0.8755475555555556,
+            "success_rate": 0.26666666666666666
+          },
+          "world_id": "W12"
+        },
+        {
+          "vector": {
+            "ambiguous_rate": 0.4666666666666667,
+            "failure_rate": 0.26666666666666666,
+            "mean_motif_score": 0.6753343421596444,
+            "success_rate": 0.26666666666666666
+          },
+          "world_id": "W13"
+        }
+      ]
+    },
+    "G28_transfer_matrix": {
+      "family_count": 12,
+      "passed": true,
+      "row_count": 1584
+    },
+    "G29_transfer_motif_coverage": {
+      "motifs": [
+        "closure",
+        "boundary",
+        "externalized_memory",
+        "lineage",
+        "surface_catalysis",
+        "quasispecies",
+        "symbiogenesis",
+        "morphogenesis",
+        "ecosystem",
+        "swarm_memory",
+        "multiscale_flux"
+      ],
+      "passed": true
+    },
+    "G2_w4_references": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 15,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G30_substrate_erasure_leak_tests": {
+      "passed": true,
+      "projection_count": 45
+    },
+    "G31_nonzero_declared_loss": {
+      "max_loss": 1.03,
+      "passed": true
+    },
+    "G32_implementation_diversity": {
+      "passed": true,
+      "rows": [
+        {
+          "motif": "closure",
+          "paths": [
+            "ode",
+            "ssa",
+            "hypergraph"
+          ]
+        },
+        {
+          "motif": "externalized_memory",
+          "paths": [
+            "agent",
+            "field"
+          ]
+        },
+        {
+          "motif": "lineage",
+          "paths": [
+            "stochastic_sequence",
+            "nested_symbiosis"
+          ]
+        }
+      ]
+    },
+    "G33_transfer_failures_analyzed": {
+      "failures": [
+        {
+          "id": "closure:crn->ecosystem",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "crn",
+          "target_family": "ecosystem",
+          "transfer_loss": 1.03
+        },
+        {
+          "id": "closure:crn->field",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "crn",
+          "target_family": "field",
+          "transfer_loss": 1.03
+        },
+        {
+          "id": "closure:crn->hypergraph_reactions",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "crn",
+          "target_family": "hypergraph_reactions",
+          "transfer_loss": 1.03
+        },
+        {
+          "id": "closure:crn->multiscale",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "crn",
+          "target_family": "multiscale",
+          "transfer_loss": 1.03
+        },
+        {
+          "id": "closure:crn->protocell",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "crn",
+          "target_family": "protocell",
+          "transfer_loss": 0.8761538461538462
+        },
+        {
+          "id": "closure:crn->swarm",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "crn",
+          "target_family": "swarm",
+          "transfer_loss": 1.03
+        },
+        {
+          "id": "closure:digital->ecosystem",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "digital",
+          "target_family": "ecosystem",
+          "transfer_loss": 1.03
+        },
+        {
+          "id": "closure:digital->field",
+          "in_declared_band": true,
+          "motif": "closure",
+          "source_family": "digital",
+          "target_family": "field",
+          "transfer_loss": 1.03
+        }
+      ],
+      "passed": true
+    },
+    "G34_transfer_red_team_decoys": {
+      "decoys": [
+        {
+          "decoy": "shuffled_event_labels",
+          "detected": true
+        },
+        {
+          "decoy": "seed_shuffled_traces",
+          "detected": true
+        },
+        {
+          "decoy": "substrate_id_injected_features",
+          "detected": true
+        },
+        {
+          "decoy": "static_traces",
+          "detected": true
+        }
+      ],
+      "passed": true
+    },
+    "G35_candidate_audit_index": {
+      "candidate_count": 12,
+      "passed": true,
+      "rediscovered_count": 12
+    },
+    "G36_beta_reaudit": {
+      "passed": true,
+      "rows": [
+        {
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "score": 0.9040275004786773,
+          "status": "audited_candidate"
+        },
+        {
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "score": 0.6673511145289315,
+          "status": "audited_candidate"
+        },
+        {
+          "candidate_id": "MC-C006-03-lineage_replication",
+          "score": 0.7244719965178112,
+          "status": "held_back"
+        },
+        {
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "score": 0.6835824906198151,
+          "status": "audited_candidate"
+        },
+        {
+          "candidate_id": "MC-C006-05-entropy_coupled_transition",
+          "score": 0.9418127355953502,
+          "status": "retired"
+        },
+        {
+          "candidate_id": "MC-C006-06-morphogenetic_branching",
+          "score": 0.7286940970952727,
+          "status": "held_back"
+        },
+        {
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "score": 0.9499061574816681,
+          "status": "audited_candidate"
+        },
+        {
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "score": 0.936056717054056,
+          "status": "audited_candidate"
+        },
+        {
+          "candidate_id": "MC-C006-09-surface_anchored_catalysis",
+          "score": 0.7321528670930741,
+          "status": "held_back"
+        },
+        {
+          "candidate_id": "MC-C006-10-quasispecies_robust_cloud",
+          "score": 0.9001121555656991,
+          "status": "audited_candidate"
+        },
+        {
+          "candidate_id": "MC-C006-11-nested_symbiotic_exchange",
+          "score": 0.927286831227353,
+          "status": "retired"
+        },
+        {
+          "candidate_id": "MC-C006-12-cross_scale_flux_closure",
+          "score": 0.8070230051513598,
+          "status": "held_back"
+        }
+      ]
+    },
+    "G37_differentiated_outcomes": {
+      "passed": true,
+      "statuses": {
+        "audited_candidate": 6,
+        "held_back": 4,
+        "retired": 2
+      }
+    },
+    "G38_draft_motif_proposals": {
+      "drafts": [
+        {
+          "calibration_corpus_needs": [
+            "K5",
+            "K6",
+            "K8",
+            "K9",
+            "K10"
+          ],
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "detector_binding_plan": [
+            "candidate_beta.trajectory",
+            "candidate_beta.structure_information"
+          ],
+          "draft_id": "DRAFT-MC-C006-01-closure_like_production",
+          "falsifiers": [
+            "fails heldout beta-world recurrence",
+            "fails substrate-erasure transfer",
+            "high dictionary echo"
+          ],
+          "grammar_sketch": [
+            "production",
+            "feedback",
+            "state_motion"
+          ],
+          "mode_tag": "exploratory",
+          "nulls_contested": [
+            "N1",
+            "N2",
+            "N5",
+            "N7"
+          ],
+          "path": "reports\\campaign_006\\draft_motifs\\DRAFT-MC-C006-01-closure_like_production.json",
+          "promotion_status": "draft_motif",
+          "red_team_plan": [
+            "event vocabulary shuffle",
+            "static trace",
+            "same appearance different process"
+          ],
+          "required_reviews": [
+            "Architect",
+            "PI",
+            "Red Team"
+          ]
+        },
+        {
+          "calibration_corpus_needs": [
+            "K5",
+            "K6",
+            "K8",
+            "K9",
+            "K10"
+          ],
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "detector_binding_plan": [
+            "candidate_beta.trajectory",
+            "candidate_beta.structure_information"
+          ],
+          "draft_id": "DRAFT-MC-C006-02-repair_boundary_memory",
+          "falsifiers": [
+            "fails heldout beta-world recurrence",
+            "fails substrate-erasure transfer",
+            "high dictionary echo"
+          ],
+          "grammar_sketch": [
+            "boundary",
+            "repair",
+            "feedback"
+          ],
+          "mode_tag": "exploratory",
+          "nulls_contested": [
+            "N1",
+            "N2",
+            "N5",
+            "N7"
+          ],
+          "path": "reports\\campaign_006\\draft_motifs\\DRAFT-MC-C006-02-repair_boundary_memory.json",
+          "promotion_status": "draft_motif",
+          "red_team_plan": [
+            "event vocabulary shuffle",
+            "static trace",
+            "same appearance different process"
+          ],
+          "required_reviews": [
+            "Architect",
+            "PI",
+            "Red Team"
+          ]
+        },
+        {
+          "calibration_corpus_needs": [
+            "K5",
+            "K6",
+            "K8",
+            "K9",
+            "K10"
+          ],
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "detector_binding_plan": [
+            "candidate_beta.trajectory",
+            "candidate_beta.structure_information"
+          ],
+          "draft_id": "DRAFT-MC-C006-04-field_front_propagation",
+          "falsifiers": [
+            "fails heldout beta-world recurrence",
+            "fails substrate-erasure transfer",
+            "high dictionary echo"
+          ],
+          "grammar_sketch": [
+            "field",
+            "state_motion",
+            "production"
+          ],
+          "mode_tag": "exploratory",
+          "nulls_contested": [
+            "N1",
+            "N2",
+            "N5",
+            "N7"
+          ],
+          "path": "reports\\campaign_006\\draft_motifs\\DRAFT-MC-C006-04-field_front_propagation.json",
+          "promotion_status": "draft_motif",
+          "red_team_plan": [
+            "event vocabulary shuffle",
+            "static trace",
+            "same appearance different process"
+          ],
+          "required_reviews": [
+            "Architect",
+            "PI",
+            "Red Team"
+          ]
+        },
+        {
+          "calibration_corpus_needs": [
+            "K5",
+            "K6",
+            "K8",
+            "K9",
+            "K10"
+          ],
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "detector_binding_plan": [
+            "candidate_beta.trajectory",
+            "candidate_beta.structure_information"
+          ],
+          "draft_id": "DRAFT-MC-C006-07-ecosystem_niche_construction",
+          "falsifiers": [
+            "fails heldout beta-world recurrence",
+            "fails substrate-erasure transfer",
+            "high dictionary echo"
+          ],
+          "grammar_sketch": [
+            "ecosystem",
+            "event_entropy",
+            "feedback"
+          ],
+          "mode_tag": "exploratory",
+          "nulls_contested": [
+            "N1",
+            "N2",
+            "N5",
+            "N7"
+          ],
+          "path": "reports\\campaign_006\\draft_motifs\\DRAFT-MC-C006-07-ecosystem_niche_construction.json",
+          "promotion_status": "draft_motif",
+          "red_team_plan": [
+            "event vocabulary shuffle",
+            "static trace",
+            "same appearance different process"
+          ],
+          "required_reviews": [
+            "Architect",
+            "PI",
+            "Red Team"
+          ]
+        },
+        {
+          "calibration_corpus_needs": [
+            "K5",
+            "K6",
+            "K8",
+            "K9",
+            "K10"
+          ],
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "detector_binding_plan": [
+            "candidate_beta.trajectory",
+            "candidate_beta.structure_information"
+          ],
+          "draft_id": "DRAFT-MC-C006-08-swarm_marker_coordination",
+          "falsifiers": [
+            "fails heldout beta-world recurrence",
+            "fails substrate-erasure transfer",
+            "high dictionary echo"
+          ],
+          "grammar_sketch": [
+            "swarm_memory",
+            "event_entropy",
+            "state_motion"
+          ],
+          "mode_tag": "exploratory",
+          "nulls_contested": [
+            "N1",
+            "N2",
+            "N5",
+            "N7"
+          ],
+          "path": "reports\\campaign_006\\draft_motifs\\DRAFT-MC-C006-08-swarm_marker_coordination.json",
+          "promotion_status": "draft_motif",
+          "red_team_plan": [
+            "event vocabulary shuffle",
+            "static trace",
+            "same appearance different process"
+          ],
+          "required_reviews": [
+            "Architect",
+            "PI",
+            "Red Team"
+          ]
+        }
+      ],
+      "passed": true
+    },
+    "G39_detector_prototypes": {
+      "passed": true,
+      "rows": [
+        {
+          "confidence": 0.3896396879731295,
+          "detector_id": "candidate_beta.trajectory",
+          "mode_tag": "exploratory"
+        },
+        {
+          "confidence": 0.32,
+          "detector_id": "candidate_beta.structure_information",
+          "mode_tag": "exploratory"
+        },
+        {
+          "confidence": 0.3896396879731295,
+          "detector_id": "candidate_beta.trajectory",
+          "mode_tag": "exploratory"
+        },
+        {
+          "confidence": 0.32,
+          "detector_id": "candidate_beta.structure_information",
+          "mode_tag": "exploratory"
+        }
+      ]
+    },
+    "G3_w6_beta": {
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "disturbance_event",
+        "extinction_event",
+        "niche_construction_event",
+        "recovery_event"
+      ],
+      "motifs": [
+        "ecosystem_niche_construction",
+        "recovery",
+        "oscillation",
+        "extinction"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W6"
+    },
+    "G40_promotion_safety": {
+      "passed": true,
+      "tests": [
+        {
+          "allowed": false,
+          "missing": [
+            "architect_review",
+            "calibration_scenarios_declared",
+            "heldout_recurrence_passed",
+            "pi_signature",
+            "red_team_passed"
+          ],
+          "reason": "missing_requirements"
+        },
+        {
+          "allowed": false,
+          "missing": [
+            "architect_review",
+            "calibration_scenarios_declared",
+            "pi_signature",
+            "red_team_passed"
+          ],
+          "reason": "missing_requirements"
+        },
+        {
+          "allowed": false,
+          "reason": "instrument_health_panic_budget"
+        }
+      ]
+    },
+    "G41_decoy_holdbacks": {
+      "decoy_failure_count": 4,
+      "passed": true
+    },
+    "G42_negative_space_merge": {
+      "merged_count": 16,
+      "passed": true
+    },
+    "G43_campaign006_negative_space_entries": {
+      "categories": [
+        "bio_only",
+        "math_only",
+        "predicted_empty",
+        "sim_only",
+        "unexplained_absence"
+      ],
+      "entry_count": 12,
+      "passed": true
+    },
+    "G44_negative_space_fields": {
+      "field_checked": true,
+      "passed": true
+    },
+    "G45_status_mix": {
+      "passed": true,
+      "status_counts": {
+        "open": 5,
+        "resolved": 5,
+        "retired": 2
+      }
+    },
+    "G46_absence_semantics": {
+      "passed": true,
+      "states": [
+        "absent",
+        "not_searched",
+        "unknown",
+        "unobserved"
+      ]
+    },
+    "G47_search_feedback_targets": {
+      "next_targets": [
+        {
+          "entry_id": "NS-C006-02-w4-boundary",
+          "priority": 0.65,
+          "target": {
+            "failure_artifact": "FAIL-C006-002",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-03-w4-structural",
+          "priority": 0.67,
+          "target": {
+            "failure_artifact": "FAIL-C006-003",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-07-w4-informative",
+          "priority": 0.75,
+          "target": {
+            "failure_artifact": "FAIL-C006-007",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-08-w4-boundary",
+          "priority": 0.61,
+          "target": {
+            "failure_artifact": "FAIL-C006-008",
+            "regime": "failure",
+            "world_id": "W4"
+          }
+        },
+        {
+          "entry_id": "NS-C006-11-w4-boundary",
+          "priority": 0.67,
+          "target": {
+            "failure_artifact": "FAIL-C006-011",
+            "regime": "ambiguous",
+            "world_id": "W4"
+          }
+        }
+      ],
+      "passed": true
+    },
+    "G48_evidence_bundles": {
+      "bundle_count": 5,
+      "passed": true
+    },
+    "G49_bundle_verification": {
+      "passed": true,
+      "verifications": {
+        "campaign_002": {
+          "passed": true,
+          "row_count": 1
+        },
+        "campaign_003": {
+          "passed": true,
+          "row_count": 1
+        },
+        "campaign_004": {
+          "passed": true,
+          "row_count": 1
+        },
+        "campaign_005": {
+          "passed": true,
+          "row_count": 3
+        },
+        "campaign_006": {
+          "passed": true,
+          "row_count": 29
+        }
+      }
+    },
+    "G4_w6_regimes": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G50_provenance_closure": {
+      "closure": {
+        "atlas_page_links": 5,
+        "candidate_links": 12,
+        "negative_space_links": 12,
+        "report_links": 33,
+        "trace_links": 21
+      },
+      "passed": true
+    },
+    "G51_atlas_rendering": {
+      "atlas": {
+        "claim_status_visible": true,
+        "mode_tag_visible": true,
+        "page_count": 5,
+        "pages": {
+          "candidates": {
+            "path": "atlas\\status_viewer\\generated\\campaign_006\\candidates.md",
+            "row_count": 12,
+            "title": "Campaign 006 Candidates"
+          },
+          "health": {
+            "path": "atlas\\status_viewer\\generated\\campaign_006\\health.md",
+            "row_count": 9,
+            "title": "Campaign 006 Instrument Health"
+          },
+          "negative_space": {
+            "path": "atlas\\status_viewer\\generated\\campaign_006\\negative_space.md",
+            "row_count": 12,
+            "title": "Campaign 006 Negative Space"
+          },
+          "transfer": {
+            "path": "atlas\\status_viewer\\generated\\campaign_006\\transfer.md",
+            "row_count": 24,
+            "title": "Campaign 006 Transfer Matrix"
+          },
+          "worlds": {
+            "path": "atlas\\status_viewer\\generated\\campaign_006\\worlds.md",
+            "row_count": 21,
+            "title": "Campaign 006 Beta Worlds"
+          }
+        },
+        "queries": {
+          "blocked_from_claim_use": [
+            "MC-C006-03-lineage_replication",
+            "MC-C006-05-entropy_coupled_transition",
+            "MC-C006-06-morphogenetic_branching",
+            "MC-C006-09-surface_anchored_catalysis",
+            "MC-C006-11-nested_symbiotic_exchange",
+            "MC-C006-12-cross_scale_flux_closure"
+          ],
+          "candidates_by_status": {
+            "audited_candidate": [
+              "MC-C006-01-closure_like_production",
+              "MC-C006-02-repair_boundary_memory",
+              "MC-C006-04-field_front_propagation",
+              "MC-C006-07-ecosystem_niche_construction",
+              "MC-C006-08-swarm_marker_coordination",
+              "MC-C006-10-quasispecies_robust_cloud"
+            ],
+            "held_back": [
+              "MC-C006-03-lineage_replication",
+              "MC-C006-06-morphogenetic_branching",
+              "MC-C006-09-surface_anchored_catalysis",
+              "MC-C006-12-cross_scale_flux_closure"
+            ],
+            "retired": [
+              "MC-C006-05-entropy_coupled_transition",
+              "MC-C006-11-nested_symbiotic_exchange"
+            ]
+          },
+          "evidence_by_world_family": {
+            "ecosystem": [
+              "sha256:e136126d8c9f91d23d9a1ffe2f02f27777509177485008ed45883f7a31f973da",
+              "sha256:bcc330c039afb8858b0f5bcfb9517256d6749bbfd79bd5663ea91b9ec0a9963d",
+              "sha256:70420a94de7f024dc551a9ddae2f2f88716889ce83f0a46c9e09b18e908f9d6e"
+            ],
+            "morphogenesis": [
+              "sha256:985ad8e4bf22c59601e9481e3a793bfc83b247e8c81fdd730f9cce1da3438670",
+              "sha256:587b8a37628e43baba5c7ea9e471f16122b8969fb9a256ba0555acd2a212172e",
+              "sha256:4624cc0342a215287ed5d548af3133f629adf07372e6c9a683507c8780185a57"
+            ],
+            "multiscale": [
+              "sha256:b8ed97af356c8c9ada1a4d4f8e9c7a0c0983e11adf455edd9314bb01af7024da",
+              "sha256:2bb4f9963b1e8f50cefbfc7e29f9bd09542b33593fede8ab082042310f8b6f5e",
+              "sha256:e08ac6590b29c30f135900146cd6a44de43235ba2aea0e0253cf1d2b9f33826b"
+            ],
+            "origins_chemistry": [
+              "sha256:02d2c1e2f81950fadb42fe0882828add29990cd07ca766464eabce06863fdde7",
+              "sha256:4d2984c0ef2cbebc744d3e704922339d6f9bb0ada2f918cc2bd1b314dc14697d",
+              "sha256:737bf6a18ed2c96ca95f239d995e9e15f5aaa2a44f3059f2aaa8a286e4640bab"
+            ],
+            "quasispecies": [
+              "sha256:d5ee6fd62402ac02299fcad31cde78771eacd514882a83a21bf2917f36175a95",
+              "sha256:db7326f1e017c7b04e8c96b782c27cf35b0f000903ba13cfb19743d2cd60c382",
+              "sha256:d6a82a504a7908cc308ca27c5c5bb8755fe6371ab6c6f24ed43a85433ff73a8e"
+            ],
+            "swarm": [
+              "sha256:cbab5d74de27bbdff29f5492d068742fd89999f271c323ad831d1a11774e70d8",
+              "sha256:b5173736e67a4a3acdc3274deccec540eace5ba09e8266581041d62ad0a93377",
+              "sha256:165823c673ae2e19441608569544c42195eebd1f65d218665bf266095d9a7cab"
+            ],
+            "symbiogenesis": [
+              "sha256:0da7131170789d568aae4e9a8da5cc922ece3cb487a9b8adeecd04267982b7ba",
+              "sha256:85dbda1d95a96b3bf1594eb8855e9cdea165f8fae4b88af9fc5954f999d1e969",
+              "sha256:c3b1a1365874015c3acfefd7b1ca5a087c10aee7b248b4252705abe640c22522"
+            ]
+          },
+          "external_review_packet": "reports/campaign_006/external_review_packet.json",
+          "failed_perturbation_regimes": [
+            "FAIL-C006-001",
+            "FAIL-C006-002",
+            "FAIL-C006-003",
+            "FAIL-C006-004",
+            "FAIL-C006-005",
+            "FAIL-C006-006",
+            "FAIL-C006-007",
+            "FAIL-C006-008",
+            "FAIL-C006-009",
+            "FAIL-C006-010",
+            "FAIL-C006-011",
+            "FAIL-C006-012"
+          ],
+          "open_negative_space_entries": [
+            "NS-C006-02-w4-boundary",
+            "NS-C006-03-w4-structural",
+            "NS-C006-07-w4-informative",
+            "NS-C006-08-w4-boundary",
+            "NS-C006-11-w4-boundary"
+          ]
+        }
+      },
+      "passed": true
+    },
+    "G52_atlas_queries": {
+      "passed": true,
+      "queries": {
+        "blocked_from_claim_use": [
+          "MC-C006-03-lineage_replication",
+          "MC-C006-05-entropy_coupled_transition",
+          "MC-C006-06-morphogenetic_branching",
+          "MC-C006-09-surface_anchored_catalysis",
+          "MC-C006-11-nested_symbiotic_exchange",
+          "MC-C006-12-cross_scale_flux_closure"
+        ],
+        "candidates_by_status": {
+          "audited_candidate": [
+            "MC-C006-01-closure_like_production",
+            "MC-C006-02-repair_boundary_memory",
+            "MC-C006-04-field_front_propagation",
+            "MC-C006-07-ecosystem_niche_construction",
+            "MC-C006-08-swarm_marker_coordination",
+            "MC-C006-10-quasispecies_robust_cloud"
+          ],
+          "held_back": [
+            "MC-C006-03-lineage_replication",
+            "MC-C006-06-morphogenetic_branching",
+            "MC-C006-09-surface_anchored_catalysis",
+            "MC-C006-12-cross_scale_flux_closure"
+          ],
+          "retired": [
+            "MC-C006-05-entropy_coupled_transition",
+            "MC-C006-11-nested_symbiotic_exchange"
+          ]
+        },
+        "evidence_by_world_family": {
+          "ecosystem": [
+            "sha256:e136126d8c9f91d23d9a1ffe2f02f27777509177485008ed45883f7a31f973da",
+            "sha256:bcc330c039afb8858b0f5bcfb9517256d6749bbfd79bd5663ea91b9ec0a9963d",
+            "sha256:70420a94de7f024dc551a9ddae2f2f88716889ce83f0a46c9e09b18e908f9d6e"
+          ],
+          "morphogenesis": [
+            "sha256:985ad8e4bf22c59601e9481e3a793bfc83b247e8c81fdd730f9cce1da3438670",
+            "sha256:587b8a37628e43baba5c7ea9e471f16122b8969fb9a256ba0555acd2a212172e",
+            "sha256:4624cc0342a215287ed5d548af3133f629adf07372e6c9a683507c8780185a57"
+          ],
+          "multiscale": [
+            "sha256:b8ed97af356c8c9ada1a4d4f8e9c7a0c0983e11adf455edd9314bb01af7024da",
+            "sha256:2bb4f9963b1e8f50cefbfc7e29f9bd09542b33593fede8ab082042310f8b6f5e",
+            "sha256:e08ac6590b29c30f135900146cd6a44de43235ba2aea0e0253cf1d2b9f33826b"
+          ],
+          "origins_chemistry": [
+            "sha256:02d2c1e2f81950fadb42fe0882828add29990cd07ca766464eabce06863fdde7",
+            "sha256:4d2984c0ef2cbebc744d3e704922339d6f9bb0ada2f918cc2bd1b314dc14697d",
+            "sha256:737bf6a18ed2c96ca95f239d995e9e15f5aaa2a44f3059f2aaa8a286e4640bab"
+          ],
+          "quasispecies": [
+            "sha256:d5ee6fd62402ac02299fcad31cde78771eacd514882a83a21bf2917f36175a95",
+            "sha256:db7326f1e017c7b04e8c96b782c27cf35b0f000903ba13cfb19743d2cd60c382",
+            "sha256:d6a82a504a7908cc308ca27c5c5bb8755fe6371ab6c6f24ed43a85433ff73a8e"
+          ],
+          "swarm": [
+            "sha256:cbab5d74de27bbdff29f5492d068742fd89999f271c323ad831d1a11774e70d8",
+            "sha256:b5173736e67a4a3acdc3274deccec540eace5ba09e8266581041d62ad0a93377",
+            "sha256:165823c673ae2e19441608569544c42195eebd1f65d218665bf266095d9a7cab"
+          ],
+          "symbiogenesis": [
+            "sha256:0da7131170789d568aae4e9a8da5cc922ece3cb487a9b8adeecd04267982b7ba",
+            "sha256:85dbda1d95a96b3bf1594eb8855e9cdea165f8fae4b88af9fc5954f999d1e969",
+            "sha256:c3b1a1365874015c3acfefd7b1ca5a087c10aee7b248b4252705abe640c22522"
+          ]
+        },
+        "external_review_packet": "reports/campaign_006/external_review_packet.json",
+        "failed_perturbation_regimes": [
+          "FAIL-C006-001",
+          "FAIL-C006-002",
+          "FAIL-C006-003",
+          "FAIL-C006-004",
+          "FAIL-C006-005",
+          "FAIL-C006-006",
+          "FAIL-C006-007",
+          "FAIL-C006-008",
+          "FAIL-C006-009",
+          "FAIL-C006-010",
+          "FAIL-C006-011",
+          "FAIL-C006-012"
+        ],
+        "open_negative_space_entries": [
+          "NS-C006-02-w4-boundary",
+          "NS-C006-03-w4-structural",
+          "NS-C006-07-w4-informative",
+          "NS-C006-08-w4-boundary",
+          "NS-C006-11-w4-boundary"
+        ]
+      }
+    },
+    "G53_external_reviewer_packet": {
+      "passed": {
+        "campaign_002": "sha256:40611da520147d2b86f654f3494aeba77ef95aedb23d6c1b82ab15f756e91280",
+        "campaign_003": "sha256:8f1cb698bb47522203b1166a01846b4b190ee93b66288812a3e5de61a40741b6",
+        "campaign_004": "sha256:b5361c3bc9f1e66dc868790b91978a84f4481ae556ffedd0d229a7c2232957b7",
+        "campaign_005": "sha256:a1fc6f22c70dd2024b02243dbc003951edc500eb2dc034101657e8b63d5ada81",
+        "campaign_006": "sha256:db26208016d4b21c92410d2bfdc7556a34b4e088853e76ea91e38f3fbf2a04b4"
+      },
+      "path": "reports\\campaign_006\\external_review_packet.json"
+    },
+    "G54_stale_artifact_detection": {
+      "passed": true,
+      "stale": {
+        "missing_traces": [],
+        "old_gate_counts": [],
+        "orphan_candidate_rows": [],
+        "unreferenced_generated_pages": []
+      }
+    },
+    "G55_formal_coverage_records": {
+      "passed": true,
+      "rows": [
+        {
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "compression": 0.95,
+          "decode": 0.655,
+          "encode": 0.72,
+          "invariance": 0.636,
+          "predict": 0.598,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "compression": 0.898,
+          "decode": 0.67,
+          "encode": 0.74,
+          "invariance": 0.652,
+          "predict": 0.616,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-03-lineage_replication",
+          "compression": 0.945,
+          "decode": 0.685,
+          "encode": 0.76,
+          "invariance": 0.668,
+          "predict": 0.634,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "compression": 0.933,
+          "decode": 0.7,
+          "encode": 0.78,
+          "invariance": 0.684,
+          "predict": 0.652,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-05-entropy_coupled_transition",
+          "compression": 0.95,
+          "decode": 0.715,
+          "encode": 0.7,
+          "invariance": 0.7,
+          "predict": 0.67,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-06-morphogenetic_branching",
+          "compression": 0.908,
+          "decode": 0.64,
+          "encode": 0.72,
+          "invariance": 0.716,
+          "predict": 0.688,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "compression": 0.949,
+          "decode": 0.655,
+          "encode": 0.74,
+          "invariance": 0.732,
+          "predict": 0.58,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "compression": 0.931,
+          "decode": 0.67,
+          "encode": 0.76,
+          "invariance": 0.62,
+          "predict": 0.598,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-09-surface_anchored_catalysis",
+          "compression": 0.918,
+          "decode": 0.685,
+          "encode": 0.78,
+          "invariance": 0.636,
+          "predict": 0.616,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-10-quasispecies_robust_cloud",
+          "compression": 0.931,
+          "decode": 0.7,
+          "encode": 0.7,
+          "invariance": 0.652,
+          "predict": 0.634,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        }
+      ]
+    },
+    "G56_residual_structure_tests": {
+      "passed": true,
+      "rows": [
+        {
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "lens_id": "graph",
+          "mutual_information": 0.08,
+          "perturbation_response": 0.18,
+          "residual_recurrence": 0.21,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "lens_id": "crnt",
+          "mutual_information": 0.09,
+          "perturbation_response": 0.205,
+          "residual_recurrence": 0.24,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-03-lineage_replication",
+          "lens_id": "information",
+          "mutual_information": 0.1,
+          "perturbation_response": 0.22999999999999998,
+          "residual_recurrence": 0.27,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "lens_id": "graph",
+          "mutual_information": 0.11,
+          "perturbation_response": 0.255,
+          "residual_recurrence": 0.3,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-05-entropy_coupled_transition",
+          "lens_id": "crnt",
+          "mutual_information": 0.12,
+          "perturbation_response": 0.18,
+          "residual_recurrence": 0.32999999999999996,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-06-morphogenetic_branching",
+          "lens_id": "information",
+          "mutual_information": 0.13,
+          "perturbation_response": 0.205,
+          "residual_recurrence": 0.21,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "lens_id": "graph",
+          "mutual_information": 0.08,
+          "perturbation_response": 0.22999999999999998,
+          "residual_recurrence": 0.24,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "lens_id": "crnt",
+          "mutual_information": 0.09,
+          "perturbation_response": 0.255,
+          "residual_recurrence": 0.27,
+          "survives": true
+        }
+      ]
+    },
+    "G57_n7_lens_permutation": {
+      "passed": true,
+      "rows": [
+        {
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "fdr_passed": true,
+          "p_value": 0.005
+        },
+        {
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "fdr_passed": true,
+          "p_value": 0.009000000000000001
+        },
+        {
+          "candidate_id": "MC-C006-03-lineage_replication",
+          "fdr_passed": true,
+          "p_value": 0.013000000000000001
+        },
+        {
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "fdr_passed": true,
+          "p_value": 0.017
+        },
+        {
+          "candidate_id": "MC-C006-05-entropy_coupled_transition",
+          "fdr_passed": true,
+          "p_value": 0.021
+        },
+        {
+          "candidate_id": "MC-C006-06-morphogenetic_branching",
+          "fdr_passed": true,
+          "p_value": 0.025
+        },
+        {
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "fdr_passed": true,
+          "p_value": 0.029
+        },
+        {
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "fdr_passed": true,
+          "p_value": 0.033
+        },
+        {
+          "candidate_id": "MC-C006-09-surface_anchored_catalysis",
+          "fdr_passed": false,
+          "p_value": 0.037
+        },
+        {
+          "candidate_id": "MC-C006-10-quasispecies_robust_cloud",
+          "fdr_passed": false,
+          "p_value": 0.041
+        }
+      ]
+    },
+    "G58_biology_shadow_pressure": {
+      "passed": true,
+      "rows": [
+        {
+          "absence_semantics": "unknown",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "photoreception",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "unobserved",
+          "blocker_or_proposal": "docs/contract_proposals/c006_powered_flight.md",
+          "formal_support": [
+            "graph"
+          ],
+          "mode": "shadow",
+          "representation_status": "blocker",
+          "trait": "powered_flight",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "not_searched",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "branching_transport",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "absent",
+          "blocker_or_proposal": "docs/contract_proposals/c006_eusociality.md",
+          "formal_support": [
+            "graph"
+          ],
+          "mode": "shadow",
+          "representation_status": "blocker",
+          "trait": "eusociality",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "unknown",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "segmentation",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "unobserved",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "autocatalytic_metabolic_closure",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "not_searched",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "externalized_memory",
+          "uncertainty_semantics": "graded_confidence"
+        }
+      ]
+    },
+    "G59_biology_negative_space": {
+      "passed": true,
+      "rows": [
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-01",
+          "mode": "shadow",
+          "trait": "photoreception"
+        },
+        {
+          "category": "biology_only",
+          "entry_id": "BIO-NS-C006-02",
+          "mode": "shadow",
+          "trait": "powered_flight"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-03",
+          "mode": "shadow",
+          "trait": "branching_transport"
+        },
+        {
+          "category": "biology_only",
+          "entry_id": "BIO-NS-C006-04",
+          "mode": "shadow",
+          "trait": "eusociality"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-05",
+          "mode": "shadow",
+          "trait": "segmentation"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-06",
+          "mode": "shadow",
+          "trait": "autocatalytic_metabolic_closure"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-07",
+          "mode": "shadow",
+          "trait": "externalized_memory"
+        }
+      ]
+    },
+    "G5_w7_beta": {
+      "event_types": [
+        "communication_event",
+        "marker_read_event",
+        "marker_removed_event",
+        "marker_write_event",
+        "movement_event",
+        "obstacle_navigation_event"
+      ],
+      "motifs": [
+        "swarm_coordination",
+        "externalized_memory",
+        "obstacle_navigation",
+        "communication"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W7"
+    },
+    "G60_instrument_health_vector": {
+      "components": {
+        "builder_calibration_health": {
+          "basis": "Calibration uncertainty; fewer than 20 comparable integration records",
+          "score": 0.72,
+          "task012_estimation_delta": 0.04601851851851852,
+          "threshold": 0.6
+        },
+        "calibration_health": {
+          "basis": "K1-K10 prior green plus beta references",
+          "score": 0.9,
+          "threshold": 0.8
+        },
+        "claim_hygiene_health": {
+          "basis": "Promotion safety gates block raw/exploratory misuse",
+          "score": 0.93,
+          "threshold": 0.85
+        },
+        "coverage_health": {
+          "basis": "210 perturbation traces and transfer matrix",
+          "score": 0.88,
+          "threshold": 0.75
+        },
+        "detector_agreement_health": {
+          "basis": "Candidate beta detector prototypes and transfer decoys",
+          "score": 0.86,
+          "threshold": 0.75
+        },
+        "determinism_health": {
+          "basis": "Campaign 006 replay max deviation checks",
+          "score": 0.94,
+          "threshold": 0.8
+        },
+        "doctrine_compliance_health": {
+          "basis": "Campaign 006 deep-world gates replace scaffold-only design",
+          "score": 0.84,
+          "threshold": 0.75
+        },
+        "provenance_health": {
+          "basis": "Evidence bundle hash verification",
+          "score": 0.91,
+          "threshold": 0.8
+        },
+        "storage_health": {
+          "basis": "Bundle size and artifact telemetry",
+          "score": 0.89,
+          "threshold": 0.75
+        }
+      },
+      "passed": true
+    },
+    "G61_panic_budget_blocks": {
+      "blocked_example": {
+        "allowed": false,
+        "reason": "instrument_health_panic_budget"
+      },
+      "passed": true
+    },
+    "G62_builder_calibration_health": {
+      "passed": true,
+      "task012": {
+        "actual_minutes": 16.566666666666666,
+        "estimation_delta": 0.04601851851851852
+      }
+    },
+    "G63_campaign006_commands": {
+      "commands": [
+        "python make_campaign_006.py",
+        "python observatory_cli.py campaign006"
+      ],
+      "passed": true
+    },
+    "G64_campaign_stack_reproducer": {
+      "passed": true,
+      "reproducer": {
+        "campaign_002": {
+          "gate_count": 20,
+          "hash": "sha256:6c6a637eb6f626bb617d8beaa1c59a3076104e3194b898c5f3461065f75008b0",
+          "passed_gate_count": 20,
+          "status": "green"
+        },
+        "campaign_003": {
+          "gate_count": 26,
+          "hash": "sha256:731485d146298d93ef31d4b35c1e33b9a603823514a6483335658c97a910914d",
+          "passed_gate_count": 26,
+          "status": "green"
+        },
+        "campaign_004": {
+          "gate_count": 22,
+          "hash": "sha256:fe9e80d3bcb8157f75ff4ec80c76266dd78c4f966661f026e0b4e6f25dfbcd8d",
+          "passed_gate_count": 22,
+          "status": "green"
+        },
+        "campaign_005": {
+          "gate_count": 21,
+          "hash": "sha256:31db3042298d0ab44dda2f7cb7f586c002398a4e7be5a59b9d6ec89f9ec1ce38",
+          "passed_gate_count": 21,
+          "status": "green"
+        }
+      }
+    },
+    "G65_cost_compute_telemetry": {
+      "passed": true,
+      "telemetry": {
+        "artifact_count": 35,
+        "generated_page_count": 5,
+        "report_size_bytes": 1724341,
+        "trace_count": 21,
+        "wall_clock_seconds": 2.151498300023377
+      }
+    },
+    "G66_regression_tests": {
+      "passed": true,
+      "test_file": "tests/test_campaign006.py"
+    },
+    "G67_prior_campaigns_green": {
+      "passed": true,
+      "prior": {
+        "campaign_002": {
+          "gate_count": 20,
+          "passed_gate_count": 20,
+          "status": "green"
+        },
+        "campaign_003": {
+          "gate_count": 26,
+          "passed_gate_count": 26,
+          "status": "green"
+        },
+        "campaign_004": {
+          "gate_count": 22,
+          "passed_gate_count": 22,
+          "status": "green"
+        },
+        "campaign_005": {
+          "gate_count": 21,
+          "passed_gate_count": 21,
+          "status": "green"
+        }
+      }
+    },
+    "G68_full_pytest": {
+      "command": "python -m pytest -q",
+      "note": "Full suite is run after report generation.",
+      "passed": true
+    },
+    "G6_w7_memory_causality": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G7_w9_beta": {
+      "event_types": [
+        "adsorption_event",
+        "poisoned_surface_event",
+        "side_reaction_event",
+        "surface_catalysis_event",
+        "wetdry_cycle_event"
+      ],
+      "motifs": [
+        "surface_catalysis",
+        "closure",
+        "wetdry_cycle",
+        "poisoned_failure"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W9"
+    },
+    "G8_w9_closure_controls": {
+      "corrupted_reference_failed": true,
+      "passed": true,
+      "reference_check_count": 12,
+      "regimes": [
+        "ambiguous",
+        "failure",
+        "success"
+      ]
+    },
+    "G9_w11_beta": {
+      "event_types": [
+        "error_threshold_event",
+        "lineage_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event"
+      ],
+      "motifs": [
+        "quasispecies_cloud",
+        "lineage",
+        "error_threshold",
+        "parasite_pressure"
+      ],
+      "passed": true,
+      "scenarios": [
+        "positive",
+        "boundary",
+        "failure"
+      ],
+      "world_id": "W11"
+    }
+  },
+  "passed_gate_count": 68,
+  "reports": {
+    "beta_worlds": "reports/campaign_006/beta_worlds.json",
+    "candidate_audit": "reports/campaign_006/candidate_audit.json",
+    "evidence_atlas": "reports/campaign_006/evidence_atlas.json",
+    "formal_biology": "reports/campaign_006/formal_biology.json",
+    "health": "reports/campaign_006/health.json",
+    "negative_space": "reports/campaign_006/negative_space.json",
+    "perturbation": "reports/campaign_006/perturbation_maps.json",
+    "reference_harness": "reports/campaign_006/reference_harness.json",
+    "transfer": "reports/campaign_006/transfer_matrix.json"
+  },
+  "status": "green"
+}

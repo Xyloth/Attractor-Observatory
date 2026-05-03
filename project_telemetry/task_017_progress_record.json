@@ -1,0 +1,74 @@
+{
+  "acceptance_outcome": "pass",
+  "actual_files": 18,
+  "actual_minutes": 41.75,
+  "actual_tests": 192,
+  "complexity_score": 10,
+  "estimated_files": 24,
+  "estimated_minutes": 60,
+  "estimated_tests": 190,
+  "estimation_delta": 0.6958333333333333,
+  "expansions_planned": [
+    "Log TASK-016 actual wall-clock without letting timing dominate TASK-017.",
+    "Implement TASK-017 hardcode excision before continuing W6-W13 reconstruction.",
+    "Ratify and enforce D14: no benchmark-conditional answer writing inside simulation step/update/apply/mutation methods.",
+    "Fix W4 segmentation, branching, radial, and layered morphogenesis so benchmark behavior follows declared fields and initial conditions.",
+    "Fix W5 EQU emergence so mutation/evolution can produce de-novo EQU without a forced task-innovation insertion branch.",
+    "Replace the mislabeled Cahn-Hilliard zero-order ODE with a fourth-order finite-difference update.",
+    "Regenerate Campaign 007 hardcode reports, preserve W3R/W4R/W5R, and keep prior campaigns reproducible."
+  ],
+  "expansions_realised": [
+    "Logged TASK-016 actual wall-clock as 48m35s with estimation_delta 0.26991 and an audit-rework note.",
+    "Added docs/doctrine_d14.md and registered D14 with a content hash in docs/doctrine_registry.json.",
+    "Added AST D14 audit enforcement over simulation methods; reports/campaign_007/d14_audit.json is green with zero violations.",
+    "Reworked W4 morphogenesis so segmented body arises from pulsed anterior/posterior source schedules, branching follows rotatable branch sources, identity updates are benchmark-agnostic, division angles follow field gradients, and radial/layered outcomes no longer use unconditional protein stamps.",
+    "Added W4 hardcode controls: segmentation passes with the declared schedule, fails when the schedule is removed, and branching changes axis when branch sources are rotated.",
+    "Removed W5 task_innovation force insertion. Added EQU-free logic precursor genomes and robust de-novo EQU emergence under mutation and selection across the reconstruction seed, hardcode seed, and ten-seed sample.",
+    "Replaced W3 Cahn-Hilliard with an explicit fourth-order finite-difference update using laplacian(phi) and laplacian(chemical potential), with phase variance and positive/negative phase checks.",
+    "Added Campaign 007 hardcode report builder, make_campaign_007_hardcode.py, and observatory_cli.py campaign007-hardcode.",
+    "Added hardcode-excision regression tests for HE1-HE9 and updated W5 tests so forced task_innovation now fails.",
+    "Fixed Campaign 005 search compatibility by making generic world runners respect a world's native scenario dt, preserving W4 density invariants under the reconstructed model.",
+    "Regenerated reports: Campaign 007 Truth 5/5, Substrate W3-W5 3/3, Hardcode HE1-HE9 9/9, Campaign 002 20/20, Campaign 005 21/21, Campaign 006 68/68.",
+    "Ran full regression: python -m pytest -q -> 192 passed."
+  ],
+  "initiative_score": null,
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "notes": "TASK-017 completed against CODEX_TASK_017_DRIVE.md hardcode-excision precondition. This does not complete Campaign 007; it clears HE1-HE9 and preserves the current Campaign 007 Truth/Substrate surface so W6R-W13R, KR, FH, BH, CSR, and RS can continue without propagating scenario-internal hardcoding. PI supplied actual wall-clock 41m45s (41.75 min), estimation_delta=0.69583. Accuracy improved because the estimate was tied to a concrete verification-bound repair slice rather than a vague campaign-size prior.",
+  "rework_index": 2,
+  "scope_delta": 0.75,
+  "scope_score": 10,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+  ],
+  "substance_audit": [
+    {
+      "module": "D14 AST audit",
+      "gate": "HE8",
+      "benchmark_condition_violations": 0,
+      "status": "green"
+    },
+    {
+      "module": "Campaign 007 hardcode excision",
+      "gate_count": 9,
+      "passed_gate_count": 9,
+      "status": "green"
+    },
+    {
+      "module": "Campaign 007 substrate preservation",
+      "gate_count": 3,
+      "passed_gate_count": 3,
+      "status": "green"
+    },
+    {
+      "module": "Full regression",
+      "test_count": 192,
+      "status": "green"
+    }
+  ],
+  "task_atom_hash": "campaign-007-hardcode-excision-he1-he9",
+  "task_class": "integration",
+  "task_id": "TASK-017",
+  "underbuild_score": null
+}

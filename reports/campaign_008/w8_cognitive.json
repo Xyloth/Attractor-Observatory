@@ -1,0 +1,312 @@
+{
+  "control_rows": [
+    {
+      "control": 0.2935337235587936,
+      "direction": "higher",
+      "effect_size": 0.4954618965755757,
+      "label": "action_homeostasis",
+      "passed": true,
+      "positive": 0.7889956201343693,
+      "threshold": 0.1
+    },
+    {
+      "control": 0.8696476375475078,
+      "direction": "higher",
+      "effect_size": 0.05000352249863216,
+      "label": "prediction_error_reduction",
+      "passed": true,
+      "positive": 0.91965116004614,
+      "threshold": 0.02
+    }
+  ],
+  "gates": {
+    "W8C": {
+      "controls": [
+        {
+          "control": 0.2935337235587936,
+          "direction": "higher",
+          "effect_size": 0.4954618965755757,
+          "label": "action_homeostasis",
+          "passed": true,
+          "positive": 0.7889956201343693,
+          "threshold": 0.1
+        },
+        {
+          "control": 0.8696476375475078,
+          "direction": "higher",
+          "effect_size": 0.05000352249863216,
+          "label": "prediction_error_reduction",
+          "passed": true,
+          "positive": 0.91965116004614,
+          "threshold": 0.02
+        }
+      ],
+      "passed": true
+    },
+    "W8R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "action_event",
+        "attention_allocation_event",
+        "energy_budget_event",
+        "external_mark_event",
+        "homeostasis_event",
+        "learning_gain_event",
+        "memory_read_event",
+        "memory_write_event",
+        "prediction_error_event",
+        "prediction_event",
+        "sensor_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 600,
+        "line_floor_met": false,
+        "path": "worlds\\cognitive\\model.py",
+        "scaffolding_lines": 40,
+        "simulation_logic_lines": 432,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W8.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 432,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 487,
+        "trace_export_lines": 15,
+        "world_id": "W8"
+      }
+    }
+  },
+  "passed": true,
+  "positive_rows": [
+    {
+      "benchmark": "homeostasis",
+      "event_types": [
+        "action_event",
+        "attention_allocation_event",
+        "energy_budget_event",
+        "external_mark_event",
+        "homeostasis_event",
+        "learning_gain_event",
+        "memory_read_event",
+        "memory_write_event",
+        "prediction_error_event",
+        "prediction_event",
+        "sensor_event"
+      ],
+      "final_state": {
+        "action": 0.03385712307174133,
+        "action_variability": 0.13053879237379037,
+        "alive": 1.0,
+        "attention_budget": 1.0,
+        "attention_entropy": 0.9919474924058636,
+        "attention_utilisation": 0.1789955509018517,
+        "baseline_error": 0.05743918330845883,
+        "baseline_gap": -0.015472252627134767,
+        "control_effort": 0.03385712307174133,
+        "controlled": 1.1891506393436035,
+        "deviation": 0.18915063934360354,
+        "disturbance_phase": 1.102182119232618e-15,
+        "energy": 1.2260348525324716,
+        "environment": 1.675998086929174,
+        "error_slope": -0.00037477085022127876,
+        "external_mark_count": 24.0,
+        "external_memory_effect": 0.22,
+        "memory_size": 16.0,
+        "memory_specificity": 0.0504059495112344,
+        "prediction": 0.9955634253579357,
+        "prediction_error": 0.0729114359355936,
+        "prediction_error_reduction": 0.0,
+        "predictive_alignment": -0.034482758620689655,
+        "sensor_health_mean": 0.9700000000000103,
+        "target": 1.0
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "final_deviation": 0.18915063934360354,
+        "within_tolerance_fraction": 0.2983425414364641
+      },
+      "observed_regime": "externalized_memory",
+      "passed": true,
+      "seed": 8100,
+      "trace_id": "sha256:928318c20f68d84d073a54eece470e3b586bb1e4b21c5d43b901a7aeaeabb82f",
+      "trace_path": "reports\\campaign_008\\traces\\W8\\homeostasis_8100_0.json",
+      "world_id": "W8"
+    },
+    {
+      "benchmark": "anticipation",
+      "event_types": [
+        "action_event",
+        "attention_allocation_event",
+        "energy_budget_event",
+        "external_mark_event",
+        "homeostasis_event",
+        "learning_gain_event",
+        "memory_read_event",
+        "memory_write_event",
+        "prediction_error_event",
+        "prediction_event",
+        "sensor_event"
+      ],
+      "final_state": {
+        "action": 0.0679503447450017,
+        "action_variability": 0.07498157866005985,
+        "alive": 1.0,
+        "attention_budget": 1.0,
+        "attention_entropy": 0.9943002446558464,
+        "attention_utilisation": 0.19714674149851644,
+        "baseline_error": 0.09241331654234645,
+        "baseline_gap": 0.022658592633049895,
+        "control_effort": 0.0679503447450017,
+        "controlled": 1.3446688696519302,
+        "deviation": 0.3446688696519302,
+        "disturbance_phase": 0.43388373911755956,
+        "energy": 1.228334541574555,
+        "environment": 1.3885807981915295,
+        "error_slope": -0.014875701986726997,
+        "external_mark_count": 24.0,
+        "external_memory_effect": 0.22,
+        "memory_size": 15.0,
+        "memory_specificity": 0.03819285389677703,
+        "prediction": 1.2140255178697554,
+        "prediction_error": 0.06975472390929656,
+        "prediction_error_reduction": 0.245187527954016,
+        "predictive_alignment": -0.1724137931034483,
+        "sensor_health_mean": 0.9700000000000101,
+        "target": 1.0
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "baseline_error": 0.09241331654234645,
+        "prediction_error": 0.06975472390929656,
+        "prediction_error_reduction": 0.245187527954016
+      },
+      "observed_regime": "externalized_memory",
+      "passed": true,
+      "seed": 8101,
+      "trace_id": "sha256:8f495d820d5cb83df0c88c8c1134bf19d67ac82ed7007ec40b3be829b681cd59",
+      "trace_path": "reports\\campaign_008\\traces\\W8\\anticipation_8101_0.json",
+      "world_id": "W8"
+    },
+    {
+      "benchmark": "externalized_memory",
+      "event_types": [
+        "action_event",
+        "attention_allocation_event",
+        "energy_budget_event",
+        "external_mark_event",
+        "homeostasis_event",
+        "learning_gain_event",
+        "memory_read_event",
+        "memory_write_event",
+        "prediction_error_event",
+        "prediction_event",
+        "sensor_event"
+      ],
+      "final_state": {
+        "action": 0.05447673131887348,
+        "action_variability": 0.12669574142544182,
+        "alive": 1.0,
+        "attention_budget": 1.0,
+        "attention_entropy": 0.9792161320713902,
+        "attention_utilisation": 1.0,
+        "baseline_error": 0.06553227795090497,
+        "baseline_gap": -0.0117200260791539,
+        "control_effort": 0.05447673131887348,
+        "controlled": 1.0266192791706241,
+        "deviation": 0.02661927917062412,
+        "disturbance_phase": 1.102182119232618e-15,
+        "energy": 1.22930539723506,
+        "environment": 1.6772594853484097,
+        "error_slope": -0.04290203553927752,
+        "external_mark_count": 24.0,
+        "external_memory_effect": 0.36000000000000004,
+        "memory_size": 20.0,
+        "memory_specificity": 0.06144872952156811,
+        "prediction": 1.026306607881284,
+        "prediction_error": 0.07725230403005887,
+        "prediction_error_reduction": 0.0,
+        "predictive_alignment": 0.034482758620689655,
+        "sensor_health_mean": 0.9700000000000101,
+        "target": 1.0
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "external_mark_count": 24.0,
+        "external_memory_effect": 0.36000000000000004,
+        "within_tolerance_fraction": 0.39226519337016574
+      },
+      "observed_regime": "externalized_memory",
+      "passed": true,
+      "seed": 8102,
+      "trace_id": "sha256:d17512acd64bd894145699c941902ff7f3200a888e9f81b209a5ec0540292a2e",
+      "trace_path": "reports\\campaign_008\\traces\\W8\\externalized_memory_8102_0.json",
+      "world_id": "W8"
+    },
+    {
+      "benchmark": "attention_budget",
+      "event_types": [
+        "action_event",
+        "attention_allocation_event",
+        "energy_budget_event",
+        "external_mark_event",
+        "homeostasis_event",
+        "learning_gain_event",
+        "memory_read_event",
+        "memory_write_event",
+        "prediction_error_event",
+        "prediction_event",
+        "sensor_event"
+      ],
+      "final_state": {
+        "action": 0.06279837697406501,
+        "action_variability": 0.12235972569230427,
+        "alive": 1.0,
+        "attention_budget": 0.45,
+        "attention_entropy": 0.9928257387188222,
+        "attention_utilisation": 0.05319088046828824,
+        "baseline_error": 0.1778824834837073,
+        "baseline_gap": -0.26495377653315466,
+        "control_effort": 0.028259269638329258,
+        "controlled": 1.5312803498709937,
+        "deviation": 0.5312803498709937,
+        "disturbance_phase": 1.102182119232618e-15,
+        "energy": 1.163076992443399,
+        "environment": 1.686615631846221,
+        "error_slope": 0.09257799385781001,
+        "external_mark_count": 24.0,
+        "external_memory_effect": 0.22,
+        "memory_size": 20.0,
+        "memory_specificity": 0.09033879598695359,
+        "prediction": 1.4255976771260954,
+        "prediction_error": 0.44283626001686194,
+        "prediction_error_reduction": 0.0,
+        "predictive_alignment": 0.034482758620689655,
+        "sensor_health_mean": 0.9370000000000099,
+        "target": 1.0
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "attention_budget": 0.45,
+        "deviation": 0.5312803498709937,
+        "prediction_error": 0.44283626001686194
+      },
+      "observed_regime": "externalized_memory",
+      "passed": true,
+      "seed": 8103,
+      "trace_id": "sha256:852650bd337f0d7f5347aea8cef574a9f4afa863f1e80fffc47cd8611d2a76a3",
+      "trace_path": "reports\\campaign_008\\traces\\W8\\attention_budget_8103_0.json",
+      "world_id": "W8"
+    }
+  ],
+  "schema": "Campaign008WorldReport.v1",
+  "world_id": "W8"
+}

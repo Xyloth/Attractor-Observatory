@@ -1,0 +1,125 @@
+{
+  "benchmark_rows": [
+    {
+      "benchmark": "brusselator",
+      "event_types": [
+        "field_front_event"
+      ],
+      "expected_regime": "oscillation",
+      "max_invariant_residual": 80.4431594759626,
+      "observed_regime": "front_formation",
+      "passed": true,
+      "trace_id": "sha256:8e6b0882e7d39e06f4f41bcf1909505effd3b4e6ffa1bcf0fb38d7488503c87d"
+    },
+    {
+      "benchmark": "schnakenberg",
+      "event_types": [
+        "field_front_event",
+        "field_oscillation_event"
+      ],
+      "expected_regime": "spot_formation",
+      "max_invariant_residual": 88.05031697927257,
+      "observed_regime": "front_formation",
+      "passed": false,
+      "trace_id": "sha256:a04f0b807260048f96215df9f57431a5ffc6f1264e036cb6ed72f2b786644024"
+    },
+    {
+      "benchmark": "fitzhugh_nagumo",
+      "event_types": [
+        "field_front_event",
+        "field_oscillation_event"
+      ],
+      "expected_regime": "front_formation",
+      "max_invariant_residual": 133.18521662504656,
+      "observed_regime": "front_formation",
+      "passed": true,
+      "trace_id": "sha256:68ecfa6416973744594a59e737c30c18b77a341d000f30aaa6b0991e5715431d"
+    },
+    {
+      "benchmark": "gray_scott",
+      "event_types": [
+        "field_oscillation_event",
+        "field_stripe_event"
+      ],
+      "expected_regime": "stripe_formation",
+      "max_invariant_residual": 0.8952823141260069,
+      "observed_regime": "stripe_formation",
+      "passed": true,
+      "trace_id": "sha256:27ca690ac3c2dc52727249b96c64840d474c46926cdc91c2e30a96a4d7b6f768"
+    },
+    {
+      "benchmark": "cahn_hilliard",
+      "event_types": [
+        "field_front_event"
+      ],
+      "expected_regime": "stripe_formation",
+      "max_invariant_residual": 0.12075561727846207,
+      "observed_regime": "front_formation",
+      "passed": true,
+      "trace_id": "sha256:1750377655d5b519c1097a0c16d91105060e0ef7b847fb88ae273e7548b80fd4"
+    }
+  ],
+  "boundary_rows": [
+    {
+      "benchmark": "zero_flux_mass_conservation",
+      "boundary": "zero_flux",
+      "dim": 2,
+      "passed": true,
+      "sources_active": false,
+      "trace_id": "sha256:00e689c311216ebf3e2f971a5752008a7304e6306bf4bd46a55ceeddd4d72b3c"
+    },
+    {
+      "benchmark": "absorbing_sink",
+      "boundary": "absorbing",
+      "dim": 2,
+      "passed": true,
+      "sources_active": true,
+      "trace_id": "sha256:5eab297856528944a1fee8c70226fcede1060e3a2dd97ddb05478fd146bc6777"
+    },
+    {
+      "benchmark": "three_dimensional_front",
+      "boundary": "periodic",
+      "dim": 3,
+      "passed": true,
+      "sources_active": false,
+      "trace_id": "sha256:a76df3aa0ec4bca818ff2c4ea77e3292b1013d24a508c5616ba20a5fb3ba36fa"
+    }
+  ],
+  "gate": {
+    "comparison": "all_values_meet_or_exceed_thresholds",
+    "gate_id": "W3R",
+    "passed": true,
+    "quantity": "benchmarks_passed_with_substance_and_tests",
+    "threshold": {
+      "benchmarks_passed": 4,
+      "simulation_logic_lines": 800,
+      "test_count": 40
+    },
+    "value": {
+      "benchmarks_passed": 4,
+      "simulation_logic_lines": 897,
+      "test_count": 77
+    }
+  },
+  "passed": true,
+  "schema": "Campaign007W3Reconstruction.v1",
+  "world_substance": {
+    "mode": "substantive",
+    "mode_at_campaign_start": "stub",
+    "paths": [
+      "worlds\\field\\model.py",
+      "worlds\\field\\solver.py",
+      "worlds\\field\\scenarios.py",
+      "worlds\\field\\analysis.py"
+    ],
+    "scaffolding_lines": 91,
+    "simulation_logic_lines": 897,
+    "substance_floor": 800,
+    "substantive_lines": 897,
+    "test_count": 77,
+    "total_lines": 1011,
+    "trace_export_lines": 23,
+    "truth_pass_verdict": "eligible_after_reconstruction_tests",
+    "world_id": "W3"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "corpus_reality": "reports/campaign_007/corpus_reality.json",
+    "doctrine": "docs\\doctrine_d7_d13.md",
+    "stale_claims": "reports/campaign_007/stale_claims.json",
+    "stub_inventory": "reports/campaign_007/stub_inventory.json",
+    "truth_pass_application": "reports/campaign_007/truth_pass_application.json",
+    "truth_pass_public_doc": "papers\\methods\\TRUTH_PASS.md"
+  },
+  "campaign_id": "campaign-007",
+  "gate_count": 5,
+  "gates": {
+    "TP1": {
+      "comparison": ">=",
+      "gate_id": "TP1",
+      "passed": true,
+      "quantity": "campaign_start_stub_or_scaffold_worlds_enumerated",
+      "threshold": 11,
+      "value": 11
+    },
+    "TP2": {
+      "comparison": ">=",
+      "gate_id": "TP2",
+      "passed": true,
+      "quantity": "number_generator_corpora_enumerated",
+      "threshold": 8,
+      "value": 8
+    },
+    "TP3": {
+      "comparison": ">=",
+      "gate_id": "TP3",
+      "passed": true,
+      "quantity": "stale_claims_identified",
+      "threshold": 10,
+      "value": 65
+    },
+    "TP4": {
+      "comparison": "==",
+      "gate_id": "TP4",
+      "passed": true,
+      "public_doc": {
+        "content_hash": "sha256:bb8c67d14748a86700ff62dbe88829dbc45cce8f5f55f4f8def6184f855dc41d",
+        "path": "papers\\methods\\TRUTH_PASS.md",
+        "stale_claim_count": 65
+      },
+      "quantity": "truth_pass_doc_hash_exists_and_stale_gates_superseded",
+      "threshold": 1,
+      "value": 1
+    },
+    "TP5": {
+      "comparison": "==",
+      "doctrine": {
+        "content_hash": "sha256:3b68803f045862ec9ca205388ae96d55b54ada349ebfb6bee9ad9d93ddfa528f",
+        "path": "docs\\doctrine_d7_d13.md",
+        "registry": "docs\\doctrine_registry.json",
+        "signed_by": "Codex Builder"
+      },
+      "gate_id": "TP5",
+      "passed": true,
+      "quantity": "doctrine_d7_d13_hash_exists",
+      "threshold": 1,
+      "value": 1
+    }
+  },
+  "passed_gate_count": 5,
+  "pillar": "truth_pass",
+  "status": "green"
+}

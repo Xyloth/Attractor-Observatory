@@ -1,0 +1,1017 @@
+{
+  "gate": {
+    "max_ci_width_first5": 0.2,
+    "passed": true,
+    "vector_count": 8
+  },
+  "geometries": [
+    {
+      "basin_id": null,
+      "confidence": 0.349598930481,
+      "cross_substrate_signature": null,
+      "detector_provenance": [
+        {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "prereg": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc"
+        }
+      ],
+      "equivalence_invariants": {
+        "declared_invariants": [
+          {
+            "basis_role": "function_class",
+            "invariant_id": "motif.autocatalytic_closure.draft"
+          }
+        ],
+        "failure_modes": [],
+        "invariant_strength": 1.0,
+        "preservation_rate": {
+          "motif.autocatalytic_closure.draft": 1.0
+        },
+        "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+      },
+      "exit_barrier": {
+        "minimum_perturbation": "medium",
+        "percolation_threshold": 0.0
+      },
+      "floor_connectivity": {
+        "escape_rate": 1.0,
+        "intra_fiber_distance_dist": [
+          0.011804959393332972,
+          0.011526075328067752,
+          0.01088826008592418,
+          0.034307266651571904,
+          0.009650302725930737,
+          0.37940740711366183,
+          0.40381848447257485,
+          0.3875444335388899
+        ],
+        "percolation_threshold": 0.0
+      },
+      "floor_dimensionality": {
+        "ci_high": 0.41420898851459714,
+        "ci_low": 0.24829015592190945,
+        "estimate": 0.3312495722182533
+      },
+      "floor_falsifier": {
+        "conflicts_with_claim": [],
+        "is_implementation_unique": true,
+        "is_point_attractor": false,
+        "status": "exploratory"
+      },
+      "floor_onset": {
+        "minimum_magnitude": "k9_free_pair"
+      },
+      "floor_reachability": {
+        "basin_volume": 0.5314948245406943,
+        "discovery_rate": 0.6136363636363636,
+        "time_to_first_visit": 3.8636363636363633
+      },
+      "floor_ruggedness": {
+        "component_count": 5,
+        "curvature_signal": 1.0,
+        "non_flatness": 1.0
+      },
+      "floor_width": {
+        "ci_high": 0.5676566309936676,
+        "ci_low": 0.49533301808772096,
+        "measure_id": "bfg-v0-normalised",
+        "volume": 0.5314948245406943
+      },
+      "geometry_id": "sha256:e214216d71404ebd6671cfefc7ca743726a52563acc32332b4cd1fcb58727eb5",
+      "implementation_diversity": {
+        "curve": [
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.05
+          },
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.1
+          },
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.2
+          },
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.4
+          }
+        ],
+        "distance_count": 28,
+        "radii": [
+          0.05,
+          0.1,
+          0.2,
+          0.4
+        ]
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "motif_registry_version": "0.1.0",
+      "neutral_drift_rate": {
+        "ci": [
+          0.52,
+          0.6799999999999999
+        ],
+        "dwell_variance": 0.6,
+        "mixing_time": 6.0
+      },
+      "neutral_floor_index": {
+        "Conn": 0.0,
+        "D_floor": 0.331249572218,
+        "H_impl": 0.0,
+        "I_inv": 1.0,
+        "L_func": 0.0,
+        "P_equiv": 0.0,
+        "R_drift": 0.6,
+        "Reach": 0.613636363636,
+        "W_floor": 0.531494824541,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "null_contested": [
+        "NF_decoy_floor"
+      ],
+      "perturbation_budget": {
+        "declared_cap": 50000,
+        "used": 88
+      },
+      "perturbation_outcomes": {
+        "outcome_counts": {
+          "O1": 0,
+          "O2": 0,
+          "O3": 44,
+          "O4": 0,
+          "O5": 0
+        },
+        "outcome_rates": {
+          "O1": 0.0,
+          "O2": 0.0,
+          "O3": 1.0,
+          "O4": 0.0,
+          "O5": 0.0
+        },
+        "perturbation_kind_breakdown": {
+          "campaign009": {
+            "O1": 0,
+            "O2": 0,
+            "O3": 44,
+            "O4": 0,
+            "O5": 0
+          }
+        },
+        "preserved_invariant_rate": 1.0,
+        "same_motif_after_perturbation_rate": 0.0,
+        "total_perturbations": 44
+      },
+      "provenance": {
+        "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+        "campaign_id": "campaign-009"
+      },
+      "source_pos_count": 22,
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "trace_set": [
+        "sha256:4047c8b64d45403ad3c77ed0e8f8f24ef91270f04fecf9cb34037c79f2ebc720",
+        "sha256:2eb91d68b23bda4918016dea2b4afe88babfab43e8d21a1a52fa5f165ddbd632",
+        "sha256:ac389492c64a53d96b78cd290f68de98b5af1822a11fd745649270b5ba48476b",
+        "sha256:25cb188076de03358b2c3405b363ef5dddc95219b038d69334755289900b5492",
+        "sha256:bd77a14a4fed38a5268fe7930a71ad3ceddff23c1cbf7ed269058c50dc33b375"
+      ],
+      "uncertainty": {
+        "bootstrap_n": 200,
+        "max_ci_width": 0.16591883259268772
+      },
+      "world_family": "crn"
+    },
+    {
+      "basin_id": null,
+      "confidence": 0.46568627451,
+      "cross_substrate_signature": null,
+      "detector_provenance": [
+        {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "prereg": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc"
+        }
+      ],
+      "equivalence_invariants": {
+        "declared_invariants": [
+          {
+            "basis_role": "function_class",
+            "invariant_id": "motif.morphogenesis_pattern.draft"
+          }
+        ],
+        "failure_modes": [],
+        "invariant_strength": 1.0,
+        "preservation_rate": {
+          "motif.morphogenesis_pattern.draft": 1.0
+        },
+        "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+      },
+      "exit_barrier": {
+        "minimum_perturbation": "large",
+        "percolation_threshold": 1.0
+      },
+      "floor_connectivity": {
+        "escape_rate": 0.0,
+        "intra_fiber_distance_dist": [
+          0.6034176081106886,
+          0.539917411942507,
+          0.6308141976161586,
+          0.6114634578513457,
+          0.5634412218085552,
+          0.7392513035928236,
+          0.7458458391109976,
+          0.7485792701195
+        ],
+        "percolation_threshold": 1.0
+      },
+      "floor_dimensionality": {
+        "ci_high": 0.7048840387883717,
+        "ci_low": 0.632595945338631,
+        "estimate": 0.6687399920635013
+      },
+      "floor_falsifier": {
+        "conflicts_with_claim": [],
+        "is_implementation_unique": false,
+        "is_point_attractor": false,
+        "status": "exploratory"
+      },
+      "floor_onset": {
+        "minimum_magnitude": "single_coordinate"
+      },
+      "floor_reachability": {
+        "basin_volume": 0.7971473648735825,
+        "discovery_rate": 1.0,
+        "time_to_first_visit": 1.0
+      },
+      "floor_ruggedness": {
+        "component_count": 1,
+        "curvature_signal": 0.0,
+        "non_flatness": 0.0
+      },
+      "floor_width": {
+        "ci_high": 0.8079200454138586,
+        "ci_low": 0.7863746843333064,
+        "measure_id": "bfg-v0-normalised",
+        "volume": 0.7971473648735825
+      },
+      "geometry_id": "sha256:4aecc507a273a5737204603837c00260548591d025475b66d5c095019ca7ff04",
+      "implementation_diversity": {
+        "curve": [
+          {
+            "cluster_count": 4,
+            "entropy": 1.9056390622295662,
+            "radius": 0.05
+          },
+          {
+            "cluster_count": 3,
+            "entropy": 1.5612781244591325,
+            "radius": 0.1
+          },
+          {
+            "cluster_count": 2,
+            "entropy": 0.9544340029249649,
+            "radius": 0.2
+          },
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.4
+          }
+        ],
+        "distance_count": 28,
+        "radii": [
+          0.05,
+          0.1,
+          0.2,
+          0.4
+        ]
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.morphogenesis_pattern.draft",
+      "motif_registry_version": "0.1.0",
+      "neutral_drift_rate": {
+        "ci": [
+          0.52,
+          0.6799999999999999
+        ],
+        "dwell_variance": 0.6,
+        "mixing_time": 1.0
+      },
+      "neutral_floor_index": {
+        "Conn": 1.0,
+        "D_floor": 0.668739992064,
+        "H_impl": 0.635213020743,
+        "I_inv": 1.0,
+        "L_func": 0.165169711622,
+        "P_equiv": 1.0,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 0.797147364874,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "null_contested": [
+        "NF_decoy_floor"
+      ],
+      "perturbation_budget": {
+        "declared_cap": 50000,
+        "used": 40
+      },
+      "perturbation_outcomes": {
+        "outcome_counts": {
+          "O1": 0,
+          "O2": 20,
+          "O3": 0,
+          "O4": 0,
+          "O5": 0
+        },
+        "outcome_rates": {
+          "O1": 0.0,
+          "O2": 1.0,
+          "O3": 0.0,
+          "O4": 0.0,
+          "O5": 0.0
+        },
+        "perturbation_kind_breakdown": {
+          "campaign009": {
+            "O1": 0,
+            "O2": 20,
+            "O3": 0,
+            "O4": 0,
+            "O5": 0
+          }
+        },
+        "preserved_invariant_rate": 1.0,
+        "same_motif_after_perturbation_rate": 1.0,
+        "total_perturbations": 20
+      },
+      "provenance": {
+        "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+        "campaign_id": "campaign-009"
+      },
+      "source_pos_count": 10,
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "trace_set": [
+        "sha256:9201c3a28c9ac86be8e8e0032e2f2e73b5cf2dc56686964b3411e6249b6f7137",
+        "sha256:d6a078d9af3e542491e8b4e5b0f1631b8441706ab33525d117c1e4bcb6b14ac7",
+        "sha256:2e99123d5239969e4213427eba2a69af3dbc03231393425a1e610c5212acb4af",
+        "sha256:10e62de0c0f7fefa52292967a0ff8d43aa35a29d03301e196abda04bdbf7d244",
+        "sha256:2136d56bcc93614020ec5fce6e985cf493f3bd3e54f0bc562bfb5ff8d4efc727"
+      ],
+      "uncertainty": {
+        "bootstrap_n": 200,
+        "max_ci_width": 0.07228809344974083
+      },
+      "world_family": "morphogenesis"
+    },
+    {
+      "basin_id": null,
+      "confidence": 0.632352941176,
+      "cross_substrate_signature": null,
+      "detector_provenance": [
+        {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "prereg": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc"
+        }
+      ],
+      "equivalence_invariants": {
+        "declared_invariants": [
+          {
+            "basis_role": "function_class",
+            "invariant_id": "motif.self_maintained_boundary.draft"
+          }
+        ],
+        "failure_modes": [],
+        "invariant_strength": 1.0,
+        "preservation_rate": {
+          "motif.self_maintained_boundary.draft": 1.0
+        },
+        "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+      },
+      "exit_barrier": {
+        "minimum_perturbation": "large",
+        "percolation_threshold": 0.75
+      },
+      "floor_connectivity": {
+        "escape_rate": 0.25,
+        "intra_fiber_distance_dist": [
+          0.1532268459382317,
+          0.15232793969290065,
+          0.1541073229975691,
+          0.1532268459382317,
+          0.15232793969290065,
+          0.5617258580498289,
+          0.5617258580498289,
+          0.5617258580498289
+        ],
+        "percolation_threshold": 0.75
+      },
+      "floor_dimensionality": {
+        "ci_high": 0.3667653773938401,
+        "ci_low": 0.22037408690446914,
+        "estimate": 0.2935697321491546
+      },
+      "floor_falsifier": {
+        "conflicts_with_claim": [],
+        "is_implementation_unique": false,
+        "is_point_attractor": false,
+        "status": "exploratory"
+      },
+      "floor_onset": {
+        "minimum_magnitude": "single_coordinate"
+      },
+      "floor_reachability": {
+        "basin_volume": 0.8092613069495895,
+        "discovery_rate": 1.0,
+        "time_to_first_visit": 1.0
+      },
+      "floor_ruggedness": {
+        "component_count": 2,
+        "curvature_signal": 0.25,
+        "non_flatness": 0.25
+      },
+      "floor_width": {
+        "ci_high": 0.870026125115138,
+        "ci_low": 0.7484964887840411,
+        "measure_id": "bfg-v0-normalised",
+        "volume": 0.8092613069495895
+      },
+      "geometry_id": "sha256:d42d8734653818c2e35a7923ea5405debb87321599d1e17f69422b615e7451a7",
+      "implementation_diversity": {
+        "curve": [
+          {
+            "cluster_count": 5,
+            "entropy": 2.25,
+            "radius": 0.05
+          },
+          {
+            "cluster_count": 5,
+            "entropy": 2.25,
+            "radius": 0.1
+          },
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.2
+          },
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.4
+          }
+        ],
+        "distance_count": 28,
+        "radii": [
+          0.05,
+          0.1,
+          0.2,
+          0.4
+        ]
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "motif_registry_version": "0.1.0",
+      "neutral_drift_rate": {
+        "ci": [
+          0.52,
+          0.6799999999999999
+        ],
+        "dwell_variance": 0.6,
+        "mixing_time": 1.5
+      },
+      "neutral_floor_index": {
+        "Conn": 0.75,
+        "D_floor": 0.293569732149,
+        "H_impl": 0.75,
+        "I_inv": 1.0,
+        "L_func": 0.023863636364,
+        "P_equiv": 0.75,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 0.80926130695,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "null_contested": [
+        "NF_decoy_floor"
+      ],
+      "perturbation_budget": {
+        "declared_cap": 50000,
+        "used": 40
+      },
+      "perturbation_outcomes": {
+        "outcome_counts": {
+          "O1": 0,
+          "O2": 15,
+          "O3": 5,
+          "O4": 0,
+          "O5": 0
+        },
+        "outcome_rates": {
+          "O1": 0.0,
+          "O2": 0.75,
+          "O3": 0.25,
+          "O4": 0.0,
+          "O5": 0.0
+        },
+        "perturbation_kind_breakdown": {
+          "campaign009": {
+            "O1": 0,
+            "O2": 15,
+            "O3": 5,
+            "O4": 0,
+            "O5": 0
+          }
+        },
+        "preserved_invariant_rate": 1.0,
+        "same_motif_after_perturbation_rate": 0.75,
+        "total_perturbations": 20
+      },
+      "provenance": {
+        "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+        "campaign_id": "campaign-009"
+      },
+      "source_pos_count": 10,
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "trace_set": [
+        "sha256:3f05473eceedbed1b22aa2cccc3778c4dc6bce638b66e902c5b4b2bf5baa7d17",
+        "sha256:695c5de34e1d8b9e5ef06cc6f9e7bdf5c51c15746941003a3cd6fae6c8dcd2f4",
+        "sha256:c06a582dd83eaf08687d46673951c0b09b66b576eb0ae7c1fcce2902c614d63a",
+        "sha256:672c08f593b527374290d365b933d3bdacdfb2c1a93b3cad880f1c3a52496822",
+        "sha256:ce43708d9663256c5703da842a32ce9bab43ac161c73c76071495d02e9ab0f64"
+      ],
+      "uncertainty": {
+        "bootstrap_n": 200,
+        "max_ci_width": 0.14639129048937097
+      },
+      "world_family": "protocell"
+    },
+    {
+      "basin_id": null,
+      "confidence": 0.732843137255,
+      "cross_substrate_signature": null,
+      "detector_provenance": [
+        {
+          "detector": "motifs.geometry.perturbation_outcomes.v1",
+          "prereg": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc"
+        }
+      ],
+      "equivalence_invariants": {
+        "declared_invariants": [
+          {
+            "basis_role": "function_class",
+            "invariant_id": "motif.self_replication_lineage.draft"
+          }
+        ],
+        "failure_modes": [],
+        "invariant_strength": 1.0,
+        "preservation_rate": {
+          "motif.self_replication_lineage.draft": 1.0
+        },
+        "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+      },
+      "exit_barrier": {
+        "minimum_perturbation": "medium",
+        "percolation_threshold": 0.25
+      },
+      "floor_connectivity": {
+        "escape_rate": 0.75,
+        "intra_fiber_distance_dist": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.3458281835554563,
+          0.34643270760800643,
+          0.34616946906420587
+        ],
+        "percolation_threshold": 0.25
+      },
+      "floor_dimensionality": {
+        "ci_high": 0.3463040529273457,
+        "ci_low": 0.1463040529273457,
+        "estimate": 0.2463040529273457
+      },
+      "floor_falsifier": {
+        "conflicts_with_claim": [],
+        "is_implementation_unique": false,
+        "is_point_attractor": false,
+        "status": "exploratory"
+      },
+      "floor_onset": {
+        "minimum_magnitude": "single_coordinate"
+      },
+      "floor_reachability": {
+        "basin_volume": 0.8694276489991122,
+        "discovery_rate": 1.0,
+        "time_to_first_visit": 1.0
+      },
+      "floor_ruggedness": {
+        "component_count": 4,
+        "curvature_signal": 0.75,
+        "non_flatness": 0.75
+      },
+      "floor_width": {
+        "ci_high": 0.9352190202590474,
+        "ci_low": 0.803636277739177,
+        "measure_id": "bfg-v0-normalised",
+        "volume": 0.8694276489991122
+      },
+      "geometry_id": "sha256:be7aead455450bce3a7a9f2c80cfcfbb0e1a9b97a21c040b2f5afe380c40f536",
+      "implementation_diversity": {
+        "curve": [
+          {
+            "cluster_count": 2,
+            "entropy": 0.8112781244591328,
+            "radius": 0.05
+          },
+          {
+            "cluster_count": 2,
+            "entropy": 0.8112781244591328,
+            "radius": 0.1
+          },
+          {
+            "cluster_count": 2,
+            "entropy": 0.8112781244591328,
+            "radius": 0.2
+          },
+          {
+            "cluster_count": 1,
+            "entropy": 0.0,
+            "radius": 0.4
+          }
+        ],
+        "distance_count": 28,
+        "radii": [
+          0.05,
+          0.1,
+          0.2,
+          0.4
+        ]
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.self_replication_lineage.draft",
+      "motif_registry_version": "0.1.0",
+      "neutral_drift_rate": {
+        "ci": [
+          0.52,
+          0.6799999999999999
+        ],
+        "dwell_variance": 0.6,
+        "mixing_time": 4.5
+      },
+      "neutral_floor_index": {
+        "Conn": 0.25,
+        "D_floor": 0.246304052927,
+        "H_impl": 0.270426041486,
+        "I_inv": 1.0,
+        "L_func": 0.065347727502,
+        "P_equiv": 0.75,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 0.869427648999,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "null_contested": [
+        "NF_decoy_floor"
+      ],
+      "perturbation_budget": {
+        "declared_cap": 50000,
+        "used": 40
+      },
+      "perturbation_outcomes": {
+        "outcome_counts": {
+          "O1": 10,
+          "O2": 5,
+          "O3": 5,
+          "O4": 0,
+          "O5": 0
+        },
+        "outcome_rates": {
+          "O1": 0.5,
+          "O2": 0.25,
+          "O3": 0.25,
+          "O4": 0.0,
+          "O5": 0.0
+        },
+        "perturbation_kind_breakdown": {
+          "campaign009": {
+            "O1": 10,
+            "O2": 5,
+            "O3": 5,
+            "O4": 0,
+            "O5": 0
+          }
+        },
+        "preserved_invariant_rate": 1.0,
+        "same_motif_after_perturbation_rate": 0.75,
+        "total_perturbations": 20
+      },
+      "provenance": {
+        "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+        "campaign_id": "campaign-009"
+      },
+      "source_pos_count": 10,
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "trace_set": [
+        "sha256:330d33eb666dafcc995a3040ce3626b78cf3bf35508f7f13759d76b33f01a6c0",
+        "sha256:24fc74118fd5ab4c86a0089753ff63d2d70c3d8cedf042bd7c2089f9ffeae29f",
+        "sha256:283c49f827ce34b9c3e486c3c2c41c523220e09d29bcfb606f663b480e9c416a",
+        "sha256:28086061e718518a8239d4da4a7255b2ed1e8ae15d8278f9d0f2e450c12b0b73",
+        "sha256:eaa366dc16c909b29e7b1015703b9a621b17b631e1aea0cf4300aebf928fcdaf"
+      ],
+      "uncertainty": {
+        "bootstrap_n": 200,
+        "max_ci_width": 0.2
+      },
+      "world_family": "digital"
+    }
+  ],
+  "passed": true,
+  "schema": "Campaign009NFIVectors.v1",
+  "vectors": [
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.41420898851459714,
+          "ci_low": 0.24829015592190945,
+          "mean": 0.3312495722182533,
+          "width": 0.16591883259268772
+        },
+        "W_floor": {
+          "ci_high": 0.5676566309936676,
+          "ci_low": 0.49533301808772096,
+          "mean": 0.5314948245406943,
+          "width": 0.07232361290594666
+        }
+      },
+      "max_ci_width": 0.16591883259268772,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nfi": {
+        "Conn": 0.0,
+        "D_floor": 0.331249572218,
+        "H_impl": 0.0,
+        "I_inv": 1.0,
+        "L_func": 0.0,
+        "P_equiv": 0.0,
+        "R_drift": 0.6,
+        "Reach": 0.613636363636,
+        "W_floor": 0.531494824541,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source_pair_count": 44,
+      "world_family": "crn"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.7048840387883717,
+          "ci_low": 0.632595945338631,
+          "mean": 0.6687399920635013,
+          "width": 0.07228809344974083
+        },
+        "W_floor": {
+          "ci_high": 0.8079200454138586,
+          "ci_low": 0.7863746843333064,
+          "mean": 0.7971473648735825,
+          "width": 0.02154536108055225
+        }
+      },
+      "max_ci_width": 0.07228809344974083,
+      "motif_id": "motif.morphogenesis_pattern.draft",
+      "nfi": {
+        "Conn": 1.0,
+        "D_floor": 0.668739992064,
+        "H_impl": 0.635213020743,
+        "I_inv": 1.0,
+        "L_func": 0.165169711622,
+        "P_equiv": 1.0,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 0.797147364874,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source_pair_count": 20,
+      "world_family": "morphogenesis"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.3667653773938401,
+          "ci_low": 0.22037408690446914,
+          "mean": 0.2935697321491546,
+          "width": 0.14639129048937097
+        },
+        "W_floor": {
+          "ci_high": 0.870026125115138,
+          "ci_low": 0.7484964887840411,
+          "mean": 0.8092613069495895,
+          "width": 0.12152963633109695
+        }
+      },
+      "max_ci_width": 0.14639129048937097,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nfi": {
+        "Conn": 0.75,
+        "D_floor": 0.293569732149,
+        "H_impl": 0.75,
+        "I_inv": 1.0,
+        "L_func": 0.023863636364,
+        "P_equiv": 0.75,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 0.80926130695,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source_pair_count": 20,
+      "world_family": "protocell"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.3463040529273457,
+          "ci_low": 0.1463040529273457,
+          "mean": 0.2463040529273457,
+          "width": 0.2
+        },
+        "W_floor": {
+          "ci_high": 0.9352190202590474,
+          "ci_low": 0.803636277739177,
+          "mean": 0.8694276489991122,
+          "width": 0.13158274251987026
+        }
+      },
+      "max_ci_width": 0.2,
+      "motif_id": "motif.self_replication_lineage.draft",
+      "nfi": {
+        "Conn": 0.25,
+        "D_floor": 0.246304052927,
+        "H_impl": 0.270426041486,
+        "I_inv": 1.0,
+        "L_func": 0.065347727502,
+        "P_equiv": 0.75,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 0.869427648999,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source_pair_count": 20,
+      "world_family": "digital"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.07835683604703926,
+          "ci_low": 0.04163627611874797,
+          "mean": 0.059996556082893615,
+          "width": 0.03672055992829129
+        },
+        "W_floor": {
+          "ci_high": 0.3144093426996125,
+          "ci_low": 0.1955906573003875,
+          "mean": 0.255,
+          "width": 0.11881868539922502
+        }
+      },
+      "max_ci_width": 0.11881868539922502,
+      "motif_id": "motif.externalized_memory.draft",
+      "nfi": {
+        "Conn": 0.940003443917,
+        "D_floor": 0.059996556083,
+        "H_impl": 0.40563906223,
+        "I_inv": 1.0,
+        "L_func": 0.745,
+        "P_equiv": 0.25,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 0.255,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source": "reports/campaign_008/w8_cognitive.json",
+      "source_pair_count": 4,
+      "world_family": "cognitive"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.3746604874566548,
+          "ci_low": 0.17466048745665483,
+          "mean": 0.27466048745665483,
+          "width": 0.2
+        },
+        "W_floor": {
+          "ci_high": 0.12356858627770567,
+          "ci_low": 0.04169161062806084,
+          "mean": 0.08263009845288326,
+          "width": 0.08187697564964483
+        }
+      },
+      "max_ci_width": 0.2,
+      "motif_id": "motif.self_replication_lineage.draft",
+      "nfi": {
+        "Conn": 0.725339512543,
+        "D_floor": 0.274660487457,
+        "H_impl": 1.0,
+        "I_inv": 1.0,
+        "L_func": 0.917369901547,
+        "P_equiv": 0.0,
+        "R_drift": 0.6,
+        "Reach": 0.333333333333,
+        "W_floor": 0.082630098453,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source": "reports/campaign_008/w11_quasispecies.json",
+      "source_pair_count": 3,
+      "world_family": "quasispecies"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.2624137133447083,
+          "ci_low": 0.06241371334470827,
+          "mean": 0.16241371334470828,
+          "width": 0.2
+        },
+        "W_floor": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "mean": 0.0,
+          "width": 0.0
+        }
+      },
+      "max_ci_width": 0.2,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nfi": {
+        "Conn": 0.837586286655,
+        "D_floor": 0.162413713345,
+        "H_impl": 1.0,
+        "I_inv": 1.0,
+        "L_func": 1.0,
+        "P_equiv": 0.0,
+        "R_drift": 0.6,
+        "Reach": 0.0,
+        "W_floor": 0.0,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source": "reports/campaign_008/w12_symbiogenesis.json",
+      "source_pair_count": 3,
+      "world_family": "symbiogenesis"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.04943882440251886,
+          "ci_low": 0.006142932742565537,
+          "mean": 0.027790878572542196,
+          "width": 0.04329589165995332
+        },
+        "W_floor": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "mean": 1.0,
+          "width": 0.0
+        }
+      },
+      "max_ci_width": 0.04329589165995332,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nfi": {
+        "Conn": 0.972209121427,
+        "D_floor": 0.027790878573,
+        "H_impl": 0.0,
+        "I_inv": 1.0,
+        "L_func": 0.0,
+        "P_equiv": 1.0,
+        "R_drift": 0.6,
+        "Reach": 1.0,
+        "W_floor": 1.0,
+        "projection_method_id": null,
+        "scalar_projection": null
+      },
+      "passed": true,
+      "source": "reports/campaign_008/w13_multiscale.json",
+      "source_pair_count": 4,
+      "world_family": "multiscale"
+    }
+  ]
+}

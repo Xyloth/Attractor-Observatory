@@ -1,0 +1,292 @@
+{
+  "control_rows": [
+    {
+      "control": 0.75,
+      "direction": "higher",
+      "effect_size": 0.25,
+      "label": "catalyst_removal",
+      "passed": true,
+      "positive": 1.0,
+      "threshold": 0.15
+    },
+    {
+      "control": 2.0,
+      "direction": "higher",
+      "effect_size": 1.2000000000000002,
+      "label": "hyperedge_order",
+      "passed": true,
+      "positive": 3.2,
+      "threshold": 0.5
+    }
+  ],
+  "gates": {
+    "W10C": {
+      "controls": [
+        {
+          "control": 0.75,
+          "direction": "higher",
+          "effect_size": 0.25,
+          "label": "catalyst_removal",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.15
+        },
+        {
+          "control": 2.0,
+          "direction": "higher",
+          "effect_size": 1.2000000000000002,
+          "label": "hyperedge_order",
+          "passed": true,
+          "positive": 3.2,
+          "threshold": 0.5
+        }
+      ],
+      "passed": true
+    },
+    "W10R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "block_activation_event",
+        "bottleneck_species_event",
+        "catalysis_event",
+        "closure_event",
+        "feedback_component_event",
+        "hyperedge_fire_event",
+        "module_merge_event",
+        "recycling_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 400,
+        "line_floor_met": true,
+        "path": "worlds\\hypergraph_reactions\\model.py",
+        "scaffolding_lines": 39,
+        "simulation_logic_lines": 443,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W10.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 443,
+        "test_count": 21,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 497,
+        "trace_export_lines": 15,
+        "world_id": "W10"
+      }
+    }
+  },
+  "passed": true,
+  "positive_rows": [
+    {
+      "benchmark": "high_order_closure",
+      "event_types": [
+        "block_activation_event",
+        "bottleneck_species_event",
+        "catalysis_event",
+        "closure_event",
+        "feedback_component_event",
+        "hyperedge_fire_event",
+        "module_merge_event",
+        "recycling_event"
+      ],
+      "final_state": {
+        "A": 8.04650394786053,
+        "B": 0.9956332506609159,
+        "C": 0.527515452644549,
+        "D": 5.02560736253419,
+        "E": 0.955602038807983,
+        "F": 6.378581285155607,
+        "G": 0.9795175767456299,
+        "H": 4.6214187148443875,
+        "active_extent_capacity": 4.453901569519994,
+        "catalyst_concentration": 0.2,
+        "catalyst_coverage": 5.0,
+        "closure_deficit": 0.0,
+        "closure_score": 1.0,
+        "degree_imbalance": 0.125,
+        "dependency_articulation_proxy": 0.6,
+        "feedback_component_score": 1.0,
+        "flux_entropy": 0.9623550887639133,
+        "high_order_signal": 3.2,
+        "modularity": 0.4242482618757658,
+        "module_count": 2.0,
+        "module_entropy": 0.8877715578761672,
+        "order_weighted_activity": 16.0,
+        "output_recycling": 6.0,
+        "stoichiometric_rank_proxy": 5.0,
+        "stoichiometric_signed_balance": 0.28028673835125445
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "closure_score": 1.0
+      },
+      "observed_regime": "closed_hypergraph",
+      "passed": true,
+      "seed": 8100,
+      "trace_id": "sha256:84ebe6a892ae08e3945d503f691c9b8d251724ab3cb0f4b8c0547cb6224b1fef",
+      "trace_path": "reports\\campaign_008\\traces\\W10\\high_order_closure_8100_0.json",
+      "world_id": "W10"
+    },
+    {
+      "benchmark": "modular_blocks",
+      "event_types": [
+        "block_activation_event",
+        "bottleneck_species_event",
+        "catalysis_event",
+        "closure_event",
+        "feedback_component_event",
+        "hyperedge_fire_event",
+        "module_merge_event",
+        "recycling_event"
+      ],
+      "final_state": {
+        "A": 7.847328859754104,
+        "B": 0.804373860795755,
+        "C": 0.39371018915316613,
+        "D": 4.9544992025873835,
+        "E": 0.7656019488495821,
+        "F": 6.358530924604198,
+        "G": 0.8038766050683119,
+        "H": 4.641469075395797,
+        "active_extent_capacity": 3.57193646466257,
+        "catalyst_concentration": 0.2,
+        "catalyst_coverage": 5.0,
+        "closure_deficit": 0.0,
+        "closure_score": 1.0,
+        "degree_imbalance": 0.125,
+        "dependency_articulation_proxy": 0.6,
+        "feedback_component_score": 1.0,
+        "flux_entropy": 0.9622126002381594,
+        "high_order_signal": 3.2,
+        "modularity": 0.43191056149591245,
+        "module_count": 2.0,
+        "module_entropy": 0.8994070437068903,
+        "order_weighted_activity": 16.0,
+        "output_recycling": 6.0,
+        "stoichiometric_rank_proxy": 5.0,
+        "stoichiometric_signed_balance": 0.28028673835125445
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "modularity": 0.43191056149591245,
+        "module_count": 2.0
+      },
+      "observed_regime": "closed_hypergraph",
+      "passed": true,
+      "seed": 8101,
+      "trace_id": "sha256:f5e1c30f8af5bb41345eb5c8b5df885a5ed1b662182df17e9aa786d636e70fc5",
+      "trace_path": "reports\\campaign_008\\traces\\W10\\modular_blocks_8101_0.json",
+      "world_id": "W10"
+    },
+    {
+      "benchmark": "ode_ssa_agreement",
+      "event_types": [
+        "block_activation_event",
+        "bottleneck_species_event",
+        "catalysis_event",
+        "closure_event",
+        "feedback_component_event",
+        "hyperedge_fire_event",
+        "module_merge_event",
+        "recycling_event"
+      ],
+      "final_state": {
+        "A": 8.595839742702525,
+        "B": 1.5379639165599466,
+        "C": 0.968647829470322,
+        "D": 5.27224363310875,
+        "E": 1.486894678129075,
+        "F": 6.444943974282666,
+        "G": 1.4733120320621564,
+        "H": 4.555056025717328,
+        "active_extent_capacity": 7.004782372781446,
+        "catalyst_concentration": 0.2,
+        "catalyst_coverage": 5.0,
+        "closure_deficit": 0.0,
+        "closure_score": 1.0,
+        "degree_imbalance": 0.125,
+        "dependency_articulation_proxy": 0.6,
+        "feedback_component_score": 1.0,
+        "flux_entropy": 0.9602670943041098,
+        "high_order_signal": 3.2,
+        "modularity": 0.4044206490877218,
+        "module_count": 2.0,
+        "module_entropy": 0.8573399081420603,
+        "order_weighted_activity": 16.0,
+        "output_recycling": 6.0,
+        "stoichiometric_rank_proxy": 5.0,
+        "stoichiometric_signed_balance": 0.28028673835125445
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "closure_score": 1.0,
+        "state_mass": 30.33490183203277
+      },
+      "observed_regime": "closed_hypergraph",
+      "passed": true,
+      "seed": 8102,
+      "trace_id": "sha256:d92377539232fe19b050ca07a806ae0e687424d24f8321c68e50d7d5e41e2f40",
+      "trace_path": "reports\\campaign_008\\traces\\W10\\ode_ssa_agreement_8102_0.json",
+      "world_id": "W10"
+    },
+    {
+      "benchmark": "hyperedge_order_effect",
+      "event_types": [
+        "block_activation_event",
+        "bottleneck_species_event",
+        "catalysis_event",
+        "closure_event",
+        "feedback_component_event",
+        "hyperedge_fire_event",
+        "module_merge_event",
+        "recycling_event"
+      ],
+      "final_state": {
+        "A": 8.595839742702525,
+        "B": 1.5379639165599466,
+        "C": 0.968647829470322,
+        "D": 5.27224363310875,
+        "E": 1.486894678129075,
+        "F": 6.444943974282666,
+        "G": 1.4733120320621564,
+        "H": 4.555056025717328,
+        "active_extent_capacity": 7.004782372781446,
+        "catalyst_concentration": 0.2,
+        "catalyst_coverage": 5.0,
+        "closure_deficit": 0.0,
+        "closure_score": 1.0,
+        "degree_imbalance": 0.125,
+        "dependency_articulation_proxy": 0.6,
+        "feedback_component_score": 1.0,
+        "flux_entropy": 0.9602670943041098,
+        "high_order_signal": 3.2,
+        "modularity": 0.4044206490877218,
+        "module_count": 2.0,
+        "module_entropy": 0.8573399081420603,
+        "order_weighted_activity": 16.0,
+        "output_recycling": 6.0,
+        "stoichiometric_rank_proxy": 5.0,
+        "stoichiometric_signed_balance": 0.28028673835125445
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "closure_score": 1.0
+      },
+      "observed_regime": "closed_hypergraph",
+      "passed": true,
+      "seed": 8103,
+      "trace_id": "sha256:fca39fe254911222e3497071b49e58091985f76bbb3eaa3b27742f0de73bc743",
+      "trace_path": "reports\\campaign_008\\traces\\W10\\hyperedge_order_effect_8103_0.json",
+      "world_id": "W10"
+    }
+  ],
+  "schema": "Campaign008WorldReport.v1",
+  "world_id": "W10"
+}

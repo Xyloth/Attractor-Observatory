@@ -1,0 +1,115 @@
+# =============================================================================
+# Attractor Observatory — public-facing portfolio repository
+#
+# This repository is a curated public showcase of the project's documentation,
+# specifications, doctrine, AI-collaboration framework, methodology, and
+# numerical evidence. The full implementation (substrate engines, motif
+# detectors, validation gauntlet, kernel) is held privately. Sample code
+# excerpts demonstrating technical depth live in docs/SAMPLE_CODE.md.
+#
+# What ships publicly: README, LICENSE, CITATION, CONTRIBUTING, all spec
+# versions, all CODEX_*.md campaign drivers, the doctrine document, the
+# methods documents, the substance audits, the truth pass, the decision log,
+# the AI builder ledger (empirical estimation calibration data), preregistration
+# records, campaign summary reports, the negative-space registry, and curated
+# code excerpts in docs/.
+#
+# What does not ship: the substrate engines (worlds/), motif detectors
+# (motifs/), validation gauntlet (validation/), null factory (nulls/), kernel
+# (core/), trace plane (trace/), formalism layer (formalism/), biology shadow
+# (biology/), search/orchestration (search/), test suite (tests/), atlas
+# Python modules, AI OS Python modules, top-level entry points, and per-seed
+# trace dumps.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Implementation modules — held privately
+# -----------------------------------------------------------------------------
+worlds/
+motifs/
+validation/
+nulls/
+core/
+trace/
+formalism/
+biology/
+search/
+ops/
+experiments/
+evidence/
+tests/
+
+# Top-level Python entry points
+observatory_cli.py
+verify_bundle.py
+make_campaign_*.py
+make_task_*.py
+
+# AI OS Python (memory ledger Markdown is kept; .py modules are private)
+ai_os/*.py
+ai_os/__pycache__/
+ai_os/debate_log/
+
+# Atlas Python (markdown summaries kept; .py is private)
+atlas/db.py
+atlas/structured.py
+atlas/__pycache__/
+atlas/negative_space/structured.py
+atlas/negative_space/__pycache__/
+
+# -----------------------------------------------------------------------------
+# Runtime artifacts and per-seed trace dumps (regenerable)
+# -----------------------------------------------------------------------------
+runs/
+trace_store/
+reports/*/traces/
+reports/*/he_traces/
+reports/*/w5_traces/
+reports/*/closure_recurrence/traces/
+reports/*/closure_recurrence_verify/traces/
+reports/phase1/closure_recurrence/traces/
+reports/phase1/closure_recurrence_verify/traces/
+
+# -----------------------------------------------------------------------------
+# Standard exclusions
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+venv/
+.venv/
+env/
+ENV/
+
+build/
+dist/
+*.egg-info/
+*.egg
+
+.codex_bootstrap/
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.bak
+*.orig
+
+.ipynb_checkpoints/

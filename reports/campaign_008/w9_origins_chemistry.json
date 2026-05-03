@@ -1,0 +1,272 @@
+{
+  "control_rows": [
+    {
+      "control": 0.7924188613623281,
+      "direction": "higher",
+      "effect_size": 0.2075811386376719,
+      "label": "surface_catalysis",
+      "passed": true,
+      "positive": 1.0,
+      "threshold": 0.2
+    },
+    {
+      "control": 4.428096239867925e-05,
+      "direction": "higher",
+      "effect_size": 0.6806528812794804,
+      "label": "gradient_boundary",
+      "passed": true,
+      "positive": 0.6806971622418792,
+      "threshold": 0.05
+    }
+  ],
+  "gates": {
+    "W9C": {
+      "controls": [
+        {
+          "control": 0.7924188613623281,
+          "direction": "higher",
+          "effect_size": 0.2075811386376719,
+          "label": "surface_catalysis",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.2
+        },
+        {
+          "control": 4.428096239867925e-05,
+          "direction": "higher",
+          "effect_size": 0.6806528812794804,
+          "label": "gradient_boundary",
+          "passed": true,
+          "positive": 0.6806971622418792,
+          "threshold": 0.05
+        }
+      ],
+      "passed": true
+    },
+    "W9R": {
+      "benchmark_count": 3,
+      "benchmarks_passed": 3,
+      "event_types": [
+        "adsorption_event",
+        "boundary_repair_event",
+        "compartment_event",
+        "desorption_event",
+        "gradient_flux_event",
+        "mineral_weathering_event",
+        "pore_diffusion_event",
+        "protected_microenvironment_event",
+        "surface_catalysis_event",
+        "surface_closure_event",
+        "surface_reaction_event",
+        "template_memory_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 500,
+        "line_floor_met": false,
+        "path": "worlds\\origins_chemistry\\model.py",
+        "scaffolding_lines": 33,
+        "simulation_logic_lines": 404,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W9.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 404,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 452,
+        "trace_export_lines": 15,
+        "world_id": "W9"
+      }
+    }
+  },
+  "passed": true,
+  "positive_rows": [
+    {
+      "benchmark": "surface_stabilized_closure",
+      "event_types": [
+        "adsorption_event",
+        "boundary_repair_event",
+        "compartment_event",
+        "desorption_event",
+        "gradient_flux_event",
+        "mineral_weathering_event",
+        "pore_diffusion_event",
+        "protected_microenvironment_event",
+        "surface_catalysis_event",
+        "surface_closure_event",
+        "surface_reaction_event",
+        "template_memory_event"
+      ],
+      "final_state": {
+        "amphiphile_partition": 0.46297266487583055,
+        "boundary": 26.015241723878205,
+        "boundary_entropy": 0.9926195646879056,
+        "boundary_persistence": 1.0,
+        "catalytic_support": 3.552672326786595,
+        "chemistry_boundary_correlation": 1.0,
+        "closure_product": 29.624108519842665,
+        "closure_score": 1.0,
+        "compartment_contrast": 0.04938448764442824,
+        "energy_gradient_span": 0.41999999999999993,
+        "energy_weighted_product": 29.505923574569902,
+        "gradient_span": 0.42027141738210266,
+        "gradient_work": 1.0247453350000297,
+        "microenvironment_stability": 0.8776079020555319,
+        "occupied_site_fraction": 1.0,
+        "pore_graph_conductance": 1.0,
+        "redox_heterogeneity": 0.08601979605205767,
+        "solution_a": 0.037510627200440065,
+        "solution_b": 0.04584632213387119,
+        "solution_gradient_span": 0.0002714173821027604,
+        "surface_a": 6.03159732222875,
+        "surface_b": 1.826168445467743,
+        "surface_c": 29.624108519842665,
+        "surface_coverage": 0.3779590238774843,
+        "surface_recruitment": 0.7903582486986569,
+        "template_coherence": 0.2343227917629552,
+        "template_protection": 0.9166666666666666,
+        "transport_bottleneck_fraction": 0.0,
+        "vesicle_seed_fraction": 1.0
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "closure_score": 1.0,
+        "surface_c": 29.624108519842665
+      },
+      "observed_regime": "gradient_compartment",
+      "passed": true,
+      "seed": 8100,
+      "trace_id": "sha256:82f884efd50905645730857a32b94ed0cfb184fa939c85e44ae17ffd9ffeee27",
+      "trace_path": "reports\\campaign_008\\traces\\W9\\surface_stabilized_closure_8100_0.json",
+      "world_id": "W9"
+    },
+    {
+      "benchmark": "transport_limited_closure",
+      "event_types": [
+        "adsorption_event",
+        "boundary_repair_event",
+        "compartment_event",
+        "desorption_event",
+        "gradient_flux_event",
+        "mineral_weathering_event",
+        "pore_diffusion_event",
+        "protected_microenvironment_event",
+        "surface_catalysis_event",
+        "surface_closure_event",
+        "surface_reaction_event",
+        "template_memory_event"
+      ],
+      "final_state": {
+        "amphiphile_partition": 0.4630208277016663,
+        "boundary": 26.007140888556485,
+        "boundary_entropy": 0.9925284212546203,
+        "boundary_persistence": 1.0,
+        "catalytic_support": 3.5692540280403238,
+        "chemistry_boundary_correlation": 1.0,
+        "closure_product": 29.601688753503062,
+        "closure_score": 1.0,
+        "compartment_contrast": 0.04999974991775396,
+        "energy_gradient_span": 0.41999999999999993,
+        "energy_weighted_product": 29.488519208109437,
+        "gradient_span": 0.4202441903554076,
+        "gradient_work": 1.0248862246576333,
+        "microenvironment_stability": 0.8765094719118403,
+        "occupied_site_fraction": 1.0,
+        "pore_graph_conductance": 1.0,
+        "redox_heterogeneity": 0.08602262531948289,
+        "solution_a": 0.037482262328350925,
+        "solution_b": 0.04581165395687336,
+        "solution_gradient_span": 0.0002441903554076916,
+        "surface_a": 6.067380421025849,
+        "surface_b": 1.8439412068397416,
+        "surface_c": 29.601688753503062,
+        "surface_coverage": 0.3780961385114591,
+        "surface_recruitment": 0.7891045920485535,
+        "template_coherence": 0.23419619716545326,
+        "template_protection": 0.9166666666666666,
+        "transport_bottleneck_fraction": 0.0,
+        "vesicle_seed_fraction": 1.0
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "closure_score": 1.0,
+        "diffusion_rate": 0.085,
+        "optimum_signal": 1.0
+      },
+      "observed_regime": "gradient_compartment",
+      "passed": true,
+      "seed": 8101,
+      "trace_id": "sha256:7933db78558234aba315181924997a60c7c6857362aa83369575051700d51e36",
+      "trace_path": "reports\\campaign_008\\traces\\W9\\transport_limited_closure_8101_0.json",
+      "world_id": "W9"
+    },
+    {
+      "benchmark": "gradient_anchored_protocell",
+      "event_types": [
+        "adsorption_event",
+        "boundary_repair_event",
+        "compartment_event",
+        "desorption_event",
+        "gradient_flux_event",
+        "mineral_weathering_event",
+        "pore_diffusion_event",
+        "protected_microenvironment_event",
+        "surface_catalysis_event",
+        "surface_closure_event",
+        "surface_reaction_event",
+        "template_memory_event"
+      ],
+      "final_state": {
+        "amphiphile_partition": 0.5880690874935961,
+        "boundary": 32.63880527940154,
+        "boundary_entropy": 0.9842310007941825,
+        "boundary_persistence": 1.0,
+        "catalytic_support": 3.4764664811176074,
+        "chemistry_boundary_correlation": 1.0,
+        "closure_product": 21.750465413885777,
+        "closure_score": 1.0,
+        "compartment_contrast": 0.07048749655562227,
+        "energy_gradient_span": 0.6800000000000002,
+        "energy_weighted_product": 21.209885565365376,
+        "gradient_span": 0.6807515170065054,
+        "gradient_work": 1.0574935750168521,
+        "microenvironment_stability": 0.8195842672020252,
+        "occupied_site_fraction": 1.0,
+        "pore_graph_conductance": 1.0,
+        "redox_heterogeneity": 0.08649877451155945,
+        "solution_a": 0.02759533451703321,
+        "solution_b": 0.03372763107637392,
+        "solution_gradient_span": 0.0007515170065052594,
+        "surface_a": 8.605963730489226,
+        "surface_b": 2.6541054832678976,
+        "surface_c": 21.750465413885777,
+        "surface_coverage": 0.39076988039907407,
+        "surface_recruitment": 0.6588946728439842,
+        "template_coherence": 0.23312849304279334,
+        "template_protection": 0.75,
+        "transport_bottleneck_fraction": 0.0,
+        "vesicle_seed_fraction": 1.0
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "boundary_persistence": 1.0,
+        "chemistry_boundary_correlation": 1.0
+      },
+      "observed_regime": "gradient_compartment",
+      "passed": true,
+      "seed": 8102,
+      "trace_id": "sha256:8f91dc6ee4a7db56faa190045291f9f8f013d784b0ef009c59c007a6ddb207fb",
+      "trace_path": "reports\\campaign_008\\traces\\W9\\gradient_anchored_protocell_8102_0.json",
+      "world_id": "W9"
+    }
+  ],
+  "schema": "Campaign008WorldReport.v1",
+  "world_id": "W9"
+}

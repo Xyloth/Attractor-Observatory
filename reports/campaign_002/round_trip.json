@@ -1,0 +1,45 @@
+{
+  "explicit_failure_list": [],
+  "gate_ids": [
+    "G13",
+    "G19"
+  ],
+  "gates": {
+    "G13": {
+      "passed": true,
+      "projection_count": 3
+    },
+    "G19": {
+      "max_loss": 0.0,
+      "passed": true
+    }
+  },
+  "passed": true,
+  "projection_count": 3,
+  "rows": [
+    {
+      "encoded_size_bytes": 134,
+      "loss": 0.0,
+      "loss_metric": "exact_projection_fragment_loss",
+      "passed": true,
+      "projection": "closure",
+      "tolerance": 0.0
+    },
+    {
+      "encoded_size_bytes": 4220,
+      "loss": 0.0,
+      "loss_metric": "exact_projection_fragment_loss",
+      "passed": true,
+      "projection": "boundary",
+      "tolerance": 0.0
+    },
+    {
+      "encoded_size_bytes": 1442,
+      "loss": 0.0,
+      "loss_metric": "exact_projection_fragment_loss",
+      "passed": true,
+      "projection": "lineage",
+      "tolerance": 0.0
+    }
+  ]
+}

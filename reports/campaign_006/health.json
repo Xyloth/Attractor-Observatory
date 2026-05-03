@@ -1,0 +1,130 @@
+{
+  "components": {
+    "builder_calibration_health": {
+      "basis": "Calibration uncertainty; fewer than 20 comparable integration records",
+      "score": 0.72,
+      "task012_estimation_delta": 0.04601851851851852,
+      "threshold": 0.6
+    },
+    "calibration_health": {
+      "basis": "K1-K10 prior green plus beta references",
+      "score": 0.9,
+      "threshold": 0.8
+    },
+    "claim_hygiene_health": {
+      "basis": "Promotion safety gates block raw/exploratory misuse",
+      "score": 0.93,
+      "threshold": 0.85
+    },
+    "coverage_health": {
+      "basis": "210 perturbation traces and transfer matrix",
+      "score": 0.88,
+      "threshold": 0.75
+    },
+    "detector_agreement_health": {
+      "basis": "Candidate beta detector prototypes and transfer decoys",
+      "score": 0.86,
+      "threshold": 0.75
+    },
+    "determinism_health": {
+      "basis": "Campaign 006 replay max deviation checks",
+      "score": 0.94,
+      "threshold": 0.8
+    },
+    "doctrine_compliance_health": {
+      "basis": "Campaign 006 deep-world gates replace scaffold-only design",
+      "score": 0.84,
+      "threshold": 0.75
+    },
+    "provenance_health": {
+      "basis": "Evidence bundle hash verification",
+      "score": 0.91,
+      "threshold": 0.8
+    },
+    "storage_health": {
+      "basis": "Bundle size and artifact telemetry",
+      "score": 0.89,
+      "threshold": 0.75
+    }
+  },
+  "gates": {
+    "G60_instrument_health_vector": {
+      "components": {
+        "builder_calibration_health": {
+          "basis": "Calibration uncertainty; fewer than 20 comparable integration records",
+          "score": 0.72,
+          "task012_estimation_delta": 0.04601851851851852,
+          "threshold": 0.6
+        },
+        "calibration_health": {
+          "basis": "K1-K10 prior green plus beta references",
+          "score": 0.9,
+          "threshold": 0.8
+        },
+        "claim_hygiene_health": {
+          "basis": "Promotion safety gates block raw/exploratory misuse",
+          "score": 0.93,
+          "threshold": 0.85
+        },
+        "coverage_health": {
+          "basis": "210 perturbation traces and transfer matrix",
+          "score": 0.88,
+          "threshold": 0.75
+        },
+        "detector_agreement_health": {
+          "basis": "Candidate beta detector prototypes and transfer decoys",
+          "score": 0.86,
+          "threshold": 0.75
+        },
+        "determinism_health": {
+          "basis": "Campaign 006 replay max deviation checks",
+          "score": 0.94,
+          "threshold": 0.8
+        },
+        "doctrine_compliance_health": {
+          "basis": "Campaign 006 deep-world gates replace scaffold-only design",
+          "score": 0.84,
+          "threshold": 0.75
+        },
+        "provenance_health": {
+          "basis": "Evidence bundle hash verification",
+          "score": 0.91,
+          "threshold": 0.8
+        },
+        "storage_health": {
+          "basis": "Bundle size and artifact telemetry",
+          "score": 0.89,
+          "threshold": 0.75
+        }
+      },
+      "passed": true
+    },
+    "G61_panic_budget_blocks": {
+      "blocked_example": {
+        "allowed": false,
+        "reason": "instrument_health_panic_budget"
+      },
+      "passed": true
+    },
+    "G62_builder_calibration_health": {
+      "passed": true,
+      "task012": {
+        "actual_minutes": 16.566666666666666,
+        "estimation_delta": 0.04601851851851852
+      }
+    }
+  },
+  "panic_budget": {
+    "builder_calibration_health": true,
+    "calibration_health": true,
+    "claim_hygiene_health": true,
+    "coverage_health": true,
+    "detector_agreement_health": true,
+    "determinism_health": true,
+    "doctrine_compliance_health": true,
+    "provenance_health": true,
+    "storage_health": true
+  },
+  "passed": true,
+  "pillar": "health"
+}

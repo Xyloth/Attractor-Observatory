@@ -1,0 +1,43 @@
+{
+  "campaigns": {
+    "campaign_002": {
+      "command": "python make_campaign_002.py",
+      "gate_count": 20,
+      "passed_gate_count": 20,
+      "status": "green"
+    },
+    "campaign_005": {
+      "command": "python make_campaign_005.py",
+      "gate_count": 21,
+      "passed_gate_count": 21,
+      "status": "green"
+    },
+    "campaign_006": {
+      "command": "python make_campaign_006.py",
+      "gate_count": 68,
+      "passed_gate_count": 68,
+      "status": "green"
+    },
+    "campaign_007": {
+      "command": "python make_campaign_007.py",
+      "gate_count": 5,
+      "passed_gate_count": 5,
+      "status": "green"
+    },
+    "campaign_008": {
+      "command": "python observatory_cli.py campaign008 --out reports\\campaign_008\\cli_substrate_completion.json",
+      "gate_count": 35,
+      "passed_gate_count": 35,
+      "status": "green"
+    }
+  },
+  "d14_lint": "zero violations through reports/campaign_008/d14_world_audit.json",
+  "passed": true,
+  "pytest": {
+    "command": "python -m pytest -q",
+    "passed": 208,
+    "status": "green",
+    "wall_seconds": 374.41
+  },
+  "schema": "Task019RegressionVerification.v1"
+}

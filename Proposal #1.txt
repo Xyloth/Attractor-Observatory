@@ -1,0 +1,785 @@
+Proposal #1
+
+# Proposal: Basin-Floor Geometry as a Core Attractor Observatory Measurement Layer
+
+## Status
+
+**Conceptual upgrade for architectural review.**
+This should be treated as a candidate v1.2+ design addition, not as a public scientific claim yet.
+
+## Audience
+
+Claude: architecture, formalism, risk, and research strategy review.
+Codex: implementation feasibility, schema design, detector design, experiment design, and telemetry strategy.
+
+---
+
+# 1. Executive summary
+
+The Attractor Observatory currently focuses on detecting stable recurring motifs across artificial worlds and biological data.
+
+This proposal adds a deeper geometric layer:
+
+> **Do not only detect that a system entered an attractor. Measure the shape of the attractor basin, especially the “flat floor” where many different implementations remain functionally equivalent.**
+
+The key idea:
+
+> **The slope explains convergence. The floor explains diversity.**
+
+A slope pulls systems toward a solution class.
+A floor allows many structurally different versions of that solution to persist once inside the basin.
+
+This matters because many biological and artificial systems appear to converge toward the same broad function while realizing it through different structures:
+
+```text
+flight:
+  bird wings
+  bat wings
+  insect wings
+  pterosaur wings
+  engineered aircraft
+
+sight:
+  camera eyes
+  compound eyes
+  pinhole eyes
+  simple photoreceptors
+
+memory:
+  DNA
+  immune memory
+  pheromone trails
+  writing
+  source code
+  trained model weights
+```
+
+The Observatory should therefore distinguish:
+
+```text
+Attractor entry:
+  why systems move toward a motif
+
+Attractor floor:
+  how many different ways the motif can be realized while preserving its identity
+```
+
+This directly supports the final-stage formalism goal: identifying where current mathematics struggles to describe substrate-neutral equivalence across diverse implementations.
+
+---
+
+# 2. Core claim
+
+A biological or artificial attractor should not be modeled only as a point, minimum, or final state.
+
+It should be modeled as:
+
+> **a basin whose floor may contain a neutral manifold of equivalent implementations.**
+
+The basin walls encode directional pressure.
+The basin floor encodes implementation freedom.
+
+In operational language:
+
+> **The basin floor is the region where perturbations change implementation more than function.**
+
+This gives us a measurable object:
+
+# **Basin-Floor Geometry**
+
+A new analysis object for the Observatory.
+
+---
+
+# 3. Why this matters
+
+The current Attractor Observatory design already measures things like recurrence, persistence, basin width, cross-family transfer, detector robustness, and formal coverage.
+
+Those are necessary but incomplete.
+
+They can tell us:
+
+```text
+This motif recurs.
+This motif persists.
+This motif transfers across worlds.
+This motif survives perturbation.
+```
+
+But they do not fully answer:
+
+```text
+What counts as the same motif?
+How much internal freedom does the motif allow?
+Are two different implementations equivalent in the deeper process sense?
+Where does selection/constraint end and neutral drift begin?
+What invariant is preserved across diverse implementations?
+```
+
+Those questions are central to:
+
+```text
+cross-substrate equivalence
+implementation diversity
+formal coverage
+formal deficit detection
+candidate new mathematical objects
+```
+
+The floor is where “same process, different structure” becomes measurable.
+
+---
+
+# 4. Novelty positioning
+
+This idea has known relatives. We should not overclaim novelty.
+
+Known adjacent concepts include:
+
+```text
+fitness landscapes
+neutral networks
+genotype-phenotype maps
+critical manifolds
+Morse-Bott style non-isolated minima
+continuous attractor manifolds
+evolvability and robustness
+canalization
+adaptive landscapes
+topological data analysis
+```
+
+The likely novel contribution is not:
+
+> “flat regions exist in landscapes.”
+
+That is known.
+
+The potentially novel contribution is:
+
+> **operationalizing basin-floor geometry as a substrate-neutral measurement layer for artificial life, biology, motif equivalence, and formal-deficit detection.**
+
+In other words:
+
+```text
+not just:
+  this attractor exists
+
+but:
+  this attractor has a measurable floor;
+  the floor has dimensionality, width, ruggedness, drift behavior,
+  implementation diversity, exit barriers, and preserved invariants;
+  those properties help define cross-substrate equivalence.
+```
+
+This belongs in the Observatory because it makes the final formalism layer sharper.
+
+---
+
+# 5. Proposed canonical sentence
+
+Add this to the spec:
+
+```text
+Basin-floor geometry is the Observatory’s measurement of where convergence gives way to neutral implementation diversity. The slope explains why systems enter an attractor; the floor defines the space of equivalent realizations inside it. Floor extraction is therefore central to cross-substrate equivalence and to the search for formal deficits.
+```
+
+Short version:
+
+```text
+The slope explains convergence. The floor explains diversity.
+```
+
+---
+
+# 6. Proposed new object: BasinFloorGeometry
+
+Add a first-class analysis object:
+
+```text
+BasinFloorGeometry = {
+  motif_id:
+  basin_id:
+  world_family:
+  trace_set:
+  floor_onset:
+  floor_width:
+  floor_dimensionality:
+  floor_ruggedness:
+  neutral_drift_rate:
+  implementation_diversity:
+  exit_barrier:
+  equivalence_invariants:
+  perturbation_outcome_profile:
+  confidence:
+  uncertainty:
+  provenance:
+}
+```
+
+## Core fields
+
+### `floor_onset`
+
+Where the system transitions from directional descent/constraint into neutral or near-neutral variation.
+
+Plain language:
+
+```text
+Where does the slope become floor?
+```
+
+### `floor_width`
+
+How large the neutral/equivalent region is.
+
+### `floor_dimensionality`
+
+How many independent directions the system can vary while preserving the motif.
+
+This may be one of the most important measurements.
+
+A point-like attractor has low floor dimensionality.
+A broad solution family has high floor dimensionality.
+
+### `floor_ruggedness`
+
+Whether the floor is smooth, bumpy, divided into sub-basins, or contains local implementation traps.
+
+### `neutral_drift_rate`
+
+How quickly systems move along the floor without losing motif identity.
+
+### `implementation_diversity`
+
+How many structurally different realizations exist within the same functional/process motif.
+
+### `exit_barrier`
+
+How much perturbation is required to leave the motif basin.
+
+### `equivalence_invariants`
+
+The features preserved across different floor implementations.
+
+This is the bridge to the formalism layer.
+
+---
+
+# 7. Perturbation outcome model
+
+For a given motif instance, perturb the system in many directions and classify outcomes:
+
+```text
+O1: returns to same implementation
+O2: moves to different implementation of same motif
+O3: collapses / loses motif
+O4: exits into different motif basin
+O5: enters ambiguous/transitional region
+```
+
+The floor is especially associated with O2:
+
+> implementation changes, motif identity persists.
+
+A strong flat-floor signal is:
+
+```text
+high O2 frequency
+low fitness/stability loss
+preserved motif identity
+high structural diversity
+```
+
+This can become the basis for a **Neutral Floor Index**.
+
+---
+
+# 8. Proposed metric: Neutral Floor Index
+
+Add an optional derived metric:
+
+```text
+NeutralFloorIndex(M) =
+  f(
+    floor_width,
+    floor_dimensionality,
+    implementation_diversity,
+    neutral_drift_rate,
+    perturbation_O2_rate,
+    equivalence_invariant_strength,
+    low_functional_loss
+  )
+```
+
+Important: report as vector-first, scalar-second.
+
+Do not make the scalar canonical.
+
+Suggested vector:
+
+```text
+NFI_vector = {
+  W_floor: floor_width,
+  D_floor: floor_dimensionality,
+  H_impl: implementation_diversity,
+  R_drift: neutral_drift_rate,
+  P_equiv: probability_of_same_motif_after_perturbation,
+  L_func: functional_loss_under_floor_drift,
+  I_inv: invariant_preservation_score
+}
+```
+
+Scalar projection may be used for dashboards, but the vector is the scientific object.
+
+---
+
+# 9. Relationship to AttractorStrength
+
+AttractorStrength tells us whether a motif is real enough to care about.
+
+BasinFloorGeometry tells us what kind of attractor it is.
+
+Examples:
+
+```text
+deep narrow attractor:
+  strong convergence, few viable implementations
+
+deep wide attractor:
+  strong convergence, many viable implementations
+
+shallow wide attractor:
+  weak convergence, high drift
+
+rugged floor:
+  many local sub-solutions; historical path matters
+
+sloped basin with no floor:
+  convergence to a specific implementation
+
+flat floor with weak walls:
+  lots of neutral variation, weak attractor identity
+```
+
+This should not replace AttractorStrength. It should augment it.
+
+Suggested relationship:
+
+```text
+AttractorStrength = existence / stability / recurrence score
+
+BasinFloorGeometry = internal structure of the attractor basin
+
+FormalGap = partly informed by whether floor invariants are hard to encode
+```
+
+---
+
+# 10. Why this matters for the final “new math” stage
+
+The final Observatory stage asks whether recurring motifs expose gaps in current mathematical language.
+
+The floor is central because it forces a harder question than slope analysis.
+
+Slope analysis asks:
+
+```text
+Why did the system go there?
+```
+
+Floor analysis asks:
+
+```text
+What remains the same across all the different ways it can be there?
+```
+
+That second question is closer to new formalism.
+
+A point attractor is relatively easy to formalize:
+
+```text
+many paths → one state
+```
+
+A flat-floor attractor is harder:
+
+```text
+many paths → many states → same process identity
+```
+
+This demands mathematics for:
+
+```text
+identity without identical structure
+equivalence without material sameness
+functional sameness across implementation diversity
+stability with internal freedom
+neutral drift inside constrained possibility
+cross-substrate invariant preservation
+```
+
+That is exactly where the Observatory’s formal-deficit layer may find meaningful pressure.
+
+---
+
+# 11. Candidate formal lenses
+
+Claude should evaluate whether this belongs in the formalism layer through lenses such as:
+
+```text
+dynamical systems
+fitness landscapes
+Morse-Bott theory
+manifold learning
+neutral network theory
+topological data analysis
+information geometry
+category theory / functorial equivalence
+renormalization / coarse-graining
+control theory
+stochastic processes
+computational mechanics
+```
+
+Important framing:
+
+The project should not assume one of these already solves the problem.
+
+The formalism layer should ask:
+
+```text
+Which lens captures slope?
+Which lens captures floor?
+Which lens captures floor equivalence?
+Which lens preserves invariants across substrates?
+Which lens only encodes examples without compression?
+Which lens predicts floor drift or exit behavior?
+```
+
+---
+
+# 12. Implementation sketch for Codex
+
+Codex should treat this as a candidate analysis module, not a full immediate rewrite.
+
+Suggested module location:
+
+```text
+motifs/geometry/
+  basin_floor.py
+  perturbation_outcomes.py
+  floor_metrics.py
+  floor_embeddings.py
+  equivalence.py
+```
+
+Possible schemas:
+
+```text
+analysis/geometry/
+  BasinFloorGeometry
+  PerturbationOutcomeProfile
+  NeutralFloorIndex
+  EquivalenceInvariantReport
+```
+
+Suggested first implementation target:
+
+# Minimal vertical slice
+
+Use existing successful traces from one or more worlds.
+
+For a selected motif:
+
+```text
+1. identify motif-positive trace regions
+2. generate perturbation variants around those regions
+3. rerun or replay under perturbed conditions
+4. classify outcomes O1–O5
+5. estimate implementation diversity among surviving motif-positive variants
+6. compute preliminary floor metrics
+7. emit BasinFloorGeometry object
+```
+
+Minimum success:
+
+```text
+Given a motif-positive trace, the system can produce a perturbation outcome profile and distinguish:
+  - return to same implementation
+  - different implementation of same motif
+  - motif collapse
+  - basin exit
+```
+
+Builder expansion authority:
+
+```text
+Codex may add embeddings, dimensionality estimation, topology, clustering,
+visualization, richer schemas, tests, calibration cases, and telemetry if
+they strengthen the measurement layer.
+```
+
+Seed, not ceiling.
+
+---
+
+# 13. Calibration cases
+
+Add calibration worlds or calibration scenarios specifically for floor geometry.
+
+Suggested additions:
+
+## K5 — Neutral floor calibration
+
+A synthetic world with a known flat or near-flat solution manifold.
+
+Goal:
+
+```text
+Detector should identify broad neutral implementation space.
+```
+
+## K6 — Narrow basin calibration
+
+A synthetic world where convergence leads to a tight point-like solution.
+
+Goal:
+
+```text
+Detector should not falsely infer a broad floor.
+```
+
+## K7 — Rugged floor calibration
+
+A synthetic world with multiple nearby sub-basins separated by small barriers.
+
+Goal:
+
+```text
+Detector should distinguish smooth floor from rugged floor.
+```
+
+## K8 — Decoy floor calibration
+
+A world that appears to have many implementations, but they are not functionally equivalent.
+
+Goal:
+
+```text
+Detector should reject fake floor diversity.
+```
+
+---
+
+# 14. Telemetry additions
+
+Add telemetry for basin-floor analysis:
+
+```text
+floor_analysis_runs
+perturbations_generated
+perturbation_success_rate
+outcome_class_distribution
+same_motif_after_perturbation_rate
+same_implementation_return_rate
+different_implementation_same_motif_rate
+collapse_rate
+exit_rate
+ambiguous_rate
+embedding_stability
+floor_dimensionality_estimate
+floor_metric_confidence
+```
+
+This is especially important because floor extraction could easily hallucinate equivalence.
+
+---
+
+# 15. Risks and controls
+
+## Risk 1: mistaking weak selection for true equivalence
+
+A system may appear flat because the detector is too coarse.
+
+Control:
+
+```text
+use multiple detectors
+measure functional loss
+run decoy calibration
+audit equivalence invariants
+```
+
+## Risk 2: mistaking implementation diversity for motif equivalence
+
+Different structures may look like the same motif because the motif definition is too broad.
+
+Control:
+
+```text
+require explicit EquivalenceInvariantReport
+test against K8 decoy floor calibration
+```
+
+## Risk 3: overclaiming novelty
+
+Flat floors, neutral networks, and attractor manifolds already exist in the literature.
+
+Control:
+
+```text
+claim novelty only at the Observatory integration level:
+cross-substrate basin-floor measurement for motif equivalence and formal-gap detection
+```
+
+## Risk 4: floor metrics become arbitrary
+
+Control:
+
+```text
+vector-first reporting
+calibration worlds with known geometry
+perturbation outcome classification
+uncertainty estimates
+```
+
+## Risk 5: formalism layer treats floor as metaphor
+
+Control:
+
+```text
+require encode/decode/predict tests for floor objects
+include floor-specific coverage criteria
+```
+
+---
+
+# 16. Questions for Claude
+
+Claude should answer:
+
+```text
+1. Does BasinFloorGeometry belong as a new analysis object, a scoring extension, or a formalism-layer object?
+
+2. Should NeutralFloorIndex be added to AttractorStrength or kept separate?
+
+3. What existing mathematical frameworks best cover this idea?
+
+4. What specific formal-deficit tests would reveal whether floor equivalence exceeds existing lenses?
+
+5. What calibration corpora are required to prevent hallucinated floor detection?
+
+6. How should this alter v1.2’s claim ladder, if at all?
+
+7. Does this strengthen or weaken the project’s credibility?
+
+8. Where does this belong in the roadmap?
+```
+
+---
+
+# 17. Questions for Codex
+
+Codex should answer:
+
+```text
+1. What is the cleanest schema for BasinFloorGeometry?
+
+2. What minimum implementation could produce perturbation outcome profiles from existing traces?
+
+3. Which existing worlds are best suited for first floor-geometry testing?
+
+4. How should perturbations be generated and recorded?
+
+5. What tests would prevent false floor detection?
+
+6. What telemetry should be emitted?
+
+7. Can this be implemented as a modular analysis layer without contaminating existing motif detection?
+
+8. What is the first serious build campaign for this feature?
+```
+
+---
+
+# 18. Proposed first build campaign
+
+# Campaign: Basin Floor Geometry v0
+
+Minimum success:
+
+```text
+1. Add BasinFloorGeometry schema.
+2. Add PerturbationOutcomeProfile schema.
+3. Add outcome classes O1–O5.
+4. Implement perturbation outcome classifier for at least one world family.
+5. Compute preliminary NeutralFloorIndex vector.
+6. Add K5/K6 calibration stubs or scenarios.
+7. Emit telemetry for floor analysis.
+8. Produce one replayable report showing:
+   - motif-positive source trace
+   - perturbation variants
+   - outcome distribution
+   - preliminary floor metrics
+```
+
+Expansion authority:
+
+```text
+Codex may add dimensionality estimation, embedding visualizations,
+topological summaries, clustering, richer calibration worlds, tests,
+and report artifacts if doing so improves rigor or interpretability.
+```
+
+Claim status:
+
+```text
+exploratory only until calibration and nulls exist
+```
+
+---
+
+# 19. Recommended spec insertion
+
+Add a new section to v1.2:
+
+```text
+Section X — Basin-Floor Geometry
+
+The Observatory treats attractors not merely as point-like convergence targets but as basins with measurable internal geometry. In many biological and artificial systems, convergence appears to pull systems toward a broad functional class, while allowing neutral or near-neutral variation among structurally different implementations. The basin floor is the region where perturbations alter implementation more than motif identity.
+
+The slope explains convergence; the floor explains diversity.
+
+Basin-floor geometry is therefore central to cross-substrate equivalence, implementation diversity, and formal-deficit detection.
+```
+
+---
+
+# 20. Bottom line
+
+This is not a side metaphor.
+
+It is a serious upgrade.
+
+The Observatory should not merely ask:
+
+```text
+Did this motif recur?
+```
+
+It should ask:
+
+```text
+What is the geometry of the basin that produced it?
+Where does the slope become floor?
+How many equivalent implementations live on that floor?
+What invariant survives across them?
+Can current mathematics represent that invariant compactly?
+```
+
+That final question is the bridge to the most ambitious version of the project.
+
+If the floor can be measured, then “equivalent implementations of the same process-form” becomes a scientific object instead of a hand-wavy analogy.
+
+That is exactly the kind of object the Attractor Observatory was built to find.

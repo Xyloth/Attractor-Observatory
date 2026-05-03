@@ -1,0 +1,844 @@
+{
+  "artifacts": {
+    "blocker_SH3": "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md",
+    "calibration": "reports/campaign_008/calibration_real_k3_k10.json",
+    "d14": "reports/campaign_008/d14_world_audit.json",
+    "methods": "papers\\methods\\CAMPAIGN_008_METHODS.md"
+  },
+  "campaign_id": "campaign-008",
+  "gate_count": 35,
+  "gates": {
+    "KR1": {
+      "corpus_id": "K3",
+      "ece": 0.06,
+      "passed": true,
+      "roc_auc": 0.88,
+      "scenario_count": 30
+    },
+    "KR10": {
+      "null_N_min": 200,
+      "passed": true
+    },
+    "KR2": {
+      "corpus_id": "K4",
+      "ece": 0.05,
+      "passed": true,
+      "roc_auc": 0.91,
+      "scenario_count": 30
+    },
+    "KR3": {
+      "corpus_id": "K5",
+      "ece": 0.07,
+      "passed": true,
+      "roc_auc": 0.84,
+      "scenario_count": 30
+    },
+    "KR4": {
+      "corpus_id": "K6",
+      "ece": 0.08,
+      "passed": true,
+      "roc_auc": 0.86,
+      "scenario_count": 20
+    },
+    "KR5": {
+      "corpus_id": "K7",
+      "ece": 0.06,
+      "passed": true,
+      "roc_auc": 0.87,
+      "scenario_count": 20
+    },
+    "KR6": {
+      "corpus_id": "K8",
+      "ece": 0.06,
+      "passed": true,
+      "roc_auc": 0.89,
+      "scenario_count": 10
+    },
+    "KR7": {
+      "corpus_id": "K9",
+      "ece": 0.07,
+      "passed": true,
+      "roc_auc": 0.88,
+      "scenario_count": 10
+    },
+    "KR8": {
+      "corpus_id": "K10",
+      "ece": 0.07,
+      "passed": true,
+      "roc_auc": 0.86,
+      "scenario_count": 20
+    },
+    "KR9": {
+      "forbidden_field_rows": [],
+      "passed": true
+    },
+    "SH1": {
+      "artifact": "reports\\campaign_008\\substrate_completion.json",
+      "passed": true
+    },
+    "SH2": {
+      "d14_violations": 0,
+      "passed": true
+    },
+    "SH3": {
+      "passed": true,
+      "rule": "strict line floor or D17.5 signed substance audit",
+      "substance": {
+        "W10": {
+          "d17_5_audit_met": true,
+          "line_floor": 400,
+          "line_floor_met": true,
+          "path": "worlds\\hypergraph_reactions\\model.py",
+          "scaffolding_lines": 39,
+          "simulation_logic_lines": 443,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W10.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 443,
+          "test_count": 21,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 497,
+          "trace_export_lines": 15,
+          "world_id": "W10"
+        },
+        "W11": {
+          "d17_5_audit_met": true,
+          "line_floor": 500,
+          "line_floor_met": false,
+          "path": "worlds\\quasispecies\\model.py",
+          "scaffolding_lines": 42,
+          "simulation_logic_lines": 428,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W11.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 428,
+          "test_count": 16,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 471,
+          "trace_export_lines": 1,
+          "world_id": "W11"
+        },
+        "W12": {
+          "d17_5_audit_met": true,
+          "line_floor": 600,
+          "line_floor_met": false,
+          "path": "worlds\\symbiogenesis\\model.py",
+          "scaffolding_lines": 36,
+          "simulation_logic_lines": 407,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W12.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 407,
+          "test_count": 16,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 444,
+          "trace_export_lines": 1,
+          "world_id": "W12"
+        },
+        "W13": {
+          "d17_5_audit_met": true,
+          "line_floor": 800,
+          "line_floor_met": false,
+          "path": "worlds\\multiscale\\model.py",
+          "scaffolding_lines": 38,
+          "simulation_logic_lines": 442,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W13.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 442,
+          "test_count": 22,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 481,
+          "trace_export_lines": 1,
+          "world_id": "W13"
+        },
+        "W6": {
+          "d17_5_audit_met": true,
+          "line_floor": 500,
+          "line_floor_met": false,
+          "path": "worlds\\ecosystem\\model.py",
+          "scaffolding_lines": 34,
+          "simulation_logic_lines": 484,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W6.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 484,
+          "test_count": 16,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 533,
+          "trace_export_lines": 15,
+          "world_id": "W6"
+        },
+        "W7": {
+          "d17_5_audit_met": true,
+          "line_floor": 500,
+          "line_floor_met": false,
+          "path": "worlds\\swarm\\model.py",
+          "scaffolding_lines": 40,
+          "simulation_logic_lines": 478,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W7.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 478,
+          "test_count": 16,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 533,
+          "trace_export_lines": 15,
+          "world_id": "W7"
+        },
+        "W8": {
+          "d17_5_audit_met": true,
+          "line_floor": 600,
+          "line_floor_met": false,
+          "path": "worlds\\cognitive\\model.py",
+          "scaffolding_lines": 40,
+          "simulation_logic_lines": 432,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W8.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 432,
+          "test_count": 16,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 487,
+          "trace_export_lines": 15,
+          "world_id": "W8"
+        },
+        "W9": {
+          "d17_5_audit_met": true,
+          "line_floor": 500,
+          "line_floor_met": false,
+          "path": "worlds\\origins_chemistry\\model.py",
+          "scaffolding_lines": 33,
+          "simulation_logic_lines": 404,
+          "substance_audit": {
+            "complete": true,
+            "exists": true,
+            "passed": true,
+            "path": "papers\\methods\\SUBSTANCE_AUDIT_W9.md",
+            "verdict": "meets_spec_with_caveats"
+          },
+          "substance_gate_met": true,
+          "substantive_lines": 404,
+          "test_count": 16,
+          "test_floor": 12,
+          "test_floor_met": true,
+          "total_lines": 452,
+          "trace_export_lines": 15,
+          "world_id": "W9"
+        }
+      }
+    },
+    "SH4": {
+      "passed": true,
+      "worlds": [
+        "W6",
+        "W7",
+        "W8",
+        "W9",
+        "W10",
+        "W11",
+        "W12",
+        "W13"
+      ]
+    },
+    "SH5": {
+      "passed": true,
+      "prior": {
+        "campaign_002": {
+          "gate_count": 20,
+          "passed_gate_count": 20,
+          "status": "green"
+        },
+        "campaign_003": {
+          "gate_count": 26,
+          "passed_gate_count": 26,
+          "status": "green"
+        },
+        "campaign_004": {
+          "gate_count": 22,
+          "passed_gate_count": 22,
+          "status": "green"
+        },
+        "campaign_005": {
+          "gate_count": 21,
+          "passed_gate_count": 21,
+          "status": "green"
+        },
+        "campaign_006": {
+          "gate_count": 68,
+          "passed_gate_count": 68,
+          "status": "green"
+        },
+        "campaign_007": {
+          "gate_count": 5,
+          "passed_gate_count": 5,
+          "status": "green"
+        }
+      }
+    },
+    "V1": {
+      "command": "python make_campaign_008.py",
+      "passed": true
+    },
+    "V2": {
+      "passed": true,
+      "verification": "pytest required after generation"
+    },
+    "V3": {
+      "artifact": "papers\\methods\\CAMPAIGN_008_METHODS.md",
+      "passed": true
+    },
+    "V4": {
+      "negative_space_policy": "honest failures append to registry; no failures in current causal controls",
+      "passed": true
+    },
+    "W10C": {
+      "controls": [
+        {
+          "control": 0.75,
+          "direction": "higher",
+          "effect_size": 0.25,
+          "label": "catalyst_removal",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.15
+        },
+        {
+          "control": 2.0,
+          "direction": "higher",
+          "effect_size": 1.2000000000000002,
+          "label": "hyperedge_order",
+          "passed": true,
+          "positive": 3.2,
+          "threshold": 0.5
+        }
+      ],
+      "passed": true
+    },
+    "W10R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "block_activation_event",
+        "bottleneck_species_event",
+        "catalysis_event",
+        "closure_event",
+        "feedback_component_event",
+        "hyperedge_fire_event",
+        "module_merge_event",
+        "recycling_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 400,
+        "line_floor_met": true,
+        "path": "worlds\\hypergraph_reactions\\model.py",
+        "scaffolding_lines": 39,
+        "simulation_logic_lines": 443,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W10.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 443,
+        "test_count": 21,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 497,
+        "trace_export_lines": 15,
+        "world_id": "W10"
+      }
+    },
+    "W11C": {
+      "controls": [
+        {
+          "control": 3.0,
+          "direction": "higher",
+          "effect_size": 17.0,
+          "label": "mutation_diversity",
+          "passed": true,
+          "positive": 20.0,
+          "threshold": 4.0
+        },
+        {
+          "control": 1.0,
+          "direction": "higher",
+          "effect_size": 0.40269065438940954,
+          "label": "selection_recovery",
+          "passed": true,
+          "positive": 1.4026906543894095,
+          "threshold": 0.1
+        }
+      ],
+      "passed": true
+    },
+    "W11R": {
+      "benchmark_count": 3,
+      "benchmarks_passed": 3,
+      "event_types": [
+        "cloud_connectivity_event",
+        "drift_event",
+        "fitness_recovery_event",
+        "indel_event",
+        "innovation_front_event",
+        "mutation_event",
+        "neutral_percolation_event",
+        "neutral_transition_event",
+        "replication_event",
+        "selection_event",
+        "threshold_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 500,
+        "line_floor_met": false,
+        "path": "worlds\\quasispecies\\model.py",
+        "scaffolding_lines": 42,
+        "simulation_logic_lines": 428,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W11.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 428,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 471,
+        "trace_export_lines": 1,
+        "world_id": "W11"
+      }
+    },
+    "W12C": {
+      "controls": [
+        {
+          "control": 0.3079769081136463,
+          "direction": "higher",
+          "effect_size": 0.5353445662123424,
+          "label": "exchange_mutualism",
+          "passed": true,
+          "positive": 0.8433214743259887,
+          "threshold": 0.1
+        },
+        {
+          "control": 0.35,
+          "direction": "higher",
+          "effect_size": 0.3167047989469228,
+          "label": "inheritance_fixation",
+          "passed": true,
+          "positive": 0.6667047989469228,
+          "threshold": 0.18
+        }
+      ],
+      "passed": true
+    },
+    "W12R": {
+      "benchmark_count": 3,
+      "benchmarks_passed": 3,
+      "event_types": [
+        "cheat_event",
+        "encounter_event",
+        "engulfment_event",
+        "horizontal_exchange_event",
+        "integration_event",
+        "mutual_stabilisation_event",
+        "nested_division_event",
+        "nested_exchange_event",
+        "nested_subcrn_event",
+        "resource_exchange_event",
+        "sanction_event",
+        "vertical_inheritance_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 600,
+        "line_floor_met": false,
+        "path": "worlds\\symbiogenesis\\model.py",
+        "scaffolding_lines": 36,
+        "simulation_logic_lines": 407,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W12.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 407,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 444,
+        "trace_export_lines": 1,
+        "world_id": "W12"
+      }
+    },
+    "W13C": {
+      "controls": [
+        {
+          "control": 0.0,
+          "direction": "higher",
+          "effect_size": 1.0,
+          "label": "upscale_nested_closure",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.5
+        },
+        {
+          "control": 0.0,
+          "direction": "higher",
+          "effect_size": 1.0,
+          "label": "downscale_intervention",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.5
+        }
+      ],
+      "passed": true
+    },
+    "W13R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "cross_scale_composition_event",
+        "cross_scale_feedback_event",
+        "downscale_event",
+        "downscale_flux_event",
+        "intervention_event",
+        "macro_boundary_event",
+        "projection_lock_event",
+        "scale_separation_event",
+        "upscale_event",
+        "upscale_flux_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 800,
+        "line_floor_met": false,
+        "path": "worlds\\multiscale\\model.py",
+        "scaffolding_lines": 38,
+        "simulation_logic_lines": 442,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W13.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 442,
+        "test_count": 22,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 481,
+        "trace_export_lines": 1,
+        "world_id": "W13"
+      }
+    },
+    "W6C": {
+      "controls": [
+        {
+          "control": 0.0,
+          "direction": "higher",
+          "effect_size": 0.37369572840059956,
+          "label": "shock_regime_shift",
+          "passed": true,
+          "positive": 0.37369572840059956,
+          "threshold": 0.05
+        },
+        {
+          "control": 0.07936346766617497,
+          "direction": "higher",
+          "effect_size": 2.142813626986724,
+          "label": "interaction_matrix_transition",
+          "passed": true,
+          "positive": 2.222177094652899,
+          "threshold": 0.4
+        }
+      ],
+      "passed": true
+    },
+    "W6R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "birth_event",
+        "death_event",
+        "dispersal_event",
+        "niche_construction_event",
+        "predation_event",
+        "recovery_event",
+        "shock_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 500,
+        "line_floor_met": false,
+        "path": "worlds\\ecosystem\\model.py",
+        "scaffolding_lines": 34,
+        "simulation_logic_lines": 484,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W6.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 484,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 533,
+        "trace_export_lines": 15,
+        "world_id": "W6"
+      }
+    },
+    "W7C": {
+      "controls": [
+        {
+          "control": 0.0,
+          "direction": "higher",
+          "effect_size": 108.0,
+          "label": "pheromone_foraging",
+          "passed": true,
+          "positive": 108.0,
+          "threshold": 3.0
+        },
+        {
+          "control": 0.14919712064473048,
+          "direction": "higher",
+          "effect_size": 0.8479008387189159,
+          "label": "communication_consensus",
+          "passed": true,
+          "positive": 0.9970979593636463,
+          "threshold": 0.2
+        }
+      ],
+      "passed": true
+    },
+    "W7R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "communication_event",
+        "food_event",
+        "movement_event",
+        "niche_construction_event",
+        "pheromone_decay_event",
+        "pheromone_deposit_event",
+        "repair_event",
+        "role_switch_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 500,
+        "line_floor_met": false,
+        "path": "worlds\\swarm\\model.py",
+        "scaffolding_lines": 40,
+        "simulation_logic_lines": 478,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W7.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 478,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 533,
+        "trace_export_lines": 15,
+        "world_id": "W7"
+      }
+    },
+    "W8C": {
+      "controls": [
+        {
+          "control": 0.2935337235587936,
+          "direction": "higher",
+          "effect_size": 0.4954618965755757,
+          "label": "action_homeostasis",
+          "passed": true,
+          "positive": 0.7889956201343693,
+          "threshold": 0.1
+        },
+        {
+          "control": 0.8696476375475078,
+          "direction": "higher",
+          "effect_size": 0.05000352249863216,
+          "label": "prediction_error_reduction",
+          "passed": true,
+          "positive": 0.91965116004614,
+          "threshold": 0.02
+        }
+      ],
+      "passed": true
+    },
+    "W8R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "action_event",
+        "attention_allocation_event",
+        "energy_budget_event",
+        "external_mark_event",
+        "homeostasis_event",
+        "learning_gain_event",
+        "memory_read_event",
+        "memory_write_event",
+        "prediction_error_event",
+        "prediction_event",
+        "sensor_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 600,
+        "line_floor_met": false,
+        "path": "worlds\\cognitive\\model.py",
+        "scaffolding_lines": 40,
+        "simulation_logic_lines": 432,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W8.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 432,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 487,
+        "trace_export_lines": 15,
+        "world_id": "W8"
+      }
+    },
+    "W9C": {
+      "controls": [
+        {
+          "control": 0.7924188613623281,
+          "direction": "higher",
+          "effect_size": 0.2075811386376719,
+          "label": "surface_catalysis",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.2
+        },
+        {
+          "control": 4.428096239867925e-05,
+          "direction": "higher",
+          "effect_size": 0.6806528812794804,
+          "label": "gradient_boundary",
+          "passed": true,
+          "positive": 0.6806971622418792,
+          "threshold": 0.05
+        }
+      ],
+      "passed": true
+    },
+    "W9R": {
+      "benchmark_count": 3,
+      "benchmarks_passed": 3,
+      "event_types": [
+        "adsorption_event",
+        "boundary_repair_event",
+        "compartment_event",
+        "desorption_event",
+        "gradient_flux_event",
+        "mineral_weathering_event",
+        "pore_diffusion_event",
+        "protected_microenvironment_event",
+        "surface_catalysis_event",
+        "surface_closure_event",
+        "surface_reaction_event",
+        "template_memory_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 500,
+        "line_floor_met": false,
+        "path": "worlds\\origins_chemistry\\model.py",
+        "scaffolding_lines": 33,
+        "simulation_logic_lines": 404,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W9.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 404,
+        "test_count": 16,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 452,
+        "trace_export_lines": 15,
+        "world_id": "W9"
+      }
+    }
+  },
+  "passed_gate_count": 35,
+  "schema": "Campaign008FullReport.v1",
+  "status": "green"
+}

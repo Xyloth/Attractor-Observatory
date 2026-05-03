@@ -1,0 +1,60 @@
+{
+  "gate_id": "G17",
+  "passed": true,
+  "rows": [
+    {
+      "abs_pearson_r": 0.14337252362640227,
+      "ceiling": 0.95,
+      "detector_id": "closure.rule_trace",
+      "passed": true,
+      "pearson_r": -0.14337252362640227,
+      "sample_count": 36,
+      "vocabulary": [
+        "catalyst",
+        "reaction",
+        "raf",
+        "closure"
+      ]
+    },
+    {
+      "abs_pearson_r": 0.8510295239952316,
+      "ceiling": 0.95,
+      "detector_id": "boundary.topological",
+      "passed": true,
+      "pearson_r": -0.8510295239952316,
+      "sample_count": 34,
+      "vocabulary": [
+        "closed_cycle",
+        "particle",
+        "membrane"
+      ]
+    },
+    {
+      "abs_pearson_r": 0.8662261979336078,
+      "ceiling": 0.95,
+      "detector_id": "boundary.information",
+      "passed": true,
+      "pearson_r": -0.8662261979336078,
+      "sample_count": 34,
+      "vocabulary": [
+        "inside",
+        "outside",
+        "boundary",
+        "resource"
+      ]
+    },
+    {
+      "abs_pearson_r": 0.5113203145027737,
+      "ceiling": 0.95,
+      "detector_id": "boundary.behavioral",
+      "passed": true,
+      "pearson_r": -0.5113203145027737,
+      "sample_count": 34,
+      "vocabulary": [
+        "puncture",
+        "repair",
+        "recovery"
+      ]
+    }
+  ]
+}

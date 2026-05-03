@@ -1,0 +1,308 @@
+{
+  "control_rows": [
+    {
+      "control": 0.0,
+      "direction": "higher",
+      "effect_size": 1.0,
+      "label": "upscale_nested_closure",
+      "passed": true,
+      "positive": 1.0,
+      "threshold": 0.5
+    },
+    {
+      "control": 0.0,
+      "direction": "higher",
+      "effect_size": 1.0,
+      "label": "downscale_intervention",
+      "passed": true,
+      "positive": 1.0,
+      "threshold": 0.5
+    }
+  ],
+  "gates": {
+    "W13C": {
+      "controls": [
+        {
+          "control": 0.0,
+          "direction": "higher",
+          "effect_size": 1.0,
+          "label": "upscale_nested_closure",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.5
+        },
+        {
+          "control": 0.0,
+          "direction": "higher",
+          "effect_size": 1.0,
+          "label": "downscale_intervention",
+          "passed": true,
+          "positive": 1.0,
+          "threshold": 0.5
+        }
+      ],
+      "passed": true
+    },
+    "W13R": {
+      "benchmark_count": 4,
+      "benchmarks_passed": 4,
+      "event_types": [
+        "cross_scale_composition_event",
+        "cross_scale_feedback_event",
+        "downscale_event",
+        "downscale_flux_event",
+        "intervention_event",
+        "macro_boundary_event",
+        "projection_lock_event",
+        "scale_separation_event",
+        "upscale_event",
+        "upscale_flux_event"
+      ],
+      "passed": true,
+      "substance": {
+        "d17_5_audit_met": true,
+        "line_floor": 800,
+        "line_floor_met": false,
+        "path": "worlds\\multiscale\\model.py",
+        "scaffolding_lines": 38,
+        "simulation_logic_lines": 442,
+        "substance_audit": {
+          "complete": true,
+          "exists": true,
+          "passed": true,
+          "path": "papers\\methods\\SUBSTANCE_AUDIT_W13.md",
+          "verdict": "meets_spec_with_caveats"
+        },
+        "substance_gate_met": true,
+        "substantive_lines": 442,
+        "test_count": 22,
+        "test_floor": 12,
+        "test_floor_met": true,
+        "total_lines": 481,
+        "trace_export_lines": 1,
+        "world_id": "W13"
+      }
+    }
+  },
+  "passed": true,
+  "positive_rows": [
+    {
+      "benchmark": "nested_closure",
+      "event_types": [
+        "cross_scale_composition_event",
+        "cross_scale_feedback_event",
+        "downscale_event",
+        "downscale_flux_event",
+        "macro_boundary_event",
+        "projection_lock_event",
+        "scale_separation_event",
+        "upscale_event",
+        "upscale_flux_event"
+      ],
+      "final_state": {
+        "boundary_control": 0.9999999993333333,
+        "boundary_velocity": 0.0,
+        "coarse_predictability": 0.9420691887525003,
+        "cross_correlation_lag": 6.5,
+        "cross_scale_flux_potential": 0.0,
+        "dissipated": 41.269551537489875,
+        "field_boundary": 1.5,
+        "flux_balance": 0.07,
+        "hosted_inner_world_count": 5.0,
+        "inner_alive_count": 19.0,
+        "inner_boundary_integrity": 0.4,
+        "inner_closure": 0.6321581531702536,
+        "inner_metabolic_flux": 65.80736950774379,
+        "intervention_effect": 6.0,
+        "lagged_alignment": 1.0,
+        "macro_population": 21.69307921039257,
+        "macro_resource": 48.100021273429,
+        "macro_velocity": 0.1280311622759207,
+        "micro_closure": 0.0,
+        "micro_macro_ratio": 0.0,
+        "micro_resource": 39.44927513976902,
+        "micro_velocity": 0.0,
+        "projection_agreement": 0.375,
+        "residual_memory": 0.6270244830206636,
+        "timescale_log_ratio": 2.0149030205422647,
+        "timescale_ratio": 7.5
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "hosted_inner_world_count": 5.0,
+        "inner_closure": 0.6321581531702536,
+        "micro_closure": 0.0,
+        "projection_agreement": 0.375
+      },
+      "observed_regime": "scale_separated",
+      "passed": true,
+      "seed": 8100,
+      "trace_id": "sha256:32103c4e339ea785e0e7703f6742e801dd6236ec2d26a4edc28e9eaf79decc93",
+      "trace_path": "reports\\campaign_008\\traces\\W13\\nested_closure_8100_0.json",
+      "world_id": "W13"
+    },
+    {
+      "benchmark": "boundary_from_coarse",
+      "event_types": [
+        "cross_scale_composition_event",
+        "cross_scale_feedback_event",
+        "downscale_event",
+        "downscale_flux_event",
+        "macro_boundary_event",
+        "projection_lock_event",
+        "scale_separation_event",
+        "upscale_event",
+        "upscale_flux_event"
+      ],
+      "final_state": {
+        "boundary_control": 0.9999999993333333,
+        "boundary_velocity": 0.0,
+        "coarse_predictability": 0.9416901256027391,
+        "cross_correlation_lag": 6.5,
+        "cross_scale_flux_potential": 0.0,
+        "dissipated": 42.29807158519374,
+        "field_boundary": 1.5,
+        "flux_balance": 0.07,
+        "hosted_inner_world_count": 5.0,
+        "inner_alive_count": 19.0,
+        "inner_boundary_integrity": 0.4,
+        "inner_closure": 0.6321597701513768,
+        "inner_metabolic_flux": 67.84420313767055,
+        "intervention_effect": 6.0,
+        "lagged_alignment": 1.0,
+        "macro_population": 21.75452560265722,
+        "macro_resource": 47.16253489994513,
+        "macro_velocity": 0.1289487000890368,
+        "micro_closure": 0.0,
+        "micro_macro_ratio": 0.0,
+        "micro_resource": 39.408908259472,
+        "micro_velocity": 0.0,
+        "projection_agreement": 0.375,
+        "residual_memory": 0.6270244830206636,
+        "timescale_log_ratio": 2.0149030205422647,
+        "timescale_ratio": 7.5
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "field_boundary": 1.5,
+        "inner_boundary_integrity": 0.4,
+        "projection_agreement": 0.375
+      },
+      "observed_regime": "scale_separated",
+      "passed": true,
+      "seed": 8101,
+      "trace_id": "sha256:2f940f02a8362d656415e8617349fb0702e4ddb11f3034d593c79b0a711c4e79",
+      "trace_path": "reports\\campaign_008\\traces\\W13\\boundary_from_coarse_8101_0.json",
+      "world_id": "W13"
+    },
+    {
+      "benchmark": "scale_separation",
+      "event_types": [
+        "cross_scale_composition_event",
+        "cross_scale_feedback_event",
+        "downscale_event",
+        "downscale_flux_event",
+        "macro_boundary_event",
+        "projection_lock_event",
+        "scale_separation_event",
+        "upscale_event",
+        "upscale_flux_event"
+      ],
+      "final_state": {
+        "boundary_control": 0.9999999993333333,
+        "boundary_velocity": 0.0,
+        "coarse_predictability": 0.9135853273425818,
+        "cross_correlation_lag": 12.636363636363635,
+        "cross_scale_flux_potential": 0.0,
+        "dissipated": 44.96724893505731,
+        "field_boundary": 1.5,
+        "flux_balance": 0.07,
+        "hosted_inner_world_count": 5.0,
+        "inner_alive_count": 19.0,
+        "inner_boundary_integrity": 0.4,
+        "inner_closure": 0.632165208374554,
+        "inner_metabolic_flux": 65.74783702139923,
+        "intervention_effect": 6.0,
+        "lagged_alignment": 1.0,
+        "macro_population": 26.980394989322427,
+        "macro_resource": 34.13916114265981,
+        "macro_velocity": 0.1987280329595258,
+        "micro_closure": 0.0,
+        "micro_macro_ratio": 0.0,
+        "micro_resource": 42.65861993468187,
+        "micro_velocity": 0.0,
+        "projection_agreement": 0.375,
+        "residual_memory": 0.6270244830206636,
+        "timescale_log_ratio": 2.6127400212978853,
+        "timescale_ratio": 13.636363636363635
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "cross_correlation_lag": 12.636363636363635,
+        "timescale_ratio": 13.636363636363635
+      },
+      "observed_regime": "scale_separated",
+      "passed": true,
+      "seed": 8102,
+      "trace_id": "sha256:324ed117105942e5060d8ef1a1c94758c46c37d818311d62cb621b626d387924",
+      "trace_path": "reports\\campaign_008\\traces\\W13\\scale_separation_8102_0.json",
+      "world_id": "W13"
+    },
+    {
+      "benchmark": "downscale_intervention",
+      "event_types": [
+        "cross_scale_composition_event",
+        "cross_scale_feedback_event",
+        "downscale_event",
+        "downscale_flux_event",
+        "intervention_event",
+        "macro_boundary_event",
+        "projection_lock_event",
+        "scale_separation_event",
+        "upscale_event",
+        "upscale_flux_event"
+      ],
+      "final_state": {
+        "boundary_control": 0.9999999993333333,
+        "boundary_velocity": 0.0,
+        "coarse_predictability": 0.9419782914284015,
+        "cross_correlation_lag": 6.5,
+        "cross_scale_flux_potential": 0.0,
+        "dissipated": 41.53785685649409,
+        "field_boundary": 1.5,
+        "flux_balance": 0.07,
+        "hosted_inner_world_count": 5.0,
+        "inner_alive_count": 19.0,
+        "inner_boundary_integrity": 0.4,
+        "inner_closure": 0.6321586482025692,
+        "inner_metabolic_flux": 66.34857468480602,
+        "intervention_effect": 12.0,
+        "lagged_alignment": 1.0,
+        "macro_population": 21.705538955572973,
+        "macro_resource": 8.594559859873861,
+        "macro_velocity": 0.12825180731202224,
+        "micro_closure": 0.0,
+        "micro_macro_ratio": 0.0,
+        "micro_resource": 39.49672350272053,
+        "micro_velocity": 0.0,
+        "projection_agreement": 0.375,
+        "residual_memory": 0.6270244830206636,
+        "timescale_log_ratio": 2.0149030205422647,
+        "timescale_ratio": 7.5
+      },
+      "invariants_passed": true,
+      "metrics": {
+        "intervention_applied": 1.0,
+        "intervention_effect": 12.0
+      },
+      "observed_regime": "scale_separated",
+      "passed": true,
+      "seed": 8103,
+      "trace_id": "sha256:24f84c64c576d5f7cc7356637f0e1b56da1e0fd1f8fb6645dc46099bd2ce0acd",
+      "trace_path": "reports\\campaign_008\\traces\\W13\\downscale_intervention_8103_0.json",
+      "world_id": "W13"
+    }
+  ],
+  "schema": "Campaign008WorldReport.v1",
+  "world_id": "W13"
+}

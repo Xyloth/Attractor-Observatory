@@ -1,0 +1,186 @@
+{
+  "features": {
+    "W1": {
+      "motion": 1.0,
+      "persistence": 1.0,
+      "production": 1.0,
+      "replication": 0.0
+    },
+    "W2": {
+      "motion": 0.8845806735124657,
+      "persistence": 1.0,
+      "production": 0.10526315789473684,
+      "replication": 1.0
+    },
+    "W3": {
+      "motion": 1.0,
+      "persistence": 0.6628347187085262,
+      "production": 0.78125,
+      "replication": 0.0
+    },
+    "W5": {
+      "motion": 1.0,
+      "persistence": 0.18691588785046728,
+      "production": 1.0,
+      "replication": 0.06542056074766354
+    }
+  },
+  "gates": {
+    "P10_attractor_strength_D": {
+      "passed": true,
+      "strength_component_D": 0.9528195311147831
+    },
+    "P11_world_trace_movement": {
+      "motions": {
+        "W1": 1.0,
+        "W2": 0.8845806735124657,
+        "W3": 1.0,
+        "W5": 1.0
+      },
+      "passed": true
+    },
+    "P12_trace_invariants": {
+      "passed": true
+    },
+    "P1_w3_field_world": {
+      "field_motion": true,
+      "final_active_cells": 25.0,
+      "final_total_b": 39.214115546390666,
+      "initial_active_cells": 25.0,
+      "initial_total_b": 25.3,
+      "mass_residual": 5.684341886080802e-14,
+      "passed": true
+    },
+    "P2_w5_digital_world": {
+      "event_types": [
+        "birth_event",
+        "communication_event",
+        "death_event",
+        "movement_event",
+        "mutation_event",
+        "parasite_event",
+        "replication_event",
+        "task_completion_event"
+      ],
+      "passed": true
+    },
+    "P3_cross_substrate_transfer": {
+      "bilateral_motifs": [
+        {
+          "motif": "closure_like_production",
+          "worlds": [
+            "W1",
+            "W2",
+            "W3",
+            "W5"
+          ]
+        },
+        {
+          "motif": "persistence",
+          "worlds": [
+            "W1",
+            "W2",
+            "W3"
+          ]
+        }
+      ],
+      "passed": true
+    },
+    "P4_implementation_diversity": {
+      "D": 0.9528195311147831,
+      "passed": true
+    },
+    "P5_k_corpora_extensions": {
+      "K3": 30,
+      "K4": 30,
+      "passed": true
+    },
+    "P6_emergent_motifs": {
+      "candidates": [
+        {
+          "candidate_id": "EM-C003-front-propagation",
+          "score": 1.0,
+          "supporting_worlds": [
+            "W3"
+          ]
+        },
+        {
+          "candidate_id": "EM-C003-repair-memory-coupling",
+          "score": 0.5934579439252337,
+          "supporting_worlds": [
+            "W2",
+            "W5"
+          ]
+        },
+        {
+          "candidate_id": "EM-C003-parasite-resistant-replication",
+          "score": 0.06542056074766354,
+          "supporting_worlds": [
+            "W5"
+          ]
+        }
+      ],
+      "passed": true
+    },
+    "P7_w3_conservation": {
+      "passed": true,
+      "residual": 5.684341886080802e-14
+    },
+    "P8_w5_mutation_parasitism": {
+      "passed": true
+    },
+    "P9_substrate_blind_projection": {
+      "features": {
+        "W1": {
+          "motion": 1.0,
+          "persistence": 1.0,
+          "production": 1.0,
+          "replication": 0.0
+        },
+        "W2": {
+          "motion": 0.8845806735124657,
+          "persistence": 1.0,
+          "production": 0.10526315789473684,
+          "replication": 1.0
+        },
+        "W3": {
+          "motion": 1.0,
+          "persistence": 0.6628347187085262,
+          "production": 0.78125,
+          "replication": 0.0
+        },
+        "W5": {
+          "motion": 1.0,
+          "persistence": 0.18691588785046728,
+          "production": 1.0,
+          "replication": 0.06542056074766354
+        }
+      },
+      "passed": true
+    }
+  },
+  "motif_scores": {
+    "W1": {
+      "closure_like_production": 1.0,
+      "persistence": 1.0,
+      "replication_or_lineage": 0.0
+    },
+    "W2": {
+      "closure_like_production": 0.5338877914844877,
+      "persistence": 1.0,
+      "replication_or_lineage": 1.0
+    },
+    "W3": {
+      "closure_like_production": 0.9015625,
+      "persistence": 0.6628347187085262,
+      "replication_or_lineage": 0.0
+    },
+    "W5": {
+      "closure_like_production": 1.0,
+      "persistence": 0.18691588785046728,
+      "replication_or_lineage": 0.06542056074766354
+    }
+  },
+  "passed": true,
+  "pillar": "substrate_pluralism"
+}

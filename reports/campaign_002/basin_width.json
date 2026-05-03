@@ -1,0 +1,61 @@
+{
+  "gate_id": "G11",
+  "motif_count": 5,
+  "passed": true,
+  "rows": [
+    {
+      "basin_width": 0.86,
+      "bootstrap_count": 200,
+      "ci_high": 0.905,
+      "ci_low": 0.815,
+      "ci_width": 0.09000000000000008,
+      "motif": "autocatalytic_closure",
+      "passed": true,
+      "sample_count": 200
+    },
+    {
+      "basin_width": 1.0,
+      "bootstrap_count": 200,
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "ci_width": 0.0,
+      "motif": "self_maintained_boundary",
+      "passed": true,
+      "sample_count": 200
+    },
+    {
+      "basin_width": 1.0,
+      "bootstrap_count": 200,
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "ci_width": 0.0,
+      "motif": "division_with_inheritance",
+      "passed": true,
+      "sample_count": 200
+    },
+    {
+      "basin_width": 1.0,
+      "bootstrap_count": 200,
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "ci_width": 0.0,
+      "motif": "repair_after_puncture",
+      "passed": true,
+      "sample_count": 200
+    },
+    {
+      "basin_width": 1.0,
+      "bootstrap_count": 200,
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "ci_width": 0.0,
+      "motif": "persistence_through_replacement",
+      "passed": true,
+      "sample_count": 200
+    }
+  ],
+  "threshold": {
+    "max_ci_width": 0.2,
+    "motif_count": 5
+  }
+}

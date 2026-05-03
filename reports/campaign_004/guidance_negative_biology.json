@@ -1,0 +1,489 @@
+{
+  "gates": {
+    "G15_negative_space_index": {
+      "index": {
+        "categories": {
+          "bio_only": 2,
+          "math_only": 1,
+          "predicted_empty": 2,
+          "sim_only": 2,
+          "unexplained_absence": 1
+        },
+        "entries": [
+          "NS-C004-01-closure_high_recurrence_no_boundary",
+          "NS-C004-02-external_repair_boundary_mimic",
+          "NS-C004-03-powered_flight_control_surface",
+          "NS-C004-04-high_deficiency_low_persistence_cycle",
+          "NS-C004-05-eusocial_role_memory",
+          "NS-C004-06-field_front_without_conserved_mass",
+          "NS-C004-07-digital_parasite_locked_replication",
+          "NS-C004-08-branching_transport_remodeling"
+        ],
+        "entry_count": 8,
+        "schema": "NegativeSpaceEntry.v1.2"
+      },
+      "passed": true
+    },
+    "G16_negative_space_adversarial": {
+      "outcomes": [
+        "confirmed_absent",
+        "found",
+        "inconclusive"
+      ],
+      "passed": true
+    },
+    "G17_world_usefulness": {
+      "passed": true,
+      "rows": [
+        {
+          "vector": {
+            "biological_relevance": 0.7,
+            "calibration_value": 0.95,
+            "cross_family_value": 1.0,
+            "formal_lens_stress": 0.8077777777777777,
+            "motif_yield": 0.08333333333333333
+          },
+          "world_family": "crn"
+        },
+        {
+          "vector": {
+            "biological_relevance": 0.82,
+            "calibration_value": 0.9,
+            "cross_family_value": 0.5,
+            "formal_lens_stress": 0.8077777777777777,
+            "motif_yield": 0.16666666666666666
+          },
+          "world_family": "protocell"
+        },
+        {
+          "vector": {
+            "biological_relevance": 0.78,
+            "calibration_value": 0.72,
+            "cross_family_value": 0.0,
+            "formal_lens_stress": 0.8777777777777777,
+            "motif_yield": 0.08333333333333333
+          },
+          "world_family": "field"
+        },
+        {
+          "vector": {
+            "biological_relevance": 0.64,
+            "calibration_value": 0.7,
+            "cross_family_value": 0.3333333333333333,
+            "formal_lens_stress": 0.8577777777777776,
+            "motif_yield": 0.5
+          },
+          "world_family": "digital"
+        }
+      ]
+    },
+    "G18_pareto_contexts": {
+      "fronts": {
+        "biological_grounding": {
+          "decision_rule": "vector_pareto_front_only_no_scalar_projection",
+          "objectives": [
+            "biological_relevance",
+            "motif_yield",
+            "calibration_value"
+          ],
+          "rows": [
+            {
+              "objectives": [
+                "biological_relevance",
+                "motif_yield",
+                "calibration_value"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.7,
+                "calibration_value": 0.95,
+                "cross_family_value": 1.0,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "crn"
+            },
+            {
+              "objectives": [
+                "biological_relevance",
+                "motif_yield",
+                "calibration_value"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.82,
+                "calibration_value": 0.9,
+                "cross_family_value": 0.5,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.16666666666666666
+              },
+              "world_family": "protocell"
+            },
+            {
+              "objectives": [
+                "biological_relevance",
+                "motif_yield",
+                "calibration_value"
+              ],
+              "pareto_status": "dominated",
+              "vector": {
+                "biological_relevance": 0.78,
+                "calibration_value": 0.72,
+                "cross_family_value": 0.0,
+                "formal_lens_stress": 0.8777777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "field"
+            },
+            {
+              "objectives": [
+                "biological_relevance",
+                "motif_yield",
+                "calibration_value"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.64,
+                "calibration_value": 0.7,
+                "cross_family_value": 0.3333333333333333,
+                "formal_lens_stress": 0.8577777777777776,
+                "motif_yield": 0.5
+              },
+              "world_family": "digital"
+            }
+          ]
+        },
+        "cross_substrate_transfer": {
+          "decision_rule": "vector_pareto_front_only_no_scalar_projection",
+          "objectives": [
+            "cross_family_value",
+            "formal_lens_stress",
+            "motif_yield"
+          ],
+          "rows": [
+            {
+              "objectives": [
+                "cross_family_value",
+                "formal_lens_stress",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.7,
+                "calibration_value": 0.95,
+                "cross_family_value": 1.0,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "crn"
+            },
+            {
+              "objectives": [
+                "cross_family_value",
+                "formal_lens_stress",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.82,
+                "calibration_value": 0.9,
+                "cross_family_value": 0.5,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.16666666666666666
+              },
+              "world_family": "protocell"
+            },
+            {
+              "objectives": [
+                "cross_family_value",
+                "formal_lens_stress",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.78,
+                "calibration_value": 0.72,
+                "cross_family_value": 0.0,
+                "formal_lens_stress": 0.8777777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "field"
+            },
+            {
+              "objectives": [
+                "cross_family_value",
+                "formal_lens_stress",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.64,
+                "calibration_value": 0.7,
+                "cross_family_value": 0.3333333333333333,
+                "formal_lens_stress": 0.8577777777777776,
+                "motif_yield": 0.5
+              },
+              "world_family": "digital"
+            }
+          ]
+        },
+        "formal_deficit_candidate": {
+          "decision_rule": "vector_pareto_front_only_no_scalar_projection",
+          "objectives": [
+            "formal_lens_stress",
+            "cross_family_value",
+            "motif_yield"
+          ],
+          "rows": [
+            {
+              "objectives": [
+                "formal_lens_stress",
+                "cross_family_value",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.7,
+                "calibration_value": 0.95,
+                "cross_family_value": 1.0,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "crn"
+            },
+            {
+              "objectives": [
+                "formal_lens_stress",
+                "cross_family_value",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.82,
+                "calibration_value": 0.9,
+                "cross_family_value": 0.5,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.16666666666666666
+              },
+              "world_family": "protocell"
+            },
+            {
+              "objectives": [
+                "formal_lens_stress",
+                "cross_family_value",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.78,
+                "calibration_value": 0.72,
+                "cross_family_value": 0.0,
+                "formal_lens_stress": 0.8777777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "field"
+            },
+            {
+              "objectives": [
+                "formal_lens_stress",
+                "cross_family_value",
+                "motif_yield"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.64,
+                "calibration_value": 0.7,
+                "cross_family_value": 0.3333333333333333,
+                "formal_lens_stress": 0.8577777777777776,
+                "motif_yield": 0.5
+              },
+              "world_family": "digital"
+            }
+          ]
+        },
+        "robustness": {
+          "decision_rule": "vector_pareto_front_only_no_scalar_projection",
+          "objectives": [
+            "calibration_value",
+            "cross_family_value",
+            "formal_lens_stress"
+          ],
+          "rows": [
+            {
+              "objectives": [
+                "calibration_value",
+                "cross_family_value",
+                "formal_lens_stress"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.7,
+                "calibration_value": 0.95,
+                "cross_family_value": 1.0,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "crn"
+            },
+            {
+              "objectives": [
+                "calibration_value",
+                "cross_family_value",
+                "formal_lens_stress"
+              ],
+              "pareto_status": "dominated",
+              "vector": {
+                "biological_relevance": 0.82,
+                "calibration_value": 0.9,
+                "cross_family_value": 0.5,
+                "formal_lens_stress": 0.8077777777777777,
+                "motif_yield": 0.16666666666666666
+              },
+              "world_family": "protocell"
+            },
+            {
+              "objectives": [
+                "calibration_value",
+                "cross_family_value",
+                "formal_lens_stress"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.78,
+                "calibration_value": 0.72,
+                "cross_family_value": 0.0,
+                "formal_lens_stress": 0.8777777777777777,
+                "motif_yield": 0.08333333333333333
+              },
+              "world_family": "field"
+            },
+            {
+              "objectives": [
+                "calibration_value",
+                "cross_family_value",
+                "formal_lens_stress"
+              ],
+              "pareto_status": "on_front",
+              "vector": {
+                "biological_relevance": 0.64,
+                "calibration_value": 0.7,
+                "cross_family_value": 0.3333333333333333,
+                "formal_lens_stress": 0.8577777777777776,
+                "motif_yield": 0.5
+              },
+              "world_family": "digital"
+            }
+          ]
+        }
+      },
+      "passed": true
+    },
+    "G19_biology_shadow_pressure": {
+      "biology": {
+        "anchor_count": 7,
+        "failure_count": 2,
+        "mode": "shadow",
+        "rows": [
+          {
+            "contract_change_proposal": null,
+            "formal_lens_support": [
+              "crnt",
+              "graph",
+              "information"
+            ],
+            "mode": "shadow",
+            "operational_predicate": "signal transduction from field/sensor state to behaviour",
+            "representability_score": 0.82,
+            "schema_pressure_passed": true,
+            "trait": "photoreception"
+          },
+          {
+            "contract_change_proposal": "docs/contract_proposals/c004_powered_flight.md",
+            "formal_lens_support": [],
+            "mode": "shadow",
+            "operational_predicate": "force production, lift, control surface, and energy budget",
+            "representability_score": 0.38,
+            "schema_pressure_passed": false,
+            "trait": "powered_flight"
+          },
+          {
+            "contract_change_proposal": null,
+            "formal_lens_support": [
+              "crnt",
+              "graph",
+              "information"
+            ],
+            "mode": "shadow",
+            "operational_predicate": "branching graph topology with directed flow and remodeling",
+            "representability_score": 0.82,
+            "schema_pressure_passed": true,
+            "trait": "branching_transport"
+          },
+          {
+            "contract_change_proposal": "docs/contract_proposals/c004_eusociality.md",
+            "formal_lens_support": [
+              "graph"
+            ],
+            "mode": "shadow",
+            "operational_predicate": "role differentiation, lineage, resource sharing, and colony memory",
+            "representability_score": 0.38,
+            "schema_pressure_passed": false,
+            "trait": "eusociality"
+          },
+          {
+            "contract_change_proposal": null,
+            "formal_lens_support": [
+              "crnt",
+              "graph",
+              "information"
+            ],
+            "mode": "shadow",
+            "operational_predicate": "repeated bounded compartments with developmental lineage",
+            "representability_score": 0.82,
+            "schema_pressure_passed": true,
+            "trait": "segmentation"
+          },
+          {
+            "contract_change_proposal": null,
+            "formal_lens_support": [
+              "crnt",
+              "graph",
+              "information"
+            ],
+            "mode": "shadow",
+            "operational_predicate": "internally generated catalytic closure over metabolism",
+            "representability_score": 0.82,
+            "schema_pressure_passed": true,
+            "trait": "autocatalytic_metabolic_closure"
+          },
+          {
+            "contract_change_proposal": null,
+            "formal_lens_support": [
+              "crnt",
+              "graph",
+              "information"
+            ],
+            "mode": "shadow",
+            "operational_predicate": "environmental marker written, persisted, read, and causally used",
+            "representability_score": 0.82,
+            "schema_pressure_passed": true,
+            "trait": "externalized_memory"
+          }
+        ]
+      },
+      "passed": true
+    },
+    "G20_method_health_dashboard": {
+      "dashboard": {
+        "builder_calibration_recorded": true,
+        "campaign004_gate_count": 22,
+        "candidate_promotion_hygiene": true,
+        "k5_k10_status": "green",
+        "negative_space_entry_count": 8
+      },
+      "passed": true
+    }
+  },
+  "passed": true,
+  "pillar": "guidance_negative_biology"
+}

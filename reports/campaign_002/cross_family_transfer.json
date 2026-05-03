@@ -1,0 +1,59 @@
+{
+  "bilateral_count": 2,
+  "bilateral_motifs": [
+    "autocatalytic_closure",
+    "self_maintenance"
+  ],
+  "direct_detector_context": {
+    "w1_closure_confidence": 0.9,
+    "w2_boundary_confidence": 0.9199999999999999
+  },
+  "gate_id": "G18",
+  "passed": true,
+  "preregistration": {
+    "computed_prereg_id": "sha256:ee6433a019ac85a102d8876cb546f2d56c9928f3f711b0f12ca65c63bfee5b76",
+    "content_hash_verified": true,
+    "gate_id": "G14",
+    "limitations": [
+      "PI cryptographic signature is null in this local run.",
+      "This preregistration is signed before G18 cross-family transfer runs in TASK-009; earlier G1-G8 foundation/calibration reports already exist and are listed as prior work."
+    ],
+    "passed": true,
+    "path": "papers\\prereg\\campaign_002.signed.json",
+    "prereg_id": "sha256:ee6433a019ac85a102d8876cb546f2d56c9928f3f711b0f12ca65c63bfee5b76",
+    "signed_at": "2026-05-02T12:35:24+00:00",
+    "signed_before_g18_runs": true,
+    "signed_by": [
+      "Codex",
+      "Architect"
+    ]
+  },
+  "threshold": 0.5,
+  "w1_projection": {
+    "lineage_depth": 0.0,
+    "persistence": 1.0,
+    "production_event_density": 1.0,
+    "repair_recovery": 0.0,
+    "reproduction": 0.0,
+    "state_motion": 1.0
+  },
+  "w1_scores": {
+    "autocatalytic_closure": 1.0,
+    "reproductive_continuity": 0.0,
+    "self_maintenance": 1.0
+  },
+  "w2_projection": {
+    "lineage_depth": 1.0,
+    "persistence": 1.0,
+    "production_event_density": 0.10526315789473684,
+    "repair_recovery": 0.10526315789473684,
+    "reproduction": 1.0,
+    "state_motion": 0.8845806735124657
+  },
+  "w2_scores": {
+    "autocatalytic_closure": 0.5338877914844877,
+    "reproductive_continuity": 1.0,
+    "self_maintenance": 0.6637582399656511
+  },
+  "world_family_hidden_from_projection": true
+}

@@ -1,0 +1,347 @@
+{
+  "campaign_id": "campaign-002",
+  "completion_claim": true,
+  "gate_count": 20,
+  "gates": {
+    "G1": {
+      "passed": true,
+      "source": "validation.campaign002.validate_g1_ode_convergence",
+      "value": {
+        "brusselator_equilibrium_error": 0.0,
+        "brusselator_reference_error": 2.0190156124755276e-07,
+        "dopri5_exponential_error": 4.572863355339907e-13,
+        "rk4_exponential_error": 1.6437274349793973e-10
+      }
+    },
+    "G10": {
+      "passed": true,
+      "source": "reports/campaign_002/fdr_p_values.json",
+      "value": {
+        "N0": 0.0,
+        "N1": 0.0,
+        "N2": 0.0,
+        "N5": 0.0
+      }
+    },
+    "G11": {
+      "passed": true,
+      "source": "reports/campaign_002/basin_width.json",
+      "value": [
+        {
+          "ci_width": 0.09000000000000008,
+          "motif": "autocatalytic_closure"
+        },
+        {
+          "ci_width": 0.0,
+          "motif": "self_maintained_boundary"
+        },
+        {
+          "ci_width": 0.0,
+          "motif": "division_with_inheritance"
+        },
+        {
+          "ci_width": 0.0,
+          "motif": "repair_after_puncture"
+        },
+        {
+          "ci_width": 0.0,
+          "motif": "persistence_through_replacement"
+        }
+      ]
+    },
+    "G12": {
+      "passed": true,
+      "source": "reports/campaign_002/closure_detector_calibration.json",
+      "value": {
+        "passed": true,
+        "ranks": {
+          "C0": {
+            "just_below_scenario_count": 1,
+            "just_below_scenarios": [
+              "K2-ladder-below-C0-no-persistence"
+            ],
+            "passed": true,
+            "passing_scenario_count": 2,
+            "passing_scenarios": [
+              "K2-ladder-below-C0-no-persistence",
+              "K2-ladder-C0-passive-persistence"
+            ]
+          },
+          "C1": {
+            "just_below_scenario_count": 1,
+            "just_below_scenarios": [
+              "K2-ladder-C0-passive-persistence"
+            ],
+            "passed": true,
+            "passing_scenario_count": 15,
+            "passing_scenarios": [
+              "K2-decoy-chain",
+              "K2-decoy-same-appearance-missing-catalyst",
+              "K2-decoy-broken-cycle",
+              "K2-decoy-removed-edge",
+              "K2-decoy-uncatalysed-cycle",
+              "K2-decoy-environmental-feeder",
+              "K2-decoy-zero-activation",
+              "K2-decoy-products-no-feedback",
+              "K2-decoy-cycle-through-inhibition",
+              "K2-decoy-too-slow-to-activate",
+              "K2-K9-pair-0-external-feeder",
+              "K2-K9-pair-1-external-feeder",
+              "K2-K9-pair-2-external-feeder",
+              "K2-K9-pair-3-external-feeder",
+              "K2-ladder-C1-cyclic-recurrence-no-catalysis"
+            ]
+          },
+          "C2": {
+            "just_below_scenario_count": 15,
+            "just_below_scenarios": [
+              "K2-decoy-chain",
+              "K2-decoy-same-appearance-missing-catalyst",
+              "K2-decoy-broken-cycle",
+              "K2-decoy-removed-edge",
+              "K2-decoy-uncatalysed-cycle",
+              "K2-decoy-environmental-feeder",
+              "K2-decoy-zero-activation",
+              "K2-decoy-products-no-feedback",
+              "K2-decoy-cycle-through-inhibition",
+              "K2-decoy-too-slow-to-activate",
+              "K2-K9-pair-0-external-feeder",
+              "K2-K9-pair-1-external-feeder",
+              "K2-K9-pair-2-external-feeder",
+              "K2-K9-pair-3-external-feeder",
+              "K2-ladder-C1-cyclic-recurrence-no-catalysis"
+            ],
+            "passed": true,
+            "passing_scenario_count": 16,
+            "passing_scenarios": [
+              "K2-positive-cycle",
+              "K2-positive-nested-cycle",
+              "K2-positive-2-reaction-core",
+              "K2-positive-4-reaction-depth",
+              "K2-positive-7-reaction-HS-fragment",
+              "K2-positive-10-reaction-nested",
+              "K2-positive-15-reaction-large-core",
+              "K2-positive-layered-depth-3",
+              "K2-positive-asymmetric-stoichiometry",
+              "K2-positive-weak-but-moving",
+              "K2-K9-pair-0-internal-RAF",
+              "K2-K9-pair-1-internal-RAF",
+              "K2-K9-pair-2-internal-RAF",
+              "K2-K9-pair-3-internal-RAF",
+              "K2-ladder-C2-catalytic-closure",
+              "K2-ladder-C3-just-below"
+            ]
+          },
+          "C3": {
+            "just_below_scenario_count": 1,
+            "just_below_scenarios": [
+              "K2-ladder-C3-just-below"
+            ],
+            "passed": true,
+            "passing_scenario_count": 2,
+            "passing_scenarios": [
+              "K2-ladder-C3-bounded-closure-proxy",
+              "K2-ladder-C4-just-below"
+            ]
+          },
+          "C4": {
+            "just_below_scenario_count": 1,
+            "just_below_scenarios": [
+              "K2-ladder-C4-just-below"
+            ],
+            "passed": true,
+            "passing_scenario_count": 1,
+            "passing_scenarios": [
+              "K2-ladder-C4-reproductive-closure-proxy"
+            ]
+          }
+        }
+      }
+    },
+    "G13": {
+      "passed": true,
+      "source": "reports/campaign_002/round_trip.json",
+      "value": {
+        "passed": true,
+        "projection_count": 3
+      }
+    },
+    "G14": {
+      "passed": true,
+      "source": "papers/prereg/campaign_002.signed.json",
+      "value": {
+        "computed_prereg_id": "sha256:ee6433a019ac85a102d8876cb546f2d56c9928f3f711b0f12ca65c63bfee5b76",
+        "content_hash_verified": true,
+        "gate_id": "G14",
+        "limitations": [
+          "PI cryptographic signature is null in this local run.",
+          "This preregistration is signed before G18 cross-family transfer runs in TASK-009; earlier G1-G8 foundation/calibration reports already exist and are listed as prior work."
+        ],
+        "passed": true,
+        "path": "papers\\prereg\\campaign_002.signed.json",
+        "prereg_id": "sha256:ee6433a019ac85a102d8876cb546f2d56c9928f3f711b0f12ca65c63bfee5b76",
+        "signed_at": "2026-05-02T12:35:24+00:00",
+        "signed_before_g18_runs": true,
+        "signed_by": [
+          "Codex",
+          "Architect"
+        ]
+      }
+    },
+    "G15": {
+      "passed": true,
+      "source": "reports/campaign_002/instrument_health.json",
+      "value": {
+        "component_count": 9
+      }
+    },
+    "G16": {
+      "passed": true,
+      "source": "reports/campaign_002/reproducibility.json",
+      "value": {
+        "after_full_report_hash": "0caf15a5c82316d41ad4febe77a1fbced979a59ee127044db68d58b3af7eb877",
+        "before_full_report_hash": "0caf15a5c82316d41ad4febe77a1fbced979a59ee127044db68d58b3af7eb877",
+        "cold_container_status": "dockerfile_provided; local rerun used because Docker execution is not assumed in this desktop session",
+        "command": "C:\\Users\\xylot\\anaconda3\\python.exe make_campaign_002.py --skip-repro",
+        "elapsed_seconds": 17.871251344680786,
+        "execution_environment": "local-clean-script-rerun",
+        "gate_id": "G16",
+        "gate_match": true,
+        "hash_equality": true,
+        "passed": true,
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"gate_count\": 20, \"passed_gate_count\": 20, \"status\": \"green\"}\n"
+      }
+    },
+    "G17": {
+      "passed": true,
+      "source": "reports/campaign_002/dictionary_echo.json",
+      "value": [
+        {
+          "detector": "closure.rule_trace",
+          "r": -0.14337252362640227
+        },
+        {
+          "detector": "boundary.topological",
+          "r": -0.8510295239952316
+        },
+        {
+          "detector": "boundary.information",
+          "r": -0.8662261979336078
+        },
+        {
+          "detector": "boundary.behavioral",
+          "r": -0.5113203145027737
+        }
+      ]
+    },
+    "G18": {
+      "passed": true,
+      "source": "reports/campaign_002/cross_family_transfer.json",
+      "value": [
+        "autocatalytic_closure",
+        "self_maintenance"
+      ]
+    },
+    "G19": {
+      "passed": true,
+      "source": "reports/campaign_002/round_trip.json",
+      "value": {
+        "max_loss": 0.0,
+        "passed": true
+      }
+    },
+    "G2": {
+      "passed": true,
+      "source": "validation.campaign002.validate_g2_ssa_mass_conservation",
+      "value": {
+        "events": 1000000,
+        "final_mass": 30.0,
+        "final_state": {
+          "A": 13,
+          "B": 10,
+          "C": 7
+        },
+        "initial_mass": 30.0,
+        "mass_residual": 0.0,
+        "rng_final_state_hash": "2554261fbe76a459fe17ca006a0d0e60b08cd921255c61849799fde65f35073c",
+        "t_final": 345108.60071604565
+      }
+    },
+    "G20": {
+      "passed": true,
+      "source": "atlas/negative_space/index.json",
+      "value": {
+        "entry_count": 3
+      }
+    },
+    "G3": {
+      "passed": true,
+      "source": "reports/campaign_002/raf_benchmarks.json",
+      "value": {
+        "benchmark_count": 6
+      }
+    },
+    "G4": {
+      "passed": true,
+      "source": "reports/campaign_002/closure_detector_calibration.json",
+      "value": {
+        "passed": true,
+        "threshold": 0.92,
+        "value": 1.0
+      }
+    },
+    "G5": {
+      "passed": true,
+      "source": "reports/campaign_002/boundary_detector_calibration.json",
+      "value": {
+        "passed": true,
+        "threshold": 0.85,
+        "value": 1.0
+      }
+    },
+    "G6": {
+      "passed": true,
+      "source": "reports/campaign_002/closure_detector_calibration.json",
+      "value": {
+        "passed": true,
+        "threshold": 0.05,
+        "value": 0.0
+      }
+    },
+    "G7": {
+      "passed": true,
+      "source": "reports/campaign_002/boundary_detector_calibration.json",
+      "value": {
+        "passed": true,
+        "threshold": 0.05,
+        "value": 0.0
+      }
+    },
+    "G8": {
+      "passed": true,
+      "source": "reports/campaign_002/cross_detector_kappa.json",
+      "value": {
+        "detector_a": "closure.graph",
+        "detector_b": "closure.rule_trace",
+        "family": "K2",
+        "kappa": 1.0,
+        "n": 36,
+        "structurally_independent": true
+      }
+    },
+    "G9": {
+      "passed": true,
+      "source": "reports/campaign_002/nulls/nulls_summary.json",
+      "value": {
+        "N0": 1000,
+        "N1": 1000,
+        "N2": 1000,
+        "N5": 50
+      }
+    }
+  },
+  "passed_gate_count": 20,
+  "status": "green"
+}

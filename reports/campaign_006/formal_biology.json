@@ -1,0 +1,717 @@
+{
+  "biology": [
+    {
+      "absence_semantics": "unknown",
+      "blocker_or_proposal": null,
+      "formal_support": [
+        "graph",
+        "information"
+      ],
+      "mode": "shadow",
+      "representation_status": "represented",
+      "trait": "photoreception",
+      "uncertainty_semantics": "graded_confidence"
+    },
+    {
+      "absence_semantics": "unobserved",
+      "blocker_or_proposal": "docs/contract_proposals/c006_powered_flight.md",
+      "formal_support": [
+        "graph"
+      ],
+      "mode": "shadow",
+      "representation_status": "blocker",
+      "trait": "powered_flight",
+      "uncertainty_semantics": "graded_confidence"
+    },
+    {
+      "absence_semantics": "not_searched",
+      "blocker_or_proposal": null,
+      "formal_support": [
+        "graph",
+        "information"
+      ],
+      "mode": "shadow",
+      "representation_status": "represented",
+      "trait": "branching_transport",
+      "uncertainty_semantics": "graded_confidence"
+    },
+    {
+      "absence_semantics": "absent",
+      "blocker_or_proposal": "docs/contract_proposals/c006_eusociality.md",
+      "formal_support": [
+        "graph"
+      ],
+      "mode": "shadow",
+      "representation_status": "blocker",
+      "trait": "eusociality",
+      "uncertainty_semantics": "graded_confidence"
+    },
+    {
+      "absence_semantics": "unknown",
+      "blocker_or_proposal": null,
+      "formal_support": [
+        "graph",
+        "information"
+      ],
+      "mode": "shadow",
+      "representation_status": "represented",
+      "trait": "segmentation",
+      "uncertainty_semantics": "graded_confidence"
+    },
+    {
+      "absence_semantics": "unobserved",
+      "blocker_or_proposal": null,
+      "formal_support": [
+        "graph"
+      ],
+      "mode": "shadow",
+      "representation_status": "represented",
+      "trait": "autocatalytic_metabolic_closure",
+      "uncertainty_semantics": "graded_confidence"
+    },
+    {
+      "absence_semantics": "not_searched",
+      "blocker_or_proposal": null,
+      "formal_support": [
+        "graph",
+        "information"
+      ],
+      "mode": "shadow",
+      "representation_status": "represented",
+      "trait": "externalized_memory",
+      "uncertainty_semantics": "graded_confidence"
+    }
+  ],
+  "biology_negative": [
+    {
+      "category": "simulation_only",
+      "entry_id": "BIO-NS-C006-01",
+      "mode": "shadow",
+      "trait": "photoreception"
+    },
+    {
+      "category": "biology_only",
+      "entry_id": "BIO-NS-C006-02",
+      "mode": "shadow",
+      "trait": "powered_flight"
+    },
+    {
+      "category": "simulation_only",
+      "entry_id": "BIO-NS-C006-03",
+      "mode": "shadow",
+      "trait": "branching_transport"
+    },
+    {
+      "category": "biology_only",
+      "entry_id": "BIO-NS-C006-04",
+      "mode": "shadow",
+      "trait": "eusociality"
+    },
+    {
+      "category": "simulation_only",
+      "entry_id": "BIO-NS-C006-05",
+      "mode": "shadow",
+      "trait": "segmentation"
+    },
+    {
+      "category": "simulation_only",
+      "entry_id": "BIO-NS-C006-06",
+      "mode": "shadow",
+      "trait": "autocatalytic_metabolic_closure"
+    },
+    {
+      "category": "simulation_only",
+      "entry_id": "BIO-NS-C006-07",
+      "mode": "shadow",
+      "trait": "externalized_memory"
+    }
+  ],
+  "coverage": [
+    {
+      "candidate_id": "MC-C006-01-closure_like_production",
+      "compression": 0.95,
+      "decode": 0.655,
+      "encode": 0.72,
+      "invariance": 0.636,
+      "predict": 0.598,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-02-repair_boundary_memory",
+      "compression": 0.898,
+      "decode": 0.67,
+      "encode": 0.74,
+      "invariance": 0.652,
+      "predict": 0.616,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-03-lineage_replication",
+      "compression": 0.945,
+      "decode": 0.685,
+      "encode": 0.76,
+      "invariance": 0.668,
+      "predict": 0.634,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-04-field_front_propagation",
+      "compression": 0.933,
+      "decode": 0.7,
+      "encode": 0.78,
+      "invariance": 0.684,
+      "predict": 0.652,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-05-entropy_coupled_transition",
+      "compression": 0.95,
+      "decode": 0.715,
+      "encode": 0.7,
+      "invariance": 0.7,
+      "predict": 0.67,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-06-morphogenetic_branching",
+      "compression": 0.908,
+      "decode": 0.64,
+      "encode": 0.72,
+      "invariance": 0.716,
+      "predict": 0.688,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+      "compression": 0.949,
+      "decode": 0.655,
+      "encode": 0.74,
+      "invariance": 0.732,
+      "predict": 0.58,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-08-swarm_marker_coordination",
+      "compression": 0.931,
+      "decode": 0.67,
+      "encode": 0.76,
+      "invariance": 0.62,
+      "predict": 0.598,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-09-surface_anchored_catalysis",
+      "compression": 0.918,
+      "decode": 0.685,
+      "encode": 0.78,
+      "invariance": 0.636,
+      "predict": 0.616,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    },
+    {
+      "candidate_id": "MC-C006-10-quasispecies_robust_cloud",
+      "compression": 0.931,
+      "decode": 0.7,
+      "encode": 0.7,
+      "invariance": 0.652,
+      "predict": 0.634,
+      "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+    }
+  ],
+  "formal_gap_updates": [
+    {
+      "candidate_id": "MC-C006-01-closure_like_production",
+      "journal_status": "speculative_non_claim_bearing",
+      "reason": "residual structure survived N7 and biology pressure"
+    },
+    {
+      "candidate_id": "MC-C006-02-repair_boundary_memory",
+      "journal_status": "speculative_non_claim_bearing",
+      "reason": "residual structure survived N7 and biology pressure"
+    },
+    {
+      "candidate_id": "MC-C006-03-lineage_replication",
+      "journal_status": "speculative_non_claim_bearing",
+      "reason": "residual structure survived N7 and biology pressure"
+    },
+    {
+      "candidate_id": "MC-C006-04-field_front_propagation",
+      "journal_status": "speculative_non_claim_bearing",
+      "reason": "residual structure survived N7 and biology pressure"
+    }
+  ],
+  "gates": {
+    "G55_formal_coverage_records": {
+      "passed": true,
+      "rows": [
+        {
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "compression": 0.95,
+          "decode": 0.655,
+          "encode": 0.72,
+          "invariance": 0.636,
+          "predict": 0.598,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "compression": 0.898,
+          "decode": 0.67,
+          "encode": 0.74,
+          "invariance": 0.652,
+          "predict": 0.616,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-03-lineage_replication",
+          "compression": 0.945,
+          "decode": 0.685,
+          "encode": 0.76,
+          "invariance": 0.668,
+          "predict": 0.634,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "compression": 0.933,
+          "decode": 0.7,
+          "encode": 0.78,
+          "invariance": 0.684,
+          "predict": 0.652,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-05-entropy_coupled_transition",
+          "compression": 0.95,
+          "decode": 0.715,
+          "encode": 0.7,
+          "invariance": 0.7,
+          "predict": 0.67,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-06-morphogenetic_branching",
+          "compression": 0.908,
+          "decode": 0.64,
+          "encode": 0.72,
+          "invariance": 0.716,
+          "predict": 0.688,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "compression": 0.949,
+          "decode": 0.655,
+          "encode": 0.74,
+          "invariance": 0.732,
+          "predict": 0.58,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "compression": 0.931,
+          "decode": 0.67,
+          "encode": 0.76,
+          "invariance": 0.62,
+          "predict": 0.598,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-09-surface_anchored_catalysis",
+          "compression": 0.918,
+          "decode": 0.685,
+          "encode": 0.78,
+          "invariance": 0.636,
+          "predict": 0.616,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        },
+        {
+          "candidate_id": "MC-C006-10-quasispecies_robust_cloud",
+          "compression": 0.931,
+          "decode": 0.7,
+          "encode": 0.7,
+          "invariance": 0.652,
+          "predict": 0.634,
+          "source_bundle": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+        }
+      ]
+    },
+    "G56_residual_structure_tests": {
+      "passed": true,
+      "rows": [
+        {
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "lens_id": "graph",
+          "mutual_information": 0.08,
+          "perturbation_response": 0.18,
+          "residual_recurrence": 0.21,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "lens_id": "crnt",
+          "mutual_information": 0.09,
+          "perturbation_response": 0.205,
+          "residual_recurrence": 0.24,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-03-lineage_replication",
+          "lens_id": "information",
+          "mutual_information": 0.1,
+          "perturbation_response": 0.22999999999999998,
+          "residual_recurrence": 0.27,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "lens_id": "graph",
+          "mutual_information": 0.11,
+          "perturbation_response": 0.255,
+          "residual_recurrence": 0.3,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-05-entropy_coupled_transition",
+          "lens_id": "crnt",
+          "mutual_information": 0.12,
+          "perturbation_response": 0.18,
+          "residual_recurrence": 0.32999999999999996,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-06-morphogenetic_branching",
+          "lens_id": "information",
+          "mutual_information": 0.13,
+          "perturbation_response": 0.205,
+          "residual_recurrence": 0.21,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "lens_id": "graph",
+          "mutual_information": 0.08,
+          "perturbation_response": 0.22999999999999998,
+          "residual_recurrence": 0.24,
+          "survives": true
+        },
+        {
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "lens_id": "crnt",
+          "mutual_information": 0.09,
+          "perturbation_response": 0.255,
+          "residual_recurrence": 0.27,
+          "survives": true
+        }
+      ]
+    },
+    "G57_n7_lens_permutation": {
+      "passed": true,
+      "rows": [
+        {
+          "candidate_id": "MC-C006-01-closure_like_production",
+          "fdr_passed": true,
+          "p_value": 0.005
+        },
+        {
+          "candidate_id": "MC-C006-02-repair_boundary_memory",
+          "fdr_passed": true,
+          "p_value": 0.009000000000000001
+        },
+        {
+          "candidate_id": "MC-C006-03-lineage_replication",
+          "fdr_passed": true,
+          "p_value": 0.013000000000000001
+        },
+        {
+          "candidate_id": "MC-C006-04-field_front_propagation",
+          "fdr_passed": true,
+          "p_value": 0.017
+        },
+        {
+          "candidate_id": "MC-C006-05-entropy_coupled_transition",
+          "fdr_passed": true,
+          "p_value": 0.021
+        },
+        {
+          "candidate_id": "MC-C006-06-morphogenetic_branching",
+          "fdr_passed": true,
+          "p_value": 0.025
+        },
+        {
+          "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+          "fdr_passed": true,
+          "p_value": 0.029
+        },
+        {
+          "candidate_id": "MC-C006-08-swarm_marker_coordination",
+          "fdr_passed": true,
+          "p_value": 0.033
+        },
+        {
+          "candidate_id": "MC-C006-09-surface_anchored_catalysis",
+          "fdr_passed": false,
+          "p_value": 0.037
+        },
+        {
+          "candidate_id": "MC-C006-10-quasispecies_robust_cloud",
+          "fdr_passed": false,
+          "p_value": 0.041
+        }
+      ]
+    },
+    "G58_biology_shadow_pressure": {
+      "passed": true,
+      "rows": [
+        {
+          "absence_semantics": "unknown",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "photoreception",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "unobserved",
+          "blocker_or_proposal": "docs/contract_proposals/c006_powered_flight.md",
+          "formal_support": [
+            "graph"
+          ],
+          "mode": "shadow",
+          "representation_status": "blocker",
+          "trait": "powered_flight",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "not_searched",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "branching_transport",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "absent",
+          "blocker_or_proposal": "docs/contract_proposals/c006_eusociality.md",
+          "formal_support": [
+            "graph"
+          ],
+          "mode": "shadow",
+          "representation_status": "blocker",
+          "trait": "eusociality",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "unknown",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "segmentation",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "unobserved",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "autocatalytic_metabolic_closure",
+          "uncertainty_semantics": "graded_confidence"
+        },
+        {
+          "absence_semantics": "not_searched",
+          "blocker_or_proposal": null,
+          "formal_support": [
+            "graph",
+            "information"
+          ],
+          "mode": "shadow",
+          "representation_status": "represented",
+          "trait": "externalized_memory",
+          "uncertainty_semantics": "graded_confidence"
+        }
+      ]
+    },
+    "G59_biology_negative_space": {
+      "passed": true,
+      "rows": [
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-01",
+          "mode": "shadow",
+          "trait": "photoreception"
+        },
+        {
+          "category": "biology_only",
+          "entry_id": "BIO-NS-C006-02",
+          "mode": "shadow",
+          "trait": "powered_flight"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-03",
+          "mode": "shadow",
+          "trait": "branching_transport"
+        },
+        {
+          "category": "biology_only",
+          "entry_id": "BIO-NS-C006-04",
+          "mode": "shadow",
+          "trait": "eusociality"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-05",
+          "mode": "shadow",
+          "trait": "segmentation"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-06",
+          "mode": "shadow",
+          "trait": "autocatalytic_metabolic_closure"
+        },
+        {
+          "category": "simulation_only",
+          "entry_id": "BIO-NS-C006-07",
+          "mode": "shadow",
+          "trait": "externalized_memory"
+        }
+      ]
+    }
+  },
+  "n7": [
+    {
+      "candidate_id": "MC-C006-01-closure_like_production",
+      "fdr_passed": true,
+      "p_value": 0.005
+    },
+    {
+      "candidate_id": "MC-C006-02-repair_boundary_memory",
+      "fdr_passed": true,
+      "p_value": 0.009000000000000001
+    },
+    {
+      "candidate_id": "MC-C006-03-lineage_replication",
+      "fdr_passed": true,
+      "p_value": 0.013000000000000001
+    },
+    {
+      "candidate_id": "MC-C006-04-field_front_propagation",
+      "fdr_passed": true,
+      "p_value": 0.017
+    },
+    {
+      "candidate_id": "MC-C006-05-entropy_coupled_transition",
+      "fdr_passed": true,
+      "p_value": 0.021
+    },
+    {
+      "candidate_id": "MC-C006-06-morphogenetic_branching",
+      "fdr_passed": true,
+      "p_value": 0.025
+    },
+    {
+      "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+      "fdr_passed": true,
+      "p_value": 0.029
+    },
+    {
+      "candidate_id": "MC-C006-08-swarm_marker_coordination",
+      "fdr_passed": true,
+      "p_value": 0.033
+    },
+    {
+      "candidate_id": "MC-C006-09-surface_anchored_catalysis",
+      "fdr_passed": false,
+      "p_value": 0.037
+    },
+    {
+      "candidate_id": "MC-C006-10-quasispecies_robust_cloud",
+      "fdr_passed": false,
+      "p_value": 0.041
+    }
+  ],
+  "passed": true,
+  "pillar": "formal_biology",
+  "residual": [
+    {
+      "candidate_id": "MC-C006-01-closure_like_production",
+      "lens_id": "graph",
+      "mutual_information": 0.08,
+      "perturbation_response": 0.18,
+      "residual_recurrence": 0.21,
+      "survives": true
+    },
+    {
+      "candidate_id": "MC-C006-02-repair_boundary_memory",
+      "lens_id": "crnt",
+      "mutual_information": 0.09,
+      "perturbation_response": 0.205,
+      "residual_recurrence": 0.24,
+      "survives": true
+    },
+    {
+      "candidate_id": "MC-C006-03-lineage_replication",
+      "lens_id": "information",
+      "mutual_information": 0.1,
+      "perturbation_response": 0.22999999999999998,
+      "residual_recurrence": 0.27,
+      "survives": true
+    },
+    {
+      "candidate_id": "MC-C006-04-field_front_propagation",
+      "lens_id": "graph",
+      "mutual_information": 0.11,
+      "perturbation_response": 0.255,
+      "residual_recurrence": 0.3,
+      "survives": true
+    },
+    {
+      "candidate_id": "MC-C006-05-entropy_coupled_transition",
+      "lens_id": "crnt",
+      "mutual_information": 0.12,
+      "perturbation_response": 0.18,
+      "residual_recurrence": 0.32999999999999996,
+      "survives": true
+    },
+    {
+      "candidate_id": "MC-C006-06-morphogenetic_branching",
+      "lens_id": "information",
+      "mutual_information": 0.13,
+      "perturbation_response": 0.205,
+      "residual_recurrence": 0.21,
+      "survives": true
+    },
+    {
+      "candidate_id": "MC-C006-07-ecosystem_niche_construction",
+      "lens_id": "graph",
+      "mutual_information": 0.08,
+      "perturbation_response": 0.22999999999999998,
+      "residual_recurrence": 0.24,
+      "survives": true
+    },
+    {
+      "candidate_id": "MC-C006-08-swarm_marker_coordination",
+      "lens_id": "crnt",
+      "mutual_information": 0.09,
+      "perturbation_response": 0.255,
+      "residual_recurrence": 0.27,
+      "survives": true
+    }
+  ]
+}

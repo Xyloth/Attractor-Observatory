@@ -1,0 +1,199 @@
+{
+  "benchmark_rows": [
+    {
+      "benchmark": "linear_sheet",
+      "event_surface_complete": true,
+      "event_types": [
+        "birth_event",
+        "differentiation_event",
+        "division_event",
+        "expression_event",
+        "growth_event",
+        "movement_event",
+        "mutation_event"
+      ],
+      "expected_regime": "Linear nutrient/anterior gradient should produce a sheet with elongated x span.",
+      "final_cell_count": 14.0,
+      "lineage_size": 14,
+      "max_invariant_residual": 209.2883436216963,
+      "metrics": {
+        "cell_count": 14.0,
+        "x_span": 0.44715591344089556,
+        "y_span": 0.14474886131977902
+      },
+      "observed_regime": "sheet",
+      "passed": true,
+      "trace_id": "sha256:bf01c76869502a871e6e91315fa110ee8fc383298d44e010263fbfda17112d81"
+    },
+    {
+      "benchmark": "branching_tree",
+      "event_surface_complete": true,
+      "event_types": [
+        "birth_event",
+        "differentiation_event",
+        "division_event",
+        "expression_event",
+        "growth_event",
+        "movement_event",
+        "mutation_event"
+      ],
+      "expected_regime": "Bimodal branch morphogen should create at least two tip-rich arms.",
+      "final_cell_count": 17.0,
+      "lineage_size": 17,
+      "max_invariant_residual": 869.6972623447151,
+      "metrics": {
+        "branch_count": 2.0,
+        "cell_count": 17.0,
+        "tip_count": 17.0
+      },
+      "observed_regime": "branching",
+      "passed": true,
+      "trace_id": "sha256:8e096a546b8aa2ed238b47c898569ef2b1fe823142acfc09a3c8f7dbe819400d"
+    },
+    {
+      "benchmark": "segmented_body",
+      "event_surface_complete": true,
+      "event_types": [
+        "birth_event",
+        "differentiation_event",
+        "division_event",
+        "expression_event",
+        "growth_event",
+        "movement_event",
+        "mutation_event"
+      ],
+      "expected_regime": "Opposing anterior/posterior fields drive alternating segment bands.",
+      "final_cell_count": 41.0,
+      "lineage_size": 41,
+      "max_invariant_residual": 498.22457313370296,
+      "metrics": {
+        "cell_count": 41.0,
+        "segment_score": 1.0,
+        "x_span": 1.4630675749056308
+      },
+      "observed_regime": "segmented",
+      "passed": true,
+      "trace_id": "sha256:25eaca8e57225e6bf57ff9f1c63fdce7e8702f341e26bff8ec854516121a9c1e"
+    },
+    {
+      "benchmark": "radial_form",
+      "event_surface_complete": true,
+      "event_types": [
+        "birth_event",
+        "differentiation_event",
+        "division_event",
+        "expression_event",
+        "growth_event",
+        "movement_event"
+      ],
+      "expected_regime": "Radial morphogen should produce broad angular coverage.",
+      "final_cell_count": 57.0,
+      "lineage_size": 57,
+      "max_invariant_residual": 1065.7659765324277,
+      "metrics": {
+        "angular_coverage": 0.6666666666666666,
+        "boundary_span": 5.92,
+        "cell_count": 57.0
+      },
+      "observed_regime": "branching",
+      "passed": true,
+      "trace_id": "sha256:8ba43ac29e349bf5d18f16e7fd5c04b1da8c01948a62f62cbdf3db216f83487e"
+    },
+    {
+      "benchmark": "layered_organoid",
+      "event_surface_complete": true,
+      "event_types": [
+        "birth_event",
+        "damage_event",
+        "differentiation_event",
+        "division_event",
+        "expression_event",
+        "growth_event",
+        "movement_event",
+        "mutation_event"
+      ],
+      "expected_regime": "Layer field should separate inner and outer epithelial zones after damage repair.",
+      "final_cell_count": 30.0,
+      "lineage_size": 30,
+      "max_invariant_residual": 982.0149748814689,
+      "metrics": {
+        "cell_count": 30.0,
+        "epithelial_count": 30.0,
+        "layer_separation": 0.5437638260797438
+      },
+      "observed_regime": "layered",
+      "passed": true,
+      "trace_id": "sha256:94f7bd22cd2308d98cdac632c5955083057bcdd504b8c86dd52ccb0e814c9b98"
+    }
+  ],
+  "gate": {
+    "comparison": "all_values_meet_or_exceed_thresholds",
+    "gate_id": "W4R",
+    "passed": true,
+    "quantity": "morphogenesis_benchmarks_with_substance_tests_and_event_surface",
+    "threshold": {
+      "benchmarks_passed": 5,
+      "event_surface_scenarios": 4,
+      "simulation_logic_lines": 600,
+      "test_count": 35
+    },
+    "value": {
+      "benchmarks_passed": 5,
+      "event_surface_scenarios": 5,
+      "simulation_logic_lines": 949,
+      "test_count": 38
+    }
+  },
+  "passed": true,
+  "required_events_by_benchmark": {
+    "branching_tree": [
+      "birth_event",
+      "differentiation_event",
+      "division_event",
+      "expression_event",
+      "movement_event"
+    ],
+    "layered_organoid": [
+      "birth_event",
+      "damage_event",
+      "differentiation_event",
+      "division_event"
+    ],
+    "linear_sheet": [
+      "birth_event",
+      "differentiation_event",
+      "division_event",
+      "expression_event"
+    ],
+    "radial_form": [
+      "birth_event",
+      "differentiation_event",
+      "division_event",
+      "expression_event",
+      "movement_event"
+    ],
+    "segmented_body": [
+      "birth_event",
+      "differentiation_event",
+      "division_event",
+      "expression_event"
+    ]
+  },
+  "schema": "Campaign007W4Reconstruction.v1",
+  "world_substance": {
+    "mode": "substantive",
+    "mode_at_campaign_start": "stub",
+    "paths": [
+      "worlds\\morphogenesis\\model.py"
+    ],
+    "scaffolding_lines": 74,
+    "simulation_logic_lines": 949,
+    "substance_floor": 600,
+    "substantive_lines": 949,
+    "test_count": 38,
+    "total_lines": 1037,
+    "trace_export_lines": 14,
+    "truth_pass_verdict": "eligible_after_reconstruction_tests",
+    "world_id": "W4"
+  }
+}

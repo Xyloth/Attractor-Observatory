@@ -1,0 +1,219 @@
+{
+  "component_count": 9,
+  "components": [
+    {
+      "measurement": {
+        "max_abs_error": 0.0,
+        "passed": true,
+        "trace_a": "sha256:296c4ffeb421c7f57c1139768758970bd484de0c85ec06e3196df477d0efdd3c",
+        "trace_b": "sha256:296c4ffeb421c7f57c1139768758970bd484de0c85ec06e3196df477d0efdd3c"
+      },
+      "name": "determinism_health",
+      "notes": "Same W2 seed reproduces the same final state.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "boundary_passed": true,
+        "closure_passed": true
+      },
+      "name": "calibration_health",
+      "notes": "Closure and boundary calibration reports must be green.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "computed_prereg_id": "sha256:ee6433a019ac85a102d8876cb546f2d56c9928f3f711b0f12ca65c63bfee5b76",
+        "content_hash_verified": true,
+        "gate_id": "G14",
+        "limitations": [
+          "PI cryptographic signature is null in this local run.",
+          "This preregistration is signed before G18 cross-family transfer runs in TASK-009; earlier G1-G8 foundation/calibration reports already exist and are listed as prior work."
+        ],
+        "passed": true,
+        "path": "papers\\prereg\\campaign_002.signed.json",
+        "prereg_id": "sha256:ee6433a019ac85a102d8876cb546f2d56c9928f3f711b0f12ca65c63bfee5b76",
+        "signed_at": "2026-05-02T12:35:24+00:00",
+        "signed_before_g18_runs": true,
+        "signed_by": [
+          "Codex",
+          "Architect"
+        ]
+      },
+      "name": "provenance_health",
+      "notes": "Signed preregistration hash must verify.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "best_pair": {
+          "detector_a": "closure.graph",
+          "detector_b": "closure.rule_trace",
+          "family": "K2",
+          "kappa": 1.0,
+          "n": 36,
+          "structurally_independent": true
+        }
+      },
+      "name": "detector_agreement_health",
+      "notes": "At least one structurally independent detector pair must reach kappa >= 0.80.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "present": [
+          "reports/campaign_002/raf_benchmarks.json",
+          "reports/campaign_002/closure_detector_calibration.json",
+          "reports/campaign_002/boundary_detector_calibration.json",
+          "reports/campaign_002/cross_detector_kappa.json",
+          "reports/campaign_002/nulls/nulls_summary.json",
+          "reports/campaign_002/basin_width.json",
+          "reports/campaign_002/round_trip.json",
+          "reports/campaign_002/dictionary_echo.json",
+          "reports/campaign_002/cross_family_transfer.json"
+        ],
+        "required": [
+          "reports/campaign_002/raf_benchmarks.json",
+          "reports/campaign_002/closure_detector_calibration.json",
+          "reports/campaign_002/boundary_detector_calibration.json",
+          "reports/campaign_002/cross_detector_kappa.json",
+          "reports/campaign_002/nulls/nulls_summary.json",
+          "reports/campaign_002/basin_width.json",
+          "reports/campaign_002/round_trip.json",
+          "reports/campaign_002/dictionary_echo.json",
+          "reports/campaign_002/cross_family_transfer.json"
+        ]
+      },
+      "name": "coverage_health",
+      "notes": "Required Campaign 002 report artifacts must exist.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "storage_mode": "json"
+      },
+      "name": "storage_health",
+      "notes": "JSON trace/report storage is readable and nonempty for current dependency policy.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "nulls_passed": true,
+        "public_claim_count": 0
+      },
+      "name": "claim_hygiene_health",
+      "notes": "No public claims may be promoted while campaign is under construction; null gauntlet must be green.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "task009_records": 1
+      },
+      "name": "builder_calibration_health",
+      "notes": "TASK-009 must be open in the estimation ledger.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    },
+    {
+      "measurement": {
+        "task009_acceptance_outcome": "pass"
+      },
+      "name": "doctrine_compliance_health",
+      "notes": "TASK-009 must not use partial-as-pass.",
+      "panic_budget_rule": "pause claim promotion if this component is below threshold",
+      "passed": true,
+      "rolling_7_day_window": {
+        "current": 1.0,
+        "samples": [
+          1.0
+        ]
+      },
+      "threshold": 1.0,
+      "value": 1.0
+    }
+  ],
+  "gate_id": "G15",
+  "mapping_to_v1_2_11_4": {
+    "builder_calibration_health": "builder_calibration_health",
+    "calibration_health": "calibration_health",
+    "claim_hygiene_health": "claim_hygiene_health",
+    "coverage_health": "coverage_health",
+    "detector_agreement_health": "detector_agreement_health",
+    "determinism_health": "determinism_health",
+    "doctrine_compliance_health": "doctrine_compliance_health",
+    "provenance_health": "provenance_health",
+    "storage_health": "storage_health"
+  },
+  "passed": true
+}
