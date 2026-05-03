@@ -4,8 +4,11 @@
   "gate_count": 20,
   "gates": {
     "G1": {
+      "claim_status": "exploratory",
       "passed": true,
       "source": "validation.campaign002.validate_g1_ode_convergence",
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007.",
       "value": {
         "brusselator_equilibrium_error": 0.0,
         "brusselator_reference_error": 2.0190156124755276e-07,
@@ -50,8 +53,11 @@
       ]
     },
     "G12": {
+      "claim_status": "exploratory",
       "passed": true,
       "source": "reports/campaign_002/closure_detector_calibration.json",
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007.",
       "value": {
         "passed": true,
         "ranks": {
@@ -343,5 +349,11 @@
     }
   },
   "passed_gate_count": 20,
-  "status": "green"
+  "status": "green",
+  "truth_pass": {
+    "campaign_007": {
+      "modified_gates": 2,
+      "status": "historical_not_claim_bearing"
+    }
+  }
 }

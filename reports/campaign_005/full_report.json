@@ -3,7 +3,9 @@
   "gate_count": 21,
   "gates": {
     "G10_novelty_search": {
+      "claim_status": "exploratory",
       "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
       "top_novelty": [
         {
           "cell": [
@@ -70,7 +72,8 @@
           "sample_ref": "W13:0",
           "trace_id": "sha256:418e227906493220ae201b8ad57a294e049122d0f7f351b150706f77ef60ae34"
         }
-      ]
+      ],
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "G11_qd_archive": {
       "archive": [
@@ -227,7 +230,7 @@
           ],
           "quality": 0.3841838996696701,
           "sample_ref": "W11:3",
-          "trace_id": "sha256:332ac3682677f03181777c1e621684c13d964b594d27e85ab5516261570fbc27",
+          "trace_id": "sha256:05acbf079940eed5c6ba52f446a06148538f05829a3f7a4ad6b7eda49e7aebd2",
           "world_family": "quasispecies"
         },
         {
@@ -257,8 +260,11 @@
           "world_family": "multiscale"
         }
       ],
+      "claim_status": "exploratory",
       "occupied_cells": 14,
       "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007.",
       "world_families": [
         "crn",
         "digital",
@@ -327,6 +333,7 @@
       ]
     },
     "G13_coverage_telemetry": {
+      "claim_status": "exploratory",
       "coverage": {
         "W1": {
           "coverage_estimate": 0.0005580357142857143,
@@ -401,7 +408,9 @@
           "sample_count": 4
         }
       },
-      "passed": true
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "G14_substrate_blind_search_features": {
       "feature_keys": [
@@ -441,10 +450,14 @@
         "MC-C005-11-nested_symbiotic_exchange",
         "MC-C005-12-cross_scale_flux_closure"
       ],
+      "claim_status": "exploratory",
       "new_world_only_count": 4,
-      "passed": true
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "G16_candidate_strength": {
+      "claim_status": "exploratory",
       "passed": true,
       "rows": [
         {
@@ -507,7 +520,9 @@
           "compression_gain": 0.9484375,
           "heldout_recurrence": 1.0
         }
-      ]
+      ],
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "G17_negative_space_search_update": {
       "entries": [
@@ -629,6 +644,7 @@
       "passed": true
     },
     "G18_world_usefulness_changed": {
+      "claim_status": "exploratory",
       "passed": true,
       "recommendations": [
         {
@@ -801,7 +817,9 @@
           },
           "world_family": "symbiogenesis"
         }
-      ]
+      ],
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "G19_marginal_information": {
       "passed": true,
@@ -1115,6 +1133,7 @@
       ]
     },
     "G8_world_contracts": {
+      "claim_status": "exploratory",
       "declared_determinism": {
         "W11": "replayable_to_eps",
         "W12": "replayable_to_eps",
@@ -1125,6 +1144,8 @@
         "W9": "replayable_to_eps"
       },
       "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007.",
       "world_count": 7
     },
     "G9_latin_hypercube": {
@@ -1139,5 +1160,11 @@
     "search": "reports/campaign_005/search.json",
     "world_ensemble": "reports/campaign_005/world_ensemble.json"
   },
-  "status": "green"
+  "status": "green",
+  "truth_pass": {
+    "campaign_007": {
+      "modified_gates": 7,
+      "status": "historical_not_claim_bearing"
+    }
+  }
 }

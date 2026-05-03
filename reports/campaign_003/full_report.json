@@ -289,9 +289,13 @@
     },
     "F6_biology_anchor_set": {
       "anchor_count": 7,
-      "passed": true
+      "claim_status": "exploratory",
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "F7_biology_predicates": {
+      "claim_status": "exploratory",
       "passed": true,
       "rows": [
         {
@@ -336,9 +340,12 @@
           "schema_pressure_passed": true,
           "trait": "externalized_memory"
         }
-      ]
+      ],
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "F8_schema_pressure": {
+      "claim_status": "exploratory",
       "passed": true,
       "rows": [
         {
@@ -383,7 +390,9 @@
           "schema_pressure_passed": true,
           "trait": "externalized_memory"
         }
-      ]
+      ],
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "H1_substrate_erasure_roundtrip": {
       "passed": true,
@@ -543,6 +552,7 @@
       ]
     },
     "H4_independent_kappa": {
+      "claim_status": "exploratory",
       "independence_claim": "RAF detector uses maximal autocatalytic set extraction over the declared reaction graph; trajectory detector uses event-observed catalyst/product recurrence and state deltas from the trace.",
       "kappa": 0.8343558282208589,
       "passed": true,
@@ -741,7 +751,7 @@
               ]
             },
             "score": 0.7777528474276887,
-            "state_motion_score": 0.6219105928461087
+            "state_motion_score": 0.6219105928461086
           },
           "trajectory_score": 0.7777528474276887
         },
@@ -1481,40 +1491,52 @@
           "trajectory_score": 0.3785878407369205
         }
       ],
-      "trajectory_threshold": 0.36
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "trajectory_threshold": 0.36,
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "H5_k3_k4_expansion": {
+      "claim_status": "exploratory",
       "k3_count": 30,
       "k4_catch_rate": 1.0,
       "k4_count": 30,
-      "passed": true
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "P10_attractor_strength_D": {
       "passed": true,
       "strength_component_D": 0.9528195311147831
     },
     "P11_world_trace_movement": {
+      "claim_status": "exploratory",
       "motions": {
         "W1": 1.0,
         "W2": 0.8845806735124657,
         "W3": 1.0,
         "W5": 1.0
       },
-      "passed": true
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "P12_trace_invariants": {
       "passed": true
     },
     "P1_w3_field_world": {
+      "claim_status": "exploratory",
       "field_motion": true,
       "final_active_cells": 25.0,
       "final_total_b": 39.214115546390666,
       "initial_active_cells": 25.0,
       "initial_total_b": 25.3,
       "mass_residual": 5.684341886080802e-14,
-      "passed": true
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "P2_w5_digital_world": {
+      "claim_status": "exploratory",
       "event_types": [
         "birth_event",
         "communication_event",
@@ -1525,7 +1547,9 @@
         "replication_event",
         "task_completion_event"
       ],
-      "passed": true
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "P3_cross_substrate_transfer": {
       "bilateral_motifs": [
@@ -1547,7 +1571,10 @@
           ]
         }
       ],
-      "passed": true
+      "claim_status": "exploratory",
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "P4_implementation_diversity": {
       "D": 0.9528195311147831,
@@ -1556,7 +1583,10 @@
     "P5_k_corpora_extensions": {
       "K3": 30,
       "K4": 30,
-      "passed": true
+      "claim_status": "exploratory",
+      "passed": true,
+      "superseded_by": "reports/campaign_007/truth_pass_application.json",
+      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
     },
     "P6_emergent_motifs": {
       "candidates": [
@@ -1628,5 +1658,11 @@
     "hardening": "reports/campaign_003/hardening.json",
     "substrate_pluralism": "reports/campaign_003/substrate_pluralism.json"
   },
-  "status": "green"
+  "status": "green",
+  "truth_pass": {
+    "campaign_007": {
+      "modified_gates": 10,
+      "status": "historical_not_claim_bearing"
+    }
+  }
 }
