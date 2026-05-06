@@ -1,0 +1,54 @@
+{
+  "campaign_013_replication": {
+    "artifact": "reports/campaign_013/replication_verdict.json",
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "campaign_id": "campaign-013",
+    "empirical_p": 0.000999000999000999,
+    "formal_gap": 0.3549345653383201,
+    "mode": "candidate_replication",
+    "verdict": "replicated"
+  },
+  "campaign_id": "campaign-010",
+  "candidates": [
+    {
+      "attractor_strength": 0.9,
+      "best_lens": "statistical_mechanics",
+      "campaign_013_status": "replicated",
+      "formal_gap": 0.30615245652330003,
+      "max_coverage_score": 0.659830603863,
+      "motif_id": "motif.floor_connectivity.draft",
+      "numerator_1_minus_max_coverage": 0.34016939613700004,
+      "replication_history": [
+        {
+          "artifact": "reports/campaign_013/replication_verdict.json",
+          "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+          "campaign_id": "campaign-013",
+          "empirical_p": 0.000999000999000999,
+          "formal_gap": 0.3549345653383201,
+          "mode": "candidate_replication",
+          "verdict": "replicated"
+        },
+        {
+          "artifact": "reports/campaign_013/replication_verdict.json",
+          "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+          "campaign_id": "campaign-013",
+          "empirical_p": 0.000999000999000999,
+          "formal_gap": 0.3549345653383201,
+          "mode": "candidate_replication",
+          "verdict": "replicated"
+        }
+      ]
+    }
+  ],
+  "coverage_matrix": "reports/campaign_010/coverage_matrix.json",
+  "formal_gap": "reports/campaign_010/formal_gap.json",
+  "n7_lens_permutation": "reports/campaign_010/n7_lens_permutation.json",
+  "passed": true,
+  "prereg": "papers/prereg/deficit_map_v0.signed.json",
+  "prose_guardrail": "missing math candidate list is restricted to motifs clearing formal-gap, attractor-strength, and N7 thresholds",
+  "provenance": {
+    "basis": "Campaign 010 held-out lens evaluation plus Campaign 009 BFG strengths",
+    "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729"
+  },
+  "schema": "Campaign010FormalDeficitMap.v1"
+}

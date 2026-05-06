@@ -1,0 +1,1215 @@
+# Attractor Observatory Addendum: Observatory Control Room
+
+## Status
+
+Candidate architectural and implementation proposal for Claude Architect review.
+
+This report proposes a new sidecar module for Attractor Observatory: a visually rich, live, read-heavy **Observatory Control Room**. The Control Room is not a replacement for the scientific engine. It is an observability, steering, communication, and portfolio layer that makes the project’s internal state visible.
+
+The purpose is to let the human principal investigator, AI agents, future collaborators, and external reviewers quickly understand what the project is doing, what has changed, what is failing, what is being built, and where the system is becoming scientifically interesting.
+
+This should be treated as a serious project module, not decorative UI work.
+
+---
+
+# 1. Core thesis
+
+The Attractor Observatory has become too complex to steer by reading every file or every line of code.
+
+It now has multiple worlds, campaigns, audits, falsifiers, builder telemetry, doctrine rules, motif systems, basin-floor geometry, reports, and evolving architectural documents. The project needs a **visual command layer** that turns that complexity into live situational awareness.
+
+The Control Room should answer three questions immediately:
+
+1. What is happening right now?
+2. What has changed recently?
+3. What does the project currently know, doubt, or need reviewed?
+
+This is not merely a dashboard. It is the cockpit for a research instrument.
+
+---
+
+# 2. Why this is not “just UI”
+
+In traditional software, UI polish often comes late. That assumption does not fully apply here.
+
+For Attractor Observatory, the visual layer has four important functions:
+
+## 2.1 Internal steering
+
+The user does not read every line of code. The user reads reports, audits, tests, failures, and high-level deltas. A Control Room gives the user a way to steer through visual pattern recognition.
+
+It should surface:
+
+* failing tests
+* falsifier events
+* campaign progress
+* AI-agent work
+* suspicious deltas
+* world status
+* motif emergence
+* trace activity
+* doctrine changes
+* risky files/modules
+* audit disagreement
+
+## 2.2 Scientific observability
+
+If the project is an observatory, it needs instruments.
+
+The UI should help inspect:
+
+* worlds
+* traces
+* motifs
+* basin-floor geometry
+* perturbation outcomes
+* falsifiers
+* calibration results
+* negative-space findings
+
+A visual interface can reveal patterns that are difficult to understand from logs alone.
+
+## 2.3 AI workflow telemetry
+
+The project has a second research layer: how to build complex technical systems with multiple AI agents.
+
+The Control Room should show:
+
+* Claude Builder estimates versus actuals
+* Codex audit findings
+* Claude Architect campaign designs
+* defects caught by each agent
+* missed defects
+* campaign cycle time
+* cost and usage where tracked
+* sidecar workflow experiments
+
+This makes the AI-orchestration research visible.
+
+## 2.4 External credibility and portfolio value
+
+The project may be used as a portfolio piece.
+
+A recruiter, hiring manager, collaborator, or technical reviewer may not run the full system. They may only see screenshots, a short demo video, and the README.
+
+A bare-bones useful dashboard communicates less than a polished, information-rich research cockpit.
+
+The design principle should be:
+
+> Usefulness first. Visual impact second. But visual impact is still a first-class deliverable because presentation affects comprehension, credibility, and attention.
+
+The Control Room should look like the front end of a serious research instrument.
+
+---
+
+# 3. Design doctrine
+
+The Control Room should be:
+
+* read-heavy
+* branch-isolated
+* non-claim-bearing
+* visually rich
+* information dense
+* immediately legible
+* safe to build while unattended
+* useful to the user
+* impressive in screenshots
+* honest about uncertainty
+* incapable of silently promoting scientific claims
+
+It should not:
+
+* mutate core scientific artifacts
+* weaken thresholds
+* change campaign results
+* promote exploratory outputs to claim-bearing status
+* modify world logic
+* rewrite trace schemas
+* silently ingest external data as truth
+* hide failures behind visuals
+* turn scientific uncertainty into aesthetic certainty
+
+Key phrase:
+
+> The Control Room may visualize almost everything. It should mutate almost nothing.
+
+---
+
+# 4. Proposed module name
+
+Recommended name:
+
+**Observatory Control Room**
+
+Possible repo/module names:
+
+* `control_room/`
+* `observatory_ui/`
+* `dashboard/`
+* `atlas_control_room/`
+
+Preferred user-facing title:
+
+**Attractor Observatory Control Room**
+
+Subtitle:
+
+**Live command interface for worlds, campaigns, motifs, falsifiers, and AI research operations.**
+
+---
+
+# 5. High-level architecture
+
+The Control Room should be a sidecar app that reads project artifacts and renders them into a visual interface.
+
+It should have a clear boundary:
+
+## Input
+
+Read-only access to:
+
+* campaign reports
+* telemetry logs
+* test results
+* builder task logs
+* audit reports
+* doctrine files
+* world registry
+* motif registry
+* falsifier ledgers
+* negative-space ledgers
+* basin-floor reports
+* trace summaries
+* branch/commit metadata
+* candidate factory/intake stubs if present
+
+## Output
+
+The Control Room may write only to its own sidecar area unless explicitly approved.
+
+Allowed outputs:
+
+* UI cache
+* visualization metadata
+* screenshot/demo assets
+* local dashboard config
+* generated read-only summaries
+* Control Room reports
+* mock/sample Factory Intake records, if quarantined
+
+Forbidden outputs:
+
+* claim-bearing scientific registry writes
+* world modifications
+* detector threshold changes
+* trace schema changes
+* doctrine changes
+* promoted biological evidence
+* campaign result edits
+
+Suggested boundary:
+
+The Control Room is a viewer and interpreter, not an authority.
+
+---
+
+# 6. Visual identity
+
+The Control Room should be visually striking without becoming fake sci-fi decoration.
+
+Desired feeling:
+
+* serious research observatory
+* mission control
+* scientific instrument
+* living systems atlas
+* AI operations cockpit
+* dark, clean, high-contrast
+* subtle motion
+* dense but legible
+* beautiful screenshots
+
+Visual inspiration language:
+
+* orbital command deck
+* systems biology atlas
+* research instrument console
+* neural/network observatory
+* cybernetic field station
+* scientific cockpit
+* living knowledge graph
+
+This should not be a gray admin dashboard.
+
+It should look like something worth opening.
+
+But every visual flourish should carry meaning.
+
+Examples:
+
+* glow indicates activity, risk, novelty, or unresolved status
+* pulses indicate live updates or recent changes
+* color encodes status, not decoration
+* motion indicates transition, flow, or time
+* 3D views represent real relationships, embeddings, or structured maps where possible
+* uncertainty is visually represented, not hidden
+
+---
+
+# 7. Main rooms / tabs
+
+The UI should be organized into “rooms” rather than ordinary tabs if possible.
+
+Each room answers a different class of question.
+
+## 7.1 Pulse Deck
+
+Purpose:
+
+Show the project’s live heartbeat.
+
+Questions answered:
+
+* What is happening right now?
+* Is the repo healthy?
+* What changed recently?
+* Are any tests failing?
+* Are any gates red?
+* Which agent is active?
+* Which campaign is current?
+* What needs attention?
+
+Suggested elements:
+
+* project health score
+* active branch
+* latest campaign
+* latest commit
+* latest tests
+* red/yellow/green gate status
+* recent falsifier events
+* recent audit findings
+* current builder task
+* estimate versus actual card
+* high-severity warnings
+* “what changed since last session” summary
+
+This is the first screen.
+
+A user should be able to open it and know the state of the project in ten seconds.
+
+---
+
+## 7.2 World Observatory
+
+Purpose:
+
+Visualize the simulation worlds.
+
+Questions answered:
+
+* Which worlds exist?
+* Which are sparse?
+* Which are densified?
+* Which are claim-ready?
+* Which emitted recent traces?
+* Which worlds have falsifiers?
+* Which worlds are structurally thin?
+* Which worlds need densification?
+
+Suggested elements:
+
+* world inventory grid
+* world family status cards
+* world density status
+* trace count
+* calibration status
+* falsifier count
+* active motifs per world
+* world-to-world comparison map
+* optional replay panel
+* world chamber detail page
+
+World statuses might include:
+
+* skeleton
+* trace-valid sparse
+* exploratory densified
+* calibration-backed
+* claim-ready candidate
+* falsified limitation
+* deprecated
+
+The W13 point-attractor falsifier is a model example of what this room should show clearly.
+
+---
+
+## 7.3 Campaign Command
+
+Purpose:
+
+Track campaigns, tasks, tests, and reports.
+
+Questions answered:
+
+* What campaigns have run?
+* Which passed?
+* Which failed?
+* What did each campaign change?
+* What tests were run?
+* What did auditors say?
+* Which campaign introduced which artifact?
+* What is queued next?
+
+Suggested elements:
+
+* campaign timeline
+* campaign cards
+* task atom list
+* pass/fail gates
+* test summary
+* regression status
+* audit summaries
+* linked reports
+* branch lineage
+* “fake green risk” warnings
+* stop-condition events
+
+This room is especially useful for unattended build loops.
+
+---
+
+## 7.4 AI Operations Tower
+
+Purpose:
+
+Visualize the multi-agent build organization.
+
+Questions answered:
+
+* What did Claude Builder do?
+* What did Claude Architect design?
+* What did Codex catch?
+* What did each agent miss?
+* How accurate were estimates?
+* What failure modes repeat?
+* Is Claude Builder improving?
+* Where is Codex most valuable?
+* What does the sidecar AI workflow study show?
+
+Suggested elements:
+
+* agent cards
+* task estimate versus actual chart
+* cost per task if tracked
+* defect catches by agent
+* escaped defects
+* repeated failure modes
+* preflight return-on-investment
+* audit disagreement ledger
+* builder calibration curve
+* campaign role diagram
+* “senior reviewer notes” panel
+
+This room makes the sidecar research project visible.
+
+It is potentially portfolio-valuable by itself.
+
+---
+
+## 7.5 Motif Atlas
+
+Purpose:
+
+Show the motifs as living objects, not flat labels.
+
+Questions answered:
+
+* Which motifs exist?
+* Which worlds show them?
+* Which are exploratory?
+* Which are calibrated?
+* Which have basin-floor geometry?
+* Which have formal-gap candidates?
+* Which have falsifiers?
+* Which process roles do they express?
+
+Suggested elements:
+
+* motif graph
+* motif cards
+* motif-to-world matrix
+* motif-to-process-role map
+* motif-to-interaction-channel map
+* confidence / status indicators
+* calibration status
+* falsifier indicators
+* basin-floor summary
+* formal coverage status
+
+This room can eventually become the public-facing “atlas” portion.
+
+---
+
+## 7.6 Basin-Floor Geometry Lab
+
+Purpose:
+
+Visualize basin-floor geometry and perturbation outcomes.
+
+Questions answered:
+
+* Which attractors have floors?
+* Which are point-like?
+* Which are broad?
+* Which are rugged?
+* Which perturbations preserve motif identity?
+* Where does implementation change while function remains?
+* Which motifs have high neutral-floor signals?
+* Which worlds are too thin to support floor claims?
+
+Suggested elements:
+
+* basin diagrams
+* perturbation outcome distributions
+* neutral floor vectors
+* floor width
+* floor dimensionality
+* implementation diversity
+* ruggedness
+* O1–O5 perturbation classifications
+* falsifier warnings
+* floor confidence bands
+* “point-attractor candidate” view
+
+This room should not fake mathematical precision. If the data is preliminary, it should say so visually.
+
+---
+
+## 7.7 Falsifier and Negative-Space Ledger
+
+Purpose:
+
+Make failure visible and valuable.
+
+Questions answered:
+
+* What has been falsified?
+* What weak claims were downgraded?
+* Which worlds are structurally limited?
+* Which motifs failed tests?
+* Where is negative space accumulating?
+* Which absences are meaningful?
+* Which failures are unresolved?
+
+Suggested elements:
+
+* falsifier timeline
+* severity cards
+* linked artifacts
+* affected claims
+* downgrade history
+* unresolved falsifiers
+* negative-space map
+* “this failed honestly” badges
+
+This room is important culturally.
+
+The project should look proud of honest failures.
+
+---
+
+## 7.8 Doctrine and Integrity Console
+
+Purpose:
+
+Track the project’s rules, doctrines, and guardrails.
+
+Questions answered:
+
+* What doctrines exist?
+* Which rules are active?
+* Which campaigns invoked which doctrines?
+* Were any rules violated?
+* Are there pending doctrine proposals?
+* What is D18, D19, etc.?
+* Which rules protect against fake-green behavior?
+
+Suggested elements:
+
+* doctrine registry
+* doctrine timeline
+* rule cards
+* active lints
+* violated rules
+* pending doctrine proposals
+* rule-to-campaign links
+* rule-to-test links
+
+This helps keep the project coherent.
+
+---
+
+## 7.9 Factory Intake Dock
+
+Purpose:
+
+Stub out the future Research Ingestion Factory without activating uncontrolled ingestion.
+
+Questions answered:
+
+* What will the factory eventually ingest?
+* What candidate process roles exist?
+* What interaction channels exist?
+* What overlap fields exist?
+* What trait decompositions are planned?
+* What evidence objects are quarantined?
+* What would be needed to promote them?
+
+Important:
+
+This room should be a **quarantined scaffold**, not a live biology ingestion system unless explicitly approved.
+
+Suggested elements:
+
+* ProcessRole registry preview
+* InteractionChannel registry preview
+* OverlapField registry preview
+* TraitDecomposition sample records
+* candidate evidence lifecycle
+* audit status examples
+* source-bound extraction doctrine
+* no-promotion warning
+* mock W7 densification recommendation
+
+This lets the project prepare for the factory without letting unattended work contaminate biology grounding.
+
+---
+
+## 7.10 Portfolio / Demo Mode
+
+Purpose:
+
+Produce a clean external presentation path.
+
+Questions answered:
+
+* What should a recruiter see?
+* What screenshots should be in the README?
+* What is the 60-second demo path?
+* What is the project’s visual story?
+* What is safe to show publicly?
+
+Suggested elements:
+
+* curated screenshot mode
+* demo scenario
+* “what this project is” slide-like overview
+* architecture visual
+* campaign timeline
+* AI-agent workflow diagram
+* world/motif/falsifier demo sequence
+* export screenshot button if easy
+* README image assets
+
+This is not vanity. It is project communication.
+
+---
+
+# 8. Screenshot-worthy views
+
+The Control Room should intentionally produce at least five polished screenshot moments.
+
+Suggested screenshots:
+
+## 8.1 Main Pulse Deck
+
+Shows live system state, campaign health, active agents, recent falsifiers, and world status.
+
+Purpose:
+
+Immediate “this is serious” impression.
+
+## 8.2 World Observatory Map
+
+Shows all world families as nodes/cards with status, traces, motifs, and falsifiers.
+
+Purpose:
+
+Communicates the multi-world nature of the project.
+
+## 8.3 AI Operations Tower
+
+Shows Claude/Codex workflow, estimate deltas, audit catches, and campaign role structure.
+
+Purpose:
+
+Communicates AI-orchestrated research engineering.
+
+## 8.4 Motif Atlas
+
+Shows motifs connected to worlds, process roles, interaction channels, and basin-floor status.
+
+Purpose:
+
+Communicates the intellectual core.
+
+## 8.5 Falsifier Ledger
+
+Shows honest failures and downgraded claims.
+
+Purpose:
+
+Communicates scientific discipline.
+
+Optional sixth:
+
+## 8.6 Basin-Floor Lab
+
+Shows perturbation outcomes and floor metrics.
+
+Purpose:
+
+Communicates the project’s most original analysis direction.
+
+---
+
+# 9. Live visualization ideas
+
+The UI should not only display static cards. It should make project motion visible.
+
+Potential live visuals:
+
+## 9.1 Project Graph
+
+Nodes:
+
+* worlds
+* campaigns
+* motifs
+* traces
+* agents
+* doctrines
+* falsifiers
+* reports
+* process roles
+* interaction channels
+
+Edges:
+
+* produced
+* audited
+* falsified
+* depends on
+* detected in
+* modifies
+* supports
+* conflicts with
+
+This becomes the living map of the project.
+
+## 9.2 Campaign Timeline
+
+A horizontal or vertical timeline showing campaigns, tasks, tests, audits, and falsifiers.
+
+## 9.3 Agent Activity Streams
+
+Separate streams for:
+
+* Claude Architect
+* Claude Builder
+* Codex
+* GPT review
+* Human decisions
+
+## 9.4 World Heatmap
+
+World families plotted by:
+
+* trace validity
+* density
+* calibration
+* falsifier load
+* motif richness
+* claim readiness
+
+## 9.5 Motif Embedding
+
+A graph or spatial view of motifs based on shared process roles, worlds, or interaction channels.
+
+## 9.6 Basin Surface Visualization
+
+A conceptual or data-backed basin view showing:
+
+* slope
+* floor
+* perturbation points
+* same-implementation returns
+* different-implementation same-motif outcomes
+* collapses
+* exits
+
+This should be labeled exploratory unless backed by actual measurements.
+
+---
+
+# 10. Read-only first principle
+
+The first version should be strongly read-only.
+
+Allowed:
+
+* read logs
+* read reports
+* read test outputs
+* parse JSON/Markdown artifacts
+* render graphs
+* generate summaries
+* cache UI state
+* produce screenshots
+* stub factory objects
+* produce Control Room report
+
+Not allowed without explicit review:
+
+* modify campaign outputs
+* modify trace files
+* modify scientific registries
+* modify detector thresholds
+* modify world implementations
+* promote evidence
+* change doctrine files
+* rewrite architecture docs
+
+This makes it safe for an unattended Claude Builder campaign.
+
+---
+
+# 11. Factory stub boundary
+
+The Factory Intake Dock should not become the full Research Ingestion Factory during this run.
+
+It may define:
+
+* visual placeholders
+* registry previews
+* sample records
+* schema stubs
+* local mock data
+* audit lifecycle display
+* candidate/promotion distinction
+* source-bound extraction doctrine display
+
+It should not:
+
+* perform uncontrolled external crawling
+* promote biological claims
+* ingest restricted sources
+* infer absence from missing evidence
+* treat AI-generated entries as truth
+* create claim-bearing biology outputs
+
+Recommended language:
+
+> Factory Intake is a quarantined preview of the future evidence ingestion system. All records are exploratory unless explicitly promoted through audited source-bound workflows.
+
+---
+
+# 12. Data adapters
+
+The Control Room should initially read from whatever the repo already has.
+
+Likely inputs:
+
+* campaign reports
+* task telemetry JSONL
+* audit Markdown
+* test result logs
+* doctrine files
+* falsifier ledgers
+* motif geometry outputs
+* world registry files
+* branch/commit metadata
+* generated reports
+
+Claude Architect should determine exact current file paths.
+
+The Control Room should tolerate missing files.
+
+If a file is missing, it should show:
+
+* not found
+* not yet implemented
+* no data
+* blocked
+* exploratory
+
+It should not crash because one artifact does not exist.
+
+---
+
+# 13. Implementation options
+
+Claude Architect should decide final stack based on repo reality.
+
+Possible UI stack:
+
+* local React/Vite app
+* static HTML/JS dashboard
+* Python-generated HTML report with interactive JavaScript
+* lightweight local server
+* file-watching dashboard
+* Electron/Tauri later if desired
+
+Given the project context, a local web app seems likely best.
+
+Important capabilities:
+
+* file parsing
+* live reload or manual refresh
+* graph visualization
+* timeline visualization
+* cards and panels
+* screenshot-worthy layout
+* dark-mode design
+* local-only operation
+* no cloud dependency required
+
+---
+
+# 14. Visual design system
+
+Suggested design language:
+
+## Color semantics
+
+* green: verified/pass/healthy
+* amber: warning/needs review
+* red: failed/falsifier/high risk
+* blue: active/in progress
+* purple: motif/formalism
+* cyan: trace/world activity
+* gray: unavailable/unknown
+* white: claim-bearing/high-confidence text
+
+Use carefully. No meaningless rainbow.
+
+## Motion semantics
+
+* pulse: active process
+* slow glow: live monitored item
+* flash: recent event
+* fade: historical artifact
+* orbit/flow: dependency or trace relation
+* jitter/noise: uncertainty or instability, if used
+
+## Typography
+
+* large clear status numbers
+* readable labels
+* compact technical detail
+* strong hierarchy
+* avoid tiny unreadable science-console text
+
+## Density
+
+The UI should be dense, but layered.
+
+First glance: simple.
+
+Click/drill: detailed.
+
+---
+
+# 15. How it helps the user
+
+The Control Room should support the user’s actual workflow.
+
+The user often:
+
+* does not read bulk code
+* relies on reports/tests/audits
+* compares AI-agent outputs
+* watches for fake-green results
+* wants to understand what changed
+* wants to see visual project structure
+* wants to show the work externally
+* wants to steer high-level architecture
+
+Therefore, the Control Room should prioritize:
+
+* deltas
+* risk
+* active work
+* test outcomes
+* audit disagreements
+* visual project map
+* traceability
+* screenshot/demo value
+
+---
+
+# 16. How it helps Claude Architect
+
+Claude Architect can use it to:
+
+* see campaign state
+* spot drift
+* manage doctrine
+* inspect failure concentration
+* monitor Builder behavior
+* review world readiness
+* identify next campaigns
+* track architecture decisions
+* prepare reports
+
+---
+
+# 17. How it helps Codex
+
+Codex can use it to:
+
+* identify suspicious green states
+* review diffs by campaign
+* see failure patterns
+* prioritize audit passes
+* inspect what changed since last review
+* target high-risk modules
+* review Builder estimate deltas
+
+---
+
+# 18. How it helps portfolio presentation
+
+The Control Room can become the face of the repo.
+
+A recruiter or hiring manager can see:
+
+* the project is visually coherent
+* the architecture is serious
+* the user can direct complex AI workflows
+* the project has tests and falsifiers
+* the project has multi-agent telemetry
+* the project has live scientific-computing concepts
+* the project is not a toy
+
+The README can show screenshots from:
+
+* Pulse Deck
+* World Observatory
+* AI Operations Tower
+* Motif Atlas
+* Falsifier Ledger
+
+This makes the repo legible without requiring the reviewer to run the entire simulation stack.
+
+---
+
+# 19. Unattended-build suitability
+
+This is a good 24-hour unattended task because it is:
+
+* sidecar
+* visually valuable
+* branch-isolated
+* mostly read-only
+* portfolio useful
+* low risk to scientific core
+* ambitious enough to justify time
+* compatible with parallel future work
+* useful even if imperfect
+
+The main risk is overreach into mutation, ingestion, or claim promotion.
+
+That is controlled by read-only and quarantine boundaries.
+
+---
+
+# 20. Proposed campaign name
+
+Possible names:
+
+* Campaign 010 — Observatory Control Room v0
+* Campaign 010 — Control Room Sidecar
+* Campaign 010 — Live Observatory Interface
+* Campaign 010 — Project Instrumentation Cockpit
+
+Preferred:
+
+**Campaign 010 — Observatory Control Room v0**
+
+---
+
+# 21. Minimum success conditions
+
+Minimum success should be ambitious but clear.
+
+The campaign succeeds if:
+
+1. A local Control Room app can be launched.
+2. It reads real repo artifacts where available.
+3. It displays project status on a Pulse Deck.
+4. It displays campaign history or campaign reports.
+5. It displays world inventory, even if partial.
+6. It displays AI builder telemetry or task logs, even if partial.
+7. It displays falsifier/negative-space status if files exist.
+8. It displays motif or basin-floor geometry status if files exist.
+9. It includes a Factory Intake Dock as a quarantined scaffold only.
+10. It has polished visual styling suitable for screenshots.
+11. It does not mutate scientific artifacts.
+12. It has tests for parsers or data adapters.
+13. It has a README or report explaining how to run it.
+14. It produces at least one screenshot-ready demo path.
+
+---
+
+# 22. Builder expansion authority
+
+Claude Builder may exceed the minimum by adding:
+
+* graph visualization
+* timeline visualization
+* live file watching
+* replay mode
+* screenshot export
+* demo mode
+* richer visual design
+* 3D motif preview
+* interactive world map
+* advanced AI telemetry charts
+* branch/commit visualizer
+* local mock data generator
+* graceful missing-data handling
+* Control Room documentation
+* portfolio screenshots
+
+But Claude Builder may not exceed scope by:
+
+* changing core scientific logic
+* modifying campaign outcomes
+* promoting claims
+* ingesting external biology sources as truth
+* changing doctrine
+* modifying detector thresholds
+* editing traces
+* weakening tests
+
+---
+
+# 23. Tests and verification
+
+Suggested tests:
+
+* parser tests for campaign reports
+* parser tests for telemetry files
+* missing-file handling tests
+* read-only enforcement tests
+* sample data render tests
+* schema round-trip for Control Room cache/config
+* no writes outside allowed sidecar paths
+* no mutation of protected directories
+* build/test command for UI
+* screenshot/demo route smoke test if possible
+
+A key test:
+
+> Running the Control Room must not modify core scientific artifacts.
+
+Another key test:
+
+> If project artifacts are missing or malformed, the Control Room degrades gracefully and marks data unavailable rather than inventing content.
+
+---
+
+# 24. Stop conditions
+
+Claude Builder should stop and request review if:
+
+* the UI requires changing core schemas
+* protected files need mutation
+* external data ingestion becomes necessary
+* dependency changes become large or risky
+* a local server architecture requires security decisions
+* scientific claims would need promotion
+* existing tests fail in unrelated modules
+* the dashboard cannot distinguish exploratory from claim-bearing artifacts
+* visuals require fabricating scientific data
+* file formats are too inconsistent to parse safely
+
+---
+
+# 25. Questions for Claude Architect
+
+Please review and answer:
+
+1. Is this safe and appropriate as an unattended sidecar campaign?
+2. Which current repo artifacts should the Control Room read first?
+3. What directories/files must be protected as read-only?
+4. Should this be a React/Vite app, static HTML app, Python-generated HTML dashboard, or another stack?
+5. What is the smallest real artifact set that proves usefulness?
+6. What is the most ambitious visual layer that remains honest?
+7. How should the Factory Intake Dock be stubbed without activating the factory?
+8. Should the Control Room have a graph view in v0?
+9. Should live file watching be included in v0 or deferred?
+10. What tests prove non-mutation of scientific artifacts?
+11. What screenshots should be targeted for the README?
+12. How should exploratory versus claim-bearing status be displayed visually?
+13. How should AI Builder / Architect / Codex roles be represented?
+14. Should this campaign include portfolio/demo mode?
+15. What should Codex preflight review before Claude Builder starts?
+
+---
+
+# 26. Suggested prompt to Codex for preflight
+
+Ask Codex to review the proposed Control Room campaign as a senior engineer.
+
+Codex should answer:
+
+* What would make this dashboard fake-useful?
+* What files should be protected?
+* What data adapters should be built first?
+* What tests should catch accidental mutation?
+* What visualizations are high value versus decorative?
+* What should Claude Builder avoid?
+* How should missing artifacts be handled?
+* What would make this portfolio-worthy?
+* What would make this scientifically dangerous?
+* What should the v0 architecture look like?
+
+---
+
+# 27. Suggested prompt to Claude Builder
+
+After Claude Architect and Codex preflight, Claude Builder should receive:
+
+Build an ambitious Observatory Control Room sidecar.
+
+It should make the Attractor Observatory visible: campaigns, worlds, traces, tests, falsifiers, agent telemetry, doctrine, motifs, basin-floor geometry, and a quarantined Factory Intake scaffold.
+
+Treat the listed requirements as the minimum success condition, not the ceiling. Add visual richness, interactivity, tests, documentation, and portfolio-quality presentation where it strengthens the project.
+
+Keep it branch-isolated, non-claim-bearing, read-heavy, and forbidden from mutating core scientific artifacts.
+
+All scientific uncertainty must remain visible. Do not invent data to make the UI look complete. Use graceful placeholders, mock data only when clearly labeled, and real repo artifacts wherever possible.
+
+---
+
+# 28. Bottom line
+
+The Observatory Control Room should become the visual command layer for Attractor Observatory.
+
+It is useful internally because the project is too complex to steer through raw code alone.
+
+It is useful scientifically because it makes worlds, traces, motifs, falsifiers, and uncertainty inspectable.
+
+It is useful operationally because it shows AI-agent workflow, builder calibration, and campaign progress.
+
+It is useful externally because it gives the repo a screenshot-worthy, legible, impressive face.
+
+The goal is not a pretty dashboard.
+
+The goal is a visually powerful research cockpit.
+
+Pretty is allowed. Useful is required. Honesty is non-negotiable.

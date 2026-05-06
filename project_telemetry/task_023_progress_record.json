@@ -1,0 +1,79 @@
+{
+  "acceptance_outcome": "pass",
+  "actual_files": 42,
+  "actual_minutes": 25.9,
+  "actual_tests": 252,
+  "complexity_score": 8,
+  "estimated_files": 34,
+  "estimated_minutes": 80,
+  "estimated_tests": 245,
+  "estimation_delta": 0.32375,
+  "execution_context": {
+    "speed_mode": "regular",
+    "advertised_speedup": 1.0,
+    "quality_gate_policy": "unchanged",
+    "note": "PI switched off Fast speed after TASK-022 cost approximately $22."
+  },
+  "expansions_planned": [
+    "Acceptance gates RA1-RA5, FA1-FA4, KP1H-KP4H, KP-AGG, KE1S, W7N1-W7N4, FCR1-FCR3, RG, FR are the stopping signal.",
+    "Pillar A first: implement one real Lane-1 source adapter for a tightly scoped CC0/public-domain ITIS insect-family subset.",
+    "Pillar B: prepare Factory Claude activation scaffolding without activating Factory Claude.",
+    "Pillar C: harden KP decoys and add subtle KE1 misalignment cases without softening failures.",
+    "Pillar D: remove biology surface labels from W7 template identifiers and add lint.",
+    "Pillar E: pre-register floor_connectivity replication infrastructure without running replication.",
+    "Regular-speed estimate restored; TASK-022 Fast-speed actual remains tagged as a separate context."
+  ],
+  "expansions_realised": [
+    "Implemented ITIS Lane-1 real-source adapter for a bounded family-level Insecta subset using the official ITIS Solr service and CC0 license basis.",
+    "Extracted 150 real-source BiologicalClaim records with TSN accessions, source URL, evidence location, extraction method, license class, provenance hash, and raw_extracted audit status.",
+    "Created Factory Claude session scaffolding: factory_session_log.md template, factory_session_records.jsonl header, and an executable synthetic Lane-1 operating-procedure harness.",
+    "Implemented pointer audit for CLAUDE_FACTORY_INITIATION.md and added registry_proposals handoff directory.",
+    "Hardened KP1-KP4 with adversarial decoys; KP1H landed nontrivial AUC 0.909 while all hardened corpora stayed above 0.85.",
+    "Added KE1 subtle misalignment calibration with narrative-vs-structured, taxon-rank, and synonym-conflict cases; rejection rate 0.833.",
+    "Renamed W7 templates to axis-configuration identifiers, moved biology labels to surface_label_examples, added template lint, and refreshed W7 Substance Audit.",
+    "Pre-registered the floor_connectivity replication beachhead with unchanged Campaign 009 basis hash and locked lens registry hash; replication itself was not run.",
+    "Added Campaign 012 report generator, make script, CLI command, and 13 tests.",
+    "Regenerated Campaigns 002, 005, 006, 007, 008, 009, 010, and 011 green; split full-suite verification across all collected tests with 252/252 passing."
+  ],
+  "initiative_score": 10,
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "notes": "TASK-023 completed Campaign 012. PI supplied actual wall-clock 25m54s. Estimate used regular-speed prior again. Campaign 012 is 24/24 green. ITIS was selected over NCBI because it gives explicit CC0 terms and a bounded Solr API slice for family-level Insecta.",
+  "rework_index": 2,
+  "scope_delta": 1.2352941176470589,
+  "scope_score": 8,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "CODEX_TASK_023_DRIVE.md",
+    "CLAUDE_FACTORY_INITIATION.md",
+    "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md"
+  ],
+  "substance_audit": [
+    {
+      "gate_count": 24,
+      "module": "Campaign 012 First Real Source + Factory Activation Scaffolding",
+      "passed_gate_count": 24,
+      "status": "green"
+    },
+    {
+      "module": "ITIS Lane-1 real-source adapter",
+      "status": "green",
+      "claim_count": 150,
+      "license_class": "cc0"
+    },
+    {
+      "module": "Full regression split verification",
+      "status": "green",
+      "test_count": 252
+    },
+    {
+      "module": "Regular speed execution context",
+      "status": "restored",
+      "quality_gate_policy": "unchanged"
+    }
+  ],
+  "task_atom_hash": "campaign-012-real-lane1-factory-scaffolding",
+  "task_class": "integration",
+  "task_id": "TASK-023",
+  "underbuild_score": 0
+}

@@ -1,0 +1,79 @@
+{
+  "acceptance_outcome": "pass",
+  "actual_files": 34,
+  "actual_minutes": null,
+  "actual_tests": 265,
+  "complexity_score": 8,
+  "estimated_files": 40,
+  "estimated_minutes": 70,
+  "estimated_tests": 260,
+  "estimation_delta": null,
+  "execution_context": {
+    "speed_mode": "regular",
+    "advertised_speedup": 1.0,
+    "quality_gate_policy": "unchanged",
+    "note": "PI supplied TASK-023 actual at 25m54s and regular speed remains active."
+  },
+  "expansions_planned": [
+    "Acceptance gates SD1-SD5, FC1-FC7, L3-1 through L3-9, AT1-AT3, RG, and FR are the stopping signal.",
+    "Pillar A first: bump BiologicalClaim to v1.1, migrate 200 KE1 plus 150 ITIS records, and verify cache/provenance integrity before scale ingestion.",
+    "Pillar B: run the locked floor_connectivity replication once on the independent corpus and report the threshold verdict honestly.",
+    "Pillar C: ingest at least 1000 ITIS insect-family records under v1.1 and produce the first exploratory L3 insects x W7 overlap report.",
+    "Pillar D: seed atlas entries from Campaigns 002, 009, 010, and 013 with integrity checks.",
+    "Pillar E: regenerate Campaigns 002-012 green, keep D14/D17.5/D18/D19/D20/D21 lints clean, and pass at least 260 pytests."
+  ],
+  "expansions_realised": [
+    "Bumped BiologicalClaim to v1.1 with the FACTORY_END_STATE high-priority schema fields and backward-compatible read support.",
+    "Implemented pure v1.0-to-v1.1 migration with derivable-vs-replay field accounting, schema lint, and post-migration cache/provenance integrity checks over 350 existing records.",
+    "Scaled the ITIS Lane-1 insect-family extraction to 1000 BiologicalClaim v1.1 records under CC0 with source cache index, schema lint, and full provenance.",
+    "Ran the floor_connectivity replication under the locked Campaign 009 basis and Campaign 010 lens registry; verdict replicated with formal_gap 0.3549345653 and N7 empirical_p 0.000999.",
+    "Produced the first L3 insects x W7 overlap report. W7 motifs detect under substrate-blind projection; ITIS biology side lands honest null/insufficient-data verdicts because the source is taxonomic, not behavior-bearing.",
+    "Seeded six exploratory AtlasEntry records from Campaigns 002, 009, 010, and 013 with round-trip and integrity checks.",
+    "Added Campaign 013 report generator, make script, CLI command, and 13 regression tests.",
+    "Regenerated Campaigns 002, 005, 006, 007, 008, 009, 010, 011, and 012 green; verified 265/265 collected pytests passing in bounded split runs."
+  ],
+  "initiative_score": 10,
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "notes": "TASK-024 completed Campaign 013. Actual wall-clock awaits PI measurement. Estimate was 70 minutes under regular speed. Campaign 013 is 26/26 green. The replication result is positive; the L3 result is honestly source-limited rather than engineered into a false overlap.",
+  "rework_index": 2,
+  "scope_delta": 1.2142857142857142,
+  "scope_score": 8,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "CODEX_TASK_024_DRIVE.md",
+    "FACTORY_END_STATE_AND_SCHEMA_DISCIPLINE.md",
+    "papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md"
+  ],
+  "substance_audit": [
+    {
+      "gate_count": 26,
+      "module": "Campaign 013 science-result milestone",
+      "passed_gate_count": 26,
+      "status": "green"
+    },
+    {
+      "module": "Floor connectivity replication",
+      "status": "replicated",
+      "formal_gap": 0.3549345653383201,
+      "n7_empirical_p": 0.000999000999000999
+    },
+    {
+      "module": "L3 insects x W7 overlap",
+      "status": "exploratory_source_limited",
+      "verdicts": [
+        "null",
+        "insufficient-data"
+      ]
+    },
+    {
+      "module": "Full regression split verification",
+      "status": "green",
+      "test_count": 265
+    }
+  ],
+  "task_atom_hash": "campaign-013-schema-replication-l3-overlap-atlas",
+  "task_class": "integration",
+  "task_id": "TASK-024",
+  "underbuild_score": 0
+}

@@ -1,0 +1,56 @@
+{
+  "artifacts": {
+    "foundry_report": "reports/campaign_014/floor_corpus_foundry.json",
+    "methods": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md",
+    "traces": "reports/campaign_014/traces/"
+  },
+  "blocked_control_verdict": "signal_not_distinguishable_after_substrate_blocking",
+  "campaign_id": "campaign_014",
+  "gate_count": 9,
+  "gates": {
+    "C14-1": {
+      "description": "48 real W8/W11/W12 traces generated; locked predicate labels match audit-only mechanism expectation.",
+      "passed": true
+    },
+    "C14-2": {
+      "description": "Each substrate has both floor labels with minority count >= 8.",
+      "passed": true
+    },
+    "C14-3": {
+      "description": "Substrate-blocked control is nondegenerate and ran N=10000.",
+      "passed": true
+    },
+    "C14-4": {
+      "description": "All-uniform negative control remains not_evaluable.",
+      "passed": true
+    },
+    "C14-5": {
+      "description": "CB-003 adversarial baseline remains methodology_sound.",
+      "passed": true
+    },
+    "C14-6": {
+      "description": "Campaign 014 report round-trips and has a content hash.",
+      "passed": true
+    },
+    "C14-7": {
+      "description": "Locked basis and lens registry unchanged.",
+      "passed": true
+    },
+    "C14-8": {
+      "description": "Blocked-control scientific verdict is machine-readable and aggregate L5 surface matches it.",
+      "passed": true
+    },
+    "C14-9": {
+      "description": "All outputs remain exploratory; no claim-bearing promotion attempted.",
+      "passed": true
+    }
+  },
+  "l5_candidacy_advancement": false,
+  "mode_tag": "exploratory",
+  "passed_gate_count": 9,
+  "primary_artifact": "reports/campaign_014/floor_corpus_foundry.json",
+  "primary_content_hash": "sha256:9d98220bdfd1b9b12be3e8125d24c9435424283ce39d22bbe8256b4f6594e99d",
+  "schema": "Campaign014FullReport.v1",
+  "status": "green",
+  "task_id": "TASK-025"
+}

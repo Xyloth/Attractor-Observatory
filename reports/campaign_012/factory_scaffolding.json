@@ -1,0 +1,344 @@
+{
+  "factory_session_log": {
+    "entries_empty": true,
+    "exists": true,
+    "path": "ai_os\\memory\\factory_session_log.md"
+  },
+  "factory_session_records": {
+    "exists": true,
+    "header_comment": true,
+    "path": "project_telemetry\\factory_session_records.jsonl"
+  },
+  "harness": {
+    "normalizer_counts": {
+      "channels": 40,
+      "effects": 40,
+      "overlap_fields": 26,
+      "process_roles": 40
+    },
+    "passed": true,
+    "recommendation": {
+      "content_hash": "sha256:47d3dfce01ffdad60c26a8a85f0241eae8e733da43fc249ec9cecfb4fbf8bd83",
+      "coverage_axes": {
+        "communication": [
+          "broadcast",
+          "contact",
+          "pheromone",
+          "stigmergic"
+        ],
+        "environment_modification": [
+          "chemical_field",
+          "nest",
+          "soil",
+          "trail"
+        ],
+        "memory_substrate": [
+          "architecture",
+          "external_field",
+          "internal",
+          "lineage"
+        ],
+        "mobility": [
+          "flying",
+          "sessile",
+          "swimming",
+          "walking"
+        ],
+        "organization": [
+          "cluster",
+          "colony",
+          "hierarchical",
+          "leaderless"
+        ],
+        "resource_strategy": [
+          "farming",
+          "foraging",
+          "scavenging",
+          "symbiotic"
+        ]
+      },
+      "current_density_class": "trace_valid",
+      "metrics": {
+        "axis_count": 6,
+        "curve": [
+          {
+            "axis": "communication",
+            "entropy": 0.9987512731845577,
+            "value_count": 4
+          },
+          {
+            "axis": "organization",
+            "entropy": 0.9987512731845577,
+            "value_count": 4
+          },
+          {
+            "axis": "mobility",
+            "entropy": 0.9987512731845577,
+            "value_count": 4
+          },
+          {
+            "axis": "resource_strategy",
+            "entropy": 0.9987512731845577,
+            "value_count": 4
+          },
+          {
+            "axis": "environment_modification",
+            "entropy": 0.9987512731845577,
+            "value_count": 4
+          },
+          {
+            "axis": "memory_substrate",
+            "entropy": 0.9987512731845577,
+            "value_count": 4
+          }
+        ],
+        "mean_entropy": 0.9987512731845577
+      },
+      "missing_axes": {
+        "communication": [],
+        "environment_modification": [],
+        "memory_substrate": [],
+        "mobility": [],
+        "organization": [],
+        "resource_strategy": []
+      },
+      "rationale": "W7 has trace-valid swarm mechanics; synthetic source-bound evidence supports orthogonal expansion across communication, organization, mobility, resource strategy, environment modification, and memory substrates.",
+      "recommendation_id": "density.w7.swarm.011",
+      "schema": "WorldDensificationRecommendation.v1",
+      "simulation_templates": [
+        "factory.harness.00",
+        "factory.harness.01",
+        "factory.harness.02",
+        "factory.harness.03",
+        "factory.harness.04",
+        "factory.harness.05",
+        "factory.harness.06",
+        "factory.harness.07",
+        "factory.harness.08",
+        "factory.harness.09"
+      ],
+      "source_ids": [
+        "syn.lane1.000",
+        "syn.lane1.001",
+        "syn.lane1.002",
+        "syn.lane1.003",
+        "syn.lane1.004",
+        "syn.lane1.005",
+        "syn.lane1.006",
+        "syn.lane1.007",
+        "syn.lane1.008",
+        "syn.lane1.009",
+        "syn.lane1.010",
+        "syn.lane1.011",
+        "syn.lane1.012",
+        "syn.lane1.013",
+        "syn.lane1.014",
+        "syn.lane1.015",
+        "syn.lane1.016",
+        "syn.lane1.017",
+        "syn.lane1.018",
+        "syn.lane1.019",
+        "syn.lane1.020",
+        "syn.lane1.021",
+        "syn.lane1.022",
+        "syn.lane1.023",
+        "syn.lane1.024",
+        "syn.lane1.025",
+        "syn.lane1.026",
+        "syn.lane1.027",
+        "syn.lane1.028",
+        "syn.lane1.029",
+        "syn.lane1.030",
+        "syn.lane1.031",
+        "syn.lane1.032",
+        "syn.lane1.033",
+        "syn.lane1.034",
+        "syn.lane1.035",
+        "syn.lane1.036",
+        "syn.lane1.037",
+        "syn.lane1.038",
+        "syn.lane1.039"
+      ],
+      "target_density_class": "exploratory_densified",
+      "world_id": "W7"
+    },
+    "schema": "FactorySessionHarness.v1",
+    "session_record": {
+      "adapter_id": "synthetic_lane1",
+      "audit_queue_depth_at_close": 40,
+      "claims_extracted_count": 40,
+      "claims_normalized_count": 146,
+      "conflicts_flagged_count": 4,
+      "factory_session_id": "sha256:0e4bca333c54fe043e924e01377e8ac0d4e50b7c855ac8182957898f444004e9",
+      "license_class": "internal_synthetic",
+      "license_closure_summary": "synthetic internal corpus, no restricted exports",
+      "mode": "dry_run",
+      "ontology_registry_hash": "sha256:5b7f947227aa189f9c09f7ae85b05812702b0f2369851c76b36f6e4a8b4e3da7",
+      "recommendations_produced_count": 1,
+      "source_identity": "synthetic_lane1:40",
+      "timestamp_end": "2026-05-05T23:31:24.310027+00:00",
+      "timestamp_start": "2026-05-05T23:31:24.307027+00:00"
+    },
+    "steps": [
+      {
+        "passed": true,
+        "step": "session_log_entry"
+      },
+      {
+        "passed": true,
+        "step": "ontology_hash_check"
+      },
+      {
+        "passed": true,
+        "step": "adapter_read"
+      },
+      {
+        "passed": true,
+        "step": "extraction"
+      },
+      {
+        "passed": true,
+        "step": "normalization"
+      },
+      {
+        "passed": true,
+        "step": "conflict_detection"
+      },
+      {
+        "passed": true,
+        "step": "audit_queue_submission"
+      },
+      {
+        "passed": true,
+        "step": "session_close"
+      }
+    ]
+  },
+  "passed": true,
+  "pointer_audit": {
+    "broken": [],
+    "broken_count": 0,
+    "checked": [
+      {
+        "exists": true,
+        "path": "NO ARTIFICIAL CEILING DOCTRINE.txt",
+        "reference": "NO ARTIFICIAL CEILING DOCTRINE.txt"
+      },
+      {
+        "exists": true,
+        "path": "The Attractor Observatory v1.2.md",
+        "reference": "The Attractor Observatory v1.2.md"
+      },
+      {
+        "exists": true,
+        "path": "docs/DOCTRINE.md",
+        "reference": "docs/DOCTRINE.md"
+      },
+      {
+        "exists": true,
+        "path": "docs/doctrine_d19_d21.md",
+        "reference": "docs/doctrine_d19_d21.md"
+      },
+      {
+        "exists": true,
+        "path": "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md",
+        "reference": "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md"
+      },
+      {
+        "exists": true,
+        "path": "CODEX_TASK_022_DRIVE.md",
+        "reference": "CODEX_TASK_022_DRIVE.md"
+      },
+      {
+        "exists": true,
+        "path": "reports/campaign_011/full_report.json",
+        "reference": "reports/campaign_011/full_report.json"
+      },
+      {
+        "exists": true,
+        "path": "ai_os/memory/factory_session_log.md",
+        "reference": "ai_os/memory/factory_session_log.md"
+      },
+      {
+        "exists": true,
+        "path": "biology/evidence_ingestion/sources/adapters/",
+        "reference": "biology/evidence_ingestion/sources/adapters/"
+      },
+      {
+        "exists": true,
+        "path": "biology/evidence_ingestion/audit/lifecycle.py",
+        "reference": "biology/evidence_ingestion/audit/lifecycle.py"
+      },
+      {
+        "exists": true,
+        "path": "ai_os/memory/factory_session_log.md",
+        "reference": "ai_os/memory/factory_session_log.md"
+      },
+      {
+        "exists": true,
+        "path": "biology/evidence_ingestion/sources/adapters/",
+        "reference": "biology/evidence_ingestion/sources/adapters/"
+      },
+      {
+        "exists": true,
+        "path": "ai_os/memory/decision_log.md",
+        "reference": "ai_os/memory/decision_log.md"
+      },
+      {
+        "exists": true,
+        "path": "motifs/ontology/registry_proposals/",
+        "reference": "motifs/ontology/registry_proposals/"
+      },
+      {
+        "exists": true,
+        "path": "papers/falsifiers/",
+        "reference": "papers/falsifiers/"
+      }
+    ],
+    "checked_count": 15,
+    "passed": true,
+    "schema": "FactoryInitiationPointerAudit.v1",
+    "skipped": [
+      "BiologicalClaim",
+      "ProcessRole",
+      "InteractionChannel",
+      "StateSpaceEffect",
+      "OverlapField",
+      "WorldDensificationRecommendation",
+      "BiologicalClaim",
+      "mode_tag: exploratory",
+      "claim-bearing",
+      "density_class",
+      "BiologicalClaim",
+      "ProcessRole",
+      "InteractionChannel",
+      "StateSpaceEffect",
+      "OverlapField",
+      "TraitDecomposition",
+      "raw_extracted",
+      "conflict_report",
+      "WorldDensificationRecommendation",
+      "SimulationTemplate",
+      "promoted_claim_bearing",
+      "audited_confirmed",
+      "promoted_exploratory",
+      "promoted_claim_bearing",
+      "claim.promote(target_status)",
+      "dry_run",
+      "1. Open session record in ai_os/memory/factory_session_log.md:\n   - timestamp_start\n   - factory_session_id (content hash of timestamp + adapter + source identity)\n   - adapter_id\n   - source_identity\n   - license_class\n   - mode (default: candidate_generation; non-default requires user authorization)\n\n2. Verify ontology registry content-hash:\n   - Read motifs/ontology/registry.py current version\n   - Record version hash in session record\n   - Detection sessions consulting your extractions will check this hash\n\n3. Read source records via the adapter:\n   - Honor batch caps and license-class restrictions\n   - Skip records whose license forbids extraction in this session's mode\n   - Log adapter status to session record\n\n4. Extract claims:\n   - For each source record, run structured_extractor \u2192 BiologicalClaim\n   - Each claim carries: source, evidence_location, extraction_method (= \"factory.claude.{model_version}\"),\n     confidence (your honest estimate), license_class (inherited from source),\n     provenance_hash (content hash of source + extraction parameters),\n     audit_status: raw_extracted\n\n5. Normalize:\n   - For each claim, run process_role_normalizer / channel_normalizer / overlap_field_normalizer / state_space_effect_normalizer\n   - Map claim's surface trait label to ontology references where appropriate\n   - Some claims won't normalize (no ontology entry maps); record as such\n\n6. Detect conflicts:\n   - For each (taxon_id, trait_id) pair, check claim_store for prior records\n   - If contradicting prior record found, conflict_report.flag(claim_ids, reason)\n   - Conflicts route to audit queue with status: conflicted\n\n7. Bundle into TraitDecomposition where appropriate:\n   - When multiple claims describe the same surface trait across multiple sources,\n     bundle them into a TraitDecomposition candidate with confidence aggregation\n\n8. Generate recommendations (optional, for chosen world families):\n   - Run densification_recommender on the bundled candidates\n   - Output WorldDensificationRecommendation records with orthogonality rationale\n\n9. Submit to audit queue:\n   - All raw_extracted records flow into audit_queue automatically\n   - Honor queue depth cap (stall if exceeded; record stall in session log)\n\n10. Close session:\n    - Append summary to factory_session_log.md:\n      - timestamp_end\n      - claims_extracted_count\n      - claims_normalized_count\n      - conflicts_flagged_count\n      - recommendations_produced_count\n      - audit_queue_depth_at_close\n      - license_closure_summary\n      - any deferred actions",
+      "## The Estimation Loop applies to you\n\nYou commit a session record before substantive extraction begins",
+      "{\n  \"session_id\": \"<content_hash>\",\n  \"model_name\": \"Claude (Factory)\",\n  \"model_version\": \"<your model identifier>\",\n  \"spec_version\": \"<active spec content hash>\",\n  \"task_class\": \"factory_extraction\",\n  \"scope_score\": <1..10>,\n  \"complexity_score\": <1..10>,\n  \"estimated_minutes\": <float>,\n  \"estimated_claims\": <int>,\n  \"estimated_normalizations\": <int>,\n  \"actual_minutes\": null,  # filled by user\n  \"actual_claims\": <int>,\n  \"actual_normalizations\": <int>,\n  \"expansions_planned\": [<list of intended extensions>],\n  \"expansions_realised\": [<list>],\n  \"notes\": \"<...>\",\n}",
+      "Records append to",
+      " The user provides actual_minutes on session close; you compute estimation_delta and adjust your prior. **Same Estimation Loop discipline as Codex.** You start fresh \u2014 no borrowed prior \u2014 and you are deliberately ambitious for the first ~10 sessions while your calibration accumulates.\n\n## What \"done\" looks like for a session\n\nA session is complete when:\n\n- The audit_queue has received all extracted candidates with full provenance\n- All conflicts are flagged\n- All recommendations are queued (status",
+      "by default; promotion is the Architect/PI's call)\n- The session log records timestamp_end + summary\n- License closure summary confirms no restricted-class data has leaked through public-class artifacts in this session\n\nYou do not promote your own extractions. You do not sign your own work. The Architect Claude reads from the audit queue and signs",
+      "for records that pass review. The PI signs",
+      "for records that meet claim discipline.\n\n## Three things to keep in front of you\n\n1. **The AI is the extractor, not the source.** When you read a source record, you are translating the source's claim into a structured record. You are not authoring; you are transcoding. If you find yourself uncertain whether a claim is \"in the source\" or \"in your training data\" \u2014 *stop, cite, or skip.* Skip is honest; cite is honest; \"I'm pretty sure that's what the source says\" is not honest.\n\n2. **Confidence is honest, not aspirational.** Your",
+      "field is your real estimate of extraction quality given the source clarity. A 0.6 confidence record is more useful than a 0.9 record that turns out to be wrong. The audit lifecycle handles uncertainty; you don't have to compress everything to high confidence to make it valuable.\n\n3. **The audit queue is the discipline.** Every extraction defaults to",
+      " Every promotion goes through audit. You do not shortcut. If you find yourself wanting to promote a record you produced because \"it's obviously correct,\" ask the Architect to audit it; do not promote yourself.\n\n## How to begin (first session)\n\nWhen you first activate:\n\n1. Read the eight files in \u00a7\"What you must read first.\"\n2. Verify the ontology registry is content-hash-locked (read",
+      "'s current version hash).\n3. Open",
+      "(create if it doesn't exist; the file is your role's permanent ledger).\n4. Open the Estimation Loop: write your first session record to"
+    ],
+    "source": "CLAUDE_FACTORY_INITIATION.md"
+  },
+  "schema": "Campaign012FactoryScaffolding.v1"
+}

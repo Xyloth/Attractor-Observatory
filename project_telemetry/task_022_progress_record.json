@@ -1,0 +1,70 @@
+{
+  "acceptance_outcome": "pass",
+  "actual_files": 92,
+  "actual_minutes": 48.75,
+  "actual_tests": 239,
+  "complexity_score": 10,
+  "estimated_files": 54,
+  "estimated_minutes": 95,
+  "estimated_tests": 245,
+  "estimation_delta": 0.5131578947368421,
+  "execution_context": {
+    "speed_mode": "fast",
+    "advertised_speedup": 1.5,
+    "quality_gate_policy": "unchanged"
+  },
+  "expansions_planned": [
+    "Acceptance gates ON1-ON7, F1-F7, KP1-KP4, KE1-KE2, LE1-LE2, W7-1 through W7-4, D19, D20, D21, RG, FR are the stopping signal.",
+    "Pillar A first: substrate-neutral ontology with operational predicates and registry rejection for entries without predicates.",
+    "Pillar B next: ingestion schemas, audit lifecycle, claim store, evidence graph, synthetic Lane-1 adapter, extractor, normalizers, recommender, and dry-run background discipline.",
+    "Pillar C: KP/KE calibration corpora with adversarial decoys, false-claim rejection, contradiction detection, and license enforcement.",
+    "Pillar D: W7 exploratory densification as basis coverage, not species count.",
+    "Pillar E: D19/D20/D21 CI lints become binding only if operational and green.",
+    "Fast speed estimate applied as a telemetry context only; acceptance gates and regression remain unchanged."
+  ],
+  "expansions_realised": [
+    "Implemented the substrate-neutral ontology layer with ProcessRole, InteractionChannel, StateSpaceEffect, OverlapField, TraitDecomposition, registry hashing, migration aliases, and predicate rejection.",
+    "Implemented the evidence ingestion factory with source, snippet, biological-claim, simulation-template, densification-recommendation schemas; claim store; evidence graph; provenance records; audit lifecycle; audit queue; background-job policy; and license enforcement.",
+    "Built the synthetic Lane-1 adapter, structured extractor, four normalizers, and source-bound extraction path that rejects planted false claims by reading trace predicates rather than claim labels.",
+    "Built KP1-KP4 predicate calibration corpora and KE1/KE2 ingestion/license adversarial corpora with ROC AUC/ECE, false-claim rejection, contradiction detection, and restricted-export leakage checks.",
+    "Built W7 exploratory densification with 12 organism/system types, 6 orthogonal axes, templates, source citations, process-role/channel/overlap/effect coverage, and an exploratory_densified density transition.",
+    "Ratified D19/D20/D21 in docs/doctrine_d19_d21.md and doctrine_registry.json with operational D19/D20/D21 lints.",
+    "Added Campaign 011 report generator, make script, CLI command, and 16 regression tests.",
+    "Regenerated Campaigns 002, 005, 006, 007, 008, 009, and 010 green; split full pytest verification across all collected tests because a single full-suite invocation exceeded the tool timeout; 239/239 passed."
+  ],
+  "initiative_score": 10,
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "notes": "TASK-022 completed Campaign 011. PI supplied actual wall-clock 48m45s. Normal-context prior was roughly 140 minutes; Fast speed adjustment produced the 95 minute estimate. Campaign 011 is 32/32 green. The driver table listed 31 named rows while requiring 32 gates, so I added DR as an explicit doctrine-registry ratification gate and documented that in the report.",
+  "rework_index": 2,
+  "scope_delta": 1.704,
+  "scope_score": 10,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "CODEX_TASK_022_DRIVE.md",
+    "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md",
+    "Proposal #1 v2 - Basin-Floor Geometry.md"
+  ],
+  "substance_audit": [
+    {
+      "gate_count": 32,
+      "module": "Campaign 011 Factory",
+      "passed_gate_count": 32,
+      "status": "green"
+    },
+    {
+      "module": "Full regression split verification",
+      "status": "green",
+      "test_count": 239
+    },
+    {
+      "module": "Fast speed execution context",
+      "status": "logged",
+      "quality_gate_policy": "unchanged"
+    }
+  ],
+  "task_atom_hash": "campaign-011-ontology-ingestion-factory-densification",
+  "task_class": "integration",
+  "task_id": "TASK-022",
+  "underbuild_score": 0
+}

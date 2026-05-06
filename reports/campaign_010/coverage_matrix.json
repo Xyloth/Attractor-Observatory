@@ -1,0 +1,949 @@
+{
+  "component_weights": {
+    "compression_score": 0.15,
+    "encoding_success": 0.2,
+    "invariance_preservation": 0.2,
+    "prediction_component": 0.25,
+    "reconstruction_score": 0.2
+  },
+  "gate": {
+    "components_ok": true,
+    "lens_count": 8,
+    "motif_count": 6,
+    "passed": true
+  },
+  "lenses": [
+    "control_theory",
+    "crnt",
+    "dynamical_systems",
+    "graph",
+    "information",
+    "petri",
+    "statistical_mechanics",
+    "topology"
+  ],
+  "motifs": [
+    "motif.autocatalytic_closure.draft",
+    "motif.externalized_memory.draft",
+    "motif.floor_connectivity.draft",
+    "motif.repair.draft",
+    "motif.replication_lineage.draft",
+    "motif.self_maintained_boundary.draft"
+  ],
+  "passed": true,
+  "rows": [
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "control_theory",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.008520400252,
+        "compression_score": 0.991031157629,
+        "encoding_success": 0.609929078014,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.95,
+        "prediction_baseline": 0.757575757576,
+        "prediction_component": 0.79375,
+        "reconstruction_score": 0.712558139535
+      },
+      "coverage_score": 0.811589617154,
+      "decline_count": 55,
+      "holdout_count": 20,
+      "lens_id": "crnt",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 86,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.00984257947,
+        "compression_score": 0.989639390031,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.590909090909,
+        "prediction_baseline": 0.597222222222,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.641779241838,
+      "decline_count": 47,
+      "holdout_count": 22,
+      "lens_id": "dynamical_systems",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.004814969039,
+        "compression_score": 0.994931611537,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.505050505051,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.959239741731,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "graph",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.005111050147,
+        "compression_score": 0.994619947213,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.97619047619,
+        "prediction_baseline": 0.505050505051,
+        "prediction_component": 0.951895043732,
+        "reconstruction_score": 0.78
+      },
+      "coverage_score": 0.943166753015,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "information",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007899554784,
+        "compression_score": 0.991684679174,
+        "encoding_success": 0.581560283688,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.0625,
+        "prediction_baseline": 0.757575757576,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.82
+      },
+      "coverage_score": 0.629064758614,
+      "decline_count": 59,
+      "holdout_count": 16,
+      "lens_id": "petri",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 82,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "statistical_mechanics",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007220263103,
+        "compression_score": 0.992399723049,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.623188405797,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.7
+      },
+      "coverage_score": 0.872193291791,
+      "decline_count": 47,
+      "holdout_count": 25,
+      "lens_id": "topology",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.000182260867,
+        "compression_score": 0.999808146455,
+        "encoding_success": 0.106382978723,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.666666666667,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.74
+      },
+      "coverage_score": 0.769247817713,
+      "decline_count": 126,
+      "holdout_count": 6,
+      "lens_id": "control_theory",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 15,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "crnt",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.00984257947,
+        "compression_score": 0.989639390031,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.958333333333,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.891779241838,
+      "decline_count": 47,
+      "holdout_count": 22,
+      "lens_id": "dynamical_systems",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.004814969039,
+        "compression_score": 0.994931611537,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.969696969697,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.959239741731,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "graph",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.005111050147,
+        "compression_score": 0.994619947213,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.97619047619,
+        "prediction_baseline": 0.969696969697,
+        "prediction_component": 0.439285714286,
+        "reconstruction_score": 0.78
+      },
+      "coverage_score": 0.815014420653,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "information",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "petri",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "statistical_mechanics",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007220263103,
+        "compression_score": 0.992399723049,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.95652173913,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.7
+      },
+      "coverage_score": 0.872193291791,
+      "decline_count": 47,
+      "holdout_count": 25,
+      "lens_id": "topology",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.000182260867,
+        "compression_score": 0.999808146455,
+        "encoding_success": 0.106382978723,
+        "invariance_preservation": 0.82,
+        "prediction_accuracy": 0.666666666667,
+        "prediction_baseline": 0.555555555556,
+        "prediction_component": 0.3,
+        "reconstruction_score": 0.49
+      },
+      "coverage_score": 0.508247817713,
+      "decline_count": 126,
+      "holdout_count": 6,
+      "lens_id": "control_theory",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 15,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "crnt",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.00984257947,
+        "compression_score": 0.989639390031,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 0.82,
+        "prediction_accuracy": 0.909090909091,
+        "prediction_baseline": 0.888888888889,
+        "prediction_component": 0.409090909091,
+        "reconstruction_score": 0.55
+      },
+      "coverage_score": 0.658051969111,
+      "decline_count": 47,
+      "holdout_count": 22,
+      "lens_id": "dynamical_systems",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "graph",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "information",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "petri",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007842514611,
+        "compression_score": 0.991744721462,
+        "encoding_success": 0.751773049645,
+        "invariance_preservation": 0.82,
+        "prediction_accuracy": 0.964285714286,
+        "prediction_baseline": 0.935897435897,
+        "prediction_component": 0.442857142857,
+        "reconstruction_score": 0.43
+      },
+      "coverage_score": 0.659830603863,
+      "decline_count": 35,
+      "holdout_count": 28,
+      "lens_id": "statistical_mechanics",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 106,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007220263103,
+        "compression_score": 0.992399723049,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 0.82,
+        "prediction_accuracy": 0.4,
+        "prediction_baseline": 0.884057971014,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.45
+      },
+      "coverage_score": 0.536193291791,
+      "decline_count": 47,
+      "holdout_count": 25,
+      "lens_id": "topology",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.000182260867,
+        "compression_score": 0.999808146455,
+        "encoding_success": 0.106382978723,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.666666666667,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.74
+      },
+      "coverage_score": 0.769247817713,
+      "decline_count": 126,
+      "holdout_count": 6,
+      "lens_id": "control_theory",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 15,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.008520400252,
+        "compression_score": 0.991031157629,
+        "encoding_success": 0.609929078014,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.818181818182,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.712558139535
+      },
+      "coverage_score": 0.863152117154,
+      "decline_count": 55,
+      "holdout_count": 20,
+      "lens_id": "crnt",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 86,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.00984257947,
+        "compression_score": 0.989639390031,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.777777777778,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.891779241838,
+      "decline_count": 47,
+      "holdout_count": 22,
+      "lens_id": "dynamical_systems",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.004814969039,
+        "compression_score": 0.994931611537,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.838383838384,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.959239741731,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "graph",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.005111050147,
+        "compression_score": 0.994619947213,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.97619047619,
+        "prediction_baseline": 0.838383838384,
+        "prediction_component": 0.852678571429,
+        "reconstruction_score": 0.78
+      },
+      "coverage_score": 0.918362634939,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "information",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007899554784,
+        "compression_score": 0.991684679174,
+        "encoding_success": 0.581560283688,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.818181818182,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.82
+      },
+      "coverage_score": 0.879064758614,
+      "decline_count": 59,
+      "holdout_count": 16,
+      "lens_id": "petri",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 82,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007842514611,
+        "compression_score": 0.991744721462,
+        "encoding_success": 0.751773049645,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.642857142857,
+        "prediction_baseline": 0.833333333333,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.68
+      },
+      "coverage_score": 0.635116318148,
+      "decline_count": 35,
+      "holdout_count": 28,
+      "lens_id": "statistical_mechanics",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 106,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "topology",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "control_theory",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "crnt",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "dynamical_systems",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.004814969039,
+        "compression_score": 0.994931611537,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.646464646465,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.959239741731,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "graph",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.005111050147,
+        "compression_score": 0.994619947213,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.97619047619,
+        "prediction_baseline": 0.646464646465,
+        "prediction_component": 0.932653061224,
+        "reconstruction_score": 0.78
+      },
+      "coverage_score": 0.938356257388,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "information",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007899554784,
+        "compression_score": 0.991684679174,
+        "encoding_success": 0.581560283688,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.9375,
+        "prediction_baseline": 0.818181818182,
+        "prediction_component": 0.65625,
+        "reconstruction_score": 0.82
+      },
+      "coverage_score": 0.793127258614,
+      "decline_count": 59,
+      "holdout_count": 16,
+      "lens_id": "petri",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 82,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007842514611,
+        "compression_score": 0.991744721462,
+        "encoding_success": 0.751773049645,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.692307692308,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.68
+      },
+      "coverage_score": 0.885116318148,
+      "decline_count": 35,
+      "holdout_count": 28,
+      "lens_id": "statistical_mechanics",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 106,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 1.0,
+        "compression_score": 0.0,
+        "encoding_success": 0.0,
+        "invariance_preservation": 0.0,
+        "prediction_accuracy": 0.0,
+        "prediction_baseline": 0.5,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.0
+      },
+      "coverage_score": 0.0,
+      "decline_count": 141,
+      "holdout_count": 0,
+      "lens_id": "topology",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.000182260867,
+        "compression_score": 0.999808146455,
+        "encoding_success": 0.106382978723,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.777777777778,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.74
+      },
+      "coverage_score": 0.769247817713,
+      "decline_count": 126,
+      "holdout_count": 6,
+      "lens_id": "control_theory",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 15,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.008520400252,
+        "compression_score": 0.991031157629,
+        "encoding_success": 0.609929078014,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.757575757576,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.712558139535
+      },
+      "coverage_score": 0.863152117154,
+      "decline_count": 55,
+      "holdout_count": 20,
+      "lens_id": "crnt",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 86,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.00984257947,
+        "compression_score": 0.989639390031,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.681818181818,
+        "prediction_baseline": 0.777777777778,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.641779241838,
+      "decline_count": 47,
+      "holdout_count": 22,
+      "lens_id": "dynamical_systems",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.004814969039,
+        "compression_score": 0.994931611537,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.838383838384,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.8
+      },
+      "coverage_score": 0.959239741731,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "graph",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.005111050147,
+        "compression_score": 0.994619947213,
+        "encoding_success": 1.0,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.97619047619,
+        "prediction_baseline": 0.838383838384,
+        "prediction_component": 0.852678571429,
+        "reconstruction_score": 0.78
+      },
+      "coverage_score": 0.918362634939,
+      "decline_count": 0,
+      "holdout_count": 42,
+      "lens_id": "information",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 141,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007899554784,
+        "compression_score": 0.991684679174,
+        "encoding_success": 0.581560283688,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 1.0,
+        "prediction_baseline": 0.757575757576,
+        "prediction_component": 1.0,
+        "reconstruction_score": 0.82
+      },
+      "coverage_score": 0.879064758614,
+      "decline_count": 59,
+      "holdout_count": 16,
+      "lens_id": "petri",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 82,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007842514611,
+        "compression_score": 0.991744721462,
+        "encoding_success": 0.751773049645,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.964285714286,
+        "prediction_baseline": 0.794871794872,
+        "prediction_component": 0.825892857143,
+        "reconstruction_score": 0.68
+      },
+      "coverage_score": 0.841589532434,
+      "decline_count": 35,
+      "holdout_count": 28,
+      "lens_id": "statistical_mechanics",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 106,
+      "pair_count": 141
+    },
+    {
+      "components": {
+        "compression_ratio": 0.007220263103,
+        "compression_score": 0.992399723049,
+        "encoding_success": 0.666666666667,
+        "invariance_preservation": 1.0,
+        "prediction_accuracy": 0.04,
+        "prediction_baseline": 0.971014492754,
+        "prediction_component": 0.0,
+        "reconstruction_score": 0.7
+      },
+      "coverage_score": 0.622193291791,
+      "decline_count": 47,
+      "holdout_count": 25,
+      "lens_id": "topology",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 94,
+      "pair_count": 141
+    }
+  ],
+  "schema": "Campaign010CoverageMatrix.v1"
+}

@@ -1,0 +1,44 @@
+{
+  "artifact": "papers/methods/TRUTH_PASS.md",
+  "audit_rows": [
+    {
+      "bfg_vectors": 4,
+      "passed": true,
+      "path": "papers\\methods\\SUBSTANCE_AUDIT_W8.md",
+      "point_attractor_count": 0,
+      "simulation_logic_lines": 478,
+      "verdict": "meets_spec_with_caveats",
+      "world_id": "W8"
+    },
+    {
+      "bfg_vectors": 4,
+      "passed": true,
+      "path": "papers\\methods\\SUBSTANCE_AUDIT_W11.md",
+      "point_attractor_count": 0,
+      "simulation_logic_lines": 471,
+      "verdict": "meets_spec_with_caveats",
+      "world_id": "W11"
+    },
+    {
+      "bfg_vectors": 4,
+      "passed": true,
+      "path": "papers\\methods\\SUBSTANCE_AUDIT_W12.md",
+      "point_attractor_count": 0,
+      "simulation_logic_lines": 446,
+      "verdict": "meets_spec_with_caveats",
+      "world_id": "W12"
+    }
+  ],
+  "bfg_vectors": 12,
+  "falsifier_rows": [
+    {
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "path": "papers\\falsifiers\\bfg_point_attractor_candidate.md",
+      "status": "falsifier_active",
+      "upgraded": true,
+      "world_id": "W13"
+    }
+  ],
+  "passed": true,
+  "schema": "Campaign010TruthPassRefresh.v1"
+}

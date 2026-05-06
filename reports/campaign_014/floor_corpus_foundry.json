@@ -1,0 +1,3427 @@
+{
+  "adversarial_control": {
+    "all_motif_gaps": [
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.03618088193965998,
+        "max_coverage_score": 0.941643738807,
+        "motif_id": "motif.autocatalytic_closure.draft"
+      },
+      {
+        "attractor_strength": 0.7,
+        "best_lens": "graph",
+        "formal_gap": 0.04084938283509998,
+        "max_coverage_score": 0.941643738807,
+        "motif_id": "motif.externalized_memory.draft"
+      },
+      {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.3549345653383201,
+        "max_coverage_score": 0.596665266661,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.03618088193965998,
+        "max_coverage_score": 0.941643738807,
+        "motif_id": "motif.repair.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.03618088193965998,
+        "max_coverage_score": 0.941643738807,
+        "motif_id": "motif.replication_lineage.draft"
+      },
+      {
+        "attractor_strength": 0.74,
+        "best_lens": "graph",
+        "formal_gap": 0.043183633282819975,
+        "max_coverage_score": 0.941643738807,
+        "motif_id": "motif.self_maintained_boundary.draft"
+      }
+    ],
+    "baselines": {
+      "campaign_013_lens_coverage_for_target": 0.941643738807,
+      "comparison_note": "Per Codex outline pitfall: a 'lens captures motif' verdict requires the lens's coverage_score to exceed both the majority-label baseline (always-predict-most-common) and the substrate-only baseline (predict by world_family alone). If lens coverage is at or below either baseline, the lens is not contributing additional discrimination beyond what's available from substrate identity.",
+      "lens_beats_majority": true,
+      "lens_beats_substrate_only": true,
+      "majority_label_baseline_accuracy": 0.5384615384615384,
+      "substrate_only_baseline_accuracy": 0.8461538461538461
+    },
+    "campaign_013_evidence_row_count": 156,
+    "campaign_013_evidence_target_row_count": 26,
+    "floor_motif_formal_gap_for_comparison": {
+      "attractor_strength": 0.88,
+      "best_lens": "dynamical_systems",
+      "formal_gap": 0.3549345653383201,
+      "max_coverage_score": 0.596665266661,
+      "motif_id": "motif.floor_connectivity.draft"
+    },
+    "interpretation": {
+      "empirical_p": 1.0,
+      "formal_gap": 0.03618088193965998,
+      "gap_threshold": 0.2,
+      "p_threshold": 0.05,
+      "rationale": "Adversarial target motif.replication_lineage.draft (K2 coverage \u2265 0.85) returns formal_gap = 0.036181 (< 0.2) and N7 empirical p = 1.000000 (> 0.05). The methodology correctly does NOT flag a known-captured motif as a deficit candidate. Discriminating power validated.",
+      "verdict": "methodology_sound"
+    },
+    "k2_step_0a_check": {
+      "holdout_count": 42,
+      "k2_coverage_score": 0.959239741731,
+      "k2_floor": 0.85,
+      "lens_id": "graph",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 141,
+      "passed": true,
+      "source": "reports/campaign_010/coverage_matrix.json"
+    },
+    "label_distribution_for_target": {
+      "false": 16,
+      "true": 10
+    },
+    "locked_instruments": {
+      "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "basis_unchanged": true,
+      "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+      "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+      "lens_registry_unchanged": true
+    },
+    "mode_tag": "exploratory",
+    "n7": {
+      "N": 1000,
+      "empirical_p": 1.0,
+      "null_ci": {
+        "ci_high": -0.0048329748932009284,
+        "ci_low": -0.006974286261179033,
+        "mean": -0.005903630577189981,
+        "width": 0.0021413113679781054
+      },
+      "null_mean": -0.005903630577189981,
+      "observed_statistic": -0.066084987127452,
+      "schema": "TaskCB003N7AdversarialNull.v1",
+      "seed": 13013,
+      "target_motif": "motif.replication_lineage.draft"
+    },
+    "schema": "TaskCB003AdversarialControl.v1",
+    "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+    "target_lens": "graph",
+    "target_motif": "motif.replication_lineage.draft",
+    "target_motif_formal_gap": {
+      "attractor_strength": 0.62,
+      "best_lens": "graph",
+      "formal_gap": 0.03618088193965998,
+      "max_coverage_score": 0.941643738807,
+      "motif_id": "motif.replication_lineage.draft"
+    }
+  },
+  "aggregate_verdict": {
+    "blocked_control_adjusted": true,
+    "blocked_control_verdict": "signal_not_distinguishable_after_substrate_blocking",
+    "claim_eligible": false,
+    "l5_candidacy_advancement": false,
+    "per_substrate_scientific_verdicts": {
+      "cognitive": "replicated",
+      "quasispecies": "replicated",
+      "symbiogenesis": "replicated"
+    },
+    "per_substrate_threshold_verdicts": {
+      "cognitive": "replicated",
+      "quasispecies": "replicated",
+      "symbiogenesis": "replicated"
+    },
+    "rationale": "All 3 Step-0-eligible substrates (['cognitive', 'quasispecies', 'symbiogenesis']) returned threshold verdict replicated. Multi-substrate confirmation is achieved under the locked basis. L5 candidacy advancement is True; claim_eligible remains False pending D21 densification audit on the source worlds. Substrates that failed Step 0 ([]): excluded as not-evaluable, not as falsifiers. Campaign 014 blocked-control adjustment: threshold-only replication is not enough. The observed floor gap does not clear the within-stratum shuffled null, so L5 candidacy advancement is false.",
+    "scientific_verdict": "threshold_replicated_but_blocked_control_not_distinguishable",
+    "step_0_eligible_substrates": [
+      "cognitive",
+      "quasispecies",
+      "symbiogenesis"
+    ],
+    "step_0_failed_substrates": [],
+    "step_0_failure_reasons": {},
+    "threshold_only_l5_candidacy_advancement": true,
+    "threshold_only_scientific_verdict": "replicated_multi_substrate",
+    "threshold_verdict": "uniform_replication"
+  },
+  "content_hash": "sha256:0525d9a35c4b3018fc997eb50565f3bd9abae6589d9b20bc5fbc20bbdc5906d3",
+  "gate_count": 9,
+  "gates": {
+    "C14-1": {
+      "description": "48 real W8/W11/W12 traces generated; locked predicate labels match audit-only mechanism expectation.",
+      "passed": true
+    },
+    "C14-2": {
+      "description": "Each substrate has both floor labels with minority count >= 8.",
+      "passed": true
+    },
+    "C14-3": {
+      "description": "Substrate-blocked control is nondegenerate and ran N=10000.",
+      "passed": true
+    },
+    "C14-4": {
+      "description": "All-uniform negative control remains not_evaluable.",
+      "passed": true
+    },
+    "C14-5": {
+      "description": "CB-003 adversarial baseline remains methodology_sound.",
+      "passed": true
+    },
+    "C14-6": {
+      "description": "Campaign 014 report round-trips and has a content hash.",
+      "passed": true
+    },
+    "C14-7": {
+      "description": "Locked basis and lens registry unchanged.",
+      "passed": true
+    },
+    "C14-8": {
+      "description": "Blocked-control scientific verdict is machine-readable and aggregate L5 surface matches it.",
+      "passed": true
+    },
+    "C14-9": {
+      "description": "All outputs remain exploratory; no claim-bearing promotion attempted.",
+      "passed": true
+    }
+  },
+  "holdout_audit": {
+    "checked_path_count": 48,
+    "deficit_map_evidence_row_count": 141,
+    "deficit_map_prereg": "papers\\prereg\\deficit_map_v0.signed.json",
+    "deficit_map_present": true,
+    "holdout_clean": true,
+    "overlap_count": 0,
+    "overlap_paths": []
+  },
+  "label_audit": {
+    "all_substrates_have_both_classes": true,
+    "all_substrates_minority_ge_8": true,
+    "label_source": "locked _label_feature_for_motif; scenario expected label is audit-only",
+    "per_substrate": {
+      "cognitive": {
+        "balanced_for_step_0": true,
+        "floor_false": 8,
+        "floor_true": 8,
+        "minority": 8
+      },
+      "quasispecies": {
+        "balanced_for_step_0": true,
+        "floor_false": 8,
+        "floor_true": 8,
+        "minority": 8
+      },
+      "symbiogenesis": {
+        "balanced_for_step_0": true,
+        "floor_false": 8,
+        "floor_true": 8,
+        "minority": 8
+      }
+    },
+    "schema": "Campaign014LabelAudit.v1"
+  },
+  "locked_instruments": {
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "basis_unchanged": true,
+    "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_unchanged": true
+  },
+  "mode_tag": "exploratory",
+  "n7_methodology": {
+    "N": 1000,
+    "seed": 13013,
+    "statistic": "floor_connectivity_gap_minus_other_gap_mean"
+  },
+  "negative_uniform_control": {
+    "N_attempted": 10000,
+    "N_run": 0,
+    "corpus_id": "campaign014_uniform_negative_control",
+    "empirical_p": null,
+    "evidence_row_count": 144,
+    "floor_evaluation_row_count_8_lenses_x_floor_evidence": 192,
+    "floor_evidence_row_count": 24,
+    "interpretation": {
+      "l5_candidacy_advancement": false,
+      "rationale": "All strata are label-uniform; the blocked shuffle is degenerate and cannot evaluate substrate-blind floor signal.",
+      "verdict": "not_evaluable_substrate_confounded"
+    },
+    "locked_instruments": {
+      "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "basis_unchanged": true,
+      "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+      "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+      "lens_registry_unchanged": true
+    },
+    "mode_tag": "exploratory",
+    "observed_breakdown": {
+      "floor_gap": 0.23195337860816004,
+      "other_gap_mean": 0.06273802912608002
+    },
+    "observed_statistic": 0.16921534948208,
+    "schema": "Campaign014SubstrateBlockedControl.v1",
+    "seed": 13013,
+    "step_0a": {
+      "per_stratum": {
+        "cognitive::campaign_014/traces": {
+          "F": 8,
+          "T": 0,
+          "minority": 0,
+          "total": 8,
+          "uniform": true
+        },
+        "quasispecies::campaign_014/traces": {
+          "F": 8,
+          "T": 0,
+          "minority": 0,
+          "total": 8,
+          "uniform": true
+        },
+        "symbiogenesis::campaign_014/traces": {
+          "F": 8,
+          "T": 0,
+          "minority": 0,
+          "total": 8,
+          "uniform": true
+        }
+      },
+      "rationale": "Step 0a (within-stratum balance) requires \u22652 strata to carry both pos and neg labels. Found 0 of 3 strata with both classes. Step 0a FAILED.",
+      "step_0a_passed": false,
+      "strata_count": 3,
+      "strata_with_both_classes": [],
+      "strata_with_both_classes_count": 0
+    },
+    "step_0b_run": false,
+    "step_0b_skipped_reason": "every stratum uniform; within-stratum shuffle is degenerate"
+  },
+  "notes": "Campaign 014 creates substrate-suitable W8/W11/W12 floor-connectivity corpora and runs the CB-003 substrate-blocked control nondegenerately.",
+  "passed_gate_count": 9,
+  "pooled_result": {
+    "all_motif_gaps": [
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.11007754934163998,
+        "max_coverage_score": 0.822455565578,
+        "motif_id": "motif.autocatalytic_closure.draft"
+      },
+      {
+        "attractor_strength": 0.7,
+        "best_lens": "graph",
+        "formal_gap": 0.028031104095400005,
+        "max_coverage_score": 0.959955565578,
+        "motif_id": "motif.externalized_memory.draft"
+      },
+      {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.27243656847704,
+        "max_coverage_score": 0.690412990367,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.024827549341640005,
+        "max_coverage_score": 0.959955565578,
+        "motif_id": "motif.repair.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.024827549341640005,
+        "max_coverage_score": 0.959955565578,
+        "motif_id": "motif.replication_lineage.draft"
+      },
+      {
+        "attractor_strength": 0.74,
+        "best_lens": "graph",
+        "formal_gap": 0.029632881472280007,
+        "max_coverage_score": 0.959955565578,
+        "motif_id": "motif.self_maintained_boundary.draft"
+      }
+    ],
+    "blocked_control_adjusted": true,
+    "blocked_control_verdict": "signal_not_distinguishable_after_substrate_blocking",
+    "claim_eligible": false,
+    "coverage_count": 48,
+    "evaluation_count": 2304,
+    "evidence_row_count": 288,
+    "formal_gap": {
+      "attractor_strength": 0.88,
+      "best_lens": "dynamical_systems",
+      "formal_gap": 0.27243656847704,
+      "max_coverage_score": 0.690412990367,
+      "motif_id": "motif.floor_connectivity.draft"
+    },
+    "l5_candidacy_advancement": false,
+    "label_breakdown_by_motif": {
+      "motif.autocatalytic_closure.draft": {
+        "false": 48
+      },
+      "motif.externalized_memory.draft": {
+        "false": 40,
+        "true": 8
+      },
+      "motif.floor_connectivity.draft": {
+        "false": 24,
+        "true": 24
+      },
+      "motif.repair.draft": {
+        "false": 16,
+        "true": 32
+      },
+      "motif.replication_lineage.draft": {
+        "false": 24,
+        "true": 24
+      },
+      "motif.self_maintained_boundary.draft": {
+        "false": 32,
+        "true": 16
+      }
+    },
+    "lens_decline_rates": {
+      "control_theory": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        }
+      },
+      "crnt": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.666666666667,
+          "declined_count": 32,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.666666666667,
+          "declined_count": 32,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.666666666667,
+          "declined_count": 32,
+          "total_count": 48
+        }
+      },
+      "dynamical_systems": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        }
+      },
+      "graph": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        }
+      },
+      "information": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        }
+      },
+      "petri": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.666666666667,
+          "declined_count": 32,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.666666666667,
+          "declined_count": 32,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.666666666667,
+          "declined_count": 32,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.666666666667,
+          "declined_count": 32,
+          "total_count": 48
+        }
+      },
+      "statistical_mechanics": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.333333333333,
+          "declined_count": 16,
+          "total_count": 48
+        }
+      },
+      "topology": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        },
+        "motif.repair.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 48,
+          "total_count": 48
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 48
+        }
+      }
+    },
+    "n7": {
+      "N": 1000,
+      "empirical_p": 0.003996003996003996,
+      "null_ci": {
+        "ci_high": 0.014942209250238567,
+        "ci_low": 0.010456023944310767,
+        "mean": 0.012699116597274667,
+        "width": 0.004486185305927802
+      },
+      "null_mean": 0.012699116597274667,
+      "observed_statistic": 0.22895724175852,
+      "seed": 13013
+    },
+    "scientific_verdict": "threshold_replicated_but_blocked_control_not_distinguishable",
+    "scientific_verdict_rationale": "Threshold logic fires replicated on a substrate-suitable corpus; contributes to L5 candidacy. claim_eligible remains False until D21 densification audit signs the source world as claim_ready_densified. Campaign 014 substrate-blocked control did not distinguish observed floor gap from within-stratum shuffled labels; final L5 advancement is therefore false.",
+    "split_breakdown": {
+      "holdout": 113,
+      "train": 175
+    },
+    "step_0": {
+      "evidence_row_count_for_floor_motif": 48,
+      "floor_label_false_count": 24,
+      "floor_label_true_count": 24,
+      "label_balance_ratio": 0.5,
+      "minority_class_count": 24,
+      "rationale": "Floor motif on substrate 'campaign014_pooled_w8_w11_w12': 24 label=True / 24 label=False; both classes present above minimum threshold. Threshold logic is applicable and the verdict is scientifically meaningful subject to D18-locked methodology.",
+      "step_0_status": "motif_present_balanced",
+      "threshold_logic_eligible": true,
+      "world_family": "campaign014_pooled_w8_w11_w12"
+    },
+    "threshold_only_l5_candidacy_advancement": true,
+    "threshold_only_scientific_verdict": "replicated",
+    "threshold_verdict": {
+      "empirical_p": 0.003996003996003996,
+      "formal_gap": 0.27243656847704,
+      "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+      "threshold_check": {
+        "formal_gap_threshold": 0.2,
+        "p_threshold": 0.05,
+        "replicated": true
+      },
+      "verdict": "replicated"
+    },
+    "trace_count": 48,
+    "world_family": "campaign014_pooled_w8_w11_w12"
+  },
+  "roundtrip_hash_v2_surface": "sha256:4c51e720faeb73d23f70dda2da6e49259fbf7b52da7afc78c9eeb26f6045d246",
+  "schema": "Campaign014FloorCorpusFoundry.v1",
+  "sources": {
+    "label_audit": {
+      "all_substrates_have_both_classes": true,
+      "all_substrates_minority_ge_8": true,
+      "label_source": "locked _label_feature_for_motif; scenario expected label is audit-only",
+      "per_substrate": {
+        "cognitive": {
+          "balanced_for_step_0": true,
+          "floor_false": 8,
+          "floor_true": 8,
+          "minority": 8
+        },
+        "quasispecies": {
+          "balanced_for_step_0": true,
+          "floor_false": 8,
+          "floor_true": 8,
+          "minority": 8
+        },
+        "symbiogenesis": {
+          "balanced_for_step_0": true,
+          "floor_false": 8,
+          "floor_true": 8,
+          "minority": 8
+        }
+      },
+      "schema": "Campaign014LabelAudit.v1"
+    },
+    "trace_generation": {
+      "all_labels_match_expected_mechanism": true,
+      "label_source": "formalism.lens_registry._label_feature_for_motif on exported trace",
+      "rows": [
+        {
+          "event_count": 1457,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14000,
+          "state_count": 121,
+          "trace_id": "sha256:4b6757c99147734730144e5ffbc26ca03e7d1ae8b8e4badc7e7adf279d27d97d",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_00.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 770,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14100,
+          "state_count": 121,
+          "trace_id": "sha256:ec8c0663d5f2b1d1f785100755bcbc6af4ecdc32cde39f7613b44241545d6b67",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_00.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 1461,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14001,
+          "state_count": 121,
+          "trace_id": "sha256:8cef04dc1529f889d4e0d07a0adf3324c6dce2306a6bdaa0172deb86f6afb76f",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_01.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 757,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14101,
+          "state_count": 121,
+          "trace_id": "sha256:fb1d6cf1a33ef8b7a65e58fdb525ee26f878b17f64f8c2f1382fe1fc48d8a499",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_01.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 1457,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14002,
+          "state_count": 121,
+          "trace_id": "sha256:d05366f217172637841fdcd07bd773ff7cd35f3cf7d26a8fe75fe76be6e677c2",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_02.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 776,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14102,
+          "state_count": 121,
+          "trace_id": "sha256:471262497b1a9b448318119dcd8a878d8a5a96f4cb4fe6487148f1ed85d083b7",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_02.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 1459,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14003,
+          "state_count": 121,
+          "trace_id": "sha256:07273919c6aa9ce1e388e5a40f46fd1e41f6daee4e0158abde45c3a879c60351",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_03.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 764,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14103,
+          "state_count": 121,
+          "trace_id": "sha256:19111f34a8f718f87d04d7ec8e368073d2a36e42c268c7966fcab7d44f5e9ab1",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_03.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 1448,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14004,
+          "state_count": 121,
+          "trace_id": "sha256:baf9d36caab43d569904721d59abd270c29d9ee866468068126ac83b90991881",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_04.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 769,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14104,
+          "state_count": 121,
+          "trace_id": "sha256:bdc2096e7637cb8ef85767182f68bb447a6ca2e9d28d11f0c5bfc21bee275755",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_04.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 1447,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14005,
+          "state_count": 121,
+          "trace_id": "sha256:a2308afca692d7413feaf751925cc9234077d4fe5e6f12742d424e105b9291eb",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_05.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 763,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14105,
+          "state_count": 121,
+          "trace_id": "sha256:7fc4b2a3f1500002c494c10280013a38214d4783a531be2a37e141c8b6453388",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_05.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 1453,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14006,
+          "state_count": 121,
+          "trace_id": "sha256:b577947b67e9f5c3ee730213a1c8b289a85083a4287b8373485fe658d65b1350",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_06.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 769,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14106,
+          "state_count": 121,
+          "trace_id": "sha256:380c3d119fa1409f02586e83cbf3e505ed2ba04976436cc98e8e660912abfd6b",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_06.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 1453,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 14007,
+          "state_count": 121,
+          "trace_id": "sha256:c23c361830b2689af0aeb46413e1708df383e6f9fbf906473e112a5f95d563fd",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_07.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 766,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "attention_floor_channel_disabled",
+          "implementation_id": "w8.cognitive.adaptive_control",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 14107,
+          "state_count": 121,
+          "trace_id": "sha256:a5ad91d198a3b9fedd964a905ead4adba83be9cd8bd82b4a4d637a2f7fbe0de6",
+          "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_07.json",
+          "world_family": "cognitive"
+        },
+        {
+          "event_count": 4768,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15000,
+          "state_count": 61,
+          "trace_id": "sha256:5d4f0ec49349b23691de30e59163f0c77bab39f2165a517eb595f92b7727fd47",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_00.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7437,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15100,
+          "state_count": 61,
+          "trace_id": "sha256:27f7aa9ffeb744bf20d66428303268fd1b2d2ea65f95639a84862413774b5012",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_00.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 4841,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15001,
+          "state_count": 61,
+          "trace_id": "sha256:9307ad08ed84a48a717b4e085c19978484b4b14778624fc29582b4b5d68f7560",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_01.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7474,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15101,
+          "state_count": 61,
+          "trace_id": "sha256:428e0f8025c9e4b7e2855360b4551db7748925e697bdec36046cf92f51737e15",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_01.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 4879,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15002,
+          "state_count": 61,
+          "trace_id": "sha256:4c32a2bba05c8c965283f7ad70a65296146af326327c0586ea6a4ec5026c52ed",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_02.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7481,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15102,
+          "state_count": 61,
+          "trace_id": "sha256:c864b1ad82fa43dafce278edbc320a9345218e2b72be320f038463033dd1352c",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_02.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 4876,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15003,
+          "state_count": 61,
+          "trace_id": "sha256:d53bde42a731a735737f413b0aaee17ed07afb5bfc30bdd4e77ec380f49a159a",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_03.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7648,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15103,
+          "state_count": 61,
+          "trace_id": "sha256:ed89d910cc82c1c7454e13bcb7ef21d6576fa1bf8c91d465b15ebe2c7ce640e9",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_03.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 4834,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15004,
+          "state_count": 61,
+          "trace_id": "sha256:5e5bce5474c836d32b07d25c7bd51dbd3af2275516d99a4fa4d09a7a9aacb620",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_04.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7399,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15104,
+          "state_count": 61,
+          "trace_id": "sha256:c5411d5b71d415513be6c2c2dccd9ef4063b43f3026748c308b01a15927970a6",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_04.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 4866,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15005,
+          "state_count": 61,
+          "trace_id": "sha256:47551ce60fdf106115ed57523c8d9061ed2ed38cb426c5fbca982d8629d75771",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_05.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7518,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15105,
+          "state_count": 61,
+          "trace_id": "sha256:714a572c991920bcf2e8f6c4fc80db519d7e2dbfd373961b8a0357f1c9381886",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_05.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 4823,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15006,
+          "state_count": 61,
+          "trace_id": "sha256:3487abe5e10a6d53c9f0589ed80441d51bac763b36645192c7ecd78a61086e1d",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_06.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7524,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15106,
+          "state_count": 61,
+          "trace_id": "sha256:ff351e86767842d9a97bedc2246f15ddee45fa5719ed1c56946919395e3e6f2c",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_06.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 4884,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "neutral_component_sequence_floor",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 15007,
+          "state_count": 61,
+          "trace_id": "sha256:20aeb63ca60eba3d96c224caab2f4fd935ccab77c6d372e484ca8912df1e7760",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_07.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 7599,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+          "implementation_id": "w11.quasispecies.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 15107,
+          "state_count": 61,
+          "trace_id": "sha256:d9d58fd0a36e9986426b137252a4ca309e5257b8b2ec6307191e4890a07b1e0f",
+          "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_07.json",
+          "world_family": "quasispecies"
+        },
+        {
+          "event_count": 3119,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16000,
+          "state_count": 91,
+          "trace_id": "sha256:3a925f4bae4f963b2a15ad0528ab0150834ce5b283e465ce7b2b38e2bab27fb4",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_00.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16100,
+          "state_count": 91,
+          "trace_id": "sha256:a227012a0c9bfcb2767077c7f0ad16c1410ff740aa8bb3c2e2e21948ebd3b89b",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_00.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 3121,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16001,
+          "state_count": 91,
+          "trace_id": "sha256:1907d7a3ad9162734e4397dac877a40f38666ce6f21e35ae3326bc081bd7a23b",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_01.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16101,
+          "state_count": 91,
+          "trace_id": "sha256:29eaa3809a313ea4626c36ea647b02a828c8315f5c6992e66e3edd94c0285ab6",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_01.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 3123,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16002,
+          "state_count": 91,
+          "trace_id": "sha256:55ba986d905259a5966c9099becf8f5be044ee788e1bc50fcfcfcfa0f7ec3ce4",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_02.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16102,
+          "state_count": 91,
+          "trace_id": "sha256:fe29af1dea703c414616beaf6cbd658dcc05ec02cdf78d0b0b0b245454f9e11c",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_02.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 3127,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16003,
+          "state_count": 91,
+          "trace_id": "sha256:39d3d259429779deb3e6061ae2cb9ad2e74fbb4e91633978da998508510ebab5",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_03.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16103,
+          "state_count": 91,
+          "trace_id": "sha256:52f4f219c4945c774f78f7aad365334f604dabffb6ee60f19eb27b0d7e5e75b0",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_03.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 3116,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16004,
+          "state_count": 91,
+          "trace_id": "sha256:f1d6d28c770dfc9f4c917f052c8b01f983c41d908916b27ae1652af2b2b16744",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_04.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16104,
+          "state_count": 91,
+          "trace_id": "sha256:e256c30ddf54a82572565b7521d14a4f4d0f92ac2f552763cf6d1aad7fb2b365",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_04.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 3119,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16005,
+          "state_count": 91,
+          "trace_id": "sha256:22b093647d6221c5b4c02736b9db2129d65bca294f43b5981373b01a72ff4d3c",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_05.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16105,
+          "state_count": 91,
+          "trace_id": "sha256:a55a35950010bf73ed909a3afed0d340a6f321d5676b46ca2e14b862516938d7",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_05.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 3125,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16006,
+          "state_count": 91,
+          "trace_id": "sha256:aa91fa7aa8719414bed5db0539f574b60a21886f903e5a7e928905c03c89e248",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_06.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16106,
+          "state_count": 91,
+          "trace_id": "sha256:0b662308fdae693aa39c677c4c8436ba7a49752a58b19ec3f1553ff3831f5d40",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_06.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 3127,
+          "expected_floor_label_for_audit_only": true,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": true,
+          "mechanism_class": "floor_positive",
+          "seed": 16007,
+          "state_count": 91,
+          "trace_id": "sha256:685ea88eb3a6c3f3c237d0dfc5ede38c76acfea2f09c23371266823a150dc11d",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_07.json",
+          "world_family": "symbiogenesis"
+        },
+        {
+          "event_count": 1613,
+          "expected_floor_label_for_audit_only": false,
+          "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+          "implementation_id": "w12.symbiogenesis.production",
+          "implementation_version": "0.8.1",
+          "label_matches_expected_mechanism": true,
+          "locked_predicate_floor_label": false,
+          "mechanism_class": "floor_negative",
+          "seed": 16107,
+          "state_count": 91,
+          "trace_id": "sha256:94a9866fa4e0dc22a3c14a61bddb077ebe7ebe388609fd6ef4e1d800cd608978",
+          "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_07.json",
+          "world_family": "symbiogenesis"
+        }
+      ],
+      "schema": "Campaign014TraceGeneration.v1",
+      "trace_count": 48,
+      "trace_root": "reports/campaign_014/traces"
+    }
+  },
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "status": "green",
+  "step_0_corpus_overview": {
+    "binding_discipline": "Class 11: within-substrate label variation is required before pooled multi-substrate signal can advance L5 candidacy.",
+    "candidate_substrates_surveyed": [
+      "cognitive",
+      "quasispecies",
+      "symbiogenesis"
+    ],
+    "substrates_failing_step_0": [],
+    "substrates_passing_step_0": [
+      "cognitive",
+      "quasispecies",
+      "symbiogenesis"
+    ]
+  },
+  "substrate_blocked_control": {
+    "N_attempted": 10000,
+    "N_run": 10000,
+    "corpus_id": "campaign014_w8_w11_w12",
+    "empirical_p": 0.9075092490750925,
+    "evidence_row_count": 288,
+    "floor_evaluation_row_count_8_lenses_x_floor_evidence": 384,
+    "floor_evidence_row_count": 48,
+    "interpretation": {
+      "l5_candidacy_advancement": false,
+      "rationale": "The observed floor gap does not clear the within-stratum shuffled null; no L5 advancement from this corpus.",
+      "verdict": "signal_not_distinguishable_after_substrate_blocking"
+    },
+    "locked_instruments": {
+      "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "basis_unchanged": true,
+      "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+      "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+      "lens_registry_unchanged": true
+    },
+    "mode_tag": "exploratory",
+    "null_distribution": {
+      "N": 10000,
+      "ci": {
+        "ci_high": 0.24760713526752035,
+        "ci_low": 0.24670879177785757,
+        "mean": 0.24715796352268896,
+        "width": 0.0008983434896627592
+      },
+      "mean": 0.24715796352268896
+    },
+    "observed_breakdown": {
+      "floor_gap": 0.27243656847704,
+      "other_gap_mean": 0.04347932671852
+    },
+    "observed_statistic": 0.22895724175852,
+    "schema": "Campaign014SubstrateBlockedControl.v1",
+    "seed": 13013,
+    "step_0a": {
+      "per_stratum": {
+        "cognitive::campaign_014/traces": {
+          "F": 8,
+          "T": 8,
+          "minority": 8,
+          "total": 16,
+          "uniform": false
+        },
+        "quasispecies::campaign_014/traces": {
+          "F": 8,
+          "T": 8,
+          "minority": 8,
+          "total": 16,
+          "uniform": false
+        },
+        "symbiogenesis::campaign_014/traces": {
+          "F": 8,
+          "T": 8,
+          "minority": 8,
+          "total": 16,
+          "uniform": false
+        }
+      },
+      "rationale": "Step 0a (within-stratum balance) requires \u22652 strata to carry both pos and neg labels. Found 3 of 3 strata with both classes. Step 0a PASSED.",
+      "step_0a_passed": true,
+      "strata_count": 3,
+      "strata_with_both_classes": [
+        "cognitive::campaign_014/traces",
+        "quasispecies::campaign_014/traces",
+        "symbiogenesis::campaign_014/traces"
+      ],
+      "strata_with_both_classes_count": 3
+    },
+    "step_0b_run": true
+  },
+  "substrate_results": {
+    "cognitive": {
+      "all_motif_gaps": [
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11009327119252,
+          "max_coverage_score": 0.822430207754,
+          "motif_id": "motif.autocatalytic_closure.draft"
+        },
+        {
+          "attractor_strength": 0.7,
+          "best_lens": "graph",
+          "formal_gap": 0.028048854572200032,
+          "max_coverage_score": 0.959930207754,
+          "motif_id": "motif.externalized_memory.draft"
+        },
+        {
+          "attractor_strength": 0.88,
+          "best_lens": "dynamical_systems",
+          "formal_gap": 0.33097060712584003,
+          "max_coverage_score": 0.623897037357,
+          "motif_id": "motif.floor_connectivity.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11009327119252,
+          "max_coverage_score": 0.822430207754,
+          "motif_id": "motif.repair.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11009327119252,
+          "max_coverage_score": 0.822430207754,
+          "motif_id": "motif.replication_lineage.draft"
+        },
+        {
+          "attractor_strength": 0.74,
+          "best_lens": "graph",
+          "formal_gap": 0.13140164626204,
+          "max_coverage_score": 0.822430207754,
+          "motif_id": "motif.self_maintained_boundary.draft"
+        }
+      ],
+      "blocked_control_adjusted": true,
+      "blocked_control_verdict": "signal_not_distinguishable_after_substrate_blocking",
+      "claim_eligible": false,
+      "coverage_count": 48,
+      "evaluation_count": 768,
+      "evidence_row_count": 96,
+      "formal_gap": {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.33097060712584003,
+        "max_coverage_score": 0.623897037357,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 16
+        },
+        "motif.externalized_memory.draft": {
+          "false": 8,
+          "true": 8
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 8,
+          "true": 8
+        },
+        "motif.repair.draft": {
+          "true": 16
+        },
+        "motif.replication_lineage.draft": {
+          "false": 16
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 16
+        }
+      },
+      "lens_decline_rates": {
+        "control_theory": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "crnt": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          }
+        },
+        "dynamical_systems": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "graph": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "information": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "petri": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          }
+        },
+        "statistical_mechanics": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          }
+        },
+        "topology": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        }
+      },
+      "n7": {
+        "N": 1000,
+        "empirical_p": 0.003996003996003996,
+        "null_ci": {
+          "ci_high": 0.030196967648234662,
+          "ci_low": 0.021371171284777595,
+          "mean": 0.02578406946650613,
+          "width": 0.008825796363457067
+        },
+        "null_mean": 0.02578406946650613,
+        "observed_statistic": 0.23302454424348001,
+        "seed": 13013
+      },
+      "scientific_verdict": "threshold_replicated_but_blocked_control_not_distinguishable",
+      "scientific_verdict_rationale": "Threshold logic fires replicated on a substrate-suitable corpus; contributes to L5 candidacy. claim_eligible remains False until D21 densification audit signs the source world as claim_ready_densified. Campaign 014 substrate-blocked control did not distinguish observed floor gap from within-stratum shuffled labels; final L5 advancement is therefore false.",
+      "split_breakdown": {
+        "holdout": 41,
+        "train": 55
+      },
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 16,
+        "floor_label_false_count": 8,
+        "floor_label_true_count": 8,
+        "label_balance_ratio": 0.5,
+        "minority_class_count": 8,
+        "rationale": "Floor motif on substrate 'cognitive': 8 label=True / 8 label=False; both classes present above minimum threshold. Threshold logic is applicable and the verdict is scientifically meaningful subject to D18-locked methodology.",
+        "step_0_status": "motif_present_balanced",
+        "threshold_logic_eligible": true,
+        "world_family": "cognitive"
+      },
+      "threshold_only_l5_candidacy_advancement": true,
+      "threshold_only_scientific_verdict": "replicated",
+      "threshold_verdict": {
+        "empirical_p": 0.003996003996003996,
+        "formal_gap": 0.33097060712584003,
+        "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+        "threshold_check": {
+          "formal_gap_threshold": 0.2,
+          "p_threshold": 0.05,
+          "replicated": true
+        },
+        "verdict": "replicated"
+      },
+      "trace_count": 16,
+      "world_family": "cognitive"
+    },
+    "quasispecies": {
+      "all_motif_gaps": [
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11006523434178002,
+          "max_coverage_score": 0.822475428481,
+          "motif_id": "motif.autocatalytic_closure.draft"
+        },
+        {
+          "attractor_strength": 0.7,
+          "best_lens": "graph",
+          "formal_gap": 0.12426720006330001,
+          "max_coverage_score": 0.822475428481,
+          "motif_id": "motif.externalized_memory.draft"
+        },
+        {
+          "attractor_strength": 0.88,
+          "best_lens": "dynamical_systems",
+          "formal_gap": 0.2814099571448,
+          "max_coverage_score": 0.68021595779,
+          "motif_id": "motif.floor_connectivity.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11006523434178002,
+          "max_coverage_score": 0.822475428481,
+          "motif_id": "motif.repair.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11006523434178002,
+          "max_coverage_score": 0.822475428481,
+          "motif_id": "motif.replication_lineage.draft"
+        },
+        {
+          "attractor_strength": 0.74,
+          "best_lens": "graph",
+          "formal_gap": 0.13136818292406002,
+          "max_coverage_score": 0.822475428481,
+          "motif_id": "motif.self_maintained_boundary.draft"
+        }
+      ],
+      "blocked_control_adjusted": true,
+      "blocked_control_verdict": "signal_not_distinguishable_after_substrate_blocking",
+      "claim_eligible": false,
+      "coverage_count": 48,
+      "evaluation_count": 768,
+      "evidence_row_count": 96,
+      "formal_gap": {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.2814099571448,
+        "max_coverage_score": 0.68021595779,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 16
+        },
+        "motif.externalized_memory.draft": {
+          "false": 16
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 8,
+          "true": 8
+        },
+        "motif.repair.draft": {
+          "false": 16
+        },
+        "motif.replication_lineage.draft": {
+          "true": 16
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 16
+        }
+      },
+      "lens_decline_rates": {
+        "control_theory": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          }
+        },
+        "crnt": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          }
+        },
+        "dynamical_systems": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "graph": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "information": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "petri": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          }
+        },
+        "statistical_mechanics": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "topology": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        }
+      },
+      "n7": {
+        "N": 1000,
+        "empirical_p": 0.004995004995004995,
+        "null_ci": {
+          "ci_high": 0.04128166219734378,
+          "ci_low": 0.038271218787043676,
+          "mean": 0.039776440492193726,
+          "width": 0.003010443410300104
+        },
+        "null_mean": 0.039776440492193726,
+        "observed_statistic": 0.16424373994226,
+        "seed": 13013
+      },
+      "scientific_verdict": "threshold_replicated_but_blocked_control_not_distinguishable",
+      "scientific_verdict_rationale": "Threshold logic fires replicated on a substrate-suitable corpus; contributes to L5 candidacy. claim_eligible remains False until D21 densification audit signs the source world as claim_ready_densified. Campaign 014 substrate-blocked control did not distinguish observed floor gap from within-stratum shuffled labels; final L5 advancement is therefore false.",
+      "split_breakdown": {
+        "holdout": 36,
+        "train": 60
+      },
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 16,
+        "floor_label_false_count": 8,
+        "floor_label_true_count": 8,
+        "label_balance_ratio": 0.5,
+        "minority_class_count": 8,
+        "rationale": "Floor motif on substrate 'quasispecies': 8 label=True / 8 label=False; both classes present above minimum threshold. Threshold logic is applicable and the verdict is scientifically meaningful subject to D18-locked methodology.",
+        "step_0_status": "motif_present_balanced",
+        "threshold_logic_eligible": true,
+        "world_family": "quasispecies"
+      },
+      "threshold_only_l5_candidacy_advancement": true,
+      "threshold_only_scientific_verdict": "replicated",
+      "threshold_verdict": {
+        "empirical_p": 0.004995004995004995,
+        "formal_gap": 0.2814099571448,
+        "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+        "threshold_check": {
+          "formal_gap_threshold": 0.2,
+          "p_threshold": 0.05,
+          "replicated": true
+        },
+        "verdict": "replicated"
+      },
+      "trace_count": 16,
+      "world_family": "quasispecies"
+    },
+    "symbiogenesis": {
+      "all_motif_gaps": [
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "petri",
+          "formal_gap": 0.10759411046017997,
+          "max_coverage_score": 0.826461112161,
+          "motif_id": "motif.autocatalytic_closure.draft"
+        },
+        {
+          "attractor_strength": 0.7,
+          "best_lens": "graph",
+          "formal_gap": 0.12427725765069997,
+          "max_coverage_score": 0.822461060499,
+          "motif_id": "motif.externalized_memory.draft"
+        },
+        {
+          "attractor_strength": 0.88,
+          "best_lens": "dynamical_systems",
+          "formal_gap": 0.26492914115976,
+          "max_coverage_score": 0.698944157773,
+          "motif_id": "motif.floor_connectivity.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "petri",
+          "formal_gap": 0.10759411046017997,
+          "max_coverage_score": 0.826461112161,
+          "motif_id": "motif.repair.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.02482414249062001,
+          "max_coverage_score": 0.959961060499,
+          "motif_id": "motif.replication_lineage.draft"
+        },
+        {
+          "attractor_strength": 0.74,
+          "best_lens": "petri",
+          "formal_gap": 0.12841877700085996,
+          "max_coverage_score": 0.826461112161,
+          "motif_id": "motif.self_maintained_boundary.draft"
+        }
+      ],
+      "blocked_control_adjusted": true,
+      "blocked_control_verdict": "signal_not_distinguishable_after_substrate_blocking",
+      "claim_eligible": false,
+      "coverage_count": 48,
+      "evaluation_count": 768,
+      "evidence_row_count": 96,
+      "formal_gap": {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.26492914115976,
+        "max_coverage_score": 0.698944157773,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 16
+        },
+        "motif.externalized_memory.draft": {
+          "false": 16
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 8,
+          "true": 8
+        },
+        "motif.repair.draft": {
+          "true": 16
+        },
+        "motif.replication_lineage.draft": {
+          "false": 8,
+          "true": 8
+        },
+        "motif.self_maintained_boundary.draft": {
+          "true": 16
+        }
+      },
+      "lens_decline_rates": {
+        "control_theory": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "crnt": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "dynamical_systems": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "graph": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "information": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "petri": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "statistical_mechanics": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        },
+        "topology": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 16,
+            "total_count": 16
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 16
+          }
+        }
+      },
+      "n7": {
+        "N": 1000,
+        "empirical_p": 0.002997002997002997,
+        "null_ci": {
+          "ci_high": 0.03655936069504084,
+          "ci_low": 0.028832470562199106,
+          "mean": 0.032695915628619975,
+          "width": 0.007726890132841738
+        },
+        "null_mean": 0.032695915628619975,
+        "observed_statistic": 0.16638746154725204,
+        "seed": 13013
+      },
+      "scientific_verdict": "threshold_replicated_but_blocked_control_not_distinguishable",
+      "scientific_verdict_rationale": "Threshold logic fires replicated on a substrate-suitable corpus; contributes to L5 candidacy. claim_eligible remains False until D21 densification audit signs the source world as claim_ready_densified. Campaign 014 substrate-blocked control did not distinguish observed floor gap from within-stratum shuffled labels; final L5 advancement is therefore false.",
+      "split_breakdown": {
+        "holdout": 36,
+        "train": 60
+      },
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 16,
+        "floor_label_false_count": 8,
+        "floor_label_true_count": 8,
+        "label_balance_ratio": 0.5,
+        "minority_class_count": 8,
+        "rationale": "Floor motif on substrate 'symbiogenesis': 8 label=True / 8 label=False; both classes present above minimum threshold. Threshold logic is applicable and the verdict is scientifically meaningful subject to D18-locked methodology.",
+        "step_0_status": "motif_present_balanced",
+        "threshold_logic_eligible": true,
+        "world_family": "symbiogenesis"
+      },
+      "threshold_only_l5_candidacy_advancement": true,
+      "threshold_only_scientific_verdict": "replicated",
+      "threshold_verdict": {
+        "empirical_p": 0.002997002997002997,
+        "formal_gap": 0.26492914115976,
+        "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+        "threshold_check": {
+          "formal_gap_threshold": 0.2,
+          "p_threshold": 0.05,
+          "replicated": true
+        },
+        "verdict": "replicated"
+      },
+      "trace_count": 16,
+      "world_family": "symbiogenesis"
+    }
+  },
+  "threshold_source": "Campaign 013 thresholds remain locked; Campaign 014 changes the corpus, not the basis or lens registry.",
+  "trace_generation": {
+    "all_labels_match_expected_mechanism": true,
+    "label_source": "formalism.lens_registry._label_feature_for_motif on exported trace",
+    "rows": [
+      {
+        "event_count": 1457,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14000,
+        "state_count": 121,
+        "trace_id": "sha256:4b6757c99147734730144e5ffbc26ca03e7d1ae8b8e4badc7e7adf279d27d97d",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_00.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 770,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14100,
+        "state_count": 121,
+        "trace_id": "sha256:ec8c0663d5f2b1d1f785100755bcbc6af4ecdc32cde39f7613b44241545d6b67",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_00.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 1461,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14001,
+        "state_count": 121,
+        "trace_id": "sha256:8cef04dc1529f889d4e0d07a0adf3324c6dce2306a6bdaa0172deb86f6afb76f",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_01.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 757,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14101,
+        "state_count": 121,
+        "trace_id": "sha256:fb1d6cf1a33ef8b7a65e58fdb525ee26f878b17f64f8c2f1382fe1fc48d8a499",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_01.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 1457,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14002,
+        "state_count": 121,
+        "trace_id": "sha256:d05366f217172637841fdcd07bd773ff7cd35f3cf7d26a8fe75fe76be6e677c2",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_02.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 776,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14102,
+        "state_count": 121,
+        "trace_id": "sha256:471262497b1a9b448318119dcd8a878d8a5a96f4cb4fe6487148f1ed85d083b7",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_02.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 1459,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14003,
+        "state_count": 121,
+        "trace_id": "sha256:07273919c6aa9ce1e388e5a40f46fd1e41f6daee4e0158abde45c3a879c60351",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_03.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 764,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14103,
+        "state_count": 121,
+        "trace_id": "sha256:19111f34a8f718f87d04d7ec8e368073d2a36e42c268c7966fcab7d44f5e9ab1",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_03.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 1448,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14004,
+        "state_count": 121,
+        "trace_id": "sha256:baf9d36caab43d569904721d59abd270c29d9ee866468068126ac83b90991881",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_04.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 769,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14104,
+        "state_count": 121,
+        "trace_id": "sha256:bdc2096e7637cb8ef85767182f68bb447a6ca2e9d28d11f0c5bfc21bee275755",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_04.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 1447,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14005,
+        "state_count": 121,
+        "trace_id": "sha256:a2308afca692d7413feaf751925cc9234077d4fe5e6f12742d424e105b9291eb",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_05.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 763,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14105,
+        "state_count": 121,
+        "trace_id": "sha256:7fc4b2a3f1500002c494c10280013a38214d4783a531be2a37e141c8b6453388",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_05.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 1453,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14006,
+        "state_count": 121,
+        "trace_id": "sha256:b577947b67e9f5c3ee730213a1c8b289a85083a4287b8373485fe658d65b1350",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_06.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 769,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14106,
+        "state_count": 121,
+        "trace_id": "sha256:380c3d119fa1409f02586e83cbf3e505ed2ba04976436cc98e8e660912abfd6b",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_06.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 1453,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "adaptive_attention_entropy_channel",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 14007,
+        "state_count": 121,
+        "trace_id": "sha256:c23c361830b2689af0aeb46413e1708df383e6f9fbf906473e112a5f95d563fd",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_positive_07.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 766,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "attention_floor_channel_disabled",
+        "implementation_id": "w8.cognitive.adaptive_control",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 14107,
+        "state_count": 121,
+        "trace_id": "sha256:a5ad91d198a3b9fedd964a905ead4adba83be9cd8bd82b4a4d637a2f7fbe0de6",
+        "trace_path": "reports/campaign_014/traces/cognitive/w8_floor_negative_07.json",
+        "world_family": "cognitive"
+      },
+      {
+        "event_count": 4768,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15000,
+        "state_count": 61,
+        "trace_id": "sha256:5d4f0ec49349b23691de30e59163f0c77bab39f2165a517eb595f92b7727fd47",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_00.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7437,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15100,
+        "state_count": 61,
+        "trace_id": "sha256:27f7aa9ffeb744bf20d66428303268fd1b2d2ea65f95639a84862413774b5012",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_00.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 4841,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15001,
+        "state_count": 61,
+        "trace_id": "sha256:9307ad08ed84a48a717b4e085c19978484b4b14778624fc29582b4b5d68f7560",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_01.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7474,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15101,
+        "state_count": 61,
+        "trace_id": "sha256:428e0f8025c9e4b7e2855360b4551db7748925e697bdec36046cf92f51737e15",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_01.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 4879,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15002,
+        "state_count": 61,
+        "trace_id": "sha256:4c32a2bba05c8c965283f7ad70a65296146af326327c0586ea6a4ec5026c52ed",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_02.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7481,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15102,
+        "state_count": 61,
+        "trace_id": "sha256:c864b1ad82fa43dafce278edbc320a9345218e2b72be320f038463033dd1352c",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_02.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 4876,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15003,
+        "state_count": 61,
+        "trace_id": "sha256:d53bde42a731a735737f413b0aaee17ed07afb5bfc30bdd4e77ec380f49a159a",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_03.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7648,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15103,
+        "state_count": 61,
+        "trace_id": "sha256:ed89d910cc82c1c7454e13bcb7ef21d6576fa1bf8c91d465b15ebe2c7ce640e9",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_03.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 4834,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15004,
+        "state_count": 61,
+        "trace_id": "sha256:5e5bce5474c836d32b07d25c7bd51dbd3af2275516d99a4fa4d09a7a9aacb620",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_04.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7399,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15104,
+        "state_count": 61,
+        "trace_id": "sha256:c5411d5b71d415513be6c2c2dccd9ef4063b43f3026748c308b01a15927970a6",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_04.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 4866,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15005,
+        "state_count": 61,
+        "trace_id": "sha256:47551ce60fdf106115ed57523c8d9061ed2ed38cb426c5fbca982d8629d75771",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_05.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7518,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15105,
+        "state_count": 61,
+        "trace_id": "sha256:714a572c991920bcf2e8f6c4fc80db519d7e2dbfd373961b8a0357f1c9381886",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_05.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 4823,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15006,
+        "state_count": 61,
+        "trace_id": "sha256:3487abe5e10a6d53c9f0589ed80441d51bac763b36645192c7ecd78a61086e1d",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_06.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7524,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15106,
+        "state_count": 61,
+        "trace_id": "sha256:ff351e86767842d9a97bedc2246f15ddee45fa5719ed1c56946919395e3e6f2c",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_06.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 4884,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "neutral_component_sequence_floor",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 15007,
+        "state_count": 61,
+        "trace_id": "sha256:20aeb63ca60eba3d96c224caab2f4fd935ccab77c6d372e484ca8912df1e7760",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_positive_07.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 7599,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "neutral_floor_channel_disabled_single_peak",
+        "implementation_id": "w11.quasispecies.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 15107,
+        "state_count": 61,
+        "trace_id": "sha256:d9d58fd0a36e9986426b137252a4ca309e5257b8b2ec6307191e4890a07b1e0f",
+        "trace_path": "reports/campaign_014/traces/quasispecies/w11_floor_negative_07.json",
+        "world_family": "quasispecies"
+      },
+      {
+        "event_count": 3119,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16000,
+        "state_count": 91,
+        "trace_id": "sha256:3a925f4bae4f963b2a15ad0528ab0150834ce5b283e465ce7b2b38e2bab27fb4",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_00.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16100,
+        "state_count": 91,
+        "trace_id": "sha256:a227012a0c9bfcb2767077c7f0ad16c1410ff740aa8bb3c2e2e21948ebd3b89b",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_00.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 3121,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16001,
+        "state_count": 91,
+        "trace_id": "sha256:1907d7a3ad9162734e4397dac877a40f38666ce6f21e35ae3326bc081bd7a23b",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_01.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16101,
+        "state_count": 91,
+        "trace_id": "sha256:29eaa3809a313ea4626c36ea647b02a828c8315f5c6992e66e3edd94c0285ab6",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_01.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 3123,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16002,
+        "state_count": 91,
+        "trace_id": "sha256:55ba986d905259a5966c9099becf8f5be044ee788e1bc50fcfcfcfa0f7ec3ce4",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_02.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16102,
+        "state_count": 91,
+        "trace_id": "sha256:fe29af1dea703c414616beaf6cbd658dcc05ec02cdf78d0b0b0b245454f9e11c",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_02.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 3127,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16003,
+        "state_count": 91,
+        "trace_id": "sha256:39d3d259429779deb3e6061ae2cb9ad2e74fbb4e91633978da998508510ebab5",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_03.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16103,
+        "state_count": 91,
+        "trace_id": "sha256:52f4f219c4945c774f78f7aad365334f604dabffb6ee60f19eb27b0d7e5e75b0",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_03.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 3116,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16004,
+        "state_count": 91,
+        "trace_id": "sha256:f1d6d28c770dfc9f4c917f052c8b01f983c41d908916b27ae1652af2b2b16744",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_04.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16104,
+        "state_count": 91,
+        "trace_id": "sha256:e256c30ddf54a82572565b7521d14a4f4d0f92ac2f552763cf6d1aad7fb2b365",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_04.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 3119,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16005,
+        "state_count": 91,
+        "trace_id": "sha256:22b093647d6221c5b4c02736b9db2129d65bca294f43b5981373b01a72ff4d3c",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_05.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16105,
+        "state_count": 91,
+        "trace_id": "sha256:a55a35950010bf73ed909a3afed0d340a6f321d5676b46ca2e14b862516938d7",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_05.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 3125,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16006,
+        "state_count": 91,
+        "trace_id": "sha256:aa91fa7aa8719414bed5db0539f574b60a21886f903e5a7e928905c03c89e248",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_06.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16106,
+        "state_count": 91,
+        "trace_id": "sha256:0b662308fdae693aa39c677c4c8436ba7a49752a58b19ec3f1553ff3831f5d40",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_06.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 3127,
+        "expected_floor_label_for_audit_only": true,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": true,
+        "mechanism_class": "floor_positive",
+        "seed": 16007,
+        "state_count": 91,
+        "trace_id": "sha256:685ea88eb3a6c3f3c237d0dfc5ede38c76acfea2f09c23371266823a150dc11d",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_positive_07.json",
+        "world_family": "symbiogenesis"
+      },
+      {
+        "event_count": 1613,
+        "expected_floor_label_for_audit_only": false,
+        "floor_foundry_mechanism": "nested_lineage_floor_channel_disabled",
+        "implementation_id": "w12.symbiogenesis.production",
+        "implementation_version": "0.8.1",
+        "label_matches_expected_mechanism": true,
+        "locked_predicate_floor_label": false,
+        "mechanism_class": "floor_negative",
+        "seed": 16107,
+        "state_count": 91,
+        "trace_id": "sha256:94a9866fa4e0dc22a3c14a61bddb077ebe7ebe388609fd6ef4e1d800cd608978",
+        "trace_path": "reports/campaign_014/traces/symbiogenesis/w12_floor_negative_07.json",
+        "world_family": "symbiogenesis"
+      }
+    ],
+    "schema": "Campaign014TraceGeneration.v1",
+    "trace_count": 48,
+    "trace_root": "reports/campaign_014/traces"
+  }
+}

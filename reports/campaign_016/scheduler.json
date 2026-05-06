@@ -1,0 +1,10 @@
+{
+  "cadence_seconds": 3600,
+  "command": "python observatory_cli.py campaign016 --routine-ingest",
+  "dry_run_default": true,
+  "mode": "loop_or_task_scheduler",
+  "requires_ai_runtime": false,
+  "schedule_id": "factory.low_level.hourly.dry_run",
+  "schema": "LowLevelFactorySchedule.v1",
+  "windows_task_scheduler_hint": "schtasks /Create /SC HOURLY /TN AttractorLowLevelFactory /TR \"python observatory_cli.py campaign016 --routine-ingest\""
+}

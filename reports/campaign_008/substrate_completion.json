@@ -112,8 +112,8 @@
           "line_floor": 500,
           "line_floor_met": false,
           "path": "worlds\\quasispecies\\model.py",
-          "scaffolding_lines": 42,
-          "simulation_logic_lines": 428,
+          "scaffolding_lines": 43,
+          "simulation_logic_lines": 471,
           "substance_audit": {
             "complete": true,
             "exists": true,
@@ -122,11 +122,11 @@
             "verdict": "meets_spec_with_caveats"
           },
           "substance_gate_met": true,
-          "substantive_lines": 428,
-          "test_count": 16,
+          "substantive_lines": 471,
+          "test_count": 31,
           "test_floor": 12,
           "test_floor_met": true,
-          "total_lines": 471,
+          "total_lines": 515,
           "trace_export_lines": 1,
           "world_id": "W11"
         },
@@ -135,8 +135,8 @@
           "line_floor": 600,
           "line_floor_met": false,
           "path": "worlds\\symbiogenesis\\model.py",
-          "scaffolding_lines": 36,
-          "simulation_logic_lines": 407,
+          "scaffolding_lines": 37,
+          "simulation_logic_lines": 446,
           "substance_audit": {
             "complete": true,
             "exists": true,
@@ -145,11 +145,11 @@
             "verdict": "meets_spec_with_caveats"
           },
           "substance_gate_met": true,
-          "substantive_lines": 407,
-          "test_count": 16,
+          "substantive_lines": 446,
+          "test_count": 31,
           "test_floor": 12,
           "test_floor_met": true,
-          "total_lines": 444,
+          "total_lines": 484,
           "trace_export_lines": 1,
           "world_id": "W12"
         },
@@ -215,7 +215,7 @@
           },
           "substance_gate_met": true,
           "substantive_lines": 478,
-          "test_count": 16,
+          "test_count": 44,
           "test_floor": 12,
           "test_floor_met": true,
           "total_lines": 533,
@@ -227,8 +227,8 @@
           "line_floor": 600,
           "line_floor_met": false,
           "path": "worlds\\cognitive\\model.py",
-          "scaffolding_lines": 40,
-          "simulation_logic_lines": 432,
+          "scaffolding_lines": 43,
+          "simulation_logic_lines": 478,
           "substance_audit": {
             "complete": true,
             "exists": true,
@@ -237,12 +237,12 @@
             "verdict": "meets_spec_with_caveats"
           },
           "substance_gate_met": true,
-          "substantive_lines": 432,
-          "test_count": 16,
+          "substantive_lines": 478,
+          "test_count": 47,
           "test_floor": 12,
           "test_floor_met": true,
-          "total_lines": 487,
-          "trace_export_lines": 15,
+          "total_lines": 540,
+          "trace_export_lines": 19,
           "world_id": "W8"
         },
         "W9": {
@@ -427,6 +427,7 @@
         "fitness_recovery_event",
         "indel_event",
         "innovation_front_event",
+        "landscape_connectivity_event",
         "mutation_event",
         "neutral_percolation_event",
         "neutral_transition_event",
@@ -440,8 +441,8 @@
         "line_floor": 500,
         "line_floor_met": false,
         "path": "worlds\\quasispecies\\model.py",
-        "scaffolding_lines": 42,
-        "simulation_logic_lines": 428,
+        "scaffolding_lines": 43,
+        "simulation_logic_lines": 471,
         "substance_audit": {
           "complete": true,
           "exists": true,
@@ -450,11 +451,11 @@
           "verdict": "meets_spec_with_caveats"
         },
         "substance_gate_met": true,
-        "substantive_lines": 428,
-        "test_count": 16,
+        "substantive_lines": 471,
+        "test_count": 31,
         "test_floor": 12,
         "test_floor_met": true,
-        "total_lines": 471,
+        "total_lines": 515,
         "trace_export_lines": 1,
         "world_id": "W11"
       }
@@ -505,8 +506,8 @@
         "line_floor": 600,
         "line_floor_met": false,
         "path": "worlds\\symbiogenesis\\model.py",
-        "scaffolding_lines": 36,
-        "simulation_logic_lines": 407,
+        "scaffolding_lines": 37,
+        "simulation_logic_lines": 446,
         "substance_audit": {
           "complete": true,
           "exists": true,
@@ -515,11 +516,11 @@
           "verdict": "meets_spec_with_caveats"
         },
         "substance_gate_met": true,
-        "substantive_lines": 407,
-        "test_count": 16,
+        "substantive_lines": 446,
+        "test_count": 31,
         "test_floor": 12,
         "test_floor_met": true,
-        "total_lines": 444,
+        "total_lines": 484,
         "trace_export_lines": 1,
         "world_id": "W12"
       }
@@ -700,7 +701,7 @@
         },
         "substance_gate_met": true,
         "substantive_lines": 478,
-        "test_count": 16,
+        "test_count": 44,
         "test_floor": 12,
         "test_floor_met": true,
         "total_lines": 533,
@@ -711,21 +712,21 @@
     "W8C": {
       "controls": [
         {
-          "control": 0.2935337235587936,
+          "control": 0.29353797645338076,
           "direction": "higher",
-          "effect_size": 0.4954618965755757,
+          "effect_size": 0.49550504759397973,
           "label": "action_homeostasis",
           "passed": true,
-          "positive": 0.7889956201343693,
+          "positive": 0.7890430240473605,
           "threshold": 0.1
         },
         {
           "control": 0.8696476375475078,
           "direction": "higher",
-          "effect_size": 0.05000352249863216,
+          "effect_size": 0.05009541269654871,
           "label": "prediction_error_reduction",
           "passed": true,
-          "positive": 0.91965116004614,
+          "positive": 0.9197430502440566,
           "threshold": 0.02
         }
       ],
@@ -740,6 +741,7 @@
         "energy_budget_event",
         "external_mark_event",
         "homeostasis_event",
+        "kernel_prediction_event",
         "learning_gain_event",
         "memory_read_event",
         "memory_write_event",
@@ -753,8 +755,8 @@
         "line_floor": 600,
         "line_floor_met": false,
         "path": "worlds\\cognitive\\model.py",
-        "scaffolding_lines": 40,
-        "simulation_logic_lines": 432,
+        "scaffolding_lines": 43,
+        "simulation_logic_lines": 478,
         "substance_audit": {
           "complete": true,
           "exists": true,
@@ -763,12 +765,12 @@
           "verdict": "meets_spec_with_caveats"
         },
         "substance_gate_met": true,
-        "substantive_lines": 432,
-        "test_count": 16,
+        "substantive_lines": 478,
+        "test_count": 47,
         "test_floor": 12,
         "test_floor_met": true,
-        "total_lines": 487,
-        "trace_export_lines": 15,
+        "total_lines": 540,
+        "trace_export_lines": 19,
         "world_id": "W8"
       }
     },

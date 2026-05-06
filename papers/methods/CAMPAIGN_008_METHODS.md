@@ -29,14 +29,14 @@ Causal controls:
 ## W8 cognitive
 
 Positive benchmarks:
-- homeostasis: passed=True; metrics={'within_tolerance_fraction': 0.2983425414364641, 'final_deviation': 0.18915063934360354}
-- anticipation: passed=True; metrics={'prediction_error_reduction': 0.245187527954016, 'prediction_error': 0.06975472390929656, 'baseline_error': 0.09241331654234645}
+- homeostasis: passed=True; metrics={'within_tolerance_fraction': 0.2983425414364641, 'final_deviation': 0.18885110745293487}
+- anticipation: passed=True; metrics={'prediction_error_reduction': 0.24422299598205288, 'prediction_error': 0.0698590976456082, 'baseline_error': 0.09243347875658478}
 - externalized_memory: passed=True; metrics={'external_memory_effect': 0.36000000000000004, 'external_mark_count': 24.0, 'within_tolerance_fraction': 0.39226519337016574}
-- attention_budget: passed=True; metrics={'attention_budget': 0.45, 'prediction_error': 0.44283626001686194, 'deviation': 0.5312803498709937}
+- attention_budget: passed=True; metrics={'attention_budget': 0.45, 'prediction_error': 0.4450492628766848, 'deviation': 0.5320980510223983}
 
 Causal controls:
 - action_homeostasis: effect=0.4955; threshold=0.1; passed=True
-- prediction_error_reduction: effect=0.0500; threshold=0.02; passed=True
+- prediction_error_reduction: effect=0.0501; threshold=0.02; passed=True
 
 ## W9 origins_chemistry
 

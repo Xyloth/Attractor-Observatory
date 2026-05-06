@@ -1,0 +1,2052 @@
+{
+  "completed_at": "2026-05-05T23:33:19Z",
+  "normalized_refs": [
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:1601ec14e55e41240443907ea6878e1efe6ff77737387eaec531984172c63d94",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "CH4",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:16eaa974eeccfb12984df07943589ea30cd2eae497f6dfde0da129f7872595af",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "H3N",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dr/dt = mu*r - r^3; dtheta/dt = omega",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:1ce222a15e67febd0112744cbe4e367c938715a475ca5cdd4ff726f6eaeb27de",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "mu": 1.0,
+              "omega": 1.0
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "stable_radius",
+              "phase_translation"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "stable_limit_cycle",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dr/dt = mu*r - r^3; dtheta/dt = omega",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "limit_cycle",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "limit_cycle",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.limit_cycle"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.stable_limit_cycle",
+          "label": "stable_limit_cycle",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "stable_limit_cycle",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              11.548,
+              0.28,
+              3.9316119
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:25f4bd3b06f869489c15670e55ae7434664a8e29f0875b6b445f89a757456fee",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 15.7596119,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              11.548,
+              0.28,
+              3.9316119
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Ar",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:3f3488c5b34d24a71721e8f040c8d78c9a6ce8c0f0da8ec5d43d65bd80091ab7",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "a": 0.2,
+              "b": 0.2,
+              "c": 5.7
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "spiral_band",
+              "folding_return"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "strange_attractor",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.strange_attractor"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.strange_attractor",
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 3,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:6176e97cdfdfd7ae21815460d74c80e7e9d5fbd89bcfa959497feb92b318242e",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "CO2",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 3,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              19.81961484,
+              1.14447219,
+              3.623301981
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:6582297db9bf98ae1ba22bae5dfaf21c0ac1b5cc16f04b775da0fa715fa37474",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 24.587389011,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              19.81961484,
+              1.14447219,
+              3.623301981
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "He",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dx/dt = -lambda*x",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:68cdca6b928cf0edb7730ae1dbe661273fc9a03a8586be45e526a3f24d1b3cf1",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "lambda": 1.0
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "negative_real_eigenvalue",
+              "single_basin"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "asymptotically_stable_fixed_point",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dx/dt = -lambda*x",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "fixed_point",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "fixed_point",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.fixed_point"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.asymptotically_stable_fixed_point",
+          "label": "asymptotically_stable_fixed_point",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "asymptotically_stable_fixed_point",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "example low-dimensional polynomial chaotic flow",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:73878c230db53e7afece8aa0afd05292ba10ddd9648a2b5afdd1df45a949cd3e",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "family": "Sprott"
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "low_term_count",
+              "chaotic_flow"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "strange_attractor_family",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "example low-dimensional polynomial chaotic flow",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "strange_attractor",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.strange_attractor"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.strange_attractor_family",
+          "label": "strange_attractor_family",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "strange_attractor_family",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:7a71d17b4230f6b2c9a9c02b8d5ee31e44a8e13b78a990cccd1eb7bd7cdf79b4",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "omega1": 1.0,
+              "omega2": 1.41421356237
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "angle_wrap",
+              "irrational_frequency_ratio"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "quasiperiodic_torus",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "torus",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "torus",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.torus"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.quasiperiodic_torus",
+          "label": "quasiperiodic_torus",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "quasiperiodic_torus",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:7dea8a3642fb4ba0cf386234bdf9e554008425995308ef3e59dc53803d17c602",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "H2O",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:9aa2b980feb1b83e8b2dd1d73852bc46f791cb91217f2b03fee9b089a6503966",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "C6H6",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 0,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": []
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              1.847823,
+              1.525327,
+              2.01856495
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:c41df65e3c36b61f6b1b7ad0e974c53b1c1cf73765d1a440499159308d968d73",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 5.39171495,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              1.847823,
+              1.525327,
+              2.01856495
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Li",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              10.19880615024,
+              1.88868750886,
+              1.510940940602
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:d0599f70033f8fb47027a24b9f8f7d10f9047eeb4594b92539d540e8cc02999d",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 13.598434599702,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              10.19880615024,
+              1.88868750886,
+              1.510940940602
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "H",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              16.619,
+              0.229,
+              4.71654
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:d7970a4fbf4b824ebd50ec883bfeca1c3670b2196bf9d73219186df81400fa4f",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 21.56454,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              16.619,
+              0.229,
+              4.71654
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Ne",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:e0bef14ef03df0bc073fb67bbc76b6e12ca81cd4f074136fae5340a6a90c5d1c",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "beta": 2.6666666667,
+              "rho": 28.0,
+              "sigma": 10.0
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "sensitive_dependence",
+              "bounded_absorbing_region"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "strange_attractor",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.strange_attractor"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.strange_attractor",
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    }
+  ],
+  "records": [
+    {
+      "canonical_name": "NIST energy levels He I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "He",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          19.81961484,
+          1.14447219,
+          3.623301981
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 24.587389011,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "He I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=He+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 222 H3N",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 222,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "H3N",
+        "molecular_weight": 17.031,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/222",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/222/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "rossler_1976_continuous_chaos",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "rossler_1976_continuous_chaos",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor",
+        "invariants": [
+          "spiral_band",
+          "folding_return"
+        ],
+        "parameters": {
+          "a": 0.2,
+          "b": 0.2,
+          "c": 5.7
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Rossler, An Equation for Continuous Chaos, Physics Letters A, 1976.",
+        "doi": "10.1016/0375-9601(76)90101-8",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1016/0375-9601(76)90101-8"
+      },
+      "record_id": "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "sprott_simple_chaotic_flow",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "sprott_simple_chaotic_flow",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor_family",
+        "invariants": [
+          "low_term_count",
+          "chaotic_flow"
+        ],
+        "parameters": {
+          "family": "Sprott"
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "example low-dimensional polynomial chaotic flow"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Sprott, Some simple chaotic flows, Physical Review E, 1994.",
+        "doi": "10.1103/PhysRevE.50.R647",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1103/PhysRevE.50.R647"
+      },
+      "record_id": "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "hopf_limit_cycle_normal_form",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "hopf_limit_cycle_normal_form",
+        "dimension": 2,
+        "expected_stable_form": "stable_limit_cycle",
+        "invariants": [
+          "stable_radius",
+          "phase_translation"
+        ],
+        "parameters": {
+          "mu": 1.0,
+          "omega": 1.0
+        },
+        "primitive_class": "limit_cycle",
+        "state_equation": "dr/dt = mu*r - r^3; dtheta/dt = omega"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Guckenheimer and Holmes, Hopf bifurcation normal form.",
+        "doi": "10.1007/978-1-4757-3976-6",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6"
+      },
+      "record_id": "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels Ne I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 3,
+        "element_symbol": "Ne",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          16.619,
+          0.229,
+          4.71654
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 21.56454,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Ne I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Ne+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels Ar I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 3,
+        "element_symbol": "Ar",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          11.548,
+          0.28,
+          3.9316119
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 15.7596119,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Ar I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Ar+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "fixed_point_linear_sink",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "fixed_point_linear_sink",
+        "dimension": 1,
+        "expected_stable_form": "asymptotically_stable_fixed_point",
+        "invariants": [
+          "negative_real_eigenvalue",
+          "single_basin"
+        ],
+        "parameters": {
+          "lambda": 1.0
+        },
+        "primitive_class": "fixed_point",
+        "state_equation": "dx/dt = -lambda*x"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Guckenheimer and Holmes, Nonlinear Oscillations, Dynamical Systems, and Bifurcations of Vector Fields.",
+        "doi": "10.1007/978-1-4757-3976-6",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6"
+      },
+      "record_id": "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 297 CH4",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 297,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "CH4",
+        "molecular_weight": 16.043,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/297",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/297/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 280 CO2",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 280,
+        "complexity": 18.0,
+        "heavy_atom_count": 3,
+        "molecular_formula": "CO2",
+        "molecular_weight": 44.009,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/280",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/280/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels Li I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "Li",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          1.847823,
+          1.525327,
+          2.01856495
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 5.39171495,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Li I",
+        "term_count": 3
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Li+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 962 H2O",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 962,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "H2O",
+        "molecular_weight": 18.015,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/962",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/962/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 241 C6H6",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 241,
+        "complexity": 15.0,
+        "heavy_atom_count": 6,
+        "molecular_formula": "C6H6",
+        "molecular_weight": 78.11,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/241",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/241/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels H I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "H",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          10.19880615024,
+          1.88868750886,
+          1.510940940602
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 13.598434599702,
+        "reference_count": 2,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "H I",
+        "term_count": 3
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=H+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "lorenz_1963_strange_attractor",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "lorenz_1963_strange_attractor",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor",
+        "invariants": [
+          "sensitive_dependence",
+          "bounded_absorbing_region"
+        ],
+        "parameters": {
+          "beta": 2.6666666667,
+          "rho": 28.0,
+          "sigma": 10.0
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Lorenz, Deterministic Nonperiodic Flow, Journal of the Atmospheric Sciences, 1963.",
+        "doi": "10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2"
+      },
+      "record_id": "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "quasiperiodic_torus_flow",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "quasiperiodic_torus_flow",
+        "dimension": 2,
+        "expected_stable_form": "quasiperiodic_torus",
+        "invariants": [
+          "angle_wrap",
+          "irrational_frequency_ratio"
+        ],
+        "parameters": {
+          "omega1": 1.0,
+          "omega2": 1.41421356237
+        },
+        "primitive_class": "torus",
+        "state_equation": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Katok and Hasselblatt, Introduction to the Modern Theory of Dynamical Systems.",
+        "doi": "10.1007/978-1-4612-1140-2",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1007/978-1-4612-1140-2"
+      },
+      "record_id": "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    }
+  ],
+  "registry": {
+    "schema": "LowLevelSourceRegistry.v1",
+    "sources": [
+      {
+        "adapter_id": "adapter.math_primitives.peer_reviewed_catalog.v0",
+        "auth_required": false,
+        "format": "curated DOI catalog",
+        "license_class": "metadata_only",
+        "license_note": "Bibliographic metadata and derived canonical descriptors only; no article text redistributed.",
+        "name": "Peer-reviewed canonical dynamical-system primitive catalog",
+        "refresh_cadence": "manual_spec_review",
+        "retrieval_mode_default": "dry_run",
+        "source_id": "source.math_primitives.peer_reviewed_catalog",
+        "target_world": "math_primitives",
+        "url": "doi-backed curated catalog embedded in Campaign 016"
+      },
+      {
+        "adapter_id": "adapter.nist_atomic_spectra.energy_levels.v0",
+        "auth_required": false,
+        "format": "NIST ASD CSV via energy1.pl",
+        "license_class": "metadata_only",
+        "license_note": "NIST Standard Reference Database 78 is authoritative; Campaign 016 exports derived summaries and provenance only, not raw redistribution.",
+        "name": "NIST Atomic Spectra Database energy levels",
+        "refresh_cadence": "monthly",
+        "retrieval_mode_default": "dry_run",
+        "source_id": "source.nist.asd.energy_levels",
+        "target_world": "atomic_molecular_primitives",
+        "url": "https://www.nist.gov/pml/atomic-spectra-database"
+      },
+      {
+        "adapter_id": "adapter.pubchem.small_molecule_primitives.v0",
+        "auth_required": false,
+        "format": "PubChem PUG-REST JSON property table",
+        "license_class": "metadata_only",
+        "license_note": "PubChem aggregates many source contributors; Campaign 016 stores compact derived molecular topology summaries with per-record PubChem URLs and no bulk redistribution.",
+        "name": "PubChem PUG-REST small molecule properties",
+        "refresh_cadence": "monthly",
+        "retrieval_mode_default": "dry_run",
+        "source_id": "source.pubchem.pugrest.small_molecules",
+        "target_world": "atomic_molecular_primitives",
+        "url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest"
+      }
+    ],
+    "validation": {
+      "passed": true,
+      "schema": "LowLevelSourceRegistryValidation.v1",
+      "source_count": 3,
+      "sources": [
+        {
+          "adapter_id": "adapter.math_primitives.peer_reviewed_catalog.v0",
+          "auth_required": false,
+          "export_allowed": true,
+          "format": "curated DOI catalog",
+          "license_class": "metadata_only",
+          "license_note": "Bibliographic metadata and derived canonical descriptors only; no article text redistributed.",
+          "name": "Peer-reviewed canonical dynamical-system primitive catalog",
+          "raw_redistribution_allowed": false,
+          "refresh_cadence": "manual_spec_review",
+          "retrieval_mode_default": "dry_run",
+          "source_id": "source.math_primitives.peer_reviewed_catalog",
+          "target_world": "math_primitives",
+          "url": "doi-backed curated catalog embedded in Campaign 016"
+        },
+        {
+          "adapter_id": "adapter.nist_atomic_spectra.energy_levels.v0",
+          "auth_required": false,
+          "export_allowed": true,
+          "format": "NIST ASD CSV via energy1.pl",
+          "license_class": "metadata_only",
+          "license_note": "NIST Standard Reference Database 78 is authoritative; Campaign 016 exports derived summaries and provenance only, not raw redistribution.",
+          "name": "NIST Atomic Spectra Database energy levels",
+          "raw_redistribution_allowed": false,
+          "refresh_cadence": "monthly",
+          "retrieval_mode_default": "dry_run",
+          "source_id": "source.nist.asd.energy_levels",
+          "target_world": "atomic_molecular_primitives",
+          "url": "https://www.nist.gov/pml/atomic-spectra-database"
+        },
+        {
+          "adapter_id": "adapter.pubchem.small_molecule_primitives.v0",
+          "auth_required": false,
+          "export_allowed": true,
+          "format": "PubChem PUG-REST JSON property table",
+          "license_class": "metadata_only",
+          "license_note": "PubChem aggregates many source contributors; Campaign 016 stores compact derived molecular topology summaries with per-record PubChem URLs and no bulk redistribution.",
+          "name": "PubChem PUG-REST small molecule properties",
+          "raw_redistribution_allowed": false,
+          "refresh_cadence": "monthly",
+          "retrieval_mode_default": "dry_run",
+          "source_id": "source.pubchem.pugrest.small_molecules",
+          "target_world": "atomic_molecular_primitives",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest"
+        }
+      ],
+      "violations": []
+    }
+  },
+  "requires_ai_runtime": false,
+  "routed_worlds": [
+    {
+      "empirical_record_count": 10,
+      "empirical_record_ids": [
+        "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+        "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+        "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+        "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+        "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+        "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+        "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+        "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+        "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f",
+        "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c"
+      ],
+      "normalized_ref_count": 10,
+      "normalized_ref_ids": [
+        "sha256:1601ec14e55e41240443907ea6878e1efe6ff77737387eaec531984172c63d94",
+        "sha256:16eaa974eeccfb12984df07943589ea30cd2eae497f6dfde0da129f7872595af",
+        "sha256:25f4bd3b06f869489c15670e55ae7434664a8e29f0875b6b445f89a757456fee",
+        "sha256:6176e97cdfdfd7ae21815460d74c80e7e9d5fbd89bcfa959497feb92b318242e",
+        "sha256:6582297db9bf98ae1ba22bae5dfaf21c0ac1b5cc16f04b775da0fa715fa37474",
+        "sha256:7dea8a3642fb4ba0cf386234bdf9e554008425995308ef3e59dc53803d17c602",
+        "sha256:9aa2b980feb1b83e8b2dd1d73852bc46f791cb91217f2b03fee9b089a6503966",
+        "sha256:c41df65e3c36b61f6b1b7ad0e974c53b1c1cf73765d1a440499159308d968d73",
+        "sha256:d0599f70033f8fb47027a24b9f8f7d10f9047eeb4594b92539d540e8cc02999d",
+        "sha256:d7970a4fbf4b824ebd50ec883bfeca1c3670b2196bf9d73219186df81400fa4f"
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "empirical_record_count": 6,
+      "empirical_record_ids": [
+        "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+        "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+        "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+        "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+        "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+        "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4"
+      ],
+      "normalized_ref_count": 6,
+      "normalized_ref_ids": [
+        "sha256:1ce222a15e67febd0112744cbe4e367c938715a475ca5cdd4ff726f6eaeb27de",
+        "sha256:3f3488c5b34d24a71721e8f040c8d78c9a6ce8c0f0da8ec5d43d65bd80091ab7",
+        "sha256:68cdca6b928cf0edb7730ae1dbe661273fc9a03a8586be45e526a3f24d1b3cf1",
+        "sha256:73878c230db53e7afece8aa0afd05292ba10ddd9648a2b5afdd1df45a949cd3e",
+        "sha256:7a71d17b4230f6b2c9a9c02b8d5ee31e44a8e13b78a990cccd1eb7bd7cdf79b4",
+        "sha256:e0bef14ef03df0bc073fb67bbc76b6e12ca81cd4f074136fae5340a6a90c5d1c"
+      ],
+      "world_family": "math_primitives"
+    }
+  ],
+  "run_id": "sha256:0bb3809a1a605587b1e5e157825501af76eabb25c71493ce0637b3136e686f4c",
+  "schema": "LowLevelFactoryRun.v1",
+  "started_at": "2026-05-05T23:33:19Z",
+  "store_snapshot": {
+    "content_hash": "sha256:0bb3809a1a605587b1e5e157825501af76eabb25c71493ce0637b3136e686f4c",
+    "counts": {
+      "audit_queue_items": 0,
+      "empirical_records": 16,
+      "evidence_edges": 19,
+      "normalized_refs": 16,
+      "source_cache_entries": 3
+    },
+    "paths": {
+      "audit_queue": "reports\\campaign_016\\factory_store\\audit_queue.json",
+      "empirical_records": "reports\\campaign_016\\factory_store\\empirical_records.json",
+      "evidence_graph": "reports\\campaign_016\\factory_store\\evidence_graph.json",
+      "normalized_refs": "reports\\campaign_016\\factory_store\\normalized_refs.json",
+      "source_cache_index": "reports\\campaign_016\\factory_store\\source_cache_index.json"
+    },
+    "schema": "LowLevelFactoryStoreSnapshot.v1"
+  },
+  "warnings": []
+}

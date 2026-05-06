@@ -1,0 +1,205 @@
+{
+  "normalizer_counts": {
+    "channels": 40,
+    "effects": 40,
+    "overlap_fields": 26,
+    "process_roles": 40
+  },
+  "passed": true,
+  "recommendation": {
+    "content_hash": "sha256:47d3dfce01ffdad60c26a8a85f0241eae8e733da43fc249ec9cecfb4fbf8bd83",
+    "coverage_axes": {
+      "communication": [
+        "broadcast",
+        "contact",
+        "pheromone",
+        "stigmergic"
+      ],
+      "environment_modification": [
+        "chemical_field",
+        "nest",
+        "soil",
+        "trail"
+      ],
+      "memory_substrate": [
+        "architecture",
+        "external_field",
+        "internal",
+        "lineage"
+      ],
+      "mobility": [
+        "flying",
+        "sessile",
+        "swimming",
+        "walking"
+      ],
+      "organization": [
+        "cluster",
+        "colony",
+        "hierarchical",
+        "leaderless"
+      ],
+      "resource_strategy": [
+        "farming",
+        "foraging",
+        "scavenging",
+        "symbiotic"
+      ]
+    },
+    "current_density_class": "trace_valid",
+    "metrics": {
+      "axis_count": 6,
+      "curve": [
+        {
+          "axis": "communication",
+          "entropy": 0.9987512731845577,
+          "value_count": 4
+        },
+        {
+          "axis": "organization",
+          "entropy": 0.9987512731845577,
+          "value_count": 4
+        },
+        {
+          "axis": "mobility",
+          "entropy": 0.9987512731845577,
+          "value_count": 4
+        },
+        {
+          "axis": "resource_strategy",
+          "entropy": 0.9987512731845577,
+          "value_count": 4
+        },
+        {
+          "axis": "environment_modification",
+          "entropy": 0.9987512731845577,
+          "value_count": 4
+        },
+        {
+          "axis": "memory_substrate",
+          "entropy": 0.9987512731845577,
+          "value_count": 4
+        }
+      ],
+      "mean_entropy": 0.9987512731845577
+    },
+    "missing_axes": {
+      "communication": [],
+      "environment_modification": [],
+      "memory_substrate": [],
+      "mobility": [],
+      "organization": [],
+      "resource_strategy": []
+    },
+    "rationale": "W7 has trace-valid swarm mechanics; synthetic source-bound evidence supports orthogonal expansion across communication, organization, mobility, resource strategy, environment modification, and memory substrates.",
+    "recommendation_id": "density.w7.swarm.011",
+    "schema": "WorldDensificationRecommendation.v1",
+    "simulation_templates": [
+      "factory.harness.00",
+      "factory.harness.01",
+      "factory.harness.02",
+      "factory.harness.03",
+      "factory.harness.04",
+      "factory.harness.05",
+      "factory.harness.06",
+      "factory.harness.07",
+      "factory.harness.08",
+      "factory.harness.09"
+    ],
+    "source_ids": [
+      "syn.lane1.000",
+      "syn.lane1.001",
+      "syn.lane1.002",
+      "syn.lane1.003",
+      "syn.lane1.004",
+      "syn.lane1.005",
+      "syn.lane1.006",
+      "syn.lane1.007",
+      "syn.lane1.008",
+      "syn.lane1.009",
+      "syn.lane1.010",
+      "syn.lane1.011",
+      "syn.lane1.012",
+      "syn.lane1.013",
+      "syn.lane1.014",
+      "syn.lane1.015",
+      "syn.lane1.016",
+      "syn.lane1.017",
+      "syn.lane1.018",
+      "syn.lane1.019",
+      "syn.lane1.020",
+      "syn.lane1.021",
+      "syn.lane1.022",
+      "syn.lane1.023",
+      "syn.lane1.024",
+      "syn.lane1.025",
+      "syn.lane1.026",
+      "syn.lane1.027",
+      "syn.lane1.028",
+      "syn.lane1.029",
+      "syn.lane1.030",
+      "syn.lane1.031",
+      "syn.lane1.032",
+      "syn.lane1.033",
+      "syn.lane1.034",
+      "syn.lane1.035",
+      "syn.lane1.036",
+      "syn.lane1.037",
+      "syn.lane1.038",
+      "syn.lane1.039"
+    ],
+    "target_density_class": "exploratory_densified",
+    "world_id": "W7"
+  },
+  "schema": "FactorySessionHarness.v1",
+  "session_record": {
+    "adapter_id": "synthetic_lane1",
+    "audit_queue_depth_at_close": 40,
+    "claims_extracted_count": 40,
+    "claims_normalized_count": 146,
+    "conflicts_flagged_count": 4,
+    "factory_session_id": "sha256:0e4bca333c54fe043e924e01377e8ac0d4e50b7c855ac8182957898f444004e9",
+    "license_class": "internal_synthetic",
+    "license_closure_summary": "synthetic internal corpus, no restricted exports",
+    "mode": "dry_run",
+    "ontology_registry_hash": "sha256:5b7f947227aa189f9c09f7ae85b05812702b0f2369851c76b36f6e4a8b4e3da7",
+    "recommendations_produced_count": 1,
+    "source_identity": "synthetic_lane1:40",
+    "timestamp_end": "2026-05-05T23:31:24.310027+00:00",
+    "timestamp_start": "2026-05-05T23:31:24.307027+00:00"
+  },
+  "steps": [
+    {
+      "passed": true,
+      "step": "session_log_entry"
+    },
+    {
+      "passed": true,
+      "step": "ontology_hash_check"
+    },
+    {
+      "passed": true,
+      "step": "adapter_read"
+    },
+    {
+      "passed": true,
+      "step": "extraction"
+    },
+    {
+      "passed": true,
+      "step": "normalization"
+    },
+    {
+      "passed": true,
+      "step": "conflict_detection"
+    },
+    {
+      "passed": true,
+      "step": "audit_queue_submission"
+    },
+    {
+      "passed": true,
+      "step": "session_close"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "basis_lock": {
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "basis_unchanged": true,
+    "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_unchanged": true,
+    "n7_methodology": {
+      "N": 1000,
+      "seed": 13013,
+      "statistic": "floor_connectivity_gap_minus_other_gap_mean"
+    },
+    "passed": true,
+    "protocol": "papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md",
+    "schema": "Campaign013ReplicationBasisLock.v1",
+    "threshold_source": "Campaign 013 driver acceptance threshold formal_gap > 0.20 and N7 empirical_p < 0.05; protocol text is loaded and preserved."
+  },
+  "corpus": {
+    "row_count": 156,
+    "sources": {
+      "campaign_009_heldout_partition": 84,
+      "campaign_011_w7_exploratory_densified": 72
+    }
+  },
+  "formal_gap": {
+    "attractor_strength": 0.88,
+    "best_lens": "dynamical_systems",
+    "formal_gap": 0.3549345653383201,
+    "max_coverage_score": 0.596665266661,
+    "motif_id": "motif.floor_connectivity.draft"
+  },
+  "n7": {
+    "N": 1000,
+    "empirical_p": 0.000999000999000999,
+    "observed_statistic": 0.3164194329509401
+  },
+  "passed": true,
+  "schema": "Campaign013ReplicationVerdict.v1",
+  "truth_pass_update": {
+    "passed": true,
+    "reason": "replication did not weaken or falsify the candidate",
+    "required": false
+  },
+  "verdict": {
+    "empirical_p": 0.000999000999000999,
+    "formal_gap": 0.3549345653383201,
+    "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+    "threshold_check": {
+      "formal_gap_threshold": 0.2,
+      "p_threshold": 0.05,
+      "replicated": true
+    },
+    "verdict": "replicated"
+  }
+}

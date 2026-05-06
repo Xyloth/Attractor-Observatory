@@ -142,6 +142,36 @@ The doctrine governs **work** — implementation, tests, instrumentation, dashbo
 
 ---
 
+## D19 — Source-bound extraction
+
+See [`doctrine_d19_d21.md`](doctrine_d19_d21.md). Binding for the Research Ingestion Factory: every `BiologicalClaim` that advances beyond exploratory carries source identity, evidence location, extraction method, license class, provenance hash, and audit status. AI systems extract; they are not evidence sources.
+
+## D20 — Extraction/detection separation
+
+See [`doctrine_d19_d21.md`](doctrine_d19_d21.md). Extraction registry entries are content-hash-locked before detector sessions consult them; the same AI session does not both extract and detect against its own extraction.
+
+## D21 — Densification before claim-bearing
+
+See [`doctrine_d19_d21.md`](doctrine_d19_d21.md). A world cannot anchor a claim-bearing motif observation unless its `WorldDensificationReport` shows coverage above declared per-motif thresholds.
+
+---
+
+## D22 — Empty rooms beat stocked rooms with mock data
+
+See [`doctrine_d22.md`](doctrine_d22.md).
+
+> When a Control Room view (or any read-only project surface) has no real artifact to display, the view shows the absence honestly — labelled "no data" with the campaign, artifact, or condition that would populate it — rather than a synthetic placeholder, fabricated example, or styled mock that could be mistaken for real signal.
+
+**Failure mode caught (anticipated, ratified before observed bypass):** Visual UI work invites a class of mistake that scientific code has not surfaced — making an empty room "look fuller" by adding placeholder rows, lorem-ipsum narrative, plausible mock charts, or screenshot-friendly fabricated arrangements. This erodes D11 (truth pass) and D17 (honest falsifiers) at the presentation layer.
+
+**How enforced:** mechanism, not policy. A single empty-state component (`control_room/components/empty_state.py`) is the only path to "no data" rendering; every adapter returns a `status` field in `{ok, missing, malformed}` and rooms route directly. CI test verifies the component is the unique no-data path.
+
+**Class watch:** Class 12 candidate — *Decorative Completeness* — is on the mistake catalog watch list. Ratification follows observed bypass.
+
+**Authored by:** Architect Claude, TASK-CB-004 / Campaign 015 Phase 0 (Observatory Control Room Foundation). Ratified at module foundation rather than after-the-fact, in response to the structural pull of visual work.
+
+---
+
 ## How the doctrine evolves
 
 A new doctrine rule is added when:

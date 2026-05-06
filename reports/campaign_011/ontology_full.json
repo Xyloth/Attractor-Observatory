@@ -1,0 +1,68 @@
+{
+  "channels": {
+    "entry_count": 15,
+    "missing_predicates": [],
+    "passed": true,
+    "roundtrip_count": 15,
+    "schema": "InteractionChannelValidation.v1"
+  },
+  "effects": {
+    "entry_count": 10,
+    "missing_predicates": [],
+    "passed": true,
+    "roundtrip_count": 10,
+    "schema": "StateSpaceEffectValidation.v1"
+  },
+  "overlap": {
+    "entry_count": 4,
+    "missing_predicates": [],
+    "passed": true,
+    "requires_four_parts": true,
+    "roundtrip_count": 4,
+    "schema": "OverlapFieldValidation.v1"
+  },
+  "overlap_four_part_sample": {
+    "counterfactual": true,
+    "passed": true,
+    "persist": true,
+    "read": true,
+    "write": true
+  },
+  "passed": true,
+  "registry": {
+    "alias_count": 13,
+    "content_hash": "sha256:78633698ad9585c8fea148cbf8773d62c87f3d3ae6fea9c00d5d988c28755408",
+    "entry_count": 51,
+    "migration_aliases": {
+      "Boundary": "process.boundary.inside_outside_distinction",
+      "Catalyst": "process.construction.environmental_inscription",
+      "Channel": "process.energy.flow_routing",
+      "Flow": "process.energy.flow_routing",
+      "Memory": "process.memory.state_preservation",
+      "Predictor": "process.prediction.future_state_compression",
+      "Selector": "process.prediction.policy_selection",
+      "Sink": "process.energy.dissipation",
+      "Source": "process.energy.gradient_capture",
+      "Store": "process.memory.state_preservation"
+    },
+    "passed": true,
+    "rejection_worked": true,
+    "schema": "OntologyRegistryValidation.v1",
+    "tombstone_count": 0,
+    "version": "0.1.0"
+  },
+  "roles": {
+    "category_count": 9,
+    "entry_count": 22,
+    "missing_predicates": [],
+    "passed": true,
+    "roundtrip_count": 22,
+    "schema": "ProcessRoleValidation.v1"
+  },
+  "schema": "Campaign011OntologyValidation.v1",
+  "trait_decomposition": {
+    "passed": true,
+    "sample_id": "td.sample.flight",
+    "schema": "TraitDecompositionValidation.v1"
+  }
+}

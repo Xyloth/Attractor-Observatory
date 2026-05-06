@@ -2,7 +2,7 @@
 
 Status: living report
 Owner: Codex Builder
-Last updated: 2026-05-03
+Last updated: 2026-05-04
 
 ## Purpose
 
@@ -16,7 +16,19 @@ This report tracks how Builder estimates are becoming less distorted. The initia
 
 ## Latest Calibration Point
 
-TASK-019 confirmed that the estimator is now calibrated enough to watch for drift rather than to dominate planning.
+TASK-023 was overestimated again after returning to regular speed, but the correction is now showing up in scope rather than caution. TASK-024 opened at 70 minutes instead of hundreds, while still carrying a 26-gate science milestone with schema migration, replication, L3 overlap, atlas seed, and full regression.
+
+## Execution Context Change
+
+As of TASK-022, the PI activated **Fast speed**. The product advertised roughly 1.5x execution speed at higher usage cost. This was recorded as a calibration context, not a quality exemption.
+
+Operational impact:
+
+- Estimates after TASK-022 should divide the normal calibrated wall-clock prior by roughly 1.5 unless the task is dominated by long-running tests or fixed external waits.
+- Acceptance gates, regression, and audit discipline do not change.
+- If Fast speed correlates with sloppiness, Claude audit and gate failures should surface it; the record should track that as a separate context effect rather than silently folding it into normal calibration.
+
+As of TASK-023, the PI switched back to **regular speed** because TASK-022 cost roughly $22 and the speed/cost tradeoff was not worth it. Estimates from TASK-023 onward use the regular-speed prior again. TASK-022 actual wall-clock was 48.75 minutes under Fast speed; that point stays tagged with its execution context rather than merged into the regular-speed baseline.
 
 | Task | Estimate | Actual | Ratio actual / estimate | Read |
 |---|---:|---:|---:|---|
@@ -24,8 +36,12 @@ TASK-019 confirmed that the estimator is now calibrated enough to watch for drif
 | TASK-017 | 60.00 min | 41.75 min | 0.6958 | Large improvement; estimate was anchored to HE1-HE9 plus full regression. |
 | TASK-018 | 90.00 min | 84.03 min | 0.9337 | Calibrated: large foundation pass plus self-audit, blocker, and full regression. |
 | TASK-019 | 60.00 min | 53.97 min | 0.8994 | Calibrated: Campaign 008 closure, D17.5 audits, W8/W11/W12/W13 deepening, D7 self-correction, full regression. |
+| TASK-020 | 110.00 min | 60.00 min | 0.5455 | Drift-high but not pathological: Campaign 009 BFG vertical, D18 preregistration, KF calibration, falsifier audit, and full regression. |
+| TASK-022 | 95.00 min | 48.75 min | 0.5132 | Fast-speed context; 32-gate Campaign 011 with full factory, doctrine, W7 densification, and split full-suite verification. |
+| TASK-023 | 80.00 min | 25.90 min | 0.3238 | Regular-speed context restored; Campaign 012 real ITIS adapter, Factory scaffolding, calibration hardening, W7 naming, replication preregistration, and 252 tests. |
+| TASK-024 | 70.00 min | pending | pending | Campaign 013 schema migration, floor-connectivity replication, first L3 insects x W7 overlap, atlas seed, and 265-test split regression. |
 
-TASK-019 error was 6.03 minutes. TASK-018 and TASK-019 were both in the [0.85, 1.0] band. Earlier campaign estimates were often off by 10x to 50x. The current useful estimator is now gate count plus verification cost plus expected audit rework, not broad campaign language. The loop's job now shifts from "stop overestimating" to "detect divergence."
+TASK-020 error was 50 minutes against a larger and novel formal-geometry vertical. That is worse than TASK-018/TASK-019 but still far from the early 10x to 50x failure mode. The correction is to keep estimating from gate shape plus verification cost, then let the next large campaign carry enough substance to make the estimate meaningful.
 
 ## What Changed
 
@@ -71,6 +87,4 @@ The practical rule: estimate the next coherent gate-bearing vertical, not the wh
 
 ## Next Estimate Guidance
 
-For TASK-020, the estimate is 110 minutes. That number is a telemetry prior, not a stopping signal. Campaign 009 ends only when BFG-PR through BFG12 are green for the right reasons or when a named blocker records why a gate cannot honestly be completed.
-
-The current Builder estimate for the next large implementation vertical should be based on the selected gates after the campaign is accepted, with 60-90 minutes as the likely first-pass band if it targets W6-W8 plus the shared reconstruction harness.
+For the next regular-speed campaign, estimate from gate type first. A bounded 20-30 gate milestone with mostly existing infrastructure and heavy report generation now belongs around 60-90 minutes, not 100-200 minutes. A genuinely new world/lens/source family still belongs higher, but only when the gate list requires new simulation or formal machinery rather than more artifacts around existing machinery.

@@ -1,0 +1,695 @@
+{
+  "gate": {
+    "passed": true,
+    "worlds": {
+      "W11": {
+        "max_ci_width": 0.2,
+        "motif_count": 4
+      },
+      "W12": {
+        "max_ci_width": 0.13046022590078368,
+        "motif_count": 4
+      },
+      "W8": {
+        "max_ci_width": 0.12702251768879408,
+        "motif_count": 4
+      }
+    }
+  },
+  "passed": true,
+  "schema": "Campaign010BFGTruthRefresh.v1",
+  "vectors": [
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.12924797328458562,
+          "ci_low": 0.05090054418014178,
+          "mean": 0.0900742587323637,
+          "width": 0.07834742910444384
+        },
+        "W_floor": {
+          "ci_high": 0.2735112588443971,
+          "ci_low": 0.14648874115560298,
+          "mean": 0.21000000000000002,
+          "width": 0.12702251768879408
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 4,
+          "entropy": 1.75,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.061278124459133,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.12702251768879408,
+      "motif_id": "motif.externalized_memory.draft",
+      "nfi": {
+        "Conn": 0.9099257412676363,
+        "D_floor": 0.0900742587323637,
+        "H_impl": 0.5833333333333334,
+        "I_inv": 1.0,
+        "L_func": 0.79,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.875,
+        "W_floor": 0.21000000000000002
+      },
+      "passed": true,
+      "trace_count": 8,
+      "world_family": "cognitive",
+      "world_id": "W8"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.12924797328458562,
+          "ci_low": 0.05090054418014178,
+          "mean": 0.0900742587323637,
+          "width": 0.07834742910444384
+        },
+        "W_floor": {
+          "ci_high": 0.2735112588443971,
+          "ci_low": 0.14648874115560298,
+          "mean": 0.21000000000000002,
+          "width": 0.12702251768879408
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 4,
+          "entropy": 1.75,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.061278124459133,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.12702251768879408,
+      "motif_id": "motif.repair.draft",
+      "nfi": {
+        "Conn": 0.9099257412676363,
+        "D_floor": 0.0900742587323637,
+        "H_impl": 0.5833333333333334,
+        "I_inv": 1.0,
+        "L_func": 0.79,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.875,
+        "W_floor": 0.21000000000000002
+      },
+      "passed": true,
+      "trace_count": 8,
+      "world_family": "cognitive",
+      "world_id": "W8"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.12924797328458562,
+          "ci_low": 0.05090054418014178,
+          "mean": 0.0900742587323637,
+          "width": 0.07834742910444384
+        },
+        "W_floor": {
+          "ci_high": 0.1641067553066382,
+          "ci_low": 0.08789324469336178,
+          "mean": 0.126,
+          "width": 0.07621351061327644
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 4,
+          "entropy": 1.75,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.061278124459133,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.07834742910444384,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nfi": {
+        "Conn": 0.9099257412676363,
+        "D_floor": 0.0900742587323637,
+        "H_impl": 0.5833333333333334,
+        "I_inv": 1.0,
+        "L_func": 0.874,
+        "P_equiv": 0.0,
+        "R_drift": 0.55,
+        "Reach": 0.875,
+        "W_floor": 0.126
+      },
+      "passed": true,
+      "trace_count": 8,
+      "world_family": "cognitive",
+      "world_id": "W8"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.12924797328458562,
+          "ci_low": 0.05090054418014178,
+          "mean": 0.0900742587323637,
+          "width": 0.07834742910444384
+        },
+        "W_floor": {
+          "ci_high": 0.2735112588443971,
+          "ci_low": 0.14648874115560298,
+          "mean": 0.21000000000000002,
+          "width": 0.12702251768879408
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 4,
+          "entropy": 1.75,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.061278124459133,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.12702251768879408,
+      "motif_id": "motif.floor_connectivity.draft",
+      "nfi": {
+        "Conn": 0.9099257412676363,
+        "D_floor": 0.0900742587323637,
+        "H_impl": 0.5833333333333334,
+        "I_inv": 1.0,
+        "L_func": 0.79,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.875,
+        "W_floor": 0.21000000000000002
+      },
+      "passed": true,
+      "trace_count": 8,
+      "world_family": "cognitive",
+      "world_id": "W8"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.33647542262417046,
+          "ci_low": 0.13647542262417045,
+          "mean": 0.23647542262417046,
+          "width": 0.2
+        },
+        "W_floor": {
+          "ci_high": 0.1319993358343473,
+          "ci_low": 0.03251367401094102,
+          "mean": 0.08225650492264416,
+          "width": 0.09948566182340629
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 2,
+          "entropy": 0.9182958340544896,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.2,
+      "motif_id": "motif.replication_lineage.draft",
+      "nfi": {
+        "Conn": 0.7635245773758296,
+        "D_floor": 0.23647542262417046,
+        "H_impl": 0.8710490642551527,
+        "I_inv": 1.0,
+        "L_func": 0.9177434950773559,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.5,
+        "W_floor": 0.08225650492264416
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "quasispecies",
+      "world_id": "W11"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.33647542262417046,
+          "ci_low": 0.13647542262417045,
+          "mean": 0.23647542262417046,
+          "width": 0.2
+        },
+        "W_floor": {
+          "ci_high": 0.1319993358343473,
+          "ci_low": 0.03251367401094102,
+          "mean": 0.08225650492264416,
+          "width": 0.09948566182340629
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 2,
+          "entropy": 0.9182958340544896,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.2,
+      "motif_id": "motif.floor_connectivity.draft",
+      "nfi": {
+        "Conn": 0.7635245773758296,
+        "D_floor": 0.23647542262417046,
+        "H_impl": 0.8710490642551527,
+        "I_inv": 1.0,
+        "L_func": 0.9177434950773559,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.5,
+        "W_floor": 0.08225650492264416
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "quasispecies",
+      "world_id": "W11"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.33647542262417046,
+          "ci_low": 0.13647542262417045,
+          "mean": 0.23647542262417046,
+          "width": 0.2
+        },
+        "W_floor": {
+          "ci_high": 0.07919960150060838,
+          "ci_low": 0.019508204406564603,
+          "mean": 0.04935390295358649,
+          "width": 0.05969139709404378
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 2,
+          "entropy": 0.9182958340544896,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.2,
+      "motif_id": "motif.repair.draft",
+      "nfi": {
+        "Conn": 0.7635245773758296,
+        "D_floor": 0.23647542262417046,
+        "H_impl": 0.8710490642551527,
+        "I_inv": 1.0,
+        "L_func": 0.9506460970464135,
+        "P_equiv": 0.0,
+        "R_drift": 0.55,
+        "Reach": 0.5,
+        "W_floor": 0.04935390295358649
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "quasispecies",
+      "world_id": "W11"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.33647542262417046,
+          "ci_low": 0.13647542262417045,
+          "mean": 0.23647542262417046,
+          "width": 0.2
+        },
+        "W_floor": {
+          "ci_high": 0.07919960150060838,
+          "ci_low": 0.019508204406564603,
+          "mean": 0.04935390295358649,
+          "width": 0.05969139709404378
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 2,
+          "entropy": 0.9182958340544896,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.2,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nfi": {
+        "Conn": 0.7635245773758296,
+        "D_floor": 0.23647542262417046,
+        "H_impl": 0.8710490642551527,
+        "I_inv": 1.0,
+        "L_func": 0.9506460970464135,
+        "P_equiv": 0.0,
+        "R_drift": 0.55,
+        "Reach": 0.5,
+        "W_floor": 0.04935390295358649
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "quasispecies",
+      "world_id": "W11"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.28580373842059814,
+          "ci_low": 0.15534351251981443,
+          "mean": 0.22057362547020629,
+          "width": 0.13046022590078368
+        },
+        "W_floor": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "mean": 0.0,
+          "width": 0.0
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 6,
+          "entropy": 2.584962500721156,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.2516291673878228,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.13046022590078368,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nfi": {
+        "Conn": 0.7794263745297937,
+        "D_floor": 0.22057362547020629,
+        "H_impl": 1.0,
+        "I_inv": 0.9964128035320088,
+        "L_func": 1.0,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.0,
+        "W_floor": 0.0
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "symbiogenesis",
+      "world_id": "W12"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.28580373842059814,
+          "ci_low": 0.15534351251981443,
+          "mean": 0.22057362547020629,
+          "width": 0.13046022590078368
+        },
+        "W_floor": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "mean": 0.0,
+          "width": 0.0
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 6,
+          "entropy": 2.584962500721156,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.2516291673878228,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.13046022590078368,
+      "motif_id": "motif.repair.draft",
+      "nfi": {
+        "Conn": 0.7794263745297937,
+        "D_floor": 0.22057362547020629,
+        "H_impl": 1.0,
+        "I_inv": 0.9964128035320088,
+        "L_func": 1.0,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.0,
+        "W_floor": 0.0
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "symbiogenesis",
+      "world_id": "W12"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.28580373842059814,
+          "ci_low": 0.15534351251981443,
+          "mean": 0.22057362547020629,
+          "width": 0.13046022590078368
+        },
+        "W_floor": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "mean": 0.0,
+          "width": 0.0
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 6,
+          "entropy": 2.584962500721156,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.2516291673878228,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.13046022590078368,
+      "motif_id": "motif.replication_lineage.draft",
+      "nfi": {
+        "Conn": 0.7794263745297937,
+        "D_floor": 0.22057362547020629,
+        "H_impl": 1.0,
+        "I_inv": 0.9964128035320088,
+        "L_func": 1.0,
+        "P_equiv": 0.8333333333333334,
+        "R_drift": 0.675,
+        "Reach": 0.0,
+        "W_floor": 0.0
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "symbiogenesis",
+      "world_id": "W12"
+    },
+    {
+      "ci": {
+        "D_floor": {
+          "ci_high": 0.28580373842059814,
+          "ci_low": 0.15534351251981443,
+          "mean": 0.22057362547020629,
+          "width": 0.13046022590078368
+        },
+        "W_floor": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "mean": 0.0,
+          "width": 0.0
+        }
+      },
+      "entropy_curve": [
+        {
+          "cluster_count": 6,
+          "entropy": 2.584962500721156,
+          "radius": 0.05
+        },
+        {
+          "cluster_count": 5,
+          "entropy": 2.2516291673878226,
+          "radius": 0.1
+        },
+        {
+          "cluster_count": 3,
+          "entropy": 1.2516291673878228,
+          "radius": 0.2
+        },
+        {
+          "cluster_count": 1,
+          "entropy": 0.0,
+          "radius": 0.4
+        }
+      ],
+      "is_point_attractor": false,
+      "max_ci_width": 0.13046022590078368,
+      "motif_id": "motif.floor_connectivity.draft",
+      "nfi": {
+        "Conn": 0.7794263745297937,
+        "D_floor": 0.22057362547020629,
+        "H_impl": 1.0,
+        "I_inv": 0.9964128035320088,
+        "L_func": 1.0,
+        "P_equiv": 1.0,
+        "R_drift": 0.7000000000000001,
+        "Reach": 0.0,
+        "W_floor": 0.0
+      },
+      "passed": true,
+      "trace_count": 6,
+      "world_family": "symbiogenesis",
+      "world_id": "W12"
+    }
+  ]
+}

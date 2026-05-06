@@ -1,0 +1,109 @@
+{
+  "schema": "Campaign011RegressionVerification.v1",
+  "passed": true,
+  "pytest": {
+    "collected": 239,
+    "passed": 239,
+    "failed": 0,
+    "execution_mode": "split_by_test_group_after_single full pytest exceeded the tool timeout"
+  },
+  "groups": [
+    {
+      "name": "campaign_011",
+      "command": "python -m pytest tests\\test_campaign011.py -q",
+      "passed": 16,
+      "failed": 0
+    },
+    {
+      "name": "field_world_reconstruction",
+      "command": "python -m pytest tests\\test_field_world_reconstruction.py -q",
+      "passed": 43,
+      "failed": 0
+    },
+    {
+      "name": "morphogenesis_world_reconstruction",
+      "command": "python -m pytest tests\\test_morphogenesis_world_reconstruction.py -q",
+      "passed": 35,
+      "failed": 0
+    },
+    {
+      "name": "digital_world_reconstruction",
+      "command": "python -m pytest tests\\test_digital_world_reconstruction.py -q",
+      "passed": 41,
+      "failed": 0
+    },
+    {
+      "name": "campaign_002_to_004",
+      "command": "python -m pytest tests\\test_basin_width.py tests\\test_campaign002_foundation.py tests\\test_campaign002_nulls.py tests\\test_campaign003.py tests\\test_campaign004.py -q",
+      "passed": 13,
+      "failed": 0
+    },
+    {
+      "name": "campaign_005_to_007",
+      "command": "python -m pytest tests\\test_campaign005.py tests\\test_campaign006.py tests\\test_campaign007_hardcode_excision.py tests\\test_campaign007_truth.py -q",
+      "passed": 17,
+      "failed": 0
+    },
+    {
+      "name": "campaign_008_to_011",
+      "command": "python -m pytest tests\\test_campaign008.py tests\\test_campaign009.py tests\\test_campaign010.py tests\\test_campaign011.py -q",
+      "passed": 47,
+      "failed": 0
+    },
+    {
+      "name": "core_lints_and_calibration",
+      "command": "python -m pytest tests\\test_campaign_prereg.py tests\\test_closure_calibration_gates.py tests\\test_core_kernel.py tests\\test_cross_detector_kappa.py tests\\test_cross_family_transfer.py tests\\test_dictionary_echo.py -q",
+      "passed": 13,
+      "failed": 0
+    },
+    {
+      "name": "telemetry_and_evidence",
+      "command": "python -m pytest tests\\test_estimation_loop.py tests\\test_evidence_roundtrip.py tests\\test_full_campaign_report.py tests\\test_instrument_health_campaign002.py tests\\test_negative_space.py -q",
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "name": "phase1_spine_and_protocell",
+      "command": "python -m pytest tests\\test_phase1_chemistry.py tests\\test_phase1_completion.py tests\\test_raf_canonical.py tests\\test_spine.py tests\\test_w2_protocell.py -q",
+      "passed": 23,
+      "failed": 0
+    }
+  ],
+  "prior_campaign_regeneration": {
+    "campaign_002": {
+      "gate_count": 20,
+      "passed_gate_count": 20,
+      "status": "green"
+    },
+    "campaign_005": {
+      "gate_count": 21,
+      "passed_gate_count": 21,
+      "status": "green"
+    },
+    "campaign_006": {
+      "gate_count": 68,
+      "passed_gate_count": 68,
+      "status": "green"
+    },
+    "campaign_007": {
+      "gate_count": 5,
+      "passed_gate_count": 5,
+      "status": "green"
+    },
+    "campaign_008": {
+      "gate_count": 35,
+      "passed_gate_count": 35,
+      "status": "green"
+    },
+    "campaign_009": {
+      "gate_count": 13,
+      "passed_gate_count": 13,
+      "status": "green"
+    },
+    "campaign_010": {
+      "gate_count": 24,
+      "passed_gate_count": 24,
+      "status": "green"
+    }
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "lens_count": 8,
+  "new_lenses": [
+    "dynamical_systems",
+    "topology",
+    "petri",
+    "statistical_mechanics",
+    "control_theory"
+  ],
+  "passed": true,
+  "rows": [
+    {
+      "decline_regime": "declines on floor-connectivity because ordinary event graphs do not encode the quotient/fiber basis",
+      "domain_worlds": [
+        "cognitive",
+        "crn",
+        "digital",
+        "ecosystem",
+        "field",
+        "hypergraph_reactions",
+        "morphogenesis",
+        "multiscale",
+        "origins_chemistry",
+        "protocell",
+        "quasispecies",
+        "swarm",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "species_relabel",
+        "substrate_erasure"
+      ],
+      "lens_id": "graph",
+      "predicts": [
+        "motif.autocatalytic_closure.draft",
+        "motif.externalized_memory.draft",
+        "motif.repair.draft",
+        "motif.replication_lineage.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    },
+    {
+      "decline_regime": "declines on non-reaction-network worlds and on lineage/memory motifs",
+      "domain_worlds": [
+        "crn",
+        "hypergraph_reactions",
+        "multiscale",
+        "origins_chemistry",
+        "protocell",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "species_relabel"
+      ],
+      "lens_id": "crnt",
+      "predicts": [
+        "motif.autocatalytic_closure.draft",
+        "motif.repair.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    },
+    {
+      "decline_regime": "declines on floor-connectivity because transfer information does not identify function-preserving quotient fibers",
+      "domain_worlds": [
+        "cognitive",
+        "crn",
+        "digital",
+        "ecosystem",
+        "field",
+        "hypergraph_reactions",
+        "morphogenesis",
+        "multiscale",
+        "origins_chemistry",
+        "protocell",
+        "quasispecies",
+        "swarm",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "time_shift",
+        "substrate_erasure"
+      ],
+      "lens_id": "information",
+      "predicts": [
+        "motif.autocatalytic_closure.draft",
+        "motif.externalized_memory.draft",
+        "motif.repair.draft",
+        "motif.replication_lineage.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    },
+    {
+      "decline_regime": "declines on pure event-driven worlds without continuous state continuity",
+      "domain_worlds": [
+        "cognitive",
+        "crn",
+        "ecosystem",
+        "field",
+        "multiscale",
+        "protocell",
+        "quasispecies",
+        "swarm",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "time_shift"
+      ],
+      "lens_id": "dynamical_systems",
+      "predicts": [
+        "motif.autocatalytic_closure.draft",
+        "motif.externalized_memory.draft",
+        "motif.floor_connectivity.draft",
+        "motif.repair.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    },
+    {
+      "decline_regime": "declines on low-dimensional event-only traces where no filtration can be constructed",
+      "domain_worlds": [
+        "cognitive",
+        "crn",
+        "ecosystem",
+        "field",
+        "morphogenesis",
+        "multiscale",
+        "quasispecies",
+        "swarm",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "spatial_translation",
+        "substrate_erasure"
+      ],
+      "lens_id": "topology",
+      "predicts": [
+        "motif.autocatalytic_closure.draft",
+        "motif.externalized_memory.draft",
+        "motif.floor_connectivity.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    },
+    {
+      "decline_regime": "declines on non-CRN/non-hypergraph worlds and on memory/floor motifs",
+      "domain_worlds": [
+        "crn",
+        "hypergraph_reactions",
+        "origins_chemistry",
+        "protocell",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "species_relabel"
+      ],
+      "lens_id": "petri",
+      "predicts": [
+        "motif.autocatalytic_closure.draft",
+        "motif.repair.draft",
+        "motif.replication_lineage.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    },
+    {
+      "decline_regime": "declines on deterministic field/formalisms where rare-event statistics are degenerate",
+      "domain_worlds": [
+        "crn",
+        "digital",
+        "ecosystem",
+        "protocell",
+        "quasispecies",
+        "swarm",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "time_shift",
+        "substrate_erasure"
+      ],
+      "lens_id": "statistical_mechanics",
+      "predicts": [
+        "motif.floor_connectivity.draft",
+        "motif.repair.draft",
+        "motif.replication_lineage.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    },
+    {
+      "decline_regime": "declines on non-agent worlds without action/observation channels",
+      "domain_worlds": [
+        "cognitive",
+        "multiscale",
+        "swarm",
+        "symbiogenesis"
+      ],
+      "invariances": [
+        "trace_id_erasure",
+        "time_shift"
+      ],
+      "lens_id": "control_theory",
+      "predicts": [
+        "motif.externalized_memory.draft",
+        "motif.floor_connectivity.draft",
+        "motif.repair.draft",
+        "motif.self_maintained_boundary.draft"
+      ],
+      "supports_composition": true
+    }
+  ],
+  "schema": "Campaign010LensDomainReport.v1"
+}

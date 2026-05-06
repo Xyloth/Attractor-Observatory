@@ -1,0 +1,382 @@
+/* Attractor Observatory — Design Tokens
+ * ----------------------------------------------------------------------
+ * Mirrors control_room/design_tokens.py (the canonical source of truth
+ * declared in The Attractor Observatory v1.2 §6 + §14). Hex values are
+ * tuned for dark-mode legibility against the deep observatory base.
+ *
+ * Every token is a SEMANTIC ROLE, not a decorative choice. Status
+ * colors must distinguish the five claim states instantly:
+ *   verified · exploratory · candidate · missing/placeholder · falsified
+ *
+ * Doctrine D22 (empty-over-fake) governs visual styling: any "no data"
+ * surface MUST visually declare absence — never paper over it.
+ * ---------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap");
+
+:root {
+  /* ——————————————————————————————————————————————————————————————
+     COLOR — surfaces (observatory deep → raised card)
+     —————————————————————————————————————————————————————————————— */
+  --bg-deep:          #0a0e16;   /* observatory base — never flat black */
+  --bg-deeper:        #060912;   /* outermost void; behind the chrome   */
+  --bg-panel:         #121826;   /* default panel surface               */
+  --bg-panel-raised:  #1a2032;   /* raised card / hover surface         */
+  --bg-panel-glow:    #161e34;   /* cool blue-tinted panel for accents  */
+  --bg-quarantine:    #1f1a0d;   /* amber-tinted dock / intake surface  */
+  --border:           #283042;   /* subtle panel border                 */
+  --border-strong:    #3a4560;   /* divider / focused border            */
+  --border-dashed:    #4a5266;   /* dashed empty-state / quarantine     */
+
+  /* ——————————————————————————————————————————————————————————————
+     COLOR — status semantics (each role has a single canonical hex)
+     —————————————————————————————————————————————————————————————— */
+  --verified:         #3ddc84;   /* GREEN     — verified / pass / healthy / calibrated */
+  --warning:          #f5a623;   /* AMBER     — needs review / exploratory / candidate */
+  --failed:           #ff5468;   /* RED       — falsifier / failed gate / high risk    */
+  --active:           #4fc3f7;   /* BLUE      — active / in progress / live signal     */
+  --motif:            #bd6df8;   /* PURPLE    — motif / formalism / basin-floor        */
+  --trace:            #22d3ee;   /* CYAN      — trace / world activity / data flow     */
+  --unavailable:      #5b6478;   /* GRAY-BLUE — unavailable / unknown / placeholder    */
+  --claim-bearing:    #f8f9fa;   /* WHITE-ICE — claim-bearing / high-confidence text   */
+
+  /* Soft fills (12% alpha) for status backgrounds */
+  --verified-soft:    rgba(61, 220, 132, 0.12);
+  --warning-soft:     rgba(245, 166, 35, 0.12);
+  --failed-soft:      rgba(255, 84, 104, 0.12);
+  --active-soft:      rgba(79, 195, 247, 0.12);
+  --motif-soft:       rgba(189, 109, 248, 0.12);
+  --trace-soft:       rgba(34, 211, 238, 0.12);
+  --unavailable-soft: rgba(91, 100, 120, 0.12);
+
+  /* Outer glow rings (used for live / verified / active states) */
+  --verified-glow:    0 0 0 1px rgba(61, 220, 132, 0.30), 0 0 24px rgba(61, 220, 132, 0.18);
+  --active-glow:      0 0 0 1px rgba(79, 195, 247, 0.35), 0 0 24px rgba(79, 195, 247, 0.20);
+  --motif-glow:       0 0 0 1px rgba(189, 109, 248, 0.35), 0 0 28px rgba(189, 109, 248, 0.22);
+  --failed-glow:      0 0 0 1px rgba(255, 84, 104, 0.40), 0 0 24px rgba(255, 84, 104, 0.22);
+  --warning-glow:     0 0 0 1px rgba(245, 166, 35, 0.35), 0 0 22px rgba(245, 166, 35, 0.18);
+
+  /* ——————————————————————————————————————————————————————————————
+     COLOR — text
+     —————————————————————————————————————————————————————————————— */
+  --fg1:              #f8f9fa;   /* claim-bearing — only the load-bearing line */
+  --fg2:              #e3e6ec;   /* primary copy                                */
+  --fg3:              #9aa0ac;   /* secondary copy / labels                     */
+  --fg4:              #6c7484;   /* muted / metadata / timestamps               */
+  --fg5:              #4a5266;   /* faint / structural lines                    */
+
+  /* World family hues — used in W1–W13 emblems and chamber accents.
+     These are dim by default; brighten only when active. */
+  --world-chemistry:    #66e0c4;
+  --world-protocell:    #84e3ff;
+  --world-field:        #7fa5ff;
+  --world-morphogenesis:#c891f7;
+  --world-digital:      #5cd8a9;
+  --world-ecosystem:    #d4b86a;
+  --world-swarm:        #f59e6b;
+  --world-cognitive:    #b89cff;
+  --world-origins:      #d97a90;
+  --world-hypergraph:   #6dc6f5;
+  --world-quasispecies: #e87dca;
+  --world-symbiogenesis:#9be8a4;
+  --world-multiscale:   #f5d76e;
+
+  /* ——————————————————————————————————————————————————————————————
+     TYPE — families
+     —————————————————————————————————————————————————————————————— */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, "Cascadia Code", monospace;
+  --font-serif:   "Fraunces", "Iowan Old Style", "Charter", Georgia, serif;
+  /* Serif used SPARINGLY: room titles in Doctrine + Falsifier Ledger,
+     ceremonial / archival contexts only. Never for UI labels. */
+
+  /* ——————————————————————————————————————————————————————————————
+     TYPE — scale (mirror of design_tokens.py FONT_SIZE_*)
+     —————————————————————————————————————————————————————————————— */
+  --fs-status-number: 2.6rem;   /* big health score, 0–100 readouts        */
+  --fs-h1:            2.0rem;   /* room title                              */
+  --fs-h2:            1.4rem;   /* room subtitle / panel heading           */
+  --fs-h3:            1.1rem;   /* card heading                            */
+  --fs-body:          0.95rem;  /* default copy                            */
+  --fs-label:         0.85rem;  /* form labels, metadata key               */
+  --fs-detail:        0.78rem;  /* timestamps, hashes, micro-copy          */
+  --fs-tick:          0.70rem;  /* axis ticks, table footnotes             */
+
+  /* Weights */
+  --fw-display: 600;
+  --fw-heading: 600;
+  --fw-body:    400;
+  --fw-label:   500;
+  --fw-mono:    500;
+
+  /* Letter-spacing — labels and chips wear small caps treatment */
+  --tracking-cap:   0.08em;
+  --tracking-mono:  0.04em;
+  --tracking-tight: -0.01em;
+
+  /* ——————————————————————————————————————————————————————————————
+     SPACING / RADII / ELEVATION
+     —————————————————————————————————————————————————————————————— */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Panels are flat (border + subtle inner glow). Shadows are reserved
+     for raised affordances and are cool, never warm. */
+  --shadow-card:    0 1px 0 rgba(255, 255, 255, 0.03) inset,
+                    0 12px 40px -12px rgba(0, 0, 0, 0.55);
+  --shadow-overlay: 0 24px 80px -20px rgba(0, 0, 0, 0.7),
+                    0 0 0 1px var(--border);
+  --shadow-glow-soft: 0 0 60px -10px rgba(79, 195, 247, 0.15);
+
+  /* ——————————————————————————————————————————————————————————————
+     COMPATIBILITY ALIASES
+     UI-kit components use a parallel namespace (--status-*, --surface-*,
+     --fg-N, --accent-*, --border-N, --font-ui, --shadow-card-lg). Map
+     them onto the canonical tokens above so both spellings resolve.
+     —————————————————————————————————————————————————————————————— */
+  --status-verified:    var(--verified);
+  --status-exploratory: var(--warning);
+  --status-candidate:   var(--warning);
+  --status-falsified:   var(--failed);
+  --status-failed:      var(--failed);
+  --status-missing:     var(--unavailable);
+  --status-active:      var(--active);
+
+  --bg-base:   var(--bg-deep);
+  --bg-deepest: var(--bg-deeper);
+  --surface-1: var(--bg-panel);
+  --surface-2: var(--bg-panel-raised);
+  --surface-3: var(--bg-panel-glow);
+
+  --fg-1: var(--fg1);
+  --fg-2: var(--fg2);
+  --fg-3: var(--fg3);
+  --fg-4: var(--fg4);
+  --fg-5: var(--fg5);
+
+  --accent-trace: var(--trace);
+  --accent-motif: var(--motif);
+  --accent-active: var(--active);
+  --accent-verified: var(--verified);
+  --accent-warning: var(--warning);
+  --accent-failed: var(--failed);
+
+  --border-1: var(--border);
+  --border-2: var(--border-strong);
+  --border-dashed-1: var(--border-dashed);
+
+  --font-ui:             var(--font-body);
+  --font-display-sans:   var(--font-display);
+  --font-display-serif:  var(--font-serif);
+
+  --shadow-card-sm:  var(--shadow-card);
+  --shadow-card-lg:  var(--shadow-overlay);
+  --shadow-glow:     var(--shadow-glow-soft);
+
+  /* ——————————————————————————————————————————————————————————————
+     AGENT IDENTITY — distinct signatures across rooms.
+     Reserved for borders, glyphs, avatars, identity chips, trails.
+     NEVER use these as the main semantic status layer (red still
+     means falsifier; green still means verified). Agent colors
+     ride alongside, not over, status colors.
+     —————————————————————————————————————————————————————————————— */
+  --agent-builder:    #f5b942;   /* AMBER/GOLD — execution / forge          */
+  --agent-codex:      #5ee0ff;   /* ELECTRIC CYAN — senior code audit       */
+  --agent-architect:  #b084ff;   /* VIOLET — systems blueprint / structure  */
+  --agent-gpt:        #d6e0ff;   /* SILVER-BLUE — synthesis / theory review */
+  --agent-human:      #f4d77a;   /* WHITE-GOLD — arbitration / command      */
+
+  --agent-builder-soft:   rgba(245, 185, 66, 0.12);
+  --agent-codex-soft:     rgba(94, 224, 255, 0.12);
+  --agent-architect-soft: rgba(176, 132, 255, 0.12);
+  --agent-gpt-soft:       rgba(214, 224, 255, 0.10);
+  --agent-human-soft:     rgba(244, 215, 122, 0.14);
+
+  --agent-builder-glow:   0 0 0 1px rgba(245, 185, 66, 0.35), 0 0 20px rgba(245, 185, 66, 0.18);
+  --agent-codex-glow:     0 0 0 1px rgba(94, 224, 255, 0.40), 0 0 22px rgba(94, 224, 255, 0.20);
+  --agent-architect-glow: 0 0 0 1px rgba(176, 132, 255, 0.40), 0 0 24px rgba(176, 132, 255, 0.22);
+  --agent-gpt-glow:       0 0 0 1px rgba(214, 224, 255, 0.30), 0 0 18px rgba(214, 224, 255, 0.14);
+  --agent-human-glow:     0 0 0 1px rgba(244, 215, 122, 0.45), 0 0 22px rgba(244, 215, 122, 0.20);
+
+  /* Background textures — composed in stylesheets via background-image */
+  --grid-faint: linear-gradient(rgba(40, 48, 66, 0.32) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(40, 48, 66, 0.32) 1px, transparent 1px);
+  --grid-faint-size: 32px 32px;
+  --noise-dim: radial-gradient(circle at 20% 30%, rgba(79, 195, 247, 0.05), transparent 50%),
+               radial-gradient(circle at 80% 70%, rgba(189, 109, 248, 0.04), transparent 50%);
+
+  /* ——————————————————————————————————————————————————————————————
+     MOTION — semantic durations (mirror of design_tokens.py MOTION_*_MS)
+     —————————————————————————————————————————————————————————————— */
+  --motion-pulse:     1800ms;   /* active process            */
+  --motion-slow-glow: 4200ms;   /* live monitored item       */
+  --motion-flash:      600ms;   /* recent event (< 5 min)    */
+  --motion-fade:       800ms;   /* historical artifact       */
+  --motion-orbit:     8000ms;   /* dependency / trace flow   */
+  --motion-jitter:     300ms;   /* uncertainty (sparingly)   */
+
+  --easing-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --easing-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* =====================================================================
+   SEMANTIC ELEMENT STYLES
+   These map raw tokens to UI primitives. Components can use the tokens
+   directly OR rely on these classes for the canonical look.
+   ===================================================================== */
+
+html, body {
+  background: var(--bg-deep);
+  color: var(--fg2);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings — display family by default; serif reserved for ceremonial rooms */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-display);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg1);
+  margin: 0;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-heading);
+  color: var(--fg2);
+  margin: 0;
+}
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-heading);
+  color: var(--fg2);
+  margin: 0;
+}
+.h-serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+p, .body { font-family: var(--font-body); font-size: var(--fs-body); color: var(--fg2); }
+.label   { font-family: var(--font-body); font-size: var(--fs-label); font-weight: var(--fw-label); color: var(--fg3); }
+.detail  { font-family: var(--font-body); font-size: var(--fs-detail); color: var(--fg4); }
+.cap     { text-transform: uppercase; letter-spacing: var(--tracking-cap); font-size: var(--fs-detail); color: var(--fg3); }
+
+code, .mono, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  letter-spacing: var(--tracking-mono);
+  color: var(--fg2);
+}
+
+/* Status pills — single canonical chip used in every room */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: var(--fs-detail);
+  font-weight: var(--fw-label);
+  letter-spacing: var(--tracking-cap);
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.pill::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+.pill.verified    { color: var(--verified);    background: var(--verified-soft);    border-color: rgba(61,220,132,0.30); }
+.pill.warning     { color: var(--warning);     background: var(--warning-soft);     border-color: rgba(245,166,35,0.30); }
+.pill.failed      { color: var(--failed);      background: var(--failed-soft);      border-color: rgba(255,84,104,0.30); }
+.pill.active      { color: var(--active);      background: var(--active-soft);      border-color: rgba(79,195,247,0.30); }
+.pill.motif       { color: var(--motif);       background: var(--motif-soft);       border-color: rgba(189,109,248,0.30); }
+.pill.trace       { color: var(--trace);       background: var(--trace-soft);       border-color: rgba(34,211,238,0.30); }
+.pill.unavailable { color: var(--unavailable); background: var(--unavailable-soft); border-color: rgba(91,100,120,0.30); }
+
+/* Panel — the universal card */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.panel.raised  { background: var(--bg-panel-raised); }
+.panel.glow    { background: var(--bg-panel-glow); box-shadow: var(--shadow-glow-soft); }
+
+/* Empty-state — D22 binding. Dashed border is the canonical signal of
+   absence; never used for real content. */
+.empty-state {
+  background: var(--bg-panel);
+  border: 1px dashed var(--border-dashed);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5);
+  font-family: var(--font-mono);
+  color: var(--fg3);
+}
+.empty-state .empty-label {
+  color: var(--unavailable);
+  font-weight: var(--fw-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-cap);
+  font-size: var(--fs-detail);
+  margin-bottom: var(--space-2);
+}
+.empty-state .empty-reason  { color: var(--fg2); font-size: var(--fs-body); margin-bottom: var(--space-2); font-family: var(--font-body); }
+.empty-state .empty-expected{ color: var(--fg4); font-size: var(--fs-label); }
+.empty-state code { background: rgba(91,100,120,0.15); padding: 1px 6px; border-radius: var(--radius-xs); }
+
+/* Quarantine surface — Factory Intake. Visually screams "candidate, not truth". */
+.quarantine {
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(245, 166, 35, 0.04) 0 14px,
+      transparent          14px 28px),
+    var(--bg-quarantine);
+  border: 1px dashed rgba(245, 166, 35, 0.55);
+  border-radius: var(--radius-lg);
+}
+
+/* Keyframes — slow pulse for "live" anything. Off in print/test. */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1.00; }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 currentColor; }
+  100% { box-shadow: 0 0 0 12px transparent; }
+}
+@keyframes signal-flow {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -200; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
