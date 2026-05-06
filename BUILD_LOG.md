@@ -860,3 +860,17 @@ Red gates: `SS-02`, `SS-03`, `AI-04`, `AI-07`, `AI-08`, `AQ-03`. These remain ad
 - Doctrine: D23, D24, D25 ratified to binding docs and registry rows; README and Control Room docs updated to D7-D25.
 - Verification: python make_campaign_021.py; live adapter smoke for KEGG/NCBI/GBIF -> network; Playwright screenshot reports/campaign_021/factory_intake_dock_task033_full.png; pytest -q -> 11 passed.
 - Disclosure: formal lens registry currently contains six draft motifs, not eight; no motif IDs were fabricated. C020 methodology leak remains out of scope and promotion remains closed.
+
+## 2026-05-06 - TASK-034 Branch Sync + Merge to Main Complete
+
+- Agent: Codex 1.5x (fast).
+- Start: 2026-05-06 14:37:53 -04:00. Stop: 2026-05-06 14:47:36 -04:00. Actual: 9.72 minutes. Delta = 9.72 / 45 = 0.216.
+- Branch preservation: committed dirty TASK-033 work on `codex/task-033-multi-world-factory` as `ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd`; committed dirty CB-008 linked worktree on `feature/cb-008-ingestion-convergence` as `e857373697552dd0ce702266d931384299ea053b`.
+- Merge order: `codex/task-033-multi-world-factory` -> `main` with merge commit `189ca0d90be44026fdd8d04ed967cb774e58f37a`; `feature/cb-008-ingestion-convergence` -> `main` with merge commit `254b0332b9b0e47624fb2cd091c5118bd49a3e47`.
+- Merge hygiene: added `0cc152a` before CB-008 to stabilize raw-byte doctrine hash verification on Windows checkouts via `.gitattributes` and refreshed stale D15-D17.5 `docs/DOCTRINE.md` hashes.
+- Conflict resolution: `factory_lowlevel/adapters.py` kept CB-008 PubChem live `SMILES` / `ConnectivitySMILES` request order, provenance fields, and adapter audits while retaining TASK-033 `force_refresh`, numeric validation, and higher-world adapter additions.
+- Conflict resolution: `project_telemetry/ai_builder_tasks.jsonl` and `project_telemetry/low_level_factory_sessions.jsonl` were resolved by structured JSONL union, preserving unique task/session records from both branches and dropping duplicate legacy rows without `task_record_id`.
+- Conflict resolution: `reports/campaign_016/daemon_store/{empirical_records,snapshot,source_cache_index}.json` took CB-008 regenerated convergence artifacts because they carry the lower-layer provenance/audit/world-trace contract; TASK-033 higher-world results remain in Campaign 021 artifacts.
+- Verification: first TASK-033 merge pytest exposed the doctrine hash drift; after metadata stabilization `python -m pytest -q` passed 11/11. Post-CB full slice passed 43/43 using CB-008 tests plus Campaign 016, Campaign 019, TASK-033 public tests, and public contracts.
+- Verification: `python make_campaign_021.py` completed with Campaign 021 status green; daemon verification cycle returned run `sha256:fb5f527dbef951e9737658ca0e84889576e507448ed73fa508147d4d5d667a59` with 16 empirical records, 16 normalized refs, 19 evidence edges, 0 audit items, and 2 world traces.
+- Scope note: ignored private implementation surfaces (`worlds/`, trace dumps, top-level `make_campaign_*.py`) were not force-added during this merge ticket; verification ran against the local full workspace as designed.
