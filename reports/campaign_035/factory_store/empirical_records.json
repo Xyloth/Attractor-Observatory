@@ -1,0 +1,1406 @@
+{
+  "records": [
+    {
+      "canonical_name": "PubChem CID 241 C6H6",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 6,
+          "explicit_bond_symbols": 3,
+          "ring_digit_count": 2,
+          "unique_elements": [
+            "C"
+          ]
+        },
+        "canonical_smiles": "C1=CC=CC=C1",
+        "cid": 241,
+        "complexity": 15.5,
+        "heavy_atom_count": 6,
+        "molecular_formula": "C6H6",
+        "molecular_weight": 78.114,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/241",
+        "parser_version": "pubchem-pug-rest-property-parser.v2",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/241/property/MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:020020b65422779f53ef083e8fa9f1dbe113de072fb7198419cde282a4d2193f",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels He I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "He",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          19.81961484,
+          1.14447219,
+          3.623301981
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 24.587389011,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "He I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "parser_version": "nist-energy-csv-parser.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=He+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "Mineral-surface thioester prebiotic closure benchmark",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "surface_stabilized_closure",
+        "canonical_name": "Mineral-surface thioester prebiotic closure benchmark",
+        "chemistry_context": "mineral surface catalysis and activated-carbon chemistry",
+        "parameter_basis": "surface adsorption and catalysis strengths projected from mineral-surface closure literature",
+        "source_table": "peer-reviewed prebiotic chemistry benchmark catalog",
+        "world_parameters": {
+          "adsorption_rate": 0.34,
+          "benchmark": "surface_stabilized_closure",
+          "steps": 90,
+          "surface_catalysis": 0.24
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_prebiotic_chemistry_literature",
+        "citation": "Huber and Wachtershauser, Activated acetic acid by carbon fixation on (Fe,Ni)S under primordial conditions, Science, 1997.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1126/science.276.5310.245"
+      },
+      "record_id": "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+      "record_type": "prebiotic_chemistry_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.prebiotic_chemistry_catalog",
+      "world_family": "origins_chemistry"
+    },
+    {
+      "canonical_name": "KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "organism": "Escherichia coli K-12 MG1655",
+        "organism_code": "eco",
+        "pathway_count_observed": 4,
+        "reaction_edge_count": 8,
+        "reaction_edges": [
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:2.7.1.1"
+            ],
+            "from": "D-glucose",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00200",
+            "to": "D-glucose-6-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:5.3.1.9"
+            ],
+            "from": "D-glucose-6-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00771",
+            "to": "D-fructose-6-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:2.7.1.11"
+            ],
+            "from": "D-fructose-6-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00756",
+            "to": "D-fructose-1,6-bisphosphate"
+          },
+          {
+            "degree_proxy": 3,
+            "enzymes": [
+              "ec:4.1.2.13"
+            ],
+            "from": "D-fructose-1,6-bisphosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R01068",
+            "to": "glyceraldehyde-3-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:1.2.1.12"
+            ],
+            "from": "glyceraldehyde-3-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R01061",
+            "to": "3-phospho-D-glyceroyl-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:2.7.2.3"
+            ],
+            "from": "3-phospho-D-glyceroyl-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R01512",
+            "to": "3-phospho-D-glycerate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:5.4.2.12"
+            ],
+            "from": "3-phospho-D-glycerate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00658",
+            "to": "2-phospho-D-glycerate"
+          },
+          {
+            "degree_proxy": 1,
+            "enzymes": [
+              "structural_projection"
+            ],
+            "from": "2-phospho-D-glycerate",
+            "pathway_id": "eco01200",
+            "reaction_id": "R00200-closure",
+            "to": "D-glucose"
+          }
+        ],
+        "seed_pathway_count": 4,
+        "source_table": "KEGG REST pathway list and curated KEGG central-metabolism edge summary",
+        "species_count": 8,
+        "world_parameters": {
+          "initial_state": {
+            "2-phospho-D-glycerate": 8.0,
+            "3-phospho-D-glycerate": 1.0,
+            "3-phospho-D-glyceroyl-phosphate": 1.0,
+            "D-fructose-1,6-bisphosphate": 1.0,
+            "D-fructose-6-phosphate": 1.0,
+            "D-glucose": 1.0,
+            "D-glucose-6-phosphate": 1.0,
+            "glyceraldehyde-3-phosphate": 1.0
+          },
+          "projection_basis": "kegg_ecoli_structural_crn_v0",
+          "reactions": [
+            {
+              "catalysts": [],
+              "products": {
+                "D-glucose-6-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "D-glucose": 1.0
+              },
+              "reaction_id": "R00200",
+              "source_enzymes": [
+                "ec:2.7.1.1"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "D-fructose-6-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "D-glucose-6-phosphate": 1.0
+              },
+              "reaction_id": "R00771",
+              "source_enzymes": [
+                "ec:5.3.1.9"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "D-fructose-1,6-bisphosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "D-fructose-6-phosphate": 1.0
+              },
+              "reaction_id": "R00756",
+              "source_enzymes": [
+                "ec:2.7.1.11"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "glyceraldehyde-3-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.0375,
+              "rate_constant": 0.0375,
+              "reactants": {
+                "D-fructose-1,6-bisphosphate": 1.0
+              },
+              "reaction_id": "R01068",
+              "source_enzymes": [
+                "ec:4.1.2.13"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "3-phospho-D-glyceroyl-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "glyceraldehyde-3-phosphate": 1.0
+              },
+              "reaction_id": "R01061",
+              "source_enzymes": [
+                "ec:1.2.1.12"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "3-phospho-D-glycerate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "3-phospho-D-glyceroyl-phosphate": 1.0
+              },
+              "reaction_id": "R01512",
+              "source_enzymes": [
+                "ec:2.7.2.3"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "2-phospho-D-glycerate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "3-phospho-D-glycerate": 1.0
+              },
+              "reaction_id": "R00658",
+              "source_enzymes": [
+                "ec:5.4.2.12"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "D-glucose": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.0125,
+              "rate_constant": 0.0125,
+              "reactants": {
+                "2-phospho-D-glycerate": 1.0
+              },
+              "reaction_id": "R00200-closure",
+              "source_enzymes": [
+                "structural_projection"
+              ],
+              "source_pathway": "eco01200"
+            }
+          ],
+          "source_undertermination": "KEGG structural topology does not provide rate constants for every edge; rates are deterministic degree-scaled projections and marked exploratory."
+        }
+      },
+      "provenance": {
+        "authority": "KEGG organism code eco, E. coli K-12 MG1655",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.kegg.jp/kegg-bin/show_organism?org=eco",
+        "source_url": "https://rest.kegg.jp/list/pathway/eco"
+      },
+      "record_id": "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07",
+      "record_type": "kegg_metabolic_network_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.kegg.ecoli_mg1655.metabolic_network",
+      "world_family": "crn"
+    },
+    {
+      "canonical_name": "biomodels_high_order_reaction_hypergraph",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "biomodels_high_order_reaction_hypergraph",
+        "world_parameters": {
+          "benchmark": "high_order_closure",
+          "scenario_id": "W10-biomodels-hypergraph"
+        }
+      },
+      "provenance": {
+        "authority": "EMBL_EBI_BioModels_public_repository",
+        "citation": "EMBL-EBI BioModels public curated computational biology model repository.",
+        "license_class": "metadata_only",
+        "parser_version": "biomodels-hypergraph-derived-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.ebi.ac.uk/biomodels/",
+        "source_url": "https://www.ebi.ac.uk/biomodels/"
+      },
+      "record_id": "sha256:250cec24dd4cc5f71b5510e3cb94c01486d4ef59505f39518dfea488f6ad41f8",
+      "record_type": "biomodels_reaction_hypergraph",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.ebi_biomodels.reaction_hypergraphs",
+      "world_family": "hypergraph_reactions"
+    },
+    {
+      "canonical_name": "endosymbiotic_genome_reduction_mutualism_summary",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "endosymbiotic_genome_reduction_mutualism_summary",
+        "world_parameters": {
+          "benchmark": "stable_mutualism",
+          "scenario_id": "W12-ncbi-endosymbiosis-mutualism"
+        }
+      },
+      "provenance": {
+        "authority": "NCBI_Datasets_public_genome_repository",
+        "citation": "NCBI Datasets public genome metadata for endosymbiotic bacterial genome reduction examples.",
+        "license_class": "metadata_only",
+        "parser_version": "ncbi-endosymbiosis-genome-summary-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.ncbi.nlm.nih.gov/datasets/",
+        "source_url": "https://www.ncbi.nlm.nih.gov/datasets/"
+      },
+      "record_id": "sha256:308d9f294a8f80806603aca556d00e229cbf3014664b632dccaf94936397a552",
+      "record_type": "ncbi_endosymbiosis_genome_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.ncbi.endosymbiosis_genomes",
+      "world_family": "symbiogenesis"
+    },
+    {
+      "canonical_name": "Schnakenberg reaction-diffusion spots",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "schnakenberg",
+        "canonical_name": "Schnakenberg reaction-diffusion spots",
+        "parameter_range": {
+          "a": [
+            0.05,
+            0.2
+          ],
+          "b": [
+            0.8,
+            1.2
+          ]
+        },
+        "reaction_model": "schnakenberg",
+        "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
+        "world_parameters": {
+          "benchmark": "schnakenberg",
+          "export_interval": 4,
+          "steps": 36
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_reaction_diffusion_literature",
+        "citation": "Schnakenberg, Simple chemical reaction systems with limit cycle behaviour, Journal of Theoretical Biology, 1979.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1016/0022-5193(79)90042-0"
+      },
+      "record_id": "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+      "record_type": "reaction_diffusion_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.reaction_diffusion_benchmarks",
+      "world_family": "field"
+    },
+    {
+      "canonical_name": "rossler_1976_continuous_chaos",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "rossler_1976_continuous_chaos",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor",
+        "invariants": [
+          "spiral_band",
+          "folding_return"
+        ],
+        "parameters": {
+          "a": 0.2,
+          "b": 0.2,
+          "c": 5.7
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Rossler, An Equation for Continuous Chaos, Physics Letters A, 1976.",
+        "doi": "10.1016/0375-9601(76)90101-8",
+        "parser_version": "math-primitives-curated-catalog.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1016/0375-9601(76)90101-8"
+      },
+      "record_id": "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "Brusselator reaction-diffusion oscillation",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "brusselator",
+        "canonical_name": "Brusselator reaction-diffusion oscillation",
+        "parameter_range": {
+          "a": [
+            0.8,
+            1.2
+          ],
+          "b": [
+            2.4,
+            3.0
+          ]
+        },
+        "reaction_model": "brusselator",
+        "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
+        "world_parameters": {
+          "benchmark": "brusselator",
+          "export_interval": 4,
+          "steps": 36
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_reaction_diffusion_literature",
+        "citation": "Prigogine and Lefever, Symmetry breaking instabilities in dissipative systems, Journal of Chemical Physics, 1968.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1063/1.1668896"
+      },
+      "record_id": "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+      "record_type": "reaction_diffusion_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.reaction_diffusion_benchmarks",
+      "world_family": "field"
+    },
+    {
+      "canonical_name": "sprott_simple_chaotic_flow",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "sprott_simple_chaotic_flow",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor_family",
+        "invariants": [
+          "low_term_count",
+          "chaotic_flow"
+        ],
+        "parameters": {
+          "family": "Sprott"
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "example low-dimensional polynomial chaotic flow"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Sprott, Some simple chaotic flows, Physical Review E, 1994.",
+        "doi": "10.1103/PhysRevE.50.R647",
+        "parser_version": "math-primitives-curated-catalog.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1103/PhysRevE.50.R647"
+      },
+      "record_id": "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 962 H2O",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 1,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": [
+            "O"
+          ]
+        },
+        "canonical_smiles": "O",
+        "cid": 962,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "H2O",
+        "molecular_weight": 18.015,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/962",
+        "parser_version": "pubchem-pug-rest-property-parser.v2",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/962/property/MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "hopf_limit_cycle_normal_form",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "hopf_limit_cycle_normal_form",
+        "dimension": 2,
+        "expected_stable_form": "stable_limit_cycle",
+        "invariants": [
+          "stable_radius",
+          "phase_translation"
+        ],
+        "parameters": {
+          "mu": 1.0,
+          "omega": 1.0
+        },
+        "primitive_class": "limit_cycle",
+        "state_equation": "dr/dt = mu*r - r^3; dtheta/dt = omega"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Guckenheimer and Holmes, Hopf bifurcation normal form.",
+        "doi": "10.1007/978-1-4757-3976-6",
+        "parser_version": "math-primitives-curated-catalog.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6"
+      },
+      "record_id": "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "allen_neural_homeostasis_control_summary",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "allen_neural_homeostasis_control_summary",
+        "world_parameters": {
+          "benchmark": "anticipation",
+          "scenario_id": "W8-allen-anticipation-control"
+        }
+      },
+      "provenance": {
+        "authority": "Allen_Brain_Atlas_public_API",
+        "citation": "Allen Brain Atlas public API / Brain Map portal metadata.",
+        "license_class": "metadata_only",
+        "parser_version": "allen-brain-cognitive-summary-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://portal.brain-map.org/",
+        "source_url": "https://portal.brain-map.org/"
+      },
+      "record_id": "sha256:7fad09316047ea3a095e539164987c9727839c74fdb68f29c2df23b00c662c91",
+      "record_type": "allen_brain_cognitive_dataset",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.allen_brain_atlas.cognitive_control",
+      "world_family": "cognitive"
+    },
+    {
+      "canonical_name": "drosophila_segmented_body_morphogen_profile",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "drosophila_segmented_body_morphogen_profile",
+        "world_parameters": {
+          "benchmark": "segmented_body",
+          "morphogen_profile": {
+            "bicoid": "anterior_gradient",
+            "even_skipped": "pair_rule_stripes",
+            "nanos": "posterior_gradient"
+          },
+          "scenario_id": "W4-flybase-segmented-body"
+        }
+      },
+      "provenance": {
+        "authority": "FlyBase_and_VirtualFlyBrain_public_exports",
+        "citation": "FlyBase / VirtualFlyBrain public Drosophila embryonic patterning references.",
+        "license_class": "metadata_only",
+        "parser_version": "flybase-vfb-morphogen-profile-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://virtualflybrain.org/",
+        "source_url": "https://flybase.org/reports/FBgn0000166"
+      },
+      "record_id": "sha256:805cc22bf7f3dd7d006a101289aaebd4072fc3bf1fe7a30901a3e9bf7887f74c",
+      "record_type": "flybase_morphogen_profile",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.flybase_vfb.morphogen_profiles",
+      "world_family": "morphogenesis"
+    },
+    {
+      "canonical_name": "GBIF Jornada Basin ecosystem occurrence pilot",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "geometry": "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))",
+        "guild_occurrence_counts": {
+          "decomposer": 664,
+          "grazer": 174,
+          "predator": 165,
+          "producer": 3967
+        },
+        "site": "Jornada Basin LTER vicinity",
+        "source_table": "GBIF occurrence search count summaries by guild taxon",
+        "taxa": [
+          {
+            "guild": "producer",
+            "occurrence_count": 89,
+            "role": "black grama grass",
+            "scientific_name": "Bouteloua eriopoda"
+          },
+          {
+            "guild": "producer",
+            "occurrence_count": 3878,
+            "role": "creosote bush",
+            "scientific_name": "Larrea tridentata"
+          },
+          {
+            "guild": "grazer",
+            "occurrence_count": 58,
+            "role": "granivorous rodent",
+            "scientific_name": "Dipodomys spectabilis"
+          },
+          {
+            "guild": "grazer",
+            "occurrence_count": 116,
+            "role": "herbivorous lagomorph",
+            "scientific_name": "Lepus californicus"
+          },
+          {
+            "guild": "predator",
+            "occurrence_count": 129,
+            "role": "mesopredator",
+            "scientific_name": "Canis latrans"
+          },
+          {
+            "guild": "predator",
+            "occurrence_count": 36,
+            "role": "mesopredator",
+            "scientific_name": "Vulpes macrotis"
+          },
+          {
+            "guild": "decomposer",
+            "occurrence_count": 664,
+            "role": "fungal decomposer proxy",
+            "scientific_name": "Ascomycota"
+          }
+        ],
+        "world_parameters": {
+          "benchmark": "may_stability",
+          "initial_decomposers": 18.0,
+          "initial_grazers": 13.190906,
+          "initial_predators": 10.0,
+          "initial_producers": 62.984125,
+          "initial_resource": 95.0,
+          "interaction_radius": 1.45,
+          "interaction_strength": 0.5,
+          "patch_count": 6,
+          "source_undertermination": "GBIF occurrence counts are observation-availability proxies, not biomass estimates; projection is exploratory and audit-visible.",
+          "steps": 80
+        }
+      },
+      "provenance": {
+        "authority": "GBIF occurrence API plus Jornada Basin LTER site framing",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.gbif.org/",
+        "source_url": "https://api.gbif.org/v1/occurrence/search"
+      },
+      "record_id": "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22",
+      "record_type": "gbif_ecosystem_occurrence_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.gbif.jornada_basin.ecosystem_occurrences",
+      "world_family": "ecosystem"
+    },
+    {
+      "canonical_name": "NIST energy levels Ne I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 3,
+        "element_symbol": "Ne",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          16.619,
+          0.229,
+          4.71654
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 21.56454,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Ne I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "parser_version": "nist-energy-csv-parser.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Ne+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "collective_trail_foraging_behavior_summary",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "collective_trail_foraging_behavior_summary",
+        "world_parameters": {
+          "agent_count": 24,
+          "benchmark": "trail_foraging",
+          "scenario_id": "W7-movebank-trail-foraging"
+        }
+      },
+      "provenance": {
+        "authority": "Movebank_public_collective_movement_repository",
+        "citation": "Movebank public animal movement repository, collective movement study metadata.",
+        "license_class": "metadata_only",
+        "parser_version": "movebank-swarm-summary-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.movebank.org/",
+        "source_url": "https://www.movebank.org/cms/movebank-main"
+      },
+      "record_id": "sha256:9615d76235d35eaf5d760f5d3959228a33215620c8f9479bc3e2527ea66a7ca7",
+      "record_type": "movebank_swarm_behavior_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.movebank_swarm_behavior",
+      "world_family": "swarm"
+    },
+    {
+      "canonical_name": "NIST energy levels Ar I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 3,
+        "element_symbol": "Ar",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          11.548,
+          0.28,
+          3.9316119
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 15.7596119,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Ar I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "parser_version": "nist-energy-csv-parser.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Ar+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "fixed_point_linear_sink",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "fixed_point_linear_sink",
+        "dimension": 1,
+        "expected_stable_form": "asymptotically_stable_fixed_point",
+        "invariants": [
+          "negative_real_eigenvalue",
+          "single_basin"
+        ],
+        "parameters": {
+          "lambda": 1.0
+        },
+        "primitive_class": "fixed_point",
+        "state_equation": "dx/dt = -lambda*x"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Guckenheimer and Holmes, Nonlinear Oscillations, Dynamical Systems, and Bifurcations of Vector Fields.",
+        "doi": "10.1007/978-1-4757-3976-6",
+        "parser_version": "math-primitives-curated-catalog.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6"
+      },
+      "record_id": "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "Alkaline hydrothermal gradient protocell benchmark",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "gradient_anchored_protocell",
+        "canonical_name": "Alkaline hydrothermal gradient protocell benchmark",
+        "chemistry_context": "redox and pH gradients across mineral compartments",
+        "parameter_basis": "gradient and boundary terms projected from alkaline hydrothermal origins literature",
+        "source_table": "peer-reviewed prebiotic chemistry benchmark catalog",
+        "world_parameters": {
+          "benchmark": "gradient_anchored_protocell",
+          "boundary_polymerization": 0.095,
+          "gradient_strength": 0.68,
+          "steps": 90
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_prebiotic_chemistry_literature",
+        "citation": "Martin and Russell, On the origin of biochemistry at an alkaline hydrothermal vent, Philosophical Transactions B, 2007.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1098/rstb.2006.1881"
+      },
+      "record_id": "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d",
+      "record_type": "prebiotic_chemistry_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.prebiotic_chemistry_catalog",
+      "world_family": "origins_chemistry"
+    },
+    {
+      "canonical_name": "PubChem CID 297 CH4",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 1,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": [
+            "C"
+          ]
+        },
+        "canonical_smiles": "C",
+        "cid": 297,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "CH4",
+        "molecular_weight": 16.043,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/297",
+        "parser_version": "pubchem-pug-rest-property-parser.v2",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/297/property/MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "fatty_acid_vesicle_growth_division_benchmark",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "fatty_acid_vesicle_growth_division_benchmark",
+        "world_parameters": {
+          "boundary_kind": "self_maintained",
+          "division_threshold": 12.2,
+          "dt": 0.25,
+          "external_repairs_boundary": true,
+          "initial_closure_marker": 2.4,
+          "initial_internal_resource": 9.0,
+          "initial_membrane_integrity": 0.92,
+          "initial_membrane_material": 11.5,
+          "internal_produces_boundary": true,
+          "membrane_production_rate": 0.16,
+          "repair_rate": 0.035,
+          "scenario_id": "W2-szostak-fatty-acid-vesicle",
+          "steps": 36
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_Szostak_lab_protocell_literature",
+        "citation": "Zhu and Szostak, Coupled growth and division of model protocell membranes, Journal of the American Chemical Society / Nature-era protocell literature.",
+        "license_class": "metadata_only",
+        "parser_version": "szostak-liposome-derived-parameter-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://doi.org/10.1038/nature07018",
+        "source_url": "https://doi.org/10.1038/nature07018"
+      },
+      "record_id": "sha256:aee16ccfa04d48d949d4661976f35ee3b14d8d40df9e25d416ff901407ff488d",
+      "record_type": "liposome_protocell_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.szostak_liposome.protocell_benchmarks",
+      "world_family": "protocell"
+    },
+    {
+      "canonical_name": "NIST energy levels Li I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "Li",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          1.847823,
+          1.525327,
+          2.01856495
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 5.39171495,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Li I",
+        "term_count": 3
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "parser_version": "nist-energy-csv-parser.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Li+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 280 CO2",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 1,
+          "element_token_count": 3,
+          "explicit_bond_symbols": 2,
+          "ring_digit_count": 0,
+          "unique_elements": [
+            "C",
+            "O"
+          ]
+        },
+        "canonical_smiles": "C(=O)=O",
+        "cid": 280,
+        "complexity": 18.3,
+        "heavy_atom_count": 3,
+        "molecular_formula": "CO2",
+        "molecular_weight": 44.009,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/280",
+        "parser_version": "pubchem-pug-rest-property-parser.v2",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/280/property/MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:c144561978c7ca62a7d5680afec1fcd2cc3ef7eb4379cb290a20700ca87f8344",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NCBI HIV-1 HXB2 quasispecies pilot projection",
+      "license_class": "public_domain",
+      "mode_tag": "exploratory",
+      "payload": {
+        "accession": "K03455.1",
+        "binary_projection_basis": "A/C -> 0, G/T -> 1 over the first 240 nt of the NCBI reference sequence",
+        "mutation_rate_source": {
+          "citation": "Mansky and Temin, Lower in vivo mutation rate of human immunodeficiency virus type 1 than that predicted from the fidelity of purified reverse transcriptase, Journal of Virology, 1995.",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/7609081/",
+          "usage": "Pilot quasispecies projection uses a conservative near-neutral mutation-rate scale, not a claim-bearing within-host estimate."
+        },
+        "organism": "Human immunodeficiency virus type 1 (HXB2)",
+        "sequence_length": 685,
+        "sequence_window_length": 240,
+        "sequence_window_start": 1,
+        "source_table": "NCBI E-utilities FASTA and peer-reviewed mutation-rate metadata",
+        "world_parameters": {
+          "benchmark": "neutral_networks",
+          "deletion_rate": 0.0005,
+          "insertion_rate": 0.0005,
+          "landscape_mode": "near_neutral",
+          "master_sequence": "111001110100110001000000",
+          "mutation_rate": 0.0025,
+          "neutral_radius": 5,
+          "population_size": 96,
+          "selection_strength": 0.3,
+          "source_undertermination": "NCBI reference sequence plus literature mutation-rate metadata is a pilot projection, not a sampled within-host quasispecies panel.",
+          "steps": 48
+        }
+      },
+      "provenance": {
+        "authority": "NIH NCBI Nucleotide",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.ncbi.nlm.nih.gov/nuccore/K03455.1",
+        "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=K03455.1&rettype=fasta&retmode=text"
+      },
+      "record_id": "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704",
+      "record_type": "ncbi_hiv1_sequence_pilot",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.ncbi.hiv1.reference_quasispecies_pilot",
+      "world_family": "quasispecies"
+    },
+    {
+      "canonical_name": "PubChem CID 222 H3N",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 1,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": [
+            "N"
+          ]
+        },
+        "canonical_smiles": "N",
+        "cid": 222,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "H3N",
+        "molecular_weight": 17.031,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/222",
+        "parser_version": "pubchem-pug-rest-property-parser.v2",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/222/property/MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "avida_logic_task_copy_loop_trace",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "avida_logic_task_copy_loop_trace",
+        "world_parameters": {
+          "benchmark": "copy_loop",
+          "scenario_id": "W5-avida-copy-loop-projection"
+        }
+      },
+      "provenance": {
+        "authority": "Lenski_Ofria_Avida_peer_reviewed_archive",
+        "citation": "Lenski, Ofria, Pennock, and Adami, The evolutionary origin of complex features, Nature, 2003.",
+        "license_class": "metadata_only",
+        "parser_version": "avida-executable-genome-trace-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://doi.org/10.1038/nature01568",
+        "source_url": "https://doi.org/10.1038/nature01568"
+      },
+      "record_id": "sha256:dcaf1c567d059b91c49a355e8effa39d1771275dd0ec42b06c201a76ab84dba3",
+      "record_type": "avida_executable_genome_trace",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.avida.digital_evolution_traces",
+      "world_family": "digital"
+    },
+    {
+      "canonical_name": "NIST energy levels H I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "H",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          10.19880615024,
+          1.88868750886,
+          1.510940940602
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 13.598434599702,
+        "reference_count": 2,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "H I",
+        "term_count": 3
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "parser_version": "nist-energy-csv-parser.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=H+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "Gray-Scott reaction-diffusion stripes",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "gray_scott",
+        "canonical_name": "Gray-Scott reaction-diffusion stripes",
+        "parameter_range": {
+          "feed": [
+            0.02,
+            0.08
+          ],
+          "kill": [
+            0.045,
+            0.07
+          ]
+        },
+        "reaction_model": "gray_scott",
+        "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
+        "world_parameters": {
+          "benchmark": "gray_scott",
+          "export_interval": 4,
+          "steps": 36
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_reaction_diffusion_literature",
+        "citation": "Pearson, Complex patterns in a simple system, Science, 1993.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1126/science.261.5118.189"
+      },
+      "record_id": "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262",
+      "record_type": "reaction_diffusion_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.reaction_diffusion_benchmarks",
+      "world_family": "field"
+    },
+    {
+      "canonical_name": "lorenz_1963_strange_attractor",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "lorenz_1963_strange_attractor",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor",
+        "invariants": [
+          "sensitive_dependence",
+          "bounded_absorbing_region"
+        ],
+        "parameters": {
+          "beta": 2.6666666667,
+          "rho": 28.0,
+          "sigma": 10.0
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Lorenz, Deterministic Nonperiodic Flow, Journal of the Atmospheric Sciences, 1963.",
+        "doi": "10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2",
+        "parser_version": "math-primitives-curated-catalog.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2"
+      },
+      "record_id": "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "physiome_nested_coupling_multiscale_model",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "physiome_nested_coupling_multiscale_model",
+        "world_parameters": {
+          "benchmark": "scale_separation",
+          "scenario_id": "W13-physiome-scale-separation"
+        }
+      },
+      "provenance": {
+        "authority": "Physiome_Model_Repository_public_models",
+        "citation": "Physiome Model Repository public multi-scale model metadata.",
+        "license_class": "metadata_only",
+        "parser_version": "physiome-multiscale-model-parser.v1",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_home": "https://models.physiomeproject.org/",
+        "source_url": "https://models.physiomeproject.org/"
+      },
+      "record_id": "sha256:f44ebcd2fe60e7960002e7c6f1466e2d0d572bf6ff2ebfeade933b48cb9a8443",
+      "record_type": "physiome_multiscale_model",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.physiome.multiscale_models",
+      "world_family": "multiscale"
+    },
+    {
+      "canonical_name": "quasiperiodic_torus_flow",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "quasiperiodic_torus_flow",
+        "dimension": 2,
+        "expected_stable_form": "quasiperiodic_torus",
+        "invariants": [
+          "angle_wrap",
+          "irrational_frequency_ratio"
+        ],
+        "parameters": {
+          "omega1": 1.0,
+          "omega2": 1.41421356237
+        },
+        "primitive_class": "torus",
+        "state_equation": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Katok and Hasselblatt, Introduction to the Modern Theory of Dynamical Systems.",
+        "doi": "10.1007/978-1-4612-1140-2",
+        "parser_version": "math-primitives-curated-catalog.v1",
+        "raw_exported": false,
+        "retrieval_timestamp": "2026-05-06T19:15:21Z",
+        "retrieved_at": "2026-05-06T19:15:21Z",
+        "source_url": "https://doi.org/10.1007/978-1-4612-1140-2"
+      },
+      "record_id": "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    }
+  ],
+  "schema": "LowLevelEmpiricalRecordSet.v1"
+}

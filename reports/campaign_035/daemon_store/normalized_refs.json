@@ -1,0 +1,88 @@
+{
+  "records": [
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:f44ebcd2fe60e7960002e7c6f1466e2d0d572bf6ff2ebfeade933b48cb9a8443",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.multiscale.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "scale_separation",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:e32f8825b1831abd6373eecdbf0ae3976f19427e2c47bdb482d0002fe27b4315",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "benchmark": "scale_separation",
+              "scenario_id": "W13-physiome-scale-separation"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.multiscale.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://models.physiomeproject.org/",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "benchmark",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "benchmark": "scale_separation",
+              "scenario_id": "W13-physiome-scale-separation"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.multiscale.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.multiscale.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "multiscale"
+    }
+  ],
+  "schema": "LowLevelNormalizedReferenceSet.v1"
+}

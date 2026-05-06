@@ -1,0 +1,467 @@
+{
+  "records": [
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:86e66cea51031af645e3a016056381d40695022fa968de629b013e679151fe8d",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 3,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:35688799e46fea01225a5f450088877da1f71113d5a5003c4676919607254e93",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 1,
+              "element_token_count": 3,
+              "explicit_bond_symbols": 2,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C",
+                "O"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "CO2",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 3,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C(=O)=O",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C(=O)=O",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 1,
+              "element_token_count": 3,
+              "explicit_bond_symbols": 2,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C",
+                "O"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:83b9c578a47db610121f20c53dcf69f42e7ec7f48370f002f46c5c9eb6b00355",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:744971ff442b8415be7ab5420797fda3cbd20c6ff761dd34042efec5cfdd0b36",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 6,
+              "explicit_bond_symbols": 3,
+              "ring_digit_count": 2,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "C6H6",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C1=CC=CC=C1",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C1=CC=CC=C1",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 6,
+              "explicit_bond_symbols": 3,
+              "ring_digit_count": 2,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:b1d190dc2f2b7bebe9074a8640bfb58e92e43a4f0aa08133db2b14febf8970c9",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "N"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "H3N",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "N",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "N",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "N"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:dae72eda0eb0a32fcf62242ae0ee334a3bffa9f41f4b5f4f410828338e01f375",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "CH4",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:e3e091c17fba973dbc8680e70394d50eff466a3f5b0d4f729682b2745dd31e44",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "O"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "H2O",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "O",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "O",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "O"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    }
+  ],
+  "schema": "LowLevelNormalizedReferenceSet.v1"
+}

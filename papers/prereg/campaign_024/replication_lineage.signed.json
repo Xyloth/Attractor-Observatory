@@ -1,0 +1,38 @@
+{
+  "campaign_id": "campaign_024",
+  "claim_promotion_allowed": false,
+  "content_hash": "sha256:e3998ff62a094a930f57c4080f8dc9ccf89762a8fef2a8a728550e16c99c36d9",
+  "forbidden_adjustments": [
+    "no event-token predicates",
+    "no event-token lenses",
+    "no generator-id metadata",
+    "no C020 floor label-function score",
+    "no claim-bearing promotion"
+  ],
+  "input_corpus_hash": "sha256:7b01bf3517426d489b6cd8678a6363303f2ca78749ddc49717c5b798004d1344",
+  "lens_coupling_audit_hash": "sha256:727c28ab17048eb5544ef2d4ae4edddfc9598a176d7440a6aca49300a139110c",
+  "min_negative_per_substrate": 15,
+  "min_positive_per_substrate": 15,
+  "mode_tag": "exploratory",
+  "motif_id": "motif.replication_lineage.draft",
+  "permutation_N": 10000,
+  "permutation_seed": 24024,
+  "predicate_contract_hash": "sha256:5ce35bc9b64c16a61977b14a4801f6db0b85cdd8e1a0a900c746294d4dd93a45",
+  "primary_lens": null,
+  "schema": "Campaign024LensSidePreregistration.v1",
+  "signature": {
+    "scheme": "sha256-preregistration-content",
+    "signed_by": "Codex 1.5x",
+    "signed_hash": "sha256:e3998ff62a094a930f57c4080f8dc9ccf89762a8fef2a8a728550e16c99c36d9",
+    "status": "signed_before_permutation"
+  },
+  "statistic": "mean clean lens score on MotifContract.v2 positives minus mean score on MotifContract.v2 negatives",
+  "stratification": "world_family",
+  "task_id": "TASK-LENS-METHOD",
+  "verdict_logic": {
+    "not_evaluable": "corpus or clean lens unavailable",
+    "signal_partial_or_inconclusive": "shuffled_mean < observed_gap <= shuffled_95_ci_high",
+    "signal_survives_shuffle": "observed_gap > shuffled_95_ci_high",
+    "signal_was_substrate_id": "observed_gap <= shuffled_mean"
+  }
+}

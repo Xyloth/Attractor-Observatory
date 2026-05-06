@@ -1,0 +1,189 @@
+{
+  "audit_count": 0,
+  "latest_record": "PubChem CID 222 H3N",
+  "life_form_count": 5,
+  "normalized_count": 5,
+  "record_count": 5,
+  "rejection_count": 0,
+  "routed_worlds": [
+    "atomic_molecular_primitives"
+  ],
+  "run_id": "sha256:252b9d79e3f6c04323336e0c1c726677c6480991a0f6ffd11e1ae19ddfaf1b19",
+  "run_path": "reports\\task_w1_mass_ingest\\factory_runs\\run_252b9d79e3f6c043.json",
+  "source_count": 1,
+  "source_ids": [
+    "source.pubchem.pugrest.small_molecules"
+  ],
+  "stage": "audit",
+  "stage_history": [
+    {
+      "at": "2026-05-06T21:51:28Z",
+      "source_ids": [
+        "source.nist.asd.energy_levels"
+      ],
+      "stage": "download",
+      "started_at": "2026-05-06T21:51:28Z",
+      "status": "running",
+      "target_worlds": []
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "record_count": 5,
+      "source_count": 1,
+      "stage": "parse",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "normalized_count": 5,
+      "stage": "normalize",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "rejection_count": 0,
+      "routed_worlds": [
+        "atomic_molecular_primitives"
+      ],
+      "stage": "route",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "latest_record": "NIST energy levels He I",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 1
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "latest_record": "NIST energy levels Ne I",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 2
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "latest_record": "NIST energy levels Ar I",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 3
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "latest_record": "NIST energy levels Li I",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 4
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "latest_record": "NIST energy levels H I",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "life_form_count": 5,
+      "stage": "motif_evaluate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "audit_count": 0,
+      "run_id": "sha256:92a9fdb7b18f4a4ce4be3db6c5339151568afedd56a8c75a7b2af53ca813ead7",
+      "run_path": "reports\\task_w1_mass_ingest\\factory_runs\\run_92a9fdb7b18f4a4c.json",
+      "stage": "audit",
+      "status": "done"
+    },
+    {
+      "at": "2026-05-06T21:51:29Z",
+      "source_ids": [
+        "source.pubchem.pugrest.small_molecules"
+      ],
+      "stage": "download",
+      "started_at": "2026-05-06T21:51:29Z",
+      "status": "running",
+      "target_worlds": []
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "record_count": 5,
+      "source_count": 1,
+      "stage": "parse",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "normalized_count": 5,
+      "stage": "normalize",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "rejection_count": 0,
+      "routed_worlds": [
+        "atomic_molecular_primitives"
+      ],
+      "stage": "route",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "latest_record": "PubChem CID 962 H2O",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 1
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "latest_record": "PubChem CID 241 C6H6",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 2
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "latest_record": "PubChem CID 280 CO2",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 3
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "latest_record": "PubChem CID 297 CH4",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 4
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "latest_record": "PubChem CID 222 H3N",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T21:51:30Z",
+      "life_form_count": 5,
+      "stage": "motif_evaluate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T21:51:31Z",
+      "audit_count": 0,
+      "run_id": "sha256:252b9d79e3f6c04323336e0c1c726677c6480991a0f6ffd11e1ae19ddfaf1b19",
+      "run_path": "reports\\task_w1_mass_ingest\\factory_runs\\run_252b9d79e3f6c043.json",
+      "stage": "audit",
+      "status": "done"
+    }
+  ],
+  "started_at": "2026-05-06T21:51:29Z",
+  "status": "done",
+  "target_worlds": [],
+  "trace_count": 5,
+  "updated_at": "2026-05-06T21:51:31Z"
+}

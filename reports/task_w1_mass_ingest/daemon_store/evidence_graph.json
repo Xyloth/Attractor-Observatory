@@ -1,0 +1,61 @@
+{
+  "edges": [
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:3ad72b4e8100226439a8005be22d50d6a6b319a96baf74c7c082693e4ddd3a02",
+      "evidence_record_ids": [
+        "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+        "sha256:83b9c578a47db610121f20c53dcf69f42e7ec7f48370f002f46c5c9eb6b00355",
+        "sha256:86e66cea51031af645e3a016056381d40695022fa968de629b013e679151fe8d",
+        "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
+        "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704"
+      ],
+      "relation": "has_process_role",
+      "source": "world:atomic_molecular_primitives",
+      "target": "process_roles:bond_topology"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:40273839a21de9c853d26a372bf7d687baeddfbb5c773cbb330e0ae2484e5506",
+      "evidence_record_ids": [
+        "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+        "sha256:83b9c578a47db610121f20c53dcf69f42e7ec7f48370f002f46c5c9eb6b00355",
+        "sha256:86e66cea51031af645e3a016056381d40695022fa968de629b013e679151fe8d",
+        "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
+        "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:atomic_molecular_primitives",
+      "target": "state_space_effects:molecular_topology_constraint"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:c6824c9f2ff15ade1864379015a21dec1bc19df49b879b5f90e95dee5367f73f",
+      "evidence_record_ids": [
+        "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+        "sha256:83b9c578a47db610121f20c53dcf69f42e7ec7f48370f002f46c5c9eb6b00355",
+        "sha256:86e66cea51031af645e3a016056381d40695022fa968de629b013e679151fe8d",
+        "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
+        "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:atomic_molecular_primitives",
+      "target": "overlap_fields:covalent_structure_field"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:e2e6fc08aa4ffbca2585f7d5e4c3a503d00ad2901e5e0ae4e8ca7003ef8a8d73",
+      "evidence_record_ids": [
+        "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+        "sha256:83b9c578a47db610121f20c53dcf69f42e7ec7f48370f002f46c5c9eb6b00355",
+        "sha256:86e66cea51031af645e3a016056381d40695022fa968de629b013e679151fe8d",
+        "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
+        "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:atomic_molecular_primitives",
+      "target": "interaction_channels:covalent_bond_graph"
+    }
+  ],
+  "schema": "LowLevelEvidenceGraph.v1"
+}

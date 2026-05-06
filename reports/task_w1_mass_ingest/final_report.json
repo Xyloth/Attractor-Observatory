@@ -1,0 +1,89 @@
+{
+  "adapters_touched": [
+    "NISTAtomicSpectraAdapter",
+    "PubChemSmallMoleculeAdapter"
+  ],
+  "atomic_status": {
+    "nist_asd_energy_levels_available": 108,
+    "nist_asd_no_energy_level_rows": 10
+  },
+  "audit_queue": {
+    "escalated": 10,
+    "escalation_reason": "NIST ASD has no neutral energy-level rows for listed superheavy elements; records are retained as source-limited and not fabricated.",
+    "items": 10,
+    "resolved": 0
+  },
+  "daemon": {
+    "clean_cycle_count": 2,
+    "cycle_count": 2,
+    "latest_heartbeat": {
+      "audit_items": [],
+      "completed_source_count": 0,
+      "cycle_index": 1,
+      "due_source_count": 0,
+      "heartbeat_at": "2026-05-06T22:00:06Z",
+      "quarantined_source_count": 0,
+      "run_ids": [],
+      "schema": "FactoryDaemonHeartbeat.v1",
+      "status": "complete"
+    }
+  },
+  "fixes_shipped": [
+    "Added W-1-only daemon filtering to prevent W0+/higher-world contention.",
+    "Fixed NIST HTTP 403 by sending explicit User-Agent headers.",
+    "Expanded NIST to 118 neutral element spectra with source-limited audit records for no-data elements.",
+    "Expanded PubChem to CID 1-2000 filtered small-molecule subset, 1257 accepted records.",
+    "Propagated methodology_review_required=true across W-1 records.",
+    "Fixed AtomicMolecularPrimitivesWorld to trace source-limited NIST records instead of rejecting them.",
+    "Persisted adapter audits through live_pipeline."
+  ],
+  "methodology_review_required": "confirmed",
+  "mode_tag": "exploratory",
+  "molecular_selection_rule": "PubChem CID 1-2000; accepted if nonempty formula/SMILES, 1<=HeavyAtomCount<=64, 1<=MolecularWeight<=500; capped at 1500 records.",
+  "provenance_completeness": {
+    "missing_count": 0,
+    "required_fields": [
+      "source_url",
+      "source_home",
+      "retrieval_timestamp",
+      "parser_version",
+      "authority",
+      "raw_exported"
+    ]
+  },
+  "records_ingested": {
+    "atomic_count": 118,
+    "molecular_count": 1257,
+    "total": 1375
+  },
+  "run_id": "sha256:cecae90ee16804bb944156ec398ea10844878b69319a5bc268b74f8a3e6c4e2b",
+  "schema": "TaskW1MassIngestReport.v1",
+  "source_limited_elements": [
+    "Nh I",
+    "Mc I",
+    "Ts I",
+    "Fl I",
+    "Mt I",
+    "Ds I",
+    "Og I",
+    "Rg I",
+    "Lv I",
+    "Cn I"
+  ],
+  "source_scope": "W-1 atomic_molecular_primitives only",
+  "stop_condition": "substantive W-1 ingestion completed before 90-minute ceiling; no unresolved adapter/world/methodology issue remained after fixes.",
+  "storage": {
+    "baseline_campaign_021_factory_store_bytes": 60967,
+    "delta_bytes": 364003139,
+    "delta_mb": 347.14,
+    "task_w1_mass_ingest_bytes": 364064106
+  },
+  "task_id": "TASK-W-1-MASS-INGEST",
+  "world_trace_verification": {
+    "failed": 0,
+    "passed": 1375,
+    "rate": 1.0,
+    "record_to_trace_rate": 1.0,
+    "trace_count": 1375
+  }
+}

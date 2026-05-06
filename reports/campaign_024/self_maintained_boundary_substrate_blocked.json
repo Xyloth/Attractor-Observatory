@@ -1,0 +1,35 @@
+{
+  "N_run": 10000,
+  "balance": {
+    "passed": true,
+    "per_substrate": {
+      "protocell": {
+        "meets_floor": true,
+        "negative": 15,
+        "positive": 15,
+        "total": 30
+      }
+    },
+    "ready_substrates": [
+      "protocell"
+    ]
+  },
+  "empirical_p": 9.999000099990002e-05,
+  "evaluation_row_count": 30,
+  "interpretation": {
+    "rationale": "observed gap 0.051501 exceeds shuffled CI high 0.017167",
+    "verdict": "signal_survives_shuffle"
+  },
+  "mode_tag": "exploratory",
+  "motif_id": "motif.self_maintained_boundary.draft",
+  "null_distribution": {
+    "ci_high": 0.017166874456999992,
+    "ci_low": -0.017166874456999992,
+    "mean": -3.5020423892279927e-05
+  },
+  "observed_gap": 0.051500623370999976,
+  "preregistration_hash": "sha256:42e55ff8028ac9e197b241cf9320a415cb17e09e03c6ce5a6e855bc8ee483833",
+  "primary_lens": "dynamical_systems",
+  "primary_lens_rationale": "first D26 lens-decoupled cell with nondeclined rows",
+  "schema": "Campaign024SubstrateBlockedControl.v1"
+}

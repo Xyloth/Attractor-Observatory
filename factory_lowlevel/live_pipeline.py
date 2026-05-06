@@ -17,14 +17,22 @@ from formalism.lens_registry import MOTIFS, _label_feature_for_motif, evaluate_l
 from trace.schema.v1 import canonical_json, trace_content_hash
 
 from .adapters import (
-    KEGGEcoliCRNAdapter,
+    AllenBrainCognitiveAdapter,
+    AvidaDigitalTraceAdapter,
+    BioModelsHypergraphAdapter,
+    FlyBaseMorphogenProfileAdapter,
     GBIFJornadaEcosystemAdapter,
+    KEGGEcoliCRNAdapter,
     MathPrimitivesCatalogAdapter,
+    MovebankSwarmBehaviorAdapter,
+    NCBIEndosymbiosisGenomeAdapter,
     NCBIHIVQuasispeciesAdapter,
     NISTAtomicSpectraAdapter,
+    PhysiomeMultiscaleAdapter,
     PrebioticChemistryCatalogAdapter,
     PubChemSmallMoleculeAdapter,
     ReactionDiffusionBenchmarkAdapter,
+    SzostakLiposomeProtocellAdapter,
 )
 from .normalization import normalize_record
 from .persistence import LowLevelFactoryStore, atomic_write_json
@@ -41,21 +49,41 @@ TASK033_ADAPTERS = (
     NCBIHIVQuasispeciesAdapter,
 )
 
+TASK035_ADAPTERS = (
+    SzostakLiposomeProtocellAdapter,
+    FlyBaseMorphogenProfileAdapter,
+    AvidaDigitalTraceAdapter,
+    MovebankSwarmBehaviorAdapter,
+    AllenBrainCognitiveAdapter,
+    BioModelsHypergraphAdapter,
+    NCBIEndosymbiosisGenomeAdapter,
+    PhysiomeMultiscaleAdapter,
+)
+
 ALL_FACTORY_ADAPTERS = (
     NISTAtomicSpectraAdapter,
     PubChemSmallMoleculeAdapter,
     MathPrimitivesCatalogAdapter,
     *TASK033_ADAPTERS,
+    *TASK035_ADAPTERS,
 )
 
 WORLD_LABELS = {
     "atomic_molecular_primitives": "W-1 Atomic / Molecular",
     "math_primitives": "W0 Math Primitives",
     "crn": "W1 CRN",
+    "protocell": "W2 Protocell",
     "field": "W3 Field",
+    "morphogenesis": "W4 Morphogenesis",
+    "digital": "W5 Digital",
     "ecosystem": "W6 Ecosystem",
+    "swarm": "W7 Swarm",
+    "cognitive": "W8 Cognitive",
     "origins_chemistry": "W9 Origins Chemistry",
+    "hypergraph_reactions": "W10 Hypergraph Reactions",
     "quasispecies": "W11 Quasispecies",
+    "symbiogenesis": "W12 Symbiogenesis",
+    "multiscale": "W13 Multiscale",
 }
 
 LIVE_STAGE_IDS = ("download", "parse", "normalize", "route", "world_simulate", "motif_evaluate", "audit")
@@ -111,6 +139,7 @@ def run_live_factory_cycle(
         warnings.extend(result.warnings)
         store.ingest_source_cache(result.cache_entry)
         store.ingest_empirical_records(result.records)
+        store.ingest_adapter_audits(getattr(result, "audits", []))
         records.extend(result.records)
     _write_live_state(live_state_path, stage="parse", status="running", record_count=len(records), source_count=len(adapters))
 
@@ -209,18 +238,50 @@ def _select_adapters(*, target_worlds: list[str] | None, source_ids: list[str] |
 def _simulate_record(record: EmpiricalRecord, *, trace_root: Path) -> dict[str, Any]:
     record_trace_dir = trace_root / record.world_family
     trace_path = record_trace_dir / f"{record.record_id.removeprefix('sha256:')[:16]}.json"
-    if record.world_family == "crn":
+    if record.world_family == "atomic_molecular_primitives":
+        from worlds.atomic_molecular_primitives.model import AtomicMolecularPrimitivesWorld
+
+        constructed = AtomicMolecularPrimitivesWorld.from_empirical_records([record])
+    elif record.world_family == "math_primitives":
+        from worlds.math_primitives.model import MathPrimitivesWorld
+
+        constructed = MathPrimitivesWorld.from_empirical_records([record])
+    elif record.world_family == "crn":
         from worlds.crn.model import CRNWorld
 
         constructed = CRNWorld.from_empirical_records([record])
+    elif record.world_family == "protocell":
+        from worlds.protocell.model import ProtocellWorld
+
+        constructed = ProtocellWorld.from_empirical_records([record])
     elif record.world_family == "field":
         from worlds.field.model import FieldWorld
 
         constructed = FieldWorld.from_empirical_records([record])
+    elif record.world_family == "morphogenesis":
+        from worlds.morphogenesis.model import MorphogenesisWorld
+
+        constructed = MorphogenesisWorld.from_empirical_records([record])
+    elif record.world_family == "digital":
+        from worlds.digital.model import DigitalWorld
+
+        constructed = DigitalWorld.from_empirical_records([record])
+    elif record.world_family == "swarm":
+        from worlds.swarm.model import SwarmWorld
+
+        constructed = SwarmWorld.from_empirical_records([record])
+    elif record.world_family == "cognitive":
+        from worlds.cognitive.model import CognitiveWorld
+
+        constructed = CognitiveWorld.from_empirical_records([record])
     elif record.world_family == "origins_chemistry":
         from worlds.origins_chemistry.model import OriginsChemistryWorld
 
         constructed = OriginsChemistryWorld.from_empirical_records([record])
+    elif record.world_family == "hypergraph_reactions":
+        from worlds.hypergraph_reactions.model import HypergraphReactionWorld
+
+        constructed = HypergraphReactionWorld.from_empirical_records([record])
     elif record.world_family == "ecosystem":
         from worlds.ecosystem.model import EcosystemWorld
 
@@ -229,6 +290,14 @@ def _simulate_record(record: EmpiricalRecord, *, trace_root: Path) -> dict[str, 
         from worlds.quasispecies.model import QuasispeciesWorld
 
         constructed = QuasispeciesWorld.from_empirical_records([record])
+    elif record.world_family == "symbiogenesis":
+        from worlds.symbiogenesis.model import SymbiogenesisWorld
+
+        constructed = SymbiogenesisWorld.from_empirical_records([record])
+    elif record.world_family == "multiscale":
+        from worlds.multiscale.model import MultiscaleWorld
+
+        constructed = MultiscaleWorld.from_empirical_records([record])
     else:
         return {"record_id": record.record_id, "world_family": record.world_family, "trace": None, "trace_path": None, "rejections": [{"record_id": record.record_id, "reason": "no_world_constructor"}]}
     world = constructed.get("world")
@@ -315,6 +384,7 @@ def _life_forms(trace_rows: list[dict[str, Any]], evaluations: list[dict[str, An
                 "world_family": trace_row["world_family"],
                 "trace_id": trace_id,
                 "trace_path": trace_row.get("trace_path"),
+                **_trace_path_boundary(trace_row.get("trace_path")),
                 "motif_fires": motif_fires,
                 "lens_nondeclines": lens_nondeclines,
                 "lens_fire_counts": lens_fire_counts,
@@ -346,7 +416,22 @@ def _motif_fire_rates(life_forms: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _trace_row_public(row: dict[str, Any]) -> dict[str, Any]:
-    return {key: value for key, value in row.items() if key != "trace"}
+    public = {key: value for key, value in row.items() if key != "trace"}
+    public.update(_trace_path_boundary(public.get("trace_path")))
+    return public
+
+
+def _trace_path_boundary(trace_path: str | None) -> dict[str, Any]:
+    if not trace_path:
+        return {}
+    normalized = str(trace_path).replace("\\", "/")
+    if "/traces/" in normalized or normalized.endswith("/traces") or "/daemon_traces/" in normalized:
+        return {
+            "evidence_private": True,
+            "evidence_private_reason": "trace_path points at generated trace storage, not the shipped public surface",
+            "trace_path_status": "private_unshipped",
+        }
+    return {"evidence_private": False, "trace_path_status": "dereferenceable"}
 
 
 def _motif_short(motif_id: str) -> str:

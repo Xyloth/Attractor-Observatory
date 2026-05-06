@@ -2,6 +2,170 @@
   "records": [
     {
       "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:df4c0c739b283e72fbb3170d2a418ab62ecf9d3df51d1bea345dfa697f20cefb",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              16.619,
+              0.229,
+              4.71654
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:08ad7618b84d7675a58e1ae2eb3bf45914bf072c2e792934d203b67f3bd3d639",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 21.56454,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              16.619,
+              0.229,
+              4.71654
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Ne",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:7a930f755eed8d3345feb46ec8305c8dcbbd04bf9170159a9a9a4641c123b5db",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              19.81961484,
+              1.14447219,
+              3.623301981
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:13603ce060b8266af735be370b8b47fccc8c7459942e532300b69db6eeb2ae4f",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 24.587389011,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              19.81961484,
+              1.14447219,
+              3.623301981
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "He",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
       "confidence": 0.92,
       "empirical_record_id": "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
       "interaction_channels": [
@@ -79,182 +243,6 @@
         }
       ],
       "world_family": "math_primitives"
-    },
-    {
-      "audit_flags": [],
-      "confidence": 0.89,
-      "empirical_record_id": "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
-      "interaction_channels": [
-        {
-          "channel_id": "channel.electromagnetic_transition",
-          "label": "electromagnetic_transition",
-          "predicate": {
-            "expression": "len(payload.first_level_gaps_eV) > 0",
-            "observed": [
-              11.548,
-              0.28,
-              3.9316119
-            ],
-            "predicate": "level_gaps_present",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "normalized_id": "sha256:25f4bd3b06f869489c15670e55ae7434664a8e29f0875b6b445f89a757456fee",
-      "overlap_fields": [
-        {
-          "counterfactual": {
-            "expression": "max_observed_level_eV > ground_state_eV",
-            "observed": 15.7596119,
-            "predicate": "ionization_limit_present",
-            "trace_checkable": true
-          },
-          "field_id": "overlap.electron_shell_energy_field",
-          "label": "electron_shell_energy_field",
-          "persist": {
-            "expression": "payload.energy_level_count >= 3",
-            "observed": 4,
-            "predicate": "multiple_energy_levels",
-            "trace_checkable": true
-          },
-          "read": {
-            "expression": "first_level_gaps_eV are derived from levels",
-            "observed": [
-              11.548,
-              0.28,
-              3.9316119
-            ],
-            "predicate": "transitions_read_gaps",
-            "trace_checkable": true
-          },
-          "write": {
-            "expression": "payload.element_symbol present",
-            "observed": "Ar",
-            "predicate": "nucleus_charge_context",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "process_roles": [
-        {
-          "label": "energy_level_structure",
-          "predicate": {
-            "expression": "payload.energy_level_count >= 2",
-            "observed": 4,
-            "predicate": "energy_levels_observed",
-            "trace_checkable": true
-          },
-          "role_id": "process.atomic.energy_level_structure"
-        }
-      ],
-      "schema_version": "NormalizedReference.v1",
-      "state_space_effects": [
-        {
-          "effect_id": "effect.discrete_energy_spectrum",
-          "label": "discrete_energy_spectrum",
-          "predicate": {
-            "expression": "payload.energy_level_count > 1",
-            "observed": 4,
-            "predicate": "discrete_levels",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "world_family": "atomic_molecular_primitives"
-    },
-    {
-      "audit_flags": [],
-      "confidence": 0.86,
-      "empirical_record_id": "sha256:86e66cea51031af645e3a016056381d40695022fa968de629b013e679151fe8d",
-      "interaction_channels": [
-        {
-          "channel_id": "channel.covalent_bond_graph",
-          "label": "covalent_bond_graph",
-          "predicate": {
-            "expression": "payload.heavy_atom_count >= 1",
-            "observed": 3,
-            "predicate": "heavy_atoms_present",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "normalized_id": "sha256:35688799e46fea01225a5f450088877da1f71113d5a5003c4676919607254e93",
-      "overlap_fields": [
-        {
-          "counterfactual": {
-            "expression": "changing SMILES changes topology proxy",
-            "observed": {
-              "aromatic_atom_count": 0,
-              "branch_points": 1,
-              "element_token_count": 3,
-              "explicit_bond_symbols": 2,
-              "ring_digit_count": 0,
-              "unique_elements": [
-                "C",
-                "O"
-              ]
-            },
-            "predicate": "bond_proxy_counterfactual",
-            "trace_checkable": true
-          },
-          "field_id": "overlap.covalent_structure_field",
-          "label": "covalent_structure_field",
-          "persist": {
-            "expression": "molecular_formula present",
-            "observed": "CO2",
-            "predicate": "formula_persists_identity",
-            "trace_checkable": true
-          },
-          "read": {
-            "expression": "heavy_atom_count >= 1",
-            "observed": 3,
-            "predicate": "heavy_atom_count_reads_graph",
-            "trace_checkable": true
-          },
-          "write": {
-            "expression": "canonical_smiles maps to bond topology",
-            "observed": "C(=O)=O",
-            "predicate": "smiles_writes_graph",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "process_roles": [
-        {
-          "label": "bond_topology",
-          "predicate": {
-            "expression": "payload.canonical_smiles != ''",
-            "observed": "C(=O)=O",
-            "predicate": "smiles_present",
-            "trace_checkable": true
-          },
-          "role_id": "process.molecular.bond_topology"
-        }
-      ],
-      "schema_version": "NormalizedReference.v1",
-      "state_space_effects": [
-        {
-          "effect_id": "effect.molecular_topology_constraint",
-          "label": "molecular_topology_constraint",
-          "predicate": {
-            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
-            "observed": {
-              "aromatic_atom_count": 0,
-              "branch_points": 1,
-              "element_token_count": 3,
-              "explicit_bond_symbols": 2,
-              "ring_digit_count": 0,
-              "unique_elements": [
-                "C",
-                "O"
-              ]
-            },
-            "predicate": "topology_proxy_present",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "world_family": "atomic_molecular_primitives"
     },
     {
       "audit_flags": [],
@@ -339,80 +327,90 @@
     },
     {
       "audit_flags": [],
-      "confidence": 0.89,
-      "empirical_record_id": "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:fa617b91c514cb5fbfd89109c6be68fd1384beedebff815bcd6b227edecbb124",
       "interaction_channels": [
         {
-          "channel_id": "channel.electromagnetic_transition",
-          "label": "electromagnetic_transition",
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
           "predicate": {
-            "expression": "len(payload.first_level_gaps_eV) > 0",
-            "observed": [
-              19.81961484,
-              1.14447219,
-              3.623301981
-            ],
-            "predicate": "level_gaps_present",
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
             "trace_checkable": true
           }
         }
       ],
-      "normalized_id": "sha256:6582297db9bf98ae1ba22bae5dfaf21c0ac1b5cc16f04b775da0fa715fa37474",
+      "normalized_id": "sha256:48eb9848b3678fca4b800e368c2803f0f2774336f49f4351ea09ef639ee10241",
       "overlap_fields": [
         {
           "counterfactual": {
-            "expression": "max_observed_level_eV > ground_state_eV",
-            "observed": 24.587389011,
-            "predicate": "ionization_limit_present",
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
             "trace_checkable": true
           },
-          "field_id": "overlap.electron_shell_energy_field",
-          "label": "electron_shell_energy_field",
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
           "persist": {
-            "expression": "payload.energy_level_count >= 3",
-            "observed": 4,
-            "predicate": "multiple_energy_levels",
+            "expression": "molecular_formula present",
+            "observed": "CH4",
+            "predicate": "formula_persists_identity",
             "trace_checkable": true
           },
           "read": {
-            "expression": "first_level_gaps_eV are derived from levels",
-            "observed": [
-              19.81961484,
-              1.14447219,
-              3.623301981
-            ],
-            "predicate": "transitions_read_gaps",
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
             "trace_checkable": true
           },
           "write": {
-            "expression": "payload.element_symbol present",
-            "observed": "He",
-            "predicate": "nucleus_charge_context",
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C",
+            "predicate": "smiles_writes_graph",
             "trace_checkable": true
           }
         }
       ],
       "process_roles": [
         {
-          "label": "energy_level_structure",
+          "label": "bond_topology",
           "predicate": {
-            "expression": "payload.energy_level_count >= 2",
-            "observed": 4,
-            "predicate": "energy_levels_observed",
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C",
+            "predicate": "smiles_present",
             "trace_checkable": true
           },
-          "role_id": "process.atomic.energy_level_structure"
+          "role_id": "process.molecular.bond_topology"
         }
       ],
       "schema_version": "NormalizedReference.v1",
       "state_space_effects": [
         {
-          "effect_id": "effect.discrete_energy_spectrum",
-          "label": "discrete_energy_spectrum",
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
           "predicate": {
-            "expression": "payload.energy_level_count > 1",
-            "observed": 4,
-            "predicate": "discrete_levels",
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "topology_proxy_present",
             "trace_checkable": true
           }
         }
@@ -500,6 +498,88 @@
     },
     {
       "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:5a267a8005699fe85dec2c60a8a5cedf9627016164c00ea5363f980d8b6caae6",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              1.847823,
+              1.525327,
+              2.01856495
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:695bd8be37e4d712caa5649931e761fe687294b70fe761390233fddfac8babde",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 5.39171495,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              1.847823,
+              1.525327,
+              2.01856495
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Li",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
       "confidence": 0.92,
       "empirical_record_id": "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
       "interaction_channels": [
@@ -576,98 +656,6 @@
         }
       ],
       "world_family": "math_primitives"
-    },
-    {
-      "audit_flags": [],
-      "confidence": 0.86,
-      "empirical_record_id": "sha256:83b9c578a47db610121f20c53dcf69f42e7ec7f48370f002f46c5c9eb6b00355",
-      "interaction_channels": [
-        {
-          "channel_id": "channel.covalent_bond_graph",
-          "label": "covalent_bond_graph",
-          "predicate": {
-            "expression": "payload.heavy_atom_count >= 1",
-            "observed": 6,
-            "predicate": "heavy_atoms_present",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "normalized_id": "sha256:744971ff442b8415be7ab5420797fda3cbd20c6ff761dd34042efec5cfdd0b36",
-      "overlap_fields": [
-        {
-          "counterfactual": {
-            "expression": "changing SMILES changes topology proxy",
-            "observed": {
-              "aromatic_atom_count": 0,
-              "branch_points": 0,
-              "element_token_count": 6,
-              "explicit_bond_symbols": 3,
-              "ring_digit_count": 2,
-              "unique_elements": [
-                "C"
-              ]
-            },
-            "predicate": "bond_proxy_counterfactual",
-            "trace_checkable": true
-          },
-          "field_id": "overlap.covalent_structure_field",
-          "label": "covalent_structure_field",
-          "persist": {
-            "expression": "molecular_formula present",
-            "observed": "C6H6",
-            "predicate": "formula_persists_identity",
-            "trace_checkable": true
-          },
-          "read": {
-            "expression": "heavy_atom_count >= 1",
-            "observed": 6,
-            "predicate": "heavy_atom_count_reads_graph",
-            "trace_checkable": true
-          },
-          "write": {
-            "expression": "canonical_smiles maps to bond topology",
-            "observed": "C1=CC=CC=C1",
-            "predicate": "smiles_writes_graph",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "process_roles": [
-        {
-          "label": "bond_topology",
-          "predicate": {
-            "expression": "payload.canonical_smiles != ''",
-            "observed": "C1=CC=CC=C1",
-            "predicate": "smiles_present",
-            "trace_checkable": true
-          },
-          "role_id": "process.molecular.bond_topology"
-        }
-      ],
-      "schema_version": "NormalizedReference.v1",
-      "state_space_effects": [
-        {
-          "effect_id": "effect.molecular_topology_constraint",
-          "label": "molecular_topology_constraint",
-          "predicate": {
-            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
-            "observed": {
-              "aromatic_atom_count": 0,
-              "branch_points": 0,
-              "element_token_count": 6,
-              "explicit_bond_symbols": 3,
-              "ring_digit_count": 2,
-              "unique_elements": [
-                "C"
-              ]
-            },
-            "predicate": "topology_proxy_present",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "world_family": "atomic_molecular_primitives"
     },
     {
       "audit_flags": [],
@@ -752,32 +740,33 @@
     {
       "audit_flags": [],
       "confidence": 0.86,
-      "empirical_record_id": "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704",
+      "empirical_record_id": "sha256:23ed8706c34591b284d96185d0ac92c17be2ab472f8a140cd807d97d6ce48326",
       "interaction_channels": [
         {
           "channel_id": "channel.covalent_bond_graph",
           "label": "covalent_bond_graph",
           "predicate": {
             "expression": "payload.heavy_atom_count >= 1",
-            "observed": 1,
+            "observed": 3,
             "predicate": "heavy_atoms_present",
             "trace_checkable": true
           }
         }
       ],
-      "normalized_id": "sha256:b1d190dc2f2b7bebe9074a8640bfb58e92e43a4f0aa08133db2b14febf8970c9",
+      "normalized_id": "sha256:7f1159064def94c87708dc314e2c9860d93861464780bdac5d91711300e0d6b2",
       "overlap_fields": [
         {
           "counterfactual": {
             "expression": "changing SMILES changes topology proxy",
             "observed": {
               "aromatic_atom_count": 0,
-              "branch_points": 0,
-              "element_token_count": 1,
-              "explicit_bond_symbols": 0,
+              "branch_points": 1,
+              "element_token_count": 3,
+              "explicit_bond_symbols": 2,
               "ring_digit_count": 0,
               "unique_elements": [
-                "N"
+                "C",
+                "O"
               ]
             },
             "predicate": "bond_proxy_counterfactual",
@@ -787,19 +776,19 @@
           "label": "covalent_structure_field",
           "persist": {
             "expression": "molecular_formula present",
-            "observed": "H3N",
+            "observed": "CO2",
             "predicate": "formula_persists_identity",
             "trace_checkable": true
           },
           "read": {
             "expression": "heavy_atom_count >= 1",
-            "observed": 1,
+            "observed": 3,
             "predicate": "heavy_atom_count_reads_graph",
             "trace_checkable": true
           },
           "write": {
             "expression": "canonical_smiles maps to bond topology",
-            "observed": "N",
+            "observed": "C(=O)=O",
             "predicate": "smiles_writes_graph",
             "trace_checkable": true
           }
@@ -810,7 +799,7 @@
           "label": "bond_topology",
           "predicate": {
             "expression": "payload.canonical_smiles != ''",
-            "observed": "N",
+            "observed": "C(=O)=O",
             "predicate": "smiles_present",
             "trace_checkable": true
           },
@@ -826,12 +815,13 @@
             "expression": "payload.bond_topology_proxy.element_token_count >= 1",
             "observed": {
               "aromatic_atom_count": 0,
-              "branch_points": 0,
-              "element_token_count": 1,
-              "explicit_bond_symbols": 0,
+              "branch_points": 1,
+              "element_token_count": 3,
+              "explicit_bond_symbols": 2,
               "ring_digit_count": 0,
               "unique_elements": [
-                "N"
+                "C",
+                "O"
               ]
             },
             "predicate": "topology_proxy_present",
@@ -844,7 +834,7 @@
     {
       "audit_flags": [],
       "confidence": 0.89,
-      "empirical_record_id": "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+      "empirical_record_id": "sha256:38ec8c407581c8bf0a555f21afb982bfac619d2e78730d2209c9536f89ddaf91",
       "interaction_channels": [
         {
           "channel_id": "channel.electromagnetic_transition",
@@ -852,21 +842,21 @@
           "predicate": {
             "expression": "len(payload.first_level_gaps_eV) > 0",
             "observed": [
-              1.847823,
-              1.525327,
-              2.01856495
+              11.548,
+              0.28,
+              3.9316119
             ],
             "predicate": "level_gaps_present",
             "trace_checkable": true
           }
         }
       ],
-      "normalized_id": "sha256:c41df65e3c36b61f6b1b7ad0e974c53b1c1cf73765d1a440499159308d968d73",
+      "normalized_id": "sha256:80b38a1f9c454f8f955ca253fda14db05e29b1f9baaa7ceafa1fa5b9bb1845ce",
       "overlap_fields": [
         {
           "counterfactual": {
             "expression": "max_observed_level_eV > ground_state_eV",
-            "observed": 5.39171495,
+            "observed": 15.7596119,
             "predicate": "ionization_limit_present",
             "trace_checkable": true
           },
@@ -881,16 +871,16 @@
           "read": {
             "expression": "first_level_gaps_eV are derived from levels",
             "observed": [
-              1.847823,
-              1.525327,
-              2.01856495
+              11.548,
+              0.28,
+              3.9316119
             ],
             "predicate": "transitions_read_gaps",
             "trace_checkable": true
           },
           "write": {
             "expression": "payload.element_symbol present",
-            "observed": "Li",
+            "observed": "Ar",
             "predicate": "nucleus_charge_context",
             "trace_checkable": true
           }
@@ -925,8 +915,192 @@
     },
     {
       "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:31b152895111c342008fdfffec7cdd06fa7d5b20e15f5809d4cee659995de513",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:873d97d3fcb22bca5628c9a9c09c3de78d484798c92508fa7a5aa1181f4d55cc",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 6,
+              "explicit_bond_symbols": 3,
+              "ring_digit_count": 2,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "C6H6",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C1=CC=CC=C1",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C1=CC=CC=C1",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 6,
+              "explicit_bond_symbols": 3,
+              "ring_digit_count": 2,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:9380728b68f70faa0d1a3a4b3b19a6b893d91fb139f44783662a4d9e667c7576",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:b80d1f1eb03ef66194c95e3384656cc15d614d77bd444458fe33576de985370f",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "O"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "H2O",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "O",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "O",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "O"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
       "confidence": 0.89,
-      "empirical_record_id": "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c",
+      "empirical_record_id": "sha256:86913ace2e9c7fbda9b78aa0d9a92304f1078a79c8aad6b5edb71c0c00042ad7",
       "interaction_channels": [
         {
           "channel_id": "channel.electromagnetic_transition",
@@ -943,7 +1117,7 @@
           }
         }
       ],
-      "normalized_id": "sha256:d0599f70033f8fb47027a24b9f8f7d10f9047eeb4594b92539d540e8cc02999d",
+      "normalized_id": "sha256:d73a16e3315999ff69728473c7748d14201d702c6fc416f1725318240830c228",
       "overlap_fields": [
         {
           "counterfactual": {
@@ -999,180 +1173,6 @@
             "expression": "payload.energy_level_count > 1",
             "observed": 4,
             "predicate": "discrete_levels",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "world_family": "atomic_molecular_primitives"
-    },
-    {
-      "audit_flags": [],
-      "confidence": 0.89,
-      "empirical_record_id": "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
-      "interaction_channels": [
-        {
-          "channel_id": "channel.electromagnetic_transition",
-          "label": "electromagnetic_transition",
-          "predicate": {
-            "expression": "len(payload.first_level_gaps_eV) > 0",
-            "observed": [
-              16.619,
-              0.229,
-              4.71654
-            ],
-            "predicate": "level_gaps_present",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "normalized_id": "sha256:d7970a4fbf4b824ebd50ec883bfeca1c3670b2196bf9d73219186df81400fa4f",
-      "overlap_fields": [
-        {
-          "counterfactual": {
-            "expression": "max_observed_level_eV > ground_state_eV",
-            "observed": 21.56454,
-            "predicate": "ionization_limit_present",
-            "trace_checkable": true
-          },
-          "field_id": "overlap.electron_shell_energy_field",
-          "label": "electron_shell_energy_field",
-          "persist": {
-            "expression": "payload.energy_level_count >= 3",
-            "observed": 4,
-            "predicate": "multiple_energy_levels",
-            "trace_checkable": true
-          },
-          "read": {
-            "expression": "first_level_gaps_eV are derived from levels",
-            "observed": [
-              16.619,
-              0.229,
-              4.71654
-            ],
-            "predicate": "transitions_read_gaps",
-            "trace_checkable": true
-          },
-          "write": {
-            "expression": "payload.element_symbol present",
-            "observed": "Ne",
-            "predicate": "nucleus_charge_context",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "process_roles": [
-        {
-          "label": "energy_level_structure",
-          "predicate": {
-            "expression": "payload.energy_level_count >= 2",
-            "observed": 4,
-            "predicate": "energy_levels_observed",
-            "trace_checkable": true
-          },
-          "role_id": "process.atomic.energy_level_structure"
-        }
-      ],
-      "schema_version": "NormalizedReference.v1",
-      "state_space_effects": [
-        {
-          "effect_id": "effect.discrete_energy_spectrum",
-          "label": "discrete_energy_spectrum",
-          "predicate": {
-            "expression": "payload.energy_level_count > 1",
-            "observed": 4,
-            "predicate": "discrete_levels",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "world_family": "atomic_molecular_primitives"
-    },
-    {
-      "audit_flags": [],
-      "confidence": 0.86,
-      "empirical_record_id": "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
-      "interaction_channels": [
-        {
-          "channel_id": "channel.covalent_bond_graph",
-          "label": "covalent_bond_graph",
-          "predicate": {
-            "expression": "payload.heavy_atom_count >= 1",
-            "observed": 1,
-            "predicate": "heavy_atoms_present",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "normalized_id": "sha256:dae72eda0eb0a32fcf62242ae0ee334a3bffa9f41f4b5f4f410828338e01f375",
-      "overlap_fields": [
-        {
-          "counterfactual": {
-            "expression": "changing SMILES changes topology proxy",
-            "observed": {
-              "aromatic_atom_count": 0,
-              "branch_points": 0,
-              "element_token_count": 1,
-              "explicit_bond_symbols": 0,
-              "ring_digit_count": 0,
-              "unique_elements": [
-                "C"
-              ]
-            },
-            "predicate": "bond_proxy_counterfactual",
-            "trace_checkable": true
-          },
-          "field_id": "overlap.covalent_structure_field",
-          "label": "covalent_structure_field",
-          "persist": {
-            "expression": "molecular_formula present",
-            "observed": "CH4",
-            "predicate": "formula_persists_identity",
-            "trace_checkable": true
-          },
-          "read": {
-            "expression": "heavy_atom_count >= 1",
-            "observed": 1,
-            "predicate": "heavy_atom_count_reads_graph",
-            "trace_checkable": true
-          },
-          "write": {
-            "expression": "canonical_smiles maps to bond topology",
-            "observed": "C",
-            "predicate": "smiles_writes_graph",
-            "trace_checkable": true
-          }
-        }
-      ],
-      "process_roles": [
-        {
-          "label": "bond_topology",
-          "predicate": {
-            "expression": "payload.canonical_smiles != ''",
-            "observed": "C",
-            "predicate": "smiles_present",
-            "trace_checkable": true
-          },
-          "role_id": "process.molecular.bond_topology"
-        }
-      ],
-      "schema_version": "NormalizedReference.v1",
-      "state_space_effects": [
-        {
-          "effect_id": "effect.molecular_topology_constraint",
-          "label": "molecular_topology_constraint",
-          "predicate": {
-            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
-            "observed": {
-              "aromatic_atom_count": 0,
-              "branch_points": 0,
-              "element_token_count": 1,
-              "explicit_bond_symbols": 0,
-              "ring_digit_count": 0,
-              "unique_elements": [
-                "C"
-              ]
-            },
-            "predicate": "topology_proxy_present",
             "trace_checkable": true
           }
         }
@@ -1263,7 +1263,7 @@
     {
       "audit_flags": [],
       "confidence": 0.86,
-      "empirical_record_id": "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+      "empirical_record_id": "sha256:5cd92bc2c605752c08879b807d883d620a4662ce357826b2f57500f7758d2156",
       "interaction_channels": [
         {
           "channel_id": "channel.covalent_bond_graph",
@@ -1276,7 +1276,7 @@
           }
         }
       ],
-      "normalized_id": "sha256:e3e091c17fba973dbc8680e70394d50eff466a3f5b0d4f729682b2745dd31e44",
+      "normalized_id": "sha256:ee95cb0e6f0b96aa8467e98cf0aab0aea2a19cf2a07be2eab8d3d819e0353d34",
       "overlap_fields": [
         {
           "counterfactual": {
@@ -1288,7 +1288,7 @@
               "explicit_bond_symbols": 0,
               "ring_digit_count": 0,
               "unique_elements": [
-                "O"
+                "N"
               ]
             },
             "predicate": "bond_proxy_counterfactual",
@@ -1298,7 +1298,7 @@
           "label": "covalent_structure_field",
           "persist": {
             "expression": "molecular_formula present",
-            "observed": "H2O",
+            "observed": "H3N",
             "predicate": "formula_persists_identity",
             "trace_checkable": true
           },
@@ -1310,7 +1310,7 @@
           },
           "write": {
             "expression": "canonical_smiles maps to bond topology",
-            "observed": "O",
+            "observed": "N",
             "predicate": "smiles_writes_graph",
             "trace_checkable": true
           }
@@ -1321,7 +1321,7 @@
           "label": "bond_topology",
           "predicate": {
             "expression": "payload.canonical_smiles != ''",
-            "observed": "O",
+            "observed": "N",
             "predicate": "smiles_present",
             "trace_checkable": true
           },
@@ -1342,7 +1342,7 @@
               "explicit_bond_symbols": 0,
               "ring_digit_count": 0,
               "unique_elements": [
-                "O"
+                "N"
               ]
             },
             "predicate": "topology_proxy_present",

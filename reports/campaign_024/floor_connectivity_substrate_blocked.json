@@ -1,0 +1,45 @@
+{
+  "N_run": 0,
+  "balance": {
+    "passed": true,
+    "per_substrate": {
+      "crn": {
+        "meets_floor": true,
+        "negative": 27,
+        "positive": 17,
+        "total": 44
+      },
+      "digital": {
+        "meets_floor": false,
+        "negative": 0,
+        "positive": 20,
+        "total": 20
+      },
+      "morphogenesis": {
+        "meets_floor": false,
+        "negative": 0,
+        "positive": 20,
+        "total": 20
+      },
+      "protocell": {
+        "meets_floor": false,
+        "negative": 0,
+        "positive": 20,
+        "total": 20
+      }
+    },
+    "ready_substrates": [
+      "crn"
+    ]
+  },
+  "interpretation": {
+    "rationale": "no lens cell remained admissible after lens-side D26/adversarial audit",
+    "verdict": "not_evaluable_no_lens_after_decoupling"
+  },
+  "mode_tag": "exploratory",
+  "motif_id": "motif.floor_connectivity.draft",
+  "preregistration_hash": "sha256:6d90097f8e029f019165091df4e69eab593424123bf572d98033b097e24cfd31",
+  "primary_lens": null,
+  "primary_lens_rationale": "no lens cell remained admissible after lens-side D26/adversarial audit",
+  "schema": "Campaign024SubstrateBlockedControl.v1"
+}

@@ -28,7 +28,7 @@ echo.
 echo Starting native window. Close the window to exit.
 echo.
 
-%INVOCATION% -m control_room.launcher %*
+%INVOCATION% -m control_room.launcher --port-kill %*
 
 REM If the launcher exits non-zero, surface the error so the user can read it.
 if errorlevel 1 (
@@ -41,5 +41,5 @@ goto :eof
 :quiet_path
 REM Silent mode: no console output. Suppress any error popup; user must check
 REM Task Manager / browser if it doesn't appear.
-start "" %INVOCATION% -m control_room.launcher %*
+start "" %INVOCATION% -m control_room.launcher --port-kill %*
 goto :eof

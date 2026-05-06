@@ -1,0 +1,2771 @@
+{
+  "records": [
+    {
+      "audit_flags": [],
+      "confidence": 0.82,
+      "empirical_record_id": "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mineral_surface_gradient",
+          "label": "mineral_surface_gradient",
+          "predicate": {
+            "expression": "payload.parameter_basis != ''",
+            "observed": "gradient and boundary terms projected from alkaline hydrothermal origins literature",
+            "predicate": "parameter_basis_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:0bfdea34eb2f08c9f59773ce592878d49e69a7358a833df36f0c3c05629d924a",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing catalytic/gradient terms changes closure or boundary",
+            "observed": {
+              "benchmark": "gradient_anchored_protocell",
+              "boundary_polymerization": 0.095,
+              "gradient_strength": 0.68,
+              "steps": 90
+            },
+            "predicate": "surface_parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.prebiotic_chemistry_parameter_space",
+          "label": "prebiotic_chemistry_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1098/rstb.2006.1881",
+            "predicate": "citation_persists_context",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters carries catalytic or gradient terms",
+            "observed": {
+              "benchmark": "gradient_anchored_protocell",
+              "boundary_polymerization": 0.095,
+              "gradient_strength": 0.68,
+              "steps": 90
+            },
+            "predicate": "world_reads_surface_terms",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects OriginsChemistryWorld scenario",
+            "observed": "gradient_anchored_protocell",
+            "predicate": "benchmark_writes_origins_scenario",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "prebiotic_surface_chemistry",
+          "predicate": {
+            "expression": "payload.chemistry_context != ''",
+            "observed": "redox and pH gradients across mineral compartments",
+            "predicate": "chemistry_context_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.origins.prebiotic_surface_chemistry"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.prebiotic_closure_boundary",
+          "label": "prebiotic_closure_boundary",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "gradient_anchored_protocell",
+            "predicate": "origins_benchmark_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "origins_chemistry"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.84,
+      "empirical_record_id": "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.diffusion_reaction_coupling",
+          "label": "diffusion_reaction_coupling",
+          "predicate": {
+            "expression": "payload.reaction_model != ''",
+            "observed": "schnakenberg",
+            "predicate": "reaction_model_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:16c554bba44b94889421b4243420eabd8bbc5db031b1ba16e048bc8cc7a0c2e1",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing feed/kill or a/b ranges changes regime",
+            "observed": {
+              "a": [
+                0.05,
+                0.2
+              ],
+              "b": [
+                0.8,
+                1.2
+              ]
+            },
+            "predicate": "parameter_range_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.field_parameter_space",
+          "label": "field_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1016/0022-5193(79)90042-0",
+            "predicate": "citation_persists_benchmark",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.steps present",
+            "observed": 36,
+            "predicate": "world_reads_steps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects FieldWorld scenario",
+            "observed": "schnakenberg",
+            "predicate": "benchmark_writes_field_config",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "reaction_diffusion_benchmark",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "schnakenberg",
+            "predicate": "benchmark_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.field.reaction_diffusion_benchmark"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.pattern_formation_parameter_space",
+          "label": "pattern_formation_parameter_space",
+          "predicate": {
+            "expression": "len(payload.parameter_range) > 0",
+            "observed": {
+              "a": [
+                0.05,
+                0.2
+              ],
+              "b": [
+                0.8,
+                1.2
+              ]
+            },
+            "predicate": "parameter_range_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "field"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dr/dt = mu*r - r^3; dtheta/dt = omega",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:1ce222a15e67febd0112744cbe4e367c938715a475ca5cdd4ff726f6eaeb27de",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "mu": 1.0,
+              "omega": 1.0
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "stable_radius",
+              "phase_translation"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "stable_limit_cycle",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dr/dt = mu*r - r^3; dtheta/dt = omega",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "limit_cycle",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "limit_cycle",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.limit_cycle"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.stable_limit_cycle",
+          "label": "stable_limit_cycle",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "stable_limit_cycle",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              11.548,
+              0.28,
+              3.9316119
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:25f4bd3b06f869489c15670e55ae7434664a8e29f0875b6b445f89a757456fee",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 15.7596119,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              11.548,
+              0.28,
+              3.9316119
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Ar",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.78,
+      "empirical_record_id": "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mutation_selection",
+          "label": "mutation_selection",
+          "predicate": {
+            "expression": "world_parameters.mutation_rate > 0",
+            "observed": 0.0025,
+            "predicate": "mutation_rate_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:3852c2ff06210b83980d02eb06691f95eb20631e7177b91bd40e440dd8605a29",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing sequence window changes master projection",
+            "observed": 240,
+            "predicate": "sequence_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.sequence_mutation_space",
+          "label": "sequence_mutation_space",
+          "persist": {
+            "expression": "payload.accession present",
+            "observed": "K03455.1",
+            "predicate": "accession_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters includes mutation/insertion/deletion rates",
+            "observed": {
+              "deletion_rate": 0.0005,
+              "insertion_rate": 0.0005,
+              "mutation_rate": 0.0025
+            },
+            "predicate": "world_reads_mutation_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "NCBI FASTA maps to binary master_sequence",
+            "observed": "111001110100110001000000",
+            "predicate": "ncbi_sequence_writes_master_projection",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "viral_sequence_population",
+          "predicate": {
+            "expression": "world_parameters.master_sequence != ''",
+            "observed": "111001110100110001000000",
+            "predicate": "sequence_projection_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.quasispecies.viral_sequence_population"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.quasispecies_cloud",
+          "label": "quasispecies_cloud",
+          "predicate": {
+            "expression": "world_parameters.population_size > 0",
+            "observed": 96,
+            "predicate": "population_size_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "quasispecies"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:3f3488c5b34d24a71721e8f040c8d78c9a6ce8c0f0da8ec5d43d65bd80091ab7",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "a": 0.2,
+              "b": 0.2,
+              "c": 5.7
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "spiral_band",
+              "folding_return"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "strange_attractor",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.strange_attractor"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.strange_attractor",
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.84,
+      "empirical_record_id": "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.diffusion_reaction_coupling",
+          "label": "diffusion_reaction_coupling",
+          "predicate": {
+            "expression": "payload.reaction_model != ''",
+            "observed": "gray_scott",
+            "predicate": "reaction_model_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:40b6a4dcc585222b607310715fe77064569199b78ebab101b0a9a7e58fe2de4d",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing feed/kill or a/b ranges changes regime",
+            "observed": {
+              "feed": [
+                0.02,
+                0.08
+              ],
+              "kill": [
+                0.045,
+                0.07
+              ]
+            },
+            "predicate": "parameter_range_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.field_parameter_space",
+          "label": "field_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1126/science.261.5118.189",
+            "predicate": "citation_persists_benchmark",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.steps present",
+            "observed": 36,
+            "predicate": "world_reads_steps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects FieldWorld scenario",
+            "observed": "gray_scott",
+            "predicate": "benchmark_writes_field_config",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "reaction_diffusion_benchmark",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "gray_scott",
+            "predicate": "benchmark_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.field.reaction_diffusion_benchmark"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.pattern_formation_parameter_space",
+          "label": "pattern_formation_parameter_space",
+          "predicate": {
+            "expression": "len(payload.parameter_range) > 0",
+            "observed": {
+              "feed": [
+                0.02,
+                0.08
+              ],
+              "kill": [
+                0.045,
+                0.07
+              ]
+            },
+            "predicate": "parameter_range_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "field"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:aee16ccfa04d48d949d4661976f35ee3b14d8d40df9e25d416ff901407ff488d",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.protocell.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "W2-szostak-fatty-acid-vesicle",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:5133865c06e703b8882ba8020c1882ca5d6f6aa41ab818471349953b688ed849",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "boundary_kind": "self_maintained",
+              "division_threshold": 12.2,
+              "dt": 0.25,
+              "external_repairs_boundary": true,
+              "initial_closure_marker": 2.4,
+              "initial_internal_resource": 9.0,
+              "initial_membrane_integrity": 0.92,
+              "initial_membrane_material": 11.5,
+              "internal_produces_boundary": true,
+              "membrane_production_rate": 0.16,
+              "repair_rate": 0.035,
+              "scenario_id": "W2-szostak-fatty-acid-vesicle",
+              "steps": 36
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.protocell.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://doi.org/10.1038/nature07018",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "boundary_kind",
+              "division_threshold",
+              "dt",
+              "external_repairs_boundary",
+              "initial_closure_marker",
+              "initial_internal_resource",
+              "initial_membrane_integrity",
+              "initial_membrane_material",
+              "internal_produces_boundary",
+              "membrane_production_rate",
+              "repair_rate",
+              "scenario_id",
+              "steps"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "boundary_kind": "self_maintained",
+              "division_threshold": 12.2,
+              "dt": 0.25,
+              "external_repairs_boundary": true,
+              "initial_closure_marker": 2.4,
+              "initial_internal_resource": 9.0,
+              "initial_membrane_integrity": 0.92,
+              "initial_membrane_material": 11.5,
+              "internal_produces_boundary": true,
+              "membrane_production_rate": 0.16,
+              "repair_rate": 0.035,
+              "scenario_id": "W2-szostak-fatty-acid-vesicle",
+              "steps": 36
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.protocell.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.protocell.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "protocell"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.74,
+      "empirical_record_id": "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.trophic_interaction_matrix",
+          "label": "trophic_interaction_matrix",
+          "predicate": {
+            "expression": "producer/grazer/predator guilds present",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "producer_grazer_predator_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:55a950d9ca64248fbc56d521522ab7291e9242c8c3ce8bdd15d260fcbd7f5c6f",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing guild counts changes initial trophic pools",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "guild_count_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.ecosystem_trophic_state_space",
+          "label": "ecosystem_trophic_state_space",
+          "persist": {
+            "expression": "payload.geometry present",
+            "observed": "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))",
+            "predicate": "site_geometry_persists_context",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters includes producer/grazer/predator pools",
+            "observed": {
+              "initial_grazers": 13.190906,
+              "initial_predators": 10.0,
+              "initial_producers": 62.984125
+            },
+            "predicate": "world_reads_trophic_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "GBIF guild counts map to initial trophic pools",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "gbif_counts_write_initial_conditions",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "multi_trophic_occurrence_proxy",
+          "predicate": {
+            "expression": "len(payload.guild_occurrence_counts) > 0",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "guild_counts_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.ecosystem.multi_trophic_occurrence_proxy"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.ecosystem_stability_proxy",
+          "label": "ecosystem_stability_proxy",
+          "predicate": {
+            "expression": "world_parameters.benchmark != ''",
+            "observed": "may_stability",
+            "predicate": "ecosystem_benchmark_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "ecosystem"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:c144561978c7ca62a7d5680afec1fcd2cc3ef7eb4379cb290a20700ca87f8344",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 3,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:5c619ffb43f01d6eb4a7b6c2235437ce4d1312f5e29bcc22034e90e123d20b45",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 1,
+              "element_token_count": 3,
+              "explicit_bond_symbols": 2,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C",
+                "O"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "CO2",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 3,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C(=O)=O",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C(=O)=O",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 1,
+              "element_token_count": 3,
+              "explicit_bond_symbols": 2,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C",
+                "O"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              19.81961484,
+              1.14447219,
+              3.623301981
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:6582297db9bf98ae1ba22bae5dfaf21c0ac1b5cc16f04b775da0fa715fa37474",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 24.587389011,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              19.81961484,
+              1.14447219,
+              3.623301981
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "He",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.82,
+      "empirical_record_id": "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mineral_surface_gradient",
+          "label": "mineral_surface_gradient",
+          "predicate": {
+            "expression": "payload.parameter_basis != ''",
+            "observed": "surface adsorption and catalysis strengths projected from mineral-surface closure literature",
+            "predicate": "parameter_basis_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:6816bb597e3d66ec0fee402576f90b8a9fd3c10e24752fa56f7439283820664c",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing catalytic/gradient terms changes closure or boundary",
+            "observed": {
+              "adsorption_rate": 0.34,
+              "benchmark": "surface_stabilized_closure",
+              "steps": 90,
+              "surface_catalysis": 0.24
+            },
+            "predicate": "surface_parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.prebiotic_chemistry_parameter_space",
+          "label": "prebiotic_chemistry_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1126/science.276.5310.245",
+            "predicate": "citation_persists_context",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters carries catalytic or gradient terms",
+            "observed": {
+              "adsorption_rate": 0.34,
+              "benchmark": "surface_stabilized_closure",
+              "steps": 90,
+              "surface_catalysis": 0.24
+            },
+            "predicate": "world_reads_surface_terms",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects OriginsChemistryWorld scenario",
+            "observed": "surface_stabilized_closure",
+            "predicate": "benchmark_writes_origins_scenario",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "prebiotic_surface_chemistry",
+          "predicate": {
+            "expression": "payload.chemistry_context != ''",
+            "observed": "mineral surface catalysis and activated-carbon chemistry",
+            "predicate": "chemistry_context_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.origins.prebiotic_surface_chemistry"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.prebiotic_closure_boundary",
+          "label": "prebiotic_closure_boundary",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "surface_stabilized_closure",
+            "predicate": "origins_benchmark_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "origins_chemistry"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dx/dt = -lambda*x",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:68cdca6b928cf0edb7730ae1dbe661273fc9a03a8586be45e526a3f24d1b3cf1",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "lambda": 1.0
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "negative_real_eigenvalue",
+              "single_basin"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "asymptotically_stable_fixed_point",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dx/dt = -lambda*x",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "fixed_point",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "fixed_point",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.fixed_point"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.asymptotically_stable_fixed_point",
+          "label": "asymptotically_stable_fixed_point",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "asymptotically_stable_fixed_point",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:805cc22bf7f3dd7d006a101289aaebd4072fc3bf1fe7a30901a3e9bf7887f74c",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.morphogenesis.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "segmented_body",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:6a2fb5584a9a8615e439d14167ac46f599d0ad3a62bc5c8c570e5cc2e5ba623b",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "benchmark": "segmented_body",
+              "morphogen_profile": {
+                "bicoid": "anterior_gradient",
+                "even_skipped": "pair_rule_stripes",
+                "nanos": "posterior_gradient"
+              },
+              "scenario_id": "W4-flybase-segmented-body"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.morphogenesis.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://flybase.org/reports/FBgn0000166",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "benchmark",
+              "morphogen_profile",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "benchmark": "segmented_body",
+              "morphogen_profile": {
+                "bicoid": "anterior_gradient",
+                "even_skipped": "pair_rule_stripes",
+                "nanos": "posterior_gradient"
+              },
+              "scenario_id": "W4-flybase-segmented-body"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.morphogenesis.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.morphogenesis.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "morphogenesis"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:020020b65422779f53ef083e8fa9f1dbe113de072fb7198419cde282a4d2193f",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:7191f3d3bf4052486f294a7ecad913181a41e5563190fff0f67701b95db82432",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 6,
+              "explicit_bond_symbols": 3,
+              "ring_digit_count": 2,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "C6H6",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 6,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C1=CC=CC=C1",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C1=CC=CC=C1",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 6,
+              "explicit_bond_symbols": 3,
+              "ring_digit_count": 2,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:308d9f294a8f80806603aca556d00e229cbf3014664b632dccaf94936397a552",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.symbiogenesis.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "stable_mutualism",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:71c38daf8ac7299799aa8b08100cf78a6bea71b443f58dc3b70b9f9b9c172e19",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "benchmark": "stable_mutualism",
+              "scenario_id": "W12-ncbi-endosymbiosis-mutualism"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.symbiogenesis.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "benchmark",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "benchmark": "stable_mutualism",
+              "scenario_id": "W12-ncbi-endosymbiosis-mutualism"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.symbiogenesis.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.symbiogenesis.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "symbiogenesis"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "example low-dimensional polynomial chaotic flow",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:73878c230db53e7afece8aa0afd05292ba10ddd9648a2b5afdd1df45a949cd3e",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "family": "Sprott"
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "low_term_count",
+              "chaotic_flow"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "strange_attractor_family",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "example low-dimensional polynomial chaotic flow",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "strange_attractor",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.strange_attractor"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.strange_attractor_family",
+          "label": "strange_attractor_family",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "strange_attractor_family",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:dcaf1c567d059b91c49a355e8effa39d1771275dd0ec42b06c201a76ab84dba3",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.digital.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "copy_loop",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:7a227d7dadb95a2a444ad5b1a7a7dd809cb94b64574e70e2285a4061dd98b64e",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "benchmark": "copy_loop",
+              "scenario_id": "W5-avida-copy-loop-projection"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.digital.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://doi.org/10.1038/nature01568",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "benchmark",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "benchmark": "copy_loop",
+              "scenario_id": "W5-avida-copy-loop-projection"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.digital.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.digital.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "digital"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:7a71d17b4230f6b2c9a9c02b8d5ee31e44a8e13b78a990cccd1eb7bd7cdf79b4",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "omega1": 1.0,
+              "omega2": 1.41421356237
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "angle_wrap",
+              "irrational_frequency_ratio"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "quasiperiodic_torus",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "torus",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "torus",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.torus"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.quasiperiodic_torus",
+          "label": "quasiperiodic_torus",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "quasiperiodic_torus",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:250cec24dd4cc5f71b5510e3cb94c01486d4ef59505f39518dfea488f6ad41f8",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.hypergraph_reactions.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "high_order_closure",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:893a1b23247ceb595f986b5e2c7a6af7d2df796019e69a375b856128669396c8",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "benchmark": "high_order_closure",
+              "scenario_id": "W10-biomodels-hypergraph"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.hypergraph_reactions.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://www.ebi.ac.uk/biomodels/",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "benchmark",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "benchmark": "high_order_closure",
+              "scenario_id": "W10-biomodels-hypergraph"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.hypergraph_reactions.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.hypergraph_reactions.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "hypergraph_reactions"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:7fad09316047ea3a095e539164987c9727839c74fdb68f29c2df23b00c662c91",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.cognitive.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "anticipation",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:992397b12445347a1a30b1a596e36a1df1714b24d3bc98f08a75b7c1502a3160",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "benchmark": "anticipation",
+              "scenario_id": "W8-allen-anticipation-control"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.cognitive.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://portal.brain-map.org/",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "benchmark",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "benchmark": "anticipation",
+              "scenario_id": "W8-allen-anticipation-control"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.cognitive.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.cognitive.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "cognitive"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:cdaee127789eb5ea1c93e8fa881c5e9e86f43e65d8c1352b73723f1dc9ac0704",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:b1d190dc2f2b7bebe9074a8640bfb58e92e43a4f0aa08133db2b14febf8970c9",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "N"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "H3N",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "N",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "N",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "N"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:9615d76235d35eaf5d760f5d3959228a33215620c8f9479bc3e2527ea66a7ca7",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.swarm.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "trail_foraging",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:c0c8901ce4baf81482ab930a609ceb53e1dea523372a06cdf113a6053821d6e3",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "agent_count": 24,
+              "benchmark": "trail_foraging",
+              "scenario_id": "W7-movebank-trail-foraging"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.swarm.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://www.movebank.org/cms/movebank-main",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "agent_count",
+              "benchmark",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "agent_count": 24,
+              "benchmark": "trail_foraging",
+              "scenario_id": "W7-movebank-trail-foraging"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.swarm.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.swarm.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "swarm"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.83,
+      "empirical_record_id": "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mass_action_reaction_edge",
+          "label": "mass_action_reaction_edge",
+          "predicate": {
+            "expression": "all reactions carry rate_constant",
+            "observed": true,
+            "predicate": "rate_constants_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:c2f9ec4951adfb026f1002292989b9e4173af91261e00d79231e7d541f7281b7",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing reaction_edges changes reactions",
+            "observed": 8,
+            "predicate": "edge_count_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.reaction_network_topology",
+          "label": "reaction_network_topology",
+          "persist": {
+            "expression": "payload.organism_code == eco",
+            "observed": "eco",
+            "predicate": "organism_identity_persists",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.initial_state present",
+            "observed": [
+              "2-phospho-D-glycerate",
+              "3-phospho-D-glycerate",
+              "3-phospho-D-glyceroyl-phosphate",
+              "D-fructose-1,6-bisphosphate",
+              "D-fructose-6-phosphate",
+              "D-glucose",
+              "D-glucose-6-phosphate",
+              "glyceraldehyde-3-phosphate"
+            ],
+            "predicate": "world_reads_initial_state",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "KEGG reaction edges map to CRN reactions",
+            "observed": 8,
+            "predicate": "kegg_edges_write_crn",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "metabolic_reaction_network",
+          "predicate": {
+            "expression": "len(payload.world_parameters.reactions) > 0",
+            "observed": 8,
+            "predicate": "reaction_edges_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.crn.metabolic_reaction_network"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.metabolic_closure_substrate_flow",
+          "label": "metabolic_closure_substrate_flow",
+          "predicate": {
+            "expression": "payload.species_count >= 2",
+            "observed": 8,
+            "predicate": "species_count_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "crn"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              1.847823,
+              1.525327,
+              2.01856495
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:c41df65e3c36b61f6b1b7ad0e974c53b1c1cf73765d1a440499159308d968d73",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 5.39171495,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              1.847823,
+              1.525327,
+              2.01856495
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Li",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              10.19880615024,
+              1.88868750886,
+              1.510940940602
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:d0599f70033f8fb47027a24b9f8f7d10f9047eeb4594b92539d540e8cc02999d",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 13.598434599702,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              10.19880615024,
+              1.88868750886,
+              1.510940940602
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "H",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.89,
+      "empirical_record_id": "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.electromagnetic_transition",
+          "label": "electromagnetic_transition",
+          "predicate": {
+            "expression": "len(payload.first_level_gaps_eV) > 0",
+            "observed": [
+              16.619,
+              0.229,
+              4.71654
+            ],
+            "predicate": "level_gaps_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:d7970a4fbf4b824ebd50ec883bfeca1c3670b2196bf9d73219186df81400fa4f",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "max_observed_level_eV > ground_state_eV",
+            "observed": 21.56454,
+            "predicate": "ionization_limit_present",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.electron_shell_energy_field",
+          "label": "electron_shell_energy_field",
+          "persist": {
+            "expression": "payload.energy_level_count >= 3",
+            "observed": 4,
+            "predicate": "multiple_energy_levels",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "first_level_gaps_eV are derived from levels",
+            "observed": [
+              16.619,
+              0.229,
+              4.71654
+            ],
+            "predicate": "transitions_read_gaps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.element_symbol present",
+            "observed": "Ne",
+            "predicate": "nucleus_charge_context",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "energy_level_structure",
+          "predicate": {
+            "expression": "payload.energy_level_count >= 2",
+            "observed": 4,
+            "predicate": "energy_levels_observed",
+            "trace_checkable": true
+          },
+          "role_id": "process.atomic.energy_level_structure"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.discrete_energy_spectrum",
+          "label": "discrete_energy_spectrum",
+          "predicate": {
+            "expression": "payload.energy_level_count > 1",
+            "observed": 4,
+            "predicate": "discrete_levels",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:aa252af9dcbb7280b452a0edfa32d31e534718dba76e0d771ec7b7a9b357cee9",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:dae72eda0eb0a32fcf62242ae0ee334a3bffa9f41f4b5f4f410828338e01f375",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "CH4",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "C",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "C",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "C"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:e0bef14ef03df0bc073fb67bbc76b6e12ca81cd4f074136fae5340a6a90c5d1c",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "beta": 2.6666666667,
+              "rho": 28.0,
+              "sigma": 10.0
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "sensitive_dependence",
+              "bounded_absorbing_region"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "strange_attractor",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.strange_attractor"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.strange_attractor",
+          "label": "strange_attractor",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "strange_attractor",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.7,
+      "empirical_record_id": "sha256:f44ebcd2fe60e7960002e7c6f1466e2d0d572bf6ff2ebfeade933b48cb9a8443",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.multiscale.empirical_parameter_bridge",
+          "label": "empirical_parameter_bridge",
+          "predicate": {
+            "expression": "world_parameters.benchmark or scenario_id present",
+            "observed": "scale_separation",
+            "predicate": "benchmark_or_scenario_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:e32f8825b1831abd6373eecdbf0ae3976f19427e2c47bdb482d0002fe27b4315",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing source-derived parameters changes trace",
+            "observed": {
+              "benchmark": "scale_separation",
+              "scenario_id": "W13-physiome-scale-separation"
+            },
+            "predicate": "parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.multiscale.math_shadow_parameter_space",
+          "label": "math_shadow_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url present",
+            "observed": "https://models.physiomeproject.org/",
+            "predicate": "provenance_persists_source",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "from_empirical_records consumes world_parameters",
+            "observed": [
+              "benchmark",
+              "scenario_id"
+            ],
+            "predicate": "world_constructor_reads_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "payload.world_parameters determines world reset",
+            "observed": {
+              "benchmark": "scale_separation",
+              "scenario_id": "W13-physiome-scale-separation"
+            },
+            "predicate": "source_writes_world_parameters",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "source_bound_projection",
+          "predicate": {
+            "expression": "payload.world_parameters is dict",
+            "observed": true,
+            "predicate": "world_parameters_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.multiscale.source_bound_projection"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.multiscale.exploratory_world_trace",
+          "label": "exploratory_world_trace",
+          "predicate": {
+            "expression": "record.mode_tag == exploratory",
+            "observed": "exploratory",
+            "predicate": "mode_exploratory",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "multiscale"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.86,
+      "empirical_record_id": "sha256:538eb2225650d6a6ee82962371c658adfe6bf5ee4a2c042b20c30d5d0aebf3a9",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.covalent_bond_graph",
+          "label": "covalent_bond_graph",
+          "predicate": {
+            "expression": "payload.heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atoms_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:e3e091c17fba973dbc8680e70394d50eff466a3f5b0d4f729682b2745dd31e44",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing SMILES changes topology proxy",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "O"
+              ]
+            },
+            "predicate": "bond_proxy_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.covalent_structure_field",
+          "label": "covalent_structure_field",
+          "persist": {
+            "expression": "molecular_formula present",
+            "observed": "H2O",
+            "predicate": "formula_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "heavy_atom_count >= 1",
+            "observed": 1,
+            "predicate": "heavy_atom_count_reads_graph",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "canonical_smiles maps to bond topology",
+            "observed": "O",
+            "predicate": "smiles_writes_graph",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "bond_topology",
+          "predicate": {
+            "expression": "payload.canonical_smiles != ''",
+            "observed": "O",
+            "predicate": "smiles_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.molecular.bond_topology"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.molecular_topology_constraint",
+          "label": "molecular_topology_constraint",
+          "predicate": {
+            "expression": "payload.bond_topology_proxy.element_token_count >= 1",
+            "observed": {
+              "aromatic_atom_count": 0,
+              "branch_points": 0,
+              "element_token_count": 1,
+              "explicit_bond_symbols": 0,
+              "ring_digit_count": 0,
+              "unique_elements": [
+                "O"
+              ]
+            },
+            "predicate": "topology_proxy_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.84,
+      "empirical_record_id": "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.diffusion_reaction_coupling",
+          "label": "diffusion_reaction_coupling",
+          "predicate": {
+            "expression": "payload.reaction_model != ''",
+            "observed": "brusselator",
+            "predicate": "reaction_model_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:fedf361ff9976c88196674467607cc359133e89bb80a0931ac3eefbcae3c7e2b",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing feed/kill or a/b ranges changes regime",
+            "observed": {
+              "a": [
+                0.8,
+                1.2
+              ],
+              "b": [
+                2.4,
+                3.0
+              ]
+            },
+            "predicate": "parameter_range_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.field_parameter_space",
+          "label": "field_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1063/1.1668896",
+            "predicate": "citation_persists_benchmark",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.steps present",
+            "observed": 36,
+            "predicate": "world_reads_steps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects FieldWorld scenario",
+            "observed": "brusselator",
+            "predicate": "benchmark_writes_field_config",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "reaction_diffusion_benchmark",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "brusselator",
+            "predicate": "benchmark_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.field.reaction_diffusion_benchmark"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.pattern_formation_parameter_space",
+          "label": "pattern_formation_parameter_space",
+          "predicate": {
+            "expression": "len(payload.parameter_range) > 0",
+            "observed": {
+              "a": [
+                0.8,
+                1.2
+              ],
+              "b": [
+                2.4,
+                3.0
+              ]
+            },
+            "predicate": "parameter_range_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "field"
+    }
+  ],
+  "schema": "LowLevelNormalizedReferenceSet.v1"
+}

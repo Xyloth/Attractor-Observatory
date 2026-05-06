@@ -1,0 +1,45 @@
+{
+  "edges": [
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:1fba3bb1d1d9ef32beed40e303c940287caa4f7a919bf197e05849800c205eb6",
+      "evidence_record_ids": [
+        "sha256:f44ebcd2fe60e7960002e7c6f1466e2d0d572bf6ff2ebfeade933b48cb9a8443"
+      ],
+      "relation": "has_process_role",
+      "source": "world:multiscale",
+      "target": "process_roles:source_bound_projection"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:a5cfdddd97e68f6594248b4d88bded4afad6a09dba0d90bb43c875d9f8ec9c7d",
+      "evidence_record_ids": [
+        "sha256:f44ebcd2fe60e7960002e7c6f1466e2d0d572bf6ff2ebfeade933b48cb9a8443"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:multiscale",
+      "target": "state_space_effects:exploratory_world_trace"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:ac7412bcc510f68002794de44c6ef6082c642290c9f66a38e10a684af356bcee",
+      "evidence_record_ids": [
+        "sha256:f44ebcd2fe60e7960002e7c6f1466e2d0d572bf6ff2ebfeade933b48cb9a8443"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:multiscale",
+      "target": "overlap_fields:math_shadow_parameter_space"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:c958f6919cd44f7c353c5f579bd7b9f42908ebbfb4ea3fd7da83b7abb39cb61b",
+      "evidence_record_ids": [
+        "sha256:f44ebcd2fe60e7960002e7c6f1466e2d0d572bf6ff2ebfeade933b48cb9a8443"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:multiscale",
+      "target": "interaction_channels:empirical_parameter_bridge"
+    }
+  ],
+  "schema": "LowLevelEvidenceGraph.v1"
+}

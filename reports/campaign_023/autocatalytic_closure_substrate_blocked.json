@@ -1,0 +1,35 @@
+{
+  "N_run": 10000,
+  "balance": {
+    "passed": true,
+    "per_substrate": {
+      "crn": {
+        "meets_floor": true,
+        "negative": 15,
+        "positive": 15,
+        "total": 30
+      }
+    },
+    "ready_substrates": [
+      "crn"
+    ]
+  },
+  "empirical_p": 9.999000099990002e-05,
+  "evaluation_row_count": 30,
+  "interpretation": {
+    "rationale": "observed gap 0.600000 exceeds shuffled CI high 0.200000",
+    "verdict": "signal_survives_shuffle"
+  },
+  "mode_tag": "exploratory",
+  "motif_id": "motif.autocatalytic_closure.draft",
+  "null_distribution": {
+    "ci_high": 0.2,
+    "ci_low": -0.2,
+    "mean": 0.000712
+  },
+  "observed_gap": 0.6,
+  "preregistration_hash": "sha256:771e09f2a5be2099b2383d102643cda2ae00070dfd9ee1270535c3b74b57e1d1",
+  "primary_lens": "graph",
+  "primary_lens_rationale": "first D26-admissible lens with nondeclined rows",
+  "schema": "Campaign023SubstrateBlockedControl.v1"
+}

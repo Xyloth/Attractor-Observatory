@@ -54,6 +54,1050 @@
     "schema": "Campaign020DeficitMapUpdate.v1",
     "task_id": "TASK-031"
   },
+  "campaign_023_motif_contract_v2_rerun": {
+    "artifact": "reports/campaign_023/full_report.json",
+    "campaign_id": "campaign_023",
+    "claim_promotion_allowed": false,
+    "mode": "motif_contract_v2_decoupled_rerun_no_promotion",
+    "motif_verdicts": {
+      "motif.autocatalytic_closure.draft": {
+        "ablation_results_per_lens": [
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "cycle_proxy",
+              "branching_proxy",
+              "process_flags.closure"
+            ],
+            "features_before": [
+              "cycle_proxy",
+              "branching_proxy",
+              "process_flags.closure"
+            ],
+            "lens_id": "graph",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "BAD",
+            "d26_independence": "BAD",
+            "features_after_ablation": [],
+            "features_before": [
+              "reaction_count",
+              "t_invariant_proxy",
+              "persistence_indicator"
+            ],
+            "lens_id": "crnt",
+            "passed": false,
+            "rationale": "lens and predicate read at least one identical source-object field"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "recurrence_rate",
+              "stability",
+              "process_flags.closure"
+            ],
+            "features_before": [
+              "recurrence_rate",
+              "stability",
+              "process_flags.closure"
+            ],
+            "lens_id": "dynamical_systems",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "long_h1_cycles",
+              "process_flags.closure"
+            ],
+            "features_before": [
+              "long_h1_cycles",
+              "process_flags.closure"
+            ],
+            "lens_id": "topology",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "BAD",
+            "d26_independence": "BAD",
+            "features_after_ablation": [],
+            "features_before": [
+              "t_invariant_count",
+              "transition_count",
+              "process_flags.closure"
+            ],
+            "lens_id": "petri",
+            "passed": false,
+            "rationale": "lens and predicate read at least one identical source-object field"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "large_deviation_rate",
+              "energy_variance"
+            ],
+            "features_before": [
+              "large_deviation_rate",
+              "energy_variance"
+            ],
+            "lens_id": "statistical_mechanics",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "controllability_proxy",
+              "observability_proxy"
+            ],
+            "features_before": [
+              "controllability_proxy",
+              "observability_proxy"
+            ],
+            "lens_id": "control_theory",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "event_entropy",
+              "delta_entropy_proxy",
+              "process_flags.closure"
+            ],
+            "features_before": [
+              "event_entropy",
+              "delta_entropy_proxy",
+              "process_flags.closure"
+            ],
+            "lens_id": "information",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          }
+        ],
+        "adversarial_controls_passed": true,
+        "contract_hash": "sha256:c54b3c4d36ac4191b235db4d6958c2888aa78ac6fbe513a7f9e091d51923cb9e",
+        "corpus_size_per_substrate": {
+          "crn": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "substrate_blocked_verdict": "signal_survives_shuffle"
+      },
+      "motif.externalized_memory.draft": {
+        "ablation_results_per_lens": [
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "actor-medium paths",
+              "process_flags.memory"
+            ],
+            "features_before": [
+              "actor-medium paths",
+              "process_flags.memory"
+            ],
+            "lens_id": "graph",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "crnt",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "recurrence_rate",
+              "process_flags.memory"
+            ],
+            "features_before": [
+              "recurrence_rate",
+              "process_flags.memory"
+            ],
+            "lens_id": "dynamical_systems",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "connectivity",
+              "process_flags.memory"
+            ],
+            "features_before": [
+              "connectivity",
+              "process_flags.memory"
+            ],
+            "lens_id": "topology",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "petri",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "statistical_mechanics",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "observability_proxy",
+              "memory_channel_count",
+              "process_flags.memory"
+            ],
+            "features_before": [
+              "observability_proxy",
+              "memory_channel_count",
+              "process_flags.memory"
+            ],
+            "lens_id": "control_theory",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "predictive_state_count",
+              "delta_entropy_proxy",
+              "process_flags.memory"
+            ],
+            "features_before": [
+              "predictive_state_count",
+              "delta_entropy_proxy",
+              "process_flags.memory"
+            ],
+            "lens_id": "information",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          }
+        ],
+        "adversarial_controls_passed": true,
+        "contract_hash": "sha256:b9437939983325d322dec3210e50b4098ac06c0c10412e5c114f34e9597b39c6",
+        "corpus_size_per_substrate": {
+          "cognitive": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "substrate_blocked_verdict": "signal_survives_shuffle"
+      },
+      "motif.floor_connectivity.draft": {
+        "ablation_results_per_lens": [
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "decline_expected"
+            ],
+            "features_before": [
+              "decline_expected"
+            ],
+            "lens_id": "graph",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "crnt",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "basin recurrence",
+              "stability"
+            ],
+            "features_before": [
+              "basin recurrence",
+              "stability"
+            ],
+            "lens_id": "dynamical_systems",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "connectivity_proxy",
+              "cycle_persistence_proxy"
+            ],
+            "features_before": [
+              "connectivity_proxy",
+              "cycle_persistence_proxy"
+            ],
+            "lens_id": "topology",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "petri",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "large_deviation_rate",
+              "energy_variance"
+            ],
+            "features_before": [
+              "large_deviation_rate",
+              "energy_variance"
+            ],
+            "lens_id": "statistical_mechanics",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "reachability_proxy"
+            ],
+            "features_before": [
+              "reachability_proxy"
+            ],
+            "lens_id": "control_theory",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "information",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          }
+        ],
+        "adversarial_controls_passed": true,
+        "contract_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+        "corpus_size_per_substrate": {
+          "crn": {
+            "negative": 27,
+            "positive": 17,
+            "total": 44
+          },
+          "digital": {
+            "negative": 0,
+            "positive": 20,
+            "total": 20
+          },
+          "morphogenesis": {
+            "negative": 0,
+            "positive": 20,
+            "total": 20
+          },
+          "protocell": {
+            "negative": 0,
+            "positive": 20,
+            "total": 20
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 104
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "substrate_blocked_verdict": "signal_survives_shuffle"
+      },
+      "motif.repair.draft": {
+        "ablation_results_per_lens": [
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "actor paths",
+              "branching_proxy"
+            ],
+            "features_before": [
+              "actor paths",
+              "branching_proxy",
+              "process_flags.repair"
+            ],
+            "lens_id": "graph",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          },
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "p_invariant_proxy",
+              "persistence_indicator"
+            ],
+            "features_before": [
+              "p_invariant_proxy",
+              "persistence_indicator",
+              "process_flags.repair"
+            ],
+            "lens_id": "crnt",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          },
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "stability",
+              "terminal drift",
+              "recovery dynamics"
+            ],
+            "features_before": [
+              "stability",
+              "terminal drift",
+              "recovery dynamics"
+            ],
+            "lens_id": "dynamical_systems",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          },
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "basin return",
+              "connectivity"
+            ],
+            "features_before": [
+              "basin return",
+              "connectivity"
+            ],
+            "lens_id": "topology",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          },
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "p_invariant_count"
+            ],
+            "features_before": [
+              "p_invariant_count",
+              "process_flags.repair"
+            ],
+            "lens_id": "petri",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          },
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "energy_variance",
+              "large_deviation_rate"
+            ],
+            "features_before": [
+              "energy_variance",
+              "large_deviation_rate",
+              "process_flags.repair"
+            ],
+            "lens_id": "statistical_mechanics",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          },
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "controllability_proxy",
+              "intervention channels"
+            ],
+            "features_before": [
+              "controllability_proxy",
+              "intervention channels",
+              "process_flags.repair"
+            ],
+            "lens_id": "control_theory",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          },
+          {
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "PARTIAL",
+            "features_after_ablation": [
+              "delta_entropy_proxy",
+              "event_entropy"
+            ],
+            "features_before": [
+              "delta_entropy_proxy",
+              "event_entropy"
+            ],
+            "lens_id": "information",
+            "passed": true,
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
+          }
+        ],
+        "adversarial_controls_passed": true,
+        "contract_hash": "sha256:d294462ebd7eb3a3e0badeba60669154eb0f612144ce039404e6d9be984ed727",
+        "corpus_size_per_substrate": {
+          "protocell": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          },
+          "swarm": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 60
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "substrate_blocked_verdict": "signal_survives_shuffle"
+      },
+      "motif.replication_lineage.draft": {
+        "ablation_results_per_lens": [
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "parent-child event paths",
+              "branching_proxy",
+              "process_flags.lineage"
+            ],
+            "features_before": [
+              "parent-child event paths",
+              "branching_proxy",
+              "process_flags.lineage"
+            ],
+            "lens_id": "graph",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "crnt",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "dynamical_systems",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "topology",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "t_invariant_count",
+              "process_flags.lineage"
+            ],
+            "features_before": [
+              "t_invariant_count",
+              "process_flags.lineage"
+            ],
+            "lens_id": "petri",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "large_deviation_rate",
+              "process_flags.lineage"
+            ],
+            "features_before": [
+              "large_deviation_rate",
+              "process_flags.lineage"
+            ],
+            "lens_id": "statistical_mechanics",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "out_of_domain"
+            ],
+            "features_before": [
+              "out_of_domain"
+            ],
+            "lens_id": "control_theory",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "heritable information proxy"
+            ],
+            "features_before": [
+              "heritable information proxy"
+            ],
+            "lens_id": "information",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          }
+        ],
+        "adversarial_controls_passed": true,
+        "contract_hash": "sha256:5ce35bc9b64c16a61977b14a4801f6db0b85cdd8e1a0a900c746294d4dd93a45",
+        "corpus_size_per_substrate": {
+          "protocell": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "substrate_blocked_verdict": "signal_survives_shuffle"
+      },
+      "motif.self_maintained_boundary.draft": {
+        "ablation_results_per_lens": [
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "process_flags.boundary",
+              "actor paths"
+            ],
+            "features_before": [
+              "process_flags.boundary",
+              "actor paths"
+            ],
+            "lens_id": "graph",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "p_invariant_proxy",
+              "process_flags.boundary"
+            ],
+            "features_before": [
+              "p_invariant_proxy",
+              "process_flags.boundary"
+            ],
+            "lens_id": "crnt",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "stability",
+              "process_flags.boundary"
+            ],
+            "features_before": [
+              "stability",
+              "process_flags.boundary"
+            ],
+            "lens_id": "dynamical_systems",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "long_h1_cycles",
+              "process_flags.boundary"
+            ],
+            "features_before": [
+              "long_h1_cycles",
+              "process_flags.boundary"
+            ],
+            "lens_id": "topology",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "p_invariant_count",
+              "process_flags.boundary"
+            ],
+            "features_before": [
+              "p_invariant_count",
+              "process_flags.boundary"
+            ],
+            "lens_id": "petri",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "energy_variance",
+              "process_flags.boundary"
+            ],
+            "features_before": [
+              "energy_variance",
+              "process_flags.boundary"
+            ],
+            "lens_id": "statistical_mechanics",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "controllability_proxy",
+              "process_flags.boundary"
+            ],
+            "features_before": [
+              "controllability_proxy",
+              "process_flags.boundary"
+            ],
+            "lens_id": "control_theory",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          },
+          {
+            "ablation_status": "CLEAN",
+            "d26_independence": "CLEAN",
+            "features_after_ablation": [
+              "delta_entropy_proxy",
+              "process_flags.boundary"
+            ],
+            "features_before": [
+              "delta_entropy_proxy",
+              "process_flags.boundary"
+            ],
+            "lens_id": "information",
+            "passed": true,
+            "rationale": "lens source objects do not overlap predicate source objects"
+          }
+        ],
+        "adversarial_controls_passed": true,
+        "contract_hash": "sha256:9d30531db762cfef54982ef0d0456716bfe4500590399c0a46fd8628435af628",
+        "corpus_size_per_substrate": {
+          "protocell": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "substrate_blocked_verdict": "signal_survives_shuffle"
+      }
+    },
+    "schema": "Campaign023DeficitMapUpdate.v1",
+    "task_id": "TASK-MOTIF-IMPL"
+  },
+  "campaign_024_lens_side_decoupled_rerun": {
+    "artifact": "reports/campaign_024/full_report.json",
+    "campaign_id": "campaign_024",
+    "claim_promotion_allowed": false,
+    "lens_coupling_audit_hash": "sha256:727c28ab17048eb5544ef2d4ae4edddfc9598a176d7440a6aca49300a139110c",
+    "mode": "predicate_and_lens_side_decoupled_rerun_no_promotion",
+    "motif_verdicts": {
+      "motif.autocatalytic_closure.draft": {
+        "contract_hash": "sha256:c54b3c4d36ac4191b235db4d6958c2888aa78ac6fbe513a7f9e091d51923cb9e",
+        "corpus_size_per_substrate": {
+          "crn": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "lens_cell_verdicts": {
+          "control_theory": "CLEAN",
+          "crnt": "BAD",
+          "dynamical_systems": "CLEAN",
+          "graph": "BAD",
+          "information": "CLEAN",
+          "petri": "BAD",
+          "statistical_mechanics": "CLEAN",
+          "topology": "CLEAN"
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "primary_lens": "dynamical_systems",
+        "substrate_blocked_verdict": "signal_was_substrate_id"
+      },
+      "motif.externalized_memory.draft": {
+        "contract_hash": "sha256:b9437939983325d322dec3210e50b4098ac06c0c10412e5c114f34e9597b39c6",
+        "corpus_size_per_substrate": {
+          "cognitive": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "lens_cell_verdicts": {
+          "control_theory": "CLEAN",
+          "crnt": "BAD",
+          "dynamical_systems": "CLEAN",
+          "graph": "BAD",
+          "information": "CLEAN",
+          "petri": "BAD",
+          "statistical_mechanics": "CLEAN",
+          "topology": "CLEAN"
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "primary_lens": "dynamical_systems",
+        "substrate_blocked_verdict": "signal_partial_or_inconclusive"
+      },
+      "motif.floor_connectivity.draft": {
+        "contract_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+        "corpus_size_per_substrate": {
+          "crn": {
+            "negative": 27,
+            "positive": 17,
+            "total": 44
+          },
+          "digital": {
+            "negative": 0,
+            "positive": 20,
+            "total": 20
+          },
+          "morphogenesis": {
+            "negative": 0,
+            "positive": 20,
+            "total": 20
+          },
+          "protocell": {
+            "negative": 0,
+            "positive": 20,
+            "total": 20
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 104
+        },
+        "lens_cell_verdicts": {
+          "control_theory": "BAD",
+          "crnt": "BAD",
+          "dynamical_systems": "BAD",
+          "graph": "BAD",
+          "information": "BAD",
+          "petri": "BAD",
+          "statistical_mechanics": "BAD",
+          "topology": "BAD"
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "primary_lens": null,
+        "substrate_blocked_verdict": "not_evaluable_no_lens_after_decoupling"
+      },
+      "motif.repair.draft": {
+        "contract_hash": "sha256:d294462ebd7eb3a3e0badeba60669154eb0f612144ce039404e6d9be984ed727",
+        "corpus_size_per_substrate": {
+          "protocell": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          },
+          "swarm": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 60
+        },
+        "lens_cell_verdicts": {
+          "control_theory": "BAD",
+          "crnt": "BAD",
+          "dynamical_systems": "BAD",
+          "graph": "BAD",
+          "information": "BAD",
+          "petri": "BAD",
+          "statistical_mechanics": "BAD",
+          "topology": "BAD"
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "primary_lens": null,
+        "substrate_blocked_verdict": "not_evaluable_no_lens_after_decoupling"
+      },
+      "motif.replication_lineage.draft": {
+        "contract_hash": "sha256:5ce35bc9b64c16a61977b14a4801f6db0b85cdd8e1a0a900c746294d4dd93a45",
+        "corpus_size_per_substrate": {
+          "protocell": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "lens_cell_verdicts": {
+          "control_theory": "BAD",
+          "crnt": "BAD",
+          "dynamical_systems": "BAD",
+          "graph": "BAD",
+          "information": "BAD",
+          "petri": "BAD",
+          "statistical_mechanics": "BAD",
+          "topology": "BAD"
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "primary_lens": null,
+        "substrate_blocked_verdict": "not_evaluable_no_lens_after_decoupling"
+      },
+      "motif.self_maintained_boundary.draft": {
+        "contract_hash": "sha256:9d30531db762cfef54982ef0d0456716bfe4500590399c0a46fd8628435af628",
+        "corpus_size_per_substrate": {
+          "protocell": {
+            "negative": 15,
+            "positive": 15,
+            "total": 30
+          }
+        },
+        "excluded_count": {
+          "excluded_insufficient_or_invalid": 0,
+          "included": 30
+        },
+        "lens_cell_verdicts": {
+          "control_theory": "CLEAN",
+          "crnt": "BAD",
+          "dynamical_systems": "CLEAN",
+          "graph": "BAD",
+          "information": "CLEAN",
+          "petri": "BAD",
+          "statistical_mechanics": "CLEAN",
+          "topology": "CLEAN"
+        },
+        "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
+        "primary_lens": "dynamical_systems",
+        "substrate_blocked_verdict": "signal_survives_shuffle"
+      }
+    },
+    "schema": "Campaign024DeficitMapUpdate.v1",
+    "task_id": "TASK-LENS-METHOD"
+  },
   "campaign_id": "campaign-010",
   "candidates": [
     {

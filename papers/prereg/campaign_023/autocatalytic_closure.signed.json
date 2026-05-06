@@ -1,0 +1,35 @@
+{
+  "campaign_id": "campaign_023",
+  "claim_promotion_allowed": false,
+  "content_hash": "sha256:771e09f2a5be2099b2383d102643cda2ae00070dfd9ee1270535c3b74b57e1d1",
+  "forbidden_adjustments": [
+    "no event-token predicate labels",
+    "no per-motif threshold tuning",
+    "no claim-bearing promotion"
+  ],
+  "input_corpus_hash": "sha256:acef66e0d5e28324a7303ea5f21bd2a0e5f4261dfe3284f94f996966ce35162c",
+  "min_negative_per_substrate": 15,
+  "min_positive_per_substrate": 15,
+  "mode_tag": "exploratory",
+  "motif_id": "motif.autocatalytic_closure.draft",
+  "permutation_N": 10000,
+  "permutation_seed": 23023,
+  "predicate_contract_hash": "sha256:c54b3c4d36ac4191b235db4d6958c2888aa78ac6fbe513a7f9e091d51923cb9e",
+  "primary_lens": "graph",
+  "schema": "Campaign023MotifPreregistration.v1",
+  "signature": {
+    "scheme": "sha256-preregistration-content",
+    "signed_by": "Codex 1.5x",
+    "signed_hash": "sha256:771e09f2a5be2099b2383d102643cda2ae00070dfd9ee1270535c3b74b57e1d1",
+    "status": "signed_before_permutation"
+  },
+  "statistic": "mean primary-detector score on MotifContract.v2 positives minus mean score on MotifContract.v2 negatives",
+  "stratification": "world_family",
+  "task_id": "TASK-MOTIF-IMPL",
+  "verdict_logic": {
+    "not_evaluable": "corpus or D26-admissible detector unavailable",
+    "signal_partial_or_inconclusive": "shuffled_mean < observed_gap <= shuffled_95_ci_high",
+    "signal_survives_shuffle": "observed_gap > shuffled_95_ci_high",
+    "signal_was_substrate_id": "observed_gap <= shuffled_mean"
+  }
+}

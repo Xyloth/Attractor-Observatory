@@ -75,7 +75,7 @@ What this catches that single-audit doesn't:
 
 ## The mistake catalog
 
-These are the failure modes the project has actually observed during Campaigns 001–013. Each was caught by *the other AI* — not by the AI that produced it. Read them not as "don't do this" rules (those are doctrine) but as **classes of mistake that recur across builders and require active watching**.
+These are the failure modes the project has actually observed during Campaigns 001–023. Each was caught by *the other AI* — not by the AI that produced it. Read them not as "don't do this" rules (those are doctrine) but as **classes of mistake that recur across builders and require active watching**.
 
 When you audit Codex's work, look for these. When you build, watch for them in your own work. When you find one in your own work mid-task, append a `BUILD_LOG.md` self-flag and route to Architect — that is honest discipline, not failure.
 
@@ -206,9 +206,19 @@ The check is mechanical and runs before threshold logic on any pool. Claim-beari
 
 **Lesson for cross-audit:** the failure mode here is *not* that Architect or Builder were sloppy; it's that single-audit reads have predictable blind spots, and the triangle exists precisely because cross-audit catches these. Codex caught it because Codex was looking with a different prior. The discipline is functioning. Future Builders should expect to miss things and trust the triangle to catch them — and audit the triangle's catches, not just their own work.
 
+### Class 13 - Predicate-detector surface coupling *(ratified after TASK-MOTIF-IMPL)*
+
+**Pattern:** A predicate and detector appear independently validated because the corpus is substrate-blocked, but both still read the same surface vocabulary or adjacent source-object fields. The detector can recover the label from event-token/state-key/generator surfaces rather than from the semantic object the motif claims to measure.
+
+**Example:** Campaign 020 reported five motif survivors under within-substrate shuffle. TASK-MOTIF-IMPL found the locked label path was still `formalism.lens_registry._label_feature_for_motif`, which reads `_process_flags`: `repair_event`, `memory_write_event`, `division_event`, `neutral_component_fraction`, `attention_entropy`, and related surface keys. The graph/information/control lenses also encoded event-token and state-key surfaces. Substrate blocking was necessary, but it did not by itself separate predicate evidence from detector evidence.
+
+**Cross-link:** Class 7 catches detector/label leakage in a direct calibration path. Class 13 is the later, subtler version: the leakage can survive a stronger control if the predicate and detector share source objects or vocabulary after stratification.
+
+**Guard:** MotifContract.v2 plus Doctrine D26. Every motif predicate declares a `predicate_source_object_map`; every lens declares its own source-object map; the pair is CLEAN, PARTIAL, or BAD. PARTIAL cells require ablation. BAD cells cannot anchor claim-bearing evidence. Four-axis adversarial controls rename event tokens, state keys, payload keys, and generator IDs before any substrate-blocked rerun.
+
 ### Watching for new classes
 
-Sessions 1–10 of your operation will probably surface additional classes specific to your failure modes. Codex's catalog (Classes 1–9) came from Architect's audits of his work; Class 10 came from cross-audit on your first task. Future classes (11+) will come from continued cross-audit. Append new classes to this file when they're observed and characterized — that is research data, not a defect log.
+Sessions after this one will probably surface additional classes specific to your failure modes. Codex's catalog (Classes 1–9) came from Architect's audits of his work; Classes 10–13 came from later cross-audit and MotifContract repair. Future classes (14+) will come from continued cross-audit. Append new classes to this file when they're observed and characterized — that is research data, not a defect log.
 
 ## Build Log discipline
 

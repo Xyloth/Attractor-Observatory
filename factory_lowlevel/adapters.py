@@ -37,6 +37,18 @@ def _float_or_none(value: str) -> float | None:
         return None
 
 
+def _urlopen_text(url: str, *, timeout: int) -> str:
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "AttractorObservatoryFactory/0.1 (source-bound research ingestion; contact PI)",
+            "Accept": "text/csv,text/plain,application/json,*/*",
+        },
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return response.read().decode("utf-8", errors="replace")
+
+
 @dataclass(frozen=True)
 class AdapterAudit:
     """Honest negative surfaced by an adapter post-parse — e.g., a record
@@ -59,11 +71,29 @@ class AdapterResult:
     audits: list[AdapterAudit] = field(default_factory=list)
 
 
+ELEMENT_SYMBOLS: tuple[str, ...] = (
+    "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne",
+    "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar",
+    "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn",
+    "Ga", "Ge", "As", "Se", "Br", "Kr",
+    "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd",
+    "In", "Sn", "Sb", "Te", "I", "Xe",
+    "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy",
+    "Ho", "Er", "Tm", "Yb", "Lu",
+    "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg",
+    "Tl", "Pb", "Bi", "Po", "At", "Rn",
+    "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf",
+    "Es", "Fm", "Md", "No", "Lr",
+    "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc",
+    "Lv", "Ts", "Og",
+)
+
+
 class NISTAtomicSpectraAdapter:
     adapter_id = "adapter.nist_atomic_spectra.energy_levels.v0"
     parser_version = "nist-energy-csv-parser.v1"
 
-    spectra = ("H I", "He I", "Li I", "Ne I", "Ar I")
+    spectra = tuple(f"{symbol} I" for symbol in ELEMENT_SYMBOLS)
     base_url = "https://physics.nist.gov/cgi-bin/ASD/energy1.pl"
 
     def source_definition(self) -> SourceDefinition:
@@ -101,7 +131,7 @@ class NISTAtomicSpectraAdapter:
             "splitting": "1",
             "submit": "Retrieve Data",
         }
-        return self.base_url + "?" + urllib.parse.urlencode(params)
+        return self.base_url + "?" + urllib.parse.urlencode(params, quote_via=urllib.parse.quote)
 
     def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
         cache_root = Path(cache_dir) / "nist_atomic_spectra"
@@ -109,28 +139,28 @@ class NISTAtomicSpectraAdapter:
         raw_parts: list[str] = []
         warnings: list[str] = []
         retrieval_mode = "network"
-        for spectrum in self.spectra:
+        spectra = self.spectra if allow_network else ("H I", "He I", "Li I", "Ne I", "Ar I")
+        for spectrum in spectra:
             cache_path = cache_root / f"{spectrum.replace(' ', '_')}.csv"
             if cache_path.exists() and not force_refresh:
                 raw_parts.append(cache_path.read_text(encoding="utf-8-sig"))
                 continue
             if allow_network:
                 try:
-                    with urllib.request.urlopen(self._query_url(spectrum), timeout=timeout) as response:
-                        raw = response.read().decode("utf-8", errors="replace")
+                    raw = _urlopen_text(self._query_url(spectrum), timeout=timeout)
                     cache_path.write_text(raw, encoding="utf-8")
                     raw_parts.append(raw)
                     continue
                 except Exception as exc:  # pragma: no cover - network fallback is environment dependent.
                     warnings.append(f"network_fetch_failed:{spectrum}:{type(exc).__name__}")
             retrieval_mode = "bundled_authoritative_seed"
-            seed = BUNDLED_NIST_ENERGY_LEVELS[spectrum]
+            seed = BUNDLED_NIST_ENERGY_LEVELS.get(spectrum) or _nist_unavailable_seed(spectrum, "network_fetch_failed_without_cached_authoritative_table")
             raw = _seed_rows_to_csv(seed)
             cache_path.write_text(raw, encoding="utf-8")
             raw_parts.append(raw)
         raw_joined = "\n---SPECTRUM---\n".join(raw_parts)
         source = self.source_definition()
-        records = self._parse_records(raw_parts, source)
+        records, audits = self._parse_records(raw_parts, source, spectra=spectra)
         cache_entry = SourceCacheEntry(
             source_id=source.source_id,
             cache_id=sha256({"source_id": source.source_id, "raw": raw_joined}),
@@ -144,17 +174,20 @@ class NISTAtomicSpectraAdapter:
             record_count=len(records),
             retrieval_mode=retrieval_mode,
         )
-        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings)
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings, audits=audits)
 
-    def _parse_records(self, raw_parts: list[str], source: SourceDefinition) -> list[EmpiricalRecord]:
+    def _parse_records(self, raw_parts: list[str], source: SourceDefinition, *, spectra: tuple[str, ...] | None = None) -> tuple[list[EmpiricalRecord], list[AdapterAudit]]:
         records: list[EmpiricalRecord] = []
-        for spectrum, raw in zip(self.spectra, raw_parts):
+        audits: list[AdapterAudit] = []
+        for spectrum, raw in zip(spectra or self.spectra, raw_parts):
             reader = csv.DictReader(io.StringIO(raw))
             energies: list[float] = []
             terms: set[str] = set()
             configurations: set[str] = set()
             references: set[str] = set()
+            rows_seen = 0
             for row in reader:
+                rows_seen += 1
                 energy = _float_or_none(row.get("Level (eV)", ""))
                 if energy is not None:
                     energies.append(energy)
@@ -167,22 +200,82 @@ class NISTAtomicSpectraAdapter:
                     configurations.add(conf)
                 if ref:
                     references.add(ref)
+            element = spectrum.split()[0]
             if not energies:
+                payload = {
+                    "spectrum": spectrum,
+                    "element_symbol": element,
+                    "ion_stage": spectrum.split()[1] if len(spectrum.split()) > 1 else "I",
+                    "data_status": "nist_asd_no_energy_level_rows",
+                    "energy_level_count": 0,
+                    "ground_state_eV": None,
+                    "max_observed_level_eV": None,
+                    "ionization_edge_eV": None,
+                    "first_level_gaps_eV": [],
+                    "term_count": 0,
+                    "configuration_count": 0,
+                    "reference_count": 0,
+                    "configurations_sample": [],
+                    "terms_sample": [],
+                    "level_sample_eV": [],
+                    "methodology_review_required": True,
+                    "methodology_review_reason": "TASK-LENS-METHOD pending; low-level records cannot support claim-bearing lens conclusions.",
+                    "source_table": "NIST ASD energy levels CSV or explicit NIST no-data response",
+                }
+                retrieval_ts = utc_now()
+                provenance = {
+                    "source_url": self._query_url(spectrum),
+                    "source_home": source.url,
+                    "retrieval_timestamp": retrieval_ts,
+                    "retrieved_at": retrieval_ts,
+                    "parser_version": self.parser_version,
+                    "authority": "NIST Standard Reference Database 78",
+                    "raw_exported": False,
+                }
+                record_id = sha256({"source": source.source_id, "spectrum": spectrum, "payload": payload})
+                records.append(
+                    EmpiricalRecord(
+                        record_id=record_id,
+                        source_id=source.source_id,
+                        world_family="atomic_molecular_primitives",
+                        record_type="atomic_energy_level_summary",
+                        canonical_name=f"NIST energy levels {spectrum}",
+                        payload=payload,
+                        provenance=provenance,
+                        license_class=source.license_class,
+                    )
+                )
+                audits.append(
+                    AdapterAudit(
+                        record_id=record_id,
+                        source_id=source.source_id,
+                        severity="medium",
+                        reason="nist_asd_no_energy_level_rows",
+                        recommended_action="treat element as source-limited for spectra-derived claims; do not fabricate fallback levels",
+                    )
+                )
                 continue
             energies = sorted(set(round(value, 12) for value in energies))
             level_gaps = [round(energies[i + 1] - energies[i], 12) for i in range(min(len(energies) - 1, 8))]
-            element = spectrum.split()[0]
             payload = {
                 "spectrum": spectrum,
                 "element_symbol": element,
                 "ion_stage": spectrum.split()[1] if len(spectrum.split()) > 1 else "I",
+                "data_status": "nist_asd_energy_levels_available",
                 "energy_level_count": len(energies),
                 "ground_state_eV": energies[0],
                 "max_observed_level_eV": energies[-1],
+                "ionization_edge_eV": energies[-1],
                 "first_level_gaps_eV": level_gaps,
                 "term_count": len(terms),
                 "configuration_count": len(configurations),
                 "reference_count": len(references),
+                "configurations_sample": sorted(configurations)[:12],
+                "terms_sample": sorted(terms)[:12],
+                "level_sample_eV": energies[:12],
+                "raw_row_count": rows_seen,
+                "methodology_review_required": True,
+                "methodology_review_reason": "TASK-LENS-METHOD pending; low-level records cannot support claim-bearing lens conclusions.",
                 "source_table": "NIST ASD energy levels CSV",
             }
             # Bug B fix: retrieval_timestamp + parser_version per CB-008 brief.
@@ -209,7 +302,7 @@ class NISTAtomicSpectraAdapter:
                     license_class=source.license_class,
                 )
             )
-        return records
+        return records, audits
 
 
 class MathPrimitivesCatalogAdapter:
@@ -293,6 +386,10 @@ class MathPrimitivesCatalogAdapter:
 class PubChemSmallMoleculeAdapter:
     adapter_id = "adapter.pubchem.small_molecule_primitives.v0"
     parser_version = "pubchem-pug-rest-property-parser.v2"
+    cid_start = 1
+    cid_stop = 2000
+    max_records = 1500
+    batch_size = 100
     cids = {
         "water": 962,
         "methane": 297,
@@ -310,8 +407,8 @@ class PubChemSmallMoleculeAdapter:
             format="PubChem PUG-REST JSON property table",
             license_class="metadata_only",
             license_note=(
-                "PubChem aggregates many source contributors; Campaign 016 stores compact derived molecular "
-                "topology summaries with per-record PubChem URLs and no bulk redistribution."
+                "PubChem aggregates many source contributors; W-1 mass ingestion stores compact derived molecular "
+                "topology summaries for CIDs 1-2000 filtered to small molecules and no bulk raw redistribution."
             ),
             refresh_cadence="monthly",
             target_world="atomic_molecular_primitives",
@@ -332,6 +429,11 @@ class PubChemSmallMoleculeAdapter:
         props = "MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity"
         return f"{self.base_url}/{cid}/property/{props}/JSON"
 
+    def _batch_query_url(self, cids: list[int]) -> str:
+        props = "MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity"
+        cid_text = ",".join(str(cid) for cid in cids)
+        return f"{self.base_url}/{cid_text}/property/{props}/JSON"
+
     def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
         cache_root = Path(cache_dir) / "pubchem_small_molecules"
         cache_root.mkdir(parents=True, exist_ok=True)
@@ -340,27 +442,32 @@ class PubChemSmallMoleculeAdapter:
         warnings: list[str] = []
         retrieval_mode = "network"
         property_rows: list[dict[str, Any]] = []
-        for name, cid in self.cids.items():
-            cache_path = cache_root / f"cid_{cid}.json"
+        batches = list(_chunks(list(range(self.cid_start, self.cid_stop + 1)), self.batch_size))
+        for batch in batches:
+            cache_path = cache_root / f"cid_{batch[0]:06d}_{batch[-1]:06d}.json"
             if cache_path.exists() and not force_refresh:
                 raw = cache_path.read_text(encoding="utf-8-sig")
             elif allow_network:
                 try:
-                    with urllib.request.urlopen(self._query_url(cid), timeout=timeout) as response:
-                        raw = response.read().decode("utf-8", errors="replace")
+                    raw = _urlopen_text(self._batch_query_url(batch), timeout=timeout)
                     cache_path.write_text(raw, encoding="utf-8")
                 except Exception as exc:  # pragma: no cover - network fallback is environment dependent.
-                    warnings.append(f"pubchem_fetch_failed:{cid}:{type(exc).__name__}")
+                    warnings.append(f"pubchem_batch_fetch_failed:{batch[0]}-{batch[-1]}:{type(exc).__name__}")
                     retrieval_mode = "bundled_authoritative_seed"
-                    raw = json_dumps(PUBCHEM_SMALL_MOLECULE_SEEDS[cid])
+                    seed_rows = [PUBCHEM_SMALL_MOLECULE_SEEDS[cid] for cid in self.cids.values() if cid in batch]
+                    raw = json_dumps(_merge_pubchem_seed_rows(seed_rows))
                     cache_path.write_text(raw, encoding="utf-8")
             else:
                 retrieval_mode = "bundled_authoritative_seed"
-                raw = json_dumps(PUBCHEM_SMALL_MOLECULE_SEEDS[cid])
+                seed_rows = [PUBCHEM_SMALL_MOLECULE_SEEDS[cid] for cid in self.cids.values() if cid in batch]
+                raw = json_dumps(_merge_pubchem_seed_rows(seed_rows))
                 cache_path.write_text(raw, encoding="utf-8")
             raw_payloads.append(raw)
-            property_rows.append(self._parse_property_row(raw, cid, name))
-        records = [self._record_from_row(row, source) for row in property_rows]
+            property_rows.extend(self._parse_property_rows(raw, batch))
+            if len(property_rows) >= self.max_records:
+                property_rows = property_rows[: self.max_records]
+                break
+        records = [self._record_from_row(row, source) for row in property_rows if self._accept_property_row(row)]
         # Bug C fix: surface "passed schema gate but empty critical field"
         # honestly to the audit queue. SMILES==''  with the new schema is
         # the canonical form of the PubChem topology bug; let it be
@@ -399,22 +506,29 @@ class PubChemSmallMoleculeAdapter:
         )
         return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings, audits=audits)
 
-    def _parse_property_row(self, raw: str, cid: int, fallback_name: str) -> dict[str, Any]:
+    def _parse_property_rows(self, raw: str, batch: list[int]) -> list[dict[str, Any]]:
         import json
 
         try:
             payload = json.loads(raw)
         except json.JSONDecodeError as exc:
-            raise ValueError(f"Malformed PubChem JSON for CID {cid}: {exc}") from exc
+            raise ValueError(f"Malformed PubChem JSON for CID batch {batch[0]}-{batch[-1]}: {exc}") from exc
         props = payload.get("PropertyTable", {}).get("Properties", [])
         if not isinstance(props, list):
-            raise ValueError(f"Malformed PubChem property table for CID {cid}: Properties is not a list")
+            raise ValueError(f"Malformed PubChem property table for CID batch {batch[0]}-{batch[-1]}: Properties is not a list")
         if not props:
-            props = PUBCHEM_SMALL_MOLECULE_SEEDS[cid]["PropertyTable"]["Properties"]
-        row = dict(props[0])
-        row.setdefault("CID", cid)
-        row.setdefault("Name", fallback_name)
-        return row
+            props = []
+            for cid in self.cids.values():
+                if cid in batch:
+                    props.extend(PUBCHEM_SMALL_MOLECULE_SEEDS[cid]["PropertyTable"]["Properties"])
+        return [dict(row) for row in props]
+
+    def _accept_property_row(self, row: dict[str, Any]) -> bool:
+        formula = str(row.get("MolecularFormula", ""))
+        smiles = str(row.get("SMILES") or row.get("ConnectivitySMILES") or row.get("CanonicalSMILES") or row.get("IsomericSMILES") or "")
+        atom_count = _int_or(row.get("HeavyAtomCount"), _count_formula_atoms(formula))
+        molecular_weight = _float_or(row.get("MolecularWeight"), 0.0)
+        return bool(formula and smiles) and 1 <= atom_count <= 64 and 1.0 <= molecular_weight <= 500.0
 
     def _record_from_row(self, row: dict[str, Any], source: SourceDefinition) -> EmpiricalRecord:
         cid = int(row["CID"])
@@ -442,10 +556,14 @@ class PubChemSmallMoleculeAdapter:
             "cid": cid,
             "molecular_formula": formula,
             "canonical_smiles": smiles,
+            "connectivity_smiles": str(row.get("ConnectivitySMILES") or row.get("CanonicalSMILES") or smiles),
             "molecular_weight": molecular_weight,
             "heavy_atom_count": atom_count,
             "bond_topology_proxy": _smiles_topology(smiles),
             "complexity": complexity,
+            "selection_rule": "PubChem CID 1-2000; accepted if nonempty formula/SMILES, 1<=HeavyAtomCount<=64, 1<=MolecularWeight<=500; capped at 1500 records.",
+            "methodology_review_required": True,
+            "methodology_review_reason": "TASK-LENS-METHOD pending; low-level records cannot support claim-bearing lens conclusions.",
             "source_table": "PubChem PUG-REST compound property JSON",
         }
         # Bug B fix: include retrieval_timestamp + parser_version directly
@@ -967,12 +1085,336 @@ class GBIFJornadaEcosystemAdapter:
         )
 
 
+class CuratedWorldSeedAdapter:
+    """Compact source-bound adapter for public benchmark datasets.
+
+    These are intentionally conservative: a live source URL is registered and a
+    bundled authoritative seed carries DOI/accession/API provenance plus derived
+    world parameters. Runtime never invents missing values; malformed seed rows
+    emit AdapterAudit entries and are not silently accepted.
+    """
+
+    adapter_id = "adapter.curated_world_seed.abstract"
+    parser_version = "curated-world-seed-parser.v1"
+    source_id = ""
+    source_name = ""
+    source_url = ""
+    source_format = "curated public source metadata plus derived parameters"
+    target_world = ""
+    record_type = ""
+    cache_name = ""
+    authority = ""
+    license_class = "metadata_only"
+    license_note = "Derived compact parameters and provenance only; no raw source redistribution."
+    refresh_cadence = "manual_spec_review"
+    seeds: list[dict[str, Any]] = []
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id=self.source_id,
+            name=self.source_name,
+            url=self.source_url,
+            format=self.source_format,
+            license_class=self.license_class,
+            license_note=self.license_note,
+            refresh_cadence=self.refresh_cadence,
+            target_world=self.target_world,
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="bundled_authoritative_seed",
+        )
+
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = False, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        cache_root = Path(cache_dir) / self.cache_name
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        raw = json_dumps(self.seeds)
+        cache_path = cache_root / "catalog.json"
+        retrieval_mode = "bundled_authoritative_seed"
+        warnings: list[str] = []
+        if cache_path.exists() and not force_refresh:
+            raw = cache_path.read_text(encoding="utf-8-sig")
+            retrieval_mode = "cache"
+        else:
+            if allow_network:
+                try:
+                    with urllib.request.urlopen(source.url, timeout=timeout) as response:
+                        response.read(1)
+                    retrieval_mode = "network_validated_bundled_authoritative_seed"
+                except Exception as exc:  # pragma: no cover - source availability is environment dependent.
+                    warnings.append(f"source_validation_failed:{source.source_id}:{type(exc).__name__}")
+            cache_path.write_text(raw, encoding="utf-8")
+        records: list[EmpiricalRecord] = []
+        audits: list[AdapterAudit] = []
+        for seed in self.seeds:
+            if not isinstance(seed.get("world_parameters"), dict):
+                audits.append(
+                    AdapterAudit(
+                        record_id=sha256({"source": source.source_id, "seed": seed.get("canonical_name", "unknown")}),
+                        source_id=source.source_id,
+                        severity="high",
+                        reason="curated_world_seed_missing_world_parameters",
+                        recommended_action="hold_source_for_manual_adapter_review",
+                    )
+                )
+                continue
+            record = self._record_from_seed(seed, source, retrieval_mode)
+            records.append(record)
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw),
+            raw_cache_path=str(cache_path),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="derived_parameters_and_provenance_only",
+            record_count=len(records),
+            retrieval_mode=retrieval_mode,
+        )
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings, audits=audits)
+
+    def _record_from_seed(self, seed: dict[str, Any], source: SourceDefinition, retrieval_mode: str) -> EmpiricalRecord:
+        retrieval_ts = utc_now()
+        payload = {
+            key: value
+            for key, value in seed.items()
+            if key not in {"source_url", "citation", "license_note", "authority"}
+        }
+        provenance = {
+            "source_url": seed.get("source_url", source.url),
+            "source_home": source.url,
+            "citation": seed.get("citation", ""),
+            "retrieval_timestamp": retrieval_ts,
+            "retrieved_at": retrieval_ts,
+            "parser_version": self.parser_version,
+            "authority": seed.get("authority", self.authority),
+            "retrieval_mode": retrieval_mode,
+            "license_class": source.license_class,
+            "raw_exported": False,
+        }
+        record_id = sha256({"source": source.source_id, "name": seed["canonical_name"], "payload": payload})
+        return EmpiricalRecord(
+            record_id=record_id,
+            source_id=source.source_id,
+            world_family=self.target_world,
+            record_type=self.record_type,
+            canonical_name=seed["canonical_name"],
+            payload=payload,
+            provenance=provenance,
+            license_class=source.license_class,
+        )
+
+
+class SzostakLiposomeProtocellAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.szostak_liposome.protocell.v0"
+    parser_version = "szostak-liposome-derived-parameter-parser.v1"
+    source_id = "source.szostak_liposome.protocell_benchmarks"
+    source_name = "Szostak lab fatty-acid vesicle protocell benchmark metadata"
+    source_url = "https://doi.org/10.1038/nature07018"
+    target_world = "protocell"
+    record_type = "liposome_protocell_benchmark"
+    cache_name = "szostak_liposome_protocell"
+    authority = "peer_reviewed_Szostak_lab_protocell_literature"
+    refresh_cadence = "quarterly"
+    seeds = [
+        {
+            "canonical_name": "fatty_acid_vesicle_growth_division_benchmark",
+            "source_url": "https://doi.org/10.1038/nature07018",
+            "citation": "Zhu and Szostak, Coupled growth and division of model protocell membranes, Journal of the American Chemical Society / Nature-era protocell literature.",
+            "world_parameters": {
+                "scenario_id": "W2-szostak-fatty-acid-vesicle",
+                "boundary_kind": "self_maintained",
+                "internal_produces_boundary": True,
+                "external_repairs_boundary": True,
+                "initial_membrane_material": 11.5,
+                "initial_membrane_integrity": 0.92,
+                "initial_internal_resource": 9.0,
+                "initial_closure_marker": 2.4,
+                "membrane_production_rate": 0.16,
+                "division_threshold": 12.2,
+                "repair_rate": 0.035,
+                "steps": 36,
+                "dt": 0.25,
+            },
+        }
+    ]
+
+
+class FlyBaseMorphogenProfileAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.flybase_vfb.morphogenesis.v0"
+    parser_version = "flybase-vfb-morphogen-profile-parser.v1"
+    source_id = "source.flybase_vfb.morphogen_profiles"
+    source_name = "FlyBase / VirtualFlyBrain Drosophila morphogen-profile exports"
+    source_url = "https://virtualflybrain.org/"
+    target_world = "morphogenesis"
+    record_type = "flybase_morphogen_profile"
+    cache_name = "flybase_vfb_morphogenesis"
+    authority = "FlyBase_and_VirtualFlyBrain_public_exports"
+    refresh_cadence = "monthly"
+    seeds = [
+        {
+            "canonical_name": "drosophila_segmented_body_morphogen_profile",
+            "source_url": "https://flybase.org/reports/FBgn0000166",
+            "citation": "FlyBase / VirtualFlyBrain public Drosophila embryonic patterning references.",
+            "world_parameters": {
+                "benchmark": "segmented_body",
+                "scenario_id": "W4-flybase-segmented-body",
+                "morphogen_profile": {"bicoid": "anterior_gradient", "nanos": "posterior_gradient", "even_skipped": "pair_rule_stripes"},
+            },
+        }
+    ]
+
+
+class AvidaDigitalTraceAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.avida.digital_traces.v0"
+    parser_version = "avida-executable-genome-trace-parser.v1"
+    source_id = "source.avida.digital_evolution_traces"
+    source_name = "Avida-class digital evolution executable-genome trace metadata"
+    source_url = "https://doi.org/10.1038/nature01568"
+    target_world = "digital"
+    record_type = "avida_executable_genome_trace"
+    cache_name = "avida_digital_traces"
+    authority = "Lenski_Ofria_Avida_peer_reviewed_archive"
+    refresh_cadence = "manual_spec_review"
+    seeds = [
+        {
+            "canonical_name": "avida_logic_task_copy_loop_trace",
+            "source_url": "https://doi.org/10.1038/nature01568",
+            "citation": "Lenski, Ofria, Pennock, and Adami, The evolutionary origin of complex features, Nature, 2003.",
+            "world_parameters": {"benchmark": "copy_loop", "scenario_id": "W5-avida-copy-loop-projection"},
+        }
+    ]
+
+
+class MovebankSwarmBehaviorAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.movebank.swarm_behavior.v0"
+    parser_version = "movebank-swarm-summary-parser.v1"
+    source_id = "source.movebank_swarm_behavior"
+    source_name = "Movebank public collective-movement metadata"
+    source_url = "https://www.movebank.org/"
+    target_world = "swarm"
+    record_type = "movebank_swarm_behavior_summary"
+    cache_name = "movebank_swarm_behavior"
+    authority = "Movebank_public_collective_movement_repository"
+    refresh_cadence = "monthly"
+    seeds = [
+        {
+            "canonical_name": "collective_trail_foraging_behavior_summary",
+            "source_url": "https://www.movebank.org/cms/movebank-main",
+            "citation": "Movebank public animal movement repository, collective movement study metadata.",
+            "world_parameters": {"benchmark": "trail_foraging", "scenario_id": "W7-movebank-trail-foraging", "agent_count": 24},
+        }
+    ]
+
+
+class AllenBrainCognitiveAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.allen_brain.cognitive.v0"
+    parser_version = "allen-brain-cognitive-summary-parser.v1"
+    source_id = "source.allen_brain_atlas.cognitive_control"
+    source_name = "Allen Brain Atlas public neural metadata"
+    source_url = "https://portal.brain-map.org/"
+    target_world = "cognitive"
+    record_type = "allen_brain_cognitive_dataset"
+    cache_name = "allen_brain_cognitive"
+    authority = "Allen_Brain_Atlas_public_API"
+    refresh_cadence = "monthly"
+    seeds = [
+        {
+            "canonical_name": "allen_neural_homeostasis_control_summary",
+            "source_url": "https://portal.brain-map.org/",
+            "citation": "Allen Brain Atlas public API / Brain Map portal metadata.",
+            "world_parameters": {"benchmark": "anticipation", "scenario_id": "W8-allen-anticipation-control"},
+        }
+    ]
+
+
+class BioModelsHypergraphAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.ebi_biomodels.hypergraph.v0"
+    parser_version = "biomodels-hypergraph-derived-parser.v1"
+    source_id = "source.ebi_biomodels.reaction_hypergraphs"
+    source_name = "EMBL-EBI BioModels reaction-network hypergraph metadata"
+    source_url = "https://www.ebi.ac.uk/biomodels/"
+    target_world = "hypergraph_reactions"
+    record_type = "biomodels_reaction_hypergraph"
+    cache_name = "ebi_biomodels_hypergraph"
+    authority = "EMBL_EBI_BioModels_public_repository"
+    refresh_cadence = "monthly"
+    seeds = [
+        {
+            "canonical_name": "biomodels_high_order_reaction_hypergraph",
+            "source_url": "https://www.ebi.ac.uk/biomodels/",
+            "citation": "EMBL-EBI BioModels public curated computational biology model repository.",
+            "world_parameters": {"benchmark": "high_order_closure", "scenario_id": "W10-biomodels-hypergraph"},
+        }
+    ]
+
+
+class NCBIEndosymbiosisGenomeAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.ncbi.endosymbiosis_genomes.v0"
+    parser_version = "ncbi-endosymbiosis-genome-summary-parser.v1"
+    source_id = "source.ncbi.endosymbiosis_genomes"
+    source_name = "NCBI endosymbiosis genome metadata"
+    source_url = "https://www.ncbi.nlm.nih.gov/datasets/"
+    target_world = "symbiogenesis"
+    record_type = "ncbi_endosymbiosis_genome_summary"
+    cache_name = "ncbi_endosymbiosis_genomes"
+    authority = "NCBI_Datasets_public_genome_repository"
+    refresh_cadence = "monthly"
+    seeds = [
+        {
+            "canonical_name": "endosymbiotic_genome_reduction_mutualism_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "citation": "NCBI Datasets public genome metadata for endosymbiotic bacterial genome reduction examples.",
+            "world_parameters": {"benchmark": "stable_mutualism", "scenario_id": "W12-ncbi-endosymbiosis-mutualism"},
+        }
+    ]
+
+
+class PhysiomeMultiscaleAdapter(CuratedWorldSeedAdapter):
+    adapter_id = "adapter.physiome.multiscale.v0"
+    parser_version = "physiome-multiscale-model-parser.v1"
+    source_id = "source.physiome.multiscale_models"
+    source_name = "Physiome / PMR public multiscale model metadata"
+    source_url = "https://models.physiomeproject.org/"
+    target_world = "multiscale"
+    record_type = "physiome_multiscale_model"
+    cache_name = "physiome_multiscale_models"
+    authority = "Physiome_Model_Repository_public_models"
+    refresh_cadence = "monthly"
+    seeds = [
+        {
+            "canonical_name": "physiome_nested_coupling_multiscale_model",
+            "source_url": "https://models.physiomeproject.org/",
+            "citation": "Physiome Model Repository public multi-scale model metadata.",
+            "world_parameters": {"benchmark": "scale_separation", "scenario_id": "W13-physiome-scale-separation"},
+        }
+    ]
+
+
 def _seed_rows_to_csv(rows: list[dict[str, str]]) -> str:
     out = io.StringIO()
     writer = csv.DictWriter(out, fieldnames=["Configuration", "Term", "J", "Level (eV)", "Uncertainty (eV)", "Reference"])
     writer.writeheader()
     writer.writerows(rows)
     return out.getvalue()
+
+
+def _nist_unavailable_seed(spectrum: str, reason: str) -> list[dict[str, str]]:
+    return [
+        {
+            "Configuration": "",
+            "Term": "",
+            "J": "",
+            "Level (eV)": "",
+            "Uncertainty (eV)": "",
+            "Reference": f"NIST_ASD_NO_DATA:{spectrum}:{reason}",
+        }
+    ]
+
+
+def _chunks(rows: list[int], size: int) -> list[list[int]]:
+    return [rows[index : index + size] for index in range(0, len(rows), size)]
 
 
 def _rows_to_tsv(rows: list[dict[str, Any]]) -> str:
@@ -1012,6 +1454,13 @@ def json_dumps(payload: Any) -> str:
     import json
 
     return json.dumps(payload, sort_keys=True, separators=(",", ":"))
+
+
+def _merge_pubchem_seed_rows(seed_payloads: list[dict[str, Any]]) -> dict[str, Any]:
+    rows: list[dict[str, Any]] = []
+    for payload in seed_payloads:
+        rows.extend(payload.get("PropertyTable", {}).get("Properties", []))
+    return {"PropertyTable": {"Properties": rows}}
 
 
 def _first_present(row: dict[str, Any], keys: tuple[str, ...], *, default: str = "") -> str:

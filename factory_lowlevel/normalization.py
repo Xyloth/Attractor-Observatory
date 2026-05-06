@@ -22,6 +22,17 @@ def normalize_record(record: EmpiricalRecord) -> NormalizedReference:
         return _normalize_quasispecies(record)
     if record.world_family == "ecosystem":
         return _normalize_ecosystem(record)
+    if record.world_family in {
+        "protocell",
+        "morphogenesis",
+        "digital",
+        "swarm",
+        "cognitive",
+        "hypergraph_reactions",
+        "symbiogenesis",
+        "multiscale",
+    }:
+        return _normalize_world_parameter_record(record)
     raise ValueError(f"no normalizer for world_family={record.world_family}")
 
 
@@ -319,6 +330,43 @@ def _normalize_ecosystem(record: EmpiricalRecord) -> NormalizedReference:
         }
     ]
     return _normalized(record, process_roles, channels, effects, overlap, confidence=0.74)
+
+
+def _normalize_world_parameter_record(record: EmpiricalRecord) -> NormalizedReference:
+    payload = record.payload
+    world_params = payload.get("world_parameters", {})
+    process_roles = [
+        {
+            "role_id": f"process.{record.world_family}.source_bound_projection",
+            "label": "source_bound_projection",
+            "predicate": _predicate("world_parameters_present", "payload.world_parameters is dict", isinstance(world_params, dict)),
+        }
+    ]
+    channels = [
+        {
+            "channel_id": f"channel.{record.world_family}.empirical_parameter_bridge",
+            "label": "empirical_parameter_bridge",
+            "predicate": _predicate("benchmark_or_scenario_present", "world_parameters.benchmark or scenario_id present", world_params.get("benchmark") or world_params.get("scenario_id")),
+        }
+    ]
+    effects = [
+        {
+            "effect_id": f"effect.{record.world_family}.exploratory_world_trace",
+            "label": "exploratory_world_trace",
+            "predicate": _predicate("mode_exploratory", "record.mode_tag == exploratory", record.mode_tag),
+        }
+    ]
+    overlap = [
+        {
+            "field_id": f"overlap.{record.world_family}.math_shadow_parameter_space",
+            "label": "math_shadow_parameter_space",
+            "write": _predicate("source_writes_world_parameters", "payload.world_parameters determines world reset", world_params),
+            "persist": _predicate("provenance_persists_source", "provenance.source_url present", record.provenance.get("source_url")),
+            "read": _predicate("world_constructor_reads_parameters", "from_empirical_records consumes world_parameters", sorted(world_params.keys()) if isinstance(world_params, dict) else []),
+            "counterfactual": _predicate("parameter_counterfactual", "changing source-derived parameters changes trace", world_params),
+        }
+    ]
+    return _normalized(record, process_roles, channels, effects, overlap, confidence=0.70)
 
 
 def _normalized(

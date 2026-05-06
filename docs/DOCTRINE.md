@@ -1,6 +1,6 @@
 # Doctrine
 
-Twenty binding rules, plus the canonical operating principle. Each rule corresponds to a specific failure mode that has, in fact, been observed during this project's history. They are not aesthetic preferences. They are corrections.
+Twenty-one binding rules, plus the canonical operating principle. Each rule corresponds to a specific failure mode that has, in fact, been observed during this project's history. They are not aesthetic preferences. They are corrections.
 
 ---
 
@@ -205,6 +205,18 @@ See [`doctrine_d25.md`](doctrine_d25.md).
 **Failure mode caught:** DX-001 found README and Control Room docs claiming public tests and screenshot assets that the shipped surface did not actually contain.
 
 **TASK-033 ratification:** TASK-032 applied the candidate during the fix-all pass. TASK-033 ratifies it as binding: public docs now distinguish shipped `public_tests/` from private implementation-side test suites, and screenshot references point to existing public PNGs.
+
+---
+
+## D26 - Predicate-lens independence
+
+See [`doctrine_d26.md`](doctrine_d26.md).
+
+> A motif predicate and the detector/lens used to evaluate it must declare their source-object maps before a claim-bearing run; the pair is CLEAN, PARTIAL, or BAD by source-object comparison, and BAD paths cannot anchor claim-bearing evidence.
+
+**Failure mode caught:** Campaign 020 substrate-blocked survivors were still vulnerable to predicate-detector surface coupling because the locked label function and graph-lens detector shared event-token/state-key surfaces.
+
+**TASK-MOTIF-IMPL ratification:** MotifContract.v2 implements source-object maps, four-state predicate verdicts, adversarial controls, and PARTIAL-cell ablation before substrate-blocked reruns.
 
 ---
 

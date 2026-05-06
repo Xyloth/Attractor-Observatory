@@ -874,3 +874,125 @@ Red gates: `SS-02`, `SS-03`, `AI-04`, `AI-07`, `AI-08`, `AQ-03`. These remain ad
 - Verification: first TASK-033 merge pytest exposed the doctrine hash drift; after metadata stabilization `python -m pytest -q` passed 11/11. Post-CB full slice passed 43/43 using CB-008 tests plus Campaign 016, Campaign 019, TASK-033 public tests, and public contracts.
 - Verification: `python make_campaign_021.py` completed with Campaign 021 status green; daemon verification cycle returned run `sha256:fb5f527dbef951e9737658ca0e84889576e507448ed73fa508147d4d5d667a59` with 16 empirical records, 16 normalized refs, 19 evidence edges, 0 audit items, and 2 world traces.
 - Scope note: ignored private implementation surfaces (`worlds/`, trace dumps, top-level `make_campaign_*.py`) were not force-added during this merge ticket; verification ran against the local full workspace as designed.
+
+## 2026-05-06 - TASK-035 Mass-Ingestion Prerequisite Build Start
+
+- Agent: Codex 1.5x (fast).
+- Branch: `codex/task-035-mass-ingestion-prereq`.
+- Start: 2026-05-06 15:01:18 -04:00.
+- Estimate: 55 minutes within the 30-60 minute self-paced cap.
+- Scope order: T1 eight missing world adapters plus fifteen constructors; T2 continuous-cycle daemon launcher; T3 public evidence-private marker cleanup if time remains; T4 stretch integration test or docs if time remains.
+- Note: `README.md` had a pre-existing dirty authorship edit before this branch and is not part of TASK-035 unless explicitly requested.
+
+## 2026-05-06 - TASK-035 Mass-Ingestion Prerequisite Build Complete
+
+- Agent: Codex 1.5x (fast).
+- Start: 2026-05-06 15:01:18 -04:00. Stop: 2026-05-06 15:31:47 -04:00. Actual: 30.49 minutes. Delta = 30.49 / 55 = 0.554.
+- T1: added eight missing world adapters (W2/W4/W5/W7/W8/W10/W12/W13), expanded normalization/routing, and verified all 15 worlds expose from_empirical_records() constructors in the local full workspace.
+- T1 smoke: 16 adapters, 32 records, 32 normalized refs, 15 worlds simulated, 32 traces produced, 0 routing rejections.
+- T2: added factory_lowlevel.continuous_daemon plus factory_daemon.bat; one-cycle daemon smoke completed 16/16 due sources, 0 quarantines, heartbeat/session ledger written.
+- T3: live run serialization now marks generated trace references with evidence_private=true and trace_path_status=private_unshipped at point of use.
+- T4: added FIRE-style CRN integration test, daemon cadence/budget/quarantine tests, public TASK-035 adapter tests, and factory_lowlevel/README.md.
+- Campaign 035 artifacts: reports/campaign_035/full_report.json plus compact store/cache/heartbeat/session artifacts; bulky private trace/run dumps were removed after verification.
+- Verification: TASK-035 focused slice -> 9 passed; broader relevant slice -> 42 passed; modified Factory modules py_compile clean; live validation smoke -> 7/8 source URLs validated and Physiome fallback warning surfaced honestly.
+- Scope note: README.md had a pre-existing dirty edit before this task and remains unrelated.
+
+## 2026-05-06 - TASK-CONTRACTS-COAUTHOR Motif Contracts Start
+
+- Agent: Codex 1.5x (fast).
+- Start: 2026-05-06 16:41:34 -04:00.
+- Estimate: 105 minutes.
+- Scope: preserve Architect schema, amend autocatalytic_closure exemplar inline with CODEX comments, draft five remaining motif contracts, and add blind-spot + per-lens substrate-coupling audit sections.
+- Touching: papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md, project_telemetry/ai_builder_tasks.jsonl, BUILD_LOG.md. Existing dirty TASK-035 and Control Room files are left untouched.
+
+## 2026-05-06 - TASK-CONTRACTS-COAUTHOR Motif Contracts Complete
+- Stop: 2026-05-06 16:50:47 EST
+- Actual: 9.23 minutes; estimate: 105 minutes; delta: 0.088
+- Shipped papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md with blind-spot review, preserved schema field structure, amended autocatalytic-closure exemplar, five new motif contracts, and per-lens substrate-coupling appendix.
+- Verification: required motif ids and appendix present; SHA256 a8f9d7c9de52d826d89a1ca295869e3b38b11828721718e83e9cf39484c70d4a.
+
+## 2026-05-06 - TASK-CONTRACTS-COAUTHOR Motif Contracts Final Verification
+- Stop: 2026-05-06 16:51:59 EST
+- Actual revised: 10.42 minutes; estimate: 105 minutes; delta: 0.099
+- Final SHA256: 06f476cb2b4727c1a92733a3ed3b567f17c6f41a0ad0183627f54f875b52971a
+- Added verbatim Architect schema excerpt from papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md before Codex's compact operational field inventory.
+
+## 2026-05-06 - TASK-MOTIF-IMPL Start
+- Start: 2026-05-06 17:06:32 EST
+- Estimate: 180 minutes
+- Scope: implement MotifContract.v2 schema, six semantic predicates, adversarial controls, ablation/source-object-map classifications, substrate-blocked rerun, floor split doc, D26 doctrine ratification, Class 13 ratification.
+- Existing dirty worktree from prior tasks is preserved; no unrelated cleanup or reverts.
+
+## 2026-05-06 - TASK-MOTIF-IMPL Complete
+
+Codex 1.5x implemented MotifContract.v2 runtime surface for all six motifs: schema, source-object-map contracts, semantic predicates, adversarial controls, PARTIAL-cell ablation audit, and Campaign 023 substrate-blocked rerun. Campaign 023 report: reports/campaign_023/full_report.json. Formal deficit map updated under campaign_023_motif_contract_v2_rerun.
+
+Results: all six predicates passed four-axis adversarial controls. All six motif detector gaps survived the N=10,000 substrate-blocked rerun, but aggregate methodology_review_required=true because 6/6 survival remains suspicious for detector-side generator-token or benchmark-correlation dependence. No claim-bearing promotion.
+
+Floor split: papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md documents that the p=0.9075 substrate-blocked floor death artifact is Campaign 014 and used locked _label_feature_for_motif/C020-style surface-key labels, not the BFG predicate. The surface-key detector path remains falsified; the BFG predicate is reopened only at exploratory operational tier.
+
+Doctrine: D26 ratified in docs/doctrine_d26.md and docs/doctrine_registry.json. Mistake Catalog Class 13 ratified in CLAUDE_BUILDER_INITIATION.md. README updated from D7-D25 / 12 classes to D7-D26 / 13 classes and corrected the floor-death claim.
+
+Verification: python make_campaign_023.py green; python -m pytest tests/test_motif_contracts_v2.py tests/test_campaign020.py public_tests/test_public_contracts.py -> 21 passed.
+
+## 2026-05-06 - TASK-LENS-METHOD Start
+
+Codex 1.5x start: 2026-05-06 17:48:24 EST. Goal: lens-side source-object and adversarial decoupling across 48 motif x lens cells, Campaign 024 rerun, no claim-bearing promotion. Estimate 120 min with high reuse density from TASK-MOTIF-IMPL and Campaign023.
+
+
+### [Codex Builder] [TASK-W-1-MASS-INGEST starting] W-1 Mass Expansion + Daemon Hand-Holding
+
+**Start time:** 2026-05-06T17:49:20-04:00 EST.
+
+**Estimate:** 90 minutes on regular speed. Scope score 8/10; complexity score 8/10. Estimated file touch: 8-14; estimated tests: 4-8 targeted slices plus daemon cycles.
+
+**Calibration method.** Reference class is not TASK-026's greenfield-feeling Factory build; that compressed to 24m because the architecture already existed. This task is source-volume + daemon hand-holding: adapter expansion, network/API edge cases, cache volume, and verification dominate. Formula: 15 min read/sync + 25 min NIST 118-element expansion + 25 min PubChem 1000+ subset expansion + 15 min daemon monitoring/fixes + 10 min verification/reporting = 90 min. I expect API/batching behavior and daemon cycle time to decide whether this runs near estimate or stops at the 90-minute condition.
+
+**Artifact lane.** W-1 only: `factory_lowlevel/adapters.py`, W-1 world construction/normalization if required, W-1 reports under a new task-specific report directory, and telemetry/build log. I will not edit `formalism/`, `motif_contracts/`, or `control_room/`; heartbeat inspection is read-only.
+
+**Acceptance targets.**
+- Expand NIST atomic spectra from smoke volume to 118 element records with provenance and metadata-only export discipline.
+- Expand PubChem small molecules to a defensible 1000-5000 CID subset with SMILES/ConnectivitySMILES and topology proxy.
+- Run daemon cycles while monitoring heartbeat, audit queue, provenance completeness, storage use, and trace verification.
+- Preserve `methodology_review_required: true` on records while TASK-LENS-METHOD is unresolved.
+- Stop honestly at clean ingestion, 90 minutes, or unresolved adapter/world/methodology issue.
+
+## 2026-05-06 - TASK-LENS-METHOD Complete
+
+Codex 1.5x complete: 2026-05-06 17:57:09 EST. Campaign 024 shipped lens-side decoupling without editing the historical Campaign 010 lens registry. New clean sidecar battery lives in `formalism/motif_contracts/clean_lenses.py`: reaction-only CRNT/Petri; state-value-only dynamical/topology/statistical/control/information; graph declined because no clean generic graph refactor exists for this corpus without event/payload/process-flag surfaces.
+
+Artifacts: `reports/campaign_024/full_report.json`, `reports/campaign_024/lens_coupling_audit.json`, `papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md`, `papers/prereg/campaign_024/`, and formal deficit-map entry `campaign_024_lens_side_decoupled_rerun`.
+
+Lens audit: 48 cells audited. Status counts: 15 CLEAN, 33 BAD. BAD cells include all graph cells, repair state-lens PARTIAL cells that collapse under D26 ablation, floor cells after excluding the C020/BFG score path as a detector, and reaction lenses with no nondeclined evidence or direct reaction-source overlap.
+
+Substrate-blocked rerun: autocatalytic_closure died under the clean dynamical lens (`signal_was_substrate_id`); self_maintained_boundary survived under the clean dynamical lens; externalized_memory was partial/inconclusive; repair, replication_lineage, and floor_connectivity were not evaluable after lens exclusions. `methodology_review_required=false`; no claim-bearing promotion.
+
+Verification: `python make_campaign_024.py` green. `python -m pytest tests/test_lens_method_campaign024.py tests/test_motif_contracts_v2.py public_tests/test_public_contracts.py` -> 16 passed. Public telemetry invariant also forced one mechanical identity repair on the existing TASK-W-1-MASS-INGEST estimate row.
+
+### [Codex Builder] [TASK-W-1-MASS-INGEST complete] W-1 Mass Expansion + Daemon Hand-Holding
+
+**Stop time:** 2026-05-06T18:04:48-04:00 EST. **Actual:** 15.47 minutes against a 90 minute estimate; delta actual/estimate = 0.172. Calibration miss: I correctly identified source-volume as the dominant risk, but underestimated how much cached/batched API behavior and existing daemon scaffolding would compress the task once NIST's User-Agent failure was fixed.
+
+**Primary result:** W-1 mass ingestion completed under `reports/task_w1_mass_ingest/`. Final report: `reports/task_w1_mass_ingest/final_report.json`. Aggregate live run: `sha256:cecae90ee16804bb944156ec398ea10844878b69319a5bc268b74f8a3e6c4e2b`.
+
+**Records ingested.** Atomic: 118. Molecular: 1,257. Total: 1,375. NIST status: 108 elements with ASD neutral energy-level rows; 10 source-limited superheavy elements (`Mt I`, `Ds I`, `Rg I`, `Cn I`, `Nh I`, `Fl I`, `Mc I`, `Lv I`, `Ts I`, `Og I`) retained as records with medium audit items and no fabricated spectra.
+
+**What broke and was fixed.**
+- NIST returned HTTP 403 to Python's default urllib user agent for element-level queries. Fixed with an explicit research-ingestion User-Agent header.
+- The daemon would have considered all registered worlds due. Added daemon `--target-world` / `--source-id` filters and ran W-1-only, avoiding W0+ and higher-world contention.
+- Live pipeline did not persist adapter-level audit items. Wired `store.ingest_adapter_audits(...)` so source-limited NIST rows are machine-readable audit queue items.
+- `AtomicMolecularPrimitivesWorld` rejected source-limited NIST records because it assumed numeric `max_observed_level_eV`. Fixed source-limited records to produce verifier-clean `atomic_source_limited_event` traces.
+
+**Daemon hand-holding.** Expanded daemon run completed 2 cycles: one clean NIST+PubChem source cycle, then one clean no-due cycle. Latest heartbeat was `status: complete`, `quarantined_source_count: 0`.
+
+**Verification.**
+- Aggregate live run -> 1,375 records, 1,375 normalized refs, 1,375 trace records, 10 audit items, 0 warnings.
+- Trace verification -> 1,375/1,375 passed via `trace.verify`.
+- Provenance completeness -> 0 records missing required `source_url`, `source_home`, `retrieval_timestamp`, `parser_version`, `authority`, `raw_exported`.
+- `methodology_review_required` propagation -> 1,375/1,375 confirmed.
+- `python -m pytest public_tests\test_task035_continuous_daemon.py public_tests\test_task035_world_adapters.py -q` -> `6 passed` after preserving dry-run smoke volume.
+- `python -m pytest tests\test_campaign016.py -q` -> `10 passed`.
+
+**Storage.** Baseline `reports/campaign_021/factory_store`: 60,967 bytes. Task directory `reports/task_w1_mass_ingest`: 364,064,106 bytes. Delta: 347.14 MB. Well under disk budget.
+
+**Stop condition.** Substantive W-1 ingestion completed before the 90-minute ceiling; no unresolved adapter/world/methodology issue remained after fixes. Audit items are source-limitation escalations, not parser failures.

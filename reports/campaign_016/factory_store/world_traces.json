@@ -1,0 +1,79 @@
+{
+  "schema": "LowLevelWorldTraceSet.v1",
+  "traces": [
+    {
+      "body": {
+        "empirical_record_count": 10,
+        "empirical_record_ids": [
+          "sha256:23ed8706c34591b284d96185d0ac92c17be2ab472f8a140cd807d97d6ce48326",
+          "sha256:31b152895111c342008fdfffec7cdd06fa7d5b20e15f5809d4cee659995de513",
+          "sha256:38ec8c407581c8bf0a555f21afb982bfac619d2e78730d2209c9536f89ddaf91",
+          "sha256:5a267a8005699fe85dec2c60a8a5cedf9627016164c00ea5363f980d8b6caae6",
+          "sha256:5cd92bc2c605752c08879b807d883d620a4662ce357826b2f57500f7758d2156",
+          "sha256:7a930f755eed8d3345feb46ec8305c8dcbbd04bf9170159a9a9a4641c123b5db",
+          "sha256:86913ace2e9c7fbda9b78aa0d9a92304f1078a79c8aad6b5edb71c0c00042ad7",
+          "sha256:9380728b68f70faa0d1a3a4b3b19a6b893d91fb139f44783662a4d9e667c7576",
+          "sha256:df4c0c739b283e72fbb3170d2a418ab62ecf9d3df51d1bea345dfa697f20cefb",
+          "sha256:fa617b91c514cb5fbfd89109c6be68fd1384beedebff815bcd6b227edecbb124"
+        ],
+        "normalized_ref_count": 10,
+        "normalized_ref_ids": [
+          "sha256:08ad7618b84d7675a58e1ae2eb3bf45914bf072c2e792934d203b67f3bd3d639",
+          "sha256:13603ce060b8266af735be370b8b47fccc8c7459942e532300b69db6eeb2ae4f",
+          "sha256:48eb9848b3678fca4b800e368c2803f0f2774336f49f4351ea09ef639ee10241",
+          "sha256:695bd8be37e4d712caa5649931e761fe687294b70fe761390233fddfac8babde",
+          "sha256:7f1159064def94c87708dc314e2c9860d93861464780bdac5d91711300e0d6b2",
+          "sha256:80b38a1f9c454f8f955ca253fda14db05e29b1f9baaa7ceafa1fa5b9bb1845ce",
+          "sha256:873d97d3fcb22bca5628c9a9c09c3de78d484798c92508fa7a5aa1181f4d55cc",
+          "sha256:b80d1f1eb03ef66194c95e3384656cc15d614d77bd444458fe33576de985370f",
+          "sha256:d73a16e3315999ff69728473c7748d14201d702c6fc416f1725318240830c228",
+          "sha256:ee95cb0e6f0b96aa8467e98cf0aab0aea2a19cf2a07be2eab8d3d819e0353d34"
+        ],
+        "run_id_seed": "sha256:3ec1560b44e8a3c4747a66112f9b72b9199af71c1bdccaeaac8c0b3a441cf825",
+        "world_family": "atomic_molecular_primitives"
+      },
+      "schema": "LowLevelWorldTrace.v1",
+      "trace_content_hash": "sha256:fe2fa536a79a8d255eccd2d12cd2ba7e78137b2ef83c1544b0298fb04ad5ed30",
+      "trace_id": "sha256:ae99225db7796811d6c4d41386f70b5b43f0d98a4b2f5961a372fdacea9cc674",
+      "verifier": {
+        "deterministic": true,
+        "predicate": "sha256_of_canonical_json(body) == trace_content_hash",
+        "trace_checkable": true
+      },
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "body": {
+        "empirical_record_count": 6,
+        "empirical_record_ids": [
+          "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+          "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+          "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+          "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+          "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+          "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4"
+        ],
+        "normalized_ref_count": 6,
+        "normalized_ref_ids": [
+          "sha256:1ce222a15e67febd0112744cbe4e367c938715a475ca5cdd4ff726f6eaeb27de",
+          "sha256:3f3488c5b34d24a71721e8f040c8d78c9a6ce8c0f0da8ec5d43d65bd80091ab7",
+          "sha256:68cdca6b928cf0edb7730ae1dbe661273fc9a03a8586be45e526a3f24d1b3cf1",
+          "sha256:73878c230db53e7afece8aa0afd05292ba10ddd9648a2b5afdd1df45a949cd3e",
+          "sha256:7a71d17b4230f6b2c9a9c02b8d5ee31e44a8e13b78a990cccd1eb7bd7cdf79b4",
+          "sha256:e0bef14ef03df0bc073fb67bbc76b6e12ca81cd4f074136fae5340a6a90c5d1c"
+        ],
+        "run_id_seed": "sha256:3ec1560b44e8a3c4747a66112f9b72b9199af71c1bdccaeaac8c0b3a441cf825",
+        "world_family": "math_primitives"
+      },
+      "schema": "LowLevelWorldTrace.v1",
+      "trace_content_hash": "sha256:1cf6b06bd17a7b2f5cb1e1b13e688a78c2471d162973b188b476b072a6d8371c",
+      "trace_id": "sha256:2400b32e12d430a10c3513df16c05130343dc4d038001073b9a48ec9bf318b3a",
+      "verifier": {
+        "deterministic": true,
+        "predicate": "sha256_of_canonical_json(body) == trace_content_hash",
+        "trace_checkable": true
+      },
+      "world_family": "math_primitives"
+    }
+  ]
+}

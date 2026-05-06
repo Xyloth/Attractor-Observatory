@@ -16,6 +16,14 @@ WORLD_REQUIRED_RECORD_TYPES = {
     "ecosystem": {"gbif_ecosystem_occurrence_summary"},
     "origins_chemistry": {"prebiotic_chemistry_benchmark"},
     "quasispecies": {"ncbi_hiv1_sequence_pilot"},
+    "protocell": {"liposome_protocell_benchmark"},
+    "morphogenesis": {"flybase_morphogen_profile"},
+    "digital": {"avida_executable_genome_trace"},
+    "swarm": {"movebank_swarm_behavior_summary"},
+    "cognitive": {"allen_brain_cognitive_dataset"},
+    "hypergraph_reactions": {"biomodels_reaction_hypergraph"},
+    "symbiogenesis": {"ncbi_endosymbiosis_genome_summary"},
+    "multiscale": {"physiome_multiscale_model"},
 }
 
 
@@ -86,7 +94,22 @@ def validate_record_for_world(record: EmpiricalRecord, target_world: str) -> Rou
         )
     payload = record.payload or {}
     world_params = payload.get("world_parameters")
-    if target_world in {"crn", "field", "ecosystem", "origins_chemistry", "quasispecies"} and not isinstance(world_params, dict):
+    parameterized_worlds = {
+        "crn",
+        "field",
+        "ecosystem",
+        "origins_chemistry",
+        "quasispecies",
+        "protocell",
+        "morphogenesis",
+        "digital",
+        "swarm",
+        "cognitive",
+        "hypergraph_reactions",
+        "symbiogenesis",
+        "multiscale",
+    }
+    if target_world in parameterized_worlds and not isinstance(world_params, dict):
         return RoutingRejection(
             record_id=record.record_id,
             source_id=record.source_id,
@@ -109,6 +132,9 @@ def validate_record_for_world(record: EmpiricalRecord, target_world: str) -> Rou
     if target_world == "quasispecies":
         if not world_params.get("master_sequence") or not world_params.get("mutation_rate"):
             return RoutingRejection(record.record_id, record.source_id, record.world_family, target_world, "quasispecies_requires_sequence_and_mutation_rate", "high")
+    if target_world in parameterized_worlds - {"crn", "field", "ecosystem", "origins_chemistry", "quasispecies"}:
+        if not (world_params.get("benchmark") or world_params.get("scenario_id")):
+            return RoutingRejection(record.record_id, record.source_id, record.world_family, target_world, f"{target_world}_requires_benchmark_or_scenario_id", "high")
     return None
 
 

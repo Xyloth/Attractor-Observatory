@@ -1,0 +1,4084 @@
+{
+  "by_motif": {
+    "motif.autocatalytic_closure.draft": {
+      "control_theory": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "control_or_memory_token",
+          "event",
+          "token"
+        ],
+        "lens_id": "control_theory",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "control_or_memory_token"
+            ],
+            "source_object": "events",
+            "type": "control_channel_proxy"
+          },
+          {
+            "fields_read": [
+              "observability_rank",
+              "delta_rank"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains control_or_memory_token, event, token"
+      },
+      "crnt": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 15,
+        "historical_suspect_surfaces": [],
+        "lens_id": "crnt",
+        "mechanical_d26_verdict": "BAD",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 15,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_network"
+          },
+          {
+            "fields_read": [
+              "species_persistence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "clean source-object map overlaps predicate fields"
+      },
+      "dynamical_systems": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "dynamical_systems",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "trajectory_shape",
+              "terminal_drift",
+              "recurrence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags"
+      },
+      "graph": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "process_flags"
+        ],
+        "lens_id": "graph",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "payload.actor_ids",
+              "payload.parent_child_ids"
+            ],
+            "source_object": "events",
+            "type": "event_graph"
+          },
+          {
+            "fields_read": [
+              "state_key_presence",
+              "trajectory_shape"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, process_flags; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+      },
+      "information": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_entropy",
+          "event_information",
+          "generator",
+          "process_flags",
+          "token"
+        ],
+        "lens_id": "information",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "event_entropy"
+            ],
+            "source_object": "events",
+            "type": "event_information"
+          },
+          {
+            "fields_read": [
+              "predictive_state_count",
+              "delta_entropy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_entropy, event_information, generator, process_flags, token"
+      },
+      "petri": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 15,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_transition_proxy",
+          "process_flags"
+        ],
+        "lens_id": "petri",
+        "mechanical_d26_verdict": "BAD",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 15,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "incidence_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_or_transition_network"
+          },
+          {
+            "fields_read": [
+              "type"
+            ],
+            "source_object": "events",
+            "type": "event_transition_proxy"
+          },
+          {
+            "fields_read": [
+              "place_count"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean source-object map overlaps predicate fields"
+      },
+      "statistical_mechanics": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_statistics"
+        ],
+        "lens_id": "statistical_mechanics",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "rare_event_rate"
+            ],
+            "source_object": "events",
+            "type": "event_statistics"
+          },
+          {
+            "fields_read": [
+              "energy_variance",
+              "large_deviation_proxy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_statistics"
+      },
+      "topology": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "topology",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.autocatalytic_closure.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "filtration_geometry",
+              "connectivity_proxy"
+            ],
+            "source_object": "state",
+            "type": "point_cloud"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags"
+      }
+    },
+    "motif.externalized_memory.draft": {
+      "control_theory": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "control_or_memory_token",
+          "event",
+          "memory_channel_count",
+          "process_flags",
+          "token"
+        ],
+        "lens_id": "control_theory",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "control_or_memory_token"
+            ],
+            "source_object": "events",
+            "type": "control_channel_proxy"
+          },
+          {
+            "fields_read": [
+              "observability_rank",
+              "delta_rank"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains control_or_memory_token, event, memory_channel_count, process_flags, token"
+      },
+      "crnt": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [],
+        "lens_id": "crnt",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_network"
+          },
+          {
+            "fields_read": [
+              "species_persistence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "dynamical_systems": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "dynamical_systems",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "trajectory_shape",
+              "terminal_drift",
+              "recurrence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags"
+      },
+      "graph": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "process_flags",
+          "token"
+        ],
+        "lens_id": "graph",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "payload.actor_ids",
+              "payload.parent_child_ids"
+            ],
+            "source_object": "events",
+            "type": "event_graph"
+          },
+          {
+            "fields_read": [
+              "state_key_presence",
+              "trajectory_shape"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, process_flags, token; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+      },
+      "information": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_entropy",
+          "event_information",
+          "process_flags"
+        ],
+        "lens_id": "information",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "event_entropy"
+            ],
+            "source_object": "events",
+            "type": "event_information"
+          },
+          {
+            "fields_read": [
+              "predictive_state_count",
+              "delta_entropy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_entropy, event_information, process_flags"
+      },
+      "petri": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_transition_proxy"
+        ],
+        "lens_id": "petri",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "incidence_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_or_transition_network"
+          },
+          {
+            "fields_read": [
+              "type"
+            ],
+            "source_object": "events",
+            "type": "event_transition_proxy"
+          },
+          {
+            "fields_read": [
+              "place_count"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "statistical_mechanics": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_statistics"
+        ],
+        "lens_id": "statistical_mechanics",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "rare_event_rate"
+            ],
+            "source_object": "events",
+            "type": "event_statistics"
+          },
+          {
+            "fields_read": [
+              "energy_variance",
+              "large_deviation_proxy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_statistics"
+      },
+      "topology": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "topology",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.externalized_memory.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "filtration_geometry",
+              "connectivity_proxy"
+            ],
+            "source_object": "state",
+            "type": "point_cloud"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags"
+      }
+    },
+    "motif.floor_connectivity.draft": {
+      "control_theory": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [
+          "control_or_memory_token",
+          "event",
+          "token"
+        ],
+        "lens_id": "control_theory",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "control_or_memory_token"
+            ],
+            "source_object": "events",
+            "type": "control_channel_proxy"
+          },
+          {
+            "fields_read": [
+              "observability_rank",
+              "delta_rank"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains control_or_memory_token, event, token; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "crnt": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [],
+        "lens_id": "crnt",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_network"
+          },
+          {
+            "fields_read": [
+              "species_persistence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "dynamical_systems": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [],
+        "lens_id": "dynamical_systems",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "trajectory_shape",
+              "terminal_drift",
+              "recurrence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "graph": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [
+          "event"
+        ],
+        "lens_id": "graph",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "payload.actor_ids",
+              "payload.parent_child_ids"
+            ],
+            "source_object": "events",
+            "type": "event_graph"
+          },
+          {
+            "fields_read": [
+              "state_key_presence",
+              "trajectory_shape"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+      },
+      "information": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_entropy",
+          "event_information"
+        ],
+        "lens_id": "information",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "event_entropy"
+            ],
+            "source_object": "events",
+            "type": "event_information"
+          },
+          {
+            "fields_read": [
+              "predictive_state_count",
+              "delta_entropy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_entropy, event_information; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "petri": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_transition_proxy"
+        ],
+        "lens_id": "petri",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "incidence_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_or_transition_network"
+          },
+          {
+            "fields_read": [
+              "type"
+            ],
+            "source_object": "events",
+            "type": "event_transition_proxy"
+          },
+          {
+            "fields_read": [
+              "place_count"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "statistical_mechanics": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_statistics"
+        ],
+        "lens_id": "statistical_mechanics",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "rare_event_rate"
+            ],
+            "source_object": "events",
+            "type": "event_statistics"
+          },
+          {
+            "fields_read": [
+              "energy_variance",
+              "large_deviation_proxy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_statistics; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "topology": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 104,
+        "historical_suspect_surfaces": [],
+        "lens_id": "topology",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.floor_connectivity.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "filtration_geometry",
+              "connectivity_proxy"
+            ],
+            "source_object": "state",
+            "type": "point_cloud"
+          }
+        ],
+        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+      }
+    },
+    "motif.repair.draft": {
+      "control_theory": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "control_or_memory_token",
+          "event",
+          "process_flags",
+          "token"
+        ],
+        "lens_id": "control_theory",
+        "mechanical_d26_verdict": "PARTIAL",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 60,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "control_or_memory_token"
+            ],
+            "source_object": "events",
+            "type": "control_channel_proxy"
+          },
+          {
+            "fields_read": [
+              "observability_rank",
+              "delta_rank"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains control_or_memory_token, event, process_flags, token; PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+      },
+      "crnt": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 60,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "crnt",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_network"
+          },
+          {
+            "fields_read": [
+              "species_persistence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "dynamical_systems": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [],
+        "lens_id": "dynamical_systems",
+        "mechanical_d26_verdict": "PARTIAL",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 60,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "trajectory_shape",
+              "terminal_drift",
+              "recurrence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+      },
+      "graph": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [],
+        "cell_verdict": "BAD",
+        "declined_count": 60,
+        "historical_suspect_surfaces": [
+          "event",
+          "process_flags"
+        ],
+        "lens_id": "graph",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "payload.actor_ids",
+              "payload.parent_child_ids"
+            ],
+            "source_object": "events",
+            "type": "event_graph"
+          },
+          {
+            "fields_read": [
+              "state_key_presence",
+              "trajectory_shape"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, process_flags; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+      },
+      "information": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_entropy",
+          "event_information"
+        ],
+        "lens_id": "information",
+        "mechanical_d26_verdict": "PARTIAL",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 60,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "event_entropy"
+            ],
+            "source_object": "events",
+            "type": "event_information"
+          },
+          {
+            "fields_read": [
+              "predictive_state_count",
+              "delta_entropy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_entropy, event_information; PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+      },
+      "petri": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 60,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_transition_proxy",
+          "process_flags"
+        ],
+        "lens_id": "petri",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "incidence_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_or_transition_network"
+          },
+          {
+            "fields_read": [
+              "type"
+            ],
+            "source_object": "events",
+            "type": "event_transition_proxy"
+          },
+          {
+            "fields_read": [
+              "place_count"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "statistical_mechanics": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_statistics",
+          "process_flags"
+        ],
+        "lens_id": "statistical_mechanics",
+        "mechanical_d26_verdict": "PARTIAL",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 60,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "rare_event_rate"
+            ],
+            "source_object": "events",
+            "type": "event_statistics"
+          },
+          {
+            "fields_read": [
+              "energy_variance",
+              "large_deviation_proxy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_statistics, process_flags; PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+      },
+      "topology": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [],
+        "lens_id": "topology",
+        "mechanical_d26_verdict": "PARTIAL",
+        "motif_id": "motif.repair.draft",
+        "nondeclined_count": 60,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "filtration_geometry",
+              "connectivity_proxy"
+            ],
+            "source_object": "state",
+            "type": "point_cloud"
+          }
+        ],
+        "reason": "PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+      }
+    },
+    "motif.replication_lineage.draft": {
+      "control_theory": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "control_or_memory_token",
+          "event",
+          "token"
+        ],
+        "lens_id": "control_theory",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "control_or_memory_token"
+            ],
+            "source_object": "events",
+            "type": "control_channel_proxy"
+          },
+          {
+            "fields_read": [
+              "observability_rank",
+              "delta_rank"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains control_or_memory_token, event, token; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "crnt": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [],
+        "lens_id": "crnt",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_network"
+          },
+          {
+            "fields_read": [
+              "species_persistence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "dynamical_systems": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event"
+        ],
+        "lens_id": "dynamical_systems",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "trajectory_shape",
+              "terminal_drift",
+              "recurrence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "graph": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "process_flags",
+          "token"
+        ],
+        "lens_id": "graph",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "payload.actor_ids",
+              "payload.parent_child_ids"
+            ],
+            "source_object": "events",
+            "type": "event_graph"
+          },
+          {
+            "fields_read": [
+              "state_key_presence",
+              "trajectory_shape"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, process_flags, token; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+      },
+      "information": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_entropy",
+          "event_information"
+        ],
+        "lens_id": "information",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "event_entropy"
+            ],
+            "source_object": "events",
+            "type": "event_information"
+          },
+          {
+            "fields_read": [
+              "predictive_state_count",
+              "delta_entropy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_entropy, event_information; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "petri": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_transition_proxy",
+          "process_flags"
+        ],
+        "lens_id": "petri",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "incidence_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_or_transition_network"
+          },
+          {
+            "fields_read": [
+              "type"
+            ],
+            "source_object": "events",
+            "type": "event_transition_proxy"
+          },
+          {
+            "fields_read": [
+              "place_count"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "statistical_mechanics": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_statistics",
+          "process_flags"
+        ],
+        "lens_id": "statistical_mechanics",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "rare_event_rate"
+            ],
+            "source_object": "events",
+            "type": "event_statistics"
+          },
+          {
+            "fields_read": [
+              "energy_variance",
+              "large_deviation_proxy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_statistics, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "topology": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [],
+        "lens_id": "topology",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.replication_lineage.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "filtration_geometry",
+              "connectivity_proxy"
+            ],
+            "source_object": "state",
+            "type": "point_cloud"
+          }
+        ],
+        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+      }
+    },
+    "motif.self_maintained_boundary.draft": {
+      "control_theory": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "control_or_memory_token",
+          "event",
+          "process_flags",
+          "token"
+        ],
+        "lens_id": "control_theory",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "control_or_memory_token"
+            ],
+            "source_object": "events",
+            "type": "control_channel_proxy"
+          },
+          {
+            "fields_read": [
+              "observability_rank",
+              "delta_rank"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains control_or_memory_token, event, process_flags, token"
+      },
+      "crnt": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "crnt",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_network"
+          },
+          {
+            "fields_read": [
+              "species_persistence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "dynamical_systems": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "dynamical_systems",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "trajectory_shape",
+              "terminal_drift",
+              "recurrence"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags"
+      },
+      "graph": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "process_flags",
+          "token"
+        ],
+        "lens_id": "graph",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "payload.actor_ids",
+              "payload.parent_child_ids"
+            ],
+            "source_object": "events",
+            "type": "event_graph"
+          },
+          {
+            "fields_read": [
+              "state_key_presence",
+              "trajectory_shape"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, process_flags, token; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+      },
+      "information": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_entropy",
+          "event_information",
+          "process_flags"
+        ],
+        "lens_id": "information",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "event_entropy"
+            ],
+            "source_object": "events",
+            "type": "event_information"
+          },
+          {
+            "fields_read": [
+              "predictive_state_count",
+              "delta_entropy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_entropy, event_information, process_flags"
+      },
+      "petri": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "stoichiometric_shape"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_declaration"
+          }
+        ],
+        "cell_verdict": "BAD",
+        "declined_count": 30,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_transition_proxy",
+          "process_flags"
+        ],
+        "lens_id": "petri",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 0,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "reactants",
+              "products",
+              "incidence_rank"
+            ],
+            "source_object": "parameter_record.reactions",
+            "type": "reaction_or_transition_network"
+          },
+          {
+            "fields_read": [
+              "type"
+            ],
+            "source_object": "events",
+            "type": "event_transition_proxy"
+          },
+          {
+            "fields_read": [
+              "place_count"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+      },
+      "statistical_mechanics": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "event",
+          "event_statistics",
+          "process_flags"
+        ],
+        "lens_id": "statistical_mechanics",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "type",
+              "rare_event_rate"
+            ],
+            "source_object": "events",
+            "type": "event_statistics"
+          },
+          {
+            "fields_read": [
+              "energy_variance",
+              "large_deviation_proxy"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_snapshot"
+          }
+        ],
+        "reason": "historical lens surface contains event, event_statistics, process_flags"
+      },
+      "topology": {
+        "adversarial_controls_passed": true,
+        "adversarial_failure_count": 0,
+        "campaign024_clean_source_object_map": [
+          {
+            "fields_read": [
+              "row_value_sums",
+              "value_distribution",
+              "temporal_deltas"
+            ],
+            "source_object": "state",
+            "type": "numeric_state_values"
+          }
+        ],
+        "cell_verdict": "CLEAN",
+        "declined_count": 0,
+        "historical_suspect_surfaces": [
+          "process_flags"
+        ],
+        "lens_id": "topology",
+        "mechanical_d26_verdict": "CLEAN",
+        "motif_id": "motif.self_maintained_boundary.draft",
+        "nondeclined_count": 30,
+        "old_contract_source_object_map": [
+          {
+            "fields_read": [
+              "filtration_geometry",
+              "connectivity_proxy"
+            ],
+            "source_object": "state",
+            "type": "point_cloud"
+          }
+        ],
+        "reason": "historical lens surface contains process_flags"
+      }
+    }
+  },
+  "campaign_id": "campaign_024",
+  "cell_count": 48,
+  "cells": [
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "process_flags"
+      ],
+      "lens_id": "graph",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "payload.actor_ids",
+            "payload.parent_child_ids"
+          ],
+          "source_object": "events",
+          "type": "event_graph"
+        },
+        {
+          "fields_read": [
+            "state_key_presence",
+            "trajectory_shape"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, process_flags; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 15,
+      "historical_suspect_surfaces": [],
+      "lens_id": "crnt",
+      "mechanical_d26_verdict": "BAD",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 15,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_network"
+        },
+        {
+          "fields_read": [
+            "species_persistence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "clean source-object map overlaps predicate fields"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "dynamical_systems",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "trajectory_shape",
+            "terminal_drift",
+            "recurrence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "topology",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "filtration_geometry",
+            "connectivity_proxy"
+          ],
+          "source_object": "state",
+          "type": "point_cloud"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 15,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_transition_proxy",
+        "process_flags"
+      ],
+      "lens_id": "petri",
+      "mechanical_d26_verdict": "BAD",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 15,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "incidence_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_or_transition_network"
+        },
+        {
+          "fields_read": [
+            "type"
+          ],
+          "source_object": "events",
+          "type": "event_transition_proxy"
+        },
+        {
+          "fields_read": [
+            "place_count"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean source-object map overlaps predicate fields"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_statistics"
+      ],
+      "lens_id": "statistical_mechanics",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "rare_event_rate"
+          ],
+          "source_object": "events",
+          "type": "event_statistics"
+        },
+        {
+          "fields_read": [
+            "energy_variance",
+            "large_deviation_proxy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_statistics"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "control_or_memory_token",
+        "event",
+        "token"
+      ],
+      "lens_id": "control_theory",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "control_or_memory_token"
+          ],
+          "source_object": "events",
+          "type": "control_channel_proxy"
+        },
+        {
+          "fields_read": [
+            "observability_rank",
+            "delta_rank"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains control_or_memory_token, event, token"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_entropy",
+        "event_information",
+        "generator",
+        "process_flags",
+        "token"
+      ],
+      "lens_id": "information",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "event_entropy"
+          ],
+          "source_object": "events",
+          "type": "event_information"
+        },
+        {
+          "fields_read": [
+            "predictive_state_count",
+            "delta_entropy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_entropy, event_information, generator, process_flags, token"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [],
+      "cell_verdict": "BAD",
+      "declined_count": 60,
+      "historical_suspect_surfaces": [
+        "event",
+        "process_flags"
+      ],
+      "lens_id": "graph",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "payload.actor_ids",
+            "payload.parent_child_ids"
+          ],
+          "source_object": "events",
+          "type": "event_graph"
+        },
+        {
+          "fields_read": [
+            "state_key_presence",
+            "trajectory_shape"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, process_flags; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 60,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "crnt",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_network"
+        },
+        {
+          "fields_read": [
+            "species_persistence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [],
+      "lens_id": "dynamical_systems",
+      "mechanical_d26_verdict": "PARTIAL",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 60,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "trajectory_shape",
+            "terminal_drift",
+            "recurrence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [],
+      "lens_id": "topology",
+      "mechanical_d26_verdict": "PARTIAL",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 60,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "filtration_geometry",
+            "connectivity_proxy"
+          ],
+          "source_object": "state",
+          "type": "point_cloud"
+        }
+      ],
+      "reason": "PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 60,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_transition_proxy",
+        "process_flags"
+      ],
+      "lens_id": "petri",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "incidence_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_or_transition_network"
+        },
+        {
+          "fields_read": [
+            "type"
+          ],
+          "source_object": "events",
+          "type": "event_transition_proxy"
+        },
+        {
+          "fields_read": [
+            "place_count"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_statistics",
+        "process_flags"
+      ],
+      "lens_id": "statistical_mechanics",
+      "mechanical_d26_verdict": "PARTIAL",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 60,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "rare_event_rate"
+          ],
+          "source_object": "events",
+          "type": "event_statistics"
+        },
+        {
+          "fields_read": [
+            "energy_variance",
+            "large_deviation_proxy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_statistics, process_flags; PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "control_or_memory_token",
+        "event",
+        "process_flags",
+        "token"
+      ],
+      "lens_id": "control_theory",
+      "mechanical_d26_verdict": "PARTIAL",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 60,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "control_or_memory_token"
+          ],
+          "source_object": "events",
+          "type": "control_channel_proxy"
+        },
+        {
+          "fields_read": [
+            "observability_rank",
+            "delta_rank"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains control_or_memory_token, event, process_flags, token; PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_entropy",
+        "event_information"
+      ],
+      "lens_id": "information",
+      "mechanical_d26_verdict": "PARTIAL",
+      "motif_id": "motif.repair.draft",
+      "nondeclined_count": 60,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "event_entropy"
+          ],
+          "source_object": "events",
+          "type": "event_information"
+        },
+        {
+          "fields_read": [
+            "predictive_state_count",
+            "delta_entropy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_entropy, event_information; PARTIAL cell collapses under ablation because the clean lens has no source left after denying shared predicate object state"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "process_flags",
+        "token"
+      ],
+      "lens_id": "graph",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "payload.actor_ids",
+            "payload.parent_child_ids"
+          ],
+          "source_object": "events",
+          "type": "event_graph"
+        },
+        {
+          "fields_read": [
+            "state_key_presence",
+            "trajectory_shape"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, process_flags, token; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [],
+      "lens_id": "crnt",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_network"
+        },
+        {
+          "fields_read": [
+            "species_persistence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "dynamical_systems",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "trajectory_shape",
+            "terminal_drift",
+            "recurrence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "topology",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "filtration_geometry",
+            "connectivity_proxy"
+          ],
+          "source_object": "state",
+          "type": "point_cloud"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_transition_proxy"
+      ],
+      "lens_id": "petri",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "incidence_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_or_transition_network"
+        },
+        {
+          "fields_read": [
+            "type"
+          ],
+          "source_object": "events",
+          "type": "event_transition_proxy"
+        },
+        {
+          "fields_read": [
+            "place_count"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_statistics"
+      ],
+      "lens_id": "statistical_mechanics",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "rare_event_rate"
+          ],
+          "source_object": "events",
+          "type": "event_statistics"
+        },
+        {
+          "fields_read": [
+            "energy_variance",
+            "large_deviation_proxy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_statistics"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "control_or_memory_token",
+        "event",
+        "memory_channel_count",
+        "process_flags",
+        "token"
+      ],
+      "lens_id": "control_theory",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "control_or_memory_token"
+          ],
+          "source_object": "events",
+          "type": "control_channel_proxy"
+        },
+        {
+          "fields_read": [
+            "observability_rank",
+            "delta_rank"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains control_or_memory_token, event, memory_channel_count, process_flags, token"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_entropy",
+        "event_information",
+        "process_flags"
+      ],
+      "lens_id": "information",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.externalized_memory.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "event_entropy"
+          ],
+          "source_object": "events",
+          "type": "event_information"
+        },
+        {
+          "fields_read": [
+            "predictive_state_count",
+            "delta_entropy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_entropy, event_information, process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "process_flags",
+        "token"
+      ],
+      "lens_id": "graph",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "payload.actor_ids",
+            "payload.parent_child_ids"
+          ],
+          "source_object": "events",
+          "type": "event_graph"
+        },
+        {
+          "fields_read": [
+            "state_key_presence",
+            "trajectory_shape"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, process_flags, token; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [],
+      "lens_id": "crnt",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_network"
+        },
+        {
+          "fields_read": [
+            "species_persistence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event"
+      ],
+      "lens_id": "dynamical_systems",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "trajectory_shape",
+            "terminal_drift",
+            "recurrence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [],
+      "lens_id": "topology",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "filtration_geometry",
+            "connectivity_proxy"
+          ],
+          "source_object": "state",
+          "type": "point_cloud"
+        }
+      ],
+      "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_transition_proxy",
+        "process_flags"
+      ],
+      "lens_id": "petri",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "incidence_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_or_transition_network"
+        },
+        {
+          "fields_read": [
+            "type"
+          ],
+          "source_object": "events",
+          "type": "event_transition_proxy"
+        },
+        {
+          "fields_read": [
+            "place_count"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_statistics",
+        "process_flags"
+      ],
+      "lens_id": "statistical_mechanics",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "rare_event_rate"
+          ],
+          "source_object": "events",
+          "type": "event_statistics"
+        },
+        {
+          "fields_read": [
+            "energy_variance",
+            "large_deviation_proxy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_statistics, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "control_or_memory_token",
+        "event",
+        "token"
+      ],
+      "lens_id": "control_theory",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "control_or_memory_token"
+          ],
+          "source_object": "events",
+          "type": "control_channel_proxy"
+        },
+        {
+          "fields_read": [
+            "observability_rank",
+            "delta_rank"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains control_or_memory_token, event, token; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_entropy",
+        "event_information"
+      ],
+      "lens_id": "information",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.replication_lineage.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "event_entropy"
+          ],
+          "source_object": "events",
+          "type": "event_information"
+        },
+        {
+          "fields_read": [
+            "predictive_state_count",
+            "delta_entropy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_entropy, event_information; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "process_flags",
+        "token"
+      ],
+      "lens_id": "graph",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "payload.actor_ids",
+            "payload.parent_child_ids"
+          ],
+          "source_object": "events",
+          "type": "event_graph"
+        },
+        {
+          "fields_read": [
+            "state_key_presence",
+            "trajectory_shape"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, process_flags, token; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "crnt",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_network"
+        },
+        {
+          "fields_read": [
+            "species_persistence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "dynamical_systems",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "trajectory_shape",
+            "terminal_drift",
+            "recurrence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "process_flags"
+      ],
+      "lens_id": "topology",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "filtration_geometry",
+            "connectivity_proxy"
+          ],
+          "source_object": "state",
+          "type": "point_cloud"
+        }
+      ],
+      "reason": "historical lens surface contains process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 30,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_transition_proxy",
+        "process_flags"
+      ],
+      "lens_id": "petri",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "incidence_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_or_transition_network"
+        },
+        {
+          "fields_read": [
+            "type"
+          ],
+          "source_object": "events",
+          "type": "event_transition_proxy"
+        },
+        {
+          "fields_read": [
+            "place_count"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_transition_proxy, process_flags; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_statistics",
+        "process_flags"
+      ],
+      "lens_id": "statistical_mechanics",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "rare_event_rate"
+          ],
+          "source_object": "events",
+          "type": "event_statistics"
+        },
+        {
+          "fields_read": [
+            "energy_variance",
+            "large_deviation_proxy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_statistics, process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "control_or_memory_token",
+        "event",
+        "process_flags",
+        "token"
+      ],
+      "lens_id": "control_theory",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "control_or_memory_token"
+          ],
+          "source_object": "events",
+          "type": "control_channel_proxy"
+        },
+        {
+          "fields_read": [
+            "observability_rank",
+            "delta_rank"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains control_or_memory_token, event, process_flags, token"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "CLEAN",
+      "declined_count": 0,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_entropy",
+        "event_information",
+        "process_flags"
+      ],
+      "lens_id": "information",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "nondeclined_count": 30,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "event_entropy"
+          ],
+          "source_object": "events",
+          "type": "event_information"
+        },
+        {
+          "fields_read": [
+            "predictive_state_count",
+            "delta_entropy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_entropy, event_information, process_flags"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [
+        "event"
+      ],
+      "lens_id": "graph",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "payload.actor_ids",
+            "payload.parent_child_ids"
+          ],
+          "source_object": "events",
+          "type": "event_graph"
+        },
+        {
+          "fields_read": [
+            "state_key_presence",
+            "trajectory_shape"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [],
+      "lens_id": "crnt",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_network"
+        },
+        {
+          "fields_read": [
+            "species_persistence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [],
+      "lens_id": "dynamical_systems",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "trajectory_shape",
+            "terminal_drift",
+            "recurrence"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [],
+      "lens_id": "topology",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "filtration_geometry",
+            "connectivity_proxy"
+          ],
+          "source_object": "state",
+          "type": "point_cloud"
+        }
+      ],
+      "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "stoichiometric_shape"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_declaration"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_transition_proxy"
+      ],
+      "lens_id": "petri",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "reactants",
+            "products",
+            "incidence_rank"
+          ],
+          "source_object": "parameter_record.reactions",
+          "type": "reaction_or_transition_network"
+        },
+        {
+          "fields_read": [
+            "type"
+          ],
+          "source_object": "events",
+          "type": "event_transition_proxy"
+        },
+        {
+          "fields_read": [
+            "place_count"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_statistics"
+      ],
+      "lens_id": "statistical_mechanics",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "rare_event_rate"
+          ],
+          "source_object": "events",
+          "type": "event_statistics"
+        },
+        {
+          "fields_read": [
+            "energy_variance",
+            "large_deviation_proxy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_statistics; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [
+        "control_or_memory_token",
+        "event",
+        "token"
+      ],
+      "lens_id": "control_theory",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "control_or_memory_token"
+          ],
+          "source_object": "events",
+          "type": "control_channel_proxy"
+        },
+        {
+          "fields_read": [
+            "observability_rank",
+            "delta_rank"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains control_or_memory_token, event, token; clean refactor produced no nondeclined evaluations on this motif corpus"
+    },
+    {
+      "adversarial_controls_passed": true,
+      "adversarial_failure_count": 0,
+      "campaign024_clean_source_object_map": [
+        {
+          "fields_read": [
+            "row_value_sums",
+            "value_distribution",
+            "temporal_deltas"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_values"
+        }
+      ],
+      "cell_verdict": "BAD",
+      "declined_count": 104,
+      "historical_suspect_surfaces": [
+        "event",
+        "event_entropy",
+        "event_information"
+      ],
+      "lens_id": "information",
+      "mechanical_d26_verdict": "CLEAN",
+      "motif_id": "motif.floor_connectivity.draft",
+      "nondeclined_count": 0,
+      "old_contract_source_object_map": [
+        {
+          "fields_read": [
+            "type",
+            "event_entropy"
+          ],
+          "source_object": "events",
+          "type": "event_information"
+        },
+        {
+          "fields_read": [
+            "predictive_state_count",
+            "delta_entropy"
+          ],
+          "source_object": "state",
+          "type": "numeric_state_snapshot"
+        }
+      ],
+      "reason": "historical lens surface contains event, event_entropy, event_information; clean refactor produced no nondeclined evaluations on this motif corpus"
+    }
+  ],
+  "content_hash": "sha256:727c28ab17048eb5544ef2d4ae4edddfc9598a176d7440a6aca49300a139110c",
+  "lens_ids": [
+    "graph",
+    "crnt",
+    "dynamical_systems",
+    "topology",
+    "petri",
+    "statistical_mechanics",
+    "control_theory",
+    "information"
+  ],
+  "method": {
+    "clean_lens_battery": "formalism.motif_contracts.clean_lenses",
+    "four_axis_controls": [
+      "event_token_rename",
+      "state_key_rename",
+      "payload_key_rename",
+      "generator_id_erasure"
+    ],
+    "historical_surface_scan": [
+      "process_flags",
+      "visible_processes",
+      "event_entropy",
+      "event_statistics",
+      "event_transition_proxy",
+      "event_information",
+      "control_or_memory_token",
+      "memory_channel_count",
+      "event",
+      "token",
+      "benchmark",
+      "generator",
+      "scenario",
+      "trace_length",
+      "neutral_component_fraction",
+      "nested_lineage_edges",
+      "attention_entropy",
+      "neutral_percolation_event"
+    ],
+    "partial_rule": "PARTIAL cells are reclassified BAD when denying the shared predicate object leaves no independent clean lens input."
+  },
+  "mode_tag": "exploratory",
+  "motif_ids": [
+    "motif.autocatalytic_closure.draft",
+    "motif.repair.draft",
+    "motif.externalized_memory.draft",
+    "motif.replication_lineage.draft",
+    "motif.self_maintained_boundary.draft",
+    "motif.floor_connectivity.draft"
+  ],
+  "schema": "Campaign024LensCouplingAudit.v1",
+  "status_counts": {
+    "BAD": 33,
+    "CLEAN": 15
+  },
+  "task_id": "TASK-LENS-METHOD"
+}
