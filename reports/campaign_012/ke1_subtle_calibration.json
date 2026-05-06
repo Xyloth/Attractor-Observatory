@@ -1,0 +1,280 @@
+{
+  "case_accuracy": 0.8666666666666667,
+  "case_count": 15,
+  "passed": true,
+  "rejection_rate": 0.8333333333333334,
+  "rows": [
+    {
+      "case_id": "KE1S-00",
+      "expected_reject": false,
+      "misalignment_type": "narrative_vs_structured",
+      "narrative_claim": {
+        "name": "Subtlea examplea 0",
+        "rank": "species",
+        "taxon": "synthetic.subtle.00",
+        "trait": "diurnal_foraging"
+      },
+      "passed": true,
+      "pipeline_rejected": false,
+      "structured_record": {
+        "accepted_name": "Subtlea examplea 0",
+        "activity_period": "diurnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-01",
+      "expected_reject": true,
+      "misalignment_type": "taxon_rank_overreach",
+      "narrative_claim": {
+        "name": "Rankus overreachus 1",
+        "rank": "species",
+        "taxon": "synthetic.subtle.species.01",
+        "trait": "collective_repair"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Rankus overreachus 1",
+        "activity_period": "variable",
+        "supported_rank": "genus"
+      }
+    },
+    {
+      "case_id": "KE1S-02",
+      "expected_reject": true,
+      "misalignment_type": "synonym_conflict",
+      "narrative_claim": {
+        "name": "Oldname conflictus 2",
+        "rank": "species",
+        "taxon": "old.synthetic.name.02",
+        "trait": "pheromone_trail"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Newname conflictus 2",
+        "activity_period": "diurnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-03",
+      "expected_reject": true,
+      "misalignment_type": "narrative_vs_structured",
+      "narrative_claim": {
+        "name": "Subtlea examplea 3",
+        "rank": "species",
+        "taxon": "synthetic.subtle.03",
+        "trait": "diurnal_foraging"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Subtlea examplea 3",
+        "activity_period": "nocturnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-04",
+      "expected_reject": true,
+      "misalignment_type": "taxon_rank_overreach",
+      "narrative_claim": {
+        "name": "Rankus overreachus 4",
+        "rank": "species",
+        "taxon": "synthetic.subtle.species.04",
+        "trait": "collective_repair"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Rankus overreachus 4",
+        "activity_period": "variable",
+        "supported_rank": "genus"
+      }
+    },
+    {
+      "case_id": "KE1S-05",
+      "expected_reject": false,
+      "misalignment_type": "synonym_conflict",
+      "narrative_claim": {
+        "name": "Oldname conflictus 5",
+        "rank": "species",
+        "taxon": "old.synthetic.name.05",
+        "trait": "pheromone_trail"
+      },
+      "passed": true,
+      "pipeline_rejected": false,
+      "structured_record": {
+        "accepted_name": "Oldname conflictus 5",
+        "activity_period": "diurnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-06",
+      "expected_reject": true,
+      "misalignment_type": "narrative_vs_structured",
+      "narrative_claim": {
+        "name": "Subtlea examplea 6",
+        "rank": "species",
+        "taxon": "synthetic.subtle.06",
+        "trait": "diurnal_foraging"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Subtlea examplea 6",
+        "activity_period": "nocturnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-07",
+      "expected_reject": true,
+      "misalignment_type": "taxon_rank_overreach",
+      "narrative_claim": {
+        "name": "Rankus overreachus 7",
+        "rank": "species",
+        "taxon": "synthetic.subtle.species.07",
+        "trait": "collective_repair"
+      },
+      "passed": false,
+      "pipeline_rejected": false,
+      "structured_record": {
+        "accepted_name": "Rankus overreachus 7",
+        "activity_period": "variable",
+        "supported_rank": "genus"
+      }
+    },
+    {
+      "case_id": "KE1S-08",
+      "expected_reject": true,
+      "misalignment_type": "synonym_conflict",
+      "narrative_claim": {
+        "name": "Oldname conflictus 8",
+        "rank": "species",
+        "taxon": "old.synthetic.name.08",
+        "trait": "pheromone_trail"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Newname conflictus 8",
+        "activity_period": "diurnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-09",
+      "expected_reject": true,
+      "misalignment_type": "narrative_vs_structured",
+      "narrative_claim": {
+        "name": "Subtlea examplea 9",
+        "rank": "species",
+        "taxon": "synthetic.subtle.09",
+        "trait": "diurnal_foraging"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Subtlea examplea 9",
+        "activity_period": "nocturnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-10",
+      "expected_reject": false,
+      "misalignment_type": "taxon_rank_overreach",
+      "narrative_claim": {
+        "name": "Rankus overreachus 10",
+        "rank": "species",
+        "taxon": "synthetic.subtle.species.10",
+        "trait": "collective_repair"
+      },
+      "passed": true,
+      "pipeline_rejected": false,
+      "structured_record": {
+        "accepted_name": "Rankus overreachus 10",
+        "activity_period": "variable",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-11",
+      "expected_reject": true,
+      "misalignment_type": "synonym_conflict",
+      "narrative_claim": {
+        "name": "Oldname conflictus 11",
+        "rank": "species",
+        "taxon": "old.synthetic.name.11",
+        "trait": "pheromone_trail"
+      },
+      "passed": false,
+      "pipeline_rejected": false,
+      "structured_record": {
+        "accepted_name": "Newname conflictus 11",
+        "activity_period": "diurnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-12",
+      "expected_reject": true,
+      "misalignment_type": "narrative_vs_structured",
+      "narrative_claim": {
+        "name": "Subtlea examplea 12",
+        "rank": "species",
+        "taxon": "synthetic.subtle.12",
+        "trait": "diurnal_foraging"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Subtlea examplea 12",
+        "activity_period": "nocturnal",
+        "supported_rank": "species"
+      }
+    },
+    {
+      "case_id": "KE1S-13",
+      "expected_reject": true,
+      "misalignment_type": "taxon_rank_overreach",
+      "narrative_claim": {
+        "name": "Rankus overreachus 13",
+        "rank": "species",
+        "taxon": "synthetic.subtle.species.13",
+        "trait": "collective_repair"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Rankus overreachus 13",
+        "activity_period": "variable",
+        "supported_rank": "genus"
+      }
+    },
+    {
+      "case_id": "KE1S-14",
+      "expected_reject": true,
+      "misalignment_type": "synonym_conflict",
+      "narrative_claim": {
+        "name": "Oldname conflictus 14",
+        "rank": "species",
+        "taxon": "old.synthetic.name.14",
+        "trait": "pheromone_trail"
+      },
+      "passed": true,
+      "pipeline_rejected": true,
+      "structured_record": {
+        "accepted_name": "Newname conflictus 14",
+        "activity_period": "diurnal",
+        "supported_rank": "species"
+      }
+    }
+  ],
+  "schema": "KE1SubtleMisalignmentCalibration.v1",
+  "subtle_case_count": 15
+}

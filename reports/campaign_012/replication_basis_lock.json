@@ -1,0 +1,30 @@
+{
+  "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+  "basis_unchanged": true,
+  "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+  "independent_evidence_corpus": [
+    {
+      "artifact": "reports/campaign_011/w7_densification_report.json",
+      "role": "exploratory_densified W7 source-bound axis coverage",
+      "used_in_campaign_010_deficit_map": false
+    },
+    {
+      "artifact": "reports/campaign_012/real_lane1_extraction.json",
+      "role": "real ITIS Lane-1 taxonomic source basis for independent biological grounding",
+      "used_in_campaign_010_deficit_map": false
+    },
+    {
+      "artifact": "reports/campaign_009/floor_calibration_full.json",
+      "role": "cross-campaign trace candidates for independent held-out partitioning",
+      "used_in_campaign_010_deficit_map": "partition_filter_required"
+    }
+  ],
+  "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+  "passed": true,
+  "protocol": {
+    "content_hash": "sha256:72ee6e241d409f08ff41ecea12c89966f556d3e71c6e8944dd67d9868482a7dc",
+    "path": "papers\\methods\\FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md"
+  },
+  "replication_run_scheduled": false,
+  "schema": "Campaign012FloorConnectivityReplicationBeachhead.v1"
+}

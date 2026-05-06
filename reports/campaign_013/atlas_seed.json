@@ -1,0 +1,370 @@
+{
+  "entries": [
+    {
+      "attractor_strength": {
+        "campaign_009_010_013": 0.62
+      },
+      "biological_examples": [
+        "claim.itis.568543.rank_family_insecta"
+      ],
+      "closure_rank": "C4",
+      "content_hash": "sha256:0d2619bb1767fdd78e2be5093b7d3be5b5db3385633ac7eeb251e0246605dacb",
+      "entry_id": "atlas.autocatalytic_closure.001",
+      "formal_gap_score": 0.0,
+      "formal_lens_coverage": {
+        "control_theory": 0.0,
+        "crnt": 0.811589617154,
+        "dynamical_systems": 0.641779241838,
+        "graph": 0.959239741731,
+        "information": 0.943166753015,
+        "petri": 0.629064758614,
+        "statistical_mechanics": 0.0,
+        "topology": 0.872193291791
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "motif_registry_version": "v0.13",
+      "open_questions": [
+        "Biological examples are provenance anchors only when the source is taxonomy-only; behavior-bearing support remains absent unless cited in the L3 report.",
+        "Campaign 014 should render this entry with explicit exploratory status."
+      ],
+      "provenance": {
+        "campaigns": [
+          "002",
+          "009",
+          "010",
+          "013"
+        ],
+        "replication_verdict": "replicated"
+      },
+      "schema": "AtlasEntry.v1",
+      "simulation_examples": [
+        "reports/phase1/closure_recurrence/traces/crn_seed_101.json",
+        "reports/campaign_009/traces/kf/KF1/KF1-000_left.json"
+      ],
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "stabilization_strategy": "energy_capture"
+    },
+    {
+      "attractor_strength": {
+        "campaign_009_010_013": 0.74
+      },
+      "biological_examples": [
+        "claim.itis.568544.rank_family_insecta"
+      ],
+      "closure_rank": "C3",
+      "content_hash": "sha256:0c07496ca96c31ef5772e3cccb4831fb80c8289e600d4960a78e473f950b0b46",
+      "entry_id": "atlas.self_boundary.001",
+      "formal_gap_score": 0.0,
+      "formal_lens_coverage": {
+        "control_theory": 0.769247817713,
+        "crnt": 0.863152117154,
+        "dynamical_systems": 0.641779241838,
+        "graph": 0.959239741731,
+        "information": 0.918362634939,
+        "petri": 0.879064758614,
+        "statistical_mechanics": 0.841589532434,
+        "topology": 0.622193291791
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "motif_registry_version": "v0.13",
+      "open_questions": [
+        "Biological examples are provenance anchors only when the source is taxonomy-only; behavior-bearing support remains absent unless cited in the L3 report.",
+        "Campaign 014 should render this entry with explicit exploratory status."
+      ],
+      "provenance": {
+        "campaigns": [
+          "002",
+          "009",
+          "010",
+          "013"
+        ],
+        "replication_verdict": "replicated"
+      },
+      "schema": "AtlasEntry.v1",
+      "simulation_examples": [
+        "reports/campaign_009/traces/kf/KF1/KF1-000_left.json",
+        "reports/campaign_009/traces/kf/KF1/KF1-001_left.json"
+      ],
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "stabilization_strategy": "boundary_maintenance"
+    },
+    {
+      "attractor_strength": {
+        "campaign_009_010_013": 0.62
+      },
+      "biological_examples": [
+        "claim.itis.568545.rank_family_insecta"
+      ],
+      "closure_rank": "C2",
+      "content_hash": "sha256:093fa1368b4e12a58b2e69ddff1c6f74b23ec9e1c3034e687f53cc0f40f860ca",
+      "entry_id": "atlas.repair.001",
+      "formal_gap_score": 0.0,
+      "formal_lens_coverage": {
+        "control_theory": 0.769247817713,
+        "crnt": 0.863152117154,
+        "dynamical_systems": 0.891779241838,
+        "graph": 0.959239741731,
+        "information": 0.918362634939,
+        "petri": 0.879064758614,
+        "statistical_mechanics": 0.635116318148,
+        "topology": 0.0
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.repair.draft",
+      "motif_registry_version": "v0.13",
+      "open_questions": [
+        "Biological examples are provenance anchors only when the source is taxonomy-only; behavior-bearing support remains absent unless cited in the L3 report.",
+        "Campaign 014 should render this entry with explicit exploratory status."
+      ],
+      "provenance": {
+        "campaigns": [
+          "002",
+          "009",
+          "010",
+          "013"
+        ],
+        "replication_verdict": "replicated"
+      },
+      "schema": "AtlasEntry.v1",
+      "simulation_examples": [
+        "reports/campaign_009/traces/kf/KF1/KF1-001_left.json",
+        "reports/campaign_009/traces/kf/KF1/KF1-003_left.json"
+      ],
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "stabilization_strategy": "repair"
+    },
+    {
+      "attractor_strength": {
+        "campaign_009_010_013": 0.62
+      },
+      "biological_examples": [
+        "claim.itis.568755.rank_family_insecta"
+      ],
+      "closure_rank": "C5",
+      "content_hash": "sha256:06d3e7309768e8576a47895379269aa1f8bff46193595beb33e9d3eb17938107",
+      "entry_id": "atlas.replication_lineage.001",
+      "formal_gap_score": 0.0,
+      "formal_lens_coverage": {
+        "control_theory": 0.0,
+        "crnt": 0.0,
+        "dynamical_systems": 0.0,
+        "graph": 0.959239741731,
+        "information": 0.938356257388,
+        "petri": 0.793127258614,
+        "statistical_mechanics": 0.885116318148,
+        "topology": 0.0
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.replication_lineage.draft",
+      "motif_registry_version": "v0.13",
+      "open_questions": [
+        "Biological examples are provenance anchors only when the source is taxonomy-only; behavior-bearing support remains absent unless cited in the L3 report.",
+        "Campaign 014 should render this entry with explicit exploratory status."
+      ],
+      "provenance": {
+        "campaigns": [
+          "002",
+          "009",
+          "010",
+          "013"
+        ],
+        "replication_verdict": "replicated"
+      },
+      "schema": "AtlasEntry.v1",
+      "simulation_examples": [
+        "reports/campaign_009/traces/kf/KF1/KF1-003_left.json",
+        "reports/campaign_009/traces/kf/KF2/KF2-001_left.json"
+      ],
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "stabilization_strategy": "replication"
+    },
+    {
+      "attractor_strength": {
+        "campaign_009_010_013": 0.7
+      },
+      "biological_examples": [
+        "claim.itis.568756.rank_family_insecta"
+      ],
+      "closure_rank": "C2",
+      "content_hash": "sha256:ae70bd0c34ae9de7ca56fe7768729f3bd313b998a96cd86238e658f0b9902b80",
+      "entry_id": "atlas.externalized_memory.001",
+      "formal_gap_score": 0.0,
+      "formal_lens_coverage": {
+        "control_theory": 0.769247817713,
+        "crnt": 0.0,
+        "dynamical_systems": 0.891779241838,
+        "graph": 0.959239741731,
+        "information": 0.815014420653,
+        "petri": 0.0,
+        "statistical_mechanics": 0.0,
+        "topology": 0.872193291791
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.externalized_memory.draft",
+      "motif_registry_version": "v0.13",
+      "open_questions": [
+        "Biological examples are provenance anchors only when the source is taxonomy-only; behavior-bearing support remains absent unless cited in the L3 report.",
+        "Campaign 014 should render this entry with explicit exploratory status."
+      ],
+      "provenance": {
+        "campaigns": [
+          "002",
+          "009",
+          "010",
+          "013"
+        ],
+        "replication_verdict": "replicated"
+      },
+      "schema": "AtlasEntry.v1",
+      "simulation_examples": [
+        "reports/campaign_009/traces/kf/KF2/KF2-001_left.json",
+        "reports/campaign_009/traces/kf/KF3/KF3-001_left.json"
+      ],
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "stabilization_strategy": "externalization"
+    },
+    {
+      "attractor_strength": {
+        "campaign_009_010_013": 0.88
+      },
+      "biological_examples": [
+        "claim.itis.568757.rank_family_insecta"
+      ],
+      "closure_rank": null,
+      "content_hash": "sha256:4d5822e5d622bc5d37d43088407fff6e37ccf780bd8b6efa7274e13ea8e7efea",
+      "entry_id": "atlas.floor_connectivity.001",
+      "formal_gap_score": 0.3549345653383201,
+      "formal_lens_coverage": {
+        "control_theory": 0.508247817713,
+        "crnt": 0.0,
+        "dynamical_systems": 0.658051969111,
+        "graph": 0.0,
+        "information": 0.0,
+        "petri": 0.0,
+        "statistical_mechanics": 0.659830603863,
+        "topology": 0.536193291791
+      },
+      "mode_tag": "exploratory",
+      "motif_id": "motif.floor_connectivity.draft",
+      "motif_registry_version": "v0.13",
+      "open_questions": [
+        "Biological examples are provenance anchors only when the source is taxonomy-only; behavior-bearing support remains absent unless cited in the L3 report.",
+        "Campaign 014 should render this entry with explicit exploratory status."
+      ],
+      "provenance": {
+        "campaigns": [
+          "002",
+          "009",
+          "010",
+          "013"
+        ],
+        "replication_verdict": "replicated"
+      },
+      "schema": "AtlasEntry.v1",
+      "simulation_examples": [
+        "reports/campaign_009/traces/kf/KF3/KF3-001_left.json"
+      ],
+      "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "stabilization_strategy": "coordination"
+    }
+  ],
+  "entry_count": 6,
+  "integrity": {
+    "entry_count": 6,
+    "failure_count": 0,
+    "passed": true,
+    "rows": [
+      {
+        "biological_ok": true,
+        "entry_id": "atlas.autocatalytic_closure.001",
+        "passed": true,
+        "provenance_ok": true,
+        "roundtrip_ok": true,
+        "simulation_ok": true
+      },
+      {
+        "biological_ok": true,
+        "entry_id": "atlas.self_boundary.001",
+        "passed": true,
+        "provenance_ok": true,
+        "roundtrip_ok": true,
+        "simulation_ok": true
+      },
+      {
+        "biological_ok": true,
+        "entry_id": "atlas.repair.001",
+        "passed": true,
+        "provenance_ok": true,
+        "roundtrip_ok": true,
+        "simulation_ok": true
+      },
+      {
+        "biological_ok": true,
+        "entry_id": "atlas.replication_lineage.001",
+        "passed": true,
+        "provenance_ok": true,
+        "roundtrip_ok": true,
+        "simulation_ok": true
+      },
+      {
+        "biological_ok": true,
+        "entry_id": "atlas.externalized_memory.001",
+        "passed": true,
+        "provenance_ok": true,
+        "roundtrip_ok": true,
+        "simulation_ok": true
+      },
+      {
+        "biological_ok": true,
+        "entry_id": "atlas.floor_connectivity.001",
+        "passed": true,
+        "provenance_ok": true,
+        "roundtrip_ok": true,
+        "simulation_ok": true
+      }
+    ],
+    "schema": "AtlasIntegrityCheck.v1"
+  },
+  "passed": true,
+  "roundtrip": [
+    {
+      "content_hash": "sha256:0d2619bb1767fdd78e2be5093b7d3be5b5db3385633ac7eeb251e0246605dacb",
+      "entry_id": "atlas.autocatalytic_closure.001",
+      "passed": true,
+      "schema": "AtlasEntryRoundTrip.v1"
+    },
+    {
+      "content_hash": "sha256:0c07496ca96c31ef5772e3cccb4831fb80c8289e600d4960a78e473f950b0b46",
+      "entry_id": "atlas.self_boundary.001",
+      "passed": true,
+      "schema": "AtlasEntryRoundTrip.v1"
+    },
+    {
+      "content_hash": "sha256:093fa1368b4e12a58b2e69ddff1c6f74b23ec9e1c3034e687f53cc0f40f860ca",
+      "entry_id": "atlas.repair.001",
+      "passed": true,
+      "schema": "AtlasEntryRoundTrip.v1"
+    },
+    {
+      "content_hash": "sha256:06d3e7309768e8576a47895379269aa1f8bff46193595beb33e9d3eb17938107",
+      "entry_id": "atlas.replication_lineage.001",
+      "passed": true,
+      "schema": "AtlasEntryRoundTrip.v1"
+    },
+    {
+      "content_hash": "sha256:ae70bd0c34ae9de7ca56fe7768729f3bd313b998a96cd86238e658f0b9902b80",
+      "entry_id": "atlas.externalized_memory.001",
+      "passed": true,
+      "schema": "AtlasEntryRoundTrip.v1"
+    },
+    {
+      "content_hash": "sha256:4d5822e5d622bc5d37d43088407fff6e37ccf780bd8b6efa7274e13ea8e7efea",
+      "entry_id": "atlas.floor_connectivity.001",
+      "passed": true,
+      "schema": "AtlasEntryRoundTrip.v1"
+    }
+  ],
+  "schema": "Campaign013AtlasSeed.v1"
+}

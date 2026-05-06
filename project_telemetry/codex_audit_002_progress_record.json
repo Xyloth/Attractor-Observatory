@@ -1,0 +1,42 @@
+{
+  "task_id": "CODEX_AUDIT_002",
+  "task_class": "audit",
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "scope_score": 5,
+  "complexity_score": 6,
+  "estimated_minutes": 55,
+  "estimated_files": 3,
+  "estimated_tests": 0,
+  "actual_minutes": null,
+  "actual_files": 6,
+  "actual_tests": 0,
+  "acceptance_outcome": "partial_signoff_with_blocker",
+  "calibration_method": "Reference class: CODEX_AUDIT_001 took a bounded cross-builder audit shape with two reruns, artifact review, Class 10 reasoning, report writing, and BUILD_LOG entry. CB-002 is likely adjacent but may include the follow-up presence-gated replication contract, so I add 10 minutes over the prior 45-minute estimate. Formula: 10 min locate/read CB-002 handoff + 15 min code/report inspection + 15 min harness/hash/applicability verification + 15 min write Architect report and mentoring/finding entry = 55 min. Actual timing remains PI-owned.",
+  "expansions_planned": [
+    "Read BUILD_LOG handoff and all TASK-CB-002 artifacts.",
+    "Identify the CB-002 verification harness and rerun it from cold if available.",
+    "Audit locked-basis/lens hashes, held-out evidence, presence-gated applicability, scientific verdict fields, and D22/Class 10 compliance.",
+    "Check for mistake-catalog regressions: static-input contamination, engineered passing, soft enforcement/strict display, scenario hardcoding, and surface-label primitives.",
+    "Write an Architect-facing CODEX_AUDIT_002 report and append a BUILD_LOG Talk entry."
+  ],
+  "expansions_realised": [
+    "Read BUILD_LOG TASK-CB-002 start/completion handoff, v2 report, v2 methods doc, modified multisubstrate analysis module, run harness, lens registry world_family path, and relevant Class 10/D22 context.",
+    "Reran v1 build() and confirmed content_hash sha256:cc2a68d7d6a0a4c34458151eb6c7e55b4bea54114c62ba1adefb025e3978d1a2.",
+    "Reran v2 through python -m motifs.geometry.multisubstrate.run and build_v2(), confirming content_hash sha256:1dbe5ed2ee1ca02f71850a04f0c537de234e57b53c5e61d736d8e91f742a24fc.",
+    "Verified locked basis/lens hashes, 136-path held-out audit with 0 overlap, W3 field negative-control routing, and claim_eligible false at per-substrate, pooled, and aggregate levels.",
+    "Identified a blocking pooled-level substrate-confounding issue: pooled balance is created by mixing uniform-positive and uniform-negative substrates, while lens registry domain/declination uses world_family.",
+    "Wrote CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md and appended a BUILD_LOG Talk entry."
+  ],
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "CLAUDE_BUILDER_INITIATION.md",
+    "BUILD_LOG.md TASK-CB-002 entries",
+    "reports/campaign_013/multisubstrate_floor_connectivity_v2.json",
+    "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+    "motifs/geometry/multisubstrate/floor_connectivity.py",
+    "motifs/geometry/multisubstrate/run.py",
+    "formalism/lens_registry.py"
+  ],
+  "notes": "CODEX_AUDIT_002 completed with partial sign-off. Per-substrate Step 0 implementation passes audit, but pooled_result.l5_candidacy_advancement=true is blocked by substrate-confounded pooling. Time logging is PI-owned; actual_minutes and estimation_delta are intentionally absent/null."
+}

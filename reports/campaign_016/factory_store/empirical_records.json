@@ -1,0 +1,548 @@
+{
+  "records": [
+    {
+      "canonical_name": "NIST energy levels He I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "He",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          19.81961484,
+          1.14447219,
+          3.623301981
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 24.587389011,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "He I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=He+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 222 H3N",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 222,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "H3N",
+        "molecular_weight": 17.031,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/222",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/222/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "rossler_1976_continuous_chaos",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "rossler_1976_continuous_chaos",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor",
+        "invariants": [
+          "spiral_band",
+          "folding_return"
+        ],
+        "parameters": {
+          "a": 0.2,
+          "b": 0.2,
+          "c": 5.7
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Rossler, An Equation for Continuous Chaos, Physics Letters A, 1976.",
+        "doi": "10.1016/0375-9601(76)90101-8",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1016/0375-9601(76)90101-8"
+      },
+      "record_id": "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "sprott_simple_chaotic_flow",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "sprott_simple_chaotic_flow",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor_family",
+        "invariants": [
+          "low_term_count",
+          "chaotic_flow"
+        ],
+        "parameters": {
+          "family": "Sprott"
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "example low-dimensional polynomial chaotic flow"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Sprott, Some simple chaotic flows, Physical Review E, 1994.",
+        "doi": "10.1103/PhysRevE.50.R647",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1103/PhysRevE.50.R647"
+      },
+      "record_id": "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "hopf_limit_cycle_normal_form",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "hopf_limit_cycle_normal_form",
+        "dimension": 2,
+        "expected_stable_form": "stable_limit_cycle",
+        "invariants": [
+          "stable_radius",
+          "phase_translation"
+        ],
+        "parameters": {
+          "mu": 1.0,
+          "omega": 1.0
+        },
+        "primitive_class": "limit_cycle",
+        "state_equation": "dr/dt = mu*r - r^3; dtheta/dt = omega"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Guckenheimer and Holmes, Hopf bifurcation normal form.",
+        "doi": "10.1007/978-1-4757-3976-6",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6"
+      },
+      "record_id": "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels Ne I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 3,
+        "element_symbol": "Ne",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          16.619,
+          0.229,
+          4.71654
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 21.56454,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Ne I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Ne+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels Ar I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 3,
+        "element_symbol": "Ar",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          11.548,
+          0.28,
+          3.9316119
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 15.7596119,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Ar I",
+        "term_count": 4
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Ar+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "fixed_point_linear_sink",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "fixed_point_linear_sink",
+        "dimension": 1,
+        "expected_stable_form": "asymptotically_stable_fixed_point",
+        "invariants": [
+          "negative_real_eigenvalue",
+          "single_basin"
+        ],
+        "parameters": {
+          "lambda": 1.0
+        },
+        "primitive_class": "fixed_point",
+        "state_equation": "dx/dt = -lambda*x"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Guckenheimer and Holmes, Nonlinear Oscillations, Dynamical Systems, and Bifurcations of Vector Fields.",
+        "doi": "10.1007/978-1-4757-3976-6",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6"
+      },
+      "record_id": "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 297 CH4",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 297,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "CH4",
+        "molecular_weight": 16.043,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/297",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/297/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 280 CO2",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 280,
+        "complexity": 18.0,
+        "heavy_atom_count": 3,
+        "molecular_formula": "CO2",
+        "molecular_weight": 44.009,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/280",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/280/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels Li I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "Li",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          1.847823,
+          1.525327,
+          2.01856495
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 5.39171495,
+        "reference_count": 1,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "Li I",
+        "term_count": 3
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=Li+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 962 H2O",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 962,
+        "complexity": 0.0,
+        "heavy_atom_count": 1,
+        "molecular_formula": "H2O",
+        "molecular_weight": 18.015,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/962",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/962/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "PubChem CID 241 C6H6",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "bond_topology_proxy": {
+          "aromatic_atom_count": 0,
+          "branch_points": 0,
+          "element_token_count": 0,
+          "explicit_bond_symbols": 0,
+          "ring_digit_count": 0,
+          "unique_elements": []
+        },
+        "canonical_smiles": "",
+        "cid": 241,
+        "complexity": 15.0,
+        "heavy_atom_count": 6,
+        "molecular_formula": "C6H6",
+        "molecular_weight": 78.11,
+        "source_table": "PubChem PUG-REST compound property JSON"
+      },
+      "provenance": {
+        "authority": "NIH NCBI PubChem PUG-REST",
+        "compound_url": "https://pubchem.ncbi.nlm.nih.gov/compound/241",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+        "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/241/property/MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity/JSON"
+      },
+      "record_id": "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f",
+      "record_type": "small_molecule_topology_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.pubchem.pugrest.small_molecules",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "NIST energy levels H I",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "configuration_count": 4,
+        "element_symbol": "H",
+        "energy_level_count": 4,
+        "first_level_gaps_eV": [
+          10.19880615024,
+          1.88868750886,
+          1.510940940602
+        ],
+        "ground_state_eV": 0.0,
+        "ion_stage": "I",
+        "max_observed_level_eV": 13.598434599702,
+        "reference_count": 2,
+        "source_table": "NIST ASD energy levels CSV",
+        "spectrum": "H I",
+        "term_count": 3
+      },
+      "provenance": {
+        "authority": "NIST Standard Reference Database 78",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_home": "https://www.nist.gov/pml/atomic-spectra-database",
+        "source_url": "https://physics.nist.gov/cgi-bin/ASD/energy1.pl?spectrum=H+I&units=1&format=2&output=0&page_size=15&conf_out=on&term_out=on&level_out=on&unc_out=1&j_out=on&lande_out=on&perc_out=on&biblio=on&splitting=1&submit=Retrieve+Data"
+      },
+      "record_id": "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c",
+      "record_type": "atomic_energy_level_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.nist.asd.energy_levels",
+      "world_family": "atomic_molecular_primitives"
+    },
+    {
+      "canonical_name": "lorenz_1963_strange_attractor",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "lorenz_1963_strange_attractor",
+        "dimension": 3,
+        "expected_stable_form": "strange_attractor",
+        "invariants": [
+          "sensitive_dependence",
+          "bounded_absorbing_region"
+        ],
+        "parameters": {
+          "beta": 2.6666666667,
+          "rho": 28.0,
+          "sigma": 10.0
+        },
+        "primitive_class": "strange_attractor",
+        "state_equation": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Lorenz, Deterministic Nonperiodic Flow, Journal of the Atmospheric Sciences, 1963.",
+        "doi": "10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2"
+      },
+      "record_id": "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    },
+    {
+      "canonical_name": "quasiperiodic_torus_flow",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "quasiperiodic_torus_flow",
+        "dimension": 2,
+        "expected_stable_form": "quasiperiodic_torus",
+        "invariants": [
+          "angle_wrap",
+          "irrational_frequency_ratio"
+        ],
+        "parameters": {
+          "omega1": 1.0,
+          "omega2": 1.41421356237
+        },
+        "primitive_class": "torus",
+        "state_equation": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio"
+      },
+      "provenance": {
+        "authority": "peer_reviewed_math_ds_literature",
+        "citation": "Katok and Hasselblatt, Introduction to the Modern Theory of Dynamical Systems.",
+        "doi": "10.1007/978-1-4612-1140-2",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-05T23:33:19Z",
+        "source_url": "https://doi.org/10.1007/978-1-4612-1140-2"
+      },
+      "record_id": "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.math_primitives.peer_reviewed_catalog",
+      "world_family": "math_primitives"
+    }
+  ],
+  "schema": "LowLevelEmpiricalRecordSet.v1"
+}

@@ -1,0 +1,558 @@
+{
+  "claim_eligible": false,
+  "content_hash": "sha256:8ec207145a9ee70febad1b4e08dd1aace6fe52da27bf5ef9c28e5b4aeb61e672",
+  "mode_tag": "exploratory",
+  "rows": [
+    {
+      "basis": "math primitives as field-like state-space trajectories",
+      "declined_count": 29,
+      "evaluation_count": 48,
+      "nondeclined_count": 19,
+      "positive_label_count": 0,
+      "projected_world_family": "field",
+      "source_world_family": "math_primitives",
+      "top_coverage": [
+        {
+          "components": {
+            "compression_ratio": 0.040478087649,
+            "compression_score": 0.957391486685,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.8
+          },
+          "coverage_score": 0.703608723003,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "graph",
+          "motif_id": "motif.autocatalytic_closure.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.040478087649,
+            "compression_score": 0.957391486685,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.8
+          },
+          "coverage_score": 0.703608723003,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "graph",
+          "motif_id": "motif.externalized_memory.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.040478087649,
+            "compression_score": 0.957391486685,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.8
+          },
+          "coverage_score": 0.703608723003,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "graph",
+          "motif_id": "motif.repair.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        }
+      ]
+    },
+    {
+      "basis": "math primitives as reaction-network closure surrogates",
+      "declined_count": 18,
+      "evaluation_count": 48,
+      "nondeclined_count": 30,
+      "positive_label_count": 0,
+      "projected_world_family": "crn",
+      "source_world_family": "math_primitives",
+      "top_coverage": [
+        {
+          "components": {
+            "compression_ratio": 0.040503906873,
+            "compression_score": 0.957364308555,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.707604646283,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.autocatalytic_closure.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.040503906873,
+            "compression_score": 0.957364308555,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.707604646283,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.repair.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.040503906873,
+            "compression_score": 0.957364308555,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.707604646283,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.replication_lineage.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        }
+      ]
+    },
+    {
+      "basis": "math primitives as executable-state transition signatures",
+      "declined_count": 34,
+      "evaluation_count": 48,
+      "nondeclined_count": 14,
+      "positive_label_count": 0,
+      "projected_world_family": "digital",
+      "source_world_family": "math_primitives",
+      "top_coverage": [
+        {
+          "components": {
+            "compression_ratio": 0.040751353072,
+            "compression_score": 0.957103838872,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.8
+          },
+          "coverage_score": 0.703565575831,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "graph",
+          "motif_id": "motif.autocatalytic_closure.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.040751353072,
+            "compression_score": 0.957103838872,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.8
+          },
+          "coverage_score": 0.703565575831,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "graph",
+          "motif_id": "motif.externalized_memory.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.040751353072,
+            "compression_score": 0.957103838872,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.8
+          },
+          "coverage_score": 0.703565575831,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "graph",
+          "motif_id": "motif.repair.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        }
+      ]
+    },
+    {
+      "basis": "atomic/molecular primitives as chemistry-like source records",
+      "declined_count": 31,
+      "evaluation_count": 48,
+      "nondeclined_count": 17,
+      "positive_label_count": 0,
+      "projected_world_family": "origins_chemistry",
+      "source_world_family": "atomic_molecular_primitives",
+      "top_coverage": [
+        {
+          "components": {
+            "compression_ratio": 0.023463978448,
+            "compression_score": 0.975301075318,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710295161298,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.autocatalytic_closure.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.023463978448,
+            "compression_score": 0.975301075318,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710295161298,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.repair.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.023463978448,
+            "compression_score": 0.975301075318,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710295161298,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.replication_lineage.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        }
+      ]
+    },
+    {
+      "basis": "atomic/molecular primitives as reaction-network ingredient summaries",
+      "declined_count": 18,
+      "evaluation_count": 48,
+      "nondeclined_count": 30,
+      "positive_label_count": 0,
+      "projected_world_family": "crn",
+      "source_world_family": "atomic_molecular_primitives",
+      "top_coverage": [
+        {
+          "components": {
+            "compression_ratio": 0.022286062505,
+            "compression_score": 0.976540986837,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710481148026,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.autocatalytic_closure.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.022286062505,
+            "compression_score": 0.976540986837,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710481148026,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.repair.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.022286062505,
+            "compression_score": 0.976540986837,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710481148026,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.replication_lineage.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        }
+      ]
+    },
+    {
+      "basis": "atomic/molecular primitives as hyperedge-like relation summaries",
+      "declined_count": 31,
+      "evaluation_count": 48,
+      "nondeclined_count": 17,
+      "positive_label_count": 0,
+      "projected_world_family": "hypergraph_reactions",
+      "source_world_family": "atomic_molecular_primitives",
+      "top_coverage": [
+        {
+          "components": {
+            "compression_ratio": 0.023704089607,
+            "compression_score": 0.975048326729,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710257249009,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.autocatalytic_closure.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.023704089607,
+            "compression_score": 0.975048326729,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710257249009,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.repair.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        },
+        {
+          "components": {
+            "compression_ratio": 0.023704089607,
+            "compression_score": 0.975048326729,
+            "encoding_success": 1.0,
+            "invariance_preservation": 1.0,
+            "prediction_accuracy": 0.0,
+            "prediction_baseline": 0.5,
+            "prediction_component": 0.0,
+            "reconstruction_score": 0.82
+          },
+          "coverage_score": 0.710257249009,
+          "decline_count": 0,
+          "holdout_count": 0,
+          "lens_id": "petri",
+          "motif_id": "motif.replication_lineage.draft",
+          "nondeclined_count": 1,
+          "pair_count": 1
+        }
+      ]
+    }
+  ],
+  "schema": "Campaign016ProjectionBasisComparison.v1",
+  "summary": {
+    "best_by_source_world": {
+      "atomic_molecular_primitives": {
+        "basis": "atomic/molecular primitives as reaction-network ingredient summaries",
+        "declined_count": 18,
+        "evaluation_count": 48,
+        "nondeclined_count": 30,
+        "positive_label_count": 0,
+        "projected_world_family": "crn",
+        "source_world_family": "atomic_molecular_primitives",
+        "top_coverage": [
+          {
+            "components": {
+              "compression_ratio": 0.022286062505,
+              "compression_score": 0.976540986837,
+              "encoding_success": 1.0,
+              "invariance_preservation": 1.0,
+              "prediction_accuracy": 0.0,
+              "prediction_baseline": 0.5,
+              "prediction_component": 0.0,
+              "reconstruction_score": 0.82
+            },
+            "coverage_score": 0.710481148026,
+            "decline_count": 0,
+            "holdout_count": 0,
+            "lens_id": "petri",
+            "motif_id": "motif.autocatalytic_closure.draft",
+            "nondeclined_count": 1,
+            "pair_count": 1
+          },
+          {
+            "components": {
+              "compression_ratio": 0.022286062505,
+              "compression_score": 0.976540986837,
+              "encoding_success": 1.0,
+              "invariance_preservation": 1.0,
+              "prediction_accuracy": 0.0,
+              "prediction_baseline": 0.5,
+              "prediction_component": 0.0,
+              "reconstruction_score": 0.82
+            },
+            "coverage_score": 0.710481148026,
+            "decline_count": 0,
+            "holdout_count": 0,
+            "lens_id": "petri",
+            "motif_id": "motif.repair.draft",
+            "nondeclined_count": 1,
+            "pair_count": 1
+          },
+          {
+            "components": {
+              "compression_ratio": 0.022286062505,
+              "compression_score": 0.976540986837,
+              "encoding_success": 1.0,
+              "invariance_preservation": 1.0,
+              "prediction_accuracy": 0.0,
+              "prediction_baseline": 0.5,
+              "prediction_component": 0.0,
+              "reconstruction_score": 0.82
+            },
+            "coverage_score": 0.710481148026,
+            "decline_count": 0,
+            "holdout_count": 0,
+            "lens_id": "petri",
+            "motif_id": "motif.replication_lineage.draft",
+            "nondeclined_count": 1,
+            "pair_count": 1
+          }
+        ]
+      },
+      "math_primitives": {
+        "basis": "math primitives as reaction-network closure surrogates",
+        "declined_count": 18,
+        "evaluation_count": 48,
+        "nondeclined_count": 30,
+        "positive_label_count": 0,
+        "projected_world_family": "crn",
+        "source_world_family": "math_primitives",
+        "top_coverage": [
+          {
+            "components": {
+              "compression_ratio": 0.040503906873,
+              "compression_score": 0.957364308555,
+              "encoding_success": 1.0,
+              "invariance_preservation": 1.0,
+              "prediction_accuracy": 0.0,
+              "prediction_baseline": 0.5,
+              "prediction_component": 0.0,
+              "reconstruction_score": 0.82
+            },
+            "coverage_score": 0.707604646283,
+            "decline_count": 0,
+            "holdout_count": 0,
+            "lens_id": "petri",
+            "motif_id": "motif.autocatalytic_closure.draft",
+            "nondeclined_count": 1,
+            "pair_count": 1
+          },
+          {
+            "components": {
+              "compression_ratio": 0.040503906873,
+              "compression_score": 0.957364308555,
+              "encoding_success": 1.0,
+              "invariance_preservation": 1.0,
+              "prediction_accuracy": 0.0,
+              "prediction_baseline": 0.5,
+              "prediction_component": 0.0,
+              "reconstruction_score": 0.82
+            },
+            "coverage_score": 0.707604646283,
+            "decline_count": 0,
+            "holdout_count": 0,
+            "lens_id": "petri",
+            "motif_id": "motif.repair.draft",
+            "nondeclined_count": 1,
+            "pair_count": 1
+          },
+          {
+            "components": {
+              "compression_ratio": 0.040503906873,
+              "compression_score": 0.957364308555,
+              "encoding_success": 1.0,
+              "invariance_preservation": 1.0,
+              "prediction_accuracy": 0.0,
+              "prediction_baseline": 0.5,
+              "prediction_component": 0.0,
+              "reconstruction_score": 0.82
+            },
+            "coverage_score": 0.707604646283,
+            "decline_count": 0,
+            "holdout_count": 0,
+            "lens_id": "petri",
+            "motif_id": "motif.replication_lineage.draft",
+            "nondeclined_count": 1,
+            "pair_count": 1
+          }
+        ]
+      }
+    },
+    "interpretation": "Projection counts are bridge diagnostics for math-shadow design; they do not override the raw 96/96 low-level lens decline.",
+    "projection_option_count": 6
+  }
+}

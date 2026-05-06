@@ -1,0 +1,39 @@
+{
+  "acceptance_outcome": "pass",
+  "actual_files": 6,
+  "actual_minutes": null,
+  "actual_tests": 0,
+  "calibration_method": "Reference class: bounded code-review/audit task, not a build campaign. Closest prior shapes are design/audit slices in the 15-35 minute range, plus TASK-024 verification work where the relevant harness and reports are already in place. Estimate formula: 10 min required reading + 15 min artifact/code inspection + 10 min rerun harness and compare hashes + 10 min write Architect-facing report and BUILD_LOG Talk entry = 45 min. I am not deflating further because this is first cross-audit of Claude Builder and requires mistake-catalog reasoning, not just command verification.",
+  "complexity_score": 5,
+  "estimated_files": 3,
+  "estimated_minutes": 45,
+  "estimated_tests": 0,
+  "expansions_planned": [
+    "Read CLAUDE_BUILDER_INITIATION.md mistake catalog and Claude Builder's TASK-CB-001 outputs.",
+    "Rerun the multisubstrate verification harness against the locked Campaign 009 basis and Campaign 010 lens registry hash.",
+    "Audit per-substrate verdicts, substrate-presence diagnostics, schema round-trip, and content-hash determinism.",
+    "Check for observed mistake-catalog classes, especially static-input contamination, engineered passing, and soft enforcement/strict display.",
+    "Write an Architect-facing CODEX_AUDIT_001 report and append a BUILD_LOG Talk entry."
+  ],
+  "expansions_realised": [
+    "Read CLAUDE_BUILDER_INITIATION.md, BUILD_LOG handoff, the multisubstrate report, methods doc, new analysis module, run harness, Campaign 013 helper functions, lens label path, and Class 10 decision-log proposal.",
+    "Reran python -m motifs.geometry.multisubstrate.run twice from cold, rewriting the report and methods artifacts with deterministic byte-equivalent contents and confirming content_hash sha256:cc2a68d7d6a0a4c34458151eb6c7e55b4bea54114c62ba1adefb025e3978d1a2.",
+    "Verified locked basis hash sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb, locked lens registry hash sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8, and 17-path held-out audit with 0 overlap.",
+    "Audited substrate-presence diagnostics and confirmed floor_label_true_count = 0 on digital, field, and morphogenesis despite threshold-mechanical uniform_replication.",
+    "Wrote CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md with audit verdict, Class 10/D22 recommendation, and mentoring instructions for Claude Builder.",
+    "Appended BUILD_LOG.md Talk entry for Architect and cross-audit chronology."
+  ],
+  "model_name": "Codex",
+  "model_version": "gpt-5",
+  "notes": "CODEX_AUDIT_001 completed as exploratory sign-off with one Architect action: require machine-readable scientific_verdict/claim_eligible fields so a high signal_quality_caveat cannot be bypassed by parsing aggregate_verdict alone. Time logging is PI-owned; actual_minutes and estimation_delta are intentionally left null.",
+  "scope_score": 4,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "spec_versions_consulted": [
+    "CLAUDE_BUILDER_INITIATION.md",
+    "reports/campaign_013/multisubstrate_floor_connectivity.json",
+    "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+    "papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md"
+  ],
+  "task_class": "audit",
+  "task_id": "CODEX_AUDIT_001"
+}

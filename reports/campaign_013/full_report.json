@@ -1,0 +1,429 @@
+{
+  "artifacts": {
+    "atlas_seed": "reports/campaign_013/atlas_seed.json",
+    "l3_overlap": "papers/methods/L3_OVERLAP_INSECTS_W7.md",
+    "replication_verdict": "reports/campaign_013/replication_verdict.json",
+    "schema_migration": "reports/campaign_013/schema_migration.json"
+  },
+  "campaign_id": "campaign-013",
+  "gate_count": 26,
+  "gates": {
+    "AT1": {
+      "entry_count": 6,
+      "passed": true
+    },
+    "AT2": {
+      "entry_count": 6,
+      "passed": true
+    },
+    "AT3": {
+      "failure_count": 0,
+      "passed": true
+    },
+    "FC1": {
+      "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+      "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+      "passed": true
+    },
+    "FC2": {
+      "passed": true,
+      "row_count": 156,
+      "sources": {
+        "campaign_009_heldout_partition": 84,
+        "campaign_011_w7_exploratory_densified": 72
+      }
+    },
+    "FC3": {
+      "empirical_p": 0.000999000999000999,
+      "passed": true
+    },
+    "FC4": {
+      "formal_gap": {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.3549345653383201,
+        "max_coverage_score": 0.596665266661,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      "passed": true
+    },
+    "FC5": {
+      "passed": true,
+      "verdict": {
+        "empirical_p": 0.000999000999000999,
+        "formal_gap": 0.3549345653383201,
+        "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+        "threshold_check": {
+          "formal_gap_threshold": 0.2,
+          "p_threshold": 0.05,
+          "replicated": true
+        },
+        "verdict": "replicated"
+      }
+    },
+    "FC6": {
+      "artifact": "reports/campaign_010/formal_deficit_map.json",
+      "passed": true
+    },
+    "FC7": {
+      "passed": true,
+      "truth_pass_update": {
+        "passed": true,
+        "reason": "replication did not weaken or falsify the candidate",
+        "required": false
+      }
+    },
+    "FR": {
+      "gate_count": 26,
+      "passed": true,
+      "reproducibility_script": "make_campaign_013.py"
+    },
+    "L3-1": {
+      "claim_count": 1000,
+      "passed": true
+    },
+    "L3-2": {
+      "honesty_note": "The normalizers fired on every ITIS claim and declined every behavioral mapping because this Lane-1 ITIS taxonomy slice is taxonomic, not trait-bearing.",
+      "passed": true,
+      "process_role_normalized_count": 0
+    },
+    "L3-3": {
+      "detected_count": 35,
+      "passed": true,
+      "template_count": 12
+    },
+    "L3-4": {
+      "motif_count": 6,
+      "passed": true
+    },
+    "L3-5": {
+      "family_count": 853,
+      "passed": true
+    },
+    "L3-6": {
+      "order_count": 28,
+      "passed": true
+    },
+    "L3-7": {
+      "passed": true,
+      "verdict_rows": [
+        {
+          "bias_corrected_matching_taxa": 0,
+          "empirical_p": 1.0,
+          "family_level_independent_occurrences": 0,
+          "itis_matching_taxon_count": 0,
+          "mode_tag": "exploratory",
+          "motif_id": "motif.autocatalytic_closure.draft",
+          "rationale": "Observed biological overlap does not exceed the family-level null.",
+          "verdict": "null",
+          "w7_template_hit_count": 0
+        },
+        {
+          "bias_corrected_matching_taxa": 0,
+          "empirical_p": 1.0,
+          "family_level_independent_occurrences": 0,
+          "itis_matching_taxon_count": 0,
+          "mode_tag": "exploratory",
+          "motif_id": "motif.self_maintained_boundary.draft",
+          "rationale": "W7 detects the motif, but ITIS taxonomy records contain no behavior-bearing process-role evidence for an overlap test.",
+          "verdict": "insufficient-data",
+          "w7_template_hit_count": 5
+        },
+        {
+          "bias_corrected_matching_taxa": 0,
+          "empirical_p": 1.0,
+          "family_level_independent_occurrences": 0,
+          "itis_matching_taxon_count": 0,
+          "mode_tag": "exploratory",
+          "motif_id": "motif.repair.draft",
+          "rationale": "W7 detects the motif, but ITIS taxonomy records contain no behavior-bearing process-role evidence for an overlap test.",
+          "verdict": "insufficient-data",
+          "w7_template_hit_count": 7
+        },
+        {
+          "bias_corrected_matching_taxa": 0,
+          "empirical_p": 1.0,
+          "family_level_independent_occurrences": 0,
+          "itis_matching_taxon_count": 0,
+          "mode_tag": "exploratory",
+          "motif_id": "motif.replication_lineage.draft",
+          "rationale": "W7 detects the motif, but ITIS taxonomy records contain no behavior-bearing process-role evidence for an overlap test.",
+          "verdict": "insufficient-data",
+          "w7_template_hit_count": 5
+        },
+        {
+          "bias_corrected_matching_taxa": 0,
+          "empirical_p": 1.0,
+          "family_level_independent_occurrences": 0,
+          "itis_matching_taxon_count": 0,
+          "mode_tag": "exploratory",
+          "motif_id": "motif.externalized_memory.draft",
+          "rationale": "W7 detects the motif, but ITIS taxonomy records contain no behavior-bearing process-role evidence for an overlap test.",
+          "verdict": "insufficient-data",
+          "w7_template_hit_count": 6
+        },
+        {
+          "bias_corrected_matching_taxa": 0,
+          "empirical_p": 1.0,
+          "family_level_independent_occurrences": 0,
+          "itis_matching_taxon_count": 0,
+          "mode_tag": "exploratory",
+          "motif_id": "motif.floor_connectivity.draft",
+          "rationale": "W7 detects the motif, but ITIS taxonomy records contain no behavior-bearing process-role evidence for an overlap test.",
+          "verdict": "insufficient-data",
+          "w7_template_hit_count": 12
+        }
+      ]
+    },
+    "L3-8": {
+      "mode_tag": "exploratory",
+      "passed": true
+    },
+    "L3-9": {
+      "artifact": "papers/methods/L3_OVERLAP_INSECTS_W7.md",
+      "passed": true
+    },
+    "RG": {
+      "d14_zero": true,
+      "d17_5": true,
+      "d18": true,
+      "d19": true,
+      "d20": true,
+      "d21": true,
+      "passed": true,
+      "prior": {
+        "campaign_002": {
+          "gate_count": 20,
+          "passed_gate_count": 20,
+          "status": "green"
+        },
+        "campaign_005": {
+          "gate_count": 21,
+          "passed_gate_count": 21,
+          "status": "green"
+        },
+        "campaign_006": {
+          "gate_count": 68,
+          "passed_gate_count": 68,
+          "status": "green"
+        },
+        "campaign_007": {
+          "gate_count": 5,
+          "passed_gate_count": 5,
+          "status": "green"
+        },
+        "campaign_008": {
+          "gate_count": 35,
+          "passed_gate_count": 35,
+          "status": "green"
+        },
+        "campaign_009": {
+          "gate_count": 13,
+          "passed_gate_count": 13,
+          "status": "green"
+        },
+        "campaign_010": {
+          "gate_count": 24,
+          "passed_gate_count": 24,
+          "status": "green"
+        },
+        "campaign_011": {
+          "gate_count": 32,
+          "passed_gate_count": 32,
+          "status": "green"
+        },
+        "campaign_012": {
+          "gate_count": 24,
+          "passed_gate_count": 24,
+          "status": "green"
+        }
+      },
+      "regression": {
+        "doctrine_lints": {
+          "D14": "green",
+          "D17.5": "green",
+          "D18": "green",
+          "D19": "green",
+          "D20": "green",
+          "D21": "green"
+        },
+        "full_suite_unsplit_note": "A single unsplit pytest run exceeded the command window; the suite was verified in bounded chunks with 265/265 collected tests passing.",
+        "passed": true,
+        "prior_campaigns": {
+          "campaign_002": {
+            "gate_count": 20,
+            "passed_gate_count": 20,
+            "status": "green"
+          },
+          "campaign_005": {
+            "gate_count": 21,
+            "passed_gate_count": 21,
+            "status": "green"
+          },
+          "campaign_006": {
+            "gate_count": 68,
+            "passed_gate_count": 68,
+            "status": "green"
+          },
+          "campaign_007_hardcode": {
+            "gate_count": 9,
+            "passed_gate_count": 9,
+            "status": "green"
+          },
+          "campaign_007_truth": {
+            "gate_count": 5,
+            "passed_gate_count": 5,
+            "status": "green"
+          },
+          "campaign_008": {
+            "gate_count": 35,
+            "passed_gate_count": 35,
+            "status": "green"
+          },
+          "campaign_009": {
+            "gate_count": 13,
+            "passed_gate_count": 13,
+            "status": "green"
+          },
+          "campaign_010": {
+            "gate_count": 24,
+            "passed_gate_count": 24,
+            "status": "green"
+          },
+          "campaign_011": {
+            "gate_count": 32,
+            "passed_gate_count": 32,
+            "status": "green"
+          },
+          "campaign_012": {
+            "gate_count": 24,
+            "passed_gate_count": 24,
+            "status": "green"
+          }
+        },
+        "pytest": {
+          "collected": 265,
+          "passed": 265,
+          "split_runs": [
+            {
+              "name": "campaign_011_012_013",
+              "passed": 41
+            },
+            {
+              "name": "campaign_008",
+              "passed": 16
+            },
+            {
+              "name": "campaign_009_010",
+              "passed": 15
+            },
+            {
+              "name": "field_world_reconstruction",
+              "passed": 43
+            },
+            {
+              "name": "morphogenesis_world_reconstruction",
+              "passed": 35
+            },
+            {
+              "name": "digital_world_reconstruction",
+              "passed": 41
+            },
+            {
+              "name": "campaign_002_core",
+              "passed": 7
+            },
+            {
+              "name": "campaign_003_007",
+              "passed": 24
+            },
+            {
+              "name": "core_lints_and_factory",
+              "passed": 20
+            },
+            {
+              "name": "phase1_completion_and_chemistry",
+              "passed": 9
+            },
+            {
+              "name": "raf_spine_w2",
+              "passed": 14
+            }
+          ]
+        },
+        "schema": "Campaign013Regression.v1"
+      }
+    },
+    "SD1": {
+      "passed": true,
+      "roundtrip": {
+        "claim_id": "claim.syn.lane1.000.000",
+        "passed": true,
+        "schema": "Campaign013SchemaRoundTrip.v1"
+      }
+    },
+    "SD2": {
+      "derivation_summary": {
+        "rows": {
+          "claim_publication_year": {
+            "filled_count": 0,
+            "replay_flag_count": 350
+          },
+          "life_stage_context": {
+            "filled_count": 0,
+            "replay_flag_count": 350
+          },
+          "normalization_version": {
+            "filled_count": 350,
+            "replay_flag_count": 0
+          },
+          "observation_setting": {
+            "filled_count": 350,
+            "replay_flag_count": 0
+          },
+          "schema_version_at_extraction": {
+            "filled_count": 350,
+            "replay_flag_count": 0
+          },
+          "scope_level": {
+            "filled_count": 350,
+            "replay_flag_count": 0
+          },
+          "source_authority_class": {
+            "filled_count": 350,
+            "replay_flag_count": 0
+          },
+          "spatial_context": {
+            "filled_count": 0,
+            "replay_flag_count": 200
+          },
+          "taxon_synonym_chain": {
+            "filled_count": 350,
+            "replay_flag_count": 200
+          },
+          "temporal_context": {
+            "filled_count": 144,
+            "replay_flag_count": 206
+          }
+        },
+        "schema": "Campaign013MigrationDerivationSummary.v1"
+      },
+      "passed": true
+    },
+    "SD3": {
+      "migrated_record_count": 350,
+      "passed": true
+    },
+    "SD4": {
+      "artifact": "reports/campaign_013/schema_version_lint.json",
+      "passed": true
+    },
+    "SD5": {
+      "artifact": "reports/campaign_013/cache_integrity.json",
+      "passed": true
+    }
+  },
+  "passed_gate_count": 26,
+  "schema": "Campaign013FullReport.v1",
+  "status": "green"
+}

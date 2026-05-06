@@ -1,0 +1,45 @@
+/* Base for /preview/*.html cards.
+ * Pulls tokens, sets the dark scientific-observatory canvas, scopes a card
+ * frame so cards render correctly in isolation. */
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-deep);
+  color: var(--fg2);
+  font-family: var(--font-body);
+}
+body {
+  /* Faint observatory grid + soft radial glows */
+  background:
+    var(--noise-dim),
+    var(--grid-faint),
+    var(--bg-deep);
+  background-size: 100% 100%, var(--grid-faint-size), 100% 100%;
+}
+.card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.col { display: flex; flex-direction: column; gap: 8px; }
+.swatch {
+  width: 100%;
+  height: 56px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.swatch.tall { height: 80px; }
+.token-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--fs-detail);
+}
+.token-meta .name { color: var(--fg2); }
+.token-meta .hex  { color: var(--fg4); }
+.scale-row { display: grid; grid-template-columns: 80px 1fr 100px; gap: 12px; align-items: center; }
+.kicker { color: var(--fg4); font-family: var(--font-mono); font-size: var(--fs-detail); letter-spacing: var(--tracking-cap); text-transform: uppercase; }

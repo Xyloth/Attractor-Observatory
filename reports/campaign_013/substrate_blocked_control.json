@@ -1,0 +1,119 @@
+{
+  "N_attempted": 10000,
+  "N_run": 0,
+  "content_hash": "sha256:8edd8dc5e5d0a109a28b867f29112e471edee6e083d3c5a8b4443813969eba62",
+  "evidence_row_count": 816,
+  "floor_evaluation_row_count_8_lenses_x_floor_evidence": 1088,
+  "floor_evidence_row_count": 136,
+  "interpretation": {
+    "L5_implication": "The TASK-CB-002 v2 pooled-corpus 'replicated' threshold result CANNOT be interpreted as substrate-blind multi-substrate confirmation. The Class 11 finding from CODEX_AUDIT_002 is operationally confirmed by this control. floor_connectivity L5 candidacy is NOT advanced by the pooled result; the only substrate-blind confirmation that survives this control is the Campaign 013 W1/W2-context replication on the deficit-map independent corpus.",
+    "rationale": "Every stratum's floor label distribution is uniform (single class within stratum). Within-stratum shuffle is degenerate -- it produces the same labels every permutation, and the null statistic equals the observed statistic on every iteration. The substrate-blocked control therefore CANNOT distinguish substrate-classification signal from substrate-blind floor signal. Per Codex's outline, the verdict is 'not_evaluable_substrate_confounded' (NOT 'replicated', NOT 'low power'). The pooled result from TASK-CB-002 v2 is therefore confirmed as substrate-confounded under the ratified Class 11 discipline; the original 'replicated' threshold output cannot be interpreted as floor-connectivity signal.",
+    "verdict": "not_evaluable_substrate_confounded"
+  },
+  "locked_instruments": {
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "basis_unchanged": true,
+    "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_unchanged": true
+  },
+  "mode_tag": "exploratory",
+  "observed_breakdown": {
+    "floor_gap": 0.30712826510256,
+    "other_gap_mean": 0.02679578036058001
+  },
+  "observed_statistic": 0.28033248474198,
+  "schema": "TaskCB003SubstrateBlockedControl.v1",
+  "seed": 13013,
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "step_0a": {
+    "per_stratum": {
+      "cognitive::campaign_008/traces": {
+        "F": 0,
+        "T": 4,
+        "minority": 0,
+        "total": 4,
+        "uniform": true
+      },
+      "cognitive::campaign_010/traces": {
+        "F": 0,
+        "T": 8,
+        "minority": 0,
+        "total": 8,
+        "uniform": true
+      },
+      "crn::campaign_009/traces": {
+        "F": 36,
+        "T": 0,
+        "minority": 0,
+        "total": 36,
+        "uniform": true
+      },
+      "digital::campaign_009/traces": {
+        "F": 20,
+        "T": 0,
+        "minority": 0,
+        "total": 20,
+        "uniform": true
+      },
+      "field::campaign_007/w3_traces": {
+        "F": 8,
+        "T": 0,
+        "minority": 0,
+        "total": 8,
+        "uniform": true
+      },
+      "morphogenesis::campaign_009/traces": {
+        "F": 20,
+        "T": 0,
+        "minority": 0,
+        "total": 20,
+        "uniform": true
+      },
+      "protocell::campaign_009/traces": {
+        "F": 20,
+        "T": 0,
+        "minority": 0,
+        "total": 20,
+        "uniform": true
+      },
+      "quasispecies::campaign_008/traces": {
+        "F": 0,
+        "T": 4,
+        "minority": 0,
+        "total": 4,
+        "uniform": true
+      },
+      "quasispecies::campaign_010/traces": {
+        "F": 0,
+        "T": 6,
+        "minority": 0,
+        "total": 6,
+        "uniform": true
+      },
+      "symbiogenesis::campaign_008/traces": {
+        "F": 0,
+        "T": 4,
+        "minority": 0,
+        "total": 4,
+        "uniform": true
+      },
+      "symbiogenesis::campaign_010/traces": {
+        "F": 0,
+        "T": 6,
+        "minority": 0,
+        "total": 6,
+        "uniform": true
+      }
+    },
+    "rationale": "Step 0a (within-stratum balance) requires \u22652 strata to carry both pos and neg labels. Found 0 of 11 strata with both classes. Step 0a FAILED.",
+    "step_0a_passed": false,
+    "strata_count": 11,
+    "strata_with_both_classes": [],
+    "strata_with_both_classes_count": 0
+  },
+  "step_0b_run": false,
+  "step_0b_skipped_reason": "every stratum uniform; within-stratum shuffle is degenerate",
+  "stratum_count": 11
+}

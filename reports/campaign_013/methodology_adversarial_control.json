@@ -1,0 +1,121 @@
+{
+  "all_motif_gaps": [
+    {
+      "attractor_strength": 0.62,
+      "best_lens": "graph",
+      "formal_gap": 0.03618088193965998,
+      "max_coverage_score": 0.941643738807,
+      "motif_id": "motif.autocatalytic_closure.draft"
+    },
+    {
+      "attractor_strength": 0.7,
+      "best_lens": "graph",
+      "formal_gap": 0.04084938283509998,
+      "max_coverage_score": 0.941643738807,
+      "motif_id": "motif.externalized_memory.draft"
+    },
+    {
+      "attractor_strength": 0.88,
+      "best_lens": "dynamical_systems",
+      "formal_gap": 0.3549345653383201,
+      "max_coverage_score": 0.596665266661,
+      "motif_id": "motif.floor_connectivity.draft"
+    },
+    {
+      "attractor_strength": 0.62,
+      "best_lens": "graph",
+      "formal_gap": 0.03618088193965998,
+      "max_coverage_score": 0.941643738807,
+      "motif_id": "motif.repair.draft"
+    },
+    {
+      "attractor_strength": 0.62,
+      "best_lens": "graph",
+      "formal_gap": 0.03618088193965998,
+      "max_coverage_score": 0.941643738807,
+      "motif_id": "motif.replication_lineage.draft"
+    },
+    {
+      "attractor_strength": 0.74,
+      "best_lens": "graph",
+      "formal_gap": 0.043183633282819975,
+      "max_coverage_score": 0.941643738807,
+      "motif_id": "motif.self_maintained_boundary.draft"
+    }
+  ],
+  "baselines": {
+    "campaign_013_lens_coverage_for_target": 0.941643738807,
+    "comparison_note": "Per Codex outline pitfall: a 'lens captures motif' verdict requires the lens's coverage_score to exceed both the majority-label baseline (always-predict-most-common) and the substrate-only baseline (predict by world_family alone). If lens coverage is at or below either baseline, the lens is not contributing additional discrimination beyond what's available from substrate identity.",
+    "lens_beats_majority": true,
+    "lens_beats_substrate_only": true,
+    "majority_label_baseline_accuracy": 0.5384615384615384,
+    "substrate_only_baseline_accuracy": 0.8461538461538461
+  },
+  "campaign_013_evidence_row_count": 156,
+  "campaign_013_evidence_target_row_count": 26,
+  "content_hash": "sha256:b341b030d1945b190881f977e129be6be3288a1b9ac14562af0e8674a760574e",
+  "floor_motif_formal_gap_for_comparison": {
+    "attractor_strength": 0.88,
+    "best_lens": "dynamical_systems",
+    "formal_gap": 0.3549345653383201,
+    "max_coverage_score": 0.596665266661,
+    "motif_id": "motif.floor_connectivity.draft"
+  },
+  "interpretation": {
+    "empirical_p": 1.0,
+    "formal_gap": 0.03618088193965998,
+    "gap_threshold": 0.2,
+    "p_threshold": 0.05,
+    "rationale": "Adversarial target motif.replication_lineage.draft (K2 coverage \u2265 0.85) returns formal_gap = 0.036181 (< 0.2) and N7 empirical p = 1.000000 (> 0.05). The methodology correctly does NOT flag a known-captured motif as a deficit candidate. Discriminating power validated.",
+    "verdict": "methodology_sound"
+  },
+  "k2_step_0a_check": {
+    "holdout_count": 42,
+    "k2_coverage_score": 0.959239741731,
+    "k2_floor": 0.85,
+    "lens_id": "graph",
+    "motif_id": "motif.replication_lineage.draft",
+    "nondeclined_count": 141,
+    "passed": true,
+    "source": "reports/campaign_010/coverage_matrix.json"
+  },
+  "label_distribution_for_target": {
+    "false": 16,
+    "true": 10
+  },
+  "locked_instruments": {
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "basis_unchanged": true,
+    "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_unchanged": true
+  },
+  "mode_tag": "exploratory",
+  "n7": {
+    "N": 1000,
+    "empirical_p": 1.0,
+    "null_ci": {
+      "ci_high": -0.0048329748932009284,
+      "ci_low": -0.006974286261179033,
+      "mean": -0.005903630577189981,
+      "width": 0.0021413113679781054
+    },
+    "null_mean": -0.005903630577189981,
+    "observed_statistic": -0.066084987127452,
+    "schema": "TaskCB003N7AdversarialNull.v1",
+    "seed": 13013,
+    "target_motif": "motif.replication_lineage.draft"
+  },
+  "schema": "TaskCB003AdversarialControl.v1",
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "target_lens": "graph",
+  "target_motif": "motif.replication_lineage.draft",
+  "target_motif_formal_gap": {
+    "attractor_strength": 0.62,
+    "best_lens": "graph",
+    "formal_gap": 0.03618088193965998,
+    "max_coverage_score": 0.941643738807,
+    "motif_id": "motif.replication_lineage.draft"
+  }
+}

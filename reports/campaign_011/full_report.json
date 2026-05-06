@@ -1,0 +1,349 @@
+{
+  "artifacts": {
+    "calibration": "reports/campaign_011/calibration_full.json",
+    "doctrine": "docs/doctrine_d19_d21.md",
+    "factory": "reports/campaign_011/ingestion_factory.json",
+    "ontology": "reports/campaign_011/ontology_full.json",
+    "w7": "reports/campaign_011/w7_densification_report.json"
+  },
+  "campaign_id": "campaign-011",
+  "gate_count": 32,
+  "gates": {
+    "D19": {
+      "false_claim_rejection_rate": 1.0,
+      "passed": true,
+      "source_bound": true,
+      "violations": []
+    },
+    "D20": {
+      "consulted_count": 12,
+      "detector_allowed": true,
+      "passed": true,
+      "unlocked_sample_rejected": true
+    },
+    "D21": {
+      "actual_violation_count": 0,
+      "future_claim_ready_allowed": true,
+      "invalid_claim_bearing_rejected": true,
+      "passed": true
+    },
+    "DR": {
+      "artifact": "docs\\doctrine_d19_d21.md",
+      "doctrine_ids": [
+        "D19",
+        "D20",
+        "D21"
+      ],
+      "passed": true
+    },
+    "F1": {
+      "claim_count": 200,
+      "passed": true
+    },
+    "F2": {
+      "passed": true,
+      "status_counts": {
+        "extracted": 170,
+        "promoted_trace_valid": 1,
+        "rejected_false_claim": 30
+      }
+    },
+    "F3": {
+      "edge_count": 252,
+      "node_count": 161,
+      "passed": true
+    },
+    "F4": {
+      "claim_count": 200,
+      "passed": true,
+      "source_count": 200
+    },
+    "F5": {
+      "normalizer_counts": {
+        "channels": 200,
+        "effects": 200,
+        "overlap_fields": 127,
+        "process_roles": 200
+      },
+      "passed": true
+    },
+    "F6": {
+      "artifact": "reports/campaign_011/w7_recommendations.json",
+      "passed": true
+    },
+    "F7": {
+      "artifact": "reports/campaign_011/background_jobs.json",
+      "passed": true
+    },
+    "FR": {
+      "gate_count": 32,
+      "passed": true,
+      "reproducibility_script": "make_campaign_011.py"
+    },
+    "KE1": {
+      "contradiction_flag_rate": 1.0,
+      "false_claim_rejection_rate": 1.0,
+      "passed": true
+    },
+    "KE2": {
+      "leak_count": 0,
+      "passed": true,
+      "restricted_source_count": 12
+    },
+    "KP1": {
+      "ece": 0.043333333333333446,
+      "passed": true,
+      "roc_auc": 1.0,
+      "row_count": 36
+    },
+    "KP2": {
+      "ece": 0.04250000000000009,
+      "passed": true,
+      "roc_auc": 1.0,
+      "row_count": 40
+    },
+    "KP3": {
+      "ece": 0.05899999999999994,
+      "passed": true,
+      "roc_auc": 1.0,
+      "row_count": 40
+    },
+    "KP4": {
+      "ece": 0.04250000000000009,
+      "passed": true,
+      "roc_auc": 1.0,
+      "row_count": 44
+    },
+    "LE1": {
+      "passed": true,
+      "restricted_source_count": 8
+    },
+    "LE2": {
+      "artifact": "reports/campaign_011/license_enforcement.json",
+      "passed": true
+    },
+    "ON1": {
+      "category_count": 9,
+      "entry_count": 22,
+      "passed": true
+    },
+    "ON2": {
+      "entry_count": 15,
+      "passed": true
+    },
+    "ON3": {
+      "entry_count": 10,
+      "passed": true
+    },
+    "ON4": {
+      "entry_count": 4,
+      "four_part_sample": {
+        "counterfactual": true,
+        "passed": true,
+        "persist": true,
+        "read": true,
+        "write": true
+      },
+      "passed": true
+    },
+    "ON5": {
+      "artifact": "reports/campaign_011/ontology_trait_decomposition.json",
+      "passed": true
+    },
+    "ON6": {
+      "content_hash": "sha256:78633698ad9585c8fea148cbf8773d62c87f3d3ae6fea9c00d5d988c28755408",
+      "passed": true,
+      "tombstone_count": 0
+    },
+    "ON7": {
+      "artifact": "reports/campaign_011/ontology_registry.json",
+      "passed": true
+    },
+    "RG": {
+      "d14_zero": true,
+      "d18_lint": {
+        "checks": {
+          "abstention_rules_declared": true,
+          "adversarial_stable": true,
+          "content_hash_locked": true,
+          "cross_substrate_consistent": true,
+          "distance_metrics_declared": true,
+          "identity_blind": true
+        },
+        "passed": true,
+        "prereg_id": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc",
+        "schema": "BFGPreregistrationLint.v1"
+      },
+      "passed": true,
+      "prior": {
+        "campaign_002": {
+          "gate_count": 20,
+          "passed_gate_count": 20,
+          "status": "green"
+        },
+        "campaign_005": {
+          "gate_count": 21,
+          "passed_gate_count": 21,
+          "status": "green"
+        },
+        "campaign_006": {
+          "gate_count": 68,
+          "passed_gate_count": 68,
+          "status": "green"
+        },
+        "campaign_007": {
+          "gate_count": 5,
+          "passed_gate_count": 5,
+          "status": "green"
+        },
+        "campaign_008": {
+          "gate_count": 35,
+          "passed_gate_count": 35,
+          "status": "green"
+        },
+        "campaign_009": {
+          "gate_count": 13,
+          "passed_gate_count": 13,
+          "status": "green"
+        },
+        "campaign_010": {
+          "gate_count": 24,
+          "passed_gate_count": 24,
+          "status": "green"
+        }
+      },
+      "regression": {
+        "groups": [
+          {
+            "command": "python -m pytest tests\\test_campaign011.py -q",
+            "failed": 0,
+            "name": "campaign_011",
+            "passed": 16
+          },
+          {
+            "command": "python -m pytest tests\\test_field_world_reconstruction.py -q",
+            "failed": 0,
+            "name": "field_world_reconstruction",
+            "passed": 43
+          },
+          {
+            "command": "python -m pytest tests\\test_morphogenesis_world_reconstruction.py -q",
+            "failed": 0,
+            "name": "morphogenesis_world_reconstruction",
+            "passed": 35
+          },
+          {
+            "command": "python -m pytest tests\\test_digital_world_reconstruction.py -q",
+            "failed": 0,
+            "name": "digital_world_reconstruction",
+            "passed": 41
+          },
+          {
+            "command": "python -m pytest tests\\test_basin_width.py tests\\test_campaign002_foundation.py tests\\test_campaign002_nulls.py tests\\test_campaign003.py tests\\test_campaign004.py -q",
+            "failed": 0,
+            "name": "campaign_002_to_004",
+            "passed": 13
+          },
+          {
+            "command": "python -m pytest tests\\test_campaign005.py tests\\test_campaign006.py tests\\test_campaign007_hardcode_excision.py tests\\test_campaign007_truth.py -q",
+            "failed": 0,
+            "name": "campaign_005_to_007",
+            "passed": 17
+          },
+          {
+            "command": "python -m pytest tests\\test_campaign008.py tests\\test_campaign009.py tests\\test_campaign010.py tests\\test_campaign011.py -q",
+            "failed": 0,
+            "name": "campaign_008_to_011",
+            "passed": 47
+          },
+          {
+            "command": "python -m pytest tests\\test_campaign_prereg.py tests\\test_closure_calibration_gates.py tests\\test_core_kernel.py tests\\test_cross_detector_kappa.py tests\\test_cross_family_transfer.py tests\\test_dictionary_echo.py -q",
+            "failed": 0,
+            "name": "core_lints_and_calibration",
+            "passed": 13
+          },
+          {
+            "command": "python -m pytest tests\\test_estimation_loop.py tests\\test_evidence_roundtrip.py tests\\test_full_campaign_report.py tests\\test_instrument_health_campaign002.py tests\\test_negative_space.py -q",
+            "failed": 0,
+            "name": "telemetry_and_evidence",
+            "passed": 7
+          },
+          {
+            "command": "python -m pytest tests\\test_phase1_chemistry.py tests\\test_phase1_completion.py tests\\test_raf_canonical.py tests\\test_spine.py tests\\test_w2_protocell.py -q",
+            "failed": 0,
+            "name": "phase1_spine_and_protocell",
+            "passed": 23
+          }
+        ],
+        "passed": true,
+        "prior_campaign_regeneration": {
+          "campaign_002": {
+            "gate_count": 20,
+            "passed_gate_count": 20,
+            "status": "green"
+          },
+          "campaign_005": {
+            "gate_count": 21,
+            "passed_gate_count": 21,
+            "status": "green"
+          },
+          "campaign_006": {
+            "gate_count": 68,
+            "passed_gate_count": 68,
+            "status": "green"
+          },
+          "campaign_007": {
+            "gate_count": 5,
+            "passed_gate_count": 5,
+            "status": "green"
+          },
+          "campaign_008": {
+            "gate_count": 35,
+            "passed_gate_count": 35,
+            "status": "green"
+          },
+          "campaign_009": {
+            "gate_count": 13,
+            "passed_gate_count": 13,
+            "status": "green"
+          },
+          "campaign_010": {
+            "gate_count": 24,
+            "passed_gate_count": 24,
+            "status": "green"
+          }
+        },
+        "pytest": {
+          "collected": 239,
+          "execution_mode": "split_by_test_group_after_single full pytest exceeded the tool timeout",
+          "failed": 0,
+          "passed": 239
+        },
+        "schema": "Campaign011RegressionVerification.v1"
+      }
+    },
+    "W7-1": {
+      "axis_count": 6,
+      "mean_entropy": 0.9998613237697036,
+      "organism_type_count": 12,
+      "passed": true
+    },
+    "W7-2": {
+      "passed": true,
+      "source_count": 120,
+      "template_count": 12
+    },
+    "W7-3": {
+      "density_class_after": "exploratory_densified",
+      "passed": true
+    },
+    "W7-4": {
+      "artifact": "reports/campaign_011/w7_densification_report.json",
+      "passed": true
+    }
+  },
+  "note": "DR is the explicit doctrine-registry ratification gate added because the driver table names 31 rows while requiring 32 gates.",
+  "passed_gate_count": 32,
+  "schema": "Campaign011FullReport.v1",
+  "status": "green"
+}

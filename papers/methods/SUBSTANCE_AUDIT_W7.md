@@ -36,4 +36,9 @@ Measured simulation logic: 478 lines against a 500-line proxy floor
 The 22-line shortfall is not evidence of a missing swarm component. The world has embodied agents, spatial fields, memory, communication, role allocation, task interaction, controls, and trace-backed invariants. The proxy floor should not force filler code.
 
 Architect verdict: meets_spec_with_caveats
+## Campaign 012 Template Naming Refresh
 
+- Renamed W7 simulation templates to axis-configuration identifiers; template count: 12.
+- Biology surface labels moved to `surface_label_examples` where present; identifiers no longer borrow genus/species-style labels.
+- Template lint passed: True with 0 violations.
+- Existing source evidence IDs are preserved through the rename.

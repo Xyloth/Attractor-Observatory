@@ -1,0 +1,223 @@
+{
+  "artifacts": {
+    "bfg_truth": "reports/campaign_010/bfg_w8_w11_w12.json",
+    "coverage_matrix": "reports/campaign_010/coverage_matrix.json",
+    "deficit_map": "reports/campaign_010/formal_deficit_map.json",
+    "lens_domains": "reports/campaign_010/lens_domains.json",
+    "truth_pass": "papers/methods/TRUTH_PASS.md"
+  },
+  "campaign_id": "campaign-010",
+  "gate_count": 24,
+  "gates": {
+    "DM1": {
+      "components_ok": true,
+      "lens_count": 8,
+      "motif_count": 6,
+      "passed": true
+    },
+    "DM2": {
+      "artifact": "reports/campaign_010/coverage_matrix.json",
+      "passed": true
+    },
+    "DM3": {
+      "artifact": "reports/campaign_010/encoding_compression.json",
+      "passed": true
+    },
+    "DM4": {
+      "artifact": "papers/prereg/deficit_map_v0.signed.json",
+      "content_hash": "sha256:204712c952011141f5c7eb2f1cf63187a5edbbdc742abefcc29adb74580e6866",
+      "passed": true
+    },
+    "DM5": {
+      "artifact": "reports/campaign_010/residual_structure.json",
+      "passed": true,
+      "verdict": "lens_captures_motif"
+    },
+    "DM6": {
+      "artifact": "reports/campaign_010/n7_lens_permutation.json",
+      "empirical_p": 0.001998001998001998,
+      "passed": true
+    },
+    "DM7": {
+      "artifact": "reports/campaign_010/formal_gap.json",
+      "candidate_count": 1,
+      "passed": true
+    },
+    "DM8": {
+      "artifact": "reports/campaign_010/formal_deficit_map.json",
+      "passed": true
+    },
+    "LR1": {
+      "lens_count": 8,
+      "new_lenses": [
+        "control_theory",
+        "dynamical_systems",
+        "petri",
+        "statistical_mechanics",
+        "topology"
+      ],
+      "passed": true
+    },
+    "LR2": {
+      "artifact": "reports/campaign_010/lens_domains.json",
+      "passed": true
+    },
+    "LR3": {
+      "artifact": "reports/campaign_010/lens_ast_lint.json",
+      "passed": true,
+      "violations": []
+    },
+    "LR4": {
+      "artifact": "reports/campaign_010/lens_compositionality.json",
+      "passed": true
+    },
+    "LR5": {
+      "artifact": "reports/campaign_010/lens_invariance.json",
+      "passed": true
+    },
+    "LR6": {
+      "artifact": "reports/campaign_010/encoding_compression.json",
+      "passed": true,
+      "passed_lens_count": 8
+    },
+    "LR7": {
+      "artifact": "reports/campaign_010/lens_roundtrip.json",
+      "passed": true
+    },
+    "LR8": {
+      "artifact": "reports/campaign_010/lens_predictive.json",
+      "passed": true
+    },
+    "TR1": {
+      "passed": true,
+      "worlds": {
+        "W11": {
+          "max_ci_width": 0.2,
+          "motif_count": 4
+        },
+        "W12": {
+          "max_ci_width": 0.13046022590078368,
+          "motif_count": 4
+        },
+        "W8": {
+          "max_ci_width": 0.12702251768879408,
+          "motif_count": 4
+        }
+      }
+    },
+    "TR2": {
+      "passed": true,
+      "routed_count": 1,
+      "w13_upgraded": true
+    },
+    "TR3": {
+      "artifact": "reports/campaign_010/substance_audit_refresh.json",
+      "passed": true
+    },
+    "TR4": {
+      "downgraded_worlds": [],
+      "passed": true
+    },
+    "TR5": {
+      "passed": true,
+      "standing": [],
+      "superseded": []
+    },
+    "TR6": {
+      "artifact": "papers/methods/TRUTH_PASS.md",
+      "passed": true
+    },
+    "TR7": {
+      "artifact": "reports/campaign_010/d14_audit.json",
+      "passed": true,
+      "violations": 0
+    },
+    "TR8": {
+      "passed": true,
+      "prior": {
+        "campaign_002": {
+          "gate_count": 20,
+          "passed_gate_count": 20,
+          "status": "green"
+        },
+        "campaign_005": {
+          "gate_count": 21,
+          "passed_gate_count": 21,
+          "status": "green"
+        },
+        "campaign_006": {
+          "gate_count": 68,
+          "passed_gate_count": 68,
+          "status": "green"
+        },
+        "campaign_007": {
+          "gate_count": 5,
+          "passed_gate_count": 5,
+          "status": "green"
+        },
+        "campaign_008": {
+          "gate_count": 35,
+          "passed_gate_count": 35,
+          "status": "green"
+        },
+        "campaign_009": {
+          "gate_count": 13,
+          "passed_gate_count": 13,
+          "status": "green"
+        }
+      },
+      "regression": {
+        "campaigns": {
+          "campaign_002": {
+            "command": "python make_campaign_002.py",
+            "gate_count": 20,
+            "passed_gate_count": 20,
+            "status": "green"
+          },
+          "campaign_005": {
+            "command": "python make_campaign_005.py",
+            "gate_count": 21,
+            "passed_gate_count": 21,
+            "status": "green"
+          },
+          "campaign_006": {
+            "command": "python make_campaign_006.py",
+            "gate_count": 68,
+            "passed_gate_count": 68,
+            "status": "green"
+          },
+          "campaign_007": {
+            "command": "python make_campaign_007.py",
+            "gate_count": 5,
+            "passed_gate_count": 5,
+            "status": "green"
+          },
+          "campaign_008": {
+            "command": "python make_campaign_008.py",
+            "gate_count": 35,
+            "passed_gate_count": 35,
+            "status": "green"
+          },
+          "campaign_009": {
+            "command": "python make_campaign_009.py",
+            "gate_count": 13,
+            "passed_gate_count": 13,
+            "status": "green"
+          }
+        },
+        "d14_lint": "zero violations through reports/campaign_010/d14_audit.json",
+        "passed": true,
+        "pytest": {
+          "command": "python -m pytest -q",
+          "passed": 223,
+          "status": "green",
+          "wall_seconds": 655.53
+        },
+        "schema": "Campaign010RegressionVerification.v1"
+      }
+    }
+  },
+  "passed_gate_count": 24,
+  "schema": "Campaign010FullReport.v1",
+  "status": "green"
+}

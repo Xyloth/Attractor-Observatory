@@ -1,0 +1,80 @@
+{
+  "case_count": 3,
+  "cases": [
+    {
+      "case_id": "math_missing_strange_attractor",
+      "detector_row": {
+        "claim_eligible": false,
+        "detector_id": "detector.low_level.canonical_stable_form",
+        "features": {
+          "event_count": 3,
+          "primitive_classes": [
+            "fixed_point",
+            "limit_cycle",
+            "torus"
+          ],
+          "state_count": 3
+        },
+        "fired": false,
+        "reason": "source-native detector validates low-level trace structure only; it does not promote motifs.",
+        "world_family": "math_primitives"
+      },
+      "expected_detector_id": "detector.low_level.canonical_stable_form",
+      "expected_fired": false,
+      "observed_fired": false,
+      "passed": true,
+      "rationale": "A math catalog with no strange-attractor primitive must not certify the canonical stable-form detector."
+    },
+    {
+      "case_id": "atomic_single_energy_level",
+      "detector_row": {
+        "claim_eligible": false,
+        "detector_id": "detector.low_level.discrete_energy_spectrum",
+        "features": {
+          "bond_topology_events": 0,
+          "max_heavy_atom_count": 0,
+          "max_level_count": 1,
+          "molecular_state_count": 0,
+          "spectral_state_count": 1,
+          "spectral_transition_events": 1
+        },
+        "fired": false,
+        "reason": "source-native detector validates empirical spectrum structure only; it does not promote motifs.",
+        "world_family": "atomic_molecular_primitives"
+      },
+      "expected_detector_id": "detector.low_level.discrete_energy_spectrum",
+      "expected_fired": false,
+      "observed_fired": false,
+      "passed": true,
+      "rationale": "A spectrum with one energy level carries no transition ladder and must decline."
+    },
+    {
+      "case_id": "molecule_no_heavy_atoms",
+      "detector_row": {
+        "claim_eligible": false,
+        "detector_id": "detector.low_level.molecular_topology_presence",
+        "features": {
+          "bond_topology_events": 1,
+          "max_heavy_atom_count": 0,
+          "min_heavy_atom_count": 0,
+          "molecular_state_count": 0
+        },
+        "fired": false,
+        "reason": "source-native detector validates molecular topology presence only; it does not promote motifs.",
+        "world_family": "atomic_molecular_primitives"
+      },
+      "expected_detector_id": "detector.low_level.molecular_topology_presence",
+      "expected_fired": false,
+      "observed_fired": false,
+      "passed": true,
+      "rationale": "A molecule row with no heavy atoms is not a topology-bearing molecule for the source-native detector."
+    }
+  ],
+  "claim_eligible": false,
+  "content_hash": "sha256:1169a17b3f80e19c69af9854492c5f28578f696ab3072dfa969290862b9cef33",
+  "interpretation": "Source-native low-level detectors must fire on the as-built corpus and decline on degenerate inputs before unattended Factory use.",
+  "mode_tag": "exploratory",
+  "passed": true,
+  "passed_case_count": 3,
+  "schema": "Campaign016SourceNativeAdversarialControls.v1"
+}

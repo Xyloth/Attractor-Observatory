@@ -1,0 +1,952 @@
+{
+  "aggregate_verdict": {
+    "claim_eligible": false,
+    "l5_candidacy_advancement": false,
+    "per_substrate_scientific_verdicts": {
+      "cognitive": "not_evaluable_label_uniform",
+      "crn": "not_evaluable_motif_absent",
+      "digital": "not_evaluable_motif_absent",
+      "field": "not_evaluable_motif_absent",
+      "morphogenesis": "not_evaluable_motif_absent",
+      "protocell": "not_evaluable_motif_absent",
+      "quasispecies": "not_evaluable_label_uniform",
+      "symbiogenesis": "not_evaluable_label_uniform"
+    },
+    "per_substrate_threshold_verdicts": {},
+    "rationale": "Step 0 substrate-suitability check failed on every substrate evaluated (8 of 8). Threshold logic was not applicable to any corpus. Per binding Class 10 discipline (and candidate D22), the aggregate scientific verdict is not_evaluable. No L5 candidacy advancement. claim_eligible is structurally False until both (a) at least two Step-0-eligible substrates produce replicated verdicts and (b) the source worlds advance to claim_ready_densified under D21. Step 0 failure breakdown: cognitive=motif_present_uniform_positive, crn=motif_absent_in_corpus, digital=motif_absent_in_corpus, field=motif_absent_in_corpus, morphogenesis=motif_absent_in_corpus, protocell=motif_absent_in_corpus, quasispecies=motif_present_uniform_positive, symbiogenesis=motif_present_uniform_positive",
+    "scientific_verdict": "not_evaluable_no_substrate_suitable",
+    "step_0_eligible_substrates": [],
+    "step_0_failed_substrates": [
+      "cognitive",
+      "crn",
+      "digital",
+      "field",
+      "morphogenesis",
+      "protocell",
+      "quasispecies",
+      "symbiogenesis"
+    ],
+    "step_0_failure_reasons": {
+      "cognitive": "motif_present_uniform_positive",
+      "crn": "motif_absent_in_corpus",
+      "digital": "motif_absent_in_corpus",
+      "field": "motif_absent_in_corpus",
+      "morphogenesis": "motif_absent_in_corpus",
+      "protocell": "motif_absent_in_corpus",
+      "quasispecies": "motif_present_uniform_positive",
+      "symbiogenesis": "motif_present_uniform_positive"
+    },
+    "threshold_verdict": "no_threshold_logic_ran"
+  },
+  "content_hash": "sha256:1dbe5ed2ee1ca02f71850a04f0c537de234e57b53c5e61d736d8e91f742a24fc",
+  "holdout_audit": {
+    "checked_path_count": 136,
+    "deficit_map_evidence_row_count": 141,
+    "deficit_map_prereg": "papers\\prereg\\deficit_map_v0.signed.json",
+    "deficit_map_present": true,
+    "holdout_clean": true,
+    "overlap_count": 0,
+    "overlap_paths": []
+  },
+  "locked_instruments": {
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "basis_unchanged": true,
+    "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_unchanged": true
+  },
+  "mode_tag": "exploratory",
+  "n7_methodology": {
+    "N": 1000,
+    "seed": 13013,
+    "statistic": "floor_connectivity_gap_minus_other_gap_mean"
+  },
+  "notes": "Claude Builder Session 002 / TASK-CB-002. Substrate-suitability gate (Step 0) runs BEFORE the threshold logic for every substrate in the candidate set. Per CODEX_AUDIT_001 P2 fix and the ratified Class 10 / candidate D22 doctrine, the report carries sibling threshold_verdict, scientific_verdict, claim_eligible, and l5_candidacy_advancement fields at every level (per-substrate, pooled, aggregate). The locked Campaign 013 methodology is unchanged (D18 honored); the Step 0 gate determines whether the threshold logic is *applicable* to each substrate's corpus. The candidate set deliberately includes (1) the Architect-specified Campaign 009 BFG corpus, (2) the floor-positive candidates surfaced by extended Step 0 (W8 cognitive, W11 quasispecies, W12 symbiogenesis), and (3) a deliberate W3 field negative-control substrate so the Step 0 plumbing self-tests on a known-absent corpus.",
+  "pooled_result": {
+    "all_motif_gaps": [
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.02517179373468,
+        "max_coverage_score": 0.959400332686,
+        "motif_id": "motif.autocatalytic_closure.draft"
+      },
+      {
+        "attractor_strength": 0.7,
+        "best_lens": "graph",
+        "formal_gap": 0.0284197671198,
+        "max_coverage_score": 0.959400332686,
+        "motif_id": "motif.externalized_memory.draft"
+      },
+      {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.31682500442032,
+        "max_coverage_score": 0.639971585886,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.02517179373468,
+        "max_coverage_score": 0.959400332686,
+        "motif_id": "motif.repair.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.02517179373468,
+        "max_coverage_score": 0.959400332686,
+        "motif_id": "motif.replication_lineage.draft"
+      },
+      {
+        "attractor_strength": 0.74,
+        "best_lens": "graph",
+        "formal_gap": 0.030043753812359998,
+        "max_coverage_score": 0.959400332686,
+        "motif_id": "motif.self_maintained_boundary.draft"
+      }
+    ],
+    "claim_eligible": false,
+    "coverage_count": 48,
+    "evaluation_count": 6528,
+    "evidence_row_count": 816,
+    "formal_gap": {
+      "attractor_strength": 0.88,
+      "best_lens": "dynamical_systems",
+      "formal_gap": 0.31682500442032,
+      "max_coverage_score": 0.639971585886,
+      "motif_id": "motif.floor_connectivity.draft"
+    },
+    "l5_candidacy_advancement": true,
+    "label_breakdown_by_motif": {
+      "motif.autocatalytic_closure.draft": {
+        "false": 100,
+        "true": 36
+      },
+      "motif.externalized_memory.draft": {
+        "false": 124,
+        "true": 12
+      },
+      "motif.floor_connectivity.draft": {
+        "false": 104,
+        "true": 32
+      },
+      "motif.repair.draft": {
+        "false": 94,
+        "true": 42
+      },
+      "motif.replication_lineage.draft": {
+        "false": 63,
+        "true": 73
+      },
+      "motif.self_maintained_boundary.draft": {
+        "false": 106,
+        "true": 30
+      }
+    },
+    "lens_decline_rates": {
+      "control_theory": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.838235294118,
+          "declined_count": 114,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.838235294118,
+          "declined_count": 114,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.838235294118,
+          "declined_count": 114,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.838235294118,
+          "declined_count": 114,
+          "total_count": 136
+        }
+      },
+      "crnt": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.514705882353,
+          "declined_count": 70,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.514705882353,
+          "declined_count": 70,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.514705882353,
+          "declined_count": 70,
+          "total_count": 136
+        }
+      },
+      "dynamical_systems": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        }
+      },
+      "graph": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        }
+      },
+      "information": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 136
+        }
+      },
+      "petri": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.514705882353,
+          "declined_count": 70,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.514705882353,
+          "declined_count": 70,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.514705882353,
+          "declined_count": 70,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.514705882353,
+          "declined_count": 70,
+          "total_count": 136
+        }
+      },
+      "statistical_mechanics": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        }
+      },
+      "topology": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        },
+        "motif.repair.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 136,
+          "total_count": 136
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.294117647059,
+          "declined_count": 40,
+          "total_count": 136
+        }
+      }
+    },
+    "n7": {
+      "N": 1000,
+      "empirical_p": 0.000999000999000999,
+      "null_ci": {
+        "ci_high": 0.010767865496383696,
+        "ci_low": 0.008371000021603174,
+        "mean": 0.009569432758993435,
+        "width": 0.002396865474780523
+      },
+      "null_mean": 0.009569432758993435,
+      "observed_statistic": 0.29002922399308,
+      "seed": 13013
+    },
+    "scientific_verdict": "replicated",
+    "scientific_verdict_rationale": "Threshold logic fires replicated on a substrate-suitable corpus; contributes to L5 candidacy. claim_eligible remains False until D21 densification audit signs the source world as claim_ready_densified.",
+    "split_breakdown": {
+      "holdout": 316,
+      "train": 500
+    },
+    "step_0": {
+      "evidence_row_count_for_floor_motif": 136,
+      "floor_label_false_count": 104,
+      "floor_label_true_count": 32,
+      "label_balance_ratio": 0.23529411764705882,
+      "minority_class_count": 32,
+      "rationale": "Floor motif on substrate 'pooled_all_substrates': 32 label=True / 104 label=False; both classes present above minimum threshold. Threshold logic is applicable and the verdict is scientifically meaningful subject to D18-locked methodology.",
+      "step_0_status": "motif_present_balanced",
+      "threshold_logic_eligible": true,
+      "world_family": "pooled_all_substrates"
+    },
+    "threshold_verdict": {
+      "empirical_p": 0.000999000999000999,
+      "formal_gap": 0.31682500442032,
+      "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+      "threshold_check": {
+        "formal_gap_threshold": 0.2,
+        "p_threshold": 0.05,
+        "replicated": true
+      },
+      "verdict": "replicated"
+    },
+    "trace_count": 131,
+    "world_family": "pooled_all_substrates"
+  },
+  "schema": "MultisubstrateFloorConnectivity.v2",
+  "sources": {
+    "corpus_summary": {
+      "cognitive": {
+        "evidence_row_count": 72,
+        "purpose": "floor_positive_candidate",
+        "sources_breakdown": "campaign_008/traces/W8=4, campaign_010/traces/W8=8",
+        "trace_count": 12
+      },
+      "crn": {
+        "evidence_row_count": 216,
+        "purpose": "BFG_specified",
+        "sources_breakdown": "campaign_009/k9=16, campaign_009/kf/KF1=0, campaign_009/kf/KF2=0, campaign_009/kf/KF3=10, campaign_009/kf/KF4=10",
+        "trace_count": 36
+      },
+      "digital": {
+        "evidence_row_count": 120,
+        "purpose": "BFG_specified",
+        "sources_breakdown": "campaign_009/kf/KF1=0, campaign_009/kf/KF2=0, campaign_009/kf/KF3=10, campaign_009/kf/KF4=10",
+        "trace_count": 15
+      },
+      "field": {
+        "evidence_row_count": 48,
+        "purpose": "deliberate_negative_control",
+        "sources_breakdown": "campaign_007/w3_traces=8",
+        "trace_count": 8
+      },
+      "morphogenesis": {
+        "evidence_row_count": 120,
+        "purpose": "BFG_specified",
+        "sources_breakdown": "campaign_009/kf/KF1=0, campaign_009/kf/KF2=0, campaign_009/kf/KF3=10, campaign_009/kf/KF4=10",
+        "trace_count": 20
+      },
+      "protocell": {
+        "evidence_row_count": 120,
+        "purpose": "BFG_specified",
+        "sources_breakdown": "campaign_009/kf/KF1=0, campaign_009/kf/KF2=0, campaign_009/kf/KF3=10, campaign_009/kf/KF4=10",
+        "trace_count": 20
+      },
+      "quasispecies": {
+        "evidence_row_count": 60,
+        "purpose": "floor_positive_candidate",
+        "sources_breakdown": "campaign_008/traces/W11=4, campaign_010/traces/W11=6",
+        "trace_count": 10
+      },
+      "symbiogenesis": {
+        "evidence_row_count": 60,
+        "purpose": "floor_positive_candidate",
+        "sources_breakdown": "campaign_008/traces/W12=4, campaign_010/traces/W12=6",
+        "trace_count": 10
+      }
+    }
+  },
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "step_0_corpus_overview": {
+    "binding_discipline": "Class 10 / candidate D22 (presence-gated replication): a replication verdict is claim-bearing only if the target motif is present in the corpus AND label distribution has enough variation to make the threshold test falsifiable. Step 0 routes ineligible substrates to the threshold_mechanical / not_evaluable_* lane; threshold logic does not run on them.",
+    "candidate_substrates_surveyed": [
+      "cognitive",
+      "crn",
+      "digital",
+      "field",
+      "morphogenesis",
+      "protocell",
+      "quasispecies",
+      "symbiogenesis"
+    ],
+    "step_0_status_per_substrate": {
+      "cognitive": "motif_present_uniform_positive",
+      "crn": "motif_absent_in_corpus",
+      "digital": "motif_absent_in_corpus",
+      "field": "motif_absent_in_corpus",
+      "morphogenesis": "motif_absent_in_corpus",
+      "protocell": "motif_absent_in_corpus",
+      "quasispecies": "motif_present_uniform_positive",
+      "symbiogenesis": "motif_present_uniform_positive"
+    },
+    "substrates_failing_step_0": [
+      "cognitive",
+      "crn",
+      "digital",
+      "field",
+      "morphogenesis",
+      "protocell",
+      "quasispecies",
+      "symbiogenesis"
+    ],
+    "substrates_passing_step_0": []
+  },
+  "substrate_results": {
+    "cognitive": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 72,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 12
+        },
+        "motif.externalized_memory.draft": {
+          "true": 12
+        },
+        "motif.floor_connectivity.draft": {
+          "true": 12
+        },
+        "motif.repair.draft": {
+          "true": 12
+        },
+        "motif.replication_lineage.draft": {
+          "false": 12
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 12
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_label_uniform",
+      "scientific_verdict_rationale": "Floor motif labels are uniform (single class) in this substrate's evidence; threshold test cannot falsify via label discrimination.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 12,
+        "floor_label_false_count": 0,
+        "floor_label_true_count": 12,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 12 but label=False count is 0 on substrate 'cognitive'. Uniform-positive labels mean the threshold test cannot falsify the candidate via label discrimination (per Codex mentoring instruction #4: treat uniform labels as a stop sign). The N7 statistic still fires mechanically due to the lens-registry asymmetric design (per the imported assumption set above), so the threshold output is reported as threshold_mechanical and the scientific verdict is not_evaluable.",
+        "step_0_status": "motif_present_uniform_positive",
+        "threshold_logic_eligible": false,
+        "world_family": "cognitive"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_present_uniform_positive",
+        "verdict": "skipped"
+      },
+      "trace_count": 12,
+      "world_family": "cognitive"
+    },
+    "crn": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 216,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "true": 36
+        },
+        "motif.externalized_memory.draft": {
+          "false": 36
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 36
+        },
+        "motif.repair.draft": {
+          "false": 36
+        },
+        "motif.replication_lineage.draft": {
+          "false": 36
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 36
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_motif_absent",
+      "scientific_verdict_rationale": "Floor motif absent from this substrate's evidence corpus; threshold logic not applicable.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 36,
+        "floor_label_false_count": 36,
+        "floor_label_true_count": 0,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 0 across 36 held-out trace(s) on substrate 'crn'. Per the binding Class 10 discipline, the threshold logic is not applicable to this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "threshold_logic_eligible": false,
+        "world_family": "crn"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "verdict": "skipped"
+      },
+      "trace_count": 36,
+      "world_family": "crn"
+    },
+    "digital": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 120,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 20
+        },
+        "motif.externalized_memory.draft": {
+          "false": 20
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 20
+        },
+        "motif.repair.draft": {
+          "false": 20
+        },
+        "motif.replication_lineage.draft": {
+          "true": 20
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 20
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_motif_absent",
+      "scientific_verdict_rationale": "Floor motif absent from this substrate's evidence corpus; threshold logic not applicable.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 20,
+        "floor_label_false_count": 20,
+        "floor_label_true_count": 0,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 0 across 20 held-out trace(s) on substrate 'digital'. Per the binding Class 10 discipline, the threshold logic is not applicable to this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "threshold_logic_eligible": false,
+        "world_family": "digital"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "verdict": "skipped"
+      },
+      "trace_count": 15,
+      "world_family": "digital"
+    },
+    "field": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 48,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 8
+        },
+        "motif.externalized_memory.draft": {
+          "false": 8
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 8
+        },
+        "motif.repair.draft": {
+          "false": 8
+        },
+        "motif.replication_lineage.draft": {
+          "false": 8
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 8
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_motif_absent",
+      "scientific_verdict_rationale": "Floor motif absent from this substrate's evidence corpus; threshold logic not applicable.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 8,
+        "floor_label_false_count": 8,
+        "floor_label_true_count": 0,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 0 across 8 held-out trace(s) on substrate 'field'. Per the binding Class 10 discipline, the threshold logic is not applicable to this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "threshold_logic_eligible": false,
+        "world_family": "field"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "verdict": "skipped"
+      },
+      "trace_count": 8,
+      "world_family": "field"
+    },
+    "morphogenesis": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 120,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 20
+        },
+        "motif.externalized_memory.draft": {
+          "false": 20
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 20
+        },
+        "motif.repair.draft": {
+          "false": 20
+        },
+        "motif.replication_lineage.draft": {
+          "true": 20
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 20
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_motif_absent",
+      "scientific_verdict_rationale": "Floor motif absent from this substrate's evidence corpus; threshold logic not applicable.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 20,
+        "floor_label_false_count": 20,
+        "floor_label_true_count": 0,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 0 across 20 held-out trace(s) on substrate 'morphogenesis'. Per the binding Class 10 discipline, the threshold logic is not applicable to this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "threshold_logic_eligible": false,
+        "world_family": "morphogenesis"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "verdict": "skipped"
+      },
+      "trace_count": 20,
+      "world_family": "morphogenesis"
+    },
+    "protocell": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 120,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 20
+        },
+        "motif.externalized_memory.draft": {
+          "false": 20
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 20
+        },
+        "motif.repair.draft": {
+          "true": 20
+        },
+        "motif.replication_lineage.draft": {
+          "false": 5,
+          "true": 15
+        },
+        "motif.self_maintained_boundary.draft": {
+          "true": 20
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_motif_absent",
+      "scientific_verdict_rationale": "Floor motif absent from this substrate's evidence corpus; threshold logic not applicable.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 20,
+        "floor_label_false_count": 20,
+        "floor_label_true_count": 0,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 0 across 20 held-out trace(s) on substrate 'protocell'. Per the binding Class 10 discipline, the threshold logic is not applicable to this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "threshold_logic_eligible": false,
+        "world_family": "protocell"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_absent_in_corpus",
+        "verdict": "skipped"
+      },
+      "trace_count": 20,
+      "world_family": "protocell"
+    },
+    "quasispecies": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 60,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 10
+        },
+        "motif.externalized_memory.draft": {
+          "false": 10
+        },
+        "motif.floor_connectivity.draft": {
+          "true": 10
+        },
+        "motif.repair.draft": {
+          "false": 10
+        },
+        "motif.replication_lineage.draft": {
+          "true": 10
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 10
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_label_uniform",
+      "scientific_verdict_rationale": "Floor motif labels are uniform (single class) in this substrate's evidence; threshold test cannot falsify via label discrimination.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 10,
+        "floor_label_false_count": 0,
+        "floor_label_true_count": 10,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 10 but label=False count is 0 on substrate 'quasispecies'. Uniform-positive labels mean the threshold test cannot falsify the candidate via label discrimination (per Codex mentoring instruction #4: treat uniform labels as a stop sign). The N7 statistic still fires mechanically due to the lens-registry asymmetric design (per the imported assumption set above), so the threshold output is reported as threshold_mechanical and the scientific verdict is not_evaluable.",
+        "step_0_status": "motif_present_uniform_positive",
+        "threshold_logic_eligible": false,
+        "world_family": "quasispecies"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_present_uniform_positive",
+        "verdict": "skipped"
+      },
+      "trace_count": 10,
+      "world_family": "quasispecies"
+    },
+    "symbiogenesis": {
+      "all_motif_gaps": [],
+      "claim_eligible": false,
+      "coverage_count": 0,
+      "evaluation_count": 0,
+      "evidence_row_count": 60,
+      "formal_gap": null,
+      "l5_candidacy_advancement": false,
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 10
+        },
+        "motif.externalized_memory.draft": {
+          "false": 10
+        },
+        "motif.floor_connectivity.draft": {
+          "true": 10
+        },
+        "motif.repair.draft": {
+          "true": 10
+        },
+        "motif.replication_lineage.draft": {
+          "false": 2,
+          "true": 8
+        },
+        "motif.self_maintained_boundary.draft": {
+          "true": 10
+        }
+      },
+      "lens_decline_rates": {},
+      "n7": null,
+      "scientific_verdict": "not_evaluable_label_uniform",
+      "scientific_verdict_rationale": "Floor motif labels are uniform (single class) in this substrate's evidence; threshold test cannot falsify via label discrimination.",
+      "step_0": {
+        "evidence_row_count_for_floor_motif": 10,
+        "floor_label_false_count": 0,
+        "floor_label_true_count": 10,
+        "label_balance_ratio": 0.0,
+        "minority_class_count": 0,
+        "rationale": "Floor motif label=True count is 10 but label=False count is 0 on substrate 'symbiogenesis'. Uniform-positive labels mean the threshold test cannot falsify the candidate via label discrimination (per Codex mentoring instruction #4: treat uniform labels as a stop sign). The N7 statistic still fires mechanically due to the lens-registry asymmetric design (per the imported assumption set above), so the threshold output is reported as threshold_mechanical and the scientific verdict is not_evaluable.",
+        "step_0_status": "motif_present_uniform_positive",
+        "threshold_logic_eligible": false,
+        "world_family": "symbiogenesis"
+      },
+      "threshold_verdict": {
+        "rationale": "Skipped per Step 0 substrate-suitability check; threshold logic not applicable on this corpus.",
+        "step_0_status": "motif_present_uniform_positive",
+        "verdict": "skipped"
+      },
+      "trace_count": 10,
+      "world_family": "symbiogenesis"
+    }
+  },
+  "threshold_source": "Campaign 013 driver thresholds (formal_gap > 0.20 and N7 empirical_p < 0.05 = replicated). Locked under D18; not re-tuned after observing per-substrate outcomes. Threshold logic only runs on substrates that pass Step 0; substrates failing Step 0 carry threshold_verdict='skipped' with not_evaluable_* scientific_verdict."
+}

@@ -1,0 +1,597 @@
+{
+  "brier": 0.161848,
+  "corpus_id": "KP3H",
+  "decoys": [
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-00",
+      "score": 0.86,
+      "trace_digest": 3
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-01",
+      "score": 0.84,
+      "trace_digest": 4
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-02",
+      "score": 0.82,
+      "trace_digest": 5
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-03",
+      "score": 0.86,
+      "trace_digest": 6
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-04",
+      "score": 0.84,
+      "trace_digest": 7
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-05",
+      "score": 0.82,
+      "trace_digest": 8
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-06",
+      "score": 0.86,
+      "trace_digest": 9
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-07",
+      "score": 0.84,
+      "trace_digest": 10
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-08",
+      "score": 0.82,
+      "trace_digest": 11
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-09",
+      "score": 0.86,
+      "trace_digest": 12
+    }
+  ],
+  "ece": 0.18719999999999995,
+  "negative_count": 18,
+  "new_adversarial_decoy_count": 10,
+  "nontrivial_challenge": false,
+  "passed": true,
+  "positive_count": 32,
+  "roc_auc": 1.0,
+  "row_count": 50,
+  "rows": [
+    {
+      "confidence": 0.96,
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-00",
+      "score": 0.5,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-01",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-02",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-03",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-04",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": false,
+      "scenario_id": "KP3-05",
+      "score": 0.0,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-06",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-07",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-08",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-09",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": false,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-10",
+      "score": 0.5,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-11",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-12",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-13",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-14",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": false,
+      "scenario_id": "KP3-15",
+      "score": 0.0,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-16",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-17",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-18",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-19",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-20",
+      "score": 0.5,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-21",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-22",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-23",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-24",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": false,
+      "scenario_id": "KP3-25",
+      "score": 0.0,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-26",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-27",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-28",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-29",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": false,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-30",
+      "score": 0.5,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-31",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-32",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-33",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-34",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": false,
+      "scenario_id": "KP3-35",
+      "score": 0.0,
+      "trace_digest": 1
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3-36",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3-37",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3-38",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3-39",
+      "score": 1.0,
+      "trace_digest": 9
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-00",
+      "score": 0.86,
+      "trace_digest": 3
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-01",
+      "score": 0.84,
+      "trace_digest": 4
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-02",
+      "score": 0.82,
+      "trace_digest": 5
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-03",
+      "score": 0.86,
+      "trace_digest": 6
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-04",
+      "score": 0.84,
+      "trace_digest": 7
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-05",
+      "score": 0.82,
+      "trace_digest": 8
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.externalised_continuity_creation",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-06",
+      "score": 0.86,
+      "trace_digest": 9
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "effect.information_horizon_expansion",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-07",
+      "score": 0.84,
+      "trace_digest": 10
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.memory.delayed_causality",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-08",
+      "score": 0.82,
+      "trace_digest": 11
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.prediction.control",
+      "predicted": true,
+      "scenario_id": "KP3H-adversarial-decoy-09",
+      "score": 0.86,
+      "trace_digest": 12
+    }
+  ],
+  "schema": "OntologyPredicateCalibration.v1"
+}

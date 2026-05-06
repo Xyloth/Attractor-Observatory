@@ -1,0 +1,240 @@
+{
+  "edges": [
+    {
+      "confidence": 0.1667,
+      "edge_id": "sha256:014e645bccd7912bae13d24e86d4a833b6aed43f93f8b1890138e29122a5b6c1",
+      "evidence_record_ids": [
+        "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:math_primitives",
+      "target": "state_space_effects:asymptotically_stable_fixed_point"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:02928ae207c9c6a4bf2607d0e24a74713d993d48de0793adc29b8f6889657dec",
+      "evidence_record_ids": [
+        "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+        "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+        "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+        "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+        "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:atomic_molecular_primitives",
+      "target": "overlap_fields:electron_shell_energy_field"
+    },
+    {
+      "confidence": 0.1667,
+      "edge_id": "sha256:1b887e4c9afc99387dde10b665f868ceb31a487493f2fa86716813ffab1dcc87",
+      "evidence_record_ids": [
+        "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4"
+      ],
+      "relation": "has_process_role",
+      "source": "world:math_primitives",
+      "target": "process_roles:torus"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:2337295b630be37c6661bd32de026e573f815a9f03e9ab71907b9fd291e41df7",
+      "evidence_record_ids": [
+        "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+        "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+        "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+        "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+        "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:atomic_molecular_primitives",
+      "target": "interaction_channels:electromagnetic_transition"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:2681a28b750a1f4ac0766900f6a5c01baa850d06ba342871ad754172a4cbb3d9",
+      "evidence_record_ids": [
+        "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+        "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+        "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+        "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+        "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+        "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:math_primitives",
+      "target": "interaction_channels:phase_flow"
+    },
+    {
+      "confidence": 0.1667,
+      "edge_id": "sha256:386e25467a3de2af563c86b7cbb05b7c2478d1cbd8e7c9074070a6dbe2527a9f",
+      "evidence_record_ids": [
+        "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:math_primitives",
+      "target": "state_space_effects:stable_limit_cycle"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:39168cd27abc8ce7f2afa51f87f95f71b5a471c30a6d864f3b35609b27d4e526",
+      "evidence_record_ids": [
+        "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+        "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+        "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+        "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+        "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:atomic_molecular_primitives",
+      "target": "state_space_effects:discrete_energy_spectrum"
+    },
+    {
+      "confidence": 0.1667,
+      "edge_id": "sha256:4b7aea15d88263e32d113b36e0557f490584198e31939d7c42507f4e7641296e",
+      "evidence_record_ids": [
+        "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:math_primitives",
+      "target": "state_space_effects:quasiperiodic_torus"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:58a3549d91ca555fa1af12c81069d62b1b83408130604142730111ddf06c20fa",
+      "evidence_record_ids": [
+        "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+        "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+        "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+        "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+        "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:atomic_molecular_primitives",
+      "target": "interaction_channels:covalent_bond_graph"
+    },
+    {
+      "confidence": 0.1667,
+      "edge_id": "sha256:601fa3c612dd47426dd3a2c7ea38cbbbe9a0d37ba52875969edf912d06024b1e",
+      "evidence_record_ids": [
+        "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29"
+      ],
+      "relation": "has_process_role",
+      "source": "world:math_primitives",
+      "target": "process_roles:fixed_point"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:6b68c204b9dd72a04c98c550207dfef3b6ad717acd45bce62e1a6fa0ce4ae527",
+      "evidence_record_ids": [
+        "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+        "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+        "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+        "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+        "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:atomic_molecular_primitives",
+      "target": "overlap_fields:covalent_structure_field"
+    },
+    {
+      "confidence": 0.1667,
+      "edge_id": "sha256:768dc64d2a8715063ba4a974c645d8e18fcfb52531ff825c8044d1522eec9b11",
+      "evidence_record_ids": [
+        "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616"
+      ],
+      "relation": "has_process_role",
+      "source": "world:math_primitives",
+      "target": "process_roles:limit_cycle"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:7b6cf6d14951d598da2110020c8a11ef361bb03d6c808b06f850f632574b2f38",
+      "evidence_record_ids": [
+        "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+        "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+        "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+        "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+        "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:atomic_molecular_primitives",
+      "target": "state_space_effects:molecular_topology_constraint"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:937982c45c5953a30e65e07b954aa8907fc6f6dade5451d7327e2eb5a2283644",
+      "evidence_record_ids": [
+        "sha256:0ad6eb9bd20d38178105053b857f9361e678b9054294d0435d2205ff129fddfc",
+        "sha256:847ffca61d0388bdc368c2d3f90343608d86a1a53d93b560df4fea3733db9c9b",
+        "sha256:97bcf4596d0bc5db2dd3913eccb5eec63fc5841f53453b9b55c0bb28aaca9699",
+        "sha256:b528e77338cc77b69a9860af192ee41a7b0f595dcd7f7024c7e59a341174ddda",
+        "sha256:e8ff76058b1d3cfaed64df59104069a886634a82109357b846367824fc486f0c"
+      ],
+      "relation": "has_process_role",
+      "source": "world:atomic_molecular_primitives",
+      "target": "process_roles:energy_level_structure"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:b48232390e1797bc88811e454c7f0b2598aef491f4711f5d0196643eb59e1d4b",
+      "evidence_record_ids": [
+        "sha256:27dbe4c42b549d9b6358bfe7ed6bccb2a0bb49333bb4b9ceb0a094d649002f44",
+        "sha256:9c006601fcf961f0a3026bc2ba9cabba5ab9ea241d6711ddc5ffdeb395289e75",
+        "sha256:b23299669b38bfb17f1c7dea7249c1850674aecbd93acbae07df12cf42aa41c6",
+        "sha256:ccb0fa328a694761521570883f47e4febbb6df563d2cd2716ae89a54f85cb0d4",
+        "sha256:cf9fee01d7890a502e2b96717e280ca03f547d5bd0f9508513225b2a7d54209f"
+      ],
+      "relation": "has_process_role",
+      "source": "world:atomic_molecular_primitives",
+      "target": "process_roles:bond_topology"
+    },
+    {
+      "confidence": 0.3333,
+      "edge_id": "sha256:e9b0f47556fd75b67903d4805ce94f9a73758cfb6ba50e4170dd221da04ecbd4",
+      "evidence_record_ids": [
+        "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+        "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:math_primitives",
+      "target": "state_space_effects:strange_attractor"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:f187b081eedc5bfb62c5d85548f400ec8e034990edade9bc0aa8c94b0f4b9480",
+      "evidence_record_ids": [
+        "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+        "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+        "sha256:713117167bc5d4c8f249b56b80e859db0427d265777f638d5346396999be5616",
+        "sha256:9bd5545234cec9876c3e30d4ed404aacf2cb6869c5c9d6d3bf90aa9261f3ef29",
+        "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a",
+        "sha256:f765cc3b8867666d7fe77fdb7aefa7a1f04dbed20330d2cad49c22aa0a42c9b4"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:math_primitives",
+      "target": "overlap_fields:state_space_flow_field"
+    },
+    {
+      "confidence": 0.5,
+      "edge_id": "sha256:f29f35938e7eeaf6d65f5c30bf6e95e7d69264498123edb102b5ea1ea827cea3",
+      "evidence_record_ids": [
+        "sha256:3b263f52697628dda76139871bbaae1db18e69577a4ff0008fe0316e316f4bff",
+        "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc",
+        "sha256:ed454738f5187a0ab732f6d62ccf74bc1fd0cbb2e5a3ace7e09cf724a3d7a94a"
+      ],
+      "relation": "has_process_role",
+      "source": "world:math_primitives",
+      "target": "process_roles:strange_attractor"
+    },
+    {
+      "confidence": 0.1667,
+      "edge_id": "sha256:f80ad3e2358f1a99077d1c02a969e77ac48a01240f47fb073ddd6c9570eb2233",
+      "evidence_record_ids": [
+        "sha256:4b9bb996d3b67c6c8538b573a406bc17a8de7a4267b9ebc23257fc31ece3bfbc"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:math_primitives",
+      "target": "state_space_effects:strange_attractor_family"
+    }
+  ],
+  "schema": "LowLevelEvidenceGraph.v1"
+}

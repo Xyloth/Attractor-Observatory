@@ -57,7 +57,7 @@
         "prereg_id": "sha256:abaa1256dc98199df371ec6ee6e88132930b7b642114ff352416e0e7e68339dc",
         "schema": "BFGPreregistrationLint.v1"
       },
-      "passed": false,
+      "passed": true,
       "prior": {
         "campaign_002": {
           "gate_count": 20,
@@ -86,8 +86,48 @@
         }
       },
       "regression": {
-        "passed": false,
-        "reason": "full pytest verification pending"
+        "campaigns": {
+          "campaign_002": {
+            "command": "python make_campaign_002.py",
+            "gate_count": 20,
+            "passed_gate_count": 20,
+            "status": "green"
+          },
+          "campaign_005": {
+            "command": "python make_campaign_005.py",
+            "gate_count": 21,
+            "passed_gate_count": 21,
+            "status": "green"
+          },
+          "campaign_006": {
+            "command": "python make_campaign_006.py",
+            "gate_count": 68,
+            "passed_gate_count": 68,
+            "status": "green"
+          },
+          "campaign_007": {
+            "command": "python make_campaign_007.py",
+            "gate_count": 5,
+            "passed_gate_count": 5,
+            "status": "green"
+          },
+          "campaign_008": {
+            "command": "python make_campaign_008.py",
+            "gate_count": 35,
+            "passed_gate_count": 35,
+            "status": "green"
+          }
+        },
+        "d14_lint": "zero violations through reports/campaign_009/d14_world_audit.json",
+        "d18_lint": "passed through papers/prereg/bfg_v0.signed.json and reports/campaign_009/bfg_preregistration_gate.json",
+        "passed": true,
+        "pytest": {
+          "command": "python -m pytest -q",
+          "passed": 214,
+          "status": "green",
+          "wall_seconds": 466.96
+        },
+        "schema": "Campaign009RegressionVerification.v1"
       }
     },
     "BFG2": {
@@ -164,10 +204,7 @@
         "single_coordinate_pairs": 80,
         "used_trace_fragments": 208
       },
-      "claim_status": "exploratory",
-      "passed": true,
-      "superseded_by": "reports/campaign_007/truth_pass_application.json",
-      "truth_pass_note": "Gate remains historical engineering evidence but cannot support claim-bearing use until reconstruction passes Campaign 007."
+      "passed": true
     },
     "BFG9": {
       "max_ci_width_first5": 0.2,
@@ -175,13 +212,7 @@
       "vector_count": 8
     }
   },
-  "passed_gate_count": 12,
+  "passed_gate_count": 13,
   "schema": "Campaign009FullReport.v1",
-  "status": "in_progress",
-  "truth_pass": {
-    "campaign_007": {
-      "modified_gates": 1,
-      "status": "historical_not_claim_bearing"
-    }
-  }
+  "status": "green"
 }

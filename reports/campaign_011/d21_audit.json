@@ -1,0 +1,72 @@
+{
+  "gate": {
+    "actual_violation_count": 0,
+    "future_claim_ready_allowed": true,
+    "invalid_claim_bearing_rejected": true,
+    "passed": true
+  },
+  "passed": true,
+  "records": [
+    {
+      "basis_hash": "sha256:64dfc80802b2dfb3e18e9f20d91cb6a78e17d0aaaed478849b21bca3a0e0e4ea",
+      "claim_ids": [
+        "claim.syn.lane1.000.000"
+      ],
+      "content_hash": "sha256:5e7f78a56078542ea547deb31dd0f2c61ee37a9c5d0067cdadb5fbe765d6bd8c",
+      "density_class": "exploratory_densified",
+      "evidence_ids": [
+        "ev.syn.lane1.000.000"
+      ],
+      "license_classes": [
+        "internal_synthetic"
+      ],
+      "mode_tag": "exploratory",
+      "record_id": "prov.w7.exploratory",
+      "schema": "ProvenanceRecord.v1",
+      "source_ids": [
+        "syn.lane1.000"
+      ]
+    },
+    {
+      "basis_hash": "sha256:64dfc80802b2dfb3e18e9f20d91cb6a78e17d0aaaed478849b21bca3a0e0e4ea",
+      "claim_ids": [
+        "claim.syn.lane1.000.000"
+      ],
+      "content_hash": "sha256:5e7f78a56078542ea547deb31dd0f2c61ee37a9c5d0067cdadb5fbe765d6bd8c",
+      "density_class": "exploratory_densified",
+      "evidence_ids": [
+        "ev.syn.lane1.000.000"
+      ],
+      "license_classes": [
+        "internal_synthetic"
+      ],
+      "mode_tag": "claim_bearing",
+      "record_id": "prov.w7.invalid_claim_bearing",
+      "schema": "ProvenanceRecord.v1",
+      "source_ids": [
+        "syn.lane1.000"
+      ]
+    },
+    {
+      "basis_hash": "sha256:64dfc80802b2dfb3e18e9f20d91cb6a78e17d0aaaed478849b21bca3a0e0e4ea",
+      "claim_ids": [
+        "claim.syn.lane1.000.000"
+      ],
+      "content_hash": "sha256:5e7f78a56078542ea547deb31dd0f2c61ee37a9c5d0067cdadb5fbe765d6bd8c",
+      "density_class": "claim_ready_densified",
+      "evidence_ids": [
+        "ev.syn.lane1.000.000"
+      ],
+      "license_classes": [
+        "internal_synthetic"
+      ],
+      "mode_tag": "claim_bearing",
+      "record_id": "prov.w7.future_claim_ready",
+      "schema": "ProvenanceRecord.v1",
+      "source_ids": [
+        "syn.lane1.000"
+      ]
+    }
+  ],
+  "schema": "Campaign011D21Audit.v1"
+}

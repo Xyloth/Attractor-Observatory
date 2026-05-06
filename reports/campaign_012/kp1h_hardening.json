@@ -1,0 +1,561 @@
+{
+  "brier": 0.17902608695652172,
+  "corpus_id": "KP1H",
+  "decoys": [
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-00",
+      "score": 1.0,
+      "trace_digest": 3
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-01",
+      "score": 1.0,
+      "trace_digest": 4
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-02",
+      "score": 1.0,
+      "trace_digest": 5
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-03",
+      "score": 1.0,
+      "trace_digest": 6
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-04",
+      "score": 0.84,
+      "trace_digest": 7
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-05",
+      "score": 0.82,
+      "trace_digest": 8
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-06",
+      "score": 0.86,
+      "trace_digest": 9
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-07",
+      "score": 0.84,
+      "trace_digest": 10
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-08",
+      "score": 0.82,
+      "trace_digest": 11
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-09",
+      "score": 0.86,
+      "trace_digest": 12
+    }
+  ],
+  "ece": 0.18260869565217397,
+  "negative_count": 22,
+  "new_adversarial_decoy_count": 10,
+  "nontrivial_challenge": true,
+  "passed": true,
+  "positive_count": 24,
+  "roc_auc": 0.9090909090909091,
+  "row_count": 46,
+  "rows": [
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": false,
+      "scenario_id": "KP1-00",
+      "score": 0.0,
+      "trace_digest": 0
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-01",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-02",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": false,
+      "scenario_id": "KP1-03",
+      "score": 0.0,
+      "trace_digest": 2
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-04",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-05",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": false,
+      "scenario_id": "KP1-06",
+      "score": 0.0,
+      "trace_digest": 0
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-07",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-08",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": false,
+      "scenario_id": "KP1-09",
+      "score": 0.0,
+      "trace_digest": 2
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-10",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-11",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": false,
+      "scenario_id": "KP1-12",
+      "score": 0.0,
+      "trace_digest": 0
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-13",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-14",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": false,
+      "scenario_id": "KP1-15",
+      "score": 0.0,
+      "trace_digest": 2
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-16",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-17",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": false,
+      "scenario_id": "KP1-18",
+      "score": 0.0,
+      "trace_digest": 0
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-19",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-20",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": false,
+      "scenario_id": "KP1-21",
+      "score": 0.0,
+      "trace_digest": 2
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-22",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-23",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": false,
+      "scenario_id": "KP1-24",
+      "score": 0.0,
+      "trace_digest": 0
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-25",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-26",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": false,
+      "scenario_id": "KP1-27",
+      "score": 0.0,
+      "trace_digest": 2
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-28",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-29",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": false,
+      "scenario_id": "KP1-30",
+      "score": 0.0,
+      "trace_digest": 0
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-31",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-32",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.95,
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": false,
+      "scenario_id": "KP1-33",
+      "score": 0.0,
+      "trace_digest": 2
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1-34",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "confidence": 0.96,
+      "expected": true,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1-35",
+      "score": 1.0,
+      "trace_digest": 8
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-00",
+      "score": 1.0,
+      "trace_digest": 3
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-01",
+      "score": 1.0,
+      "trace_digest": 4
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-02",
+      "score": 1.0,
+      "trace_digest": 5
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.66,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-03",
+      "score": 1.0,
+      "trace_digest": 6
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-04",
+      "score": 0.84,
+      "trace_digest": 7
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-05",
+      "score": 0.82,
+      "trace_digest": 8
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-06",
+      "score": 0.86,
+      "trace_digest": 9
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-07",
+      "score": 0.84,
+      "trace_digest": 10
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.access.traversal",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-08",
+      "score": 0.82,
+      "trace_digest": 11
+    },
+    {
+      "adversarial_decoy": true,
+      "confidence": 0.7,
+      "decoy_rationale": "Shallow trace observables resemble positives, but the deeper operational predicate should require causation not surface similarity.",
+      "expected": false,
+      "predicate_id": "role.mobility.barrier_bypass",
+      "predicted": true,
+      "scenario_id": "KP1H-adversarial-decoy-09",
+      "score": 0.86,
+      "trace_digest": 12
+    }
+  ],
+  "schema": "OntologyPredicateCalibration.v1"
+}

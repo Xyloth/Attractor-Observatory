@@ -1,0 +1,1659 @@
+{
+  "aggregate_verdict": {
+    "aggregate_verdict": "uniform_replication",
+    "motif_absent_substrates": [
+      "digital",
+      "field",
+      "morphogenesis"
+    ],
+    "motif_present_substrate_count": 0,
+    "per_substrate_verdict_counts": {
+      "replicated": 3
+    },
+    "per_substrate_verdicts": {
+      "digital": "replicated",
+      "field": "replicated",
+      "morphogenesis": "replicated"
+    },
+    "rationale": "Per-substrate verdicts: {'field': 'replicated', 'morphogenesis': 'replicated', 'digital': 'replicated'}. motif_present_in_substrate: {'field': False, 'morphogenesis': False, 'digital': False}. **Signal-quality caveat (severity=high):** Every 'replicated' verdict is on a substrate where the motif is absent from labels. Under the locked basis and locked lens registry, with floor-motif label uniformly False and non-floor motifs also uniformly False, the N7 statistic detects the lens registry's per-motif design choices (floor base prediction systematically lower than other motifs; floor attractor_strength=0.88 vs 0.62-0.74 for others) instead of substrate-blind floor coverage. The test architecture cannot fail to fire 'replicated' under these conditions; the verdict is therefore not substrate-blind multi-substrate confirmation. Re-running on substrates where _label_feature_for_motif returns True for floor (i.e., traces with neutral_component_fraction / nested_lineage_edges / attention_entropy state keys or neutral_percolation_event events) is required for genuine multi-substrate confirmation. Aggregate verdict above is the threshold-mechanical output (locked under D18) and should be read alongside this caveat, not as substrate-blind multi-substrate confirmation.",
+    "signal_quality_caveat": {
+      "L5_candidacy_implication": "uniform_replication on motif-absent substrates does not advance L5 candidacy. The Campaign 013 W1/W2-context replication remains the only substrate-blind confirmation. Genuine multi-substrate test requires substrates whose traces contain floor-flag indicators.",
+      "explanation": "Every 'replicated' verdict is on a substrate where the motif is absent from labels. Under the locked basis and locked lens registry, with floor-motif label uniformly False and non-floor motifs also uniformly False, the N7 statistic detects the lens registry's per-motif design choices (floor base prediction systematically lower than other motifs; floor attractor_strength=0.88 vs 0.62-0.74 for others) instead of substrate-blind floor coverage. The test architecture cannot fail to fire 'replicated' under these conditions; the verdict is therefore not substrate-blind multi-substrate confirmation. Re-running on substrates where _label_feature_for_motif returns True for floor (i.e., traces with neutral_component_fraction / nested_lineage_edges / attention_entropy state keys or neutral_percolation_event events) is required for genuine multi-substrate confirmation.",
+      "motif_absent_substrates": [
+        "digital",
+        "field",
+        "morphogenesis"
+      ],
+      "replicated_on_motif_absent_substrates": [
+        "digital",
+        "field",
+        "morphogenesis"
+      ],
+      "replicated_substrates": [
+        "digital",
+        "field",
+        "morphogenesis"
+      ],
+      "severity": "high",
+      "test_architecture_finding": "Lens registry coefficients for motif.floor_connectivity.draft are systematically lower than for other motifs across all 8 lenses (by Campaign 010 design, since the floor motif is the formal-deficit candidate). attractor_strength for floor is 0.88 vs 0.62-0.74 for other motifs. The product (1 - max_coverage) * attractor_strength therefore exceeds the per-motif mean for floor under any substrate where lens predictions are uniformly low across motifs, including substrates where the motif is absent."
+    },
+    "substrate_count": 3
+  },
+  "content_hash": "sha256:cc2a68d7d6a0a4c34458151eb6c7e55b4bea54114c62ba1adefb025e3978d1a2",
+  "cross_substrate_signature": {
+    "consistent_under_substrate_blind": true,
+    "floor_signature_distance": {
+      "digital|field": 0.050299775234,
+      "digital|morphogenesis": 0.109865604297,
+      "field|morphogenesis": 0.153121439226
+    },
+    "matches_above_threshold": [
+      "digital|field",
+      "digital|morphogenesis",
+      "field|morphogenesis"
+    ],
+    "per_motif_signature_distance": {
+      "motif.autocatalytic_closure.draft": {
+        "digital|field": 0.04610357831,
+        "digital|morphogenesis": 0.054242446664,
+        "field|morphogenesis": 0.1003443762
+      },
+      "motif.externalized_memory.draft": {
+        "digital|field": 0.04610431422,
+        "digital|morphogenesis": 0.054242450555,
+        "field|morphogenesis": 0.100344663085
+      },
+      "motif.floor_connectivity.draft": {
+        "digital|field": 0.050299775234,
+        "digital|morphogenesis": 0.109865604297,
+        "field|morphogenesis": 0.153121439226
+      },
+      "motif.repair.draft": {
+        "digital|field": 0.04610357831,
+        "digital|morphogenesis": 0.054242446664,
+        "field|morphogenesis": 0.1003443762
+      },
+      "motif.replication_lineage.draft": {
+        "digital|field": 0.04610357831,
+        "digital|morphogenesis": 0.054242446664,
+        "field|morphogenesis": 0.1003443762
+      },
+      "motif.self_maintained_boundary.draft": {
+        "digital|field": 0.04610471562,
+        "digital|morphogenesis": 0.054242452677,
+        "field|morphogenesis": 0.100344819567
+      }
+    },
+    "similarity_threshold": 0.3,
+    "substrate_blind_signature": {
+      "lower_distance_means_more_similar_substrates": true,
+      "metric": "euclidean in (formal_gap, log10(p)) clipped to [0,1] x [-3,0]"
+    },
+    "substrate_pairs": [
+      [
+        "digital",
+        "field"
+      ],
+      [
+        "digital",
+        "morphogenesis"
+      ],
+      [
+        "field",
+        "morphogenesis"
+      ]
+    ]
+  },
+  "holdout_audit": {
+    "checked_path_count": 17,
+    "deficit_map_evidence_row_count": 141,
+    "deficit_map_prereg": "papers\\prereg\\deficit_map_v0.signed.json",
+    "deficit_map_present": true,
+    "holdout_clean": true,
+    "overlap_count": 0,
+    "overlap_paths": []
+  },
+  "locked_instruments": {
+    "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "basis_unchanged": true,
+    "expected_basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
+    "expected_lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_hash": "sha256:7c325d9367d873ede832f78a73ddffd2f9e5f5ca879a09a296bc19b2e950a7e8",
+    "lens_registry_unchanged": true
+  },
+  "mode_tag": "exploratory",
+  "n7_methodology": {
+    "N": 1000,
+    "seed": 13013,
+    "statistic": "floor_connectivity_gap_minus_other_gap_mean"
+  },
+  "notes": "Claude Builder Session 001 / TASK-CB-001. Replication of motif.floor_connectivity.draft restricted to substrates structurally independent of the W1/W2 closure context that surfaced the candidate (Campaign 010 deficit map). All measurements remain mode_tag: exploratory per D21 (W3/W4/W5 source worlds are trace_valid, not claim_ready_densified for floor_connectivity). The per-substrate verdict is computed by the same threshold logic as Campaign 013 (formal_gap > 0.20 AND p < 0.05 = replicated); the aggregate verdict composes per-substrate verdicts honestly without re-tuning thresholds.",
+  "pooled_result": {
+    "all_motif_gaps": [
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.11032731512705997,
+        "max_coverage_score": 0.822052717537,
+        "motif_id": "motif.autocatalytic_closure.draft"
+      },
+      {
+        "attractor_strength": 0.7,
+        "best_lens": "graph",
+        "formal_gap": 0.12456309772409996,
+        "max_coverage_score": 0.822052717537,
+        "motif_id": "motif.externalized_memory.draft"
+      },
+      {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.32611655496639996,
+        "max_coverage_score": 0.62941300572,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.11032731512705997,
+        "max_coverage_score": 0.822052717537,
+        "motif_id": "motif.repair.draft"
+      },
+      {
+        "attractor_strength": 0.62,
+        "best_lens": "graph",
+        "formal_gap": 0.02507731512706,
+        "max_coverage_score": 0.959552717537,
+        "motif_id": "motif.replication_lineage.draft"
+      },
+      {
+        "attractor_strength": 0.74,
+        "best_lens": "graph",
+        "formal_gap": 0.13168098902261996,
+        "max_coverage_score": 0.822052717537,
+        "motif_id": "motif.self_maintained_boundary.draft"
+      }
+    ],
+    "coverage_count": 48,
+    "evaluation_count": 816,
+    "evidence_row_count": 102,
+    "formal_gap": {
+      "attractor_strength": 0.88,
+      "best_lens": "dynamical_systems",
+      "formal_gap": 0.32611655496639996,
+      "max_coverage_score": 0.62941300572,
+      "motif_id": "motif.floor_connectivity.draft"
+    },
+    "label_breakdown_by_motif": {
+      "motif.autocatalytic_closure.draft": {
+        "false": 17
+      },
+      "motif.externalized_memory.draft": {
+        "false": 17
+      },
+      "motif.floor_connectivity.draft": {
+        "false": 17
+      },
+      "motif.repair.draft": {
+        "false": 17
+      },
+      "motif.replication_lineage.draft": {
+        "false": 8,
+        "true": 9
+      },
+      "motif.self_maintained_boundary.draft": {
+        "false": 17
+      }
+    },
+    "lens_decline_rates": {
+      "control_theory": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        }
+      },
+      "crnt": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        }
+      },
+      "dynamical_systems": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.529411764706,
+          "declined_count": 9,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.529411764706,
+          "declined_count": 9,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.529411764706,
+          "declined_count": 9,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.529411764706,
+          "declined_count": 9,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.529411764706,
+          "declined_count": 9,
+          "total_count": 17
+        }
+      },
+      "graph": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        }
+      },
+      "information": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.0,
+          "declined_count": 0,
+          "total_count": 17
+        }
+      },
+      "petri": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        }
+      },
+      "statistical_mechanics": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.764705882353,
+          "declined_count": 13,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 0.764705882353,
+          "declined_count": 13,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 0.764705882353,
+          "declined_count": 13,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.764705882353,
+          "declined_count": 13,
+          "total_count": 17
+        }
+      },
+      "topology": {
+        "motif.autocatalytic_closure.draft": {
+          "decline_rate": 0.235294117647,
+          "declined_count": 4,
+          "total_count": 17
+        },
+        "motif.externalized_memory.draft": {
+          "decline_rate": 0.235294117647,
+          "declined_count": 4,
+          "total_count": 17
+        },
+        "motif.floor_connectivity.draft": {
+          "decline_rate": 0.235294117647,
+          "declined_count": 4,
+          "total_count": 17
+        },
+        "motif.repair.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.replication_lineage.draft": {
+          "decline_rate": 1.0,
+          "declined_count": 17,
+          "total_count": 17
+        },
+        "motif.self_maintained_boundary.draft": {
+          "decline_rate": 0.235294117647,
+          "declined_count": 4,
+          "total_count": 17
+        }
+      }
+    },
+    "n7": {
+      "N": 1000,
+      "empirical_p": 0.006993006993006993,
+      "null_ci": {
+        "ci_high": 0.03957018983881294,
+        "ci_low": 0.03092129009065589,
+        "mean": 0.035245739964734416,
+        "width": 0.00864889974815705
+      },
+      "null_mean": 0.035245739964734416,
+      "observed_statistic": 0.22572134854082,
+      "seed": 13013
+    },
+    "split_breakdown": {
+      "holdout": 39,
+      "train": 63
+    },
+    "trace_count": 17,
+    "verdict": {
+      "empirical_p": 0.006993006993006993,
+      "formal_gap": 0.32611655496639996,
+      "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+      "threshold_check": {
+        "formal_gap_threshold": 0.2,
+        "p_threshold": 0.05,
+        "replicated": true
+      },
+      "verdict": "replicated"
+    },
+    "world_family": "pooled_w3_w4_w5"
+  },
+  "schema": "MultisubstrateFloorConnectivity.v1",
+  "sources": {
+    "digital": {
+      "evidence_row_count": 24,
+      "trace_count": 4,
+      "trace_dir": "reports/campaign_007/w5_traces"
+    },
+    "field": {
+      "evidence_row_count": 48,
+      "trace_count": 8,
+      "trace_dir": "reports/campaign_007/w3_traces"
+    },
+    "morphogenesis": {
+      "evidence_row_count": 30,
+      "trace_count": 5,
+      "trace_dir": "reports/campaign_007/w4_traces"
+    },
+    "pooled_w3_w4_w5": {
+      "comment": "Substrate-erasure projection per D15: substrate label is preserved in the row but not consulted by lens predicates.",
+      "evidence_row_count": 102,
+      "trace_count": 17
+    }
+  },
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "substrate_presence": {
+    "digital": {
+      "all_motif_label_true_counts": {
+        "motif.autocatalytic_closure.draft": 0,
+        "motif.externalized_memory.draft": 0,
+        "motif.floor_connectivity.draft": 0,
+        "motif.repair.draft": 0,
+        "motif.replication_lineage.draft": 4,
+        "motif.self_maintained_boundary.draft": 0
+      },
+      "floor_label_false_count": 4,
+      "floor_label_total": 4,
+      "floor_label_true_count": 0,
+      "motif_present_in_substrate": false
+    },
+    "field": {
+      "all_motif_label_true_counts": {
+        "motif.autocatalytic_closure.draft": 0,
+        "motif.externalized_memory.draft": 0,
+        "motif.floor_connectivity.draft": 0,
+        "motif.repair.draft": 0,
+        "motif.replication_lineage.draft": 0,
+        "motif.self_maintained_boundary.draft": 0
+      },
+      "floor_label_false_count": 8,
+      "floor_label_total": 8,
+      "floor_label_true_count": 0,
+      "motif_present_in_substrate": false
+    },
+    "morphogenesis": {
+      "all_motif_label_true_counts": {
+        "motif.autocatalytic_closure.draft": 0,
+        "motif.externalized_memory.draft": 0,
+        "motif.floor_connectivity.draft": 0,
+        "motif.repair.draft": 0,
+        "motif.replication_lineage.draft": 5,
+        "motif.self_maintained_boundary.draft": 0
+      },
+      "floor_label_false_count": 5,
+      "floor_label_total": 5,
+      "floor_label_true_count": 0,
+      "motif_present_in_substrate": false
+    }
+  },
+  "substrate_results": {
+    "digital": {
+      "all_motif_gaps": [
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11008190358056003,
+          "max_coverage_score": 0.822448542612,
+          "motif_id": "motif.autocatalytic_closure.draft"
+        },
+        {
+          "attractor_strength": 0.7,
+          "best_lens": "graph",
+          "formal_gap": 0.12428602017160002,
+          "max_coverage_score": 0.822448542612,
+          "motif_id": "motif.externalized_memory.draft"
+        },
+        {
+          "attractor_strength": 0.88,
+          "best_lens": "statistical_mechanics",
+          "formal_gap": 0.25305909191112,
+          "max_coverage_score": 0.712432850101,
+          "motif_id": "motif.floor_connectivity.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11008190358056003,
+          "max_coverage_score": 0.822448542612,
+          "motif_id": "motif.repair.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11008190358056003,
+          "max_coverage_score": 0.822448542612,
+          "motif_id": "motif.replication_lineage.draft"
+        },
+        {
+          "attractor_strength": 0.74,
+          "best_lens": "graph",
+          "formal_gap": 0.13138807846712003,
+          "max_coverage_score": 0.822448542612,
+          "motif_id": "motif.self_maintained_boundary.draft"
+        }
+      ],
+      "coverage_count": 48,
+      "evaluation_count": 192,
+      "evidence_row_count": 24,
+      "formal_gap": {
+        "attractor_strength": 0.88,
+        "best_lens": "statistical_mechanics",
+        "formal_gap": 0.25305909191112,
+        "max_coverage_score": 0.712432850101,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 4
+        },
+        "motif.externalized_memory.draft": {
+          "false": 4
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 4
+        },
+        "motif.repair.draft": {
+          "false": 4
+        },
+        "motif.replication_lineage.draft": {
+          "true": 4
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 4
+        }
+      },
+      "lens_decline_rates": {
+        "control_theory": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          }
+        },
+        "crnt": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          }
+        },
+        "dynamical_systems": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          }
+        },
+        "graph": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          }
+        },
+        "information": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          }
+        },
+        "petri": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          }
+        },
+        "statistical_mechanics": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 4
+          }
+        },
+        "topology": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 4,
+            "total_count": 4
+          }
+        }
+      },
+      "n7": {
+        "N": 1000,
+        "empirical_p": 0.01098901098901099,
+        "null_ci": {
+          "ci_high": 0.04454170479829484,
+          "ci_low": 0.035470714932384996,
+          "mean": 0.04000620986533992,
+          "width": 0.009070989865909849
+        },
+        "null_mean": 0.04000620986533992,
+        "observed_statistic": 0.13587513003504,
+        "seed": 13013
+      },
+      "split_breakdown": {
+        "holdout": 11,
+        "train": 13
+      },
+      "trace_count": 4,
+      "verdict": {
+        "empirical_p": 0.01098901098901099,
+        "formal_gap": 0.25305909191112,
+        "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+        "threshold_check": {
+          "formal_gap_threshold": 0.2,
+          "p_threshold": 0.05,
+          "replicated": true
+        },
+        "verdict": "replicated"
+      },
+      "world_family": "digital"
+    },
+    "field": {
+      "all_motif_gaps": [
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11057890315509998,
+          "max_coverage_score": 0.821646930395,
+          "motif_id": "motif.autocatalytic_closure.draft"
+        },
+        {
+          "attractor_strength": 0.7,
+          "best_lens": "graph",
+          "formal_gap": 0.12484714872349997,
+          "max_coverage_score": 0.821646930395,
+          "motif_id": "motif.externalized_memory.draft"
+        },
+        {
+          "attractor_strength": 0.88,
+          "best_lens": "dynamical_systems",
+          "formal_gap": 0.23294008437744,
+          "max_coverage_score": 0.735295358662,
+          "motif_id": "motif.floor_connectivity.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11057890315509998,
+          "max_coverage_score": 0.821646930395,
+          "motif_id": "motif.repair.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11057890315509998,
+          "max_coverage_score": 0.821646930395,
+          "motif_id": "motif.replication_lineage.draft"
+        },
+        {
+          "attractor_strength": 0.74,
+          "best_lens": "graph",
+          "formal_gap": 0.13198127150769998,
+          "max_coverage_score": 0.821646930395,
+          "motif_id": "motif.self_maintained_boundary.draft"
+        }
+      ],
+      "coverage_count": 48,
+      "evaluation_count": 384,
+      "evidence_row_count": 48,
+      "formal_gap": {
+        "attractor_strength": 0.88,
+        "best_lens": "dynamical_systems",
+        "formal_gap": 0.23294008437744,
+        "max_coverage_score": 0.735295358662,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 8
+        },
+        "motif.externalized_memory.draft": {
+          "false": 8
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 8
+        },
+        "motif.repair.draft": {
+          "false": 8
+        },
+        "motif.replication_lineage.draft": {
+          "false": 8
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 8
+        }
+      },
+      "lens_decline_rates": {
+        "control_theory": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          }
+        },
+        "crnt": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          }
+        },
+        "dynamical_systems": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          }
+        },
+        "graph": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          }
+        },
+        "information": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          }
+        },
+        "petri": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          }
+        },
+        "statistical_mechanics": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          }
+        },
+        "topology": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 8,
+            "total_count": 8
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 8
+          }
+        }
+      },
+      "n7": {
+        "N": 1000,
+        "empirical_p": 0.007992007992007992,
+        "null_ci": {
+          "ci_high": 0.0420707868337417,
+          "ci_low": 0.037813085281366815,
+          "mean": 0.03994193605755426,
+          "width": 0.004257701552374879
+        },
+        "null_mean": 0.03994193605755426,
+        "observed_statistic": 0.11522705843814002,
+        "seed": 13013
+      },
+      "split_breakdown": {
+        "holdout": 17,
+        "train": 31
+      },
+      "trace_count": 8,
+      "verdict": {
+        "empirical_p": 0.007992007992007992,
+        "formal_gap": 0.23294008437744,
+        "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+        "threshold_check": {
+          "formal_gap_threshold": 0.2,
+          "p_threshold": 0.05,
+          "replicated": true
+        },
+        "verdict": "replicated"
+      },
+      "world_family": "field"
+    },
+    "morphogenesis": {
+      "all_motif_gaps": [
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11012110351827999,
+          "max_coverage_score": 0.822385316906,
+          "motif_id": "motif.autocatalytic_closure.draft"
+        },
+        {
+          "attractor_strength": 0.7,
+          "best_lens": "graph",
+          "formal_gap": 0.12433027816579997,
+          "max_coverage_score": 0.822385316906,
+          "motif_id": "motif.externalized_memory.draft"
+        },
+        {
+          "attractor_strength": 0.88,
+          "best_lens": "topology",
+          "formal_gap": 0.34860075572343996,
+          "max_coverage_score": 0.603862777587,
+          "motif_id": "motif.floor_connectivity.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11012110351827999,
+          "max_coverage_score": 0.822385316906,
+          "motif_id": "motif.repair.draft"
+        },
+        {
+          "attractor_strength": 0.62,
+          "best_lens": "graph",
+          "formal_gap": 0.11012110351827999,
+          "max_coverage_score": 0.822385316906,
+          "motif_id": "motif.replication_lineage.draft"
+        },
+        {
+          "attractor_strength": 0.74,
+          "best_lens": "graph",
+          "formal_gap": 0.13143486548956,
+          "max_coverage_score": 0.822385316906,
+          "motif_id": "motif.self_maintained_boundary.draft"
+        }
+      ],
+      "coverage_count": 48,
+      "evaluation_count": 240,
+      "evidence_row_count": 30,
+      "formal_gap": {
+        "attractor_strength": 0.88,
+        "best_lens": "topology",
+        "formal_gap": 0.34860075572343996,
+        "max_coverage_score": 0.603862777587,
+        "motif_id": "motif.floor_connectivity.draft"
+      },
+      "label_breakdown_by_motif": {
+        "motif.autocatalytic_closure.draft": {
+          "false": 5
+        },
+        "motif.externalized_memory.draft": {
+          "false": 5
+        },
+        "motif.floor_connectivity.draft": {
+          "false": 5
+        },
+        "motif.repair.draft": {
+          "false": 5
+        },
+        "motif.replication_lineage.draft": {
+          "true": 5
+        },
+        "motif.self_maintained_boundary.draft": {
+          "false": 5
+        }
+      },
+      "lens_decline_rates": {
+        "control_theory": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          }
+        },
+        "crnt": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          }
+        },
+        "dynamical_systems": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          }
+        },
+        "graph": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          }
+        },
+        "information": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          }
+        },
+        "petri": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          }
+        },
+        "statistical_mechanics": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          }
+        },
+        "topology": {
+          "motif.autocatalytic_closure.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.externalized_memory.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.floor_connectivity.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          },
+          "motif.repair.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.replication_lineage.draft": {
+            "decline_rate": 1.0,
+            "declined_count": 5,
+            "total_count": 5
+          },
+          "motif.self_maintained_boundary.draft": {
+            "decline_rate": 0.0,
+            "declined_count": 0,
+            "total_count": 5
+          }
+        }
+      },
+      "n7": {
+        "N": 1000,
+        "empirical_p": 0.015984015984015984,
+        "null_ci": {
+          "ci_high": 0.04723457344433173,
+          "ci_low": 0.03676145049578796,
+          "mean": 0.04199801197005985,
+          "width": 0.010473122948543773
+        },
+        "null_mean": 0.04199801197005985,
+        "observed_statistic": 0.23137506488139997,
+        "seed": 13013
+      },
+      "split_breakdown": {
+        "holdout": 11,
+        "train": 19
+      },
+      "trace_count": 5,
+      "verdict": {
+        "empirical_p": 0.015984015984015984,
+        "formal_gap": 0.34860075572343996,
+        "rationale": "Single preregistered independent run under locked basis and locked lens registry.",
+        "threshold_check": {
+          "formal_gap_threshold": 0.2,
+          "p_threshold": 0.05,
+          "replicated": true
+        },
+        "verdict": "replicated"
+      },
+      "world_family": "morphogenesis"
+    }
+  },
+  "threshold_source": "Campaign 013 driver thresholds (formal_gap > 0.20 and N7 empirical_p < 0.05 = replicated). Locked under D18: not re-tuned after observing per-substrate outcomes."
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Attractor Observatory · Control Room</title>
+<link rel="stylesheet" href="../../colors_and_type.css"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg-base); color: var(--fg-1); font-family: var(--font-ui); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(0,209,255,0.04), transparent 50%),
+      radial-gradient(ellipse at 90% 80%, rgba(176,132,255,0.03), transparent 50%);
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(var(--border-1) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-1) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.3;
+  }
+  #root { position: relative; z-index: 1; min-height: 100vh; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--bg-base); }
+  ::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--fg-3); }
+  button { font-family: inherit; }
+  input::placeholder { color: var(--fg-3); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="mockData.js"></script>
+<script type="text/babel" src="Pill.jsx"></script>
+<script type="text/babel" src="Panel.jsx"></script>
+<script type="text/babel" src="EmptyState.jsx"></script>
+<script type="text/babel" src="RoomGlyph.jsx"></script>
+<script type="text/babel" src="WorldGlyph.jsx"></script>
+<script type="text/babel" src="WorldThumbnail.jsx"></script>
+<script type="text/babel" src="AgentIdentity.jsx"></script>
+<script type="text/babel" src="Sidebar.jsx"></script>
+<script type="text/babel" src="TopBar.jsx"></script>
+<script type="text/babel" src="HealthBadge.jsx"></script>
+<script type="text/babel" src="WorldCard.jsx"></script>
+<script type="text/babel" src="GateGrid.jsx"></script>
+<script type="text/babel" src="CampaignTimeline.jsx"></script>
+<script type="text/babel" src="MotifNode.jsx"></script>
+<script type="text/babel" src="BasinFloor.jsx"></script>
+<script type="text/babel" src="DoctrineTablet.jsx"></script>
+<script type="text/babel" src="FalsifierEvent.jsx"></script>
+<script type="text/babel" src="ProjectGraph.jsx"></script>
+<script type="text/babel" src="rooms/PulseDeck.jsx"></script>
+<script type="text/babel" src="rooms/AIOperationsTower.jsx"></script>
+<script type="text/babel" src="rooms/CampaignCommand.jsx"></script>
+<script type="text/babel" src="rooms/WorldObservatory.jsx"></script>
+<script type="text/babel" src="rooms/MotifAtlas.jsx"></script>
+<script type="text/babel" src="rooms/BasinFloorLab.jsx"></script>
+<script type="text/babel" src="rooms/FalsifierAndDoctrine.jsx"></script>
+<script type="text/babel" src="rooms/FactoryAndPortfolio.jsx"></script>
+
+<script type="text/babel">
+const ROOMS = {
+  pulse:     { title: "Pulse Deck",         eyebrow: "01 · heartbeat",       Component: PulseDeck },
+  ai_ops:    { title: "AI Operations Tower",eyebrow: "02 · agents",          Component: AIOperationsTower },
+  campaign:  { title: "Campaign Command",   eyebrow: "03 · missions",        Component: CampaignCommand },
+  world:     { title: "World Observatory",  eyebrow: "04 · 13 worlds",       Component: WorldObservatory },
+  motif:     { title: "Motif Atlas",        eyebrow: "05 · constellations",  Component: MotifAtlas },
+  basin:     { title: "Basin-Floor Lab",    eyebrow: "06 · geometry",        Component: BasinFloorLab },
+  falsifier: { title: "Falsifier Ledger",   eyebrow: "07 · truth archive",   Component: FalsifierLedger },
+  doctrine:  { title: "Doctrine Console",   eyebrow: "08 · constitution",    Component: DoctrineConsole },
+  factory:   { title: "Factory Intake",     eyebrow: "09 · quarantine",      Component: FactoryIntakeDock },
+  portfolio: { title: "Portfolio / Demo",   eyebrow: "10 · presentation",    Component: PortfolioDemo },
+  graph:     { title: "Living Project Graph", eyebrow: "× · cross-cutting",  Component: ProjectGraph },
+};
+
+const App = () => {
+  const [room, setRoom] = React.useState("pulse");
+  const r = ROOMS[room];
+  return (
+    <div style={{ display: "flex", height: "100vh", overflow: "hidden" }}>
+      <Sidebar current={room} onChange={setRoom}/>
+      <main style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden", minWidth: 0 }}>
+        <TopBar room={r}/>
+        <r.Component/>
+      </main>
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+{
+  "schema": "Campaign013Regression.v1",
+  "pytest": {
+    "passed": 265,
+    "collected": 265,
+    "split_runs": [
+      {
+        "name": "campaign_011_012_013",
+        "passed": 41
+      },
+      {
+        "name": "campaign_008",
+        "passed": 16
+      },
+      {
+        "name": "campaign_009_010",
+        "passed": 15
+      },
+      {
+        "name": "field_world_reconstruction",
+        "passed": 43
+      },
+      {
+        "name": "morphogenesis_world_reconstruction",
+        "passed": 35
+      },
+      {
+        "name": "digital_world_reconstruction",
+        "passed": 41
+      },
+      {
+        "name": "campaign_002_core",
+        "passed": 7
+      },
+      {
+        "name": "campaign_003_007",
+        "passed": 24
+      },
+      {
+        "name": "core_lints_and_factory",
+        "passed": 20
+      },
+      {
+        "name": "phase1_completion_and_chemistry",
+        "passed": 9
+      },
+      {
+        "name": "raf_spine_w2",
+        "passed": 14
+      }
+    ]
+  },
+  "prior_campaigns": {
+    "campaign_002": {
+      "gate_count": 20,
+      "passed_gate_count": 20,
+      "status": "green"
+    },
+    "campaign_005": {
+      "gate_count": 21,
+      "passed_gate_count": 21,
+      "status": "green"
+    },
+    "campaign_006": {
+      "gate_count": 68,
+      "passed_gate_count": 68,
+      "status": "green"
+    },
+    "campaign_007_truth": {
+      "gate_count": 5,
+      "passed_gate_count": 5,
+      "status": "green"
+    },
+    "campaign_007_hardcode": {
+      "gate_count": 9,
+      "passed_gate_count": 9,
+      "status": "green"
+    },
+    "campaign_008": {
+      "gate_count": 35,
+      "passed_gate_count": 35,
+      "status": "green"
+    },
+    "campaign_009": {
+      "gate_count": 13,
+      "passed_gate_count": 13,
+      "status": "green"
+    },
+    "campaign_010": {
+      "gate_count": 24,
+      "passed_gate_count": 24,
+      "status": "green"
+    },
+    "campaign_011": {
+      "gate_count": 32,
+      "passed_gate_count": 32,
+      "status": "green"
+    },
+    "campaign_012": {
+      "gate_count": 24,
+      "passed_gate_count": 24,
+      "status": "green"
+    }
+  },
+  "doctrine_lints": {
+    "D14": "green",
+    "D17.5": "green",
+    "D18": "green",
+    "D19": "green",
+    "D20": "green",
+    "D21": "green"
+  },
+  "full_suite_unsplit_note": "A single unsplit pytest run exceeded the command window; the suite was verified in bounded chunks with 265/265 collected tests passing.",
+  "passed": true
+}

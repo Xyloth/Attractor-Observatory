@@ -1,1 +1,12 @@
 # Campaign 002 currently uses only the Python standard library.
+
+# Campaign 015 — Observatory Control Room (sidecar).
+# Streamlit + Plotly are required for `control_room/` only. The scientific
+# core (validation/, motifs/, formalism/, biology/, worlds/) remains
+# stdlib-only; the control_room test suite for adapters does not import
+# streamlit, so pytest still runs without these deps installed.
+# pywebview wraps the Streamlit app in a native Windows window via
+# WebView2 — the Control Room runs as a desktop app, not a browser tab.
+streamlit>=1.50
+plotly>=5.20
+pywebview>=5.0
