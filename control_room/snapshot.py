@@ -120,6 +120,12 @@ def build_snapshot() -> dict[str, Any]:
         "evidence_boundaries": _evidence_private_summary(),
         "factory_state": _factory_state_summary(factory),
         "detector_decline": _detector_decline_summary(factory),
+        # CB-009 T4 — atlas + audit-queue surfaces in the snapshot so a
+        # fresh AI consumer reading state_latest.json sees the periodic
+        # table coverage + the unresolved audit count without having to
+        # walk reports/.
+        "atlas_periodic_table": _atlas_periodic_table_summary(),
+        "audit_inbox": _audit_inbox_snapshot_summary(),
         "git_state": _git_state_summary(git),
         "pytest_status": _pytest_status_summary(pytest_cache),
         "recent_changes": _recent_changes_summary(build_log),
@@ -561,4 +567,113 @@ def _recent_changes_summary(build_log) -> dict[str, Any]:
         "status": "ok",
         "summary": f"{len(entries)} most-recent BUILD_LOG entries",
         "recent_entries": summary_entries,
+    }
+
+
+# ---------------------------------------------------------------------------
+# CB-009 T4 — Atlas + audit-inbox snapshot extensions
+# ---------------------------------------------------------------------------
+
+
+def _atlas_periodic_table_summary() -> dict[str, Any]:
+    """Summarize the atlas periodic table for the snapshot.
+
+    Returns per-motif row totals + grand totals so a fresh AI agent can
+    see "which motifs touched which worlds" without invoking the
+    Streamlit room. Mirrors the visible periodic-table tally rows.
+    """
+    try:
+        from control_room.rooms.motif_atlas import (
+            _WORLD_AXIS,
+            _classify_motif_world_cell,
+            _load_atlas_entries,
+        )
+    except ImportError as exc:
+        return {"status": "missing", "rationale": f"motif_atlas import failed: {exc}"}
+
+    entries = _load_atlas_entries()
+    if not entries:
+        return {
+            "status": "missing",
+            "rationale": "atlas/entries/ is empty or unreadable",
+        }
+
+    rows = []
+    col_totals = {wid: 0 for wid, _, _ in _WORLD_AXIS}
+    grand_total = 0
+    for entry in entries:
+        motif_id = entry.get("motif_id", "?")
+        per_world = {}
+        row_total = 0
+        for wid, _, _ in _WORLD_AXIS:
+            cell = _classify_motif_world_cell(entry, wid)
+            per_world[wid] = {
+                "count": cell["count"],
+                "total": cell["total"],
+                "status": cell["status"],
+            }
+            col_totals[wid] += cell["count"]
+            row_total += cell["count"]
+        grand_total += row_total
+        rows.append({
+            "motif_id": motif_id,
+            "row_total": row_total,
+            "per_world": per_world,
+        })
+    return {
+        "status": "ok",
+        "summary": (
+            f"{len(entries)} motifs × {len(_WORLD_AXIS)} worlds; "
+            f"{grand_total} cells fired across the table"
+        ),
+        "world_axis": [wid for wid, _, _ in _WORLD_AXIS],
+        "rows": rows,
+        "col_totals": col_totals,
+        "grand_total": grand_total,
+    }
+
+
+def _audit_inbox_snapshot_summary() -> dict[str, Any]:
+    """Summarize the live audit inbox: total/unresolved counts,
+    high-severity preview list, and the inbox source files."""
+    try:
+        from control_room.rooms.factory_intake_dock import _audit_inbox_summary
+    except ImportError as exc:
+        return {"status": "missing", "rationale": f"factory_intake_dock import failed: {exc}"}
+
+    s = _audit_inbox_summary()
+    if not s["all_items"]:
+        return {
+            "status": "missing",
+            "rationale": "no audit_queue.json items in reports/",
+        }
+    # Show the top 5 unresolved items (truncated reasons) so an AI
+    # consumer sees concrete examples without expanding the full list.
+    high_preview = [
+        {
+            "audit_id": i["audit_id"][:64],
+            "severity": i["severity"],
+            "reason": (i.get("reason") or "")[:120],
+            "source_id": i.get("source_id", ""),
+            "source_file": i.get("source_file", ""),
+        }
+        for i in s["unresolved"]
+        if i["severity"] == "high"
+    ][:5]
+    source_files = sorted({i.get("source_file") for i in s["all_items"] if i.get("source_file")})
+    return {
+        "status": "ok",
+        "summary": (
+            f"{s['unresolved_total']} unresolved / {len(s['all_items'])} total "
+            f"({s['high']} high · {s['medium']} med · {s['low']} low)"
+        ),
+        "unresolved_total": s["unresolved_total"],
+        "resolved_total": s["resolved_total"],
+        "by_severity": {
+            "high": s["high"],
+            "medium": s["medium"],
+            "low": s["low"],
+        },
+        "high_severity_preview": high_preview,
+        "source_files": source_files,
     }

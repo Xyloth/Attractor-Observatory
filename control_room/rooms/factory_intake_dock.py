@@ -64,6 +64,24 @@ def render() -> None:
     in_flight = _subprocess_in_flight(subprocess_state)
     recent_runs = _load_recent_runs()
 
+    # CB-009 T3 — live audit-queue badge under the room emblem so the
+    # PI sees "10 unresolved" before scrolling to the inbox section.
+    audit_summary = _audit_inbox_summary()
+    if audit_summary["unresolved_total"] > 0:
+        render_html(
+            f'<div style="display:inline-flex;align-items:center;gap:10px;'
+            f'background:var(--bg-panel,#121826);border:1px solid var(--warning,#f5a623);'
+            f'border-radius:999px;padding:6px 14px;margin:6px 0 14px;'
+            f'box-shadow:0 0 16px rgba(245,166,35,0.18);">'
+            f'<span style="font-family:var(--font-mono,monospace);font-size:0.74rem;'
+            f'color:var(--warning,#f5a623);letter-spacing:0.06em;text-transform:uppercase;">audit inbox</span>'
+            f'<span style="font-family:var(--font-display,sans-serif);font-size:1.2rem;'
+            f'color:var(--fg1,#f8f9fa);font-weight:600;">{audit_summary["unresolved_total"]}</span>'
+            f'<span style="font-family:var(--font-mono,monospace);font-size:0.7rem;color:var(--fg4,#6c7484);">'
+            f'unresolved · {audit_summary["high"]} high / {audit_summary["medium"]} med / {audit_summary["low"]} low</span>'
+            f'</div>'
+        )
+
     cols = st.columns(4)
     with cols[0]:
         render_html(metric_card("Subprocess", "running" if in_flight else "idle", "active" if in_flight else "verified", f"pid {subprocess_state.get('pid')}" if in_flight else "ready"))
@@ -74,6 +92,9 @@ def render() -> None:
     with cols[3]:
         warnings = len(latest_run.get("warnings", [])) + len(latest_run.get("routing_rejections", [])) if latest_run else 0
         render_html(metric_card("Audit signals", str(warnings), "warning" if warnings else "verified", "warnings + rejections"))
+
+    # CB-009 T3 — Audit-Queue Inbox section
+    _render_audit_inbox(audit_summary)
 
     st.markdown('<span class="cap">aim - target world and source adapter</span>', unsafe_allow_html=True)
     by_world: dict[str, list[dict[str, Any]]] = {}
@@ -418,3 +439,418 @@ def _load_recent_runs() -> list[dict[str, Any]]:
     except OSError:
         return []
     return rows
+
+
+# ---------------------------------------------------------------------------
+# CB-009 T3 — Audit-Queue Inbox
+# ---------------------------------------------------------------------------
+
+
+AUDIT_RESOLUTION_DIR = CACHE_DIR / "audit_resolutions"
+
+
+def _normalize_audit_item(item: dict[str, Any], source_path: Path) -> dict[str, Any]:
+    """Coerce heterogeneous audit-item shapes into the inbox row schema.
+
+    Different daemons / campaigns use different keys (campaign_011 uses
+    item_id+priority+reason; factory_store uses audit_id+severity+
+    recommended_action+reason+record_id+source_id). This normalizes to
+    a single shape so the inbox can render uniformly.
+    """
+    audit_id = item.get("audit_id") or item.get("item_id") or ""
+    # Severity normalization: factory_store uses 'high|medium|low';
+    # campaign_011 uses numeric priority (8/9 commonly). Map any
+    # priority >= 8 to 'high', 4-7 to 'medium', else 'low'.
+    raw_sev = item.get("severity")
+    if raw_sev:
+        severity = str(raw_sev).lower()
+    else:
+        prio = item.get("priority")
+        if isinstance(prio, (int, float)):
+            severity = "high" if prio >= 8 else "medium" if prio >= 4 else "low"
+        else:
+            severity = "medium"
+    return {
+        "audit_id": audit_id,
+        "severity": severity,
+        "reason": item.get("reason", ""),
+        "source_id": item.get("source_id") or item.get("source", ""),
+        "record_id": item.get("record_id", ""),
+        "recommended_action": item.get("recommended_action", item.get("action", "")),
+        "created_at": item.get("created_at", item.get("recorded_at", "")),
+        "raw_priority": item.get("priority"),
+        "source_file": str(source_path.relative_to(REPO_ROOT)) if source_path.is_absolute() else str(source_path),
+    }
+
+
+def _audit_inbox_load_all() -> list[dict[str, Any]]:
+    """Scan reports/ for audit_queue.json files and merge into a single
+    inbox list. Per CB-009 T3, sources include factory_store/,
+    daemon_store/, and campaign-root audit_queue.json files."""
+    inbox: list[dict[str, Any]] = []
+    reports_root = REPO_ROOT / "reports"
+    if not reports_root.exists():
+        return inbox
+    for q in sorted(reports_root.rglob("audit_queue.json")):
+        try:
+            payload = json.loads(q.read_text(encoding="utf-8-sig"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(payload, dict):
+            items = payload.get("items") or payload.get("records") or []
+        elif isinstance(payload, list):
+            items = payload
+        else:
+            items = []
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            inbox.append(_normalize_audit_item(item, q))
+    return inbox
+
+
+def _audit_resolution_status(audit_id: str) -> dict[str, Any] | None:
+    """Return the resolution sidecar dict for ``audit_id`` if present.
+    Resolutions live in control_room/cache/audit_resolutions/<audit_id>.json
+    and are READ-ONLY sidecars to the underlying audit queue (D22-style:
+    we never mutate the producer's queue file; we annotate alongside)."""
+    AUDIT_RESOLUTION_DIR.mkdir(parents=True, exist_ok=True)
+    safe_id = "".join(c if c.isalnum() or c in ("-", "_", ".") else "_" for c in audit_id)
+    p = AUDIT_RESOLUTION_DIR / f"{safe_id}.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _audit_resolution_write(audit_id: str, note: str = "") -> Path:
+    """Persist a resolution sidecar for ``audit_id``. Sidecar payload is
+    {audit_id, resolved_at, resolved_by, note} — never mutates the
+    underlying audit_queue.json."""
+    AUDIT_RESOLUTION_DIR.mkdir(parents=True, exist_ok=True)
+    safe_id = "".join(c if c.isalnum() or c in ("-", "_", ".") else "_" for c in audit_id)
+    p = AUDIT_RESOLUTION_DIR / f"{safe_id}.json"
+    payload = {
+        "schema": "ControlRoomAuditResolution.v1",
+        "audit_id": audit_id,
+        "resolved_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "resolved_by": "control_room.factory_intake_dock.audit_inbox",
+        "note": note,
+    }
+    p.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    return p
+
+
+def _audit_inbox_summary() -> dict[str, Any]:
+    """Compute the live counts used by the room-emblem badge + inbox
+    section header. Excludes any item with a resolution sidecar."""
+    inbox = _audit_inbox_load_all()
+    unresolved = [i for i in inbox if _audit_resolution_status(i["audit_id"]) is None]
+    by_sev = {"high": 0, "medium": 0, "low": 0}
+    for i in unresolved:
+        by_sev[i["severity"] if i["severity"] in by_sev else "medium"] += 1
+    return {
+        "all_items": inbox,
+        "unresolved": unresolved,
+        "unresolved_total": len(unresolved),
+        "resolved_total": len(inbox) - len(unresolved),
+        "high": by_sev["high"],
+        "medium": by_sev["medium"],
+        "low": by_sev["low"],
+    }
+
+
+def _render_audit_inbox(audit_summary: dict[str, Any]) -> None:
+    """Render the audit-queue inbox: grouped by severity, with filter,
+    drilldown, and 'Mark resolved' that writes a sidecar."""
+    import streamlit as st
+
+    st.markdown('<span class="cap">audit inbox · daemon-emitted honest negatives</span>', unsafe_allow_html=True)
+
+    inbox = audit_summary["all_items"]
+    if not inbox:
+        render_empty_state(
+            reason="no audit_queue.json files in reports/ contain items",
+            expected_artifact="reports/<campaign>/{factory_store,daemon_store}/audit_queue.json with items",
+        )
+        return
+
+    # Filter controls
+    filt_cols = st.columns([2, 2, 2, 2])
+    with filt_cols[0]:
+        sev_filter = st.multiselect(
+            "severity",
+            options=["high", "medium", "low"],
+            default=["high", "medium", "low"],
+            key="audit_inbox_sev_filter",
+        )
+    with filt_cols[1]:
+        sources_present = sorted({i["source_id"] for i in inbox if i["source_id"]})
+        source_filter = st.multiselect(
+            "source",
+            options=sources_present,
+            default=sources_present,
+            key="audit_inbox_source_filter",
+        )
+    with filt_cols[2]:
+        status_filter = st.selectbox(
+            "status",
+            options=["unresolved only", "resolved only", "all"],
+            index=0,
+            key="audit_inbox_status_filter",
+        )
+    with filt_cols[3]:
+        render_html(
+            f'<div style="font-family:var(--font-mono,monospace);font-size:0.74rem;'
+            f'color:var(--fg3,#9aa0ac);padding:8px 0;">'
+            f'<b>{audit_summary["unresolved_total"]}</b> unresolved · '
+            f'<b>{audit_summary["resolved_total"]}</b> resolved · '
+            f'<b>{len(inbox)}</b> total<br>'
+            f'<span style="color:var(--warning,#f5a623);">{audit_summary["high"]}</span> high · '
+            f'<span style="color:var(--active,#4fc3f7);">{audit_summary["medium"]}</span> med · '
+            f'<span style="color:var(--fg4,#6c7484);">{audit_summary["low"]}</span> low'
+            f'</div>'
+        )
+
+    # Apply filters
+    def _passes_status(item: dict[str, Any]) -> bool:
+        resolved = _audit_resolution_status(item["audit_id"]) is not None
+        if status_filter == "unresolved only":
+            return not resolved
+        if status_filter == "resolved only":
+            return resolved
+        return True
+
+    filtered = [
+        i for i in inbox
+        if i["severity"] in sev_filter
+        and (not source_filter or i["source_id"] in source_filter or not i["source_id"])
+        and _passes_status(i)
+    ]
+
+    if not filtered:
+        render_html(
+            '<div style="font-family:var(--font-body,sans-serif);font-size:0.85rem;'
+            'color:var(--fg4,#6c7484);margin:12px 0;padding:12px;'
+            'background:var(--bg-panel,#121826);border:1px dashed var(--border,#283042);'
+            'border-radius:14px;">'
+            'no items match current filters'
+            '</div>'
+        )
+        return
+
+    # Group by severity in priority order
+    sev_order = ["high", "medium", "low"]
+    sev_color = {"high": "#ff5468", "medium": "#f5a623", "low": "#5b6478"}
+    for sev in sev_order:
+        bucket = [i for i in filtered if i["severity"] == sev]
+        if not bucket:
+            continue
+        st.markdown(
+            f'<div style="font-family:var(--font-mono,monospace);font-size:0.78rem;'
+            f'color:{sev_color[sev]};margin:14px 0 6px;letter-spacing:0.06em;'
+            f'text-transform:uppercase;font-weight:600;">'
+            f'{sev} severity · {len(bucket)} item(s)</div>',
+            unsafe_allow_html=True,
+        )
+        for item in bucket[:25]:  # cap at 25 per severity to keep the room scannable
+            resolution = _audit_resolution_status(item["audit_id"])
+            resolved = resolution is not None
+            border_color = "var(--verified,#3ddc84)" if resolved else sev_color[sev]
+            opacity = "0.6" if resolved else "1.0"
+            audit_id_short = item["audit_id"][:48] + ("…" if len(item["audit_id"]) > 48 else "")
+            resolved_pill = (
+                '<span style="color:var(--verified,#3ddc84);font-family:var(--font-mono,monospace);'
+                'font-size:0.7rem;font-weight:600;">RESOLVED</span>'
+                if resolved else ""
+            )
+            # CB-009 T3 — click-to-drill: store audit_id in session_state
+            # so the drilldown panel below can show the underlying record
+            # / source-cache entry / failure context. The brief calls
+            # this out explicitly: "Click item → drill into the
+            # underlying record / source-cache entry / failure context".
+            row_html = (
+                f'<div style="opacity:{opacity};background:var(--bg-panel,#121826);'
+                f'border:1px solid var(--border,#283042);border-left:3px solid {border_color};'
+                f'border-radius:10px;padding:10px 14px;margin:6px 0;">'
+                f'<div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">'
+                f'<span style="font-family:var(--font-mono,monospace);font-size:0.75rem;'
+                f'color:var(--trace,#22d3ee);font-weight:600;">{audit_id_short}</span>'
+                f'<span style="font-family:var(--font-mono,monospace);font-size:0.7rem;'
+                f'color:var(--fg4,#6c7484);">{item["created_at"] or "no timestamp"}</span>'
+                f'{resolved_pill}'
+                f'</div>'
+                f'<div style="font-family:var(--font-body,sans-serif);font-size:0.88rem;'
+                f'color:var(--fg2,#e3e6ec);margin:6px 0;">{item["reason"] or "<i>no reason given</i>"}</div>'
+                f'<div style="font-family:var(--font-mono,monospace);font-size:0.7rem;'
+                f'color:var(--fg4,#6c7484);">'
+                f'source: <span style="color:var(--fg3,#9aa0ac);">{item["source_id"] or "—"}</span> · '
+                f'record: <span style="color:var(--fg3,#9aa0ac);">{(item["record_id"] or "—")[:42]}</span><br>'
+                f'recommended: <span style="color:var(--fg3,#9aa0ac);">{(item["recommended_action"] or "—")[:120]}</span><br>'
+                f'source_file: <span style="color:var(--fg3,#9aa0ac);">{item["source_file"]}</span>'
+                f'</div>'
+                f'</div>'
+            )
+            render_html(row_html)
+            if not resolved:
+                resolve_cols = st.columns([2, 1, 1])
+                with resolve_cols[0]:
+                    note = st.text_input(
+                        "resolution note (optional)",
+                        key=f"audit_note_{item['audit_id']}",
+                        label_visibility="collapsed",
+                        placeholder="resolution note (optional, persisted to sidecar)",
+                    )
+                with resolve_cols[1]:
+                    if st.button("Drill", key=f"audit_drill_{item['audit_id']}", use_container_width=True):
+                        st.session_state["audit_inbox_drilldown_id"] = item["audit_id"]
+                        st.rerun()
+                with resolve_cols[2]:
+                    if st.button("Mark resolved", key=f"audit_resolve_{item['audit_id']}", use_container_width=True):
+                        _audit_resolution_write(item["audit_id"], note=note)
+                        st.rerun()
+            else:
+                render_html(
+                    f'<div style="font-family:var(--font-mono,monospace);font-size:0.7rem;'
+                    f'color:var(--verified,#3ddc84);margin:-4px 0 8px 14px;">'
+                    f'resolved at {resolution.get("resolved_at", "?")} · '
+                    f'note: {(resolution.get("note") or "—")[:80]}'
+                    f'</div>'
+                )
+
+    # CB-009 T3 drilldown panel — surfaces the underlying record /
+    # source-cache entry / failure context for the selected audit item.
+    drill_id = st.session_state.get("audit_inbox_drilldown_id")
+    if drill_id:
+        target = next((i for i in inbox if i["audit_id"] == drill_id), None)
+        if target is None:
+            st.session_state.pop("audit_inbox_drilldown_id", None)
+        else:
+            _render_audit_drilldown(target)
+
+
+def _render_audit_drilldown(item: dict[str, Any]) -> None:
+    """Surface the underlying record + source-cache entry + failure
+    context for the audit item selected by the user. Per the CB-009
+    brief: 'Click item → drill into the underlying record /
+    source-cache entry / failure context'. Read-only — never mutates."""
+    import streamlit as st
+
+    st.markdown(
+        f'<div style="margin-top: 1.2rem; padding: 12px 14px; background: var(--bg-panel,#121826); '
+        f'border: 1px solid var(--motif,#bd6df8); border-radius: 14px; '
+        f'box-shadow: 0 0 18px rgba(189,109,248,0.15);">'
+        f'<div style="font-family: var(--font-display,sans-serif); font-size: 1.05rem; color: var(--fg1,#f8f9fa); '
+        f'font-weight: 600;">audit drilldown · {item["audit_id"][:60]}</div>'
+        f'<div style="font-family: var(--font-mono,monospace); font-size: 0.72rem; color: var(--fg4,#6c7484); '
+        f'margin: 4px 0 8px;">severity: {item["severity"]} · source: {item["source_id"] or "—"} · '
+        f'recorded: {item["created_at"] or "no timestamp"}</div>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+    # Always show the audit item itself
+    with st.expander("1. audit item (raw)", expanded=True):
+        st.json(item)
+
+    # If the audit references a record_id, hunt for the source record
+    # in factory_store / daemon_store empirical_records.json files.
+    if item.get("record_id"):
+        record = _find_empirical_record(item["record_id"])
+        with st.expander(f"2. underlying empirical record  ({'FOUND' if record else 'not found'})", expanded=bool(record)):
+            if record:
+                st.json(record)
+            else:
+                render_html(
+                    '<div style="font-family:var(--font-body,sans-serif);font-size:0.85rem;'
+                    'color:var(--fg4,#6c7484);">no empirical_records.json under reports/ '
+                    'contains this record_id (D22 honest absence — the producer may have '
+                    'wiped the contaminated record after audit).</div>'
+                )
+
+    # If the audit references a source_id, look up the source-cache entry
+    if item.get("source_id"):
+        cache_entry = _find_source_cache_entry(item["source_id"])
+        with st.expander(f"3. source cache entry  ({'FOUND' if cache_entry else 'not found'})", expanded=False):
+            if cache_entry:
+                st.json(cache_entry)
+            else:
+                render_html(
+                    '<div style="font-family:var(--font-body,sans-serif);font-size:0.85rem;'
+                    'color:var(--fg4,#6c7484);">no source_cache_index.json under reports/ '
+                    f'contains source_id={item["source_id"]}.</div>'
+                )
+
+    # Source file context — show the surrounding audit_queue.json file
+    with st.expander(f"4. source file context  ({item['source_file']})", expanded=False):
+        src_path = REPO_ROOT / item["source_file"]
+        if src_path.exists():
+            try:
+                # Show only the relevant section to keep render sane.
+                payload = json.loads(src_path.read_text(encoding="utf-8-sig"))
+                if isinstance(payload, dict):
+                    items = payload.get("items") or payload.get("records") or []
+                else:
+                    items = payload if isinstance(payload, list) else []
+                # Find this item in the file
+                matches = [
+                    x for x in items
+                    if isinstance(x, dict)
+                    and (x.get("audit_id") == item["audit_id"] or x.get("item_id") == item["audit_id"])
+                ]
+                st.json({
+                    "source_file": item["source_file"],
+                    "total_items_in_file": len(items),
+                    "matched_item": matches[0] if matches else None,
+                })
+            except (OSError, json.JSONDecodeError) as exc:
+                st.error(f"could not parse {src_path}: {exc}")
+        else:
+            st.error(f"source file no longer exists: {src_path}")
+
+    if st.button("Close drilldown", key="audit_close_drilldown"):
+        st.session_state.pop("audit_inbox_drilldown_id", None)
+        st.rerun()
+
+
+def _find_empirical_record(record_id: str) -> dict[str, Any] | None:
+    """Scan reports/**/empirical_records.json for a record matching
+    ``record_id``. Returns the first match or None. Read-only."""
+    reports = REPO_ROOT / "reports"
+    if not reports.exists():
+        return None
+    for p in reports.rglob("empirical_records.json"):
+        try:
+            payload = json.loads(p.read_text(encoding="utf-8-sig"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = payload.get("records") if isinstance(payload, dict) else payload
+        if not isinstance(records, list):
+            continue
+        for r in records:
+            if isinstance(r, dict) and r.get("record_id") == record_id:
+                return r
+    return None
+
+
+def _find_source_cache_entry(source_id: str) -> dict[str, Any] | None:
+    """Scan reports/**/source_cache_index.json for an entry matching
+    ``source_id``. Returns the first match or None. Read-only."""
+    reports = REPO_ROOT / "reports"
+    if not reports.exists():
+        return None
+    for p in reports.rglob("source_cache_index.json"):
+        try:
+            payload = json.loads(p.read_text(encoding="utf-8-sig"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        entries = payload.get("entries") if isinstance(payload, dict) else payload
+        if not isinstance(entries, list):
+            continue
+        for e in entries:
+            if isinstance(e, dict) and e.get("source_id") == source_id:
+                return e
+    return None
+

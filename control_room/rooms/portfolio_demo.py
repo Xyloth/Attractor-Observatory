@@ -33,6 +33,7 @@ inserting placeholder narrative.
 
 from __future__ import annotations
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -224,6 +225,416 @@ def render() -> None:
         "is the human equivalent of that snapshot: a 60-second hand-off."
         '</div>'
     )
+
+    # CB-009 T2 — Paper Bundle Generator
+    _render_paper_bundle_generator()
+
+
+# ---------------------------------------------------------------------------
+# CB-009 T2 — Paper Bundle Generator
+# ---------------------------------------------------------------------------
+
+
+BUNDLES_ROOT = Path(__file__).resolve().parents[2] / "papers" / "bundles"
+
+
+def _list_atlas_motifs() -> list[dict[str, Any]]:
+    """Read every atlas/entries/atlas.<motif>.001.json. Returns the list
+    of dicts. Used both for the dropdown and for bundle assembly."""
+    p = Path("atlas/entries")
+    if not p.exists():
+        return []
+    out: list[dict[str, Any]] = []
+    for f in sorted(p.glob("atlas.*.json")):
+        try:
+            out.append(json.loads(f.read_text(encoding="utf-8-sig")))
+        except (OSError, json.JSONDecodeError):
+            continue
+    return out
+
+
+def _find_methods_docs_mentioning(motif_short: str) -> list[Path]:
+    """Find every papers/methods/*.md that mentions the motif short
+    name (e.g., ``autocatalytic_closure``). Used for bundle assembly."""
+    methods_dir = Path("papers/methods")
+    if not methods_dir.exists():
+        return []
+    matches: list[Path] = []
+    for f in sorted(methods_dir.glob("*.md")):
+        try:
+            text = f.read_text(encoding="utf-8-sig").lower()
+            if motif_short.lower() in text:
+                matches.append(f)
+        except OSError:
+            continue
+    return matches
+
+
+def _find_falsifier_docs_mentioning(motif_short: str) -> list[Path]:
+    """Find every papers/falsifiers/*.{md,json} that mentions the motif."""
+    falsifiers_dir = Path("papers/falsifiers")
+    if not falsifiers_dir.exists():
+        return []
+    matches: list[Path] = []
+    for f in sorted(falsifiers_dir.iterdir()):
+        if f.suffix not in (".md", ".json"):
+            continue
+        try:
+            text = f.read_text(encoding="utf-8-sig").lower()
+            if motif_short.lower() in text:
+                matches.append(f)
+        except OSError:
+            continue
+    return matches
+
+
+def _build_paper_bundle(motif_entry: dict[str, Any]) -> dict[str, Any]:
+    """Assemble a content-hashed paper bundle for the given motif.
+
+    Bundle directory layout:
+      papers/bundles/<motif_short>_<utc_compact>/
+        bundle.json                        ← top-level manifest
+        atlas_entry.json                   ← copy of the motif's atlas entry
+        campaigns/                         ← per-campaign report excerpts
+          campaign_<id>_full_report.json   ← if present
+        methods/                           ← methods docs that mention motif
+          <doc>.md
+        falsifiers/                        ← falsifier docs that mention motif
+          <doc>.{md,json}
+        citation.bib                       ← BibTeX-ready citation block
+    """
+    import hashlib
+
+    motif_id = motif_entry.get("motif_id", "unknown")
+    motif_short = motif_id.split(".")[1] if "." in motif_id else motif_id
+    utc = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    bundle_name = f"{motif_short}_{utc}"
+    bundle_dir = BUNDLES_ROOT / bundle_name
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+
+    files_manifest: list[dict[str, str]] = []
+
+    def _write(rel_path: str, content: str) -> None:
+        # Write bytes directly (not write_text) so Windows CRLF
+        # translation can never silently drift the on-disk bytes from
+        # the hash we declare in the manifest. Bundle integrity
+        # depends on hash(in-memory content) == hash(disk content).
+        out = bundle_dir / rel_path
+        out.parent.mkdir(parents=True, exist_ok=True)
+        data = content.encode("utf-8")
+        out.write_bytes(data)
+        h = hashlib.sha256(data).hexdigest()
+        files_manifest.append({
+            "path": rel_path,
+            "size_bytes": str(len(data)),
+            "content_hash": f"sha256:{h}",
+        })
+
+    # 1. Atlas entry
+    _write("atlas_entry.json", json.dumps(motif_entry, sort_keys=True, indent=2) + "\n")
+
+    # 2. Per-campaign report excerpts
+    for cid in motif_entry.get("provenance", {}).get("campaigns", []) or []:
+        for candidate in (
+            Path(f"reports/campaign_{cid}/full_report.json"),
+            Path(f"reports/campaign_{cid}/cli_full_report.json"),
+        ):
+            if candidate.exists():
+                try:
+                    text = candidate.read_text(encoding="utf-8-sig")
+                    _write(f"campaigns/campaign_{cid}_{candidate.name}", text)
+                except OSError:
+                    continue
+                break
+
+    # 3. Methods docs
+    for f in _find_methods_docs_mentioning(motif_short):
+        try:
+            _write(f"methods/{f.name}", f.read_text(encoding="utf-8-sig"))
+        except OSError:
+            continue
+
+    # 4. Falsifier docs
+    for f in _find_falsifier_docs_mentioning(motif_short):
+        try:
+            _write(f"falsifiers/{f.name}", f.read_text(encoding="utf-8-sig"))
+        except OSError:
+            continue
+
+    # 5. BibTeX citation block (template; doctrine D14 — no fabrication
+    # of the title, so use the canonical motif_id and the spec_version
+    # the entry was registered against).
+    bib = (
+        f"@misc{{attractor_observatory_{motif_short}_atlas,\n"
+        f"  author = {{Attractor Observatory contributors}},\n"
+        f"  title  = {{Atlas entry for motif {motif_id}}},\n"
+        f"  year   = {{2026}},\n"
+        f"  note   = {{spec_version {motif_entry.get('spec_version', 'unknown')}; "
+        f"motif_registry_version {motif_entry.get('motif_registry_version', 'unknown')}}},\n"
+        f"  url    = {{https://attractor-observatory/atlas/{motif_id}}},\n"
+        f"}}\n"
+    )
+    _write("citation.bib", bib)
+
+    # 6. Top-level bundle manifest with file content_hashes + bundle hash
+    manifest = {
+        "schema": "PaperBundleManifest.v1",
+        "bundle_id": bundle_name,
+        "motif_id": motif_id,
+        "motif_short": motif_short,
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "spec_version": motif_entry.get("spec_version"),
+        "motif_registry_version": motif_entry.get("motif_registry_version"),
+        "provenance_campaigns": motif_entry.get("provenance", {}).get("campaigns") or [],
+        "replication_verdict": motif_entry.get("provenance", {}).get("replication_verdict"),
+        "files": sorted(files_manifest, key=lambda r: r["path"]),
+        "file_count": len(files_manifest),
+    }
+    manifest_text = json.dumps(manifest, sort_keys=True, indent=2) + "\n"
+    manifest_hash = hashlib.sha256(
+        json.dumps(manifest["files"], sort_keys=True).encode("utf-8")
+    ).hexdigest()
+    manifest["bundle_content_hash"] = f"sha256:{manifest_hash}"
+    manifest_text = json.dumps(manifest, sort_keys=True, indent=2) + "\n"
+    (bundle_dir / "bundle.json").write_text(manifest_text, encoding="utf-8")
+
+    return {"bundle_dir": str(bundle_dir), "manifest": manifest}
+
+
+def _list_campaign_ids() -> list[str]:
+    """Discover campaign report directories under reports/ matching
+    ``campaign_<id>/``. Used for the campaign-based bundle dropdown."""
+    out: list[str] = []
+    reports = Path("reports")
+    if not reports.exists():
+        return []
+    for p in sorted(reports.iterdir()):
+        if p.is_dir() and p.name.startswith("campaign_"):
+            cid = p.name.split("_", 1)[1]
+            out.append(cid)
+    return out
+
+
+def _build_campaign_bundle(campaign_id: str) -> dict[str, Any]:
+    """Assemble a content-hashed bundle for a single campaign.
+
+    Bundle directory layout:
+      papers/bundles/campaign_<id>_<utc>/
+        bundle.json                       ← top-level manifest
+        full_report.json (or cli_full_report.json) if present
+        atlas_entries/                    ← every atlas entry citing this campaign
+        methods/                          ← methods docs that cite this campaign
+        falsifiers/                       ← falsifier docs that cite this campaign
+        citation.bib
+    """
+    import hashlib
+
+    utc = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    bundle_name = f"campaign_{campaign_id}_{utc}"
+    bundle_dir = BUNDLES_ROOT / bundle_name
+    bundle_dir.mkdir(parents=True, exist_ok=True)
+
+    files_manifest: list[dict[str, str]] = []
+
+    def _write(rel_path: str, content: str) -> None:
+        out = bundle_dir / rel_path
+        out.parent.mkdir(parents=True, exist_ok=True)
+        data = content.encode("utf-8")
+        out.write_bytes(data)
+        h = hashlib.sha256(data).hexdigest()
+        files_manifest.append({
+            "path": rel_path,
+            "size_bytes": str(len(data)),
+            "content_hash": f"sha256:{h}",
+        })
+
+    # 1. Campaign full report (try the two filename conventions)
+    for candidate in (
+        Path(f"reports/campaign_{campaign_id}/full_report.json"),
+        Path(f"reports/campaign_{campaign_id}/cli_full_report.json"),
+    ):
+        if candidate.exists():
+            try:
+                _write(candidate.name, candidate.read_text(encoding="utf-8-sig"))
+            except OSError:
+                continue
+            break
+
+    # 2. Atlas entries that cite this campaign
+    citing_motifs: list[str] = []
+    for entry in _list_atlas_motifs():
+        if campaign_id in (entry.get("provenance") or {}).get("campaigns", []) or []:
+            motif_short = entry["motif_id"].split(".")[1] if "." in entry["motif_id"] else entry["motif_id"]
+            citing_motifs.append(entry["motif_id"])
+            _write(
+                f"atlas_entries/atlas.{motif_short}.001.json",
+                json.dumps(entry, sort_keys=True, indent=2) + "\n",
+            )
+
+    # 3. Methods docs citing this campaign id
+    methods_dir = Path("papers/methods")
+    if methods_dir.exists():
+        for f in sorted(methods_dir.glob("*.md")):
+            try:
+                text = f.read_text(encoding="utf-8-sig")
+            except OSError:
+                continue
+            if f"campaign_{campaign_id}" in text.lower() or f"campaign {campaign_id}" in text.lower():
+                _write(f"methods/{f.name}", text)
+
+    # 4. Falsifier docs citing this campaign
+    falsifiers_dir = Path("papers/falsifiers")
+    if falsifiers_dir.exists():
+        for f in sorted(falsifiers_dir.iterdir()):
+            if f.suffix not in (".md", ".json"):
+                continue
+            try:
+                text = f.read_text(encoding="utf-8-sig")
+            except OSError:
+                continue
+            if f"campaign_{campaign_id}" in text.lower() or f"campaign {campaign_id}" in text.lower():
+                _write(f"falsifiers/{f.name}", text)
+
+    # 5. BibTeX citation (template, no fabrication)
+    bib = (
+        f"@misc{{attractor_observatory_campaign_{campaign_id},\n"
+        f"  author = {{Attractor Observatory contributors}},\n"
+        f"  title  = {{Campaign {campaign_id} report bundle}},\n"
+        f"  year   = {{2026}},\n"
+        f"  note   = {{citing motifs: {', '.join(citing_motifs) or 'none'}}},\n"
+        f"  url    = {{https://attractor-observatory/reports/campaign_{campaign_id}/}},\n"
+        f"}}\n"
+    )
+    _write("citation.bib", bib)
+
+    # 6. Manifest with bundle_content_hash
+    manifest = {
+        "schema": "PaperBundleManifest.v1",
+        "bundle_id": bundle_name,
+        "bundle_kind": "campaign",
+        "campaign_id": campaign_id,
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "citing_motifs": citing_motifs,
+        "files": sorted(files_manifest, key=lambda r: r["path"]),
+        "file_count": len(files_manifest),
+    }
+    h = hashlib.sha256(
+        json.dumps(manifest["files"], sort_keys=True).encode("utf-8")
+    ).hexdigest()
+    manifest["bundle_content_hash"] = f"sha256:{h}"
+    (bundle_dir / "bundle.json").write_text(
+        json.dumps(manifest, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return {"bundle_dir": str(bundle_dir), "manifest": manifest}
+
+
+def _render_paper_bundle_generator() -> None:
+    """Dropdown of motifs OR campaigns + 'Build bundle' button + inline
+    preview of the most recent bundle structure for the selected target.
+    Brief: "pick a motif (or a campaign)"."""
+    import streamlit as st
+
+    st.markdown('<span class="cap">paper bundle generator · arXiv-ready exports</span>', unsafe_allow_html=True)
+
+    motifs = _list_atlas_motifs()
+    campaigns = _list_campaign_ids()
+    if not motifs and not campaigns:
+        render_empty_state(
+            reason="no atlas entries and no campaign reports found",
+            expected_artifact="atlas/entries/ or reports/campaign_*/",
+        )
+        return
+
+    # Mode toggle (motif vs campaign)
+    mode_cols = st.columns([1, 1, 6])
+    with mode_cols[0]:
+        kind = st.radio(
+            "bundle kind",
+            options=["motif", "campaign"],
+            horizontal=True,
+            key="paper_bundle_kind",
+            label_visibility="collapsed",
+        )
+
+    cols = st.columns([3, 2, 5])
+    if kind == "motif":
+        with cols[0]:
+            motif_choice = st.selectbox(
+                "motif",
+                options=[m.get("motif_id", "?") for m in motifs],
+                key="paper_bundle_motif_choice",
+            )
+        with cols[1]:
+            do_build = st.button("Build bundle", key="paper_bundle_build_btn", use_container_width=True)
+        with cols[2]:
+            BUNDLES_ROOT.mkdir(parents=True, exist_ok=True)
+            short = motif_choice.split('.')[1] if '.' in motif_choice else motif_choice
+            existing = sorted(BUNDLES_ROOT.glob(f"{short}_*"), reverse=True)
+            latest = existing[0].name if existing else "—"
+            render_html(
+                f'<div style="font-family:var(--font-mono,monospace);font-size:0.75rem;'
+                f'color:var(--fg3,#9aa0ac);padding:8px 0;">'
+                f'existing bundles: <b>{len(existing)}</b><br>most recent: <code>{latest}</code></div>'
+            )
+    else:
+        with cols[0]:
+            campaign_choice = st.selectbox(
+                "campaign",
+                options=campaigns,
+                key="paper_bundle_campaign_choice",
+            )
+        with cols[1]:
+            do_build = st.button("Build bundle", key="paper_bundle_build_btn", use_container_width=True)
+        with cols[2]:
+            BUNDLES_ROOT.mkdir(parents=True, exist_ok=True)
+            existing = sorted(BUNDLES_ROOT.glob(f"campaign_{campaign_choice}_*"), reverse=True)
+            latest = existing[0].name if existing else "—"
+            render_html(
+                f'<div style="font-family:var(--font-mono,monospace);font-size:0.75rem;'
+                f'color:var(--fg3,#9aa0ac);padding:8px 0;">'
+                f'existing bundles: <b>{len(existing)}</b><br>most recent: <code>{latest}</code></div>'
+            )
+
+    if do_build:
+        if kind == "motif":
+            entry = next((m for m in motifs if m.get("motif_id") == motif_choice), None)
+            if entry is None:
+                st.error(f"could not find atlas entry for {motif_choice}")
+                return
+            result = _build_paper_bundle(entry)
+        else:
+            result = _build_campaign_bundle(campaign_choice)
+        st.success(f"bundle built: {result['bundle_dir']}")
+        manifest = result["manifest"]
+        # Inline preview of bundle structure
+        files_html = "".join(
+            f'<li style="font-family:var(--font-mono,monospace);font-size:0.72rem;'
+            f'color:var(--fg2,#e3e6ec);margin:2px 0;">'
+            f'<span style="color:var(--trace,#22d3ee);">{f["path"]}</span> '
+            f'<span style="color:var(--fg4,#6c7484);">({f["size_bytes"]} B · {f["content_hash"][:24]}…)</span>'
+            f'</li>'
+            for f in manifest["files"]
+        )
+        render_html(
+            f'<div style="background:var(--bg-panel,#121826);border:1px solid var(--motif,#bd6df8);'
+            f'border-radius:14px;padding:14px;margin-top:12px;'
+            f'box-shadow:0 0 20px rgba(189,109,248,0.15);">'
+            f'<div style="font-family:var(--font-display,sans-serif);font-size:1.05rem;color:var(--fg1,#f8f9fa);'
+            f'font-weight:600;">bundle manifest · {manifest["bundle_id"]}</div>'
+            f'<div style="font-family:var(--font-mono,monospace);font-size:0.7rem;color:var(--fg4,#6c7484);'
+            f'margin:4px 0 8px;">'
+            f'motif: {manifest["motif_id"]} · '
+            f'spec: {manifest.get("spec_version", "—")[:32] if manifest.get("spec_version") else "—"}…<br>'
+            f'campaigns: {", ".join(manifest["provenance_campaigns"]) or "—"} · '
+            f'verdict: {manifest.get("replication_verdict") or "—"}<br>'
+            f'bundle_content_hash: <code>{manifest["bundle_content_hash"][:48]}…</code>'
+            f'</div>'
+            f'<div style="font-family:var(--font-mono,monospace);font-size:0.72rem;color:var(--fg3,#9aa0ac);'
+            f'margin:8px 0 4px;">{manifest["file_count"]} files:</div>'
+            f'<ul style="margin:0;padding-left:18px;list-style:disc;">{files_html}</ul>'
+            f'</div>'
+        )
 
 
 # ---------------------------------------------------------------------------
