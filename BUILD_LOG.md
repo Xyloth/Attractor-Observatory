@@ -860,3 +860,19 @@ Red gates: `SS-02`, `SS-03`, `AI-04`, `AI-07`, `AI-08`, `AQ-03`. These remain ad
 - Doctrine: D23, D24, D25 ratified to binding docs and registry rows; README and Control Room docs updated to D7-D25.
 - Verification: python make_campaign_021.py; live adapter smoke for KEGG/NCBI/GBIF -> network; Playwright screenshot reports/campaign_021/factory_intake_dock_task033_full.png; pytest -q -> 11 passed.
 - Disclosure: formal lens registry currently contains six draft motifs, not eight; no motif IDs were fabricated. C020 methodology leak remains out of scope and promotion remains closed.
+
+## TASK-CB-009 — Atlas + Paper Bundle + Audit Inbox
+
+Start EST: 2026-05-06 14:01:48 EST
+Min/Max: 30/60 min
+Branch: feature/cb-009-atlas-bundle-inbox (from codex/task-033-multi-world-factory)
+
+
+## TASK-CB-009 — Atlas + Paper Bundle + Audit Inbox — Complete
+
+Stop EST: 2026-05-06 14:15:03 EST
+Actual: 13.2 min (min 30 / max 60 / est 45)
+Delta:  0.2933
+Sub-tasks: T1 + T2 + T3 + T4 (all four)
+Tests: 12/12 pass in 0.68s
+
