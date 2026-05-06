@@ -1,0 +1,571 @@
+{
+  "records": [
+    {
+      "canonical_name": "Mineral-surface thioester prebiotic closure benchmark",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "surface_stabilized_closure",
+        "canonical_name": "Mineral-surface thioester prebiotic closure benchmark",
+        "chemistry_context": "mineral surface catalysis and activated-carbon chemistry",
+        "parameter_basis": "surface adsorption and catalysis strengths projected from mineral-surface closure literature",
+        "source_table": "peer-reviewed prebiotic chemistry benchmark catalog",
+        "world_parameters": {
+          "adsorption_rate": 0.34,
+          "benchmark": "surface_stabilized_closure",
+          "steps": 90,
+          "surface_catalysis": 0.24
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_prebiotic_chemistry_literature",
+        "citation": "Huber and Wachtershauser, Activated acetic acid by carbon fixation on (Fe,Ni)S under primordial conditions, Science, 1997.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_url": "https://doi.org/10.1126/science.276.5310.245"
+      },
+      "record_id": "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+      "record_type": "prebiotic_chemistry_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.prebiotic_chemistry_catalog",
+      "world_family": "origins_chemistry"
+    },
+    {
+      "canonical_name": "KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "organism": "Escherichia coli K-12 MG1655",
+        "organism_code": "eco",
+        "pathway_count_observed": 4,
+        "reaction_edge_count": 8,
+        "reaction_edges": [
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:2.7.1.1"
+            ],
+            "from": "D-glucose",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00200",
+            "to": "D-glucose-6-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:5.3.1.9"
+            ],
+            "from": "D-glucose-6-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00771",
+            "to": "D-fructose-6-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:2.7.1.11"
+            ],
+            "from": "D-fructose-6-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00756",
+            "to": "D-fructose-1,6-bisphosphate"
+          },
+          {
+            "degree_proxy": 3,
+            "enzymes": [
+              "ec:4.1.2.13"
+            ],
+            "from": "D-fructose-1,6-bisphosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R01068",
+            "to": "glyceraldehyde-3-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:1.2.1.12"
+            ],
+            "from": "glyceraldehyde-3-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R01061",
+            "to": "3-phospho-D-glyceroyl-phosphate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:2.7.2.3"
+            ],
+            "from": "3-phospho-D-glyceroyl-phosphate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R01512",
+            "to": "3-phospho-D-glycerate"
+          },
+          {
+            "degree_proxy": 2,
+            "enzymes": [
+              "ec:5.4.2.12"
+            ],
+            "from": "3-phospho-D-glycerate",
+            "pathway_id": "eco00010",
+            "reaction_id": "R00658",
+            "to": "2-phospho-D-glycerate"
+          },
+          {
+            "degree_proxy": 1,
+            "enzymes": [
+              "structural_projection"
+            ],
+            "from": "2-phospho-D-glycerate",
+            "pathway_id": "eco01200",
+            "reaction_id": "R00200-closure",
+            "to": "D-glucose"
+          }
+        ],
+        "seed_pathway_count": 4,
+        "source_table": "KEGG REST pathway list and curated KEGG central-metabolism edge summary",
+        "species_count": 8,
+        "world_parameters": {
+          "initial_state": {
+            "2-phospho-D-glycerate": 8.0,
+            "3-phospho-D-glycerate": 1.0,
+            "3-phospho-D-glyceroyl-phosphate": 1.0,
+            "D-fructose-1,6-bisphosphate": 1.0,
+            "D-fructose-6-phosphate": 1.0,
+            "D-glucose": 1.0,
+            "D-glucose-6-phosphate": 1.0,
+            "glyceraldehyde-3-phosphate": 1.0
+          },
+          "projection_basis": "kegg_ecoli_structural_crn_v0",
+          "reactions": [
+            {
+              "catalysts": [],
+              "products": {
+                "D-glucose-6-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "D-glucose": 1.0
+              },
+              "reaction_id": "R00200",
+              "source_enzymes": [
+                "ec:2.7.1.1"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "D-fructose-6-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "D-glucose-6-phosphate": 1.0
+              },
+              "reaction_id": "R00771",
+              "source_enzymes": [
+                "ec:5.3.1.9"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "D-fructose-1,6-bisphosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "D-fructose-6-phosphate": 1.0
+              },
+              "reaction_id": "R00756",
+              "source_enzymes": [
+                "ec:2.7.1.11"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "glyceraldehyde-3-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.0375,
+              "rate_constant": 0.0375,
+              "reactants": {
+                "D-fructose-1,6-bisphosphate": 1.0
+              },
+              "reaction_id": "R01068",
+              "source_enzymes": [
+                "ec:4.1.2.13"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "3-phospho-D-glyceroyl-phosphate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "glyceraldehyde-3-phosphate": 1.0
+              },
+              "reaction_id": "R01061",
+              "source_enzymes": [
+                "ec:1.2.1.12"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "3-phospho-D-glycerate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "3-phospho-D-glyceroyl-phosphate": 1.0
+              },
+              "reaction_id": "R01512",
+              "source_enzymes": [
+                "ec:2.7.2.3"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "2-phospho-D-glycerate": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.025,
+              "rate_constant": 0.025,
+              "reactants": {
+                "3-phospho-D-glycerate": 1.0
+              },
+              "reaction_id": "R00658",
+              "source_enzymes": [
+                "ec:5.4.2.12"
+              ],
+              "source_pathway": "eco00010"
+            },
+            {
+              "catalysts": [],
+              "products": {
+                "D-glucose": 1.0
+              },
+              "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+              "rate": 0.0125,
+              "rate_constant": 0.0125,
+              "reactants": {
+                "2-phospho-D-glycerate": 1.0
+              },
+              "reaction_id": "R00200-closure",
+              "source_enzymes": [
+                "structural_projection"
+              ],
+              "source_pathway": "eco01200"
+            }
+          ],
+          "source_undertermination": "KEGG structural topology does not provide rate constants for every edge; rates are deterministic degree-scaled projections and marked exploratory."
+        }
+      },
+      "provenance": {
+        "authority": "KEGG organism code eco, E. coli K-12 MG1655",
+        "raw_exported": false,
+        "retrieval_mode": "cache",
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_home": "https://www.kegg.jp/kegg-bin/show_organism?org=eco",
+        "source_url": "https://rest.kegg.jp/list/pathway/eco"
+      },
+      "record_id": "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07",
+      "record_type": "kegg_metabolic_network_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.kegg.ecoli_mg1655.metabolic_network",
+      "world_family": "crn"
+    },
+    {
+      "canonical_name": "Schnakenberg reaction-diffusion spots",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "schnakenberg",
+        "canonical_name": "Schnakenberg reaction-diffusion spots",
+        "parameter_range": {
+          "a": [
+            0.05,
+            0.2
+          ],
+          "b": [
+            0.8,
+            1.2
+          ]
+        },
+        "reaction_model": "schnakenberg",
+        "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
+        "world_parameters": {
+          "benchmark": "schnakenberg",
+          "export_interval": 4,
+          "steps": 36
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_reaction_diffusion_literature",
+        "citation": "Schnakenberg, Simple chemical reaction systems with limit cycle behaviour, Journal of Theoretical Biology, 1979.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_url": "https://doi.org/10.1016/0022-5193(79)90042-0"
+      },
+      "record_id": "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+      "record_type": "reaction_diffusion_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.reaction_diffusion_benchmarks",
+      "world_family": "field"
+    },
+    {
+      "canonical_name": "Brusselator reaction-diffusion oscillation",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "brusselator",
+        "canonical_name": "Brusselator reaction-diffusion oscillation",
+        "parameter_range": {
+          "a": [
+            0.8,
+            1.2
+          ],
+          "b": [
+            2.4,
+            3.0
+          ]
+        },
+        "reaction_model": "brusselator",
+        "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
+        "world_parameters": {
+          "benchmark": "brusselator",
+          "export_interval": 4,
+          "steps": 36
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_reaction_diffusion_literature",
+        "citation": "Prigogine and Lefever, Symmetry breaking instabilities in dissipative systems, Journal of Chemical Physics, 1968.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_url": "https://doi.org/10.1063/1.1668896"
+      },
+      "record_id": "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+      "record_type": "reaction_diffusion_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.reaction_diffusion_benchmarks",
+      "world_family": "field"
+    },
+    {
+      "canonical_name": "GBIF Jornada Basin ecosystem occurrence pilot",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "geometry": "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))",
+        "guild_occurrence_counts": {
+          "decomposer": 664,
+          "grazer": 174,
+          "predator": 165,
+          "producer": 3967
+        },
+        "site": "Jornada Basin LTER vicinity",
+        "source_table": "GBIF occurrence search count summaries by guild taxon",
+        "taxa": [
+          {
+            "guild": "producer",
+            "occurrence_count": 89,
+            "role": "black grama grass",
+            "scientific_name": "Bouteloua eriopoda"
+          },
+          {
+            "guild": "producer",
+            "occurrence_count": 3878,
+            "role": "creosote bush",
+            "scientific_name": "Larrea tridentata"
+          },
+          {
+            "guild": "grazer",
+            "occurrence_count": 58,
+            "role": "granivorous rodent",
+            "scientific_name": "Dipodomys spectabilis"
+          },
+          {
+            "guild": "grazer",
+            "occurrence_count": 116,
+            "role": "herbivorous lagomorph",
+            "scientific_name": "Lepus californicus"
+          },
+          {
+            "guild": "predator",
+            "occurrence_count": 129,
+            "role": "mesopredator",
+            "scientific_name": "Canis latrans"
+          },
+          {
+            "guild": "predator",
+            "occurrence_count": 36,
+            "role": "mesopredator",
+            "scientific_name": "Vulpes macrotis"
+          },
+          {
+            "guild": "decomposer",
+            "occurrence_count": 664,
+            "role": "fungal decomposer proxy",
+            "scientific_name": "Ascomycota"
+          }
+        ],
+        "world_parameters": {
+          "benchmark": "may_stability",
+          "initial_decomposers": 18.0,
+          "initial_grazers": 13.190906,
+          "initial_predators": 10.0,
+          "initial_producers": 62.984125,
+          "initial_resource": 95.0,
+          "interaction_radius": 1.45,
+          "interaction_strength": 0.5,
+          "patch_count": 6,
+          "source_undertermination": "GBIF occurrence counts are observation-availability proxies, not biomass estimates; projection is exploratory and audit-visible.",
+          "steps": 80
+        }
+      },
+      "provenance": {
+        "authority": "GBIF occurrence API plus Jornada Basin LTER site framing",
+        "raw_exported": false,
+        "retrieval_mode": "bundled_authoritative_seed",
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_home": "https://www.gbif.org/",
+        "source_url": "https://api.gbif.org/v1/occurrence/search"
+      },
+      "record_id": "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22",
+      "record_type": "gbif_ecosystem_occurrence_summary",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.gbif.jornada_basin.ecosystem_occurrences",
+      "world_family": "ecosystem"
+    },
+    {
+      "canonical_name": "Alkaline hydrothermal gradient protocell benchmark",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "gradient_anchored_protocell",
+        "canonical_name": "Alkaline hydrothermal gradient protocell benchmark",
+        "chemistry_context": "redox and pH gradients across mineral compartments",
+        "parameter_basis": "gradient and boundary terms projected from alkaline hydrothermal origins literature",
+        "source_table": "peer-reviewed prebiotic chemistry benchmark catalog",
+        "world_parameters": {
+          "benchmark": "gradient_anchored_protocell",
+          "boundary_polymerization": 0.095,
+          "gradient_strength": 0.68,
+          "steps": 90
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_prebiotic_chemistry_literature",
+        "citation": "Martin and Russell, On the origin of biochemistry at an alkaline hydrothermal vent, Philosophical Transactions B, 2007.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_url": "https://doi.org/10.1098/rstb.2006.1881"
+      },
+      "record_id": "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d",
+      "record_type": "prebiotic_chemistry_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.prebiotic_chemistry_catalog",
+      "world_family": "origins_chemistry"
+    },
+    {
+      "canonical_name": "NCBI HIV-1 HXB2 quasispecies pilot projection",
+      "license_class": "public_domain",
+      "mode_tag": "exploratory",
+      "payload": {
+        "accession": "K03455.1",
+        "binary_projection_basis": "A/C -> 0, G/T -> 1 over the first 240 nt of the NCBI reference sequence",
+        "mutation_rate_source": {
+          "citation": "Mansky and Temin, Lower in vivo mutation rate of human immunodeficiency virus type 1 than that predicted from the fidelity of purified reverse transcriptase, Journal of Virology, 1995.",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/7609081/",
+          "usage": "Pilot quasispecies projection uses a conservative near-neutral mutation-rate scale, not a claim-bearing within-host estimate."
+        },
+        "organism": "Human immunodeficiency virus type 1 (HXB2)",
+        "sequence_length": 685,
+        "sequence_window_length": 240,
+        "sequence_window_start": 1,
+        "source_table": "NCBI E-utilities FASTA and peer-reviewed mutation-rate metadata",
+        "world_parameters": {
+          "benchmark": "neutral_networks",
+          "deletion_rate": 0.0005,
+          "insertion_rate": 0.0005,
+          "landscape_mode": "near_neutral",
+          "master_sequence": "111001110100110001000000",
+          "mutation_rate": 0.0025,
+          "neutral_radius": 5,
+          "population_size": 96,
+          "selection_strength": 0.3,
+          "source_undertermination": "NCBI reference sequence plus literature mutation-rate metadata is a pilot projection, not a sampled within-host quasispecies panel.",
+          "steps": 48
+        }
+      },
+      "provenance": {
+        "authority": "NIH NCBI Nucleotide",
+        "raw_exported": false,
+        "retrieval_mode": "cache",
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_home": "https://www.ncbi.nlm.nih.gov/nuccore/K03455.1",
+        "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=K03455.1&rettype=fasta&retmode=text"
+      },
+      "record_id": "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704",
+      "record_type": "ncbi_hiv1_sequence_pilot",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.ncbi.hiv1.reference_quasispecies_pilot",
+      "world_family": "quasispecies"
+    },
+    {
+      "canonical_name": "Gray-Scott reaction-diffusion stripes",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "benchmark": "gray_scott",
+        "canonical_name": "Gray-Scott reaction-diffusion stripes",
+        "parameter_range": {
+          "feed": [
+            0.02,
+            0.08
+          ],
+          "kill": [
+            0.045,
+            0.07
+          ]
+        },
+        "reaction_model": "gray_scott",
+        "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
+        "world_parameters": {
+          "benchmark": "gray_scott",
+          "export_interval": 4,
+          "steps": 36
+        }
+      },
+      "provenance": {
+        "authority": "peer_reviewed_reaction_diffusion_literature",
+        "citation": "Pearson, Complex patterns in a simple system, Science, 1993.",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T10:47:05Z",
+        "source_url": "https://doi.org/10.1126/science.261.5118.189"
+      },
+      "record_id": "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262",
+      "record_type": "reaction_diffusion_benchmark",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.peer_reviewed.reaction_diffusion_benchmarks",
+      "world_family": "field"
+    }
+  ],
+  "schema": "LowLevelEmpiricalRecordSet.v1"
+}

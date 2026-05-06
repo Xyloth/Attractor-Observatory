@@ -1,0 +1,126 @@
+{
+  "artifacts": [
+    {
+      "bytes": 2046,
+      "path": "reports\\campaign_007\\truth_pass.json",
+      "present": true
+    },
+    {
+      "bytes": 1616,
+      "path": "reports\\campaign_007\\truth_pass_application.json",
+      "present": true
+    },
+    {
+      "bytes": 32679,
+      "path": "reports\\campaign_007\\stale_claims.json",
+      "present": true
+    },
+    {
+      "bytes": 17534,
+      "path": "reports\\campaign_007\\hardcode_excision.json",
+      "present": true
+    },
+    {
+      "bytes": 387,
+      "path": "reports\\campaign_007\\d14_audit.json",
+      "present": true
+    },
+    {
+      "bytes": 1986,
+      "path": "reports\\campaign_007\\substrate_reconstruction_progress.json",
+      "present": true
+    },
+    {
+      "bytes": 3850,
+      "path": "reports\\campaign_007\\w3_reconstruction.json",
+      "present": true
+    },
+    {
+      "bytes": 5924,
+      "path": "reports\\campaign_007\\w4_reconstruction.json",
+      "present": true
+    },
+    {
+      "bytes": 5086,
+      "path": "reports\\campaign_007\\w5_reconstruction.json",
+      "present": true
+    },
+    {
+      "bytes": 4399,
+      "path": "reports\\campaign_007\\corpus_reality.json",
+      "present": true
+    },
+    {
+      "bytes": 5383,
+      "path": "reports\\campaign_007\\stub_inventory.json",
+      "present": true
+    }
+  ],
+  "campaign_id": "campaign-007",
+  "claim_eligible": false,
+  "content_hash": "sha256:e3d4855c592377f040896515194ee674b62c48629ef35ebbbd17f8c6aad64537",
+  "created_at": "2026-05-06T02:17:49Z",
+  "gate_count": 11,
+  "gates": [
+    {
+      "evidence": "reports\\campaign_007\\truth_pass.json",
+      "gate": "campaign-007 artifact present: truth_pass.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\truth_pass_application.json",
+      "gate": "campaign-007 artifact present: truth_pass_application.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\stale_claims.json",
+      "gate": "campaign-007 artifact present: stale_claims.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\hardcode_excision.json",
+      "gate": "campaign-007 artifact present: hardcode_excision.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\d14_audit.json",
+      "gate": "campaign-007 artifact present: d14_audit.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\substrate_reconstruction_progress.json",
+      "gate": "campaign-007 artifact present: substrate_reconstruction_progress.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\w3_reconstruction.json",
+      "gate": "campaign-007 artifact present: w3_reconstruction.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\w4_reconstruction.json",
+      "gate": "campaign-007 artifact present: w4_reconstruction.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\w5_reconstruction.json",
+      "gate": "campaign-007 artifact present: w5_reconstruction.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\corpus_reality.json",
+      "gate": "campaign-007 artifact present: corpus_reality.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_007\\stub_inventory.json",
+      "gate": "campaign-007 artifact present: stub_inventory.json",
+      "passed": true
+    }
+  ],
+  "mode_tag": "exploratory",
+  "passed_gate_count": 11,
+  "schema": "CanonicalCampaignFullReport.v1",
+  "status": "green",
+  "summary": "Truth Pass, hardcode excision, D14 audit, and W3-W5 reconstruction artifacts are present; this wrapper makes Campaign 007 canonical-report discovery explicit without changing scientific verdicts."
+}

@@ -115,6 +115,7 @@ def _summarize(
     edges = _count("evidence", "edges")
     audit_queue = _count("audit_queue", "items") or _count("audit_queue", "records")
     source_cache = _count("source_cache", "entries") or _count("source_cache", "records")
+    evidence_private_count = _count_private_evidence(payloads, intake_dock, detector)
 
     declined = 0
     evaluations = 0
@@ -140,9 +141,30 @@ def _summarize(
         "edge_count": edges,
         "audit_queue_count": audit_queue,
         "source_cache_count": source_cache,
+        "evidence_private_count": evidence_private_count,
+        "evidence_private_status": "present" if evidence_private_count else "none_detected",
         "detector_declined": declined,
         "detector_evaluations": evaluations,
         "detector_decline_rate": decline_rate,
         "intake_dock_status": (intake_dock_data or {}).get("status"),
         "claim_bearing_promotions": (intake_dock_data or {}).get("claim_bearing_promotions"),
     }
+
+
+def _count_private_evidence(*payload_roots: dict[str, Any]) -> int:
+    count = 0
+
+    def visit(node: Any) -> None:
+        nonlocal count
+        if isinstance(node, dict):
+            if node.get("evidence_private") is True:
+                count += 1
+            for value in node.values():
+                visit(value)
+        elif isinstance(node, list):
+            for item in node:
+                visit(item)
+
+    for root in payload_roots:
+        visit(root)
+    return count

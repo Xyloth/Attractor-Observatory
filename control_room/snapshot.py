@@ -43,6 +43,7 @@ SNAPSHOTS_DIR = Path(__file__).resolve().parent / "snapshots"
 SNAPSHOT_LATEST = SNAPSHOTS_DIR / "state_latest.json"
 SNAPSHOT_PRIOR = SNAPSHOTS_DIR / "state_prior.json"
 SNAPSHOT_SCHEMA = "ControlRoomSnapshot.v1"
+SNAPSHOT_GENERATION_COMMAND = "control_room.snapshot.write_snapshot()"
 
 
 # Frozen mistake-catalog metadata mirroring docs/DOCTRINE.md & CB-005 rooms.
@@ -75,10 +76,13 @@ def build_snapshot() -> dict[str, Any]:
     pytest_cache = parse_pytest_cache()
 
     now = datetime.now(timezone.utc).isoformat()
+    generation_binding = _generation_binding(git, now)
 
     snapshot: dict[str, Any] = {
         "schema": SNAPSHOT_SCHEMA,
         "generated_at": now,
+        "generation_binding": generation_binding,
+        "freshness_status": generation_binding["freshness_status"],
         "purpose": (
             "Single-file digest for AI agents starting a fresh session. Read this file "
             "before parsing the 50+ source files referenced below. Each section carries "
@@ -113,6 +117,7 @@ def build_snapshot() -> dict[str, Any]:
         "doctrine": _doctrine_summary(doctrine),
         "mistake_catalog": _mistake_catalog_summary(),
         "falsifiers": _falsifiers_summary(falsifiers, negative_space),
+        "evidence_boundaries": _evidence_private_summary(),
         "factory_state": _factory_state_summary(factory),
         "detector_decline": _detector_decline_summary(factory),
         "git_state": _git_state_summary(git),
@@ -159,7 +164,8 @@ def load_latest() -> dict[str, Any] | None:
     if not SNAPSHOT_LATEST.exists():
         return None
     try:
-        return json.loads(SNAPSHOT_LATEST.read_text(encoding="utf-8"))
+        payload = json.loads(SNAPSHOT_LATEST.read_text(encoding="utf-8"))
+        return bind_snapshot_freshness(payload)
     except (OSError, json.JSONDecodeError):
         return None
 
@@ -168,9 +174,36 @@ def load_prior() -> dict[str, Any] | None:
     if not SNAPSHOT_PRIOR.exists():
         return None
     try:
-        return json.loads(SNAPSHOT_PRIOR.read_text(encoding="utf-8"))
+        payload = json.loads(SNAPSHOT_PRIOR.read_text(encoding="utf-8"))
+        return bind_snapshot_freshness(payload)
     except (OSError, json.JSONDecodeError):
         return None
+
+
+def bind_snapshot_freshness(snapshot: dict[str, Any], *, repo_dir: str | Path = ".") -> dict[str, Any]:
+    """Attach current-vs-generated freshness status to a loaded snapshot."""
+
+    binding = dict(snapshot.get("generation_binding") or {})
+    current = parse_git_metadata(repo_dir)
+    if current.get("status") != "ok":
+        binding["freshness_status"] = "unknown_git_unavailable"
+        binding["freshness_checked_at"] = datetime.now(timezone.utc).isoformat()
+    else:
+        data = current["data"]
+        current_sha = (data.get("last_commit") or {}).get("hash")
+        current_branch = data.get("branch")
+        stale_reasons = []
+        if binding.get("commit_sha") and binding.get("commit_sha") != current_sha:
+            stale_reasons.append("commit_moved")
+        if binding.get("branch") and binding.get("branch") != current_branch:
+            stale_reasons.append("branch_changed")
+        binding["current_branch"] = current_branch
+        binding["current_commit_sha"] = current_sha
+        binding["freshness_status"] = "stale:" + ",".join(stale_reasons) if stale_reasons else "current"
+        binding["freshness_checked_at"] = datetime.now(timezone.utc).isoformat()
+    snapshot["generation_binding"] = binding
+    snapshot["freshness_status"] = binding["freshness_status"]
+    return snapshot
 
 
 def diff_snapshots(prior: dict[str, Any] | None, current: dict[str, Any]) -> dict[str, Any]:
@@ -254,11 +287,29 @@ def _strip_status(adapter_payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _generation_binding(git: dict[str, Any], generated_at: str) -> dict[str, Any]:
+    data = git.get("data") if git.get("status") == "ok" else {}
+    commit = (data or {}).get("last_commit") or {}
+    return {
+        "schema": "ControlRoomSnapshotGenerationBinding.v1",
+        "branch": (data or {}).get("branch"),
+        "commit_sha": commit.get("hash"),
+        "commit_short": commit.get("short"),
+        "generation_command": SNAPSHOT_GENERATION_COMMAND,
+        "generation_timestamp": generated_at,
+        "freshness_status": "current",
+    }
+
+
 def _project_health_summary(*, campaigns, pytest_cache, falsifiers, git, telemetry) -> dict[str, Any]:
     score = 100
     notes: list[str] = []
     if pytest_cache.get("status") == "ok":
         failed = pytest_cache["data"].get("last_failed_count", 0)
+        nodeids = pytest_cache["data"].get("nodeid_count")
+        if nodeids == 0:
+            score -= 25
+            notes.append("pytest cache reports zero collected tests")
         if failed and failed > 0:
             score -= 20
             notes.append(f"{failed} pytest tests failed last run")
@@ -396,6 +447,41 @@ def _falsifiers_summary(falsifiers, negative_space) -> dict[str, Any]:
     return payload
 
 
+def _evidence_private_summary() -> dict[str, Any]:
+    files = []
+    total = 0
+    for base in (Path("reports"), Path("papers/prereg")):
+        if not base.exists():
+            continue
+        for path in sorted(base.rglob("*.json")):
+            if path.as_posix() == "reports/task_032_evidence_private_markers.json":
+                continue
+            try:
+                payload = json.loads(path.read_text(encoding="utf-8-sig"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            count = _count_evidence_private(payload)
+            if count:
+                files.append({"path": path.as_posix(), "evidence_private_count": count})
+                total += count
+    return {
+        "status": "ok",
+        "summary": f"{total} private/unshipped evidence references explicitly marked across {len(files)} files",
+        "evidence_private_count": total,
+        "file_count": len(files),
+        "files": files[:25],
+        "interpretation": "D23 candidate boundary: private trace evidence remains lineage, but is not presented as dereferenceable public artifact.",
+    }
+
+
+def _count_evidence_private(node: Any) -> int:
+    if isinstance(node, dict):
+        return (1 if node.get("evidence_private") is True else 0) + sum(_count_evidence_private(value) for value in node.values())
+    if isinstance(node, list):
+        return sum(_count_evidence_private(item) for item in node)
+    return 0
+
+
 def _factory_state_summary(factory) -> dict[str, Any]:
     if factory.get("status") != "ok":
         return {"status": "missing", "rationale": factory.get("rationale")}
@@ -404,7 +490,8 @@ def _factory_state_summary(factory) -> dict[str, Any]:
         "status": "ok",
         "summary": (
             f"empirical={s.get('empirical_count', 0)} normalized={s.get('normalized_count', 0)} "
-            f"edges={s.get('edge_count', 0)} audit_queue={s.get('audit_queue_count', 0)}"
+            f"edges={s.get('edge_count', 0)} audit_queue={s.get('audit_queue_count', 0)} "
+            f"private_evidence={s.get('evidence_private_count', 0)}"
         ),
         **s,
     }
@@ -452,11 +539,13 @@ def _pytest_status_summary(pytest_cache) -> dict[str, Any]:
     d = pytest_cache["data"]
     failed = d.get("last_failed_count", 0)
     nodes = d.get("nodeid_count")
+    coverage = d.get("coverage_status")
     return {
         "status": "ok",
-        "summary": f"pytest cache: {failed} last failed of {nodes or '?'} nodeids",
+        "summary": f"pytest cache: {failed} last failed of {nodes if nodes is not None else '?'} nodeids ({coverage})",
         "last_failed_count": failed,
         "nodeid_count": nodes,
+        "coverage_status": coverage,
     }
 
 

@@ -7,6 +7,7 @@ import time
 from pathlib import Path
 from typing import Any
 
+from .live_pipeline import run_live_factory_cycle
 from .pipeline import run_low_level_factory
 from .schemas import sha256, utc_now
 
@@ -35,6 +36,43 @@ def run_factory_cycle(
         "idempotent_duplicate_run_id": run["run_id"] in prior_run_ids,
         "store_counts": run["store_snapshot"]["counts"],
         "routed_worlds": run["routed_worlds"],
+    }
+    ledger_path.parent.mkdir(parents=True, exist_ok=True)
+    with ledger_path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, sort_keys=True) + "\n")
+    return record
+
+
+def run_multi_world_factory_cycle(
+    *,
+    allow_network: bool = False,
+    target_worlds: list[str] | None = None,
+    source_ids: list[str] | None = None,
+    session_ledger: str | Path = DEFAULT_SESSION_LEDGER,
+    trigger: str = "control_room_multi_world_fire",
+) -> dict[str, Any]:
+    run = run_live_factory_cycle(
+        allow_network=allow_network,
+        target_worlds=target_worlds,
+        source_ids=source_ids,
+        trigger=trigger,
+    )
+    ledger_path = Path(session_ledger)
+    prior_run_ids = _prior_run_ids(ledger_path)
+    record = {
+        "schema": "MultiWorldFactorySessionRecord.v1",
+        "session_id": sha256({"run_id": run["run_id"], "trigger": trigger, "seen_count": len(prior_run_ids)}),
+        "run_id": run["run_id"],
+        "trigger": trigger,
+        "recorded_at": utc_now(),
+        "requires_ai_runtime": False,
+        "idempotent_duplicate_run_id": run["run_id"] in prior_run_ids,
+        "store_counts": run["store_snapshot"]["counts"],
+        "routed_worlds": {row["world_family"]: row for row in run["routed_worlds"]},
+        "target_worlds": run["target_worlds"],
+        "source_ids": run["source_ids"],
+        "life_form_count": len(run["life_forms"]),
+        "run_path": f"control_room/cache/factory_runs/run_{run['run_id'].removeprefix('sha256:')[:16]}.json",
     }
     ledger_path.parent.mkdir(parents=True, exist_ok=True)
     with ledger_path.open("a", encoding="utf-8") as handle:

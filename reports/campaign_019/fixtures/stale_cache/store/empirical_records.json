@@ -1,0 +1,35 @@
+{
+  "records": [
+    {
+      "canonical_name": "source.fixture.stale.fixed_point.0",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "source.fixture.stale.fixed_point.0",
+        "dimension": 1,
+        "expected_stable_form": "asymptotically_stable_fixed_point",
+        "invariants": [
+          "negative_real_eigenvalue",
+          "single_basin"
+        ],
+        "parameters": {
+          "lambda": 1.0
+        },
+        "primitive_class": "fixed_point",
+        "state_equation": "dx/dt = -lambda*x"
+      },
+      "provenance": {
+        "authority": "campaign019_fixture",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T02:22:50Z",
+        "source_url": "https://example.org/source.fixture.stale"
+      },
+      "record_id": "sha256:3a6c8ce4409dd3f8f4360054497fb10a05bde2ffb912a8393d9482157441f10c",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.fixture.stale",
+      "world_family": "math_primitives"
+    }
+  ],
+  "schema": "LowLevelEmpiricalRecordSet.v1"
+}

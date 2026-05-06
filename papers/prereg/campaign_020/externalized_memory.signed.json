@@ -1,0 +1,38 @@
+{
+  "campaign_id": "campaign_020",
+  "claim_promotion_allowed": false,
+  "content_hash": "sha256:a84da4340b1b64f5b89e465124ff7cbb863cee2f8accc1839b0512dc86eeb462",
+  "coverage_threshold": 0.85,
+  "forbidden_adjustments": [
+    "no per-motif threshold tuning",
+    "no record cherry-picking",
+    "no claim-bearing promotion",
+    "no post-hoc primary-lens swap"
+  ],
+  "input_corpus_hash": "sha256:75f181d5f81a5cd95e612d8f012d864be2d30921cf8f1f83d118d4c3eeeac305",
+  "min_negative_per_substrate": 8,
+  "min_positive_per_substrate": 8,
+  "mode_tag": "exploratory",
+  "motif_id": "motif.externalized_memory.draft",
+  "permutation_N": 10000,
+  "permutation_seed": 20020,
+  "primary_lens": "graph",
+  "requested_alias": "motif.externalized_memory.draft",
+  "schema": "Campaign020MotifPreregistration.v1",
+  "signature": {
+    "scheme": "sha256-preregistration-content",
+    "signed_by": "Codex 1.5x",
+    "signed_hash": "sha256:a84da4340b1b64f5b89e465124ff7cbb863cee2f8accc1839b0512dc86eeb462",
+    "status": "signed_before_permutation"
+  },
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "statistic": "mean primary-lens prediction score on locked positives minus mean score on locked negatives",
+  "stratification": "world_family::campaign_020_native_generator",
+  "task_id": "TASK-031",
+  "verdict_logic": {
+    "not_evaluable": "no substrate reaches the predeclared per-class corpus floor or primary lens declines all rows",
+    "signal_partial_or_inconclusive": "shuffled_mean < observed_gap <= shuffled_95_ci_high",
+    "signal_survives_shuffle": "observed_gap > shuffled_95_ci_high",
+    "signal_was_substrate_id": "observed_gap <= shuffled_mean"
+  }
+}

@@ -8,7 +8,7 @@ science, mutate registries, or promote claims.
 > The Control Room may visualize almost everything. It should mutate
 > almost nothing. — proposal §3
 
-![Pulse Deck](control_room/portfolio/01_pulse_deck.png)
+![Pulse Deck](docs/screenshots/01-pulse-deck.png)
 
 ## Run it
 
@@ -23,7 +23,8 @@ Optional flags:
 Launch Control Room.bat              REM default: console + native window
 Launch Control Room.bat /quiet       REM no console; pythonw silent mode
 Launch Control Room.bat /no-window   REM Streamlit only (open in browser)
-Launch Control Room.bat /port=8765   REM custom port
+Launch Control Room.bat --port 8766  REM custom port
+Launch Control Room.bat --port-kill  REM opt in to killing the process holding the port
 ```
 
 ### Browser (manual fallback)
@@ -40,9 +41,9 @@ Open `http://localhost:8501` (default Streamlit port). The launcher uses
 
 The launcher (`control_room/launcher.py`):
 
-* **Detects port conflicts** and kills the holding process on Windows
-  via `netstat -ano` + `taskkill /F /PID`, on POSIX via `lsof -ti` +
-  `kill -9`. Replicates manual port-conflict resolution automatically.
+* **Detects port conflicts** and fails closed by default. Process
+  termination is opt-in via `--port-kill` (Windows: `netstat -ano` +
+  `taskkill /F /PID`; POSIX: `lsof -ti` + `kill -9`).
 * **Detects Streamlit** on PATH first; falls back to
   `python -m streamlit`; surfaces a helpful pip-install message if
   neither path works.
@@ -65,7 +66,7 @@ The Control Room ships **11 rooms** organized by question class
 | 6 | Basin-Floor Lab | Where is the floor connectivity candidate? | 1 |
 | 7 | Falsifier Ledger | What has been falsified? | 1 |
 | 8 | Doctrine Console | Which rules bind, which violations surfaced? | 1 |
-| 9 | Factory Intake Dock | What did the autonomous Factory ingest? | 1 |
+| 9 | Factory Intake Dock | Aim the autonomous Factory at real sources and watch traces land | 2 |
 | 10 | Project Graph | The living node-edge map of the project | 2 |
 | 11 | Portfolio & Demo Mode | 60-second curated walk-through | 3 |
 
@@ -76,7 +77,7 @@ Per-room data sources and design rationale: see
 
 ### Pulse Deck — live heartbeat
 
-![Pulse Deck](control_room/portfolio/01_pulse_deck.png)
+![Pulse Deck](docs/screenshots/01-pulse-deck.png)
 
 Branch + last commit + pytest cache + builder task as 4 first-glance
 metric cards. Needs-attention lane is bright red/amber when failed
@@ -87,7 +88,7 @@ agent), what-changed-since-last-session diff, recent falsifiers.
 
 ### World Observatory — 15-world inventory
 
-![World Observatory](control_room/portfolio/02_world_observatory.png)
+![World Observatory](docs/screenshots/02-world-observatory.png)
 
 W-1 atomic / molecular + W0 math primitives (Campaign 016 additions) +
 W1-W13 (the canonical 13 worlds). Density classes color-coded:
@@ -97,7 +98,7 @@ below the inventory grid surfaces density × motif richness at a glance.
 
 ### AI Operations Tower — Paper A's calibration empirics
 
-![AI Ops Tower](control_room/portfolio/03_ai_operations_tower.png)
+![AI Ops Tower](docs/screenshots/04-ai-operations-tower.png)
 
 Three agent cards with task counts and mean-delta. Below: the
 calibration trajectory chart (log-y; 1.0 reference line) plotting every
@@ -107,7 +108,7 @@ mistake catalog + audit log + doctrine arc.
 
 ### Motif Atlas — 6 motifs across worlds
 
-![Motif Atlas](control_room/portfolio/04_motif_atlas.png)
+![Campaign Command](docs/screenshots/03-campaign-command.png)
 
 Process-role / interaction-channel / overlap-field counts from
 Campaign 016 ontology; 6 motif cards (closure, boundary, repair,
@@ -117,7 +118,7 @@ heatmap from Campaign 010. floor_connectivity card carries Campaign
 
 ### Falsifier Ledger — honest failures published
 
-![Falsifier Ledger](control_room/portfolio/05_falsifier_ledger.png)
+![Project Graph](docs/screenshots/05-project-graph.png)
 
 papers/falsifiers/ + atlas/negative_space/ + papers/methods/ as the
 project's "this failed honestly" surface. D17 binding (floor falsifiers
@@ -125,7 +126,7 @@ are publishable) made visible.
 
 ### Project Graph — living node-edge map
 
-![Project Graph](control_room/portfolio/06_project_graph.png)
+![Basin-Floor Lab](docs/screenshots/06-basin-floor-lab.png)
 
 7 node types (worlds / campaigns / motifs / agents / doctrines /
 falsifiers / reports) wired by 8 edge types. Edges sourced from real
@@ -163,11 +164,12 @@ The Control Room **reads** all four planes via the adapter layer
 
 * `control_room/cache/` — UI state cache.
 * `control_room/snapshots/` — AI-consumption snapshots (see below).
-* `control_room/portfolio/` — README image assets.
+* `control_room/portfolio/` — optional local capture output; the shipped
+  README screenshot assets live in `docs/screenshots/`.
 
-This restriction is enforced **mechanically** by
-`tests/test_control_room_readonly.py`, which AST-walks every `.py`
-under `control_room/` and verifies write targets are cache-rooted.
+This restriction is enforced in the private control-room test suite by
+an AST walker over every `.py` under `control_room/`. The public branch
+ships matching surface-contract checks in `public_tests/`.
 
 ## How AI agents read this dashboard
 
@@ -187,7 +189,7 @@ carries a structured digest (`ControlRoomSnapshot.v1`) of:
 * **calibration_trajectory** — every agent's per-task delta = actual /
   estimated, with min/max/latest.
 * **campaigns** — every campaign's status + gate counts + schema.
-* **doctrine** — D7-D22 registry IDs.
+* **doctrine** — D7-D25 registry IDs.
 * **mistake_catalog** — Class 1-12 with status (11 ratified, 1
   candidate).
 * **falsifiers** — papers/falsifiers/ + negative_space counts and file
@@ -240,23 +242,15 @@ not just a cache. It is the canonical entry point.
 ## Test coverage
 
 ```
-$ pytest tests/test_control_room_adapters.py tests/test_control_room_readonly.py tests/test_control_room_rooms.py
+$ pytest public_tests
 ```
 
-76 tests across 3 modules:
-
-* **test_control_room_adapters.py** — 16 tests: 8 happy-path + 8
-  missing-file degradation per adapter.
-* **test_control_room_readonly.py** — 4 tests: scanner walks
-  control_room/, marker uniqueness, deliberate-violation sandbox,
-  permitted-cache-write sandbox.
-* **test_control_room_rooms.py** — 56 tests: per-room metadata
-  contract, registry order, render dispatch, snapshot endpoint shape,
-  diff first-launch + steady-state + change detection, project graph
-  determinism, edge enrichment provenance, empty-state HTML marker,
-  factory adapter, chrome helpers, portfolio room, app shell helpers.
-
-Phase 0 baseline was 20; Phase 3 (CB-007) brings the count to 76.
+The shipped public tests verify the contracts that are present in this
+branch: lineage hashes, doctrine registry coverage, telemetry row shape,
+Factory hardening status, PubChem schema aliases, snapshot freshness
+metadata, and explicit private-evidence markers. The full 76-test
+control-room suite remains private with the implementation-side test
+tree; public docs no longer claim those private files are present.
 
 ## Future tweaks
 
@@ -273,9 +267,9 @@ Phase 0 baseline was 20; Phase 3 (CB-007) brings the count to 76.
 * **Streamlit `on_select` plotly_chart events.** Available in Streamlit
   ≥ 1.37; would replace the Project Graph dropdown + button with true
   click events. The dropdown path is the documented stable fallback.
-* **Headless screenshot rig.** The Portfolio Demo's capture targets are
-  declared in `control_room/portfolio/readme_assets.json`; a Selenium
-  follow-up could automate the actual PNG capture.
+* **Headless screenshot rig.** The shipped capture helper lives at
+  `docs/screenshots/capture_screenshots.py` and writes README-grade PNGs
+  into `docs/screenshots/`.
 * **Live file-watching.** The dashboard re-renders on user nav; auto-
   refresh on file changes is deferred. Streamlit's
   `--server.fileWatcherType` is currently `none` (avoids re-renders
@@ -302,11 +296,11 @@ Phase 0 baseline was 20; Phase 3 (CB-007) brings the count to 76.
 * Phase 2 (TASK-CB-006, ~4 min): Project Graph (11th room),
   type-anchored layout, 7 node types + 4 edge types from real adapters.
 * Phase 3 (TASK-CB-007): production polish — Portfolio Demo, click-to-
-  navigate, snapshot endpoint, what-changed diff, edge enrichment, 76
-  tests, README + per-room docs, launcher hardening.
+  navigate, snapshot endpoint, what-changed diff, edge enrichment,
+  private 76-test suite, README + per-room docs, launcher hardening.
 
 Branch: `feature/control-room-v0` (no merge to main). Tracked through
 [BUILD_LOG.md](BUILD_LOG.md).
 
 — Built by Claude Builder for the Attractor Observatory project, under
-spec v1.2 + binding doctrine D7–D22.
+spec v1.2 + binding doctrine D7-D25.

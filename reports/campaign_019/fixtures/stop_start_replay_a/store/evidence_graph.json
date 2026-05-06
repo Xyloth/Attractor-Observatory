@@ -1,0 +1,49 @@
+{
+  "edges": [
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:3e47ab3ed347bf7af277203fc0c3876406b0868fed50341bd2d5b367d3a31727",
+      "evidence_record_ids": [
+        "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+        "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f"
+      ],
+      "relation": "has_process_role",
+      "source": "world:math_primitives",
+      "target": "process_roles:fixed_point"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:7702b35f1f41ad125ebc7f738195532be460938d88b2ad59cca36011bae0619d",
+      "evidence_record_ids": [
+        "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+        "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:math_primitives",
+      "target": "interaction_channels:phase_flow"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:8d7c50c973b8be81f17897b1eb67195d12d8c0e005de0815432c6a2cf39ae447",
+      "evidence_record_ids": [
+        "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+        "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:math_primitives",
+      "target": "overlap_fields:state_space_flow_field"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:acc14fe6a8d0fa3912b716031e8b02ba165bac08450e5ca06bba746417c726e6",
+      "evidence_record_ids": [
+        "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+        "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:math_primitives",
+      "target": "state_space_effects:asymptotically_stable_fixed_point"
+    }
+  ],
+  "schema": "LowLevelEvidenceGraph.v1"
+}

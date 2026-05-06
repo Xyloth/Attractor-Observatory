@@ -1,0 +1,35 @@
+{
+  "records": [
+    {
+      "canonical_name": "source.fixture.good_after_schema.fixed_point.0",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "source.fixture.good_after_schema.fixed_point.0",
+        "dimension": 1,
+        "expected_stable_form": "asymptotically_stable_fixed_point",
+        "invariants": [
+          "negative_real_eigenvalue",
+          "single_basin"
+        ],
+        "parameters": {
+          "lambda": 1.0
+        },
+        "primitive_class": "fixed_point",
+        "state_equation": "dx/dt = -lambda*x"
+      },
+      "provenance": {
+        "authority": "campaign019_fixture",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T02:22:50Z",
+        "source_url": "https://example.org/source.fixture.good_after_schema"
+      },
+      "record_id": "sha256:8a6677562b1348bad55e94c98cc8de6168c1648bae8d6ec9bec9e3504f76998c",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.fixture.good_after_schema",
+      "world_family": "math_primitives"
+    }
+  ],
+  "schema": "LowLevelEmpiricalRecordSet.v1"
+}

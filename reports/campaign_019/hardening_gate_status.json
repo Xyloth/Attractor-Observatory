@@ -1,0 +1,368 @@
+{
+  "claim_eligible": false,
+  "content_hash": "sha256:7f2631bb7bad23244f6bc628c05bd620cb1a802c6f9c58454c142d7ebce07934",
+  "fixture_gate_count": 16,
+  "fixture_passed_count": 16,
+  "gate_count": 59,
+  "green_count": 59,
+  "live_ready": true,
+  "mode_tag": "exploratory",
+  "red_count": 0,
+  "rows": [
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-01",
+      "status": "green",
+      "title": "SV-01 allowed source registry"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-02",
+      "status": "green",
+      "title": "SV-02 canonical URL retained"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-03",
+      "status": "green",
+      "title": "SV-03 retrieval URL retained"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-04",
+      "status": "green",
+      "title": "SV-04 retrieval timestamp retained"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-05",
+      "status": "green",
+      "title": "SV-05 license class enforced"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-06",
+      "status": "green",
+      "title": "SV-06 raw redistribution policy"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-07",
+      "status": "green",
+      "title": "SV-07 authority label present"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SV-08",
+      "status": "green",
+      "title": "SV-08 retrieval-mode honesty"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SS-01",
+      "status": "green",
+      "title": "SS-01 parser version pinned"
+    },
+    {
+      "evidence": "TASK-032 adapter validation: required payload keys are enforced before normalization; violating source is held and audited.",
+      "gate_id": "SS-02",
+      "status": "green",
+      "title": "SS-02 required-key contract"
+    },
+    {
+      "evidence": "TASK-032 adapter validation: unknown-key census is persisted in fetch_reports.adapter_validation per source/parser.",
+      "gate_id": "SS-03",
+      "status": "green",
+      "title": "SS-03 unknown-key census"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SS-04",
+      "status": "green",
+      "title": "SS-04 source schema bump response"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SS-05",
+      "status": "green",
+      "title": "SS-05 normalized schema roundtrip"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SS-06",
+      "status": "green",
+      "title": "SS-06 evidence graph rebuild determinism"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "SS-07",
+      "status": "green",
+      "title": "SS-07 schema mismatch severity"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AI-01",
+      "status": "green",
+      "title": "AI-01 math missing strange-attractor"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AI-02",
+      "status": "green",
+      "title": "AI-02 atomic single energy level"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AI-03",
+      "status": "green",
+      "title": "AI-03 molecule no heavy atoms"
+    },
+    {
+      "evidence": "TASK-032 malformed-source fixture: malformed source shape is held, audited, and unaffected source continues.",
+      "gate_id": "AI-04",
+      "status": "green",
+      "title": "AI-04 malformed source file"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AI-05",
+      "status": "green",
+      "title": "AI-05 partial response"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AI-06",
+      "status": "green",
+      "title": "AI-06 stale cache"
+    },
+    {
+      "evidence": "TASK-032 adapter validation: duplicate record IDs are first-class metrics and high-severity audit holds.",
+      "gate_id": "AI-07",
+      "status": "green",
+      "title": "AI-07 duplicate records"
+    },
+    {
+      "evidence": "TASK-032 adapter validation: nonsensical numeric values are high-severity audit holds.",
+      "gate_id": "AI-08",
+      "status": "green",
+      "title": "AI-08 nonsensical numeric values"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AQ-01",
+      "status": "green",
+      "title": "AQ-01 restricted license route"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AQ-02",
+      "status": "green",
+      "title": "AQ-02 schema mismatch route"
+    },
+    {
+      "evidence": "TASK-032 warning route: detector_anomaly warnings emit source-native detector audit items.",
+      "gate_id": "AQ-03",
+      "status": "green",
+      "title": "AQ-03 detector anomaly route"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AQ-04",
+      "status": "green",
+      "title": "AQ-04 queue persistence"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AQ-05",
+      "status": "green",
+      "title": "AQ-05 surfacing path"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AQ-06",
+      "status": "green",
+      "title": "AQ-06 timeout policy"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "AQ-07",
+      "status": "green",
+      "title": "AQ-07 retry ceiling"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "ID-01",
+      "status": "green",
+      "title": "ID-01 cold rerun equality"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "ID-02",
+      "status": "green",
+      "title": "ID-02 warm-cache equality"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "ID-03",
+      "status": "green",
+      "title": "ID-03 ledger duplicate detection"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "ID-04",
+      "status": "green",
+      "title": "ID-04 stable content hashes"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "ID-05",
+      "status": "green",
+      "title": "ID-05 no hidden mutable state"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DD-01",
+      "status": "green",
+      "title": "DD-01 raw low-level lens decline"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DD-02",
+      "status": "green",
+      "title": "DD-02 no decline-patching path"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DD-03",
+      "status": "green",
+      "title": "DD-03 projection kept separate"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DD-04",
+      "status": "green",
+      "title": "DD-04 source-native detector separation"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DD-05",
+      "status": "green",
+      "title": "DD-05 decline-as-signal report"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "MS-01",
+      "status": "green",
+      "title": "MS-01 bridge code labeled"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "MS-02",
+      "status": "green",
+      "title": "MS-02 no bridge-as-finding"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "MS-03",
+      "status": "green",
+      "title": "MS-03 projection-basis comparison"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "MS-04",
+      "status": "green",
+      "title": "MS-04 source basis retained"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "MS-05",
+      "status": "green",
+      "title": "MS-05 doctrine revision candidate path"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DR-01",
+      "status": "green",
+      "title": "DR-01 stop before normalization"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DR-02",
+      "status": "green",
+      "title": "DR-02 stop before evidence graph"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DR-03",
+      "status": "green",
+      "title": "DR-03 corrupt partial file"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DR-04",
+      "status": "green",
+      "title": "DR-04 session ledger recovery"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "DR-05",
+      "status": "green",
+      "title": "DR-05 atomic write policy"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "PC-01",
+      "status": "green",
+      "title": "PC-01 cache-to-record link"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "PC-02",
+      "status": "green",
+      "title": "PC-02 record-to-normalized link"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "PC-03",
+      "status": "green",
+      "title": "PC-03 normalized-to-edge link"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "PC-04",
+      "status": "green",
+      "title": "PC-04 record-to-world trace link"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "PC-05",
+      "status": "green",
+      "title": "PC-05 license in every layer"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "RC-01",
+      "status": "green",
+      "title": "RC-01 zero runtime AI proof"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "RC-02",
+      "status": "green",
+      "title": "RC-02 dry-run default"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "RC-03",
+      "status": "green",
+      "title": "RC-03 high-risk regression slice"
+    },
+    {
+      "evidence": "Campaign 019 fixture or prior Campaign 016-018 artifact",
+      "gate_id": "RC-04",
+      "status": "green",
+      "title": "RC-04 readiness packet"
+    }
+  ],
+  "schema": "Campaign019FactoryHardeningGateStatus.v1"
+}

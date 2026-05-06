@@ -12,6 +12,16 @@ def normalize_record(record: EmpiricalRecord) -> NormalizedReference:
         return _normalize_math(record)
     if record.world_family == "atomic_molecular_primitives":
         return _normalize_atomic(record)
+    if record.world_family == "crn":
+        return _normalize_crn(record)
+    if record.world_family == "field":
+        return _normalize_field(record)
+    if record.world_family == "origins_chemistry":
+        return _normalize_origins_chemistry(record)
+    if record.world_family == "quasispecies":
+        return _normalize_quasispecies(record)
+    if record.world_family == "ecosystem":
+        return _normalize_ecosystem(record)
     raise ValueError(f"no normalizer for world_family={record.world_family}")
 
 
@@ -123,6 +133,192 @@ def _normalize_atomic(record: EmpiricalRecord) -> NormalizedReference:
         }
     ]
     return _normalized(record, process_roles, channels, effects, overlap, confidence=0.89)
+
+
+def _normalize_crn(record: EmpiricalRecord) -> NormalizedReference:
+    payload = record.payload
+    world_params = payload.get("world_parameters", {})
+    reactions = world_params.get("reactions", [])
+    process_roles = [
+        {
+            "role_id": "process.crn.metabolic_reaction_network",
+            "label": "metabolic_reaction_network",
+            "predicate": _predicate("reaction_edges_present", "len(payload.world_parameters.reactions) > 0", len(reactions)),
+        }
+    ]
+    channels = [
+        {
+            "channel_id": "channel.mass_action_reaction_edge",
+            "label": "mass_action_reaction_edge",
+            "predicate": _predicate("rate_constants_declared", "all reactions carry rate_constant", all("rate_constant" in row for row in reactions)),
+        }
+    ]
+    effects = [
+        {
+            "effect_id": "effect.metabolic_closure_substrate_flow",
+            "label": "metabolic_closure_substrate_flow",
+            "predicate": _predicate("species_count_present", "payload.species_count >= 2", payload.get("species_count", 0)),
+        }
+    ]
+    overlap = [
+        {
+            "field_id": "overlap.reaction_network_topology",
+            "label": "reaction_network_topology",
+            "write": _predicate("kegg_edges_write_crn", "KEGG reaction edges map to CRN reactions", payload.get("reaction_edge_count", 0)),
+            "persist": _predicate("organism_identity_persists", "payload.organism_code == eco", payload.get("organism_code")),
+            "read": _predicate("world_reads_initial_state", "world_parameters.initial_state present", sorted(world_params.get("initial_state", {}))),
+            "counterfactual": _predicate("edge_count_counterfactual", "changing reaction_edges changes reactions", payload.get("reaction_edge_count", 0)),
+        }
+    ]
+    return _normalized(record, process_roles, channels, effects, overlap, confidence=0.83)
+
+
+def _normalize_field(record: EmpiricalRecord) -> NormalizedReference:
+    payload = record.payload
+    world_params = payload.get("world_parameters", {})
+    process_roles = [
+        {
+            "role_id": "process.field.reaction_diffusion_benchmark",
+            "label": "reaction_diffusion_benchmark",
+            "predicate": _predicate("benchmark_present", "payload.benchmark != ''", payload.get("benchmark")),
+        }
+    ]
+    channels = [
+        {
+            "channel_id": "channel.diffusion_reaction_coupling",
+            "label": "diffusion_reaction_coupling",
+            "predicate": _predicate("reaction_model_present", "payload.reaction_model != ''", payload.get("reaction_model")),
+        }
+    ]
+    effects = [
+        {
+            "effect_id": "effect.pattern_formation_parameter_space",
+            "label": "pattern_formation_parameter_space",
+            "predicate": _predicate("parameter_range_present", "len(payload.parameter_range) > 0", payload.get("parameter_range", {})),
+        }
+    ]
+    overlap = [
+        {
+            "field_id": "overlap.field_parameter_space",
+            "label": "field_parameter_space",
+            "write": _predicate("benchmark_writes_field_config", "world_parameters.benchmark selects FieldWorld scenario", world_params.get("benchmark")),
+            "persist": _predicate("citation_persists_benchmark", "provenance.source_url is DOI-backed", record.provenance.get("source_url")),
+            "read": _predicate("world_reads_steps", "world_parameters.steps present", world_params.get("steps")),
+            "counterfactual": _predicate("parameter_range_counterfactual", "changing feed/kill or a/b ranges changes regime", payload.get("parameter_range", {})),
+        }
+    ]
+    return _normalized(record, process_roles, channels, effects, overlap, confidence=0.84)
+
+
+def _normalize_origins_chemistry(record: EmpiricalRecord) -> NormalizedReference:
+    payload = record.payload
+    world_params = payload.get("world_parameters", {})
+    process_roles = [
+        {
+            "role_id": "process.origins.prebiotic_surface_chemistry",
+            "label": "prebiotic_surface_chemistry",
+            "predicate": _predicate("chemistry_context_present", "payload.chemistry_context != ''", payload.get("chemistry_context")),
+        }
+    ]
+    channels = [
+        {
+            "channel_id": "channel.mineral_surface_gradient",
+            "label": "mineral_surface_gradient",
+            "predicate": _predicate("parameter_basis_present", "payload.parameter_basis != ''", payload.get("parameter_basis")),
+        }
+    ]
+    effects = [
+        {
+            "effect_id": "effect.prebiotic_closure_boundary",
+            "label": "prebiotic_closure_boundary",
+            "predicate": _predicate("origins_benchmark_declared", "payload.benchmark != ''", payload.get("benchmark")),
+        }
+    ]
+    overlap = [
+        {
+            "field_id": "overlap.prebiotic_chemistry_parameter_space",
+            "label": "prebiotic_chemistry_parameter_space",
+            "write": _predicate("benchmark_writes_origins_scenario", "world_parameters.benchmark selects OriginsChemistryWorld scenario", world_params.get("benchmark")),
+            "persist": _predicate("citation_persists_context", "provenance.source_url is DOI-backed", record.provenance.get("source_url")),
+            "read": _predicate("world_reads_surface_terms", "world_parameters carries catalytic or gradient terms", world_params),
+            "counterfactual": _predicate("surface_parameter_counterfactual", "changing catalytic/gradient terms changes closure or boundary", world_params),
+        }
+    ]
+    return _normalized(record, process_roles, channels, effects, overlap, confidence=0.82)
+
+
+def _normalize_quasispecies(record: EmpiricalRecord) -> NormalizedReference:
+    payload = record.payload
+    world_params = payload.get("world_parameters", {})
+    process_roles = [
+        {
+            "role_id": "process.quasispecies.viral_sequence_population",
+            "label": "viral_sequence_population",
+            "predicate": _predicate("sequence_projection_present", "world_parameters.master_sequence != ''", world_params.get("master_sequence")),
+        }
+    ]
+    channels = [
+        {
+            "channel_id": "channel.mutation_selection",
+            "label": "mutation_selection",
+            "predicate": _predicate("mutation_rate_present", "world_parameters.mutation_rate > 0", world_params.get("mutation_rate")),
+        }
+    ]
+    effects = [
+        {
+            "effect_id": "effect.quasispecies_cloud",
+            "label": "quasispecies_cloud",
+            "predicate": _predicate("population_size_present", "world_parameters.population_size > 0", world_params.get("population_size")),
+        }
+    ]
+    overlap = [
+        {
+            "field_id": "overlap.sequence_mutation_space",
+            "label": "sequence_mutation_space",
+            "write": _predicate("ncbi_sequence_writes_master_projection", "NCBI FASTA maps to binary master_sequence", world_params.get("master_sequence")),
+            "persist": _predicate("accession_persists_identity", "payload.accession present", payload.get("accession")),
+            "read": _predicate("world_reads_mutation_parameters", "world_parameters includes mutation/insertion/deletion rates", {key: world_params.get(key) for key in ("mutation_rate", "insertion_rate", "deletion_rate")}),
+            "counterfactual": _predicate("sequence_counterfactual", "changing sequence window changes master projection", payload.get("sequence_window_length")),
+        }
+    ]
+    return _normalized(record, process_roles, channels, effects, overlap, confidence=0.78)
+
+
+def _normalize_ecosystem(record: EmpiricalRecord) -> NormalizedReference:
+    payload = record.payload
+    world_params = payload.get("world_parameters", {})
+    process_roles = [
+        {
+            "role_id": "process.ecosystem.multi_trophic_occurrence_proxy",
+            "label": "multi_trophic_occurrence_proxy",
+            "predicate": _predicate("guild_counts_present", "len(payload.guild_occurrence_counts) > 0", payload.get("guild_occurrence_counts", {})),
+        }
+    ]
+    channels = [
+        {
+            "channel_id": "channel.trophic_interaction_matrix",
+            "label": "trophic_interaction_matrix",
+            "predicate": _predicate("producer_grazer_predator_present", "producer/grazer/predator guilds present", payload.get("guild_occurrence_counts", {})),
+        }
+    ]
+    effects = [
+        {
+            "effect_id": "effect.ecosystem_stability_proxy",
+            "label": "ecosystem_stability_proxy",
+            "predicate": _predicate("ecosystem_benchmark_declared", "world_parameters.benchmark != ''", world_params.get("benchmark")),
+        }
+    ]
+    overlap = [
+        {
+            "field_id": "overlap.ecosystem_trophic_state_space",
+            "label": "ecosystem_trophic_state_space",
+            "write": _predicate("gbif_counts_write_initial_conditions", "GBIF guild counts map to initial trophic pools", payload.get("guild_occurrence_counts", {})),
+            "persist": _predicate("site_geometry_persists_context", "payload.geometry present", payload.get("geometry")),
+            "read": _predicate("world_reads_trophic_parameters", "world_parameters includes producer/grazer/predator pools", {key: world_params.get(key) for key in ("initial_producers", "initial_grazers", "initial_predators")}),
+            "counterfactual": _predicate("guild_count_counterfactual", "changing guild counts changes initial trophic pools", payload.get("guild_occurrence_counts", {})),
+        }
+    ]
+    return _normalized(record, process_roles, channels, effects, overlap, confidence=0.74)
 
 
 def _normalized(

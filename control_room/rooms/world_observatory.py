@@ -84,32 +84,79 @@ def render() -> None:
                 if wid in name:
                     falsifier_world_hits.setdefault(wid.upper(), []).append(d["name"])
 
-    # Top metrics
+    # ------------------------------------------------------------------
+    # DRILLDOWN MODE — when a world is selected, the drilldown TAKES
+    # OVER the screen ("brings it to the forefront in its own screen"
+    # per PI request). We render the back button + drilldown only,
+    # skipping the inventory grid + heatmap until the user clicks back.
+    # This is the canonical Streamlit pattern for "tab switch" without
+    # losing state (vs. a panel-below pattern, which dumps content far
+    # below the click point and looks like the click did nothing).
+    # ------------------------------------------------------------------
+    selected = st.session_state.get("world_obs_selected")
+    if selected:
+        family_sel, wid_sel, name_sel = selected
+        # Sticky back button at the top of the drilldown view.
+        back_col, _ = st.columns([1, 5])
+        with back_col:
+            if st.button("← Back to all worlds", key="world_obs_back", use_container_width=True):
+                st.session_state.pop("world_obs_selected", None)
+                st.rerun()
+        try:
+            from control_room.rooms._world_drilldown import render_world_drilldown
+            render_world_drilldown(family_sel, wid_sel, name_sel)
+        except Exception as e:  # surface any render error visibly
+            st.error(f"Drilldown render error: {type(e).__name__}: {e}")
+            import traceback
+            st.code(traceback.format_exc())
+        return  # ← critical: skip the inventory grid render below
+
+    # ------------------------------------------------------------------
+    # INVENTORY MODE (default) — metric cards + 15-world grid + heatmap
+    # ------------------------------------------------------------------
+    # Top metrics — display labels are humanized; underlying density-class
+    # enum names are surfaced via the metric_card subtext where useful.
     cols = st.columns(4)
     with cols[0]:
-        render_html(metric_card("worlds total", str(len(WORLD_INVENTORY)), "active", "W-1, W0, W1–W13"))
+        render_html(metric_card("Worlds total", str(len(WORLD_INVENTORY)), "active", "W-1, W0, W1 through W13"))
     with cols[1]:
-        claim_ready = sum(1 for _, _, _, d in WORLD_INVENTORY if d == "claim_ready_densified" or _ in density_overrides)
-        render_html(metric_card("claim-ready", str(claim_ready), "verified", "via D21 + densification"))
+        claim_ready = sum(
+            1 for wid, _, family, d in WORLD_INVENTORY
+            if d == "claim_ready_densified" or family in density_overrides
+        )
+        render_html(metric_card("Densification sufficient", str(claim_ready), "verified", "promoted via D21 audit"))
     with cols[2]:
         falsified = sum(1 for _, _, _, d in WORLD_INVENTORY if d == "falsifier_active")
-        render_html(metric_card("falsifier-active", str(falsified), "failed", "downgraded under D17"))
+        render_html(metric_card("Falsified", str(falsified), "failed", "downgraded under D17"))
     with cols[3]:
         falsifier_count = sum(len(v) for v in falsifier_world_hits.values())
-        render_html(metric_card("falsifier docs", str(falsifier_count), "warning" if falsifier_count else "verified", "papers/falsifiers/"))
+        render_html(metric_card("Falsifier records", str(falsifier_count), "warning" if falsifier_count else "verified", "published papers"))
 
-    # World inventory grid (3 columns of cards)
-    st.markdown('<span class="cap">world inventory · 15 worlds</span>', unsafe_allow_html=True)
+    # World inventory grid (3 columns of cards). Each card has an "Open"
+    # button that brings that world into the drilldown view (replaces
+    # this grid with a per-world detail screen).
+    st.markdown('<span class="cap">world inventory · 15 worlds · click open to drill down</span>', unsafe_allow_html=True)
     cols = st.columns(3)
     for i, (wid, display_name, family, default_density) in enumerate(WORLD_INVENTORY):
         density = density_overrides.get(family, default_density)
         falsifier_links = falsifier_world_hits.get(wid, [])
-        meta_lines = [
-            f"world_family: {family}",
-            f"density: {density}",
+        family_human = _humanize_world_family(family)
+        density_human = _humanize_density(density)
+        meta_lines: list[dict[str, str]] = [
+            {
+                "display": f"Family: {family_human}",
+                "tooltip": f"world_family: {family}",
+            },
+            {
+                "display": f"Density: {density_human}",
+                "tooltip": f"density: {density}",
+            },
         ]
         if falsifier_links:
-            meta_lines.append(f"falsifier docs: {len(falsifier_links)}")
+            meta_lines.append({
+                "display": f"Falsifier docs: {len(falsifier_links)}",
+                "tooltip": "papers/falsifiers/ entries naming this world",
+            })
         with cols[i % 3]:
             render_html(world_card(
                 name=f"{wid} · {display_name}",
@@ -120,10 +167,60 @@ def render() -> None:
                        "active",
                 meta_lines=meta_lines,
             ))
+            # Click-to-open button. Streamlit doesn't have native
+            # click-on-card, so a slim button beneath each card is the
+            # canonical pattern.
+            if st.button(f"Open {wid}", key=f"world_obs_open_{wid}", use_container_width=True):
+                st.session_state["world_obs_selected"] = (family, wid, display_name)
+                st.rerun()
 
     # World heatmap (proposal §9.4) — bar chart of density-class per world
     st.markdown('<span class="cap">world heatmap · density × motif richness</span>', unsafe_allow_html=True)
     _world_heatmap(WORLD_INVENTORY, density_overrides, falsifier_world_hits)
+
+
+# Humanizers for the world-card surface — keep the raw variable name on
+# hover via the chrome.world_card meta_lines tooltip path.
+
+_FAMILY_HUMAN = {
+    "atomic_molecular": "Atomic / molecular",
+    "math_primitives":  "Math primitives",
+    "crn":              "Chemistry (CRN)",
+    "protocell":        "Protocell",
+    "field":            "Reaction-diffusion field",
+    "morphogenesis":    "Morphogenesis (GRN)",
+    "digital":          "Digital (Avida-class)",
+    "ecosystem":        "Ecosystem",
+    "swarm":            "Swarm",
+    "cognitive":        "Cognitive",
+    "origins_chemistry": "Origins chemistry",
+    "hypergraph_reactions": "Hypergraph reactions",
+    "quasispecies":     "Quasispecies",
+    "symbiogenesis":    "Symbiogenesis",
+    "multiscale":       "Multi-scale",
+}
+
+_DENSITY_HUMAN = {
+    "claim_ready_densified":   "Sufficient",
+    "densification_validated": "Sufficient (audited)",
+    "exploratory_densified":   "Exploratory",
+    "trace_valid":             "Trace verified",
+    "skeleton":                "Skeleton",
+    "falsifier_active":        "Falsified",
+}
+
+
+def _humanize_world_family(family: str) -> str:
+    """Return a display-friendly version of the canonical world_family
+    identifier. Hover tooltip on the world card carries the raw value
+    so the variable name is still discoverable."""
+    return _FAMILY_HUMAN.get(family, family.replace("_", " ").title())
+
+
+def _humanize_density(density: str) -> str:
+    """Display name for the density class. Hover tooltip surfaces the
+    raw enum value (e.g., ``claim_ready_densified``)."""
+    return _DENSITY_HUMAN.get(density, density.replace("_", " ").title())
 
 
 def _world_heatmap(
@@ -181,10 +278,10 @@ def _world_heatmap(
         xaxis=dict(gridcolor="#283042", title="", tickangle=0),
         yaxis=dict(
             gridcolor="#283042",
-            title="density score",
+            title="Density score",
             tickmode="array",
             tickvals=[0, 1, 2, 3, 4],
-            ticktext=["falsifier_active", "skeleton", "trace_valid", "exploratory_densified", "claim_ready"],
+            ticktext=["Falsified", "Skeleton", "Trace verified", "Exploratory", "Sufficient"],
             range=[-0.5, 4.5],
         ),
         showlegend=False,

@@ -1,0 +1,4414 @@
+{
+  "claim_eligible": false,
+  "comparison": [
+    {
+      "absolute_rate_gap": 0.1875,
+      "bridge_fire_count": 9,
+      "bridge_fire_rate": 0.5625,
+      "bridge_trace_count": 16,
+      "detector_slug": "closure",
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "native_fire_count": 3,
+      "native_fire_rate": 0.75,
+      "native_trace_count": 4,
+      "verdict": "bridge-meaningful"
+    },
+    {
+      "absolute_rate_gap": 0.0,
+      "bridge_fire_count": 0,
+      "bridge_fire_rate": 0.0,
+      "bridge_trace_count": 16,
+      "detector_slug": "boundary",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "native_fire_count": 0,
+      "native_fire_rate": 0.0,
+      "native_trace_count": 4,
+      "verdict": "bridge-empty"
+    },
+    {
+      "absolute_rate_gap": 0.0,
+      "bridge_fire_count": 0,
+      "bridge_fire_rate": 0.0,
+      "bridge_trace_count": 16,
+      "detector_slug": "repair",
+      "motif_id": "motif.repair.draft",
+      "native_fire_count": 0,
+      "native_fire_rate": 0.0,
+      "native_trace_count": 4,
+      "verdict": "bridge-empty"
+    },
+    {
+      "absolute_rate_gap": 0.0,
+      "bridge_fire_count": 0,
+      "bridge_fire_rate": 0.0,
+      "bridge_trace_count": 16,
+      "detector_slug": "externalized_memory",
+      "motif_id": "motif.externalized_memory.draft",
+      "native_fire_count": 0,
+      "native_fire_rate": 0.0,
+      "native_trace_count": 4,
+      "verdict": "bridge-empty"
+    },
+    {
+      "absolute_rate_gap": 0.0,
+      "bridge_fire_count": 0,
+      "bridge_fire_rate": 0.0,
+      "bridge_trace_count": 16,
+      "detector_slug": "replication_lineage",
+      "motif_id": "motif.replication_lineage.draft",
+      "native_fire_count": 0,
+      "native_fire_rate": 0.0,
+      "native_trace_count": 4,
+      "verdict": "bridge-empty"
+    },
+    {
+      "absolute_rate_gap": 0.0,
+      "bridge_fire_count": 0,
+      "bridge_fire_rate": 0.0,
+      "bridge_trace_count": 16,
+      "detector_slug": "self_boundary",
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "native_fire_count": 0,
+      "native_fire_rate": 0.0,
+      "native_trace_count": 4,
+      "verdict": "bridge-empty"
+    }
+  ],
+  "content_hash": "sha256:116c1e7daca55d6397ef159f88d66df22cecf9f11f8d37fac48974c54fbdfc5c",
+  "detections": [
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "He_I_cfg_0": [
+            "He_I_cfg_0"
+          ],
+          "He_I_cfg_1": [
+            "He_I_cfg_1"
+          ],
+          "He_I_cfg_2": [
+            "He_I_cfg_2"
+          ],
+          "He_I_cfg_3": [
+            "He_I_cfg_3"
+          ]
+        },
+        "catalysts": [
+          "He_I_cfg_0",
+          "He_I_cfg_1",
+          "He_I_cfg_2",
+          "He_I_cfg_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "He_I_cfg_0",
+          "He_I_cfg_1",
+          "He_I_cfg_2",
+          "He_I_cfg_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "He_I_cfg_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 4,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "He_I_gap_0_1"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "He_I_cfg_0",
+            "He_I_cfg_1",
+            "He_I_cfg_2",
+            "He_I_cfg_3"
+          ],
+          "raf_reactions": [
+            "He_I_gap_0_1",
+            "He_I_gap_1_2",
+            "He_I_gap_2_3",
+            "He_I_ionization_edge"
+          ],
+          "raf_size": 4,
+          "subraf_count": 4,
+          "viable_catalysts": [
+            "He_I_cfg_0",
+            "He_I_cfg_1",
+            "He_I_cfg_2",
+            "He_I_cfg_3"
+          ]
+        },
+        "raw_score": 0.97,
+        "trace_adjusted_raw_score": 0.97,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "He_I_gap_0_1",
+            "He_I_gap_1_2",
+            "He_I_gap_2_3",
+            "He_I_ionization_edge"
+          ],
+          "max_step_delta": 0.006311902869810204,
+          "normalized_total_variation": 0.034682975923129945,
+          "reaction_event_count": 96,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "He_I_cfg_0",
+            "He_I_cfg_1",
+            "He_I_cfg_2",
+            "He_I_cfg_3"
+          ],
+          "total_variation": 0.29827359293891753,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "He_I_cfg_0",
+          "He_I_cfg_1",
+          "He_I_cfg_2",
+          "He_I_cfg_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:b90c26ff675e0d42b2338e4cf4c604b938d22b485e725fd05e729289c6c8c1ee",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\00_atomic_energy_level_summary_0ad6eb9bd20d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:b90c26ff675e0d42b2338e4cf4c604b938d22b485e725fd05e729289c6c8c1ee",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\00_atomic_energy_level_summary_0ad6eb9bd20d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:b90c26ff675e0d42b2338e4cf4c604b938d22b485e725fd05e729289c6c8c1ee",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\00_atomic_energy_level_summary_0ad6eb9bd20d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:b90c26ff675e0d42b2338e4cf4c604b938d22b485e725fd05e729289c6c8c1ee",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\00_atomic_energy_level_summary_0ad6eb9bd20d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:b90c26ff675e0d42b2338e4cf4c604b938d22b485e725fd05e729289c6c8c1ee",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\00_atomic_energy_level_summary_0ad6eb9bd20d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:b90c26ff675e0d42b2338e4cf4c604b938d22b485e725fd05e729289c6c8c1ee",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\00_atomic_energy_level_summary_0ad6eb9bd20d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.45,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.45,
+        "catalyst_edges": {
+          "cid_222_atom_0": [
+            "cid_222_atom_0"
+          ]
+        },
+        "catalysts": [
+          "cid_222_atom_0"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "cid_222_atom_0"
+        ],
+        "raf": {
+          "closure_depth": 0,
+          "food_set": [
+            "cid_222_atom_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 1,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 0,
+              "raf_reactions": [
+                "cid_222_single_atom_exchange"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "cid_222_atom_0"
+          ],
+          "raf_reactions": [
+            "cid_222_single_atom_exchange"
+          ],
+          "raf_size": 1,
+          "subraf_count": 1,
+          "viable_catalysts": [
+            "cid_222_atom_0"
+          ]
+        },
+        "raw_score": 0.45,
+        "trace_adjusted_raw_score": 0.45,
+        "trace_dynamics": {
+          "active_reaction_count": 1,
+          "active_reactions": [
+            "cid_222_single_atom_exchange"
+          ],
+          "max_step_delta": 0.0,
+          "normalized_total_variation": 0.0,
+          "reaction_event_count": 24,
+          "state_motion_score": 0.0,
+          "state_samples": 25,
+          "state_species": [
+            "cid_222_atom_0"
+          ],
+          "total_variation": 0.0,
+          "trace_dependency": false,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "cid_222_atom_0"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:8bd39d1e89b4bfa477f9285fe03fde1917f7d3b93d8920077ef248ffc9ee88d5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\01_small_molecule_topology_summary_27dbe4c42b54.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:8bd39d1e89b4bfa477f9285fe03fde1917f7d3b93d8920077ef248ffc9ee88d5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\01_small_molecule_topology_summary_27dbe4c42b54.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:8bd39d1e89b4bfa477f9285fe03fde1917f7d3b93d8920077ef248ffc9ee88d5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\01_small_molecule_topology_summary_27dbe4c42b54.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:8bd39d1e89b4bfa477f9285fe03fde1917f7d3b93d8920077ef248ffc9ee88d5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\01_small_molecule_topology_summary_27dbe4c42b54.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:8bd39d1e89b4bfa477f9285fe03fde1917f7d3b93d8920077ef248ffc9ee88d5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\01_small_molecule_topology_summary_27dbe4c42b54.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:8bd39d1e89b4bfa477f9285fe03fde1917f7d3b93d8920077ef248ffc9ee88d5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\01_small_molecule_topology_summary_27dbe4c42b54.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.65,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.65,
+        "catalyst_edges": {
+          "rossler_1976_continuous_chaos_osc_0": [
+            "rossler_1976_continuous_chaos_osc_0"
+          ],
+          "rossler_1976_continuous_chaos_osc_1": [
+            "rossler_1976_continuous_chaos_osc_1"
+          ],
+          "rossler_1976_continuous_chaos_osc_2": [
+            "rossler_1976_continuous_chaos_osc_2"
+          ],
+          "rossler_1976_continuous_chaos_osc_3": [
+            "rossler_1976_continuous_chaos_osc_0",
+            "rossler_1976_continuous_chaos_osc_3"
+          ]
+        },
+        "catalysts": [
+          "rossler_1976_continuous_chaos_osc_0",
+          "rossler_1976_continuous_chaos_osc_1",
+          "rossler_1976_continuous_chaos_osc_2",
+          "rossler_1976_continuous_chaos_osc_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "rossler_1976_continuous_chaos_osc_0",
+          "rossler_1976_continuous_chaos_osc_1",
+          "rossler_1976_continuous_chaos_osc_2",
+          "rossler_1976_continuous_chaos_osc_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "rossler_1976_continuous_chaos_osc_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 5,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "rossler_1976_continuous_chaos_osc_0"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "rossler_1976_continuous_chaos_osc_0",
+            "rossler_1976_continuous_chaos_osc_1",
+            "rossler_1976_continuous_chaos_osc_2",
+            "rossler_1976_continuous_chaos_osc_3"
+          ],
+          "raf_reactions": [
+            "rossler_1976_continuous_chaos_osc_0",
+            "rossler_1976_continuous_chaos_osc_1",
+            "rossler_1976_continuous_chaos_osc_2",
+            "rossler_1976_continuous_chaos_osc_3",
+            "rossler_1976_continuous_chaos_folding_return"
+          ],
+          "raf_size": 5,
+          "subraf_count": 6,
+          "viable_catalysts": [
+            "rossler_1976_continuous_chaos_osc_0",
+            "rossler_1976_continuous_chaos_osc_1",
+            "rossler_1976_continuous_chaos_osc_2",
+            "rossler_1976_continuous_chaos_osc_3"
+          ]
+        },
+        "raw_score": 0.923621262470548,
+        "trace_adjusted_raw_score": 0.923621262470548,
+        "trace_dynamics": {
+          "active_reaction_count": 5,
+          "active_reactions": [
+            "rossler_1976_continuous_chaos_folding_return",
+            "rossler_1976_continuous_chaos_osc_0",
+            "rossler_1976_continuous_chaos_osc_1",
+            "rossler_1976_continuous_chaos_osc_2",
+            "rossler_1976_continuous_chaos_osc_3"
+          ],
+          "max_step_delta": 0.002713578644228054,
+          "normalized_total_variation": 0.016289700997643843,
+          "reaction_event_count": 120,
+          "state_motion_score": 0.8144850498821922,
+          "state_samples": 25,
+          "state_species": [
+            "rossler_1976_continuous_chaos_osc_0",
+            "rossler_1976_continuous_chaos_osc_1",
+            "rossler_1976_continuous_chaos_osc_2",
+            "rossler_1976_continuous_chaos_osc_3"
+          ],
+          "total_variation": 0.14497833887903022,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "rossler_1976_continuous_chaos_osc_0",
+          "rossler_1976_continuous_chaos_osc_1",
+          "rossler_1976_continuous_chaos_osc_2",
+          "rossler_1976_continuous_chaos_osc_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:5609cef693f65f8820752851ed7e8a1594507aebf3fae01e17b060ec8c4dca20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\02_canonical_dynamical_form_3b263f526976.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:5609cef693f65f8820752851ed7e8a1594507aebf3fae01e17b060ec8c4dca20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\02_canonical_dynamical_form_3b263f526976.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:5609cef693f65f8820752851ed7e8a1594507aebf3fae01e17b060ec8c4dca20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\02_canonical_dynamical_form_3b263f526976.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:5609cef693f65f8820752851ed7e8a1594507aebf3fae01e17b060ec8c4dca20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\02_canonical_dynamical_form_3b263f526976.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:5609cef693f65f8820752851ed7e8a1594507aebf3fae01e17b060ec8c4dca20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\02_canonical_dynamical_form_3b263f526976.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:5609cef693f65f8820752851ed7e8a1594507aebf3fae01e17b060ec8c4dca20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\02_canonical_dynamical_form_3b263f526976.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.65,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.65,
+        "catalyst_edges": {
+          "sprott_simple_chaotic_flow_osc_0": [
+            "sprott_simple_chaotic_flow_osc_0"
+          ],
+          "sprott_simple_chaotic_flow_osc_1": [
+            "sprott_simple_chaotic_flow_osc_1"
+          ],
+          "sprott_simple_chaotic_flow_osc_2": [
+            "sprott_simple_chaotic_flow_osc_2"
+          ],
+          "sprott_simple_chaotic_flow_osc_3": [
+            "sprott_simple_chaotic_flow_osc_0",
+            "sprott_simple_chaotic_flow_osc_3"
+          ]
+        },
+        "catalysts": [
+          "sprott_simple_chaotic_flow_osc_0",
+          "sprott_simple_chaotic_flow_osc_1",
+          "sprott_simple_chaotic_flow_osc_2",
+          "sprott_simple_chaotic_flow_osc_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "sprott_simple_chaotic_flow_osc_0",
+          "sprott_simple_chaotic_flow_osc_1",
+          "sprott_simple_chaotic_flow_osc_2",
+          "sprott_simple_chaotic_flow_osc_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "sprott_simple_chaotic_flow_osc_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 5,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "sprott_simple_chaotic_flow_osc_0"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "sprott_simple_chaotic_flow_osc_0",
+            "sprott_simple_chaotic_flow_osc_1",
+            "sprott_simple_chaotic_flow_osc_2",
+            "sprott_simple_chaotic_flow_osc_3"
+          ],
+          "raf_reactions": [
+            "sprott_simple_chaotic_flow_osc_0",
+            "sprott_simple_chaotic_flow_osc_1",
+            "sprott_simple_chaotic_flow_osc_2",
+            "sprott_simple_chaotic_flow_osc_3",
+            "sprott_simple_chaotic_flow_folding_return"
+          ],
+          "raf_size": 5,
+          "subraf_count": 6,
+          "viable_catalysts": [
+            "sprott_simple_chaotic_flow_osc_0",
+            "sprott_simple_chaotic_flow_osc_1",
+            "sprott_simple_chaotic_flow_osc_2",
+            "sprott_simple_chaotic_flow_osc_3"
+          ]
+        },
+        "raw_score": 0.8803275885136368,
+        "trace_adjusted_raw_score": 0.8803275885136368,
+        "trace_dynamics": {
+          "active_reaction_count": 5,
+          "active_reactions": [
+            "sprott_simple_chaotic_flow_folding_return",
+            "sprott_simple_chaotic_flow_osc_0",
+            "sprott_simple_chaotic_flow_osc_1",
+            "sprott_simple_chaotic_flow_osc_2",
+            "sprott_simple_chaotic_flow_osc_3"
+          ],
+          "max_step_delta": 0.0021339026435813757,
+          "normalized_total_variation": 0.01282620708109094,
+          "reaction_event_count": 120,
+          "state_motion_score": 0.6413103540545471,
+          "state_samples": 25,
+          "state_species": [
+            "sprott_simple_chaotic_flow_osc_0",
+            "sprott_simple_chaotic_flow_osc_1",
+            "sprott_simple_chaotic_flow_osc_2",
+            "sprott_simple_chaotic_flow_osc_3"
+          ],
+          "total_variation": 0.11415324302170937,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "sprott_simple_chaotic_flow_osc_0",
+          "sprott_simple_chaotic_flow_osc_1",
+          "sprott_simple_chaotic_flow_osc_2",
+          "sprott_simple_chaotic_flow_osc_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:7dab9f116c7ad0cbc4f357f7b0c59bf713c01291234964bf5035b6f93fbc9a83",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\03_canonical_dynamical_form_4b9bb996d3b6.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:7dab9f116c7ad0cbc4f357f7b0c59bf713c01291234964bf5035b6f93fbc9a83",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\03_canonical_dynamical_form_4b9bb996d3b6.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:7dab9f116c7ad0cbc4f357f7b0c59bf713c01291234964bf5035b6f93fbc9a83",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\03_canonical_dynamical_form_4b9bb996d3b6.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:7dab9f116c7ad0cbc4f357f7b0c59bf713c01291234964bf5035b6f93fbc9a83",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\03_canonical_dynamical_form_4b9bb996d3b6.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:7dab9f116c7ad0cbc4f357f7b0c59bf713c01291234964bf5035b6f93fbc9a83",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\03_canonical_dynamical_form_4b9bb996d3b6.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:7dab9f116c7ad0cbc4f357f7b0c59bf713c01291234964bf5035b6f93fbc9a83",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\03_canonical_dynamical_form_4b9bb996d3b6.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.65,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.65,
+        "catalyst_edges": {
+          "hopf_limit_cycle_normal_form_phase_0": [
+            "hopf_limit_cycle_normal_form_phase_0"
+          ],
+          "hopf_limit_cycle_normal_form_phase_1": [
+            "hopf_limit_cycle_normal_form_phase_1"
+          ],
+          "hopf_limit_cycle_normal_form_phase_2": [
+            "hopf_limit_cycle_normal_form_phase_2"
+          ]
+        },
+        "catalysts": [
+          "hopf_limit_cycle_normal_form_phase_0",
+          "hopf_limit_cycle_normal_form_phase_1",
+          "hopf_limit_cycle_normal_form_phase_2"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "hopf_limit_cycle_normal_form_phase_0",
+          "hopf_limit_cycle_normal_form_phase_1",
+          "hopf_limit_cycle_normal_form_phase_2"
+        ],
+        "raf": {
+          "closure_depth": 2,
+          "food_set": [
+            "hopf_limit_cycle_normal_form_phase_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 3,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "hopf_limit_cycle_normal_form_phase_0"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "hopf_limit_cycle_normal_form_phase_0",
+            "hopf_limit_cycle_normal_form_phase_1",
+            "hopf_limit_cycle_normal_form_phase_2"
+          ],
+          "raf_reactions": [
+            "hopf_limit_cycle_normal_form_phase_0",
+            "hopf_limit_cycle_normal_form_phase_1",
+            "hopf_limit_cycle_normal_form_phase_2"
+          ],
+          "raf_size": 3,
+          "subraf_count": 3,
+          "viable_catalysts": [
+            "hopf_limit_cycle_normal_form_phase_0",
+            "hopf_limit_cycle_normal_form_phase_1",
+            "hopf_limit_cycle_normal_form_phase_2"
+          ]
+        },
+        "raw_score": 0.7163203143318113,
+        "trace_adjusted_raw_score": 0.7163203143318113,
+        "trace_dynamics": {
+          "active_reaction_count": 3,
+          "active_reactions": [
+            "hopf_limit_cycle_normal_form_phase_0",
+            "hopf_limit_cycle_normal_form_phase_1",
+            "hopf_limit_cycle_normal_form_phase_2"
+          ],
+          "max_step_delta": 0.0007039425898627272,
+          "normalized_total_variation": 0.005105625146544895,
+          "reaction_event_count": 72,
+          "state_motion_score": 0.25528125732724477,
+          "state_samples": 25,
+          "state_species": [
+            "hopf_limit_cycle_normal_form_phase_0",
+            "hopf_limit_cycle_normal_form_phase_1",
+            "hopf_limit_cycle_normal_form_phase_2"
+          ],
+          "total_variation": 0.03369712596719632,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "hopf_limit_cycle_normal_form_phase_0",
+          "hopf_limit_cycle_normal_form_phase_1",
+          "hopf_limit_cycle_normal_form_phase_2"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:c8973b7e0867617cdc3a7b4c2f1aaa689e1089af70030ca9b458ff6ac7e742fa",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\04_canonical_dynamical_form_713117167bc5.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:c8973b7e0867617cdc3a7b4c2f1aaa689e1089af70030ca9b458ff6ac7e742fa",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\04_canonical_dynamical_form_713117167bc5.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:c8973b7e0867617cdc3a7b4c2f1aaa689e1089af70030ca9b458ff6ac7e742fa",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\04_canonical_dynamical_form_713117167bc5.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:c8973b7e0867617cdc3a7b4c2f1aaa689e1089af70030ca9b458ff6ac7e742fa",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\04_canonical_dynamical_form_713117167bc5.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:c8973b7e0867617cdc3a7b4c2f1aaa689e1089af70030ca9b458ff6ac7e742fa",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\04_canonical_dynamical_form_713117167bc5.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:c8973b7e0867617cdc3a7b4c2f1aaa689e1089af70030ca9b458ff6ac7e742fa",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\04_canonical_dynamical_form_713117167bc5.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "Ne_I_cfg_0": [
+            "Ne_I_cfg_0"
+          ],
+          "Ne_I_cfg_1": [
+            "Ne_I_cfg_1"
+          ],
+          "Ne_I_cfg_2": [
+            "Ne_I_cfg_2"
+          ],
+          "Ne_I_cfg_3": [
+            "Ne_I_cfg_3"
+          ]
+        },
+        "catalysts": [
+          "Ne_I_cfg_0",
+          "Ne_I_cfg_1",
+          "Ne_I_cfg_2",
+          "Ne_I_cfg_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "Ne_I_cfg_0",
+          "Ne_I_cfg_1",
+          "Ne_I_cfg_2",
+          "Ne_I_cfg_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "Ne_I_cfg_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 4,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "Ne_I_gap_0_1"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "Ne_I_cfg_0",
+            "Ne_I_cfg_1",
+            "Ne_I_cfg_2",
+            "Ne_I_cfg_3"
+          ],
+          "raf_reactions": [
+            "Ne_I_gap_0_1",
+            "Ne_I_gap_1_2",
+            "Ne_I_gap_2_3",
+            "Ne_I_ionization_edge"
+          ],
+          "raf_size": 4,
+          "subraf_count": 4,
+          "viable_catalysts": [
+            "Ne_I_cfg_0",
+            "Ne_I_cfg_1",
+            "Ne_I_cfg_2",
+            "Ne_I_cfg_3"
+          ]
+        },
+        "raw_score": 0.97,
+        "trace_adjusted_raw_score": 0.97,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "Ne_I_gap_0_1",
+            "Ne_I_gap_1_2",
+            "Ne_I_gap_2_3",
+            "Ne_I_ionization_edge"
+          ],
+          "max_step_delta": 0.01132947407614271,
+          "normalized_total_variation": 0.062358799214337304,
+          "reaction_event_count": 96,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "Ne_I_cfg_0",
+            "Ne_I_cfg_1",
+            "Ne_I_cfg_2",
+            "Ne_I_cfg_3"
+          ],
+          "total_variation": 0.5362856732433008,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "Ne_I_cfg_0",
+          "Ne_I_cfg_1",
+          "Ne_I_cfg_2",
+          "Ne_I_cfg_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:9054c74c27c0bbf7d521966a7ac59cf4620c4b0af2aaf5d75edfd3896e80d99f",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\05_atomic_energy_level_summary_847ffca61d03.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:9054c74c27c0bbf7d521966a7ac59cf4620c4b0af2aaf5d75edfd3896e80d99f",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\05_atomic_energy_level_summary_847ffca61d03.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:9054c74c27c0bbf7d521966a7ac59cf4620c4b0af2aaf5d75edfd3896e80d99f",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\05_atomic_energy_level_summary_847ffca61d03.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:9054c74c27c0bbf7d521966a7ac59cf4620c4b0af2aaf5d75edfd3896e80d99f",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\05_atomic_energy_level_summary_847ffca61d03.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:9054c74c27c0bbf7d521966a7ac59cf4620c4b0af2aaf5d75edfd3896e80d99f",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\05_atomic_energy_level_summary_847ffca61d03.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:9054c74c27c0bbf7d521966a7ac59cf4620c4b0af2aaf5d75edfd3896e80d99f",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\05_atomic_energy_level_summary_847ffca61d03.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "Ar_I_cfg_0": [
+            "Ar_I_cfg_0"
+          ],
+          "Ar_I_cfg_1": [
+            "Ar_I_cfg_1"
+          ],
+          "Ar_I_cfg_2": [
+            "Ar_I_cfg_2"
+          ],
+          "Ar_I_cfg_3": [
+            "Ar_I_cfg_3"
+          ]
+        },
+        "catalysts": [
+          "Ar_I_cfg_0",
+          "Ar_I_cfg_1",
+          "Ar_I_cfg_2",
+          "Ar_I_cfg_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "Ar_I_cfg_0",
+          "Ar_I_cfg_1",
+          "Ar_I_cfg_2",
+          "Ar_I_cfg_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "Ar_I_cfg_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 4,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "Ar_I_gap_0_1"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "Ar_I_cfg_0",
+            "Ar_I_cfg_1",
+            "Ar_I_cfg_2",
+            "Ar_I_cfg_3"
+          ],
+          "raf_reactions": [
+            "Ar_I_gap_0_1",
+            "Ar_I_gap_1_2",
+            "Ar_I_gap_2_3",
+            "Ar_I_ionization_edge"
+          ],
+          "raf_size": 4,
+          "subraf_count": 4,
+          "viable_catalysts": [
+            "Ar_I_cfg_0",
+            "Ar_I_cfg_1",
+            "Ar_I_cfg_2",
+            "Ar_I_cfg_3"
+          ]
+        },
+        "raw_score": 0.97,
+        "trace_adjusted_raw_score": 0.97,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "Ar_I_gap_0_1",
+            "Ar_I_gap_1_2",
+            "Ar_I_gap_2_3",
+            "Ar_I_ionization_edge"
+          ],
+          "max_step_delta": 0.010542474496563425,
+          "normalized_total_variation": 0.058245314099950006,
+          "reaction_event_count": 96,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "Ar_I_cfg_0",
+            "Ar_I_cfg_1",
+            "Ar_I_cfg_2",
+            "Ar_I_cfg_3"
+          ],
+          "total_variation": 0.50090970125957,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "Ar_I_cfg_0",
+          "Ar_I_cfg_1",
+          "Ar_I_cfg_2",
+          "Ar_I_cfg_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:0397beb5d7b7acdb3b26b2d2c61546afc11579c24d28fb380be38c2f577c1caf",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\06_atomic_energy_level_summary_97bcf4596d0b.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:0397beb5d7b7acdb3b26b2d2c61546afc11579c24d28fb380be38c2f577c1caf",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\06_atomic_energy_level_summary_97bcf4596d0b.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:0397beb5d7b7acdb3b26b2d2c61546afc11579c24d28fb380be38c2f577c1caf",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\06_atomic_energy_level_summary_97bcf4596d0b.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:0397beb5d7b7acdb3b26b2d2c61546afc11579c24d28fb380be38c2f577c1caf",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\06_atomic_energy_level_summary_97bcf4596d0b.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:0397beb5d7b7acdb3b26b2d2c61546afc11579c24d28fb380be38c2f577c1caf",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\06_atomic_energy_level_summary_97bcf4596d0b.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:0397beb5d7b7acdb3b26b2d2c61546afc11579c24d28fb380be38c2f577c1caf",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\06_atomic_energy_level_summary_97bcf4596d0b.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.303,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": false,
+        "calibrated_confidence": 0.303,
+        "catalyst_edges": {},
+        "catalysts": [],
+        "cyclic_dependency": false,
+        "produced_catalyst_ratio": 0.0,
+        "produced_species": [
+          "fixed_point_linear_sink_sink"
+        ],
+        "raf": {
+          "closure_depth": 0,
+          "food_set": [
+            "fixed_point_linear_sink_x"
+          ],
+          "is_raf_like": false,
+          "maximal_raf_size": 0,
+          "minimal_raf_count": 0,
+          "minimal_rafs": [],
+          "produced_species": [
+            "fixed_point_linear_sink_sink"
+          ],
+          "raf_reactions": [],
+          "raf_size": 0,
+          "subraf_count": 0,
+          "viable_catalysts": []
+        },
+        "raw_score": 0.303,
+        "trace_adjusted_raw_score": 0.303,
+        "trace_dynamics": {
+          "active_reaction_count": 1,
+          "active_reactions": [
+            "fixed_point_linear_sink_depletion"
+          ],
+          "max_step_delta": 0.007996800853162667,
+          "normalized_total_variation": 0.03803370801472659,
+          "reaction_event_count": 24,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "fixed_point_linear_sink_sink",
+            "fixed_point_linear_sink_x"
+          ],
+          "total_variation": 0.38033708014726597,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": []
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:06d05659cf8d86aea5daaec18b1bf8b7c997f108e32ec33d5d3bf305c03aa86a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\07_canonical_dynamical_form_9bd5545234ce.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:06d05659cf8d86aea5daaec18b1bf8b7c997f108e32ec33d5d3bf305c03aa86a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\07_canonical_dynamical_form_9bd5545234ce.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:06d05659cf8d86aea5daaec18b1bf8b7c997f108e32ec33d5d3bf305c03aa86a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\07_canonical_dynamical_form_9bd5545234ce.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:06d05659cf8d86aea5daaec18b1bf8b7c997f108e32ec33d5d3bf305c03aa86a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\07_canonical_dynamical_form_9bd5545234ce.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:06d05659cf8d86aea5daaec18b1bf8b7c997f108e32ec33d5d3bf305c03aa86a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\07_canonical_dynamical_form_9bd5545234ce.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:06d05659cf8d86aea5daaec18b1bf8b7c997f108e32ec33d5d3bf305c03aa86a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\07_canonical_dynamical_form_9bd5545234ce.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.45,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.45,
+        "catalyst_edges": {
+          "cid_297_atom_0": [
+            "cid_297_atom_0"
+          ]
+        },
+        "catalysts": [
+          "cid_297_atom_0"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "cid_297_atom_0"
+        ],
+        "raf": {
+          "closure_depth": 0,
+          "food_set": [
+            "cid_297_atom_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 1,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 0,
+              "raf_reactions": [
+                "cid_297_single_atom_exchange"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "cid_297_atom_0"
+          ],
+          "raf_reactions": [
+            "cid_297_single_atom_exchange"
+          ],
+          "raf_size": 1,
+          "subraf_count": 1,
+          "viable_catalysts": [
+            "cid_297_atom_0"
+          ]
+        },
+        "raw_score": 0.45,
+        "trace_adjusted_raw_score": 0.45,
+        "trace_dynamics": {
+          "active_reaction_count": 1,
+          "active_reactions": [
+            "cid_297_single_atom_exchange"
+          ],
+          "max_step_delta": 0.0,
+          "normalized_total_variation": 0.0,
+          "reaction_event_count": 24,
+          "state_motion_score": 0.0,
+          "state_samples": 25,
+          "state_species": [
+            "cid_297_atom_0"
+          ],
+          "total_variation": 0.0,
+          "trace_dependency": false,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "cid_297_atom_0"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:762902e62beeb2c87c0386db52a4590e30f9258a5c35aa9792fe9ea1b42d10c0",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\08_small_molecule_topology_summary_9c006601fcf9.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:762902e62beeb2c87c0386db52a4590e30f9258a5c35aa9792fe9ea1b42d10c0",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\08_small_molecule_topology_summary_9c006601fcf9.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:762902e62beeb2c87c0386db52a4590e30f9258a5c35aa9792fe9ea1b42d10c0",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\08_small_molecule_topology_summary_9c006601fcf9.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:762902e62beeb2c87c0386db52a4590e30f9258a5c35aa9792fe9ea1b42d10c0",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\08_small_molecule_topology_summary_9c006601fcf9.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:762902e62beeb2c87c0386db52a4590e30f9258a5c35aa9792fe9ea1b42d10c0",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\08_small_molecule_topology_summary_9c006601fcf9.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:762902e62beeb2c87c0386db52a4590e30f9258a5c35aa9792fe9ea1b42d10c0",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\08_small_molecule_topology_summary_9c006601fcf9.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.45,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.45,
+        "catalyst_edges": {
+          "cid_280_atom_0": [
+            "cid_280_atom_0"
+          ],
+          "cid_280_atom_1": [
+            "cid_280_atom_1"
+          ],
+          "cid_280_atom_2": [
+            "cid_280_atom_2"
+          ]
+        },
+        "catalysts": [
+          "cid_280_atom_0",
+          "cid_280_atom_1",
+          "cid_280_atom_2"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "cid_280_atom_0",
+          "cid_280_atom_1",
+          "cid_280_atom_2"
+        ],
+        "raf": {
+          "closure_depth": 2,
+          "food_set": [
+            "cid_280_atom_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 3,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "cid_280_bond_0_1"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "cid_280_atom_0",
+            "cid_280_atom_1",
+            "cid_280_atom_2"
+          ],
+          "raf_reactions": [
+            "cid_280_bond_0_1",
+            "cid_280_bond_1_2",
+            "cid_280_closure_bond"
+          ],
+          "raf_size": 3,
+          "subraf_count": 3,
+          "viable_catalysts": [
+            "cid_280_atom_0",
+            "cid_280_atom_1",
+            "cid_280_atom_2"
+          ]
+        },
+        "raw_score": 0.45,
+        "trace_adjusted_raw_score": 0.45,
+        "trace_dynamics": {
+          "active_reaction_count": 3,
+          "active_reactions": [
+            "cid_280_bond_0_1",
+            "cid_280_bond_1_2",
+            "cid_280_closure_bond"
+          ],
+          "max_step_delta": 6.819923393974747e-05,
+          "normalized_total_variation": 0.0007037199052079538,
+          "reaction_event_count": 72,
+          "state_motion_score": 0.035185995260397694,
+          "state_samples": 25,
+          "state_species": [
+            "cid_280_atom_0",
+            "cid_280_atom_1",
+            "cid_280_atom_2"
+          ],
+          "total_variation": 0.0032722975592169856,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "cid_280_atom_0",
+          "cid_280_atom_1",
+          "cid_280_atom_2"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:9d5b8506214d54aa5239062503c2cc830424fb553ca38bb19988dd4cdedc4f1c",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\09_small_molecule_topology_summary_b23299669b38.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:9d5b8506214d54aa5239062503c2cc830424fb553ca38bb19988dd4cdedc4f1c",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\09_small_molecule_topology_summary_b23299669b38.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:9d5b8506214d54aa5239062503c2cc830424fb553ca38bb19988dd4cdedc4f1c",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\09_small_molecule_topology_summary_b23299669b38.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:9d5b8506214d54aa5239062503c2cc830424fb553ca38bb19988dd4cdedc4f1c",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\09_small_molecule_topology_summary_b23299669b38.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:9d5b8506214d54aa5239062503c2cc830424fb553ca38bb19988dd4cdedc4f1c",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\09_small_molecule_topology_summary_b23299669b38.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:9d5b8506214d54aa5239062503c2cc830424fb553ca38bb19988dd4cdedc4f1c",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\09_small_molecule_topology_summary_b23299669b38.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.65,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.65,
+        "catalyst_edges": {
+          "Li_I_cfg_0": [
+            "Li_I_cfg_0"
+          ],
+          "Li_I_cfg_1": [
+            "Li_I_cfg_1"
+          ],
+          "Li_I_cfg_2": [
+            "Li_I_cfg_2"
+          ],
+          "Li_I_cfg_3": [
+            "Li_I_cfg_3"
+          ]
+        },
+        "catalysts": [
+          "Li_I_cfg_0",
+          "Li_I_cfg_1",
+          "Li_I_cfg_2",
+          "Li_I_cfg_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "Li_I_cfg_0",
+          "Li_I_cfg_1",
+          "Li_I_cfg_2",
+          "Li_I_cfg_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "Li_I_cfg_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 4,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "Li_I_gap_0_1"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "Li_I_cfg_0",
+            "Li_I_cfg_1",
+            "Li_I_cfg_2",
+            "Li_I_cfg_3"
+          ],
+          "raf_reactions": [
+            "Li_I_gap_0_1",
+            "Li_I_gap_1_2",
+            "Li_I_gap_2_3",
+            "Li_I_ionization_edge"
+          ],
+          "raf_size": 4,
+          "subraf_count": 4,
+          "viable_catalysts": [
+            "Li_I_cfg_0",
+            "Li_I_cfg_1",
+            "Li_I_cfg_2",
+            "Li_I_cfg_3"
+          ]
+        },
+        "raw_score": 0.9648991481238749,
+        "trace_adjusted_raw_score": 0.9648991481238749,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "Li_I_gap_0_1",
+            "Li_I_gap_1_2",
+            "Li_I_gap_2_3",
+            "Li_I_ionization_edge"
+          ],
+          "max_step_delta": 0.0033395184624986918,
+          "normalized_total_variation": 0.01959193184990999,
+          "reaction_event_count": 96,
+          "state_motion_score": 0.9795965924954995,
+          "state_samples": 25,
+          "state_species": [
+            "Li_I_cfg_0",
+            "Li_I_cfg_1",
+            "Li_I_cfg_2",
+            "Li_I_cfg_3"
+          ],
+          "total_variation": 0.16849061390922593,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "Li_I_cfg_0",
+          "Li_I_cfg_1",
+          "Li_I_cfg_2",
+          "Li_I_cfg_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:8fe771699462bc309adbf86950225d3acfc438697fef8d06a5427e38c7da395a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\10_atomic_energy_level_summary_b528e77338cc.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:8fe771699462bc309adbf86950225d3acfc438697fef8d06a5427e38c7da395a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\10_atomic_energy_level_summary_b528e77338cc.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:8fe771699462bc309adbf86950225d3acfc438697fef8d06a5427e38c7da395a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\10_atomic_energy_level_summary_b528e77338cc.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:8fe771699462bc309adbf86950225d3acfc438697fef8d06a5427e38c7da395a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\10_atomic_energy_level_summary_b528e77338cc.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:8fe771699462bc309adbf86950225d3acfc438697fef8d06a5427e38c7da395a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\10_atomic_energy_level_summary_b528e77338cc.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:8fe771699462bc309adbf86950225d3acfc438697fef8d06a5427e38c7da395a",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\10_atomic_energy_level_summary_b528e77338cc.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.45,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.45,
+        "catalyst_edges": {
+          "cid_962_atom_0": [
+            "cid_962_atom_0"
+          ]
+        },
+        "catalysts": [
+          "cid_962_atom_0"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "cid_962_atom_0"
+        ],
+        "raf": {
+          "closure_depth": 0,
+          "food_set": [
+            "cid_962_atom_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 1,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 0,
+              "raf_reactions": [
+                "cid_962_single_atom_exchange"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "cid_962_atom_0"
+          ],
+          "raf_reactions": [
+            "cid_962_single_atom_exchange"
+          ],
+          "raf_size": 1,
+          "subraf_count": 1,
+          "viable_catalysts": [
+            "cid_962_atom_0"
+          ]
+        },
+        "raw_score": 0.45,
+        "trace_adjusted_raw_score": 0.45,
+        "trace_dynamics": {
+          "active_reaction_count": 1,
+          "active_reactions": [
+            "cid_962_single_atom_exchange"
+          ],
+          "max_step_delta": 0.0,
+          "normalized_total_variation": 0.0,
+          "reaction_event_count": 24,
+          "state_motion_score": 0.0,
+          "state_samples": 25,
+          "state_species": [
+            "cid_962_atom_0"
+          ],
+          "total_variation": 0.0,
+          "trace_dependency": false,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "cid_962_atom_0"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:82b89adc8271f637a9740928c6cceb43f9c7eb6fe80e29ba543fa7342933a0e6",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\11_small_molecule_topology_summary_ccb0fa328a69.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:82b89adc8271f637a9740928c6cceb43f9c7eb6fe80e29ba543fa7342933a0e6",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\11_small_molecule_topology_summary_ccb0fa328a69.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:82b89adc8271f637a9740928c6cceb43f9c7eb6fe80e29ba543fa7342933a0e6",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\11_small_molecule_topology_summary_ccb0fa328a69.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:82b89adc8271f637a9740928c6cceb43f9c7eb6fe80e29ba543fa7342933a0e6",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\11_small_molecule_topology_summary_ccb0fa328a69.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:82b89adc8271f637a9740928c6cceb43f9c7eb6fe80e29ba543fa7342933a0e6",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\11_small_molecule_topology_summary_ccb0fa328a69.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:82b89adc8271f637a9740928c6cceb43f9c7eb6fe80e29ba543fa7342933a0e6",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\11_small_molecule_topology_summary_ccb0fa328a69.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.45,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.45,
+        "catalyst_edges": {
+          "cid_241_atom_0": [
+            "cid_241_atom_0"
+          ],
+          "cid_241_atom_1": [
+            "cid_241_atom_1"
+          ],
+          "cid_241_atom_2": [
+            "cid_241_atom_2"
+          ],
+          "cid_241_atom_3": [
+            "cid_241_atom_3"
+          ],
+          "cid_241_atom_4": [
+            "cid_241_atom_4"
+          ],
+          "cid_241_atom_5": [
+            "cid_241_atom_5"
+          ]
+        },
+        "catalysts": [
+          "cid_241_atom_0",
+          "cid_241_atom_1",
+          "cid_241_atom_2",
+          "cid_241_atom_3",
+          "cid_241_atom_4",
+          "cid_241_atom_5"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "cid_241_atom_0",
+          "cid_241_atom_1",
+          "cid_241_atom_2",
+          "cid_241_atom_3",
+          "cid_241_atom_4",
+          "cid_241_atom_5"
+        ],
+        "raf": {
+          "closure_depth": 5,
+          "food_set": [
+            "cid_241_atom_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 6,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "cid_241_bond_0_1"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "cid_241_atom_0",
+            "cid_241_atom_1",
+            "cid_241_atom_2",
+            "cid_241_atom_3",
+            "cid_241_atom_4",
+            "cid_241_atom_5"
+          ],
+          "raf_reactions": [
+            "cid_241_bond_0_1",
+            "cid_241_bond_1_2",
+            "cid_241_bond_2_3",
+            "cid_241_bond_3_4",
+            "cid_241_bond_4_5",
+            "cid_241_closure_bond"
+          ],
+          "raf_size": 6,
+          "subraf_count": 6,
+          "viable_catalysts": [
+            "cid_241_atom_0",
+            "cid_241_atom_1",
+            "cid_241_atom_2",
+            "cid_241_atom_3",
+            "cid_241_atom_4",
+            "cid_241_atom_5"
+          ]
+        },
+        "raw_score": 0.73480502319947,
+        "trace_adjusted_raw_score": 0.73480502319947,
+        "trace_dynamics": {
+          "active_reaction_count": 6,
+          "active_reactions": [
+            "cid_241_bond_0_1",
+            "cid_241_bond_1_2",
+            "cid_241_bond_2_3",
+            "cid_241_bond_3_4",
+            "cid_241_bond_4_5",
+            "cid_241_closure_bond"
+          ],
+          "max_step_delta": 0.0001294484625695702,
+          "normalized_total_variation": 0.0011844018559576041,
+          "reaction_event_count": 144,
+          "state_motion_score": 0.05922009279788021,
+          "state_samples": 25,
+          "state_species": [
+            "cid_241_atom_0",
+            "cid_241_atom_1",
+            "cid_241_atom_2",
+            "cid_241_atom_3",
+            "cid_241_atom_4",
+            "cid_241_atom_5"
+          ],
+          "total_variation": 0.01154791809558664,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "cid_241_atom_0",
+          "cid_241_atom_1",
+          "cid_241_atom_2",
+          "cid_241_atom_3",
+          "cid_241_atom_4",
+          "cid_241_atom_5"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:4e826e85bb63673ed66568315dfa5112732a1a0492ae22a9a2b3fc1db9fedd28",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\12_small_molecule_topology_summary_cf9fee01d789.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:4e826e85bb63673ed66568315dfa5112732a1a0492ae22a9a2b3fc1db9fedd28",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\12_small_molecule_topology_summary_cf9fee01d789.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:4e826e85bb63673ed66568315dfa5112732a1a0492ae22a9a2b3fc1db9fedd28",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\12_small_molecule_topology_summary_cf9fee01d789.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:4e826e85bb63673ed66568315dfa5112732a1a0492ae22a9a2b3fc1db9fedd28",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\12_small_molecule_topology_summary_cf9fee01d789.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:4e826e85bb63673ed66568315dfa5112732a1a0492ae22a9a2b3fc1db9fedd28",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\12_small_molecule_topology_summary_cf9fee01d789.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:4e826e85bb63673ed66568315dfa5112732a1a0492ae22a9a2b3fc1db9fedd28",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\12_small_molecule_topology_summary_cf9fee01d789.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "H_I_cfg_0": [
+            "H_I_cfg_0"
+          ],
+          "H_I_cfg_1": [
+            "H_I_cfg_1"
+          ],
+          "H_I_cfg_2": [
+            "H_I_cfg_2"
+          ],
+          "H_I_cfg_3": [
+            "H_I_cfg_3"
+          ]
+        },
+        "catalysts": [
+          "H_I_cfg_0",
+          "H_I_cfg_1",
+          "H_I_cfg_2",
+          "H_I_cfg_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "H_I_cfg_0",
+          "H_I_cfg_1",
+          "H_I_cfg_2",
+          "H_I_cfg_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "H_I_cfg_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 4,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "H_I_gap_0_1"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "H_I_cfg_0",
+            "H_I_cfg_1",
+            "H_I_cfg_2",
+            "H_I_cfg_3"
+          ],
+          "raf_reactions": [
+            "H_I_gap_0_1",
+            "H_I_gap_1_2",
+            "H_I_gap_2_3",
+            "H_I_ionization_edge"
+          ],
+          "raf_size": 4,
+          "subraf_count": 4,
+          "viable_catalysts": [
+            "H_I_cfg_0",
+            "H_I_cfg_1",
+            "H_I_cfg_2",
+            "H_I_cfg_3"
+          ]
+        },
+        "raw_score": 0.97,
+        "trace_adjusted_raw_score": 0.97,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "H_I_gap_0_1",
+            "H_I_gap_1_2",
+            "H_I_gap_2_3",
+            "H_I_ionization_edge"
+          ],
+          "max_step_delta": 0.005689560848368025,
+          "normalized_total_variation": 0.03135142411485859,
+          "reaction_event_count": 96,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "H_I_cfg_0",
+            "H_I_cfg_1",
+            "H_I_cfg_2",
+            "H_I_cfg_3"
+          ],
+          "total_variation": 0.26962224738778384,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "H_I_cfg_0",
+          "H_I_cfg_1",
+          "H_I_cfg_2",
+          "H_I_cfg_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:722266e86405491b1952cbcbeafd528917d1c354e4e33ec5c478b439dfa96379",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\13_atomic_energy_level_summary_e8ff76058b1d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:722266e86405491b1952cbcbeafd528917d1c354e4e33ec5c478b439dfa96379",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\13_atomic_energy_level_summary_e8ff76058b1d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:722266e86405491b1952cbcbeafd528917d1c354e4e33ec5c478b439dfa96379",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\13_atomic_energy_level_summary_e8ff76058b1d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:722266e86405491b1952cbcbeafd528917d1c354e4e33ec5c478b439dfa96379",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\13_atomic_energy_level_summary_e8ff76058b1d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:722266e86405491b1952cbcbeafd528917d1c354e4e33ec5c478b439dfa96379",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\13_atomic_energy_level_summary_e8ff76058b1d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:722266e86405491b1952cbcbeafd528917d1c354e4e33ec5c478b439dfa96379",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\13_atomic_energy_level_summary_e8ff76058b1d.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "bridge",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "lorenz_1963_strange_attractor_osc_0": [
+            "lorenz_1963_strange_attractor_osc_0"
+          ],
+          "lorenz_1963_strange_attractor_osc_1": [
+            "lorenz_1963_strange_attractor_osc_1"
+          ],
+          "lorenz_1963_strange_attractor_osc_2": [
+            "lorenz_1963_strange_attractor_osc_2"
+          ],
+          "lorenz_1963_strange_attractor_osc_3": [
+            "lorenz_1963_strange_attractor_osc_0",
+            "lorenz_1963_strange_attractor_osc_3"
+          ]
+        },
+        "catalysts": [
+          "lorenz_1963_strange_attractor_osc_0",
+          "lorenz_1963_strange_attractor_osc_1",
+          "lorenz_1963_strange_attractor_osc_2",
+          "lorenz_1963_strange_attractor_osc_3"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "lorenz_1963_strange_attractor_osc_0",
+          "lorenz_1963_strange_attractor_osc_1",
+          "lorenz_1963_strange_attractor_osc_2",
+          "lorenz_1963_strange_attractor_osc_3"
+        ],
+        "raf": {
+          "closure_depth": 3,
+          "food_set": [
+            "lorenz_1963_strange_attractor_osc_0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 5,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "lorenz_1963_strange_attractor_osc_0"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "lorenz_1963_strange_attractor_osc_0",
+            "lorenz_1963_strange_attractor_osc_1",
+            "lorenz_1963_strange_attractor_osc_2",
+            "lorenz_1963_strange_attractor_osc_3"
+          ],
+          "raf_reactions": [
+            "lorenz_1963_strange_attractor_osc_0",
+            "lorenz_1963_strange_attractor_osc_1",
+            "lorenz_1963_strange_attractor_osc_2",
+            "lorenz_1963_strange_attractor_osc_3",
+            "lorenz_1963_strange_attractor_folding_return"
+          ],
+          "raf_size": 5,
+          "subraf_count": 6,
+          "viable_catalysts": [
+            "lorenz_1963_strange_attractor_osc_0",
+            "lorenz_1963_strange_attractor_osc_1",
+            "lorenz_1963_strange_attractor_osc_2",
+            "lorenz_1963_strange_attractor_osc_3"
+          ]
+        },
+        "raw_score": 0.97,
+        "trace_adjusted_raw_score": 0.97,
+        "trace_dynamics": {
+          "active_reaction_count": 5,
+          "active_reactions": [
+            "lorenz_1963_strange_attractor_folding_return",
+            "lorenz_1963_strange_attractor_osc_0",
+            "lorenz_1963_strange_attractor_osc_1",
+            "lorenz_1963_strange_attractor_osc_2",
+            "lorenz_1963_strange_attractor_osc_3"
+          ],
+          "max_step_delta": 0.006059985732411732,
+          "normalized_total_variation": 0.03502981338708962,
+          "reaction_event_count": 120,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "lorenz_1963_strange_attractor_osc_0",
+            "lorenz_1963_strange_attractor_osc_1",
+            "lorenz_1963_strange_attractor_osc_2",
+            "lorenz_1963_strange_attractor_osc_3"
+          ],
+          "total_variation": 0.31176533914509763,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "lorenz_1963_strange_attractor_osc_0",
+          "lorenz_1963_strange_attractor_osc_1",
+          "lorenz_1963_strange_attractor_osc_2",
+          "lorenz_1963_strange_attractor_osc_3"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:d4cdb48035a2b4fec11f0e2e9ef6a84e59fdb7bd82c5f9979b68691575603fc5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\14_canonical_dynamical_form_ed454738f518.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:d4cdb48035a2b4fec11f0e2e9ef6a84e59fdb7bd82c5f9979b68691575603fc5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\14_canonical_dynamical_form_ed454738f518.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:d4cdb48035a2b4fec11f0e2e9ef6a84e59fdb7bd82c5f9979b68691575603fc5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\14_canonical_dynamical_form_ed454738f518.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:d4cdb48035a2b4fec11f0e2e9ef6a84e59fdb7bd82c5f9979b68691575603fc5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\14_canonical_dynamical_form_ed454738f518.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:d4cdb48035a2b4fec11f0e2e9ef6a84e59fdb7bd82c5f9979b68691575603fc5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\14_canonical_dynamical_form_ed454738f518.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:d4cdb48035a2b4fec11f0e2e9ef6a84e59fdb7bd82c5f9979b68691575603fc5",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\14_canonical_dynamical_form_ed454738f518.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.45,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.45,
+        "catalyst_edges": {
+          "quasiperiodic_torus_flow_theta1_a": [
+            "quasiperiodic_torus_flow_theta1_a"
+          ],
+          "quasiperiodic_torus_flow_theta1_b": [
+            "quasiperiodic_torus_flow_theta1_b"
+          ],
+          "quasiperiodic_torus_flow_theta2_a": [
+            "quasiperiodic_torus_flow_theta2_a"
+          ],
+          "quasiperiodic_torus_flow_theta2_b": [
+            "quasiperiodic_torus_flow_theta2_b"
+          ]
+        },
+        "catalysts": [
+          "quasiperiodic_torus_flow_theta1_a",
+          "quasiperiodic_torus_flow_theta1_b",
+          "quasiperiodic_torus_flow_theta2_a",
+          "quasiperiodic_torus_flow_theta2_b"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "quasiperiodic_torus_flow_theta1_a",
+          "quasiperiodic_torus_flow_theta1_b",
+          "quasiperiodic_torus_flow_theta2_a",
+          "quasiperiodic_torus_flow_theta2_b"
+        ],
+        "raf": {
+          "closure_depth": 1,
+          "food_set": [
+            "quasiperiodic_torus_flow_theta1_a"
+          ],
+          "is_raf_like": false,
+          "maximal_raf_size": 2,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 1,
+              "raf_reactions": [
+                "quasiperiodic_torus_flow_theta1_forward"
+              ],
+              "raf_size": 1
+            }
+          ],
+          "produced_species": [
+            "quasiperiodic_torus_flow_theta1_a",
+            "quasiperiodic_torus_flow_theta1_b",
+            "quasiperiodic_torus_flow_theta2_a",
+            "quasiperiodic_torus_flow_theta2_b"
+          ],
+          "raf_reactions": [
+            "quasiperiodic_torus_flow_theta1_forward",
+            "quasiperiodic_torus_flow_theta1_return"
+          ],
+          "raf_size": 2,
+          "subraf_count": 2,
+          "viable_catalysts": [
+            "quasiperiodic_torus_flow_theta1_a",
+            "quasiperiodic_torus_flow_theta1_b",
+            "quasiperiodic_torus_flow_theta2_a",
+            "quasiperiodic_torus_flow_theta2_b"
+          ]
+        },
+        "raw_score": 0.45,
+        "trace_adjusted_raw_score": 0.45,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "quasiperiodic_torus_flow_theta1_forward",
+            "quasiperiodic_torus_flow_theta1_return",
+            "quasiperiodic_torus_flow_theta2_forward",
+            "quasiperiodic_torus_flow_theta2_return"
+          ],
+          "max_step_delta": 0.0,
+          "normalized_total_variation": 0.0,
+          "reaction_event_count": 96,
+          "state_motion_score": 0.0,
+          "state_samples": 25,
+          "state_species": [
+            "quasiperiodic_torus_flow_theta1_a",
+            "quasiperiodic_torus_flow_theta1_b",
+            "quasiperiodic_torus_flow_theta2_a",
+            "quasiperiodic_torus_flow_theta2_b"
+          ],
+          "total_variation": 0.0,
+          "trace_dependency": false,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "quasiperiodic_torus_flow_theta1_a",
+          "quasiperiodic_torus_flow_theta1_b",
+          "quasiperiodic_torus_flow_theta2_a",
+          "quasiperiodic_torus_flow_theta2_b"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:f48dfccb9da0d7bc02aa4f58e9c15e5d88263f31dcd9be91154bc605df923f20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\15_canonical_dynamical_form_f765cc3b8867.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:f48dfccb9da0d7bc02aa4f58e9c15e5d88263f31dcd9be91154bc605df923f20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\15_canonical_dynamical_form_f765cc3b8867.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:f48dfccb9da0d7bc02aa4f58e9c15e5d88263f31dcd9be91154bc605df923f20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\15_canonical_dynamical_form_f765cc3b8867.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:f48dfccb9da0d7bc02aa4f58e9c15e5d88263f31dcd9be91154bc605df923f20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\15_canonical_dynamical_form_f765cc3b8867.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:f48dfccb9da0d7bc02aa4f58e9c15e5d88263f31dcd9be91154bc605df923f20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\15_canonical_dynamical_form_f765cc3b8867.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "bridge",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:f48dfccb9da0d7bc02aa4f58e9c15e5d88263f31dcd9be91154bc605df923f20",
+      "trace_path": "reports\\campaign_018\\traces\\bridge\\15_canonical_dynamical_form_f765cc3b8867.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "native_w1",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "A": [
+            "C"
+          ],
+          "B": [
+            "A"
+          ],
+          "C": [
+            "B"
+          ]
+        },
+        "catalysts": [
+          "A",
+          "B",
+          "C"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "A",
+          "B",
+          "C"
+        ],
+        "raf": {
+          "closure_depth": 2,
+          "food_set": [
+            "A"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 3,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 2,
+              "raf_reactions": [
+                "r_a_to_b",
+                "r_b_to_c"
+              ],
+              "raf_size": 2
+            }
+          ],
+          "produced_species": [
+            "A",
+            "B",
+            "C"
+          ],
+          "raf_reactions": [
+            "r_a_to_b",
+            "r_b_to_c",
+            "r_c_to_a"
+          ],
+          "raf_size": 3,
+          "subraf_count": 2,
+          "viable_catalysts": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "raw_score": 0.9025000000000001,
+        "trace_adjusted_raw_score": 0.9025000000000001,
+        "trace_dynamics": {
+          "active_reaction_count": 3,
+          "active_reactions": [
+            "r_a_to_b",
+            "r_b_to_c",
+            "r_c_to_a"
+          ],
+          "max_step_delta": 0.04365004872262723,
+          "normalized_total_variation": 0.058152677137626646,
+          "reaction_event_count": 72,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "A",
+            "B",
+            "C"
+          ],
+          "total_variation": 1.7445803141287994,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:d5f9a9a9a201e5edf76ae2f64c03841e36e5f78e56eb6c2b3de4fc6a0be734fb",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\00_K2_positive_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:d5f9a9a9a201e5edf76ae2f64c03841e36e5f78e56eb6c2b3de4fc6a0be734fb",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\00_K2_positive_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:d5f9a9a9a201e5edf76ae2f64c03841e36e5f78e56eb6c2b3de4fc6a0be734fb",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\00_K2_positive_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:d5f9a9a9a201e5edf76ae2f64c03841e36e5f78e56eb6c2b3de4fc6a0be734fb",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\00_K2_positive_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:d5f9a9a9a201e5edf76ae2f64c03841e36e5f78e56eb6c2b3de4fc6a0be734fb",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\00_K2_positive_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:d5f9a9a9a201e5edf76ae2f64c03841e36e5f78e56eb6c2b3de4fc6a0be734fb",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\00_K2_positive_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "native_w1",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "S1": [
+            "S2"
+          ],
+          "S2": [
+            "S3"
+          ],
+          "S3": [
+            "S4"
+          ],
+          "S4": [
+            "S5"
+          ],
+          "S5": [
+            "P0",
+            "P1",
+            "S1"
+          ]
+        },
+        "catalysts": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "P0",
+          "P1",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "raf": {
+          "closure_depth": 5,
+          "food_set": [
+            "S0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 7,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 5,
+              "raf_reactions": [
+                "r1",
+                "r2",
+                "r3",
+                "r4",
+                "r5"
+              ],
+              "raf_size": 5
+            }
+          ],
+          "produced_species": [
+            "P0",
+            "P1",
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "raf_reactions": [
+            "r1",
+            "r2",
+            "r3",
+            "r4",
+            "r5",
+            "p0",
+            "p1"
+          ],
+          "raf_size": 7,
+          "subraf_count": 4,
+          "viable_catalysts": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "raw_score": 0.97,
+        "trace_adjusted_raw_score": 0.97,
+        "trace_dynamics": {
+          "active_reaction_count": 7,
+          "active_reactions": [
+            "p0",
+            "p1",
+            "r1",
+            "r2",
+            "r3",
+            "r4",
+            "r5"
+          ],
+          "max_step_delta": 0.010559504398072406,
+          "normalized_total_variation": 0.04135606702279509,
+          "reaction_event_count": 168,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "P0",
+            "P1",
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "total_variation": 0.6281986580762575,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:40013052d95a47f863d9d3d66858805714f7ac009c3adc8ad09cb4f572eaf2c4",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\01_K2_positive_nested_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:40013052d95a47f863d9d3d66858805714f7ac009c3adc8ad09cb4f572eaf2c4",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\01_K2_positive_nested_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:40013052d95a47f863d9d3d66858805714f7ac009c3adc8ad09cb4f572eaf2c4",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\01_K2_positive_nested_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:40013052d95a47f863d9d3d66858805714f7ac009c3adc8ad09cb4f572eaf2c4",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\01_K2_positive_nested_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:40013052d95a47f863d9d3d66858805714f7ac009c3adc8ad09cb4f572eaf2c4",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\01_K2_positive_nested_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:40013052d95a47f863d9d3d66858805714f7ac009c3adc8ad09cb4f572eaf2c4",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\01_K2_positive_nested_cycle.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "present",
+      "cohort": "native_w1",
+      "confidence": 0.9,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": true,
+        "calibrated_confidence": 0.9,
+        "catalyst_edges": {
+          "S1": [
+            "S2"
+          ],
+          "S2": [
+            "S3"
+          ],
+          "S3": [
+            "S4"
+          ],
+          "S4": [
+            "S1"
+          ]
+        },
+        "catalysts": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "cyclic_dependency": true,
+        "produced_catalyst_ratio": 1.0,
+        "produced_species": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "raf": {
+          "closure_depth": 4,
+          "food_set": [
+            "S0"
+          ],
+          "is_raf_like": true,
+          "maximal_raf_size": 4,
+          "minimal_raf_count": 1,
+          "minimal_rafs": [
+            {
+              "closure_depth": 4,
+              "raf_reactions": [
+                "r1",
+                "r2",
+                "r3",
+                "r4"
+              ],
+              "raf_size": 4
+            }
+          ],
+          "produced_species": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "raf_reactions": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ],
+          "raf_size": 4,
+          "subraf_count": 1,
+          "viable_catalysts": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "raw_score": 0.97,
+        "trace_adjusted_raw_score": 0.97,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "r1",
+            "r2",
+            "r3",
+            "r4"
+          ],
+          "max_step_delta": 0.00898522145603664,
+          "normalized_total_variation": 0.031140756584113645,
+          "reaction_event_count": 96,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "total_variation": 0.43285651651917967,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": true,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:8db5b8b18c0ebdb223b125eacc7a196951e59c225b6981aeb36a035c535ca47f",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\02_C18_native_chain_raf_4.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:8db5b8b18c0ebdb223b125eacc7a196951e59c225b6981aeb36a035c535ca47f",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\02_C18_native_chain_raf_4.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:8db5b8b18c0ebdb223b125eacc7a196951e59c225b6981aeb36a035c535ca47f",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\02_C18_native_chain_raf_4.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:8db5b8b18c0ebdb223b125eacc7a196951e59c225b6981aeb36a035c535ca47f",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\02_C18_native_chain_raf_4.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:8db5b8b18c0ebdb223b125eacc7a196951e59c225b6981aeb36a035c535ca47f",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\02_C18_native_chain_raf_4.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:8db5b8b18c0ebdb223b125eacc7a196951e59c225b6981aeb36a035c535ca47f",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\02_C18_native_chain_raf_4.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.303,
+      "detector_id": "closure.rule_based.v0",
+      "detector_slug": "closure",
+      "evidence": {
+        "all_catalysts_produced": false,
+        "calibrated_confidence": 0.303,
+        "catalyst_edges": {},
+        "catalysts": [],
+        "cyclic_dependency": false,
+        "produced_catalyst_ratio": 0.0,
+        "produced_species": [
+          "D",
+          "E",
+          "X",
+          "Y"
+        ],
+        "raf": {
+          "closure_depth": 0,
+          "food_set": [
+            "A",
+            "B"
+          ],
+          "is_raf_like": false,
+          "maximal_raf_size": 0,
+          "minimal_raf_count": 0,
+          "minimal_rafs": [],
+          "produced_species": [
+            "D",
+            "E",
+            "X",
+            "Y"
+          ],
+          "raf_reactions": [],
+          "raf_size": 0,
+          "subraf_count": 0,
+          "viable_catalysts": []
+        },
+        "raw_score": 0.303,
+        "trace_adjusted_raw_score": 0.303,
+        "trace_dynamics": {
+          "active_reaction_count": 4,
+          "active_reactions": [
+            "br_A_to_X",
+            "br_BX_to_YD",
+            "br_X_to_E",
+            "br_autocatalytic_XY"
+          ],
+          "max_step_delta": 0.009586208763671897,
+          "normalized_total_variation": 0.05413812920341892,
+          "reaction_event_count": 96,
+          "state_motion_score": 1.0,
+          "state_samples": 25,
+          "state_species": [
+            "A",
+            "B",
+            "D",
+            "E",
+            "X",
+            "Y"
+          ],
+          "total_variation": 0.9203481964581218,
+          "trace_dependency": true,
+          "trace_state_present": true
+        },
+        "viable_catalysts": []
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.autocatalytic_closure.draft",
+      "trace_id": "sha256:10f14a27305ad166da3ef42d6bde416ee1a15ee85e7acfe47b1dc185e198860b",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\03_C18_native_brusselator_like_mass_conserving.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "boundary.aggregate_on_crn_trace.v0",
+      "detector_slug": "boundary",
+      "evidence": {
+        "component_confidences": {
+          "boundary.conditional_information.v0": 0.31,
+          "boundary.puncture_recovery.v0": 0.15,
+          "boundary.topological_persistence.v0": 0.0
+        },
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:10f14a27305ad166da3ef42d6bde416ee1a15ee85e7acfe47b1dc185e198860b",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\03_C18_native_brusselator_like_mass_conserving.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "repair.trace_event_rule.v0",
+      "detector_slug": "repair",
+      "evidence": {
+        "repair_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.repair.draft",
+      "trace_id": "sha256:10f14a27305ad166da3ef42d6bde416ee1a15ee85e7acfe47b1dc185e198860b",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\03_C18_native_brusselator_like_mass_conserving.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "memory.externalized_marker.v0",
+      "detector_slug": "externalized_memory",
+      "evidence": {
+        "counterfactual": 0.0,
+        "internal_penalty": 0.0,
+        "persistence": 0.0,
+        "readout": 0.0
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.externalized_memory.draft",
+      "trace_id": "sha256:10f14a27305ad166da3ef42d6bde416ee1a15ee85e7acfe47b1dc185e198860b",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\03_C18_native_brusselator_like_mass_conserving.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.0,
+      "detector_id": "replication_lineage.trace_event_rule.v0",
+      "detector_slug": "replication_lineage",
+      "evidence": {
+        "branching_payload_count": 0,
+        "lineage_event_count": 0,
+        "trace_dependency": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.replication_lineage.draft",
+      "trace_id": "sha256:10f14a27305ad166da3ef42d6bde416ee1a15ee85e7acfe47b1dc185e198860b",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\03_C18_native_brusselator_like_mass_conserving.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    },
+    {
+      "absence_status": "probably_absent",
+      "cohort": "native_w1",
+      "confidence": 0.15333333333333332,
+      "detector_id": "self_boundary.strict_boundary_identity.v0",
+      "detector_slug": "self_boundary",
+      "evidence": {
+        "base_boundary_confidence": 0.15333333333333332,
+        "boundary_rows_present": false
+      },
+      "evidence_path_status": "private_unshipped",
+      "evidence_private": true,
+      "evidence_private_reason": "trace dump is local/private evidence excluded from the shipped public surface; path is retained for lineage but is not a dereferenceable public artifact",
+      "fired": false,
+      "motif_id": "motif.self_maintained_boundary.draft",
+      "trace_id": "sha256:10f14a27305ad166da3ef42d6bde416ee1a15ee85e7acfe47b1dc185e198860b",
+      "trace_path": "reports\\campaign_018\\traces\\native_w1\\03_C18_native_brusselator_like_mass_conserving.json",
+      "trace_path_private_count": 1,
+      "trace_path_status": "private_unshipped"
+    }
+  ],
+  "mode_tag": "exploratory",
+  "schema": "Campaign018DetectorBattery.v1",
+  "trace_counts": {
+    "bridge": 16,
+    "native_w1": 4
+  },
+  "verdicts": {
+    "boundary": "bridge-empty",
+    "closure": "bridge-meaningful",
+    "externalized_memory": "bridge-empty",
+    "repair": "bridge-empty",
+    "replication_lineage": "bridge-empty",
+    "self_boundary": "bridge-empty"
+  }
+}

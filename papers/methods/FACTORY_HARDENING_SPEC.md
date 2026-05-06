@@ -126,3 +126,73 @@ The daemon is live-ready only if every gate below passes under a cold start, a w
 ## Current TASK-027 Status
 
 TASK-027 implements the first adversarial detector controls and projection-basis comparison for Campaign 016. It does not certify unattended live mode. The remaining largest gap is daemon recovery under interrupted writes; that needs explicit temp/replace persistence and stop/start fixtures before the PI should leave live ingestion running overnight.
+
+## Current TASK-028 Status
+
+TASK-028 implements the first recovery primitive for DR-03 and DR-05: low-level Factory JSON artifacts now write through same-directory temp/replace, and corrupt partial JSON can be quarantined by the recovery scanner. Campaign 017 exercises this with a valid artifact plus a truncated artifact fixture and keeps the result exploratory. This is progress toward unattended live mode, not certification: stop/start replay through a real daemon cycle, malformed session-ledger recovery, and adapter-level partial-response holds remain open gates.
+
+## Current TASK-030 Gate Status
+
+Campaign 019 status: 59/59 gates green; live_ready=True.
+
+| Gate | Status | Evidence |
+|---|---|---|
+| SV-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SV-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SV-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SV-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SV-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SV-06 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SV-07 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SV-08 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SS-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SS-02 | green | TASK-032 adapter validation: required payload keys are enforced before normalization; violating source is held and audited. |
+| SS-03 | green | TASK-032 adapter validation: unknown-key census is persisted in fetch_reports.adapter_validation per source/parser. |
+| SS-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SS-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SS-06 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| SS-07 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AI-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AI-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AI-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AI-04 | green | TASK-032 malformed-source fixture: malformed source shape is held, audited, and unaffected source continues. |
+| AI-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AI-06 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AI-07 | green | TASK-032 adapter validation: duplicate record IDs are first-class metrics and high-severity audit holds. |
+| AI-08 | green | TASK-032 adapter validation: nonsensical numeric values are high-severity audit holds. |
+| AQ-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AQ-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AQ-03 | green | TASK-032 warning route: detector_anomaly warnings emit source-native detector audit items. |
+| AQ-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AQ-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AQ-06 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| AQ-07 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| ID-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| ID-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| ID-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| ID-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| ID-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DD-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DD-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DD-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DD-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DD-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| MS-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| MS-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| MS-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| MS-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| MS-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DR-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DR-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DR-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DR-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| DR-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| PC-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| PC-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| PC-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| PC-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| PC-05 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| RC-01 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| RC-02 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| RC-03 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |
+| RC-04 | green | Campaign 019 fixture or prior Campaign 016-018 artifact |

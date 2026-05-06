@@ -1,0 +1,708 @@
+{
+  "records": [
+    {
+      "audit_flags": [],
+      "confidence": 0.82,
+      "empirical_record_id": "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mineral_surface_gradient",
+          "label": "mineral_surface_gradient",
+          "predicate": {
+            "expression": "payload.parameter_basis != ''",
+            "observed": "gradient and boundary terms projected from alkaline hydrothermal origins literature",
+            "predicate": "parameter_basis_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:0bfdea34eb2f08c9f59773ce592878d49e69a7358a833df36f0c3c05629d924a",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing catalytic/gradient terms changes closure or boundary",
+            "observed": {
+              "benchmark": "gradient_anchored_protocell",
+              "boundary_polymerization": 0.095,
+              "gradient_strength": 0.68,
+              "steps": 90
+            },
+            "predicate": "surface_parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.prebiotic_chemistry_parameter_space",
+          "label": "prebiotic_chemistry_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1098/rstb.2006.1881",
+            "predicate": "citation_persists_context",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters carries catalytic or gradient terms",
+            "observed": {
+              "benchmark": "gradient_anchored_protocell",
+              "boundary_polymerization": 0.095,
+              "gradient_strength": 0.68,
+              "steps": 90
+            },
+            "predicate": "world_reads_surface_terms",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects OriginsChemistryWorld scenario",
+            "observed": "gradient_anchored_protocell",
+            "predicate": "benchmark_writes_origins_scenario",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "prebiotic_surface_chemistry",
+          "predicate": {
+            "expression": "payload.chemistry_context != ''",
+            "observed": "redox and pH gradients across mineral compartments",
+            "predicate": "chemistry_context_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.origins.prebiotic_surface_chemistry"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.prebiotic_closure_boundary",
+          "label": "prebiotic_closure_boundary",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "gradient_anchored_protocell",
+            "predicate": "origins_benchmark_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "origins_chemistry"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.84,
+      "empirical_record_id": "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.diffusion_reaction_coupling",
+          "label": "diffusion_reaction_coupling",
+          "predicate": {
+            "expression": "payload.reaction_model != ''",
+            "observed": "schnakenberg",
+            "predicate": "reaction_model_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:16c554bba44b94889421b4243420eabd8bbc5db031b1ba16e048bc8cc7a0c2e1",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing feed/kill or a/b ranges changes regime",
+            "observed": {
+              "a": [
+                0.05,
+                0.2
+              ],
+              "b": [
+                0.8,
+                1.2
+              ]
+            },
+            "predicate": "parameter_range_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.field_parameter_space",
+          "label": "field_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1016/0022-5193(79)90042-0",
+            "predicate": "citation_persists_benchmark",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.steps present",
+            "observed": 36,
+            "predicate": "world_reads_steps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects FieldWorld scenario",
+            "observed": "schnakenberg",
+            "predicate": "benchmark_writes_field_config",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "reaction_diffusion_benchmark",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "schnakenberg",
+            "predicate": "benchmark_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.field.reaction_diffusion_benchmark"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.pattern_formation_parameter_space",
+          "label": "pattern_formation_parameter_space",
+          "predicate": {
+            "expression": "len(payload.parameter_range) > 0",
+            "observed": {
+              "a": [
+                0.05,
+                0.2
+              ],
+              "b": [
+                0.8,
+                1.2
+              ]
+            },
+            "predicate": "parameter_range_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "field"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.78,
+      "empirical_record_id": "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mutation_selection",
+          "label": "mutation_selection",
+          "predicate": {
+            "expression": "world_parameters.mutation_rate > 0",
+            "observed": 0.0025,
+            "predicate": "mutation_rate_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:3852c2ff06210b83980d02eb06691f95eb20631e7177b91bd40e440dd8605a29",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing sequence window changes master projection",
+            "observed": 240,
+            "predicate": "sequence_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.sequence_mutation_space",
+          "label": "sequence_mutation_space",
+          "persist": {
+            "expression": "payload.accession present",
+            "observed": "K03455.1",
+            "predicate": "accession_persists_identity",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters includes mutation/insertion/deletion rates",
+            "observed": {
+              "deletion_rate": 0.0005,
+              "insertion_rate": 0.0005,
+              "mutation_rate": 0.0025
+            },
+            "predicate": "world_reads_mutation_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "NCBI FASTA maps to binary master_sequence",
+            "observed": "111001110100110001000000",
+            "predicate": "ncbi_sequence_writes_master_projection",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "viral_sequence_population",
+          "predicate": {
+            "expression": "world_parameters.master_sequence != ''",
+            "observed": "111001110100110001000000",
+            "predicate": "sequence_projection_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.quasispecies.viral_sequence_population"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.quasispecies_cloud",
+          "label": "quasispecies_cloud",
+          "predicate": {
+            "expression": "world_parameters.population_size > 0",
+            "observed": 96,
+            "predicate": "population_size_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "quasispecies"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.84,
+      "empirical_record_id": "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.diffusion_reaction_coupling",
+          "label": "diffusion_reaction_coupling",
+          "predicate": {
+            "expression": "payload.reaction_model != ''",
+            "observed": "gray_scott",
+            "predicate": "reaction_model_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:40b6a4dcc585222b607310715fe77064569199b78ebab101b0a9a7e58fe2de4d",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing feed/kill or a/b ranges changes regime",
+            "observed": {
+              "feed": [
+                0.02,
+                0.08
+              ],
+              "kill": [
+                0.045,
+                0.07
+              ]
+            },
+            "predicate": "parameter_range_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.field_parameter_space",
+          "label": "field_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1126/science.261.5118.189",
+            "predicate": "citation_persists_benchmark",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.steps present",
+            "observed": 36,
+            "predicate": "world_reads_steps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects FieldWorld scenario",
+            "observed": "gray_scott",
+            "predicate": "benchmark_writes_field_config",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "reaction_diffusion_benchmark",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "gray_scott",
+            "predicate": "benchmark_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.field.reaction_diffusion_benchmark"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.pattern_formation_parameter_space",
+          "label": "pattern_formation_parameter_space",
+          "predicate": {
+            "expression": "len(payload.parameter_range) > 0",
+            "observed": {
+              "feed": [
+                0.02,
+                0.08
+              ],
+              "kill": [
+                0.045,
+                0.07
+              ]
+            },
+            "predicate": "parameter_range_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "field"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.74,
+      "empirical_record_id": "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.trophic_interaction_matrix",
+          "label": "trophic_interaction_matrix",
+          "predicate": {
+            "expression": "producer/grazer/predator guilds present",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "producer_grazer_predator_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:55a950d9ca64248fbc56d521522ab7291e9242c8c3ce8bdd15d260fcbd7f5c6f",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing guild counts changes initial trophic pools",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "guild_count_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.ecosystem_trophic_state_space",
+          "label": "ecosystem_trophic_state_space",
+          "persist": {
+            "expression": "payload.geometry present",
+            "observed": "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))",
+            "predicate": "site_geometry_persists_context",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters includes producer/grazer/predator pools",
+            "observed": {
+              "initial_grazers": 13.190906,
+              "initial_predators": 10.0,
+              "initial_producers": 62.984125
+            },
+            "predicate": "world_reads_trophic_parameters",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "GBIF guild counts map to initial trophic pools",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "gbif_counts_write_initial_conditions",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "multi_trophic_occurrence_proxy",
+          "predicate": {
+            "expression": "len(payload.guild_occurrence_counts) > 0",
+            "observed": {
+              "decomposer": 664,
+              "grazer": 174,
+              "predator": 165,
+              "producer": 3967
+            },
+            "predicate": "guild_counts_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.ecosystem.multi_trophic_occurrence_proxy"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.ecosystem_stability_proxy",
+          "label": "ecosystem_stability_proxy",
+          "predicate": {
+            "expression": "world_parameters.benchmark != ''",
+            "observed": "may_stability",
+            "predicate": "ecosystem_benchmark_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "ecosystem"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.82,
+      "empirical_record_id": "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mineral_surface_gradient",
+          "label": "mineral_surface_gradient",
+          "predicate": {
+            "expression": "payload.parameter_basis != ''",
+            "observed": "surface adsorption and catalysis strengths projected from mineral-surface closure literature",
+            "predicate": "parameter_basis_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:6816bb597e3d66ec0fee402576f90b8a9fd3c10e24752fa56f7439283820664c",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing catalytic/gradient terms changes closure or boundary",
+            "observed": {
+              "adsorption_rate": 0.34,
+              "benchmark": "surface_stabilized_closure",
+              "steps": 90,
+              "surface_catalysis": 0.24
+            },
+            "predicate": "surface_parameter_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.prebiotic_chemistry_parameter_space",
+          "label": "prebiotic_chemistry_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1126/science.276.5310.245",
+            "predicate": "citation_persists_context",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters carries catalytic or gradient terms",
+            "observed": {
+              "adsorption_rate": 0.34,
+              "benchmark": "surface_stabilized_closure",
+              "steps": 90,
+              "surface_catalysis": 0.24
+            },
+            "predicate": "world_reads_surface_terms",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects OriginsChemistryWorld scenario",
+            "observed": "surface_stabilized_closure",
+            "predicate": "benchmark_writes_origins_scenario",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "prebiotic_surface_chemistry",
+          "predicate": {
+            "expression": "payload.chemistry_context != ''",
+            "observed": "mineral surface catalysis and activated-carbon chemistry",
+            "predicate": "chemistry_context_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.origins.prebiotic_surface_chemistry"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.prebiotic_closure_boundary",
+          "label": "prebiotic_closure_boundary",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "surface_stabilized_closure",
+            "predicate": "origins_benchmark_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "origins_chemistry"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.83,
+      "empirical_record_id": "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.mass_action_reaction_edge",
+          "label": "mass_action_reaction_edge",
+          "predicate": {
+            "expression": "all reactions carry rate_constant",
+            "observed": true,
+            "predicate": "rate_constants_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:c2f9ec4951adfb026f1002292989b9e4173af91261e00d79231e7d541f7281b7",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing reaction_edges changes reactions",
+            "observed": 8,
+            "predicate": "edge_count_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.reaction_network_topology",
+          "label": "reaction_network_topology",
+          "persist": {
+            "expression": "payload.organism_code == eco",
+            "observed": "eco",
+            "predicate": "organism_identity_persists",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.initial_state present",
+            "observed": [
+              "2-phospho-D-glycerate",
+              "3-phospho-D-glycerate",
+              "3-phospho-D-glyceroyl-phosphate",
+              "D-fructose-1,6-bisphosphate",
+              "D-fructose-6-phosphate",
+              "D-glucose",
+              "D-glucose-6-phosphate",
+              "glyceraldehyde-3-phosphate"
+            ],
+            "predicate": "world_reads_initial_state",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "KEGG reaction edges map to CRN reactions",
+            "observed": 8,
+            "predicate": "kegg_edges_write_crn",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "metabolic_reaction_network",
+          "predicate": {
+            "expression": "len(payload.world_parameters.reactions) > 0",
+            "observed": 8,
+            "predicate": "reaction_edges_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.crn.metabolic_reaction_network"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.metabolic_closure_substrate_flow",
+          "label": "metabolic_closure_substrate_flow",
+          "predicate": {
+            "expression": "payload.species_count >= 2",
+            "observed": 8,
+            "predicate": "species_count_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "crn"
+    },
+    {
+      "audit_flags": [],
+      "confidence": 0.84,
+      "empirical_record_id": "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.diffusion_reaction_coupling",
+          "label": "diffusion_reaction_coupling",
+          "predicate": {
+            "expression": "payload.reaction_model != ''",
+            "observed": "brusselator",
+            "predicate": "reaction_model_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:fedf361ff9976c88196674467607cc359133e89bb80a0931ac3eefbcae3c7e2b",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "changing feed/kill or a/b ranges changes regime",
+            "observed": {
+              "a": [
+                0.8,
+                1.2
+              ],
+              "b": [
+                2.4,
+                3.0
+              ]
+            },
+            "predicate": "parameter_range_counterfactual",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.field_parameter_space",
+          "label": "field_parameter_space",
+          "persist": {
+            "expression": "provenance.source_url is DOI-backed",
+            "observed": "https://doi.org/10.1063/1.1668896",
+            "predicate": "citation_persists_benchmark",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "world_parameters.steps present",
+            "observed": 36,
+            "predicate": "world_reads_steps",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "world_parameters.benchmark selects FieldWorld scenario",
+            "observed": "brusselator",
+            "predicate": "benchmark_writes_field_config",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "reaction_diffusion_benchmark",
+          "predicate": {
+            "expression": "payload.benchmark != ''",
+            "observed": "brusselator",
+            "predicate": "benchmark_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.field.reaction_diffusion_benchmark"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.pattern_formation_parameter_space",
+          "label": "pattern_formation_parameter_space",
+          "predicate": {
+            "expression": "len(payload.parameter_range) > 0",
+            "observed": {
+              "a": [
+                0.8,
+                1.2
+              ],
+              "b": [
+                2.4,
+                3.0
+              ]
+            },
+            "predicate": "parameter_range_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "field"
+    }
+  ],
+  "schema": "LowLevelNormalizedReferenceSet.v1"
+}

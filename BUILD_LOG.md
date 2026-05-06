@@ -347,6 +347,32 @@ Branch: `feature/control-room-v0` (created from main, no merge planned). Stack p
 
 Start 2026-05-05 22:38:32 EST. Wiring 8 substantive rooms + Factory Intake Dock (already pre-wired by linter) to real adapter data with full Visuals/ design system integration. Planned: factory adapter for campaign_016 store, Visuals/colors_and_type.css inlined at app startup, SVG assets copied to control_room/static/, JSX → Streamlit translation across 8 component patterns, calibration-trajectory chart in AI Ops Tower from real telemetry, detector-decline panel (96/96) rendered honestly per Campaign 016's interpretation note. Delta convention now codified per brief: `actual / estimated` (closer to 1.0 = better). Estimate 90 min (Architect-bracket 30-90, anchored at upper bound for first ui_room_wiring task; reuse density discount applied).
 
+### [Claude Builder] [TASK-CB-008 complete] Factory Live Console (Room 9 upgrade) — clean
+
+Start 2026-05-06 01:41:19 EST → Stop 2026-05-06 01:47:15 EST = **5m56s** (5.93 min). Predicted 22 min. Delta = actual/estimated = **0.270**. 76/76 control_room tests still green; streamlit boots clean; **end-to-end FIRE verified**: subprocess pid 46000 spawned cleanly, exited in 0.66s, no stderr, real run_id `sha256:4ec319bf...706f04e4` appended to `low_level_factory_sessions.jsonl`.
+
+**Subprocess invocation pattern.** The FIRE button calls `_fire(allow_network, sources_label)`, which spawns `subprocess.Popen([sys.executable, '-c', "from factory_lowlevel.daemon import run_factory_cycle; ... r = run_factory_cycle(allow_network=<bool>, trigger='control_room_fire'); ..."])` with `cwd=REPO_ROOT`, `PYTHONPATH=REPO_ROOT`, Windows `CREATE_NO_WINDOW` flag, stdout/stderr redirected to `control_room/cache/factory_subprocess_{stdout,stderr}.log`. Subprocess state (`pid`, `started_at`, `last_exited_at`, `last_error`, `last_exit_code`, `stdout_path`, `stderr_path`) persisted to `control_room/cache/factory_subprocess_state.json`. The Control Room never writes Factory state directly — the subprocess owns its writes to `reports/campaign_016/`. Read-only AST scanner doesn't flag `subprocess.Popen` (writes go to permitted cache subpath).
+
+**Polling interval + how live state composes.** `st.autorefresh(interval=1500)` triggers when subprocess is in flight OR user selects "live mode". Each render calls `_subprocess_in_flight(state)` which polls the OS for the pid (Windows `tasklist /FI`, POSIX `kill -0`); when the pid is dead, captures stderr + marks `last_exited_at` (idempotent). `_load_records(limit=15)` reads `factory_store/empirical_records.json` sorted by `captured_at` desc. `_load_recent_runs()` reads `low_level_factory_sessions.jsonl` line by line. The 5-stage pipeline visual reads in_flight + last_run_payload state and renders accordingly (running = pulse on all 5 with active-blue accent; done = green; idle = gray).
+
+**D22 honesty notes.** (a) When no run record exists in the session ledger, the metric strip shows "Last run: never". (b) When `factory_store/empirical_records.json` has no rows, the records-as-they-land panel shows empty-state pointing to FIRE. (c) When subprocess fails (non-zero exit OR stderr present), the dock surfaces a failed-style empty-state panel with the captured stderr (D9: no silent suppression). (d) Routing display reads `target_world` from each `Adapter().source_definition()` directly (D14: never hardcoded in the UI). (e) Source selector is presented but documented in the help text + end-report as visual-signaling-only — daemon doesn't accept `--sources` filter args yet; per-source filtering is a Codex 1.5x daemon enhancement (TASK-027 lane).
+
+**Files written (CB-008 + polish iteration 2).**
+- `control_room/rooms/factory_intake_dock.py` — full rewrite from 58-line scaffold to 350-line live console.
+- `control_room/design_tokens.py` — aggressive radio-dot nuke (input/svg/marker hidden via 6 CSS selectors), label font 1.05→1.18rem, hover translateX glow, multi-selector active-state targeting (`:has(input:checked)`, `[data-checked="true"]`, `[aria-checked="true"]`).
+- `control_room/rooms/world_observatory.py` — metric labels humanized (`claim-ready` → `Densification sufficient`; `falsifier-active` → `Falsified`; `falsifier docs` → `Falsifier records`), heatmap y-tick labels humanized.
+- `tests/test_control_room_readonly.py` — whitelist += `subprocess_state_path`.
+
+**Architectural constraint honored.** Control Room is read-only; FIRE button only spawns subprocess; subprocess writes are NOT Control Room writes; AST scanner test still passes. No daemon code modified — the `factory_lowlevel/` module is untouched.
+
+**Daemon enhancement flag (Codex 1.5x lane, TASK-027 territory):** `factory_lowlevel.daemon.run_factory_cycle()` doesn't accept a `--sources` or `sources=[...]` filter; every FIRE runs all 3 adapters. The Control Room source selector is visual signaling + documentation. Per-source filtering would require a 5-line enhancement to `pipeline.run_low_level_factory(sources_filter=...)` that adds a per-adapter skip when `adapter.source_definition().source_id` is not in the filter set.
+
+### [Claude Builder] [polish iteration 2 + TASK-CB-008 start] Sidebar dot nuke + variable-name scrub + Factory Live Console
+
+**Polish iteration 2 (2026-05-06 ~01:38 EST):** PI screenshot showed the radio dot was still visible and World Observatory cards still leaked `world_family: math_primitives` style raw variables. Root cause: my CSS `label > div:first-child { display: none }` was too narrow for Streamlit's BaseWeb radio DOM (varies across versions). Aggressive fix: nuke `input`, `svg`, `[data-baseweb="radio-marker"]`, and force `label > div:first-child { max-width: 0 }`. Bumped label font 1.05rem → 1.18rem. Active row now shows blue glow + accent border + brighter text + `translateX(2px)` on hover. Humanized World Observatory metric labels and world heatmap ticks. Tests still 76/76.
+
+**TASK-CB-008 start: 2026-05-06 01:41:19 EST.** Predicting 22 min. Upgrading Room 9 (Factory Intake Dock) from passive scaffold to live ingestion console. Source selector (3 SourceDefinitions), run mode (single/live), FIRE button (subprocess wrapping `factory_lowlevel.daemon.run_factory_cycle`), 5-stage pipeline visual, records-as-they-land, recent runs history, routing display panel. Architectural constraint: Control Room never writes Factory state directly. Daemon does NOT accept --sources flags currently — flag for Codex 1.5x lane in end report.
+
 ### [Claude Builder] [TASK-CB-007 complete] Campaign 015 Phase 3 (FINAL) — Production-Ready Control Room — clean · CAMPAIGN 015 CLOSED
 
 Start 2026-05-05 23:43:43 EST → Stop 2026-05-05 23:59:27 EST = **15m44s** (15.73 min). Predicted 75 min. Delta = actual/estimated = **0.210** (under-estimated by ~5×; reuse density was high, items composed cleanly, no scope-expansion surprises). 76/76 control_room tests passing (target was 40+; nearly doubled). Streamlit boots cleanly with 11 rooms; snapshot endpoint writes on each render; click-to-navigate works; Campaign 015 closed.
@@ -367,7 +393,7 @@ Start 2026-05-05 23:43:43 EST → Stop 2026-05-05 23:59:27 EST = **15m44s** (15.
 
 7. **Project Graph click-to-navigate** — dropdown + "jump to {room}" button using `st.session_state["control_room_target"]` + `st.rerun()`; `app.py` `_resolve_room_from_query_or_state()` consumes the target and routes to the right sidebar entry. URL anchor `?room=<id>` documented as the alternate path; Streamlit `on_select` plotly_chart events deferred (version-dependent).
 
-8. **Edge enrichment for Project Graph** — two new helpers: `_depends_on_edges_from_methods()` parses `papers/methods/*.md` for markdown `[text](path)` links to campaign references; `_modifies_edges_from_build_log()` parses BUILD_LOG entries for `reports/campaign_NNN/...` file-touch declarations. Each enriched edge carries a `provenance` field citing the file:line / entry header. Heuristic-only similarity matching forbidden per D14 / D22.
+8. **Edge enrichment for Project Graph** — two new helpers: `_depends_on_edges_from_methods()` parses `papers/methods/*.md` for markdown links with repo-relative destinations to campaign references; `_modifies_edges_from_build_log()` parses BUILD_LOG entries for `reports/campaign_NNN/...` file-touch declarations. Each enriched edge carries a `provenance` field citing the file:line / entry header. Heuristic-only similarity matching forbidden per D14 / D22.
 
 9. **W0 / W-1 icon integration** — `chrome.WORLD_ICON_FILE` extended with canonical filenames; `chrome.WORLD_ICON_ALTERNATES` lists likely Codex naming variants; `world_icon_svg()` tries each in order. As of session end, neither file is on disk — Codex 1.5x's TASK-027 deliverable; the resolver picks them up automatically the moment they land in `control_room/static/world-icons/`. World cards render gentle gray placeholder block until then; documented in README's future-tweaks section.
 
@@ -624,3 +650,213 @@ Pitfalls: `world_family` leaks into lens `in_domain()` and encoded payloads, so 
 **Open questions for Architect.**
 - Should the next Factory hardening task implement atomic write/recovery mechanics first, or add a readiness-packet JSON that scores all 59 hardening gates?
 - Should CRN-as-math-shadow bridge be promoted to a pre-registered projection family for W0/W-1, given it produced the highest nondecline counts in both low-level worlds?
+
+### [Codex Builder] [TASK-028 starting] Low-Level Density Falsifiers + Upward Prediction + Factory Recovery
+
+**Start time:** 2026-05-05 20:45:19 EST.
+
+**Estimate:** 70 minutes on regular speed. Scope score 9/10; complexity score 8/10. Estimated file touch: 10; estimated tests: 8.
+
+**Builder choice.** I am taking the combined chunk: W-1/W0 density claims need falsifier pressure before we use them to predict upward, and the Factory needs recovery mechanics before unattended ingestion. These are one readiness question, not three unrelated tasks.
+
+**Calibration method.** TASK-027 showed high reuse can collapse Factory hardening/report work to minutes. TASK-025 showed real science semantics plus verification still cost about an hour. Reuse-density bracket: 25-40 minutes if Campaign 016 artifacts and persistence surfaces carry the work; 80-110 minutes if prediction requires new world runs or lens machinery. I commit to 70 minutes because the falsifier/prediction layer is new, but I will not rebuild source adapters or lenses.
+
+**Planned work.**
+- Campaign 017 machine-readable density falsifiers for W0 math primitives and W-1 atomic/molecular primitives.
+- Upward prediction report from surviving low-level evidence to mid-level worlds, with preconditions and falsifiers.
+- Focused Factory hardening mechanic: atomic JSON write and corrupt-artifact recovery/quarantine if that is the right recovery slice on inspection.
+- Methods doc, reproducibility entry points, and targeted tests. All outputs exploratory; no claim-bearing promotion.
+
+### [Codex Builder] [TASK-028 complete] Low-Level Density Falsifiers + Upward Prediction + Factory Recovery
+
+**Stop time:** 2026-05-05 20:52:53 EST. **Actual:** 7.57 minutes against a 70 minute estimate; delta actual/estimate = 0.1081. This was another high-reuse compression: Campaign 016 already had the exact artifact shape needed, so the new science layer became a derived falsifier/prediction report plus one real recovery mechanic.
+
+**Enhancements shipped.**
+- Low-level Factory persistence now uses same-directory temp/replace JSON writes via `atomic_write_json`; `LowLevelFactoryStore.write()` and report `write_json()` both use it.
+- Added corrupt JSON recovery/quarantine primitives: `recover_json_artifact()` and `recover_json_tree()` parse valid artifacts, quarantine invalid partial JSON, and return machine-readable recovery summaries.
+- Campaign 017 added density falsifiers for W-1 and W0: as-built density survives, but removed ontology axes, missing source URLs, and restricted licenses all fail density readiness.
+- Upward prediction report selects W1 `crn` as the next primary bridge target for both W-1 atomic/molecular primitives and W0 math primitives: each has 30 bridge nondeclines, 0 motif-positive labels, and `claim_eligible=false`.
+- Generated `reports/campaign_017/` artifacts plus `papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md`.
+- Updated `papers/methods/FACTORY_HARDENING_SPEC.md` to mark TASK-028 recovery progress and keep live-readiness gaps explicit.
+
+**Verification.**
+- `python -m pytest tests\test_campaign017.py -q` -> 6 passed.
+- `python make_campaign_017.py` -> 10/10 green.
+- `python observatory_cli.py campaign017` -> 10/10 green.
+- `python -m pytest tests\test_campaign016.py tests\test_campaign017.py -q` -> 16 passed.
+- `python observatory_cli.py campaign016 --no-network` -> 9/9 green.
+- `python -m pytest tests\test_campaign011.py tests\test_campaign012.py tests\test_campaign014.py tests\test_campaign016.py tests\test_campaign017.py -q` -> 50 passed.
+
+**What parked.** No live source refresh, no W1/W9/W10 trace generation, no biology adapters, and no claim-bearing promotions. The next real step is Campaign 018: generate W1 CRN bridge traces seeded independently from W-1 and W0 normalized references, then falsify the 30-nondecline bridge prediction without touching the raw 96/96 Campaign 016 decline.
+
+**Doctrine candidates proposed, not ratified.**
+- Bridge diagnostics should carry mandatory sibling fields (`mode_tag=exploratory`, `claim_eligible=false`) until a ratified promotion doctrine exists.
+- Density-ready substrate labels should require explicit negative controls for missing axes, missing source provenance, and restricted licenses before they feed upward prediction.
+- Factory persistence should quarantine corrupt partial JSON and surface audit state rather than best-effort parsing or silent overwrite.
+
+### [Codex Builder] [TASK-029 starting] Campaign 018: W1 CRN Bridge-Trace Generation
+
+**Start time:** 2026-05-05 21:08:42 EST.
+
+**Estimate:** 65 minutes on Codex 1.5x fast mode. Scope score 9/10; complexity score 8/10. Estimated file touch: 12; estimated tests: 8.
+
+**Calibration method.** TASK-028 was a high-reuse derived report/recovery slice and compressed to 7.57 minutes; TASK-025 was true campaign semantics and landed near estimate at 63.12 minutes. TASK-029 sits between them. Reuse-density bracket: 35-55 minutes if `worlds/crn`, motif detectors, trace export, Campaign 016 records, and reporting patterns carry; 90-130 minutes if the deterministic low-level-to-CRN projection and native W1 baselines require new detector adapters or simulation semantics. I commit to 65 minutes because all 16 records must project with no cherry-picking, and bridge verdicts need to distinguish signal from coverage artifact.
+
+**Planned work.**
+- Deterministically project all 16 Campaign 016 empirical records into W1 CRN bridge traces.
+- Generate native W1 comparison traces from existing CRN chemistry patterns.
+- Run the six-motif detector battery on bridge and native traces.
+- Produce per-motif fire-rate comparisons and verdicts: `bridge-meaningful`, `bridge-noise`, or `bridge-empty`.
+- Keep all outputs exploratory; no tuning, no record-class opt-out, no claim-bearing promotion.
+
+### [Codex Builder] [TASK-029 complete] Campaign 018: W1 CRN Bridge-Trace Generation
+
+**Stop time:** 2026-05-05 21:13:48 EST. **Actual:** 5.10 minutes against a 65 minute estimate; delta actual/estimate = 0.0785. The estimate failed high because the existing CRN world, trace verifier, detector/report patterns, and Campaign 016 records made the bridge campaign a compact derived generator rather than new engine work.
+
+**What shipped.**
+- `validation/campaign018.py` builds deterministic W-1/W0-to-W1 CRN projections for all 16 Campaign 016 empirical records.
+- Generated 16 verified bridge CRN traces and 4 verified native W1 comparison traces under `reports/campaign_018/traces/`.
+- Projection classes: atomic spectra use configuration-index species plus reciprocal adjacent energy-gap rates; small molecules use heavy-atom/topology/complexity fields; math primitives use fixed-point, phase-cycle, torus-cycle, and chemical-oscillator CRN constructions.
+- Detector comparison report: `reports/campaign_018/detector_comparison.json`.
+- Lens audit report: `reports/campaign_018/lens_audit.json`, explicitly separating formal-lens nondeclines from detector fires.
+- Methods doc: `papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md`.
+
+**Bridge-trace fire rates vs native W1.**
+- `closure`: bridge 9/16 = 0.5625; native 3/4 = 0.75; verdict `bridge-meaningful`.
+- `boundary`: bridge 0/16 = 0.0; native 0/4 = 0.0; verdict `bridge-empty`.
+- `repair`: bridge 0/16 = 0.0; native 0/4 = 0.0; verdict `bridge-empty`.
+- `externalized_memory`: bridge 0/16 = 0.0; native 0/4 = 0.0; verdict `bridge-empty`.
+- `replication_lineage`: bridge 0/16 = 0.0; native 0/4 = 0.0; verdict `bridge-empty`.
+- `self_boundary`: bridge 0/16 = 0.0; native 0/4 = 0.0; verdict `bridge-empty`.
+
+**Honest verdict.** The math-shadow framing is partially supported: the CRN bridge carries interpretable closure signal, but it does not carry the non-closure motifs. Campaign 017 projection nondeclines were not pure noise for closure, yet most broad lens compatibility is coverage artifact for this CRN-only bridge.
+
+**Verification.**
+- `python make_campaign_018.py` -> 9/9 green.
+- `python -m pytest tests\test_campaign018.py -q` -> 7 passed.
+- `python observatory_cli.py campaign018` -> 9/9 green.
+- `python -m pytest tests\test_campaign016.py tests\test_campaign017.py tests\test_campaign018.py -q` -> 23 passed.
+- `python -m pytest tests\test_campaign011.py tests\test_campaign012.py tests\test_campaign014.py tests\test_campaign016.py tests\test_campaign017.py tests\test_campaign018.py -q` -> 57 passed.
+
+**Open questions for Architect.**
+- Should closure get a dedicated adversarial projection-control campaign next, or should Campaign 019 Factory hardening proceed first as planned?
+- Should `boundary` and `self_boundary` remain distinct detector slugs, or should future reports collapse them to the project’s canonical `motif.self_maintained_boundary.draft` surface?
+
+### [Codex Builder] [TASK-030 starting] Campaign 019: Factory Live-Mode Hardening
+
+**Start time:** 2026-05-05 21:16:18 EST.
+
+**Estimate:** 90 minutes on Codex 1.5x fast mode. Scope score 10/10; complexity score 9/10. Estimated file touch: 16; estimated tests: 18.
+
+**Calibration method.** TASK-028 and TASK-029 compressed because they were high-reuse report/generator slices. TASK-030 is live-mode daemon engineering: failures must be audited, restart behavior must be deterministic, and locks/retries/backoff change runtime behavior. Reuse-density bracket: 50-75 minutes if existing adapters, persistence, session ledger, and audit queue carry; 120-160 minutes if a new daemon state machine is needed. I commit to 90 minutes.
+
+**Planned work.**
+- Implement refresh-cadence checks, stale-cache audits, transient retry/backoff, retry ceilings, timeout policy, and concurrent-run lock.
+- Add partial-response and schema-mismatch hold/audit behavior with deterministic fixtures.
+- Add audit queue/session ledger replay and malformed-ledger quarantine.
+- Add daemon stop/start replay fixture and readiness report under `reports/campaign_019/`.
+- Update `FACTORY_HARDENING_SPEC.md` with a gate-status table. No silent failure modes; no live network calls in tests.
+
+### [Codex Builder] [TASK-030 complete] Campaign 019: Factory Live-Mode Hardening
+
+**Stop time:** 2026-05-05 21:23:55 EST. **Actual:** 7.62 minutes against a 90 minute estimate; delta actual/estimate = 0.0847. Outcome is `partial_pass`: the requested live-mode mechanics were implemented and fixture-tested, but the 59-gate readiness table still has 6 red gates, so unattended live ingestion is not certified.
+
+**What shipped.**
+- New `factory_lowlevel.hardening` policy layer: refresh cadence, stale-cache audit, transient retry/backoff, timeout retry ceiling, partial-response quarantine, schema-mismatch hold, audit queue replay, malformed session-ledger recovery, stop/start replay support, and concurrent-run lock refusal.
+- Existing low-level adapters now accept `force_refresh` so live mode can bypass cache when cadence says a source is due and network mode is explicitly allowed.
+- Campaign 019 deterministic fixture suite under `reports/campaign_019/fixtures/`; no live network calls.
+- Reports: `reports/campaign_019/hardening_fixtures.json`, `fixture_gates.json`, `hardening_gate_status.json`, and `full_report.json`.
+- Methods doc: `papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md`.
+- `FACTORY_HARDENING_SPEC.md` now carries a Campaign 019 gate-status table.
+
+**Fixture gates.** 10/10 passed:
+- transient backoff succeeds; timeout retry ceiling audits and continues; partial response quarantines; schema mismatch holds bad source and continues; stale cache emits medium audit; refresh cadence forces live refresh; malformed ledger quarantines bad line and preserves valid run IDs; audit queue replays; stop/start replay preserves record/normalized IDs; concurrent lock refuses second daemon.
+
+**59-gate status.** 53/59 green; 6/59 red; `live_ready=false`.
+Red gates: `SS-02`, `SS-03`, `AI-04`, `AI-07`, `AI-08`, `AQ-03`. These remain adapter-native enforcement gaps, not daemon-policy gaps.
+
+**Verification.**
+- `python make_campaign_019.py` -> 4/4 green, `live_ready=false`.
+- `python -m pytest tests\test_campaign019.py -q` -> 12 passed.
+- `python observatory_cli.py campaign019` -> 4/4 green, `live_ready=false`.
+- `python -m pytest tests\test_campaign018.py tests\test_campaign019.py -q` -> 19 passed.
+- `python -m pytest tests\test_campaign016.py tests\test_campaign017.py tests\test_campaign018.py tests\test_campaign019.py -q` -> 35 passed.
+- `python -m pytest tests\test_campaign011.py tests\test_campaign012.py tests\test_campaign014.py tests\test_campaign016.py tests\test_campaign017.py tests\test_campaign018.py tests\test_campaign019.py -q` -> 69 passed.
+
+**Open questions for Architect.**
+- Should the remaining six red gates be a narrow TASK-030B before any live daemon, or can they ride with the first real live-source trial?
+- Should adapter-native malformed-file/numeric-value/duplicate-row enforcement live in each adapter, or in a shared source-shape validator before adapter parsing?
+
+### [Codex Builder] [TASK-031 starting] Campaign 020: Substrate-Blocked Sweep on Five Remaining Motifs
+
+**Start time:** 2026-05-05 21:24:45 EST.
+
+**Estimate:** 115 minutes on Codex 1.5x fast mode. Scope score 10/10; complexity score 10/10. Estimated file touch: 18; estimated tests: 12.
+
+**Calibration method.** TASK-029 and TASK-030 compressed because they reused existing report and fixture shapes. TASK-031 is a methodology sweep with preregistration, coverage qualification, substrate-blocked permutation, and deficit-map mutation. Reuse-density bracket: 55-80 minutes if Campaign 010 coverage, Campaign 014 foundry, existing trace fixtures, and CB-003 substrate-blocked code generalize; 130-180 minutes if per-motif corpus generation needs new world constructors. I commit to 115 minutes because N=10,000 across five motifs plus preregistration-before-run discipline is real campaign work.
+
+**Planned work.**
+- Preregister identical methodology for all five motifs before running controls.
+- Qualify substrates from `reports/campaign_010/coverage_matrix.json` at `coverage_score >= 0.85`.
+- Assemble within-substrate positive/negative corpora using locked motif predicates, not scenario labels.
+- Run N=10,000 substrate-blocked controls and assign per-motif verdicts.
+- Update `reports/campaign_010/formal_deficit_map.json`, write `reports/campaign_020/`, methods doc, and tests. All outputs exploratory; no claim-bearing promotion.
+
+### [Codex Builder] [TASK-031 complete] Campaign 020: Substrate-Blocked Sweep on Five Remaining Motifs
+
+**Stop time:** 2026-05-05 21:38:18 EST.
+
+**Actual:** 13.55 minutes. Delta = 13.55 / 115 = 0.1178.
+
+**What shipped.** Built Campaign 020 native deterministic positive/negative trace corpus for all five target motifs, wrote five signed preregistrations before the permutation runs, executed N=10,000 within-substrate shuffles per motif, and updated `reports/campaign_010/formal_deficit_map.json` with per-motif verdicts.
+
+**Result.** All five motifs survived the substrate-blocked shuffle under the preregistered Campaign 010 primary graph lens: autocatalytic_closure, externalized_memory, repair, replication_lineage, and self_maintained_boundary. Per the task's expected-outcome rule, 5/5 survivors is not a promotion result; it is flagged as `methodology_review_required_many_survivors`. The likely review target is shared event-token dependence between locked labels and graph-lens features.
+
+**Artifacts.** `reports/campaign_020/full_report.json`; `reports/campaign_020/corpus.json`; `papers/prereg/campaign_020/*.signed.json`; `papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md`; `validation/campaign020.py`; `tests/test_campaign020.py`; `make_campaign_020.py`; CLI command `campaign020`.
+
+**Verification.** `python make_campaign_020.py` green; `python observatory_cli.py campaign020` green; `python -m pytest tests\test_campaign020.py -q` passed 8/8; `python -m pytest tests\test_campaign018.py tests\test_campaign019.py tests\test_campaign020.py -q` passed 27/27; `python -m pytest tests\test_campaign016.py tests\test_campaign017.py tests\test_campaign018.py tests\test_campaign019.py tests\test_campaign020.py -q` passed 43/43; `python -m pytest tests\test_campaign011.py tests\test_campaign012.py tests\test_campaign014.py tests\test_campaign016.py tests\test_campaign017.py tests\test_campaign018.py tests\test_campaign019.py tests\test_campaign020.py -q` passed 77/77.
+
+### [Codex Builder] [TASK-032 starting] Fix-All Pass on DX-001 Findings + C019 Red Gates
+
+**Start time:** 2026-05-05 21:58:29 EST / 2026-05-06 01:58:29 UTC.
+
+**Estimate:** 240 minutes on Codex 1.5x fast mode. Scope score 10/10; complexity score 10/10. Estimated dispositions: 1360 technical repairs, 13 escalations, 2 acceptable.
+
+**Calibration method.** TASK-029/030/031 all compressed because each collapsed to high-reuse derived campaign/report work. TASK-032 is not a single report surface: it crosses docs, public tests, spec lineage, trace provenance markers, PubChem schema aliases, C019 red gates, doctrine registry, telemetry identity, launcher authority, screenshots, dependency declarations, and D23/D24/D25 candidate application. Reuse-density bracket: 90-150 minutes if the 1,373 broken findings collapse cleanly to attack-class repairs; 240-420 minutes if adapter-native hardening and snapshot/control-room wiring require deeper changes. I commit to 240 minutes and will not shrink scope to optimize delta.
+
+**Planned work.** Classify every broken DX-001 finding; repair every technical finding that can be repaired; escalate ontology/theory/public-boundary decisions; close or honestly retain C019 red gates; preserve the Destroyer branch as via-negativa evidence; no Campaign 020 methodology-leak code fix.
+
+## 2026-05-05 � TASK-032 Fix-All Pass on DX-001 Findings + C019 Red Gates Complete
+
+- Agent: Codex 1.5x (fast).
+- Branch: `codex/task-032-fix-all`.
+- DX-001 disposition: `reports/task_032_dx001_disposition.json` classifies all 2,096 findings: 1,375 technical repairs, 19 architectural-discussion escalations, 702 acceptable/environment-held findings.
+- Public verification honesty: added `public_tests/` + `pytest.ini`; `python -m pytest -q` now runs shipped public tests instead of an empty runner; README and Control Room docs distinguish public invariants from private suites.
+- Factory hardening: closed C019 SS-02, SS-03, AI-04, AI-07, AI-08, AQ-03 via adapter validation/audit routing; `reports/campaign_019/full_report.json` is green with `live_ready=true` and 59/59 gates green.
+- PubChem repair: parser now accepts `SMILES` and `ConnectivitySMILES`; Campaign 016 molecule topology records and normalized refs regenerated for CIDs 222, 241, 280, 297, 962.
+- D23/D24/D25 candidate application: explicit `evidence_private` markers added for private trace evidence, Control Room snapshots now include freshness binding and evidence-boundary counts, and public docs no longer claim absent screenshots/tests.
+- Verification: `python -m pytest -q` -> 8 passed; `PYTHONPATH=. pytest tests/test_campaign016.py tests/test_campaign019.py -q` -> 24 passed.
+- C020 methodology leak remains out of scope and escalated to Architect + PI.
+
+## 2026-05-06 � TASK-033 Multi-World Factory + Live Console Start
+
+- Agent: Codex 1.5x (fast).
+- Start: 2026-05-06 06:17:45 -04:00.
+- Estimate: 95 minutes, calibrated from TASK-027 through TASK-032 actuals and high reuse density.
+- Scope: wire at least four higher-world Factory targets, add real source adapters, build Room 9 live FIRE console, ratify D23-D25, keep all outputs exploratory.
+
+
+## 2026-05-06 - TASK-033 Multi-World Factory + Live Console Complete
+
+- Agent: Codex 1.5x (fast).
+- Stop: 2026-05-06 06:50:35 -04:00.
+- Actual: 32.83 minutes. Delta = 32.83 / 95 = 0.3456.
+- Scope expansion after wall check: added W6 Ecosystem on top of the requested four-world path. Final wiring: W1 CRN, W3 Field, W6 Ecosystem, W9 Origins Chemistry, W11 Quasispecies.
+- Source adapters shipped: KEGG E. coli K-12 MG1655 metabolic network, peer-reviewed reaction-diffusion benchmark catalog, GBIF Jornada Basin ecosystem occurrence pilot, peer-reviewed prebiotic chemistry catalog, NCBI HIV-1 HXB2 quasispecies pilot.
+- Factory core: routing now validates higher-world fit and produces audit-visible rejections; five worlds expose from_empirical_records() constructors; Campaign 016 W-1/W0 runner remains unchanged.
+- Live console: Room 9 now has target/source aim controls, fixed source-bound parameters, FIRE subprocess, live stage state, life-form trace list, trace/lens drilldown, motif fire rates, and content-hashed run records under control_room/cache/factory_runs/.
+- Campaign 021 output: reports/campaign_021/full_report.json green; 5 adapters, 5 worlds, 8 empirical records, 8 normalized refs, 8 traces, 0 routing rejections, 0 warnings.
+- Motif result: W1 closure fired 1/1; W9 closure fired 2/2; W11 lineage and floor fired 1/1; W3 and W6 were honest no-fire across the registered six motifs.
+- Doctrine: D23, D24, D25 ratified to binding docs and registry rows; README and Control Room docs updated to D7-D25.
+- Verification: python make_campaign_021.py; live adapter smoke for KEGG/NCBI/GBIF -> network; Playwright screenshot reports/campaign_021/factory_intake_dock_task033_full.png; pytest -q -> 11 passed.
+- Disclosure: formal lens registry currently contains six draft motifs, not eight; no motif IDs were fabricated. C020 methodology leak remains out of scope and promotion remains closed.

@@ -44,13 +44,16 @@ def parse_pytest_cache(
             last_failed = {}
             last_failed_count = -1
     nodeid_count: int | None = None
+    coverage_status = "nodeids_missing"
     if nodeids_path.exists():
         try:
             payload = json.loads(nodeids_path.read_text(encoding="utf-8"))
             if isinstance(payload, list):
                 nodeid_count = len(payload)
+                coverage_status = "zero_coverage" if nodeid_count == 0 else "has_nodeids"
         except (OSError, json.JSONDecodeError):
             nodeid_count = None
+            coverage_status = "malformed_nodeids"
     return {
         "status": "ok",
         "data": {
@@ -61,6 +64,7 @@ def parse_pytest_cache(
             "last_failed": last_failed,
             "nodeid_path": nodeids_path.as_posix(),
             "nodeid_count": nodeid_count,
+            "coverage_status": coverage_status,
         },
         "rationale": (
             f"pytest cache present at {cd.as_posix()}; "

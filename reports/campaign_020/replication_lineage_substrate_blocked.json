@@ -1,0 +1,67 @@
+{
+  "N_attempted": 10000,
+  "N_run": 10000,
+  "empirical_p": 9.999000099990002e-05,
+  "evaluation_row_count": 64,
+  "interpretation": {
+    "rationale": "Observed gap 0.600000 exceeds the within-substrate shuffled 95% CI upper bound 0.150000; this motif's primary-lens score is not explained by substrate identity alone.",
+    "verdict": "signal_survives_shuffle"
+  },
+  "mode_tag": "exploratory",
+  "motif_id": "motif.replication_lineage.draft",
+  "nondeclined_trace_count": 64,
+  "null_distribution": {
+    "ci": {
+      "ci_high": 0.15000000000000002,
+      "ci_low": -0.15000000000000002
+    },
+    "mean": -0.0004012500000000009
+  },
+  "observed_gap": 0.6,
+  "primary_lens": "graph",
+  "requested_alias": "motif.replication_lineage.draft",
+  "schema": "Campaign020MotifSubstrateBlockedControl.v1",
+  "seed": 20020,
+  "step_0a": {
+    "passed": true,
+    "per_stratum": {
+      "digital::campaign_020_native_generator": {
+        "meets_c014_floor": true,
+        "minority": 8,
+        "negative": 8,
+        "positive": 8,
+        "total": 16
+      },
+      "morphogenesis::campaign_020_native_generator": {
+        "meets_c014_floor": true,
+        "minority": 8,
+        "negative": 8,
+        "positive": 8,
+        "total": 16
+      },
+      "protocell::campaign_020_native_generator": {
+        "meets_c014_floor": true,
+        "minority": 8,
+        "negative": 8,
+        "positive": 8,
+        "total": 16
+      },
+      "quasispecies::campaign_020_native_generator": {
+        "meets_c014_floor": true,
+        "minority": 8,
+        "negative": 8,
+        "positive": 8,
+        "total": 16
+      }
+    },
+    "ready_strata": [
+      "digital::campaign_020_native_generator",
+      "morphogenesis::campaign_020_native_generator",
+      "protocell::campaign_020_native_generator",
+      "quasispecies::campaign_020_native_generator"
+    ],
+    "ready_strata_count": 4,
+    "strata_count": 4
+  },
+  "step_0b_run": true
+}

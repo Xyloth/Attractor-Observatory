@@ -1,0 +1,2322 @@
+{
+  "gates": [
+    {
+      "evidence": {
+        "adapter_validation": {
+          "detector_anomalies": [],
+          "detector_anomaly_count": 0,
+          "duplicate_canonical_name_count": 0,
+          "duplicate_canonical_names": [],
+          "duplicate_record_id_count": 0,
+          "duplicate_record_ids": [],
+          "hold_source": false,
+          "numeric_violation_count": 0,
+          "numeric_violations": [],
+          "record_count": 1,
+          "required_key_violation_count": 0,
+          "required_key_violations": [],
+          "schema": "LowLevelAdapterValidation.v1",
+          "source_id": "source.fixture.transient",
+          "unknown_key_census": {},
+          "unknown_key_count": 0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "backoff_seconds": 0.25,
+            "error_type": "TransientFetchError"
+          }
+        ],
+        "cache_entry": {
+          "cache_id": "sha256:16b16b544993048913771897b79ff832eb86922314d2a7f092be4f2e335ac11b",
+          "export_policy": "fixture_derived_metadata_only",
+          "fetched_at": "2026-05-06T02:22:50Z",
+          "license_class": "metadata_only",
+          "parser_version": "fixture-parser.v1",
+          "raw_cache_path": "reports\\campaign_019\\fixtures\\transient_backoff\\cache\\source.fixture.transient",
+          "raw_content_hash": "sha256:b52823886d7892a1f190ed3c81e3525978f7eae5503df8895fe3c860805d2a5e",
+          "record_count": 1,
+          "retrieval_mode": "network",
+          "source_id": "source.fixture.transient",
+          "url": "https://example.org/source.fixture.transient"
+        },
+        "force_refresh": true,
+        "record_count": 1,
+        "refresh_due": true,
+        "source_id": "source.fixture.transient",
+        "stale": {
+          "age_seconds": null,
+          "audit_id": null,
+          "stale": false
+        },
+        "status": "ok"
+      },
+      "gate": "LM-01 transient backoff succeeds",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "count": 1,
+        "items": [
+          {
+            "audit_id": "sha256:1334eb9c6c5404558e8878617e984abe7f19fca4cf7b836fb89b78c06f7f89db",
+            "reason": "timeout_retry_ceiling:fixture timeout",
+            "recommended_action": "manual_review_after_retry_ceiling",
+            "record_id": "unknown",
+            "severity": "high",
+            "source_id": "source.fixture.timeout"
+          }
+        ]
+      },
+      "gate": "LM-02 timeout retry ceiling audits and continues",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "attempts": [],
+          "audit_id": "sha256:37d602d81248fa8ac87e6b092267f0ef7cda6937b7205fc502e6639ba24d8025",
+          "quarantine_path": "reports\\campaign_019\\fixtures\\partial_response\\store\\.quarantine\\source.fixture.partial.a4ebfbefdbfbf79d.quarantine",
+          "source_id": "source.fixture.partial",
+          "stale": {
+            "age_seconds": null,
+            "audit_id": null,
+            "stale": false
+          },
+          "status": "held"
+        },
+        {
+          "adapter_validation": {
+            "detector_anomalies": [],
+            "detector_anomaly_count": 0,
+            "duplicate_canonical_name_count": 0,
+            "duplicate_canonical_names": [],
+            "duplicate_record_id_count": 0,
+            "duplicate_record_ids": [],
+            "hold_source": false,
+            "numeric_violation_count": 0,
+            "numeric_violations": [],
+            "record_count": 1,
+            "required_key_violation_count": 0,
+            "required_key_violations": [],
+            "schema": "LowLevelAdapterValidation.v1",
+            "source_id": "source.fixture.good_after_partial",
+            "unknown_key_census": {},
+            "unknown_key_count": 0
+          },
+          "attempts": [],
+          "cache_entry": {
+            "cache_id": "sha256:199a599bf3f5f7accb07bcf28d038d9040aac3ec191c547bd4701cc64bb7fbfd",
+            "export_policy": "fixture_derived_metadata_only",
+            "fetched_at": "2026-05-06T02:22:50Z",
+            "license_class": "metadata_only",
+            "parser_version": "fixture-parser.v1",
+            "raw_cache_path": "reports\\campaign_019\\fixtures\\partial_response\\cache\\source.fixture.good_after_partial",
+            "raw_content_hash": "sha256:d9a324d96ebb5b3a7cb63dc86ea09d1402cb9fcf2e464027c9f2dbcdae76427e",
+            "record_count": 1,
+            "retrieval_mode": "network",
+            "source_id": "source.fixture.good_after_partial",
+            "url": "https://example.org/source.fixture.good_after_partial"
+          },
+          "force_refresh": true,
+          "record_count": 1,
+          "refresh_due": true,
+          "source_id": "source.fixture.good_after_partial",
+          "stale": {
+            "age_seconds": null,
+            "audit_id": null,
+            "stale": false
+          },
+          "status": "ok"
+        }
+      ],
+      "gate": "LM-03 partial response quarantines without normalization",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "attempts": [],
+          "audit_id": "sha256:0fcc4672995bf9a70b08a8b287af73d2c084a15b30073a12e890152a3b13ffba",
+          "schema_details": {
+            "missing": [
+              "primitive_class"
+            ]
+          },
+          "source_id": "source.fixture.schema",
+          "stale": {
+            "age_seconds": null,
+            "audit_id": null,
+            "stale": false
+          },
+          "status": "held"
+        },
+        {
+          "adapter_validation": {
+            "detector_anomalies": [],
+            "detector_anomaly_count": 0,
+            "duplicate_canonical_name_count": 0,
+            "duplicate_canonical_names": [],
+            "duplicate_record_id_count": 0,
+            "duplicate_record_ids": [],
+            "hold_source": false,
+            "numeric_violation_count": 0,
+            "numeric_violations": [],
+            "record_count": 1,
+            "required_key_violation_count": 0,
+            "required_key_violations": [],
+            "schema": "LowLevelAdapterValidation.v1",
+            "source_id": "source.fixture.good_after_schema",
+            "unknown_key_census": {},
+            "unknown_key_count": 0
+          },
+          "attempts": [],
+          "cache_entry": {
+            "cache_id": "sha256:c2c7ba53de5902d82c70d3446a649caadce3afe8128233088baf776448fdad97",
+            "export_policy": "fixture_derived_metadata_only",
+            "fetched_at": "2026-05-06T02:22:50Z",
+            "license_class": "metadata_only",
+            "parser_version": "fixture-parser.v1",
+            "raw_cache_path": "reports\\campaign_019\\fixtures\\schema_mismatch\\cache\\source.fixture.good_after_schema",
+            "raw_content_hash": "sha256:5b5740c89fe57ea44f3dd875037fa32424cb2ec33940e499f80b3f133642be39",
+            "record_count": 1,
+            "retrieval_mode": "network",
+            "source_id": "source.fixture.good_after_schema",
+            "url": "https://example.org/source.fixture.good_after_schema"
+          },
+          "force_refresh": true,
+          "record_count": 1,
+          "refresh_due": true,
+          "source_id": "source.fixture.good_after_schema",
+          "stale": {
+            "age_seconds": null,
+            "audit_id": null,
+            "stale": false
+          },
+          "status": "ok"
+        }
+      ],
+      "gate": "LM-04 schema mismatch holds bad source and continues",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "audit_queue": {
+          "count": 1,
+          "items": [
+            {
+              "audit_id": "sha256:325fe2d243edb0682de4b28c5c7899f1c6cb61a3cc07c8f7b47858b0b8382596",
+              "reason": "required_key_contract_missing:primitive_class",
+              "recommended_action": "hold_source_until_adapter_schema_review",
+              "record_id": "sha256:46bdca63bf31f20d23f0e17162873da86740b35fba3a8a1627f43d14038218f6",
+              "severity": "high",
+              "source_id": "source.fixture.required_key"
+            }
+          ]
+        },
+        "fetch_reports": [
+          {
+            "adapter_validation": {
+              "detector_anomalies": [],
+              "detector_anomaly_count": 0,
+              "duplicate_canonical_name_count": 0,
+              "duplicate_canonical_names": [],
+              "duplicate_record_id_count": 0,
+              "duplicate_record_ids": [],
+              "hold_source": true,
+              "numeric_violation_count": 0,
+              "numeric_violations": [],
+              "record_count": 1,
+              "required_key_violation_count": 1,
+              "required_key_violations": [
+                {
+                  "missing_keys": [
+                    "primitive_class"
+                  ],
+                  "record_id": "sha256:46bdca63bf31f20d23f0e17162873da86740b35fba3a8a1627f43d14038218f6",
+                  "record_type": "canonical_dynamical_form"
+                }
+              ],
+              "schema": "LowLevelAdapterValidation.v1",
+              "source_id": "source.fixture.required_key",
+              "unknown_key_census": {},
+              "unknown_key_count": 0
+            },
+            "attempts": [],
+            "cache_entry": {
+              "cache_id": "sha256:1c816e974be51942a767d45f70e59b337d7a50b986fc9bf38f460ad3dc026029",
+              "export_policy": "fixture_derived_metadata_only",
+              "fetched_at": "2026-05-06T02:22:50Z",
+              "license_class": "metadata_only",
+              "parser_version": "fixture-parser.v1",
+              "raw_cache_path": "reports\\campaign_019\\fixtures\\required_key_contract\\cache\\source.fixture.required_key",
+              "raw_content_hash": "sha256:0f73e103328a9f8c5043d178a44a1a98ef34db0cbd90cc5927b6af0baae83a3d",
+              "record_count": 1,
+              "retrieval_mode": "dry_run",
+              "source_id": "source.fixture.required_key",
+              "url": "https://example.org/source.fixture.required_key"
+            },
+            "force_refresh": false,
+            "record_count": 1,
+            "refresh_due": true,
+            "source_id": "source.fixture.required_key",
+            "stale": {
+              "age_seconds": null,
+              "audit_id": null,
+              "stale": false
+            },
+            "status": "ok"
+          },
+          {
+            "adapter_validation": {
+              "detector_anomalies": [],
+              "detector_anomaly_count": 0,
+              "duplicate_canonical_name_count": 0,
+              "duplicate_canonical_names": [],
+              "duplicate_record_id_count": 0,
+              "duplicate_record_ids": [],
+              "hold_source": false,
+              "numeric_violation_count": 0,
+              "numeric_violations": [],
+              "record_count": 1,
+              "required_key_violation_count": 0,
+              "required_key_violations": [],
+              "schema": "LowLevelAdapterValidation.v1",
+              "source_id": "source.fixture.good_after_required",
+              "unknown_key_census": {},
+              "unknown_key_count": 0
+            },
+            "attempts": [],
+            "cache_entry": {
+              "cache_id": "sha256:fa26ced42c08c926acf700101347eeb5c94df1deeb365143e6c5c3a5599bd4ce",
+              "export_policy": "fixture_derived_metadata_only",
+              "fetched_at": "2026-05-06T02:22:50Z",
+              "license_class": "metadata_only",
+              "parser_version": "fixture-parser.v1",
+              "raw_cache_path": "reports\\campaign_019\\fixtures\\required_key_contract\\cache\\source.fixture.good_after_required",
+              "raw_content_hash": "sha256:ea16a82fc198b2f66bc4a5d42db3f518536bb834b9dba0c9ada293a9c6fd6a4c",
+              "record_count": 1,
+              "retrieval_mode": "dry_run",
+              "source_id": "source.fixture.good_after_required",
+              "url": "https://example.org/source.fixture.good_after_required"
+            },
+            "force_refresh": false,
+            "record_count": 1,
+            "refresh_due": true,
+            "source_id": "source.fixture.good_after_required",
+            "stale": {
+              "age_seconds": null,
+              "audit_id": null,
+              "stale": false
+            },
+            "status": "ok"
+          }
+        ],
+        "ledger_recovery": {
+          "audit_items": [],
+          "quarantined_count": 0,
+          "run_ids": [],
+          "schema": "LowLevelSessionLedgerRecovery.v1",
+          "valid_count": 0
+        },
+        "lock": {
+          "acquired": true,
+          "path": "reports\\campaign_019\\fixtures\\required_key_contract\\factory.lock",
+          "reason": "ok"
+        },
+        "normalized_refs": [
+          {
+            "audit_flags": [],
+            "confidence": 0.92,
+            "empirical_record_id": "sha256:72f9eba036e11ababde00e77f473208516dd8c4bd0d50a912887b9391e48a700",
+            "interaction_channels": [
+              {
+                "channel_id": "channel.phase_flow",
+                "label": "phase_flow",
+                "predicate": {
+                  "expression": "payload.state_equation != ''",
+                  "observed": "dx/dt = -lambda*x",
+                  "predicate": "state_equation_present",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "normalized_id": "sha256:ca9d9062fdc6aa25e12fce0dee6c1309e5871b47e9a11cf94e6496429e0f2c11",
+            "overlap_fields": [
+              {
+                "counterfactual": {
+                  "expression": "len(payload.parameters) > 0",
+                  "observed": {
+                    "lambda": 1.0
+                  },
+                  "predicate": "parameter_counterfactual_declared",
+                  "trace_checkable": true
+                },
+                "field_id": "overlap.state_space_flow_field",
+                "label": "state_space_flow_field",
+                "persist": {
+                  "expression": "len(payload.invariants) > 0",
+                  "observed": [
+                    "negative_real_eigenvalue",
+                    "single_basin"
+                  ],
+                  "predicate": "invariant_declared",
+                  "trace_checkable": true
+                },
+                "read": {
+                  "expression": "expected_stable_form derives from primitive_class",
+                  "observed": "asymptotically_stable_fixed_point",
+                  "predicate": "stable_form_reads_flow",
+                  "trace_checkable": true
+                },
+                "write": {
+                  "expression": "state_equation contains dx/dt or dtheta/dt",
+                  "observed": "dx/dt = -lambda*x",
+                  "predicate": "equation_writes_vector_field",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "process_roles": [
+              {
+                "label": "fixed_point",
+                "predicate": {
+                  "expression": "payload.primitive_class != ''",
+                  "observed": "fixed_point",
+                  "predicate": "primitive_class_present",
+                  "trace_checkable": true
+                },
+                "role_id": "process.math.fixed_point"
+              }
+            ],
+            "schema_version": "NormalizedReference.v1",
+            "state_space_effects": [
+              {
+                "effect_id": "effect.asymptotically_stable_fixed_point",
+                "label": "asymptotically_stable_fixed_point",
+                "predicate": {
+                  "expression": "payload.expected_stable_form != ''",
+                  "observed": "asymptotically_stable_fixed_point",
+                  "predicate": "stable_form_declared",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "world_family": "math_primitives"
+          }
+        ],
+        "records": [
+          {
+            "canonical_name": "source.fixture.good_after_required.fixed_point.0",
+            "license_class": "metadata_only",
+            "mode_tag": "exploratory",
+            "payload": {
+              "canonical_name": "source.fixture.good_after_required.fixed_point.0",
+              "dimension": 1,
+              "expected_stable_form": "asymptotically_stable_fixed_point",
+              "invariants": [
+                "negative_real_eigenvalue",
+                "single_basin"
+              ],
+              "parameters": {
+                "lambda": 1.0
+              },
+              "primitive_class": "fixed_point",
+              "state_equation": "dx/dt = -lambda*x"
+            },
+            "provenance": {
+              "authority": "campaign019_fixture",
+              "raw_exported": false,
+              "retrieved_at": "2026-05-06T02:22:50Z",
+              "source_url": "https://example.org/source.fixture.good_after_required"
+            },
+            "record_id": "sha256:72f9eba036e11ababde00e77f473208516dd8c4bd0d50a912887b9391e48a700",
+            "record_type": "canonical_dynamical_form",
+            "schema_version": "EmpiricalRecord.v1",
+            "source_id": "source.fixture.good_after_required",
+            "world_family": "math_primitives"
+          }
+        ],
+        "recovery": {
+          "checked_count": 0,
+          "passed": true,
+          "quarantined_count": 0
+        },
+        "registry": {
+          "schema": "LowLevelSourceRegistry.v1",
+          "sources": [
+            {
+              "adapter_id": "adapter.fixture.live_mode.v0",
+              "auth_required": false,
+              "format": "fixture-json",
+              "license_class": "metadata_only",
+              "license_note": "deterministic Campaign 019 fixture",
+              "name": "Fixture source source.fixture.good_after_required",
+              "refresh_cadence": "daily",
+              "retrieval_mode_default": "dry_run",
+              "source_id": "source.fixture.good_after_required",
+              "target_world": "math_primitives",
+              "url": "https://example.org/source.fixture.good_after_required"
+            },
+            {
+              "adapter_id": "adapter.fixture.live_mode.v0",
+              "auth_required": false,
+              "format": "fixture-json",
+              "license_class": "metadata_only",
+              "license_note": "deterministic Campaign 019 fixture",
+              "name": "Fixture source source.fixture.required_key",
+              "refresh_cadence": "daily",
+              "retrieval_mode_default": "dry_run",
+              "source_id": "source.fixture.required_key",
+              "target_world": "math_primitives",
+              "url": "https://example.org/source.fixture.required_key"
+            }
+          ],
+          "validation": {
+            "passed": true,
+            "schema": "LowLevelSourceRegistryValidation.v1",
+            "source_count": 2,
+            "sources": [
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "export_allowed": true,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.good_after_required",
+                "raw_redistribution_allowed": false,
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.good_after_required",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.good_after_required"
+              },
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "export_allowed": true,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.required_key",
+                "raw_redistribution_allowed": false,
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.required_key",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.required_key"
+              }
+            ],
+            "violations": []
+          }
+        },
+        "requires_ai_runtime": false,
+        "routed_worlds": [
+          {
+            "empirical_record_count": 1,
+            "empirical_record_ids": [
+              "sha256:72f9eba036e11ababde00e77f473208516dd8c4bd0d50a912887b9391e48a700"
+            ],
+            "normalized_ref_count": 1,
+            "normalized_ref_ids": [
+              "sha256:ca9d9062fdc6aa25e12fce0dee6c1309e5871b47e9a11cf94e6496429e0f2c11"
+            ],
+            "world_family": "math_primitives"
+          }
+        ],
+        "schema": "LowLevelHardenedFactoryRun.v1",
+        "status": "ok",
+        "store_snapshot": {
+          "content_hash": "sha256:862327a5a83e3a0673cca6df09455fc58b03aaa98281caa686a5898ec54dcaf2",
+          "counts": {
+            "audit_queue_items": 1,
+            "empirical_records": 1,
+            "evidence_edges": 4,
+            "normalized_refs": 1,
+            "source_cache_entries": 1
+          },
+          "paths": {
+            "audit_queue": "reports\\campaign_019\\fixtures\\required_key_contract\\store\\audit_queue.json",
+            "empirical_records": "reports\\campaign_019\\fixtures\\required_key_contract\\store\\empirical_records.json",
+            "evidence_graph": "reports\\campaign_019\\fixtures\\required_key_contract\\store\\evidence_graph.json",
+            "normalized_refs": "reports\\campaign_019\\fixtures\\required_key_contract\\store\\normalized_refs.json",
+            "source_cache_index": "reports\\campaign_019\\fixtures\\required_key_contract\\store\\source_cache_index.json"
+          },
+          "schema": "LowLevelFactoryStoreSnapshot.v1"
+        },
+        "warnings": []
+      },
+      "gate": "LM-04b required-key contract holds bad source and continues",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "adapter_validation": {
+            "detector_anomalies": [],
+            "detector_anomaly_count": 0,
+            "duplicate_canonical_name_count": 0,
+            "duplicate_canonical_names": [],
+            "duplicate_record_id_count": 0,
+            "duplicate_record_ids": [],
+            "hold_source": false,
+            "numeric_violation_count": 0,
+            "numeric_violations": [],
+            "record_count": 1,
+            "required_key_violation_count": 0,
+            "required_key_violations": [],
+            "schema": "LowLevelAdapterValidation.v1",
+            "source_id": "source.fixture.unknown_key",
+            "unknown_key_census": {
+              "canonical_dynamical_form": {
+                "unexpected_fixture_key": 1
+              }
+            },
+            "unknown_key_count": 1
+          },
+          "attempts": [],
+          "cache_entry": {
+            "cache_id": "sha256:74976a9476949f8a6fa1ed248b3fdabb617e543495590ecbf59f736326bea79a",
+            "export_policy": "fixture_derived_metadata_only",
+            "fetched_at": "2026-05-06T02:22:50Z",
+            "license_class": "metadata_only",
+            "parser_version": "fixture-parser.v1",
+            "raw_cache_path": "reports\\campaign_019\\fixtures\\unknown_key_census\\cache\\source.fixture.unknown_key",
+            "raw_content_hash": "sha256:d85cda1120ba295784d0a3a5c6ddcc0eb7c003f9a4d84eeeec14894021f1c974",
+            "record_count": 1,
+            "retrieval_mode": "dry_run",
+            "source_id": "source.fixture.unknown_key",
+            "url": "https://example.org/source.fixture.unknown_key"
+          },
+          "force_refresh": false,
+          "record_count": 1,
+          "refresh_due": true,
+          "source_id": "source.fixture.unknown_key",
+          "stale": {
+            "age_seconds": null,
+            "audit_id": null,
+            "stale": false
+          },
+          "status": "ok"
+        }
+      ],
+      "gate": "LM-04c unknown-key census persists per parser",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "attempts": [],
+          "audit_id": "sha256:ab43b2f9b625864b7d3850755564da0ac7f3857e69ecd4c21bd40adc26e0653b",
+          "schema_details": {
+            "error": "fixture malformed JSON shape"
+          },
+          "source_id": "source.fixture.malformed",
+          "stale": {
+            "age_seconds": null,
+            "audit_id": null,
+            "stale": false
+          },
+          "status": "held"
+        },
+        {
+          "adapter_validation": {
+            "detector_anomalies": [],
+            "detector_anomaly_count": 0,
+            "duplicate_canonical_name_count": 0,
+            "duplicate_canonical_names": [],
+            "duplicate_record_id_count": 0,
+            "duplicate_record_ids": [],
+            "hold_source": false,
+            "numeric_violation_count": 0,
+            "numeric_violations": [],
+            "record_count": 1,
+            "required_key_violation_count": 0,
+            "required_key_violations": [],
+            "schema": "LowLevelAdapterValidation.v1",
+            "source_id": "source.fixture.good_after_malformed",
+            "unknown_key_census": {},
+            "unknown_key_count": 0
+          },
+          "attempts": [],
+          "cache_entry": {
+            "cache_id": "sha256:56392962f5f0157b1fd5bbb411008a1183418758a485091d90ea776b0de0b4ce",
+            "export_policy": "fixture_derived_metadata_only",
+            "fetched_at": "2026-05-06T02:22:50Z",
+            "license_class": "metadata_only",
+            "parser_version": "fixture-parser.v1",
+            "raw_cache_path": "reports\\campaign_019\\fixtures\\malformed_source_file\\cache\\source.fixture.good_after_malformed",
+            "raw_content_hash": "sha256:474b74ea660556053411bc9a6671c9abb18b576bab33e6b115f56354cbd37c7a",
+            "record_count": 1,
+            "retrieval_mode": "dry_run",
+            "source_id": "source.fixture.good_after_malformed",
+            "url": "https://example.org/source.fixture.good_after_malformed"
+          },
+          "force_refresh": false,
+          "record_count": 1,
+          "refresh_due": true,
+          "source_id": "source.fixture.good_after_malformed",
+          "stale": {
+            "age_seconds": null,
+            "audit_id": null,
+            "stale": false
+          },
+          "status": "ok"
+        }
+      ],
+      "gate": "LM-04d malformed source file holds bad source and continues",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "count": 1,
+        "items": [
+          {
+            "audit_id": "sha256:6431a6354f0a938ef86b28698c92025adadeb98e80f0a959b84aa43f55ab062e",
+            "reason": "stale_cache:73966970s",
+            "recommended_action": "refresh_source_before_live_promotion",
+            "record_id": "unknown",
+            "severity": "medium",
+            "source_id": "source.fixture.stale"
+          }
+        ]
+      },
+      "gate": "LM-05 stale cache emits medium audit",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "adapter_validation": {
+            "detector_anomalies": [],
+            "detector_anomaly_count": 0,
+            "duplicate_canonical_name_count": 0,
+            "duplicate_canonical_names": [],
+            "duplicate_record_id_count": 0,
+            "duplicate_record_ids": [],
+            "hold_source": false,
+            "numeric_violation_count": 0,
+            "numeric_violations": [],
+            "record_count": 1,
+            "required_key_violation_count": 0,
+            "required_key_violations": [],
+            "schema": "LowLevelAdapterValidation.v1",
+            "source_id": "source.fixture.refresh",
+            "unknown_key_census": {},
+            "unknown_key_count": 0
+          },
+          "attempts": [],
+          "cache_entry": {
+            "cache_id": "sha256:520e8768b6c706c75b0fb577a436c8be2d88143bce1ad67851b8fecbf88ee749",
+            "export_policy": "fixture_derived_metadata_only",
+            "fetched_at": "2026-05-06T02:22:50Z",
+            "license_class": "metadata_only",
+            "parser_version": "fixture-parser.v1",
+            "raw_cache_path": "reports\\campaign_019\\fixtures\\refresh_due\\cache\\source.fixture.refresh",
+            "raw_content_hash": "sha256:a8a050868e4957dc7230c1805aa6e365a6ca15ad953aa5b017ff52c9b671ce6e",
+            "record_count": 1,
+            "retrieval_mode": "network",
+            "source_id": "source.fixture.refresh",
+            "url": "https://example.org/source.fixture.refresh"
+          },
+          "force_refresh": true,
+          "record_count": 1,
+          "refresh_due": true,
+          "source_id": "source.fixture.refresh",
+          "stale": {
+            "age_seconds": 73966970.276387,
+            "audit_id": "sha256:01ec5b879ecc94a17c38c40874344f5aeeee068bae454ed666971cedfd59962a",
+            "stale": true
+          },
+          "status": "ok"
+        }
+      ],
+      "gate": "LM-06 refresh cadence forces live refresh when allowed",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "audit_items": [
+          {
+            "line": 2,
+            "quarantine_path": "reports\\campaign_019\\fixtures\\malformed_ledger\\store\\.quarantine\\sessions.jsonl.line2.2a1872c922f8.corrupt",
+            "reason": "malformed_session_ledger_line",
+            "recommended_action": "quarantine_bad_line_and_rebuild_from_valid_sessions",
+            "severity": "high"
+          }
+        ],
+        "quarantined_count": 1,
+        "run_ids": [
+          "prior-good"
+        ],
+        "schema": "LowLevelSessionLedgerRecovery.v1",
+        "valid_count": 1
+      },
+      "gate": "LM-07 malformed session ledger quarantines and preserves valid run ids",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "count": 1,
+        "items": [
+          {
+            "audit_id": "sha256:fixture-prior-audit",
+            "reason": "prior_fixture_audit",
+            "recommended_action": "manual_adjudication_before_promotion",
+            "record_id": "unknown",
+            "severity": "medium",
+            "source_id": "source.fixture.audit_replay"
+          }
+        ]
+      },
+      "gate": "LM-08 audit queue replays on startup",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "first": {
+          "audit_queue": {
+            "count": 0,
+            "items": []
+          },
+          "fetch_reports": [
+            {
+              "adapter_validation": {
+                "detector_anomalies": [],
+                "detector_anomaly_count": 0,
+                "duplicate_canonical_name_count": 0,
+                "duplicate_canonical_names": [],
+                "duplicate_record_id_count": 0,
+                "duplicate_record_ids": [],
+                "hold_source": false,
+                "numeric_violation_count": 0,
+                "numeric_violations": [],
+                "record_count": 2,
+                "required_key_violation_count": 0,
+                "required_key_violations": [],
+                "schema": "LowLevelAdapterValidation.v1",
+                "source_id": "source.fixture.restart",
+                "unknown_key_census": {},
+                "unknown_key_count": 0
+              },
+              "attempts": [],
+              "cache_entry": {
+                "cache_id": "sha256:c4b5a5d67a1d26f0c48fca9b2ac02f89093f96b40a2c2a1adc83290eb8b6d91e",
+                "export_policy": "fixture_derived_metadata_only",
+                "fetched_at": "2026-05-06T02:22:50Z",
+                "license_class": "metadata_only",
+                "parser_version": "fixture-parser.v1",
+                "raw_cache_path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\cache\\source.fixture.restart",
+                "raw_content_hash": "sha256:0a5cbe1d9cb0a21381324f216e08aa1226d85877cdc475329fff375c58773a7d",
+                "record_count": 2,
+                "retrieval_mode": "dry_run",
+                "source_id": "source.fixture.restart",
+                "url": "https://example.org/source.fixture.restart"
+              },
+              "force_refresh": false,
+              "record_count": 2,
+              "refresh_due": true,
+              "source_id": "source.fixture.restart",
+              "stale": {
+                "age_seconds": null,
+                "audit_id": null,
+                "stale": false
+              },
+              "status": "ok"
+            }
+          ],
+          "ledger_recovery": {
+            "audit_items": [],
+            "quarantined_count": 0,
+            "run_ids": [],
+            "schema": "LowLevelSessionLedgerRecovery.v1",
+            "valid_count": 0
+          },
+          "lock": {
+            "acquired": true,
+            "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\factory.lock",
+            "reason": "ok"
+          },
+          "normalized_refs": [
+            {
+              "audit_flags": [],
+              "confidence": 0.92,
+              "empirical_record_id": "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+              "interaction_channels": [
+                {
+                  "channel_id": "channel.phase_flow",
+                  "label": "phase_flow",
+                  "predicate": {
+                    "expression": "payload.state_equation != ''",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "state_equation_present",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "normalized_id": "sha256:b450ddc432aeb431aee59a2100b849d7dd922999c823d8492f19100868291bd4",
+              "overlap_fields": [
+                {
+                  "counterfactual": {
+                    "expression": "len(payload.parameters) > 0",
+                    "observed": {
+                      "lambda": 2.0
+                    },
+                    "predicate": "parameter_counterfactual_declared",
+                    "trace_checkable": true
+                  },
+                  "field_id": "overlap.state_space_flow_field",
+                  "label": "state_space_flow_field",
+                  "persist": {
+                    "expression": "len(payload.invariants) > 0",
+                    "observed": [
+                      "negative_real_eigenvalue",
+                      "single_basin"
+                    ],
+                    "predicate": "invariant_declared",
+                    "trace_checkable": true
+                  },
+                  "read": {
+                    "expression": "expected_stable_form derives from primitive_class",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_reads_flow",
+                    "trace_checkable": true
+                  },
+                  "write": {
+                    "expression": "state_equation contains dx/dt or dtheta/dt",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "equation_writes_vector_field",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "process_roles": [
+                {
+                  "label": "fixed_point",
+                  "predicate": {
+                    "expression": "payload.primitive_class != ''",
+                    "observed": "fixed_point",
+                    "predicate": "primitive_class_present",
+                    "trace_checkable": true
+                  },
+                  "role_id": "process.math.fixed_point"
+                }
+              ],
+              "schema_version": "NormalizedReference.v1",
+              "state_space_effects": [
+                {
+                  "effect_id": "effect.asymptotically_stable_fixed_point",
+                  "label": "asymptotically_stable_fixed_point",
+                  "predicate": {
+                    "expression": "payload.expected_stable_form != ''",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_declared",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "world_family": "math_primitives"
+            },
+            {
+              "audit_flags": [],
+              "confidence": 0.92,
+              "empirical_record_id": "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f",
+              "interaction_channels": [
+                {
+                  "channel_id": "channel.phase_flow",
+                  "label": "phase_flow",
+                  "predicate": {
+                    "expression": "payload.state_equation != ''",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "state_equation_present",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "normalized_id": "sha256:fceba3c150c32dfb768c0b03ad6f270cb08dd3dbef9a23bf2daba2dbb29a9a5a",
+              "overlap_fields": [
+                {
+                  "counterfactual": {
+                    "expression": "len(payload.parameters) > 0",
+                    "observed": {
+                      "lambda": 1.0
+                    },
+                    "predicate": "parameter_counterfactual_declared",
+                    "trace_checkable": true
+                  },
+                  "field_id": "overlap.state_space_flow_field",
+                  "label": "state_space_flow_field",
+                  "persist": {
+                    "expression": "len(payload.invariants) > 0",
+                    "observed": [
+                      "negative_real_eigenvalue",
+                      "single_basin"
+                    ],
+                    "predicate": "invariant_declared",
+                    "trace_checkable": true
+                  },
+                  "read": {
+                    "expression": "expected_stable_form derives from primitive_class",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_reads_flow",
+                    "trace_checkable": true
+                  },
+                  "write": {
+                    "expression": "state_equation contains dx/dt or dtheta/dt",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "equation_writes_vector_field",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "process_roles": [
+                {
+                  "label": "fixed_point",
+                  "predicate": {
+                    "expression": "payload.primitive_class != ''",
+                    "observed": "fixed_point",
+                    "predicate": "primitive_class_present",
+                    "trace_checkable": true
+                  },
+                  "role_id": "process.math.fixed_point"
+                }
+              ],
+              "schema_version": "NormalizedReference.v1",
+              "state_space_effects": [
+                {
+                  "effect_id": "effect.asymptotically_stable_fixed_point",
+                  "label": "asymptotically_stable_fixed_point",
+                  "predicate": {
+                    "expression": "payload.expected_stable_form != ''",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_declared",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "world_family": "math_primitives"
+            }
+          ],
+          "records": [
+            {
+              "canonical_name": "source.fixture.restart.fixed_point.1",
+              "license_class": "metadata_only",
+              "mode_tag": "exploratory",
+              "payload": {
+                "canonical_name": "source.fixture.restart.fixed_point.1",
+                "dimension": 1,
+                "expected_stable_form": "asymptotically_stable_fixed_point",
+                "invariants": [
+                  "negative_real_eigenvalue",
+                  "single_basin"
+                ],
+                "parameters": {
+                  "lambda": 2.0
+                },
+                "primitive_class": "fixed_point",
+                "state_equation": "dx/dt = -lambda*x"
+              },
+              "provenance": {
+                "authority": "campaign019_fixture",
+                "raw_exported": false,
+                "retrieved_at": "2026-05-06T02:22:50Z",
+                "source_url": "https://example.org/source.fixture.restart"
+              },
+              "record_id": "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+              "record_type": "canonical_dynamical_form",
+              "schema_version": "EmpiricalRecord.v1",
+              "source_id": "source.fixture.restart",
+              "world_family": "math_primitives"
+            },
+            {
+              "canonical_name": "source.fixture.restart.fixed_point.0",
+              "license_class": "metadata_only",
+              "mode_tag": "exploratory",
+              "payload": {
+                "canonical_name": "source.fixture.restart.fixed_point.0",
+                "dimension": 1,
+                "expected_stable_form": "asymptotically_stable_fixed_point",
+                "invariants": [
+                  "negative_real_eigenvalue",
+                  "single_basin"
+                ],
+                "parameters": {
+                  "lambda": 1.0
+                },
+                "primitive_class": "fixed_point",
+                "state_equation": "dx/dt = -lambda*x"
+              },
+              "provenance": {
+                "authority": "campaign019_fixture",
+                "raw_exported": false,
+                "retrieved_at": "2026-05-06T02:22:50Z",
+                "source_url": "https://example.org/source.fixture.restart"
+              },
+              "record_id": "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f",
+              "record_type": "canonical_dynamical_form",
+              "schema_version": "EmpiricalRecord.v1",
+              "source_id": "source.fixture.restart",
+              "world_family": "math_primitives"
+            }
+          ],
+          "recovery": {
+            "checked_count": 0,
+            "passed": true,
+            "quarantined_count": 0
+          },
+          "registry": {
+            "schema": "LowLevelSourceRegistry.v1",
+            "sources": [
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.restart",
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.restart",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.restart"
+              }
+            ],
+            "validation": {
+              "passed": true,
+              "schema": "LowLevelSourceRegistryValidation.v1",
+              "source_count": 1,
+              "sources": [
+                {
+                  "adapter_id": "adapter.fixture.live_mode.v0",
+                  "auth_required": false,
+                  "export_allowed": true,
+                  "format": "fixture-json",
+                  "license_class": "metadata_only",
+                  "license_note": "deterministic Campaign 019 fixture",
+                  "name": "Fixture source source.fixture.restart",
+                  "raw_redistribution_allowed": false,
+                  "refresh_cadence": "daily",
+                  "retrieval_mode_default": "dry_run",
+                  "source_id": "source.fixture.restart",
+                  "target_world": "math_primitives",
+                  "url": "https://example.org/source.fixture.restart"
+                }
+              ],
+              "violations": []
+            }
+          },
+          "requires_ai_runtime": false,
+          "routed_worlds": [
+            {
+              "empirical_record_count": 2,
+              "empirical_record_ids": [
+                "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+                "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f"
+              ],
+              "normalized_ref_count": 2,
+              "normalized_ref_ids": [
+                "sha256:b450ddc432aeb431aee59a2100b849d7dd922999c823d8492f19100868291bd4",
+                "sha256:fceba3c150c32dfb768c0b03ad6f270cb08dd3dbef9a23bf2daba2dbb29a9a5a"
+              ],
+              "world_family": "math_primitives"
+            }
+          ],
+          "schema": "LowLevelHardenedFactoryRun.v1",
+          "status": "ok",
+          "store_snapshot": {
+            "content_hash": "sha256:7affd0728cb5ff2b433483d61ee3e2a840065fe72489fde1e46d6ac4166d6f77",
+            "counts": {
+              "audit_queue_items": 0,
+              "empirical_records": 2,
+              "evidence_edges": 4,
+              "normalized_refs": 2,
+              "source_cache_entries": 1
+            },
+            "paths": {
+              "audit_queue": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\audit_queue.json",
+              "empirical_records": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\empirical_records.json",
+              "evidence_graph": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\evidence_graph.json",
+              "normalized_refs": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\normalized_refs.json",
+              "source_cache_index": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\source_cache_index.json"
+            },
+            "schema": "LowLevelFactoryStoreSnapshot.v1"
+          },
+          "warnings": []
+        },
+        "normalized_ids_equal": true,
+        "record_ids_equal": true,
+        "second": {
+          "audit_queue": {
+            "count": 0,
+            "items": []
+          },
+          "fetch_reports": [
+            {
+              "adapter_validation": {
+                "detector_anomalies": [],
+                "detector_anomaly_count": 0,
+                "duplicate_canonical_name_count": 0,
+                "duplicate_canonical_names": [],
+                "duplicate_record_id_count": 0,
+                "duplicate_record_ids": [],
+                "hold_source": false,
+                "numeric_violation_count": 0,
+                "numeric_violations": [],
+                "record_count": 2,
+                "required_key_violation_count": 0,
+                "required_key_violations": [],
+                "schema": "LowLevelAdapterValidation.v1",
+                "source_id": "source.fixture.restart",
+                "unknown_key_census": {},
+                "unknown_key_count": 0
+              },
+              "attempts": [],
+              "cache_entry": {
+                "cache_id": "sha256:c4b5a5d67a1d26f0c48fca9b2ac02f89093f96b40a2c2a1adc83290eb8b6d91e",
+                "export_policy": "fixture_derived_metadata_only",
+                "fetched_at": "2026-05-06T02:22:50Z",
+                "license_class": "metadata_only",
+                "parser_version": "fixture-parser.v1",
+                "raw_cache_path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\cache\\source.fixture.restart",
+                "raw_content_hash": "sha256:0a5cbe1d9cb0a21381324f216e08aa1226d85877cdc475329fff375c58773a7d",
+                "record_count": 2,
+                "retrieval_mode": "dry_run",
+                "source_id": "source.fixture.restart",
+                "url": "https://example.org/source.fixture.restart"
+              },
+              "force_refresh": false,
+              "record_count": 2,
+              "refresh_due": false,
+              "source_id": "source.fixture.restart",
+              "stale": {
+                "age_seconds": 0.368383,
+                "audit_id": null,
+                "stale": false
+              },
+              "status": "ok"
+            }
+          ],
+          "ledger_recovery": {
+            "audit_items": [],
+            "quarantined_count": 0,
+            "run_ids": [
+              "sha256:7affd0728cb5ff2b433483d61ee3e2a840065fe72489fde1e46d6ac4166d6f77"
+            ],
+            "schema": "LowLevelSessionLedgerRecovery.v1",
+            "valid_count": 1
+          },
+          "lock": {
+            "acquired": true,
+            "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\factory.lock",
+            "reason": "ok"
+          },
+          "normalized_refs": [
+            {
+              "audit_flags": [],
+              "confidence": 0.92,
+              "empirical_record_id": "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+              "interaction_channels": [
+                {
+                  "channel_id": "channel.phase_flow",
+                  "label": "phase_flow",
+                  "predicate": {
+                    "expression": "payload.state_equation != ''",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "state_equation_present",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "normalized_id": "sha256:b450ddc432aeb431aee59a2100b849d7dd922999c823d8492f19100868291bd4",
+              "overlap_fields": [
+                {
+                  "counterfactual": {
+                    "expression": "len(payload.parameters) > 0",
+                    "observed": {
+                      "lambda": 2.0
+                    },
+                    "predicate": "parameter_counterfactual_declared",
+                    "trace_checkable": true
+                  },
+                  "field_id": "overlap.state_space_flow_field",
+                  "label": "state_space_flow_field",
+                  "persist": {
+                    "expression": "len(payload.invariants) > 0",
+                    "observed": [
+                      "negative_real_eigenvalue",
+                      "single_basin"
+                    ],
+                    "predicate": "invariant_declared",
+                    "trace_checkable": true
+                  },
+                  "read": {
+                    "expression": "expected_stable_form derives from primitive_class",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_reads_flow",
+                    "trace_checkable": true
+                  },
+                  "write": {
+                    "expression": "state_equation contains dx/dt or dtheta/dt",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "equation_writes_vector_field",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "process_roles": [
+                {
+                  "label": "fixed_point",
+                  "predicate": {
+                    "expression": "payload.primitive_class != ''",
+                    "observed": "fixed_point",
+                    "predicate": "primitive_class_present",
+                    "trace_checkable": true
+                  },
+                  "role_id": "process.math.fixed_point"
+                }
+              ],
+              "schema_version": "NormalizedReference.v1",
+              "state_space_effects": [
+                {
+                  "effect_id": "effect.asymptotically_stable_fixed_point",
+                  "label": "asymptotically_stable_fixed_point",
+                  "predicate": {
+                    "expression": "payload.expected_stable_form != ''",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_declared",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "world_family": "math_primitives"
+            },
+            {
+              "audit_flags": [],
+              "confidence": 0.92,
+              "empirical_record_id": "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f",
+              "interaction_channels": [
+                {
+                  "channel_id": "channel.phase_flow",
+                  "label": "phase_flow",
+                  "predicate": {
+                    "expression": "payload.state_equation != ''",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "state_equation_present",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "normalized_id": "sha256:fceba3c150c32dfb768c0b03ad6f270cb08dd3dbef9a23bf2daba2dbb29a9a5a",
+              "overlap_fields": [
+                {
+                  "counterfactual": {
+                    "expression": "len(payload.parameters) > 0",
+                    "observed": {
+                      "lambda": 1.0
+                    },
+                    "predicate": "parameter_counterfactual_declared",
+                    "trace_checkable": true
+                  },
+                  "field_id": "overlap.state_space_flow_field",
+                  "label": "state_space_flow_field",
+                  "persist": {
+                    "expression": "len(payload.invariants) > 0",
+                    "observed": [
+                      "negative_real_eigenvalue",
+                      "single_basin"
+                    ],
+                    "predicate": "invariant_declared",
+                    "trace_checkable": true
+                  },
+                  "read": {
+                    "expression": "expected_stable_form derives from primitive_class",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_reads_flow",
+                    "trace_checkable": true
+                  },
+                  "write": {
+                    "expression": "state_equation contains dx/dt or dtheta/dt",
+                    "observed": "dx/dt = -lambda*x",
+                    "predicate": "equation_writes_vector_field",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "process_roles": [
+                {
+                  "label": "fixed_point",
+                  "predicate": {
+                    "expression": "payload.primitive_class != ''",
+                    "observed": "fixed_point",
+                    "predicate": "primitive_class_present",
+                    "trace_checkable": true
+                  },
+                  "role_id": "process.math.fixed_point"
+                }
+              ],
+              "schema_version": "NormalizedReference.v1",
+              "state_space_effects": [
+                {
+                  "effect_id": "effect.asymptotically_stable_fixed_point",
+                  "label": "asymptotically_stable_fixed_point",
+                  "predicate": {
+                    "expression": "payload.expected_stable_form != ''",
+                    "observed": "asymptotically_stable_fixed_point",
+                    "predicate": "stable_form_declared",
+                    "trace_checkable": true
+                  }
+                }
+              ],
+              "world_family": "math_primitives"
+            }
+          ],
+          "records": [
+            {
+              "canonical_name": "source.fixture.restart.fixed_point.1",
+              "license_class": "metadata_only",
+              "mode_tag": "exploratory",
+              "payload": {
+                "canonical_name": "source.fixture.restart.fixed_point.1",
+                "dimension": 1,
+                "expected_stable_form": "asymptotically_stable_fixed_point",
+                "invariants": [
+                  "negative_real_eigenvalue",
+                  "single_basin"
+                ],
+                "parameters": {
+                  "lambda": 2.0
+                },
+                "primitive_class": "fixed_point",
+                "state_equation": "dx/dt = -lambda*x"
+              },
+              "provenance": {
+                "authority": "campaign019_fixture",
+                "raw_exported": false,
+                "retrieved_at": "2026-05-06T02:22:50Z",
+                "source_url": "https://example.org/source.fixture.restart"
+              },
+              "record_id": "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+              "record_type": "canonical_dynamical_form",
+              "schema_version": "EmpiricalRecord.v1",
+              "source_id": "source.fixture.restart",
+              "world_family": "math_primitives"
+            },
+            {
+              "canonical_name": "source.fixture.restart.fixed_point.0",
+              "license_class": "metadata_only",
+              "mode_tag": "exploratory",
+              "payload": {
+                "canonical_name": "source.fixture.restart.fixed_point.0",
+                "dimension": 1,
+                "expected_stable_form": "asymptotically_stable_fixed_point",
+                "invariants": [
+                  "negative_real_eigenvalue",
+                  "single_basin"
+                ],
+                "parameters": {
+                  "lambda": 1.0
+                },
+                "primitive_class": "fixed_point",
+                "state_equation": "dx/dt = -lambda*x"
+              },
+              "provenance": {
+                "authority": "campaign019_fixture",
+                "raw_exported": false,
+                "retrieved_at": "2026-05-06T02:22:50Z",
+                "source_url": "https://example.org/source.fixture.restart"
+              },
+              "record_id": "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f",
+              "record_type": "canonical_dynamical_form",
+              "schema_version": "EmpiricalRecord.v1",
+              "source_id": "source.fixture.restart",
+              "world_family": "math_primitives"
+            }
+          ],
+          "recovery": {
+            "checked_count": 6,
+            "content_hash": "sha256:3a4e6e06c318f24d1560955a849872be003d226339b167a67c809e360551534f",
+            "missing_count": 0,
+            "ok_count": 6,
+            "passed": true,
+            "quarantined_count": 0,
+            "results": [
+              {
+                "content_hash": "sha256:34862cae32a1e662557494250ec2eadd6ce4f64c580ec892ec98136e8709252a",
+                "passed": true,
+                "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\audit_queue.json",
+                "quarantined": false,
+                "schema": "LowLevelJsonRecoveryResult.v1",
+                "status": "ok"
+              },
+              {
+                "content_hash": "sha256:5dca8a409f59bef46e278168db0429917fbcaba4bcfbdd83226bce8f9b80859f",
+                "passed": true,
+                "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\empirical_records.json",
+                "quarantined": false,
+                "schema": "LowLevelJsonRecoveryResult.v1",
+                "status": "ok"
+              },
+              {
+                "content_hash": "sha256:b22003eaa7e27553290498340c9218b8a613cc9de712479800d466fe9506d3ef",
+                "passed": true,
+                "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\evidence_graph.json",
+                "quarantined": false,
+                "schema": "LowLevelJsonRecoveryResult.v1",
+                "status": "ok"
+              },
+              {
+                "content_hash": "sha256:dfa7420d39c52e27b184cb99a3aebddf0a7ebd94d41dea2ea35ea818813f64a0",
+                "passed": true,
+                "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\normalized_refs.json",
+                "quarantined": false,
+                "schema": "LowLevelJsonRecoveryResult.v1",
+                "status": "ok"
+              },
+              {
+                "content_hash": "sha256:d79683a26da0da9528c7f9a620feac94fba6097cb9c9e4863b7dec26164cacd2",
+                "passed": true,
+                "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\snapshot.json",
+                "quarantined": false,
+                "schema": "LowLevelJsonRecoveryResult.v1",
+                "status": "ok"
+              },
+              {
+                "content_hash": "sha256:f6ab7cb8bb375a6f04a1f4b270000403572f25bf4dd7a70d158fccc17083fcbc",
+                "passed": true,
+                "path": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\source_cache_index.json",
+                "quarantined": false,
+                "schema": "LowLevelJsonRecoveryResult.v1",
+                "status": "ok"
+              }
+            ],
+            "root": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store",
+            "schema": "LowLevelJsonRecoveryTree.v1"
+          },
+          "registry": {
+            "schema": "LowLevelSourceRegistry.v1",
+            "sources": [
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.restart",
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.restart",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.restart"
+              }
+            ],
+            "validation": {
+              "passed": true,
+              "schema": "LowLevelSourceRegistryValidation.v1",
+              "source_count": 1,
+              "sources": [
+                {
+                  "adapter_id": "adapter.fixture.live_mode.v0",
+                  "auth_required": false,
+                  "export_allowed": true,
+                  "format": "fixture-json",
+                  "license_class": "metadata_only",
+                  "license_note": "deterministic Campaign 019 fixture",
+                  "name": "Fixture source source.fixture.restart",
+                  "raw_redistribution_allowed": false,
+                  "refresh_cadence": "daily",
+                  "retrieval_mode_default": "dry_run",
+                  "source_id": "source.fixture.restart",
+                  "target_world": "math_primitives",
+                  "url": "https://example.org/source.fixture.restart"
+                }
+              ],
+              "violations": []
+            }
+          },
+          "requires_ai_runtime": false,
+          "routed_worlds": [
+            {
+              "empirical_record_count": 2,
+              "empirical_record_ids": [
+                "sha256:593899d2bdc0a716e23be6119ca4748d85397f186584b5fd89edd2650a1576f2",
+                "sha256:6f7ea981e0212dc84836235988d763c64b177fe40b6bb6efdfb8f33ae465910f"
+              ],
+              "normalized_ref_count": 2,
+              "normalized_ref_ids": [
+                "sha256:b450ddc432aeb431aee59a2100b849d7dd922999c823d8492f19100868291bd4",
+                "sha256:fceba3c150c32dfb768c0b03ad6f270cb08dd3dbef9a23bf2daba2dbb29a9a5a"
+              ],
+              "world_family": "math_primitives"
+            }
+          ],
+          "schema": "LowLevelHardenedFactoryRun.v1",
+          "status": "ok",
+          "store_snapshot": {
+            "content_hash": "sha256:7affd0728cb5ff2b433483d61ee3e2a840065fe72489fde1e46d6ac4166d6f77",
+            "counts": {
+              "audit_queue_items": 0,
+              "empirical_records": 2,
+              "evidence_edges": 4,
+              "normalized_refs": 2,
+              "source_cache_entries": 1
+            },
+            "paths": {
+              "audit_queue": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\audit_queue.json",
+              "empirical_records": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\empirical_records.json",
+              "evidence_graph": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\evidence_graph.json",
+              "normalized_refs": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\normalized_refs.json",
+              "source_cache_index": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\store\\source_cache_index.json"
+            },
+            "schema": "LowLevelFactoryStoreSnapshot.v1"
+          },
+          "warnings": []
+        }
+      },
+      "gate": "LM-09 stop/start replay preserves normalized output",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "audit_queue": {
+          "count": 1,
+          "items": [
+            {
+              "audit_id": "sha256:9911f4748eb4c3af841bc00abf746bf2096413c5a2f60e5ae7daa9736c7b50ab",
+              "reason": "concurrent_run_lock_present",
+              "recommended_action": "refuse_second_daemon_instance",
+              "record_id": "unknown",
+              "severity": "high",
+              "source_id": "factory.daemon"
+            }
+          ],
+          "schema": "LowLevelHardeningAuditQueue.v1"
+        },
+        "blocking_audit_id": "sha256:9911f4748eb4c3af841bc00abf746bf2096413c5a2f60e5ae7daa9736c7b50ab",
+        "lock": {
+          "acquired": false,
+          "path": "reports\\campaign_019\\fixtures\\concurrent_lock\\factory.lock",
+          "reason": "lock_present"
+        },
+        "requires_ai_runtime": false,
+        "schema": "LowLevelHardenedFactoryRun.v1",
+        "status": "refused_lock"
+      },
+      "gate": "LM-10 concurrent run lock refuses second daemon",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "audit_queue": {
+          "count": 1,
+          "items": [
+            {
+              "audit_id": "sha256:028939e270f52a9e8257d067602fd3df77a48c9bd666e9dce582a0748e7469f4",
+              "reason": "duplicate_empirical_record_id",
+              "recommended_action": "hold_source_until_duplicate_key_resolved",
+              "record_id": "sha256:29a6906e3c608406ed321798254d6bfee53b013e5b6db6babe455334dd0eccb7",
+              "severity": "high",
+              "source_id": "source.fixture.duplicate"
+            }
+          ]
+        },
+        "fetch_reports": [
+          {
+            "adapter_validation": {
+              "detector_anomalies": [],
+              "detector_anomaly_count": 0,
+              "duplicate_canonical_name_count": 0,
+              "duplicate_canonical_names": [],
+              "duplicate_record_id_count": 1,
+              "duplicate_record_ids": [
+                "sha256:29a6906e3c608406ed321798254d6bfee53b013e5b6db6babe455334dd0eccb7"
+              ],
+              "hold_source": true,
+              "numeric_violation_count": 0,
+              "numeric_violations": [],
+              "record_count": 2,
+              "required_key_violation_count": 0,
+              "required_key_violations": [],
+              "schema": "LowLevelAdapterValidation.v1",
+              "source_id": "source.fixture.duplicate",
+              "unknown_key_census": {},
+              "unknown_key_count": 0
+            },
+            "attempts": [],
+            "cache_entry": {
+              "cache_id": "sha256:3326de7f930cb1d299db194fa1f59d11953ef78be7c7e7f59715075d96c44daf",
+              "export_policy": "fixture_derived_metadata_only",
+              "fetched_at": "2026-05-06T02:22:50Z",
+              "license_class": "metadata_only",
+              "parser_version": "fixture-parser.v1",
+              "raw_cache_path": "reports\\campaign_019\\fixtures\\duplicate_records\\cache\\source.fixture.duplicate",
+              "raw_content_hash": "sha256:a9ed5ec28de22ad2789617488afd8d4319d9821a50d7b8321b92057b39592e4e",
+              "record_count": 2,
+              "retrieval_mode": "dry_run",
+              "source_id": "source.fixture.duplicate",
+              "url": "https://example.org/source.fixture.duplicate"
+            },
+            "force_refresh": false,
+            "record_count": 2,
+            "refresh_due": true,
+            "source_id": "source.fixture.duplicate",
+            "stale": {
+              "age_seconds": null,
+              "audit_id": null,
+              "stale": false
+            },
+            "status": "ok"
+          },
+          {
+            "adapter_validation": {
+              "detector_anomalies": [],
+              "detector_anomaly_count": 0,
+              "duplicate_canonical_name_count": 0,
+              "duplicate_canonical_names": [],
+              "duplicate_record_id_count": 0,
+              "duplicate_record_ids": [],
+              "hold_source": false,
+              "numeric_violation_count": 0,
+              "numeric_violations": [],
+              "record_count": 1,
+              "required_key_violation_count": 0,
+              "required_key_violations": [],
+              "schema": "LowLevelAdapterValidation.v1",
+              "source_id": "source.fixture.good_after_duplicate",
+              "unknown_key_census": {},
+              "unknown_key_count": 0
+            },
+            "attempts": [],
+            "cache_entry": {
+              "cache_id": "sha256:73221a910df46b29f5bab37d7441b0a2b69c30efbb8aa55ecf2c48b62fd1c03e",
+              "export_policy": "fixture_derived_metadata_only",
+              "fetched_at": "2026-05-06T02:22:50Z",
+              "license_class": "metadata_only",
+              "parser_version": "fixture-parser.v1",
+              "raw_cache_path": "reports\\campaign_019\\fixtures\\duplicate_records\\cache\\source.fixture.good_after_duplicate",
+              "raw_content_hash": "sha256:be46092466d6d26ed3702e5baa5aea0bc8f22eb53571ea700c1a6d290725d5bd",
+              "record_count": 1,
+              "retrieval_mode": "dry_run",
+              "source_id": "source.fixture.good_after_duplicate",
+              "url": "https://example.org/source.fixture.good_after_duplicate"
+            },
+            "force_refresh": false,
+            "record_count": 1,
+            "refresh_due": true,
+            "source_id": "source.fixture.good_after_duplicate",
+            "stale": {
+              "age_seconds": null,
+              "audit_id": null,
+              "stale": false
+            },
+            "status": "ok"
+          }
+        ],
+        "ledger_recovery": {
+          "audit_items": [],
+          "quarantined_count": 0,
+          "run_ids": [],
+          "schema": "LowLevelSessionLedgerRecovery.v1",
+          "valid_count": 0
+        },
+        "lock": {
+          "acquired": true,
+          "path": "reports\\campaign_019\\fixtures\\duplicate_records\\factory.lock",
+          "reason": "ok"
+        },
+        "normalized_refs": [
+          {
+            "audit_flags": [],
+            "confidence": 0.92,
+            "empirical_record_id": "sha256:4e078ba5fb48bcbdffdc49b97347510d67175db92606d7658b85b3f7b54dcc4b",
+            "interaction_channels": [
+              {
+                "channel_id": "channel.phase_flow",
+                "label": "phase_flow",
+                "predicate": {
+                  "expression": "payload.state_equation != ''",
+                  "observed": "dx/dt = -lambda*x",
+                  "predicate": "state_equation_present",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "normalized_id": "sha256:2eee44c82f1fd46d197a1ab24039902f726250f97f1e1a79e9b12363b4a492c1",
+            "overlap_fields": [
+              {
+                "counterfactual": {
+                  "expression": "len(payload.parameters) > 0",
+                  "observed": {
+                    "lambda": 1.0
+                  },
+                  "predicate": "parameter_counterfactual_declared",
+                  "trace_checkable": true
+                },
+                "field_id": "overlap.state_space_flow_field",
+                "label": "state_space_flow_field",
+                "persist": {
+                  "expression": "len(payload.invariants) > 0",
+                  "observed": [
+                    "negative_real_eigenvalue",
+                    "single_basin"
+                  ],
+                  "predicate": "invariant_declared",
+                  "trace_checkable": true
+                },
+                "read": {
+                  "expression": "expected_stable_form derives from primitive_class",
+                  "observed": "asymptotically_stable_fixed_point",
+                  "predicate": "stable_form_reads_flow",
+                  "trace_checkable": true
+                },
+                "write": {
+                  "expression": "state_equation contains dx/dt or dtheta/dt",
+                  "observed": "dx/dt = -lambda*x",
+                  "predicate": "equation_writes_vector_field",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "process_roles": [
+              {
+                "label": "fixed_point",
+                "predicate": {
+                  "expression": "payload.primitive_class != ''",
+                  "observed": "fixed_point",
+                  "predicate": "primitive_class_present",
+                  "trace_checkable": true
+                },
+                "role_id": "process.math.fixed_point"
+              }
+            ],
+            "schema_version": "NormalizedReference.v1",
+            "state_space_effects": [
+              {
+                "effect_id": "effect.asymptotically_stable_fixed_point",
+                "label": "asymptotically_stable_fixed_point",
+                "predicate": {
+                  "expression": "payload.expected_stable_form != ''",
+                  "observed": "asymptotically_stable_fixed_point",
+                  "predicate": "stable_form_declared",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "world_family": "math_primitives"
+          }
+        ],
+        "records": [
+          {
+            "canonical_name": "source.fixture.good_after_duplicate.fixed_point.0",
+            "license_class": "metadata_only",
+            "mode_tag": "exploratory",
+            "payload": {
+              "canonical_name": "source.fixture.good_after_duplicate.fixed_point.0",
+              "dimension": 1,
+              "expected_stable_form": "asymptotically_stable_fixed_point",
+              "invariants": [
+                "negative_real_eigenvalue",
+                "single_basin"
+              ],
+              "parameters": {
+                "lambda": 1.0
+              },
+              "primitive_class": "fixed_point",
+              "state_equation": "dx/dt = -lambda*x"
+            },
+            "provenance": {
+              "authority": "campaign019_fixture",
+              "raw_exported": false,
+              "retrieved_at": "2026-05-06T02:22:50Z",
+              "source_url": "https://example.org/source.fixture.good_after_duplicate"
+            },
+            "record_id": "sha256:4e078ba5fb48bcbdffdc49b97347510d67175db92606d7658b85b3f7b54dcc4b",
+            "record_type": "canonical_dynamical_form",
+            "schema_version": "EmpiricalRecord.v1",
+            "source_id": "source.fixture.good_after_duplicate",
+            "world_family": "math_primitives"
+          }
+        ],
+        "recovery": {
+          "checked_count": 0,
+          "passed": true,
+          "quarantined_count": 0
+        },
+        "registry": {
+          "schema": "LowLevelSourceRegistry.v1",
+          "sources": [
+            {
+              "adapter_id": "adapter.fixture.live_mode.v0",
+              "auth_required": false,
+              "format": "fixture-json",
+              "license_class": "metadata_only",
+              "license_note": "deterministic Campaign 019 fixture",
+              "name": "Fixture source source.fixture.duplicate",
+              "refresh_cadence": "daily",
+              "retrieval_mode_default": "dry_run",
+              "source_id": "source.fixture.duplicate",
+              "target_world": "math_primitives",
+              "url": "https://example.org/source.fixture.duplicate"
+            },
+            {
+              "adapter_id": "adapter.fixture.live_mode.v0",
+              "auth_required": false,
+              "format": "fixture-json",
+              "license_class": "metadata_only",
+              "license_note": "deterministic Campaign 019 fixture",
+              "name": "Fixture source source.fixture.good_after_duplicate",
+              "refresh_cadence": "daily",
+              "retrieval_mode_default": "dry_run",
+              "source_id": "source.fixture.good_after_duplicate",
+              "target_world": "math_primitives",
+              "url": "https://example.org/source.fixture.good_after_duplicate"
+            }
+          ],
+          "validation": {
+            "passed": true,
+            "schema": "LowLevelSourceRegistryValidation.v1",
+            "source_count": 2,
+            "sources": [
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "export_allowed": true,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.duplicate",
+                "raw_redistribution_allowed": false,
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.duplicate",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.duplicate"
+              },
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "export_allowed": true,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.good_after_duplicate",
+                "raw_redistribution_allowed": false,
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.good_after_duplicate",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.good_after_duplicate"
+              }
+            ],
+            "violations": []
+          }
+        },
+        "requires_ai_runtime": false,
+        "routed_worlds": [
+          {
+            "empirical_record_count": 1,
+            "empirical_record_ids": [
+              "sha256:4e078ba5fb48bcbdffdc49b97347510d67175db92606d7658b85b3f7b54dcc4b"
+            ],
+            "normalized_ref_count": 1,
+            "normalized_ref_ids": [
+              "sha256:2eee44c82f1fd46d197a1ab24039902f726250f97f1e1a79e9b12363b4a492c1"
+            ],
+            "world_family": "math_primitives"
+          }
+        ],
+        "schema": "LowLevelHardenedFactoryRun.v1",
+        "status": "ok",
+        "store_snapshot": {
+          "content_hash": "sha256:41707f8649fbc4b7838929e087e66bb7a2a5e731cfc3f2328e4daabae8bad051",
+          "counts": {
+            "audit_queue_items": 1,
+            "empirical_records": 1,
+            "evidence_edges": 4,
+            "normalized_refs": 1,
+            "source_cache_entries": 1
+          },
+          "paths": {
+            "audit_queue": "reports\\campaign_019\\fixtures\\duplicate_records\\store\\audit_queue.json",
+            "empirical_records": "reports\\campaign_019\\fixtures\\duplicate_records\\store\\empirical_records.json",
+            "evidence_graph": "reports\\campaign_019\\fixtures\\duplicate_records\\store\\evidence_graph.json",
+            "normalized_refs": "reports\\campaign_019\\fixtures\\duplicate_records\\store\\normalized_refs.json",
+            "source_cache_index": "reports\\campaign_019\\fixtures\\duplicate_records\\store\\source_cache_index.json"
+          },
+          "schema": "LowLevelFactoryStoreSnapshot.v1"
+        },
+        "warnings": []
+      },
+      "gate": "LM-11 duplicate records are first-class metric and hold",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "audit_queue": {
+          "count": 1,
+          "items": [
+            {
+              "audit_id": "sha256:8a5aa01bcac27d579db4985251c9104c9d0305e964ac9f3f8156bfee99db60dc",
+              "reason": "nonsensical_numeric_value:dimension=-1",
+              "recommended_action": "hold_source_until_numeric_contract_review",
+              "record_id": "sha256:6c6838b830549d48248f67a44f799c2b4674709d0d7f782dfeeaf6fe4a7455fb",
+              "severity": "high",
+              "source_id": "source.fixture.nonsensical_numeric"
+            }
+          ]
+        },
+        "fetch_reports": [
+          {
+            "adapter_validation": {
+              "detector_anomalies": [],
+              "detector_anomaly_count": 0,
+              "duplicate_canonical_name_count": 0,
+              "duplicate_canonical_names": [],
+              "duplicate_record_id_count": 0,
+              "duplicate_record_ids": [],
+              "hold_source": true,
+              "numeric_violation_count": 1,
+              "numeric_violations": [
+                {
+                  "key": "dimension",
+                  "record_id": "sha256:6c6838b830549d48248f67a44f799c2b4674709d0d7f782dfeeaf6fe4a7455fb",
+                  "record_type": "canonical_dynamical_form",
+                  "value": -1
+                }
+              ],
+              "record_count": 1,
+              "required_key_violation_count": 0,
+              "required_key_violations": [],
+              "schema": "LowLevelAdapterValidation.v1",
+              "source_id": "source.fixture.nonsensical_numeric",
+              "unknown_key_census": {},
+              "unknown_key_count": 0
+            },
+            "attempts": [],
+            "cache_entry": {
+              "cache_id": "sha256:385e536b6063a9923e704772a2fd9ca3caa07b47a94efce2b1aced4852ebc5c6",
+              "export_policy": "fixture_derived_metadata_only",
+              "fetched_at": "2026-05-06T02:22:50Z",
+              "license_class": "metadata_only",
+              "parser_version": "fixture-parser.v1",
+              "raw_cache_path": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\cache\\source.fixture.nonsensical_numeric",
+              "raw_content_hash": "sha256:d9b9dbbe1ddcbfa0ad3d781600b386fa508dbeff172cead8a198b4606fa017db",
+              "record_count": 1,
+              "retrieval_mode": "dry_run",
+              "source_id": "source.fixture.nonsensical_numeric",
+              "url": "https://example.org/source.fixture.nonsensical_numeric"
+            },
+            "force_refresh": false,
+            "record_count": 1,
+            "refresh_due": true,
+            "source_id": "source.fixture.nonsensical_numeric",
+            "stale": {
+              "age_seconds": null,
+              "audit_id": null,
+              "stale": false
+            },
+            "status": "ok"
+          },
+          {
+            "adapter_validation": {
+              "detector_anomalies": [],
+              "detector_anomaly_count": 0,
+              "duplicate_canonical_name_count": 0,
+              "duplicate_canonical_names": [],
+              "duplicate_record_id_count": 0,
+              "duplicate_record_ids": [],
+              "hold_source": false,
+              "numeric_violation_count": 0,
+              "numeric_violations": [],
+              "record_count": 1,
+              "required_key_violation_count": 0,
+              "required_key_violations": [],
+              "schema": "LowLevelAdapterValidation.v1",
+              "source_id": "source.fixture.good_after_numeric",
+              "unknown_key_census": {},
+              "unknown_key_count": 0
+            },
+            "attempts": [],
+            "cache_entry": {
+              "cache_id": "sha256:7fa775f31877905a653fefc8ec9c567ad0bff8c7fc96d3dc671af59a4bfa656b",
+              "export_policy": "fixture_derived_metadata_only",
+              "fetched_at": "2026-05-06T02:22:50Z",
+              "license_class": "metadata_only",
+              "parser_version": "fixture-parser.v1",
+              "raw_cache_path": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\cache\\source.fixture.good_after_numeric",
+              "raw_content_hash": "sha256:428b7bbba2343fcaf05621fb1e549af2eb41cceaa7d1a4dfd5b0859bded5030e",
+              "record_count": 1,
+              "retrieval_mode": "dry_run",
+              "source_id": "source.fixture.good_after_numeric",
+              "url": "https://example.org/source.fixture.good_after_numeric"
+            },
+            "force_refresh": false,
+            "record_count": 1,
+            "refresh_due": true,
+            "source_id": "source.fixture.good_after_numeric",
+            "stale": {
+              "age_seconds": null,
+              "audit_id": null,
+              "stale": false
+            },
+            "status": "ok"
+          }
+        ],
+        "ledger_recovery": {
+          "audit_items": [],
+          "quarantined_count": 0,
+          "run_ids": [],
+          "schema": "LowLevelSessionLedgerRecovery.v1",
+          "valid_count": 0
+        },
+        "lock": {
+          "acquired": true,
+          "path": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\factory.lock",
+          "reason": "ok"
+        },
+        "normalized_refs": [
+          {
+            "audit_flags": [],
+            "confidence": 0.92,
+            "empirical_record_id": "sha256:d1ce700e1529327c8e8e59fc164a6e6d499cde563f5c3fe826a711cd5dc8a1ab",
+            "interaction_channels": [
+              {
+                "channel_id": "channel.phase_flow",
+                "label": "phase_flow",
+                "predicate": {
+                  "expression": "payload.state_equation != ''",
+                  "observed": "dx/dt = -lambda*x",
+                  "predicate": "state_equation_present",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "normalized_id": "sha256:737a90a4aaeca861265f997067b5ce23c1eb724e7b22d44699e179350b699eb6",
+            "overlap_fields": [
+              {
+                "counterfactual": {
+                  "expression": "len(payload.parameters) > 0",
+                  "observed": {
+                    "lambda": 1.0
+                  },
+                  "predicate": "parameter_counterfactual_declared",
+                  "trace_checkable": true
+                },
+                "field_id": "overlap.state_space_flow_field",
+                "label": "state_space_flow_field",
+                "persist": {
+                  "expression": "len(payload.invariants) > 0",
+                  "observed": [
+                    "negative_real_eigenvalue",
+                    "single_basin"
+                  ],
+                  "predicate": "invariant_declared",
+                  "trace_checkable": true
+                },
+                "read": {
+                  "expression": "expected_stable_form derives from primitive_class",
+                  "observed": "asymptotically_stable_fixed_point",
+                  "predicate": "stable_form_reads_flow",
+                  "trace_checkable": true
+                },
+                "write": {
+                  "expression": "state_equation contains dx/dt or dtheta/dt",
+                  "observed": "dx/dt = -lambda*x",
+                  "predicate": "equation_writes_vector_field",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "process_roles": [
+              {
+                "label": "fixed_point",
+                "predicate": {
+                  "expression": "payload.primitive_class != ''",
+                  "observed": "fixed_point",
+                  "predicate": "primitive_class_present",
+                  "trace_checkable": true
+                },
+                "role_id": "process.math.fixed_point"
+              }
+            ],
+            "schema_version": "NormalizedReference.v1",
+            "state_space_effects": [
+              {
+                "effect_id": "effect.asymptotically_stable_fixed_point",
+                "label": "asymptotically_stable_fixed_point",
+                "predicate": {
+                  "expression": "payload.expected_stable_form != ''",
+                  "observed": "asymptotically_stable_fixed_point",
+                  "predicate": "stable_form_declared",
+                  "trace_checkable": true
+                }
+              }
+            ],
+            "world_family": "math_primitives"
+          }
+        ],
+        "records": [
+          {
+            "canonical_name": "source.fixture.good_after_numeric.fixed_point.0",
+            "license_class": "metadata_only",
+            "mode_tag": "exploratory",
+            "payload": {
+              "canonical_name": "source.fixture.good_after_numeric.fixed_point.0",
+              "dimension": 1,
+              "expected_stable_form": "asymptotically_stable_fixed_point",
+              "invariants": [
+                "negative_real_eigenvalue",
+                "single_basin"
+              ],
+              "parameters": {
+                "lambda": 1.0
+              },
+              "primitive_class": "fixed_point",
+              "state_equation": "dx/dt = -lambda*x"
+            },
+            "provenance": {
+              "authority": "campaign019_fixture",
+              "raw_exported": false,
+              "retrieved_at": "2026-05-06T02:22:50Z",
+              "source_url": "https://example.org/source.fixture.good_after_numeric"
+            },
+            "record_id": "sha256:d1ce700e1529327c8e8e59fc164a6e6d499cde563f5c3fe826a711cd5dc8a1ab",
+            "record_type": "canonical_dynamical_form",
+            "schema_version": "EmpiricalRecord.v1",
+            "source_id": "source.fixture.good_after_numeric",
+            "world_family": "math_primitives"
+          }
+        ],
+        "recovery": {
+          "checked_count": 0,
+          "passed": true,
+          "quarantined_count": 0
+        },
+        "registry": {
+          "schema": "LowLevelSourceRegistry.v1",
+          "sources": [
+            {
+              "adapter_id": "adapter.fixture.live_mode.v0",
+              "auth_required": false,
+              "format": "fixture-json",
+              "license_class": "metadata_only",
+              "license_note": "deterministic Campaign 019 fixture",
+              "name": "Fixture source source.fixture.good_after_numeric",
+              "refresh_cadence": "daily",
+              "retrieval_mode_default": "dry_run",
+              "source_id": "source.fixture.good_after_numeric",
+              "target_world": "math_primitives",
+              "url": "https://example.org/source.fixture.good_after_numeric"
+            },
+            {
+              "adapter_id": "adapter.fixture.live_mode.v0",
+              "auth_required": false,
+              "format": "fixture-json",
+              "license_class": "metadata_only",
+              "license_note": "deterministic Campaign 019 fixture",
+              "name": "Fixture source source.fixture.nonsensical_numeric",
+              "refresh_cadence": "daily",
+              "retrieval_mode_default": "dry_run",
+              "source_id": "source.fixture.nonsensical_numeric",
+              "target_world": "math_primitives",
+              "url": "https://example.org/source.fixture.nonsensical_numeric"
+            }
+          ],
+          "validation": {
+            "passed": true,
+            "schema": "LowLevelSourceRegistryValidation.v1",
+            "source_count": 2,
+            "sources": [
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "export_allowed": true,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.good_after_numeric",
+                "raw_redistribution_allowed": false,
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.good_after_numeric",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.good_after_numeric"
+              },
+              {
+                "adapter_id": "adapter.fixture.live_mode.v0",
+                "auth_required": false,
+                "export_allowed": true,
+                "format": "fixture-json",
+                "license_class": "metadata_only",
+                "license_note": "deterministic Campaign 019 fixture",
+                "name": "Fixture source source.fixture.nonsensical_numeric",
+                "raw_redistribution_allowed": false,
+                "refresh_cadence": "daily",
+                "retrieval_mode_default": "dry_run",
+                "source_id": "source.fixture.nonsensical_numeric",
+                "target_world": "math_primitives",
+                "url": "https://example.org/source.fixture.nonsensical_numeric"
+              }
+            ],
+            "violations": []
+          }
+        },
+        "requires_ai_runtime": false,
+        "routed_worlds": [
+          {
+            "empirical_record_count": 1,
+            "empirical_record_ids": [
+              "sha256:d1ce700e1529327c8e8e59fc164a6e6d499cde563f5c3fe826a711cd5dc8a1ab"
+            ],
+            "normalized_ref_count": 1,
+            "normalized_ref_ids": [
+              "sha256:737a90a4aaeca861265f997067b5ce23c1eb724e7b22d44699e179350b699eb6"
+            ],
+            "world_family": "math_primitives"
+          }
+        ],
+        "schema": "LowLevelHardenedFactoryRun.v1",
+        "status": "ok",
+        "store_snapshot": {
+          "content_hash": "sha256:53211d4cfa0123a87c111d0032c546c635add8ffe6d41f58a71f591e72a56148",
+          "counts": {
+            "audit_queue_items": 1,
+            "empirical_records": 1,
+            "evidence_edges": 4,
+            "normalized_refs": 1,
+            "source_cache_entries": 1
+          },
+          "paths": {
+            "audit_queue": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\store\\audit_queue.json",
+            "empirical_records": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\store\\empirical_records.json",
+            "evidence_graph": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\store\\evidence_graph.json",
+            "normalized_refs": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\store\\normalized_refs.json",
+            "source_cache_index": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\store\\source_cache_index.json"
+          },
+          "schema": "LowLevelFactoryStoreSnapshot.v1"
+        },
+        "warnings": []
+      },
+      "gate": "LM-12 nonsensical numeric values hold and audit",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "count": 1,
+        "items": [
+          {
+            "audit_id": "sha256:9b66b0eca77e85d9aa4da98d9881799e93cfabbf399390299b4f1a6e5241edb0",
+            "reason": "source_native_detector_anomaly:fixture_source_native_decline",
+            "recommended_action": "manual_detector_review_before_promotion",
+            "record_id": "unknown",
+            "severity": "medium",
+            "source_id": "source.fixture.detector_anomaly"
+          }
+        ]
+      },
+      "gate": "LM-13 source-native detector anomaly routes to audit queue",
+      "passed": true
+    }
+  ],
+  "schema": "Campaign019FixtureGates.v1"
+}

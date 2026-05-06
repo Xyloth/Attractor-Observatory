@@ -1,0 +1,217 @@
+{
+  "edges": [
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:059e59aba306e952d95ac8457d7c66ad9d0beaecf7473f3ca6a31c974164a9a0",
+      "evidence_record_ids": [
+        "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+        "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d"
+      ],
+      "relation": "has_process_role",
+      "source": "world:origins_chemistry",
+      "target": "process_roles:prebiotic_surface_chemistry"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:10e414de0a6c16c114ff0d5b1c1aebb9e73785e464806fb0ba476c3d3b52ea08",
+      "evidence_record_ids": [
+        "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:ecosystem",
+      "target": "overlap_fields:ecosystem_trophic_state_space"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:13f9c2d062dc4ef16bf4b0afaf9e514b6eccb5164c77198491093ae27a4f3539",
+      "evidence_record_ids": [
+        "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:quasispecies",
+      "target": "interaction_channels:mutation_selection"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:30c42b522ac3e67d8247f664ee5533e7c46e552b785a987964f4e9e0101b302f",
+      "evidence_record_ids": [
+        "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22"
+      ],
+      "relation": "has_process_role",
+      "source": "world:ecosystem",
+      "target": "process_roles:multi_trophic_occurrence_proxy"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:365608d6d1c0040d66c8373cae65611d586e1b3158ec60888ac61382b85066d1",
+      "evidence_record_ids": [
+        "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07"
+      ],
+      "relation": "has_process_role",
+      "source": "world:crn",
+      "target": "process_roles:metabolic_reaction_network"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:3d2893807c29657e8715d53866d4cdfcd4b74df8e37770f045dbb13d31df72b3",
+      "evidence_record_ids": [
+        "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704"
+      ],
+      "relation": "has_process_role",
+      "source": "world:quasispecies",
+      "target": "process_roles:viral_sequence_population"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:4ee1ae7cbdd66b47332d322197d7eb7515a227c2862bb889bf033cfdc07953f1",
+      "evidence_record_ids": [
+        "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:ecosystem",
+      "target": "interaction_channels:trophic_interaction_matrix"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:59517da8e2fdb2ffbb9c24a3398796316f403206c3f1a4c08a9a29c9e0fb1f80",
+      "evidence_record_ids": [
+        "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+        "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+        "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262"
+      ],
+      "relation": "has_process_role",
+      "source": "world:field",
+      "target": "process_roles:reaction_diffusion_benchmark"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:5f5ba51be9bde0c0891eea91848269232266138e64aaf58592f244df4c0691a5",
+      "evidence_record_ids": [
+        "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:quasispecies",
+      "target": "state_space_effects:quasispecies_cloud"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:7285feaa0ebf7c767e22c4164036d1140c02521ef63ca130cc61b7f6f65ecf77",
+      "evidence_record_ids": [
+        "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+        "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+        "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:field",
+      "target": "state_space_effects:pattern_formation_parameter_space"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:8cf1d6af412abae019df0e6752e80896cb04e70ada116e272245ad4abd46c5a6",
+      "evidence_record_ids": [
+        "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:ecosystem",
+      "target": "state_space_effects:ecosystem_stability_proxy"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:9606344badd972c8c2852e10577882cca2827584180495182b965134849c043c",
+      "evidence_record_ids": [
+        "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+        "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+        "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:field",
+      "target": "interaction_channels:diffusion_reaction_coupling"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:9f8d8aa940b36dafdf433128a0b1b7cd1ebc32517e3fb7eeafe3aa34ca15fda1",
+      "evidence_record_ids": [
+        "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:crn",
+      "target": "overlap_fields:reaction_network_topology"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:ad5235038453ddd1e01248408261dcb4c4f45560b39cbfff80c59fe7746b9c62",
+      "evidence_record_ids": [
+        "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:crn",
+      "target": "state_space_effects:metabolic_closure_substrate_flow"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:c33b9186d7c3c8fdeb34a2a7c0493b24b62114b4a8d5e87de4814328cdc72279",
+      "evidence_record_ids": [
+        "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+        "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d"
+      ],
+      "relation": "has_state_space_effect",
+      "source": "world:origins_chemistry",
+      "target": "state_space_effects:prebiotic_closure_boundary"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:ce6e124a53f6476b1f3cf199afc62ff478829b6fc2db54a343063fcd99935983",
+      "evidence_record_ids": [
+        "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+        "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:origins_chemistry",
+      "target": "overlap_fields:prebiotic_chemistry_parameter_space"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:d1a8f82104ba618dfd15ffd7ae8c846918e3f21eb62f3ac41ff57e8e787ee341",
+      "evidence_record_ids": [
+        "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+        "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+        "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:field",
+      "target": "overlap_fields:field_parameter_space"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:eaf018b0c36d065444d61e97bae529a7ab42720f443f32dcedb707a464de127e",
+      "evidence_record_ids": [
+        "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+        "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:origins_chemistry",
+      "target": "interaction_channels:mineral_surface_gradient"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:f1d78084a71e4d69ae22e76616fb1dd4d25f255c607f1bf3a4ec163301d76992",
+      "evidence_record_ids": [
+        "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704"
+      ],
+      "relation": "has_overlap_field",
+      "source": "world:quasispecies",
+      "target": "overlap_fields:sequence_mutation_space"
+    },
+    {
+      "confidence": 1.0,
+      "edge_id": "sha256:feb41d187317b00e9e859e0f1d08fc0a8b836d247ed91bc472beb3e3988f796a",
+      "evidence_record_ids": [
+        "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07"
+      ],
+      "relation": "has_interaction_channel",
+      "source": "world:crn",
+      "target": "interaction_channels:mass_action_reaction_edge"
+    }
+  ],
+  "schema": "LowLevelEvidenceGraph.v1"
+}

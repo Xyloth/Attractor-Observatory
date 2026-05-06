@@ -41,6 +41,7 @@ from control_room.design_tokens import (
     PAGE_TITLE,
     streamlit_theme_css,
 )
+from control_room.heartbeat import render_sidebar_panel as render_heartbeat_panel
 from control_room.rooms import render_room, room_registry
 from control_room.snapshot import write_snapshot
 
@@ -142,6 +143,44 @@ def main() -> None:
             label_visibility="collapsed",
             key="control_room_radio",
         )
+        # Refresh control + auto-refresh selector. The refresh button
+        # invalidates Streamlit caches and reruns; auto-refresh wires the
+        # native st.autorefresh helper at user-chosen intervals so the
+        # dashboard updates live as agents touch the heartbeat ledger.
+        st.markdown(
+            '<div style="margin-top:1rem;padding-top:0.8rem;border-top:1px solid #283042;">'
+            '<div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--fg4);'
+            'text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">refresh</div>'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+        refresh_cols = st.columns([1, 1])
+        with refresh_cols[0]:
+            if st.button("↻ refresh", key="control_room_refresh_button", use_container_width=True):
+                st.rerun()
+        with refresh_cols[1]:
+            interval_label = st.selectbox(
+                "live every",
+                options=["off", "5s", "15s", "1m", "5m"],
+                index=2,
+                key="control_room_refresh_interval",
+                label_visibility="collapsed",
+            )
+        interval_seconds = {"off": 0, "5s": 5, "15s": 15, "1m": 60, "5m": 300}.get(interval_label, 0)
+        if interval_seconds > 0:
+            try:
+                # Streamlit ≥ 1.30 ships st.fragment / st.autorefresh; older
+                # versions fall back gracefully to manual refresh only.
+                if hasattr(st, "autorefresh"):
+                    st.autorefresh(interval=interval_seconds * 1000, key="control_room_autorefresh")
+            except Exception:
+                pass
+
+        # Heartbeat panel — shows which AI agents are currently active.
+        # Every agent in the canonical roster appears with a status dot
+        # (active pulses; stale = forgot to mark exit; departed; quiet).
+        render_heartbeat_panel()
+
         st.markdown(
             f"""
             <div style="
