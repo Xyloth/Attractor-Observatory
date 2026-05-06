@@ -129,7 +129,11 @@ FONT_WEIGHT_MONO: Final[int] = 500
 DENSITY_PANEL_PADDING_REM: Final[float] = 1.2
 DENSITY_CARD_GAP_REM: Final[float] = 0.6
 DENSITY_SECTION_GAP_REM: Final[float] = 1.6
-DENSITY_BORDER_RADIUS_REM: Final[float] = 0.5
+# CB-007 polish iteration: bumped radius from 0.5rem (~8px) to ~14px so
+# panels read more like a polished native macOS surface than a flat
+# admin dashboard. Also widens the radius hierarchy in the inline shell
+# CSS below.
+DENSITY_BORDER_RADIUS_REM: Final[float] = 0.85
 
 
 # ----------------------------------------------------------------------
@@ -176,22 +180,143 @@ def streamlit_theme_css() -> str:
         color: var(--fg2, {COLOR_TEXT_PRIMARY});
         font-family: var(--font-body, {FONT_FAMILY_BODY});
     }}
+    /* Hide Streamlit's white header / Deploy bar / hamburger / footer.
+     * The Deploy button is a hosted-Streamlit affordance that doesn't
+     * apply to a sidecar dashboard, and its white background was the
+     * white strip at the top of the screen the user pointed out. */
+    [data-testid="stHeader"] {{ display: none !important; }}
+    [data-testid="stToolbar"] {{ display: none !important; }}
+    [data-testid="stDeployButton"] {{ display: none !important; }}
+    [data-testid="stStatusWidget"] {{ display: none !important; }}
+    #MainMenu {{ visibility: hidden; }}
+    footer {{ visibility: hidden; }}
+    [data-testid="stDecoration"] {{ display: none !important; }}
+    /* Pull the main block to the top now that the header is gone. */
+    .stApp > div:first-child {{ padding-top: 0 !important; }}
+    [data-testid="stAppViewBlockContainer"] {{
+        padding-top: 1.2rem !important;
+        padding-bottom: 3rem !important;
+        max-width: 1480px;
+    }}
     [data-testid="stSidebar"] {{
         background: var(--bg-deeper, #060912);
         border-right: 1px solid var(--border, {COLOR_BORDER});
     }}
-    [data-testid="stSidebar"] .stRadio label {{
-        color: var(--fg2, {COLOR_TEXT_PRIMARY}) !important;
-        font-family: var(--font-body, {FONT_FAMILY_BODY}) !important;
-        font-size: var(--fs-body, {FONT_SIZE_BODY}) !important;
+    /* HEADER NUKE — multiple selectors because Streamlit changes testids
+     * across versions. The white bar + Deploy button live in any of these. */
+    header,
+    header[data-testid="stHeader"],
+    [data-testid="stHeader"],
+    [data-testid="stToolbar"],
+    [data-testid="stToolbarActions"],
+    [data-testid="stDeployButton"],
+    [data-testid="stStatusWidget"],
+    [data-testid="stMainMenu"],
+    [data-testid="stActionButton"],
+    [data-testid="stAppDeployButton"],
+    .stDeployButton,
+    .stAppDeployButton,
+    div[class*="DeployButton"],
+    div[class*="deployButton"],
+    button[kind="header"],
+    button[kind="headerNoPadding"] {{
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }}
+    .stApp > header {{ display: none !important; }}
+    /* In case the header isn't testid'd at all, target the topmost fixed
+     * white bar that holds the Deploy button — it lives outside the
+     * sidebar and the main block container. */
+    body > div:first-child > div:first-child > div:first-child > [data-testid="stHeader"],
+    body > div[data-testid="stApp"] > div:first-of-type {{
+        display: none !important;
+    }}
+
+    /* Sidebar radio: NUKE every native circle/marker/svg/input. The
+     * label text becomes the click target; active state is shown via
+     * background + glow + left-border accent + brighter color. No dot. */
+    [data-testid="stSidebar"] [data-testid="stRadio"] [role="radiogroup"] {{
+        gap: 4px;
+    }}
+    /* The label is the entire row; we want it to fill the sidebar width. */
+    [data-testid="stSidebar"] [data-testid="stRadio"] [role="radiogroup"] label,
+    [data-testid="stSidebar"] [data-testid="stRadio"] [role="radiogroup"] label[data-baseweb="radio"] {{
+        color: var(--fg3, {COLOR_TEXT_SECONDARY}) !important;
+        font-family: var(--font-display, {FONT_FAMILY_DISPLAY}) !important;
+        font-size: 1.18rem !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.01em !important;
+        padding: 10px 14px !important;
+        border-radius: 12px !important;
+        border-left: 2px solid transparent !important;
+        background: transparent !important;
+        transition: color 200ms ease, background 200ms ease, border-color 200ms ease, text-shadow 250ms ease, transform 150ms ease;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+    }}
+    /* Brute-force hide every native marker variant Streamlit emits.
+     * The "white circle that turns red on click" is BaseWeb's radio
+     * marker, which can render as: an <input>, an <svg>, a styled
+     * <div data-baseweb="radio-marker">, OR just the first child div
+     * of the label. Hit ALL of them. */
+    [data-testid="stSidebar"] [data-testid="stRadio"] input,
+    [data-testid="stSidebar"] [data-testid="stRadio"] svg,
+    [data-testid="stSidebar"] [data-testid="stRadio"] [data-baseweb="radio-marker"],
+    [data-testid="stSidebar"] [data-testid="stRadio"] [class*="StyledRadioMark"],
+    [data-testid="stSidebar"] [data-testid="stRadio"] [class*="radio-mark"],
+    [data-testid="stSidebar"] [data-testid="stRadio"] [class*="RadioMarker"],
+    [data-testid="stSidebar"] [data-testid="stRadio"] label::before {{
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }}
+    /* Aggressive: collapse every NON-LAST div inside the radio label.
+     * BaseWeb renders [marker_container, text_container] as siblings;
+     * the marker is always first, the text is always last. This kills
+     * the marker even when the inner CSS classes change between
+     * Streamlit versions. */
+    [data-testid="stSidebar"] [data-testid="stRadio"] label > div:not(:last-child),
+    [data-testid="stSidebar"] [data-testid="stRadio"] label > span:not(:last-child) {{
+        display: none !important;
+        max-width: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }}
+    /* Hover */
+    [data-testid="stSidebar"] [data-testid="stRadio"] [role="radiogroup"] label:hover {{
+        color: var(--fg1, {COLOR_CLAIM_BEARING}) !important;
+        background: rgba(79, 195, 247, 0.06) !important;
+        transform: translateX(2px);
+    }}
+    /* Active row: blue glow + accent border running down the line.
+     * Targets multiple shapes since Streamlit versions vary in DOM. */
+    [data-testid="stSidebar"] [data-testid="stRadio"] [role="radiogroup"] label:has(input:checked),
+    [data-testid="stSidebar"] [data-testid="stRadio"] [role="radiogroup"] label[data-checked="true"],
+    [data-testid="stSidebar"] [data-testid="stRadio"] [role="radiogroup"] label[aria-checked="true"] {{
+        color: #4fc3f7 !important;
+        border-left-color: #4fc3f7 !important;
+        background: rgba(79, 195, 247, 0.10) !important;
+        text-shadow: 0 0 22px rgba(79, 195, 247, 0.55);
+        font-weight: 600 !important;
     }}
     [data-testid="stSidebar"] .stMarkdown {{
         color: var(--fg2, {COLOR_TEXT_PRIMARY});
     }}
-    /* Hide Streamlit chrome that visually intrudes on the cockpit feel. */
-    #MainMenu {{ visibility: hidden; }}
-    footer {{ visibility: hidden; }}
-    [data-testid="stDecoration"] {{ visibility: hidden; }}
     /* Card / panel surfaces declared by the canonical stylesheet are
      * already styled. The shell layer below adds Streamlit-specific
      * fallback styles for components Streamlit renders by default. */
@@ -211,9 +336,22 @@ def streamlit_theme_css() -> str:
     .control-room-panel {{
         background: var(--bg-panel, {COLOR_BG_PANEL});
         border: 1px solid var(--border, {COLOR_BORDER});
-        border-radius: var(--radius-lg, 12px);
+        border-radius: 14px;
         padding: var(--space-5, 20px);
         margin-bottom: var(--space-4, 16px);
+    }}
+    /* Polish iteration: macOS-flavored radius bump. The base Visuals/
+     * stylesheet declares --radius-lg: 12px; we override here for the
+     * Streamlit shell so cards and panels read as more polished surfaces. */
+    .panel, .empty-state, .quarantine, .world-card,
+    .control-room-empty, [data-testid="stMetric"] {{
+        border-radius: 14px !important;
+    }}
+    .panel.raised {{ border-radius: 14px !important; }}
+    /* Plotly chart container — soften the corners */
+    .stPlotlyChart, [data-testid="stPlotlyChart"] {{
+        border-radius: 14px;
+        overflow: hidden;
     }}
     /* Empty-state block (D22 binding). Mirrors the Visuals/ canonical
      * .empty-state class with control_room/-specific selectors so the

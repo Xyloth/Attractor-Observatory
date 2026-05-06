@@ -1,0 +1,353 @@
+Branch Falsification Bath
+
+## Core idea
+
+Create one isolated branch whose purpose is to be attacked.
+
+An AI instance creates a disposable falsification branch from the current repo state and spends a sustained session pressure-testing the project. It is not building a feature. It is not polishing. It is not preparing a merge. It is applying adversarial pressure and returning a report.
+
+A normal audit asks:
+
+“Did this satisfy the spec?”
+
+A Branch Falsification Pass asks:
+
+“How can this project fail, fake-pass, mislead us, overclaim, collapse under weird inputs, or expose unresolved conceptual edges?”
+
+The branch is disposable. The report is the artifact.
+
+---
+
+# Baseline and diff-aware falsification
+
+The first falsification pass should attack the whole instrument.
+
+After the report is triaged and the team fixes or resolves the findings, that resolved state becomes a **falsification baseline**.
+
+That baseline should be recorded as:
+
+* commit hash
+* branch
+* date
+* falsification report ID
+* resolved findings
+* unresolved accepted limitations
+* regression tests added
+* doctrine or architecture decisions made
+* known remaining risks
+
+From that point forward, the falsification agent does not need to attack the entire project every time.
+
+Instead, future passes should begin with a diff from the last falsification baseline.
+
+The agent should ask:
+
+* What changed since the last clean falsification baseline?
+* Which files, schemas, reports, UI components, worlds, motifs, doctrines, or tests changed?
+* What claims or statuses did those changes affect?
+* What depends on those changed artifacts?
+* What downstream modules consume them?
+* What adjacent systems could be impacted indirectly?
+
+Then the agent attacks:
+
+1. the changed artifacts,
+2. their direct dependencies,
+3. their downstream consumers,
+4. any claim/status/report surfaces that depend on them,
+5. any tests or UI views that may now be stale.
+
+So the pattern becomes:
+
+First pass:
+
+“Pressure-test the whole instrument.”
+
+Later passes:
+
+“Pressure-test the diff and everything that spiderwebs from the diff.”
+
+This makes falsification scalable.
+
+Every few major campaigns, or after large architecture changes, the team can still run a full-project pass again. But routine falsification should be diff-aware.
+
+---
+
+# Attack layers
+
+The falsification agent should attack the project at multiple levels.
+
+## 1. Code-level attacks
+
+Try to break ordinary implementation behavior.
+
+Examples:
+
+* malformed files
+* missing files
+* invalid JSON
+* weird paths
+* empty directories
+* corrupted snapshots
+* stale cache
+* bad timestamps
+* unexpected branch state
+* parser failures
+* UI readers crashing
+* tests depending on current directory
+* snapshot export writing somewhere it should not
+
+Question:
+
+“What breaks when inputs are ugly or incomplete?”
+
+---
+
+## 2. Fake-green attacks
+
+Try to make the project look healthy while being wrong.
+
+Examples:
+
+* tests pass while asserting too little
+* empty results count as success
+* degraded adapters appear healthy
+* excluded failures are hidden
+* placeholder data looks real
+* reports show “verified” when backing data is absent
+* high pass rate with low audit coverage
+* dashboard status says green while source artifacts are missing
+* a metric passes because the threshold is too broad
+
+Question:
+
+“What passes but should not?”
+
+---
+
+## 3. Claim-boundary attacks
+
+Try to blur exploratory, candidate, audited, verified, falsified, and claim-bearing states.
+
+Examples:
+
+* mock Factory Intake records look promoted
+* basin-floor placeholders look measured
+* draft motifs look calibrated
+* “claim-ready” means different things in different rooms
+* W0/W-1 formal layers look like empirical worlds
+* falsifier-active, failed, degraded, and warning states are visually or semantically confused
+* screenshot/demo mode makes exploratory work look stronger than it is
+
+Question:
+
+“What looks more certain than it really is?”
+
+---
+
+## 4. Provenance attacks
+
+Try to create or identify objects without proper source lineage.
+
+Examples:
+
+* BiologicalClaim without source
+* TraitDecomposition without evidence
+* ProcessRole without provenance
+* report without campaign link
+* falsifier without target claim
+* doctrine rule without ratifying campaign
+* snapshot without timestamp or hash
+* audit finding without who-caught / who-missed
+* UI status without source artifact
+
+Question:
+
+“What can enter the system without a traceable origin?”
+
+---
+
+## 5. Data-shape attacks
+
+Try to break assumptions about the shape of project data.
+
+Examples:
+
+* missing fields
+* extra fields
+* wrong enum values
+* duplicated IDs
+* contradictory statuses
+* null values in required fields
+* out-of-order campaign numbers
+* malformed task telemetry
+* non-monotonic timestamps
+* repeated branch names
+* partial reports
+* report JSON and Markdown disagree
+
+Question:
+
+“What does the system silently assume about its data?”
+
+---
+
+## 6. UI truthfulness attacks
+
+Try to make the Control Room misrepresent reality.
+
+Examples:
+
+* missing artifacts rendered as successful empty states
+* mock data visually indistinguishable from real data
+* colors imply wrong status
+* “verified” badges reused for different meanings
+* placeholders not clearly marked
+* no-data states too subtle
+* screenshots hide uncertainty
+* graph omits disconnected or failed nodes
+* snapshot export drops critical warnings
+
+Question:
+
+“Can the interface lie by accident?”
+
+---
+
+## 7. Scientific-integrity attacks
+
+Try to find ways the project could contaminate its own research discipline.
+
+Examples:
+
+* detectors reading labels instead of trace contents
+* thresholds weakened to pass campaigns
+* calibration corpora too easy
+* falsifier reports too thin to support the claim
+* negative results hidden in side files
+* claim-bearing reports depending on exploratory artifacts
+* world status upgraded without enough evidence
+* density labels implying more than the world actually contains
+
+Question:
+
+“What would make this scientifically hollow while still looking impressive?”
+
+---
+
+## 8. Ontology / architecture edge attacks
+
+Try to surface conceptual ambiguity that cannot be fixed by code alone.
+
+Examples:
+
+* Is W0 a world, a formal basis layer, or a substrate?
+* When is a sparse world densified?
+* What counts as “same motif” across worlds?
+* When is a process role too broad?
+* When does an interaction channel become a motif?
+* What makes an overlap field real rather than vague?
+* What makes a falsifier real versus an expected limitation?
+* Can a mathematical primitive be claim-ready, or does it need a different status class?
+
+Question:
+
+“What needs human/architectural judgment rather than a patch?”
+
+---
+
+## 9. AI-workflow attacks
+
+Try to break the multi-agent process itself.
+
+Examples:
+
+* Builder satisfies visible tests but misses task intent
+* Architect approves because report sounds plausible
+* Codex catches something late that should have been linted
+* estimates improve but scope quality drops
+* audit findings are not converted into tests
+* repeated failure modes are documented but not enforced
+* preflight advice is ignored
+* task logs omit actual command output or timing
+
+Question:
+
+“How can the AI organization fool itself?”
+
+---
+
+# What the report should do
+
+The final report should organize findings by attack layer.
+
+For each meaningful finding, include:
+
+* what was attacked
+* what method was used
+* what happened
+* why it matters
+* how to reproduce it
+* whether it is a technical bug, fake-green risk, provenance issue, UI truthfulness issue, scientific-integrity issue, AI-workflow issue, or ontology question
+* whether the issue was found in the full baseline pass or a diff-aware pass
+* if diff-aware, which changed artifact or dependency chain led to the finding
+
+Straightforward technical breakages can go to Builder/Codex for fixes.
+
+Deeper conceptual issues should be routed to Human PI, Claude Architect, Codex, or GPT for discussion.
+
+---
+
+# Falsification baseline lifecycle
+
+The workflow should be:
+
+1. Run a full Branch Falsification Pass.
+2. Triage findings.
+3. Fix technical issues.
+4. Resolve or document conceptual questions.
+5. Add regression tests where appropriate.
+6. Record unresolved accepted limitations.
+7. Freeze that state as a falsification baseline.
+8. Continue normal development.
+9. On later passes, diff from the baseline.
+10. Attack changed artifacts and dependency spiderwebs.
+11. Periodically run a new full-project pass.
+
+The falsification baseline is not a claim that the project is perfect.
+
+It means:
+
+“At this commit, these attack layers were applied, these findings were resolved or documented, and future diff-aware falsification can use this state as its reference point.”
+
+---
+
+# Operating principle
+
+This is a pressure test, not a feature branch.
+
+The agent should ask:
+
+“How does this fail?”
+
+“What looks real but is not?”
+
+“What passes but should not?”
+
+“What has no provenance?”
+
+“What becomes misleading in screenshots?”
+
+“What changed since the last falsification baseline?”
+
+“What dependencies spiderweb out from those changes?”
+
+“What is only implicitly defined?”
+
+“What would a skeptical reviewer attack first?”
+
+The branch is allowed to get messy.
+
+The report must be clear.
+
+The report is the value.

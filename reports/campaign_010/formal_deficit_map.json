@@ -8,6 +8,52 @@
     "mode": "candidate_replication",
     "verdict": "replicated"
   },
+  "campaign_020_substrate_blocked_sweep": {
+    "artifact": "reports/campaign_020/full_report.json",
+    "campaign_id": "campaign_020",
+    "claim_promotion_allowed": false,
+    "mode": "substrate_blocked_sweep_no_promotion",
+    "motif_verdicts": {
+      "motif.autocatalytic_closure.draft": {
+        "N_run": 10000,
+        "observed_gap": 0.6,
+        "primary_lens": "graph",
+        "requested_alias": "motif.autocatalytic_closure.draft",
+        "verdict": "signal_survives_shuffle"
+      },
+      "motif.externalized_memory.draft": {
+        "N_run": 10000,
+        "observed_gap": 0.5,
+        "primary_lens": "graph",
+        "requested_alias": "motif.externalized_memory.draft",
+        "verdict": "signal_survives_shuffle"
+      },
+      "motif.repair.draft": {
+        "N_run": 10000,
+        "observed_gap": 0.5,
+        "primary_lens": "graph",
+        "requested_alias": "motif.repair.draft",
+        "verdict": "signal_survives_shuffle"
+      },
+      "motif.replication_lineage.draft": {
+        "N_run": 10000,
+        "observed_gap": 0.6,
+        "primary_lens": "graph",
+        "requested_alias": "motif.replication_lineage.draft",
+        "verdict": "signal_survives_shuffle"
+      },
+      "motif.self_maintained_boundary.draft": {
+        "N_run": 10000,
+        "observed_gap": 0.5,
+        "primary_lens": "graph",
+        "requested_alias": "motif.self_boundary.draft",
+        "verdict": "signal_survives_shuffle"
+      }
+    },
+    "rationale": "Remaining motif sweep uses preregistered within-substrate label shuffles; survival queues adversarial controls rather than promotion.",
+    "schema": "Campaign020DeficitMapUpdate.v1",
+    "task_id": "TASK-031"
+  },
   "campaign_id": "campaign-010",
   "candidates": [
     {

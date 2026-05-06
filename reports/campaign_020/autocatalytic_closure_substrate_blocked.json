@@ -1,0 +1,43 @@
+{
+  "N_attempted": 10000,
+  "N_run": 10000,
+  "empirical_p": 0.00019998000199980003,
+  "evaluation_row_count": 16,
+  "interpretation": {
+    "rationale": "Observed gap 0.600000 exceeds the within-substrate shuffled 95% CI upper bound 0.300000; this motif's primary-lens score is not explained by substrate identity alone.",
+    "verdict": "signal_survives_shuffle"
+  },
+  "mode_tag": "exploratory",
+  "motif_id": "motif.autocatalytic_closure.draft",
+  "nondeclined_trace_count": 16,
+  "null_distribution": {
+    "ci": {
+      "ci_high": 0.29999999999999993,
+      "ci_low": -0.29999999999999993
+    },
+    "mean": 0.0007200000000000002
+  },
+  "observed_gap": 0.6,
+  "primary_lens": "graph",
+  "requested_alias": "motif.autocatalytic_closure.draft",
+  "schema": "Campaign020MotifSubstrateBlockedControl.v1",
+  "seed": 20020,
+  "step_0a": {
+    "passed": true,
+    "per_stratum": {
+      "crn::campaign_020_native_generator": {
+        "meets_c014_floor": true,
+        "minority": 8,
+        "negative": 8,
+        "positive": 8,
+        "total": 16
+      }
+    },
+    "ready_strata": [
+      "crn::campaign_020_native_generator"
+    ],
+    "ready_strata_count": 1,
+    "strata_count": 1
+  },
+  "step_0b_run": true
+}

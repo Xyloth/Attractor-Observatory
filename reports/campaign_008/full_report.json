@@ -1,0 +1,136 @@
+{
+  "artifacts": [
+    {
+      "bytes": 24269,
+      "path": "reports\\campaign_008\\substrate_completion.json",
+      "present": true
+    },
+    {
+      "bytes": 24192,
+      "path": "reports\\campaign_008\\cli_substrate_completion.json",
+      "present": true
+    },
+    {
+      "bytes": 387,
+      "path": "reports\\campaign_008\\d14_world_audit.json",
+      "present": true
+    },
+    {
+      "bytes": 18152,
+      "path": "reports\\campaign_008\\calibration_real_k3_k10.json",
+      "present": true
+    },
+    {
+      "bytes": 10645,
+      "path": "reports\\campaign_008\\w6_ecosystem.json",
+      "present": true
+    },
+    {
+      "bytes": 10027,
+      "path": "reports\\campaign_008\\w7_swarm.json",
+      "present": true
+    },
+    {
+      "bytes": 12846,
+      "path": "reports\\campaign_008\\w8_cognitive.json",
+      "present": true
+    },
+    {
+      "bytes": 10728,
+      "path": "reports\\campaign_008\\w9_origins_chemistry.json",
+      "present": true
+    },
+    {
+      "bytes": 10774,
+      "path": "reports\\campaign_008\\w10_hypergraph.json",
+      "present": true
+    },
+    {
+      "bytes": 10007,
+      "path": "reports\\campaign_008\\w11_quasispecies.json",
+      "present": true
+    },
+    {
+      "bytes": 11219,
+      "path": "reports\\campaign_008\\w12_symbiogenesis.json",
+      "present": true
+    },
+    {
+      "bytes": 11740,
+      "path": "reports\\campaign_008\\w13_multiscale.json",
+      "present": true
+    }
+  ],
+  "campaign_id": "campaign-008",
+  "claim_eligible": false,
+  "content_hash": "sha256:aaa882c54cfa33a5720277fb27faf635b3b77eae6eea957c9242265b8297a0f6",
+  "created_at": "2026-05-06T02:17:49Z",
+  "gate_count": 12,
+  "gates": [
+    {
+      "evidence": "reports\\campaign_008\\substrate_completion.json",
+      "gate": "campaign-008 artifact present: substrate_completion.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\cli_substrate_completion.json",
+      "gate": "campaign-008 artifact present: cli_substrate_completion.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\d14_world_audit.json",
+      "gate": "campaign-008 artifact present: d14_world_audit.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\calibration_real_k3_k10.json",
+      "gate": "campaign-008 artifact present: calibration_real_k3_k10.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w6_ecosystem.json",
+      "gate": "campaign-008 artifact present: w6_ecosystem.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w7_swarm.json",
+      "gate": "campaign-008 artifact present: w7_swarm.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w8_cognitive.json",
+      "gate": "campaign-008 artifact present: w8_cognitive.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w9_origins_chemistry.json",
+      "gate": "campaign-008 artifact present: w9_origins_chemistry.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w10_hypergraph.json",
+      "gate": "campaign-008 artifact present: w10_hypergraph.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w11_quasispecies.json",
+      "gate": "campaign-008 artifact present: w11_quasispecies.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w12_symbiogenesis.json",
+      "gate": "campaign-008 artifact present: w12_symbiogenesis.json",
+      "passed": true
+    },
+    {
+      "evidence": "reports\\campaign_008\\w13_multiscale.json",
+      "gate": "campaign-008 artifact present: w13_multiscale.json",
+      "passed": true
+    }
+  ],
+  "mode_tag": "exploratory",
+  "passed_gate_count": 12,
+  "schema": "CanonicalCampaignFullReport.v1",
+  "status": "green",
+  "summary": "Substrate completion, D14 world audit, calibration, and W6-W13 artifacts are present; this wrapper makes Campaign 008 canonical-report discovery explicit without changing scientific verdicts."
+}

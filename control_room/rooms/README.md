@@ -18,7 +18,7 @@ render path**. No fallbacks, no plausible defaults, no styled mocks.
 | 6 | Basin-Floor Lab | `basin_floor_lab.py` | methods_falsifiers + Campaign 010 deficit map + Campaign 013 replication / adversarial / substrate-blocked records | 1 |
 | 7 | Falsifier & Negative-Space Ledger | `falsifier_ledger.py` | methods_falsifiers, negative_space | 1 |
 | 8 | Doctrine & Integrity Console | `doctrine_console.py` | doctrine, factory_store (detector decline) | 1 |
-| 9 | Factory Intake Dock | `factory_intake_dock.py` | Campaign 016 `factory_intake_dock_state.json` | 1 |
+| 9 | Factory Intake Dock | `factory_intake_dock.py` | `factory_lowlevel.live_pipeline` + `control_room/cache/factory_runs/` | 2 |
 | 10 | Project Graph | `project_graph.py` | All Phase 0 adapters + edge enrichment from papers/methods + BUILD_LOG | 2 |
 | 11 | Portfolio & Demo Mode | `portfolio_demo.py` | snapshot.build_snapshot (composes all adapters) + screenshot capture rig | 3 |
 
@@ -63,7 +63,7 @@ adapter returns non-ok or if no falsifier records exist.
   Loop convergence story rendered as a single chart.
 - Frozen Class 1-12 mistake catalog with status (10/11 ratified, 12 candidate).
 - Recent audit catches from BUILD_LOG.
-- Doctrine arc (D7-D22) cards.
+- Doctrine arc (D7-D25) cards.
 
 ## Campaign Command (`campaign_command.py`)
 
@@ -122,10 +122,17 @@ as load-bearing signal per D17.
 
 ## Factory Intake Dock (`factory_intake_dock.py`)
 
-**Purpose:** Campaign 016 autonomous Factory monitor.
+**Purpose:** Live multi-world Factory console.
 
-**Quarantine:** if no `factory_intake_dock_state.json` exists, the room
-renders honest empty-state pointing to `python make_campaign_016.py`.
+**Surfaces:** target-world selector, source-adapter selector, source-bound
+parameter inputs, FIRE button, live stage progress, life-form trace list,
+trace/lens drilldown, per-world motif fire rates, and run history.
+
+**Artifacts:** run records live under `control_room/cache/factory_runs/`;
+Campaign 021 report and traces live under `reports/campaign_021/`.
+
+**D22/D23:** empty results stay visible as no-fire or no-run states; trace
+paths in run records are dereferenceable in the shipped workspace.
 
 ## Project Graph (`project_graph.py`)
 

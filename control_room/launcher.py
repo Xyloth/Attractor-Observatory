@@ -9,9 +9,9 @@ tab) while keeping Streamlit as the underlying renderer. WebView2 (built
 into modern Windows) is the rendering engine on Windows.
 
 CB-007 hardening:
-* Port-conflict detection: if the default port is in use, attempt to
-  kill the holding process before starting fresh. Replicates what the
-  Architect did manually earlier.
+* Port-conflict detection: if the default port is in use, fail with a
+  clear message by default. Destructive port release is opt-in via
+  ``--port-kill``.
 * Venv-aware Streamlit detection: tries ``streamlit`` on PATH first,
   falls back to ``python -m streamlit``, surfaces a useful error if
   neither path works (with the exact pip command to install).
@@ -23,7 +23,7 @@ CB-007 hardening:
 Read-only discipline (D22):
 * This module orchestrates a subprocess; it does not write project state.
 * Streamlit subprocess output is suppressed to keep the launcher quiet.
-* Failure modes (port still in use after kill, streamlit boot timeout,
+* Failure modes (port still in use, streamlit boot timeout,
   missing deps) surface as console messages, not silent fallbacks.
 
 Run via ``python -m control_room.launcher`` or via the ``Launch Control
@@ -161,7 +161,16 @@ def _start_streamlit(port: int, streamlit_cmd: list[str]) -> subprocess.Popen:
         "--server.port", str(port),
         "--server.headless", "true",
         "--browser.gatherUsageStats", "false",
-        "--server.fileWatcherType", "none",
+        # File watching is now ENABLED (was 'none'). This means Python
+        # edits in control_room/ get picked up automatically — no need to
+        # close + relaunch the launcher to see new room code, CSS tokens,
+        # or component changes. The user explicitly hit this trap when
+        # CB-007 polish + CB-008 changes weren't visible in a long-lived
+        # pywebview session. Streamlit's auto-watcher is fine here; we're
+        # not concerned about reload performance, we're concerned about
+        # stale UIs misleading the user.
+        "--server.fileWatcherType", "auto",
+        "--server.runOnSave", "true",
     ]
     creationflags = 0
     if sys.platform == "win32":
@@ -181,7 +190,7 @@ def main(port: int = DEFAULT_PORT) -> int:
     parser = argparse.ArgumentParser(prog="control_room.launcher")
     parser.add_argument("--port", type=int, default=port, help="Streamlit port (default 8765)")
     parser.add_argument("--no-window", action="store_true", help="Skip pywebview, just start streamlit")
-    parser.add_argument("--no-port-kill", action="store_true", help="Skip auto-kill of port-holding process")
+    parser.add_argument("--port-kill", action="store_true", help="Opt in to killing the process holding --port")
     args = parser.parse_args()
 
     streamlit_cmd = _resolve_streamlit_command()
@@ -195,10 +204,10 @@ def main(port: int = DEFAULT_PORT) -> int:
         return 2
 
     if _port_in_use(args.port):
-        if args.no_port_kill:
+        if not args.port_kill:
             print(
-                f"[control-room] ERROR: Port {args.port} is in use and --no-port-kill set.\n"
-                f"  Free the port manually or rerun without --no-port-kill.",
+                f"[control-room] ERROR: Port {args.port} is in use.\n"
+                f"  Free the port manually, choose --port <n>, or rerun with --port-kill to opt in to process termination.",
                 flush=True,
             )
             return 3

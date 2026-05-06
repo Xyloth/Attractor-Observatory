@@ -89,7 +89,7 @@ class NISTAtomicSpectraAdapter:
         }
         return self.base_url + "?" + urllib.parse.urlencode(params)
 
-    def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20) -> AdapterResult:
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
         cache_root = Path(cache_dir) / "nist_atomic_spectra"
         cache_root.mkdir(parents=True, exist_ok=True)
         raw_parts: list[str] = []
@@ -97,7 +97,7 @@ class NISTAtomicSpectraAdapter:
         retrieval_mode = "network"
         for spectrum in self.spectra:
             cache_path = cache_root / f"{spectrum.replace(' ', '_')}.csv"
-            if cache_path.exists():
+            if cache_path.exists() and not force_refresh:
                 raw_parts.append(cache_path.read_text(encoding="utf-8-sig"))
                 continue
             if allow_network:
@@ -212,8 +212,8 @@ class MathPrimitivesCatalogAdapter:
             retrieval_mode_default="dry_run",
         )
 
-    def fetch(self, cache_dir: str | Path, *, allow_network: bool = False, timeout: int = 20) -> AdapterResult:
-        del allow_network, timeout
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = False, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        del allow_network, timeout, force_refresh
         cache_root = Path(cache_dir) / "math_primitives"
         cache_root.mkdir(parents=True, exist_ok=True)
         source = self.source_definition()
@@ -270,7 +270,7 @@ class MathPrimitivesCatalogAdapter:
 
 class PubChemSmallMoleculeAdapter:
     adapter_id = "adapter.pubchem.small_molecule_primitives.v0"
-    parser_version = "pubchem-pug-rest-property-parser.v1"
+    parser_version = "pubchem-pug-rest-property-parser.v2"
     cids = {
         "water": 962,
         "methane": 297,
@@ -298,10 +298,10 @@ class PubChemSmallMoleculeAdapter:
         )
 
     def _query_url(self, cid: int) -> str:
-        props = "MolecularFormula,CanonicalSMILES,IsomericSMILES,MolecularWeight,HeavyAtomCount,Complexity"
+        props = "MolecularFormula,CanonicalSMILES,IsomericSMILES,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity"
         return f"{self.base_url}/{cid}/property/{props}/JSON"
 
-    def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20) -> AdapterResult:
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
         cache_root = Path(cache_dir) / "pubchem_small_molecules"
         cache_root.mkdir(parents=True, exist_ok=True)
         source = self.source_definition()
@@ -311,7 +311,7 @@ class PubChemSmallMoleculeAdapter:
         property_rows: list[dict[str, Any]] = []
         for name, cid in self.cids.items():
             cache_path = cache_root / f"cid_{cid}.json"
-            if cache_path.exists():
+            if cache_path.exists() and not force_refresh:
                 raw = cache_path.read_text(encoding="utf-8-sig")
             elif allow_network:
                 try:
@@ -349,8 +349,13 @@ class PubChemSmallMoleculeAdapter:
     def _parse_property_row(self, raw: str, cid: int, fallback_name: str) -> dict[str, Any]:
         import json
 
-        payload = json.loads(raw)
+        try:
+            payload = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Malformed PubChem JSON for CID {cid}: {exc}") from exc
         props = payload.get("PropertyTable", {}).get("Properties", [])
+        if not isinstance(props, list):
+            raise ValueError(f"Malformed PubChem property table for CID {cid}: Properties is not a list")
         if not props:
             props = PUBCHEM_SMALL_MOLECULE_SEEDS[cid]["PropertyTable"]["Properties"]
         row = dict(props[0])
@@ -360,17 +365,32 @@ class PubChemSmallMoleculeAdapter:
 
     def _record_from_row(self, row: dict[str, Any], source: SourceDefinition) -> EmpiricalRecord:
         cid = int(row["CID"])
-        smiles = str(row.get("CanonicalSMILES") or row.get("IsomericSMILES") or "")
+        smiles = _first_present(
+            row,
+            (
+                "CanonicalSMILES",
+                "IsomericSMILES",
+                "SMILES",
+                "ConnectivitySMILES",
+            ),
+            default="",
+        )
         formula = str(row.get("MolecularFormula", ""))
-        atom_count = int(row.get("HeavyAtomCount") or _count_formula_atoms(formula))
+        atom_count = _int_or(row.get("HeavyAtomCount"), _count_formula_atoms(formula))
+        if atom_count < 0:
+            raise ValueError(f"PubChem CID {cid} has nonsensical HeavyAtomCount={atom_count}")
+        molecular_weight = _float_or(row.get("MolecularWeight"), 0.0)
+        complexity = _float_or(row.get("Complexity"), 0.0)
+        if molecular_weight < 0 or complexity < 0:
+            raise ValueError(f"PubChem CID {cid} has negative molecular metrics")
         payload = {
             "cid": cid,
             "molecular_formula": formula,
             "canonical_smiles": smiles,
-            "molecular_weight": float(row.get("MolecularWeight") or 0.0),
+            "molecular_weight": molecular_weight,
             "heavy_atom_count": atom_count,
             "bond_topology_proxy": _smiles_topology(smiles),
-            "complexity": float(row.get("Complexity") or 0.0),
+            "complexity": complexity,
             "source_table": "PubChem PUG-REST compound property JSON",
         }
         provenance = {
@@ -394,6 +414,496 @@ class PubChemSmallMoleculeAdapter:
         )
 
 
+class KEGGEcoliCRNAdapter:
+    adapter_id = "adapter.kegg.ecoli_mg1655.metabolic_crn.v0"
+    parser_version = "kegg-ecoli-metabolic-crn-parser.v1"
+    pathway_url = "https://rest.kegg.jp/list/pathway/eco"
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id="source.kegg.ecoli_mg1655.metabolic_network",
+            name="KEGG E. coli K-12 MG1655 metabolic pathway network",
+            url="https://www.kegg.jp/kegg-bin/show_organism?org=eco",
+            format="KEGG REST pathway list plus bundled reaction-edge projection",
+            license_class="metadata_only",
+            license_note=(
+                "KEGG REST metadata is used as source provenance; exported Factory records keep compact derived "
+                "network summaries and do not redistribute KEGG pathway pages or bulk raw files."
+            ),
+            refresh_cadence="monthly",
+            target_world="crn",
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="dry_run",
+        )
+
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        cache_root = Path(cache_dir) / "kegg_ecoli_mg1655"
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        warnings: list[str] = []
+        retrieval_mode = "bundled_authoritative_seed"
+        cache_path = cache_root / "pathway_eco.tsv"
+        raw = _rows_to_tsv(KEGG_ECOLI_CRN_SEED["pathways"])
+        if cache_path.exists() and not force_refresh:
+            raw = cache_path.read_text(encoding="utf-8-sig")
+            retrieval_mode = "cache"
+        elif allow_network:
+            try:
+                with urllib.request.urlopen(self.pathway_url, timeout=timeout) as response:
+                    raw = response.read().decode("utf-8", errors="replace")
+                cache_path.write_text(raw, encoding="utf-8")
+                retrieval_mode = "network"
+            except Exception as exc:  # pragma: no cover - network fallback is environment dependent.
+                warnings.append(f"kegg_fetch_failed:{type(exc).__name__}")
+                cache_path.write_text(raw, encoding="utf-8")
+        else:
+            cache_path.write_text(raw, encoding="utf-8")
+        record = self._record_from_seed(source, raw, retrieval_mode)
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw, "seed_edges": KEGG_ECOLI_CRN_SEED["reaction_edges"]}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw),
+            raw_cache_path=str(cache_root),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="derived_reaction_network_summary_only",
+            record_count=1,
+            retrieval_mode=retrieval_mode,
+        )
+        return AdapterResult(source=source, cache_entry=cache_entry, records=[record], warnings=warnings)
+
+    def _record_from_seed(self, source: SourceDefinition, raw: str, retrieval_mode: str) -> EmpiricalRecord:
+        pathway_count = sum(1 for line in raw.splitlines() if line.strip())
+        seed = KEGG_ECOLI_CRN_SEED
+        species = sorted({name for edge in seed["reaction_edges"] for name in (edge["from"], edge["to"])})
+        initial_state = {name: (8.0 if index == 0 else 1.0) for index, name in enumerate(species)}
+        reactions = []
+        for index, edge in enumerate(seed["reaction_edges"]):
+            degree = float(edge.get("degree_proxy", 1.0))
+            reactions.append(
+                {
+                    "reaction_id": edge["reaction_id"],
+                    "reactants": {edge["from"]: 1.0},
+                    "products": {edge["to"]: 1.0},
+                    "catalysts": [],
+                    "source_enzymes": edge.get("enzymes", []),
+                    "rate": round(0.0125 * max(degree, 1.0), 6),
+                    "rate_constant": round(0.0125 * max(degree, 1.0), 6),
+                    "source_pathway": edge["pathway_id"],
+                    "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
+                }
+            )
+        payload = {
+            "organism": "Escherichia coli K-12 MG1655",
+            "organism_code": "eco",
+            "pathway_count_observed": pathway_count,
+            "seed_pathway_count": len(seed["pathways"]),
+            "reaction_edge_count": len(reactions),
+            "species_count": len(species),
+            "reaction_edges": seed["reaction_edges"],
+            "world_parameters": {
+                "initial_state": initial_state,
+                "reactions": reactions,
+                "projection_basis": "kegg_ecoli_structural_crn_v0",
+                "source_undertermination": "KEGG structural topology does not provide rate constants for every edge; rates are deterministic degree-scaled projections and marked exploratory.",
+            },
+            "source_table": "KEGG REST pathway list and curated KEGG central-metabolism edge summary",
+        }
+        provenance = {
+            "source_url": self.pathway_url,
+            "source_home": source.url,
+            "retrieved_at": utc_now(),
+            "authority": "KEGG organism code eco, E. coli K-12 MG1655",
+            "retrieval_mode": retrieval_mode,
+            "raw_exported": False,
+        }
+        record_id = sha256({"source": source.source_id, "organism": "eco", "payload": payload})
+        return EmpiricalRecord(
+            record_id=record_id,
+            source_id=source.source_id,
+            world_family="crn",
+            record_type="kegg_metabolic_network_summary",
+            canonical_name="KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+            payload=payload,
+            provenance=provenance,
+            license_class=source.license_class,
+        )
+
+
+class ReactionDiffusionBenchmarkAdapter:
+    adapter_id = "adapter.peer_reviewed.reaction_diffusion_benchmarks.v0"
+    parser_version = "reaction-diffusion-benchmark-catalog.v1"
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id="source.peer_reviewed.reaction_diffusion_benchmarks",
+            name="Peer-reviewed reaction-diffusion benchmark parameter catalog",
+            url="doi-backed curated catalog embedded in TASK-033",
+            format="curated DOI catalog",
+            license_class="metadata_only",
+            license_note="Bibliographic metadata and derived benchmark parameters only; no article text redistributed.",
+            refresh_cadence="manual_spec_review",
+            target_world="field",
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="dry_run",
+        )
+
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = False, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        del allow_network, timeout, force_refresh
+        cache_root = Path(cache_dir) / "reaction_diffusion_benchmarks"
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        raw = "\n".join(sorted(row["benchmark"] + "\t" + row["source_url"] for row in REACTION_DIFFUSION_SEEDS))
+        (cache_root / "benchmarks.tsv").write_text(raw + "\n", encoding="utf-8")
+        records = []
+        for seed in REACTION_DIFFUSION_SEEDS:
+            payload = {
+                "benchmark": seed["benchmark"],
+                "canonical_name": seed["canonical_name"],
+                "reaction_model": seed["reaction_model"],
+                "parameter_range": seed["parameter_range"],
+                "world_parameters": seed["world_parameters"],
+                "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
+            }
+            provenance = {
+                "source_url": seed["source_url"],
+                "citation": seed["citation"],
+                "retrieved_at": utc_now(),
+                "authority": "peer_reviewed_reaction_diffusion_literature",
+                "raw_exported": False,
+            }
+            record_id = sha256({"source": source.source_id, "benchmark": seed["benchmark"], "payload": payload})
+            records.append(
+                EmpiricalRecord(
+                    record_id=record_id,
+                    source_id=source.source_id,
+                    world_family="field",
+                    record_type="reaction_diffusion_benchmark",
+                    canonical_name=seed["canonical_name"],
+                    payload=payload,
+                    provenance=provenance,
+                    license_class=source.license_class,
+                )
+            )
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw),
+            raw_cache_path=str(cache_root),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="bibliographic_metadata_and_derived_parameters_only",
+            record_count=len(records),
+            retrieval_mode="bundled_peer_reviewed_catalog",
+        )
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=[])
+
+
+class PrebioticChemistryCatalogAdapter:
+    adapter_id = "adapter.peer_reviewed.prebiotic_chemistry_benchmarks.v0"
+    parser_version = "prebiotic-chemistry-benchmark-catalog.v1"
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id="source.peer_reviewed.prebiotic_chemistry_catalog",
+            name="Peer-reviewed prebiotic chemistry benchmark catalog",
+            url="doi-backed curated catalog embedded in TASK-033",
+            format="curated DOI catalog",
+            license_class="metadata_only",
+            license_note="Bibliographic metadata and derived benchmark descriptors only; no article text redistributed.",
+            refresh_cadence="manual_spec_review",
+            target_world="origins_chemistry",
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="dry_run",
+        )
+
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = False, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        del allow_network, timeout, force_refresh
+        cache_root = Path(cache_dir) / "prebiotic_chemistry"
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        raw = "\n".join(sorted(row["benchmark"] + "\t" + row["source_url"] for row in PREBIOTIC_CHEMISTRY_SEEDS))
+        (cache_root / "benchmarks.tsv").write_text(raw + "\n", encoding="utf-8")
+        records = []
+        for seed in PREBIOTIC_CHEMISTRY_SEEDS:
+            payload = {
+                "benchmark": seed["benchmark"],
+                "canonical_name": seed["canonical_name"],
+                "chemistry_context": seed["chemistry_context"],
+                "parameter_basis": seed["parameter_basis"],
+                "world_parameters": seed["world_parameters"],
+                "source_table": "peer-reviewed prebiotic chemistry benchmark catalog",
+            }
+            provenance = {
+                "source_url": seed["source_url"],
+                "citation": seed["citation"],
+                "retrieved_at": utc_now(),
+                "authority": "peer_reviewed_prebiotic_chemistry_literature",
+                "raw_exported": False,
+            }
+            record_id = sha256({"source": source.source_id, "benchmark": seed["benchmark"], "payload": payload})
+            records.append(
+                EmpiricalRecord(
+                    record_id=record_id,
+                    source_id=source.source_id,
+                    world_family="origins_chemistry",
+                    record_type="prebiotic_chemistry_benchmark",
+                    canonical_name=seed["canonical_name"],
+                    payload=payload,
+                    provenance=provenance,
+                    license_class=source.license_class,
+                )
+            )
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw),
+            raw_cache_path=str(cache_root),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="bibliographic_metadata_and_derived_parameters_only",
+            record_count=len(records),
+            retrieval_mode="bundled_peer_reviewed_catalog",
+        )
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=[])
+
+
+class NCBIHIVQuasispeciesAdapter:
+    adapter_id = "adapter.ncbi.hiv1.quasispecies_pilot.v0"
+    parser_version = "ncbi-hiv1-quasispecies-parser.v1"
+    efetch_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id="source.ncbi.hiv1.reference_quasispecies_pilot",
+            name="NCBI HIV-1 reference sequence plus peer-reviewed mutation-rate metadata",
+            url="https://www.ncbi.nlm.nih.gov/nuccore/K03455.1",
+            format="NCBI E-utilities FASTA plus curated mutation-rate reference",
+            license_class="public_domain",
+            license_note="NCBI sequence records are public-domain US government data; exported records keep compact derived sequence projections.",
+            refresh_cadence="monthly",
+            target_world="quasispecies",
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="dry_run",
+        )
+
+    def _query_url(self) -> str:
+        params = {"db": "nuccore", "id": "K03455.1", "rettype": "fasta", "retmode": "text"}
+        return self.efetch_url + "?" + urllib.parse.urlencode(params)
+
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        cache_root = Path(cache_dir) / "ncbi_hiv1_quasispecies"
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        cache_path = cache_root / "K03455.1.fasta"
+        warnings: list[str] = []
+        retrieval_mode = "bundled_authoritative_seed"
+        raw = HIV1_HXB2_FASTA_SEED
+        if cache_path.exists() and not force_refresh:
+            raw = cache_path.read_text(encoding="utf-8-sig")
+            retrieval_mode = "cache"
+        elif allow_network:
+            try:
+                with urllib.request.urlopen(self._query_url(), timeout=timeout) as response:
+                    raw = response.read().decode("utf-8", errors="replace")
+                cache_path.write_text(raw, encoding="utf-8")
+                retrieval_mode = "network"
+            except Exception as exc:  # pragma: no cover - network fallback is environment dependent.
+                warnings.append(f"ncbi_fetch_failed:{type(exc).__name__}")
+                cache_path.write_text(raw, encoding="utf-8")
+        else:
+            cache_path.write_text(raw, encoding="utf-8")
+        sequence = _fasta_sequence(raw)
+        if not sequence:
+            sequence = _fasta_sequence(HIV1_HXB2_FASTA_SEED)
+            retrieval_mode = "bundled_authoritative_seed"
+        record = self._record_from_sequence(source, sequence, retrieval_mode)
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw, "mutation_rate": HIV1_MUTATION_RATE_SOURCE}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw),
+            raw_cache_path=str(cache_root),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="derived_sequence_projection_and_metadata_only",
+            record_count=1,
+            retrieval_mode=retrieval_mode,
+        )
+        return AdapterResult(source=source, cache_entry=cache_entry, records=[record], warnings=warnings)
+
+    def _record_from_sequence(self, source: SourceDefinition, sequence: str, retrieval_mode: str) -> EmpiricalRecord:
+        window = sequence[:240]
+        master_sequence = _binary_sequence_projection(window)[:24]
+        payload = {
+            "accession": "K03455.1",
+            "organism": "Human immunodeficiency virus type 1 (HXB2)",
+            "sequence_length": len(sequence),
+            "sequence_window_start": 1,
+            "sequence_window_length": len(window),
+            "binary_projection_basis": "A/C -> 0, G/T -> 1 over the first 240 nt of the NCBI reference sequence",
+            "mutation_rate_source": HIV1_MUTATION_RATE_SOURCE,
+            "world_parameters": {
+                "benchmark": "neutral_networks",
+                "master_sequence": master_sequence,
+                "population_size": 96,
+                "mutation_rate": 0.0025,
+                "insertion_rate": 0.0005,
+                "deletion_rate": 0.0005,
+                "neutral_radius": 5,
+                "selection_strength": 0.30,
+                "landscape_mode": "near_neutral",
+                "steps": 48,
+                "source_undertermination": "NCBI reference sequence plus literature mutation-rate metadata is a pilot projection, not a sampled within-host quasispecies panel.",
+            },
+            "source_table": "NCBI E-utilities FASTA and peer-reviewed mutation-rate metadata",
+        }
+        provenance = {
+            "source_url": self._query_url(),
+            "source_home": source.url,
+            "retrieved_at": utc_now(),
+            "authority": "NIH NCBI Nucleotide",
+            "retrieval_mode": retrieval_mode,
+            "raw_exported": False,
+        }
+        record_id = sha256({"source": source.source_id, "accession": "K03455.1", "payload": payload})
+        return EmpiricalRecord(
+            record_id=record_id,
+            source_id=source.source_id,
+            world_family="quasispecies",
+            record_type="ncbi_hiv1_sequence_pilot",
+            canonical_name="NCBI HIV-1 HXB2 quasispecies pilot projection",
+            payload=payload,
+            provenance=provenance,
+            license_class=source.license_class,
+        )
+
+
+class GBIFJornadaEcosystemAdapter:
+    adapter_id = "adapter.gbif.jornada_basin.ecosystem_pilot.v0"
+    parser_version = "gbif-jornada-occurrence-parser.v1"
+    base_url = "https://api.gbif.org/v1/occurrence/search"
+    geometry = "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))"
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id="source.gbif.jornada_basin.ecosystem_occurrences",
+            name="GBIF Jornada Basin ecosystem occurrence pilot",
+            url="https://www.gbif.org/",
+            format="GBIF occurrence search count summaries",
+            license_class="metadata_only",
+            license_note="GBIF occurrence records carry per-record licenses; this adapter exports only compact count summaries and source URLs.",
+            refresh_cadence="monthly",
+            target_world="ecosystem",
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="dry_run",
+        )
+
+    def _query_url(self, scientific_name: str) -> str:
+        params = {"geometry": self.geometry, "scientificName": scientific_name, "limit": 0}
+        return self.base_url + "?" + urllib.parse.urlencode(params)
+
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        cache_root = Path(cache_dir) / "gbif_jornada_ecosystem"
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        warnings: list[str] = []
+        retrieval_mode = "bundled_authoritative_seed"
+        rows: list[dict[str, Any]] = []
+        raw_payloads: list[str] = []
+        for seed in GBIF_JORNADA_ECOSYSTEM_SEED["taxa"]:
+            cache_path = cache_root / f"{seed['scientific_name'].replace(' ', '_')}.json"
+            if cache_path.exists() and not force_refresh:
+                raw = cache_path.read_text(encoding="utf-8-sig")
+                retrieval_mode = "cache" if retrieval_mode != "network" else retrieval_mode
+            elif allow_network:
+                try:
+                    with urllib.request.urlopen(self._query_url(seed["scientific_name"]), timeout=timeout) as response:
+                        raw = response.read().decode("utf-8", errors="replace")
+                    cache_path.write_text(raw, encoding="utf-8")
+                    retrieval_mode = "network"
+                except Exception as exc:  # pragma: no cover - network fallback is environment dependent.
+                    warnings.append(f"gbif_fetch_failed:{seed['scientific_name']}:{type(exc).__name__}")
+                    raw = json_dumps({"count": seed["occurrence_count"], "source": "bundled_authoritative_seed"})
+                    cache_path.write_text(raw, encoding="utf-8")
+            else:
+                raw = json_dumps({"count": seed["occurrence_count"], "source": "bundled_authoritative_seed"})
+                cache_path.write_text(raw, encoding="utf-8")
+            raw_payloads.append(raw)
+            rows.append({**seed, "occurrence_count": _gbif_count_or_seed(raw, seed["occurrence_count"])})
+        record = self._record_from_rows(source, rows, retrieval_mode)
+        raw_joined = "\n---GBIF-TAXON---\n".join(raw_payloads)
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw_joined}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw_joined),
+            raw_cache_path=str(cache_root),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="derived_occurrence_count_summary_only",
+            record_count=1,
+            retrieval_mode=retrieval_mode,
+        )
+        return AdapterResult(source=source, cache_entry=cache_entry, records=[record], warnings=warnings)
+
+    def _record_from_rows(self, source: SourceDefinition, rows: list[dict[str, Any]], retrieval_mode: str) -> EmpiricalRecord:
+        by_guild: dict[str, int] = {}
+        for row in rows:
+            by_guild[row["guild"]] = by_guild.get(row["guild"], 0) + int(row["occurrence_count"])
+        producer = by_guild.get("producer", 0)
+        grazer = by_guild.get("grazer", 0)
+        predator = by_guild.get("predator", 0)
+        decomposer = by_guild.get("decomposer", 0)
+        payload = {
+            "site": "Jornada Basin LTER vicinity",
+            "geometry": self.geometry,
+            "taxa": rows,
+            "guild_occurrence_counts": by_guild,
+            "world_parameters": {
+                "benchmark": "may_stability",
+                "patch_count": 6,
+                "steps": 80,
+                "initial_producers": _sqrt_scaled(producer, 12.0, 80.0),
+                "initial_grazers": _sqrt_scaled(grazer, 4.0, 28.0),
+                "initial_predators": _sqrt_scaled(predator, 1.0, 10.0),
+                "initial_decomposers": _sqrt_scaled(decomposer, 3.0, 18.0),
+                "initial_resource": 95.0,
+                "interaction_strength": 0.50,
+                "interaction_radius": 1.45,
+                "source_undertermination": "GBIF occurrence counts are observation-availability proxies, not biomass estimates; projection is exploratory and audit-visible.",
+            },
+            "source_table": "GBIF occurrence search count summaries by guild taxon",
+        }
+        provenance = {
+            "source_url": self.base_url,
+            "source_home": source.url,
+            "retrieved_at": utc_now(),
+            "authority": "GBIF occurrence API plus Jornada Basin LTER site framing",
+            "retrieval_mode": retrieval_mode,
+            "raw_exported": False,
+        }
+        record_id = sha256({"source": source.source_id, "site": payload["site"], "payload": payload})
+        return EmpiricalRecord(
+            record_id=record_id,
+            source_id=source.source_id,
+            world_family="ecosystem",
+            record_type="gbif_ecosystem_occurrence_summary",
+            canonical_name="GBIF Jornada Basin ecosystem occurrence pilot",
+            payload=payload,
+            provenance=provenance,
+            license_class=source.license_class,
+        )
+
+
 def _seed_rows_to_csv(rows: list[dict[str, str]]) -> str:
     out = io.StringIO()
     writer = csv.DictWriter(out, fieldnames=["Configuration", "Term", "J", "Level (eV)", "Uncertainty (eV)", "Reference"])
@@ -402,10 +912,69 @@ def _seed_rows_to_csv(rows: list[dict[str, str]]) -> str:
     return out.getvalue()
 
 
+def _rows_to_tsv(rows: list[dict[str, Any]]) -> str:
+    return "\n".join("\t".join(str(value) for value in row.values()) for row in rows) + "\n"
+
+
+def _fasta_sequence(raw: str) -> str:
+    sequence = "".join(line.strip().upper() for line in raw.splitlines() if line.strip() and not line.startswith(">"))
+    return "".join(base for base in sequence if base in {"A", "C", "G", "T"})
+
+
+def _binary_sequence_projection(sequence: str) -> str:
+    return "".join("0" if base in {"A", "C"} else "1" for base in sequence if base in {"A", "C", "G", "T"})
+
+
+def _gbif_count_or_seed(raw: str, seed_count: int) -> int:
+    import json
+
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError:
+        return int(seed_count)
+    count = payload.get("count", seed_count)
+    try:
+        return int(count)
+    except (TypeError, ValueError):
+        return int(seed_count)
+
+
+def _sqrt_scaled(count: int, minimum: float, maximum: float) -> float:
+    import math
+
+    return round(max(minimum, min(maximum, math.sqrt(max(int(count), 0)))), 6)
+
+
 def json_dumps(payload: Any) -> str:
     import json
 
     return json.dumps(payload, sort_keys=True, separators=(",", ":"))
+
+
+def _first_present(row: dict[str, Any], keys: tuple[str, ...], *, default: str = "") -> str:
+    for key in keys:
+        value = row.get(key)
+        if value is not None and value != "":
+            return str(value)
+    return default
+
+
+def _int_or(value: Any, default: int) -> int:
+    if value is None or value == "":
+        return default
+    try:
+        return int(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"expected integer-compatible value, got {value!r}") from exc
+
+
+def _float_or(value: Any, default: float) -> float:
+    if value is None or value == "":
+        return default
+    try:
+        return float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"expected float-compatible value, got {value!r}") from exc
 
 
 def _count_formula_atoms(formula: str) -> int:
@@ -547,4 +1116,114 @@ PUBCHEM_SMALL_MOLECULE_SEEDS: dict[int, dict[str, Any]] = {
     280: {"PropertyTable": {"Properties": [{"CID": 280, "MolecularFormula": "CO2", "CanonicalSMILES": "C(=O)=O", "IsomericSMILES": "C(=O)=O", "MolecularWeight": 44.009, "HeavyAtomCount": 3, "Complexity": 18.3}]}},
     222: {"PropertyTable": {"Properties": [{"CID": 222, "MolecularFormula": "H3N", "CanonicalSMILES": "N", "IsomericSMILES": "N", "MolecularWeight": 17.031, "HeavyAtomCount": 1, "Complexity": 0.0}]}},
     241: {"PropertyTable": {"Properties": [{"CID": 241, "MolecularFormula": "C6H6", "CanonicalSMILES": "C1=CC=CC=C1", "IsomericSMILES": "C1=CC=CC=C1", "MolecularWeight": 78.114, "HeavyAtomCount": 6, "Complexity": 15.5}]}},
+}
+
+
+KEGG_ECOLI_CRN_SEED: dict[str, Any] = {
+    "pathways": [
+        {"pathway_id": "eco00010", "name": "Glycolysis / Gluconeogenesis - Escherichia coli K-12 MG1655"},
+        {"pathway_id": "eco00020", "name": "Citrate cycle (TCA cycle) - Escherichia coli K-12 MG1655"},
+        {"pathway_id": "eco00620", "name": "Pyruvate metabolism - Escherichia coli K-12 MG1655"},
+        {"pathway_id": "eco01200", "name": "Carbon metabolism - Escherichia coli K-12 MG1655"},
+    ],
+    "reaction_edges": [
+        {"reaction_id": "R00200", "from": "D-glucose", "to": "D-glucose-6-phosphate", "pathway_id": "eco00010", "enzymes": ["ec:2.7.1.1"], "degree_proxy": 2},
+        {"reaction_id": "R00771", "from": "D-glucose-6-phosphate", "to": "D-fructose-6-phosphate", "pathway_id": "eco00010", "enzymes": ["ec:5.3.1.9"], "degree_proxy": 2},
+        {"reaction_id": "R00756", "from": "D-fructose-6-phosphate", "to": "D-fructose-1,6-bisphosphate", "pathway_id": "eco00010", "enzymes": ["ec:2.7.1.11"], "degree_proxy": 2},
+        {"reaction_id": "R01068", "from": "D-fructose-1,6-bisphosphate", "to": "glyceraldehyde-3-phosphate", "pathway_id": "eco00010", "enzymes": ["ec:4.1.2.13"], "degree_proxy": 3},
+        {"reaction_id": "R01061", "from": "glyceraldehyde-3-phosphate", "to": "3-phospho-D-glyceroyl-phosphate", "pathway_id": "eco00010", "enzymes": ["ec:1.2.1.12"], "degree_proxy": 2},
+        {"reaction_id": "R01512", "from": "3-phospho-D-glyceroyl-phosphate", "to": "3-phospho-D-glycerate", "pathway_id": "eco00010", "enzymes": ["ec:2.7.2.3"], "degree_proxy": 2},
+        {"reaction_id": "R00658", "from": "3-phospho-D-glycerate", "to": "2-phospho-D-glycerate", "pathway_id": "eco00010", "enzymes": ["ec:5.4.2.12"], "degree_proxy": 2},
+        {"reaction_id": "R00200-closure", "from": "2-phospho-D-glycerate", "to": "D-glucose", "pathway_id": "eco01200", "enzymes": ["structural_projection"], "degree_proxy": 1},
+    ],
+}
+
+
+REACTION_DIFFUSION_SEEDS: list[dict[str, Any]] = [
+    {
+        "benchmark": "gray_scott",
+        "canonical_name": "Gray-Scott reaction-diffusion stripes",
+        "reaction_model": "gray_scott",
+        "parameter_range": {"feed": [0.02, 0.08], "kill": [0.045, 0.07]},
+        "world_parameters": {"benchmark": "gray_scott", "steps": 36, "export_interval": 4},
+        "source_url": "https://doi.org/10.1126/science.261.5118.189",
+        "citation": "Pearson, Complex patterns in a simple system, Science, 1993.",
+    },
+    {
+        "benchmark": "brusselator",
+        "canonical_name": "Brusselator reaction-diffusion oscillation",
+        "reaction_model": "brusselator",
+        "parameter_range": {"a": [0.8, 1.2], "b": [2.4, 3.0]},
+        "world_parameters": {"benchmark": "brusselator", "steps": 36, "export_interval": 4},
+        "source_url": "https://doi.org/10.1063/1.1668896",
+        "citation": "Prigogine and Lefever, Symmetry breaking instabilities in dissipative systems, Journal of Chemical Physics, 1968.",
+    },
+    {
+        "benchmark": "schnakenberg",
+        "canonical_name": "Schnakenberg reaction-diffusion spots",
+        "reaction_model": "schnakenberg",
+        "parameter_range": {"a": [0.05, 0.20], "b": [0.8, 1.2]},
+        "world_parameters": {"benchmark": "schnakenberg", "steps": 36, "export_interval": 4},
+        "source_url": "https://doi.org/10.1016/0022-5193(79)90042-0",
+        "citation": "Schnakenberg, Simple chemical reaction systems with limit cycle behaviour, Journal of Theoretical Biology, 1979.",
+    },
+]
+
+
+PREBIOTIC_CHEMISTRY_SEEDS: list[dict[str, Any]] = [
+    {
+        "benchmark": "surface_stabilized_closure",
+        "canonical_name": "Mineral-surface thioester prebiotic closure benchmark",
+        "chemistry_context": "mineral surface catalysis and activated-carbon chemistry",
+        "parameter_basis": "surface adsorption and catalysis strengths projected from mineral-surface closure literature",
+        "world_parameters": {"benchmark": "surface_stabilized_closure", "surface_catalysis": 0.24, "adsorption_rate": 0.34, "steps": 90},
+        "source_url": "https://doi.org/10.1126/science.276.5310.245",
+        "citation": "Huber and Wachtershauser, Activated acetic acid by carbon fixation on (Fe,Ni)S under primordial conditions, Science, 1997.",
+    },
+    {
+        "benchmark": "gradient_anchored_protocell",
+        "canonical_name": "Alkaline hydrothermal gradient protocell benchmark",
+        "chemistry_context": "redox and pH gradients across mineral compartments",
+        "parameter_basis": "gradient and boundary terms projected from alkaline hydrothermal origins literature",
+        "world_parameters": {"benchmark": "gradient_anchored_protocell", "gradient_strength": 0.68, "boundary_polymerization": 0.095, "steps": 90},
+        "source_url": "https://doi.org/10.1098/rstb.2006.1881",
+        "citation": "Martin and Russell, On the origin of biochemistry at an alkaline hydrothermal vent, Philosophical Transactions B, 2007.",
+    },
+]
+
+
+HIV1_MUTATION_RATE_SOURCE = {
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/7609081/",
+    "citation": "Mansky and Temin, Lower in vivo mutation rate of human immunodeficiency virus type 1 than that predicted from the fidelity of purified reverse transcriptase, Journal of Virology, 1995.",
+    "usage": "Pilot quasispecies projection uses a conservative near-neutral mutation-rate scale, not a claim-bearing within-host estimate.",
+}
+
+
+HIV1_HXB2_FASTA_SEED = """>K03455.1 Human immunodeficiency virus type 1 (HXB2), complete genome; HIV1/HTLV-III/LAV reference genome
+TGGAAGGGCTAATTCACTCCCAACGAAGACAAGATATCCTTGATCTGTGGATCTACCACACACAAGGCTA
+CTTCCCTGATTAGCAGAACTACACACCAGGGCCAGGGATCAGATATCCACTGACCTTTGGATGGTGCTAC
+AAGCTAGTACCAGTTGAGCCAGAGAAGTTAGAAGAAGCCAACAAAGGAGAGAACACCAGCTTGTTACACC
+CTGTGAGCCTGCATGGAATGGATGACCCGGAGAGAGAAGTGTTAGAGTGGAGGTTTGACAGCCGCCTAGC
+ATTTCATCACATGGCCCGAGAGCTGCATCCGGAGTACTTCAAGAACTGCTGACATCGAGCTTGCTACAAG
+GGACTTTCCGCTGGGGACTTTCCAGGGAGGCGTGGCCTGGGCGGGACTGGGGAGTGGCGAGCCCTCAGAT
+CCTGCATATAAGCAGCTGCTTTTTGCCTGTACTGGGTCTCTCTGGTTAGACCAGATCTGAGCCTGGGAGC
+TCTCTGGCTAACTAGGGAACCCACTGCTTAAGCCTCAATAAAGCTTGCCTTGAGTGCTTCAAGTAGTGTG
+TGCCCGTCTGTTGTGTGACTCTGGTAACTAGAGATCCCTCAGACCCTTTTAGTCAGTGTGGAAAATCTCT
+AGCAGTGGCGCCCGAACAGGGACCTGAAAGCGAAAGGGAAACCAGAGGAGCTCTC
+"""
+
+
+GBIF_JORNADA_ECOSYSTEM_SEED: dict[str, Any] = {
+    "site": "Jornada Basin LTER vicinity",
+    "geometry": "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))",
+    "snapshot_note": "GBIF occurrence-count seed captured by TASK-033 live smoke on 2026-05-06; counts are observation proxies, not abundance claims.",
+    "taxa": [
+        {"scientific_name": "Bouteloua eriopoda", "guild": "producer", "role": "black grama grass", "occurrence_count": 89},
+        {"scientific_name": "Larrea tridentata", "guild": "producer", "role": "creosote bush", "occurrence_count": 3878},
+        {"scientific_name": "Dipodomys spectabilis", "guild": "grazer", "role": "granivorous rodent", "occurrence_count": 58},
+        {"scientific_name": "Lepus californicus", "guild": "grazer", "role": "herbivorous lagomorph", "occurrence_count": 116},
+        {"scientific_name": "Canis latrans", "guild": "predator", "role": "mesopredator", "occurrence_count": 129},
+        {"scientific_name": "Vulpes macrotis", "guild": "predator", "role": "mesopredator", "occurrence_count": 36},
+        {"scientific_name": "Ascomycota", "guild": "decomposer", "role": "fungal decomposer proxy", "occurrence_count": 664},
+    ],
 }

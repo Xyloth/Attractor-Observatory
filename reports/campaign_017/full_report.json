@@ -1,0 +1,921 @@
+{
+  "campaign_id": "campaign-017",
+  "claim_eligible": false,
+  "content_hash": "sha256:ae9c617dd3e2f67bb721e3a1d02252d305474bde00e48f6ae427dcfaa4bb2e96",
+  "created_at": "2026-05-06T01:38:09Z",
+  "density_falsifiers": {
+    "claim_eligible": false,
+    "content_hash": "sha256:8559ae39b47765569ffabe484e64775db800ad5e71f5e78790129fcb4684e732",
+    "cross_world_tests": [
+      {
+        "evidence": {
+          "declared_projection_nondeclined_count": 36,
+          "declined_count": 96,
+          "evaluation_count": 96,
+          "interpretation": "Existing lenses were not tuned for low-level primitive worlds. Declines and low coverage are retained as honest signal for formalism extension rather than patched during Campaign 016.",
+          "lens_count": 8,
+          "motif_count": 6,
+          "nondeclined_count": 0,
+          "projection_basis_option_count": 6,
+          "source_native_adversarial_passed": true,
+          "source_native_detector_fire_count": 3,
+          "world_count": 2
+        },
+        "expectation": "formal-lens decline remains the load-bearing Campaign 016 signal",
+        "passed": true,
+        "test_id": "raw_96_of_96_decline_preserved"
+      },
+      {
+        "evidence": {
+          "case_count": 3,
+          "passed_case_count": 3
+        },
+        "expectation": "source-native detectors fire on real corpus and decline on degenerate inputs",
+        "passed": true,
+        "test_id": "source_native_adversarial_controls_still_green"
+      },
+      {
+        "evidence": {
+          "best_by_source_world": {
+            "atomic_molecular_primitives": {
+              "basis": "atomic/molecular primitives as reaction-network ingredient summaries",
+              "declined_count": 18,
+              "evaluation_count": 48,
+              "nondeclined_count": 30,
+              "positive_label_count": 0,
+              "projected_world_family": "crn",
+              "source_world_family": "atomic_molecular_primitives",
+              "top_coverage": [
+                {
+                  "components": {
+                    "compression_ratio": 0.022286062505,
+                    "compression_score": 0.976540986837,
+                    "encoding_success": 1.0,
+                    "invariance_preservation": 1.0,
+                    "prediction_accuracy": 0.0,
+                    "prediction_baseline": 0.5,
+                    "prediction_component": 0.0,
+                    "reconstruction_score": 0.82
+                  },
+                  "coverage_score": 0.710481148026,
+                  "decline_count": 0,
+                  "holdout_count": 0,
+                  "lens_id": "petri",
+                  "motif_id": "motif.autocatalytic_closure.draft",
+                  "nondeclined_count": 1,
+                  "pair_count": 1
+                },
+                {
+                  "components": {
+                    "compression_ratio": 0.022286062505,
+                    "compression_score": 0.976540986837,
+                    "encoding_success": 1.0,
+                    "invariance_preservation": 1.0,
+                    "prediction_accuracy": 0.0,
+                    "prediction_baseline": 0.5,
+                    "prediction_component": 0.0,
+                    "reconstruction_score": 0.82
+                  },
+                  "coverage_score": 0.710481148026,
+                  "decline_count": 0,
+                  "holdout_count": 0,
+                  "lens_id": "petri",
+                  "motif_id": "motif.repair.draft",
+                  "nondeclined_count": 1,
+                  "pair_count": 1
+                },
+                {
+                  "components": {
+                    "compression_ratio": 0.022286062505,
+                    "compression_score": 0.976540986837,
+                    "encoding_success": 1.0,
+                    "invariance_preservation": 1.0,
+                    "prediction_accuracy": 0.0,
+                    "prediction_baseline": 0.5,
+                    "prediction_component": 0.0,
+                    "reconstruction_score": 0.82
+                  },
+                  "coverage_score": 0.710481148026,
+                  "decline_count": 0,
+                  "holdout_count": 0,
+                  "lens_id": "petri",
+                  "motif_id": "motif.replication_lineage.draft",
+                  "nondeclined_count": 1,
+                  "pair_count": 1
+                }
+              ]
+            },
+            "math_primitives": {
+              "basis": "math primitives as reaction-network closure surrogates",
+              "declined_count": 18,
+              "evaluation_count": 48,
+              "nondeclined_count": 30,
+              "positive_label_count": 0,
+              "projected_world_family": "crn",
+              "source_world_family": "math_primitives",
+              "top_coverage": [
+                {
+                  "components": {
+                    "compression_ratio": 0.040503906873,
+                    "compression_score": 0.957364308555,
+                    "encoding_success": 1.0,
+                    "invariance_preservation": 1.0,
+                    "prediction_accuracy": 0.0,
+                    "prediction_baseline": 0.5,
+                    "prediction_component": 0.0,
+                    "reconstruction_score": 0.82
+                  },
+                  "coverage_score": 0.707604646283,
+                  "decline_count": 0,
+                  "holdout_count": 0,
+                  "lens_id": "petri",
+                  "motif_id": "motif.autocatalytic_closure.draft",
+                  "nondeclined_count": 1,
+                  "pair_count": 1
+                },
+                {
+                  "components": {
+                    "compression_ratio": 0.040503906873,
+                    "compression_score": 0.957364308555,
+                    "encoding_success": 1.0,
+                    "invariance_preservation": 1.0,
+                    "prediction_accuracy": 0.0,
+                    "prediction_baseline": 0.5,
+                    "prediction_component": 0.0,
+                    "reconstruction_score": 0.82
+                  },
+                  "coverage_score": 0.707604646283,
+                  "decline_count": 0,
+                  "holdout_count": 0,
+                  "lens_id": "petri",
+                  "motif_id": "motif.repair.draft",
+                  "nondeclined_count": 1,
+                  "pair_count": 1
+                },
+                {
+                  "components": {
+                    "compression_ratio": 0.040503906873,
+                    "compression_score": 0.957364308555,
+                    "encoding_success": 1.0,
+                    "invariance_preservation": 1.0,
+                    "prediction_accuracy": 0.0,
+                    "prediction_baseline": 0.5,
+                    "prediction_component": 0.0,
+                    "reconstruction_score": 0.82
+                  },
+                  "coverage_score": 0.707604646283,
+                  "decline_count": 0,
+                  "holdout_count": 0,
+                  "lens_id": "petri",
+                  "motif_id": "motif.replication_lineage.draft",
+                  "nondeclined_count": 1,
+                  "pair_count": 1
+                }
+              ]
+            }
+          },
+          "interpretation": "Projection counts are bridge diagnostics for math-shadow design; they do not override the raw 96/96 low-level lens decline.",
+          "projection_option_count": 6
+        },
+        "expectation": "bridge nondeclines must stay separate from motif positives",
+        "passed": true,
+        "test_id": "projection_bridge_not_finding"
+      }
+    ],
+    "mode_tag": "exploratory",
+    "passed": true,
+    "schema": "Campaign017DensityFalsifiers.v1",
+    "source_campaign": "campaign-016",
+    "summary": {
+      "projection_bridge_claim_eligible": false,
+      "raw_decline_preserved": true,
+      "source_native_adversarial_passed": true,
+      "world_count": 2,
+      "worlds_ready_after_falsifiers": 2
+    },
+    "worlds": [
+      {
+        "density_ready_survives_falsifiers": true,
+        "record_count": 10,
+        "tests": [
+          {
+            "expectation": "as-built low-level density contract remains satisfied",
+            "passed": true,
+            "test_id": "atomic_molecular_primitives.as_built_density_survives"
+          },
+          {
+            "expectation": "removing overlap_fields must break density readiness",
+            "passed": true,
+            "test_id": "atomic_molecular_primitives.axis_drop_declines"
+          },
+          {
+            "expectation": "records without source_url provenance must not be density-ready",
+            "passed": true,
+            "test_id": "atomic_molecular_primitives.missing_source_url_declines"
+          },
+          {
+            "expectation": "restricted-license records must not enter normalized density output",
+            "passed": true,
+            "test_id": "atomic_molecular_primitives.restricted_license_declines"
+          },
+          {
+            "expectation": "density readiness cannot promote motif or claim eligibility",
+            "passed": true,
+            "test_id": "atomic_molecular_primitives.claim_bearing_leak_absent"
+          }
+        ],
+        "world_family": "atomic_molecular_primitives",
+        "world_level": "W-1"
+      },
+      {
+        "density_ready_survives_falsifiers": true,
+        "record_count": 6,
+        "tests": [
+          {
+            "expectation": "as-built low-level density contract remains satisfied",
+            "passed": true,
+            "test_id": "math_primitives.as_built_density_survives"
+          },
+          {
+            "expectation": "removing overlap_fields must break density readiness",
+            "passed": true,
+            "test_id": "math_primitives.axis_drop_declines"
+          },
+          {
+            "expectation": "records without source_url provenance must not be density-ready",
+            "passed": true,
+            "test_id": "math_primitives.missing_source_url_declines"
+          },
+          {
+            "expectation": "restricted-license records must not enter normalized density output",
+            "passed": true,
+            "test_id": "math_primitives.restricted_license_declines"
+          },
+          {
+            "expectation": "density readiness cannot promote motif or claim eligibility",
+            "passed": true,
+            "test_id": "math_primitives.claim_bearing_leak_absent"
+          }
+        ],
+        "world_family": "math_primitives",
+        "world_level": "W0"
+      }
+    ]
+  },
+  "factory_recovery": {
+    "atomic_write_path": "reports\\campaign_017\\recovery_fixture\\valid_artifact.json",
+    "checks": {
+      "corrupt_artifact_quarantined": true,
+      "no_runtime_ai_required": true,
+      "valid_artifact_survived": true
+    },
+    "claim_eligible": false,
+    "content_hash": "sha256:57dbad73816b42d79f50d57554034b913be4e9d2c0bfffff09ec24c71220f8ef",
+    "fixture_dir": "reports\\campaign_017\\recovery_fixture",
+    "mode_tag": "exploratory",
+    "passed": true,
+    "recovery": {
+      "checked_count": 2,
+      "content_hash": "sha256:c16cd7e6fe5146a9a5150cd363ad06f2b80c38f91cf16e78f660b2ddfd5ae4e2",
+      "missing_count": 0,
+      "ok_count": 1,
+      "passed": true,
+      "quarantined_count": 1,
+      "results": [
+        {
+          "corruption_hash": "sha256:91df93d1af3e37f0faf6290374586173fee19f5094d1eeac78a93e3f9a36f342",
+          "error": "Expecting value: line 1 column 43 (char 42)",
+          "error_type": "JSONDecodeError",
+          "passed": true,
+          "path": "reports\\campaign_017\\recovery_fixture\\partial_artifact.json",
+          "quarantine_path": "reports\\campaign_017\\recovery_fixture\\.quarantine\\partial_artifact.json.91df93d1af3e37f0.corrupt",
+          "quarantined": true,
+          "schema": "LowLevelJsonRecoveryResult.v1",
+          "status": "quarantined"
+        },
+        {
+          "content_hash": "sha256:04d4aec01034bbeead44b55cbf0bf7f6f53fec2863a8bc9705cf01accab27500",
+          "passed": true,
+          "path": "reports\\campaign_017\\recovery_fixture\\valid_artifact.json",
+          "quarantined": false,
+          "schema": "LowLevelJsonRecoveryResult.v1",
+          "status": "ok"
+        }
+      ],
+      "root": "reports\\campaign_017\\recovery_fixture",
+      "schema": "LowLevelJsonRecoveryTree.v1"
+    },
+    "schema": "Campaign017FactoryRecovery.v1"
+  },
+  "gate_count": 10,
+  "gates": [
+    {
+      "evidence": {
+        "campaign": "campaign-016",
+        "status": "green"
+      },
+      "gate": "C17-1 Campaign 016 source loaded green",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "atomic_molecular_primitives",
+        "math_primitives"
+      ],
+      "gate": "C17-2 W-1 and W0 only",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "projection_bridge_claim_eligible": false,
+        "raw_decline_preserved": true,
+        "source_native_adversarial_passed": true,
+        "world_count": 2,
+        "worlds_ready_after_falsifiers": 2
+      },
+      "gate": "C17-3 density falsifiers pass",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "declared_projection_nondeclined_count": 36,
+        "declined_count": 96,
+        "evaluation_count": 96,
+        "interpretation": "Existing lenses were not tuned for low-level primitive worlds. Declines and low coverage are retained as honest signal for formalism extension rather than patched during Campaign 016.",
+        "lens_count": 8,
+        "motif_count": 6,
+        "nondeclined_count": 0,
+        "projection_basis_option_count": 6,
+        "source_native_adversarial_passed": true,
+        "source_native_detector_fire_count": 3,
+        "world_count": 2
+      },
+      "gate": "C17-4 raw 96/96 decline preserved",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "case_count": 3,
+        "cases": [
+          {
+            "case_id": "math_missing_strange_attractor",
+            "detector_row": {
+              "claim_eligible": false,
+              "detector_id": "detector.low_level.canonical_stable_form",
+              "features": {
+                "event_count": 3,
+                "primitive_classes": [
+                  "fixed_point",
+                  "limit_cycle",
+                  "torus"
+                ],
+                "state_count": 3
+              },
+              "fired": false,
+              "reason": "source-native detector validates low-level trace structure only; it does not promote motifs.",
+              "world_family": "math_primitives"
+            },
+            "expected_detector_id": "detector.low_level.canonical_stable_form",
+            "expected_fired": false,
+            "observed_fired": false,
+            "passed": true,
+            "rationale": "A math catalog with no strange-attractor primitive must not certify the canonical stable-form detector."
+          },
+          {
+            "case_id": "atomic_single_energy_level",
+            "detector_row": {
+              "claim_eligible": false,
+              "detector_id": "detector.low_level.discrete_energy_spectrum",
+              "features": {
+                "bond_topology_events": 0,
+                "max_heavy_atom_count": 0,
+                "max_level_count": 1,
+                "molecular_state_count": 0,
+                "spectral_state_count": 1,
+                "spectral_transition_events": 1
+              },
+              "fired": false,
+              "reason": "source-native detector validates empirical spectrum structure only; it does not promote motifs.",
+              "world_family": "atomic_molecular_primitives"
+            },
+            "expected_detector_id": "detector.low_level.discrete_energy_spectrum",
+            "expected_fired": false,
+            "observed_fired": false,
+            "passed": true,
+            "rationale": "A spectrum with one energy level carries no transition ladder and must decline."
+          },
+          {
+            "case_id": "molecule_no_heavy_atoms",
+            "detector_row": {
+              "claim_eligible": false,
+              "detector_id": "detector.low_level.molecular_topology_presence",
+              "features": {
+                "bond_topology_events": 1,
+                "max_heavy_atom_count": 0,
+                "min_heavy_atom_count": 0,
+                "molecular_state_count": 0
+              },
+              "fired": false,
+              "reason": "source-native detector validates molecular topology presence only; it does not promote motifs.",
+              "world_family": "atomic_molecular_primitives"
+            },
+            "expected_detector_id": "detector.low_level.molecular_topology_presence",
+            "expected_fired": false,
+            "observed_fired": false,
+            "passed": true,
+            "rationale": "A molecule row with no heavy atoms is not a topology-bearing molecule for the source-native detector."
+          }
+        ],
+        "claim_eligible": false,
+        "content_hash": "sha256:1169a17b3f80e19c69af9854492c5f28578f696ab3072dfa969290862b9cef33",
+        "interpretation": "Source-native low-level detectors must fire on the as-built corpus and decline on degenerate inputs before unattended Factory use.",
+        "mode_tag": "exploratory",
+        "passed": true,
+        "passed_case_count": 3,
+        "schema": "Campaign016SourceNativeAdversarialControls.v1"
+      },
+      "gate": "C17-5 source-native adversarial controls pass",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "prediction_count": 2
+      },
+      "gate": "C17-6 upward predictions exploratory only",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "claim_eligible": false,
+          "falsifiers": [
+            "seeded target trace fails to reach the Campaign 016 projection nondeclined count",
+            "any bridge diagnostic is parsed as claim_eligible true",
+            "source-native degenerate controls fail after projection wiring",
+            "raw low-level formal-lens decline is overwritten or hidden"
+          ],
+          "mode_tag": "exploratory",
+          "preconditions": [
+            "source density falsifiers pass",
+            "source-native adversarial controls pass",
+            "raw 96/96 formal-lens decline remains unchanged",
+            "bridge report fields stay labeled as projection or bridge, not finding"
+          ],
+          "predicted_signal": "The next run should test bridge evaluability, not motif positivity: seeded target-world traces should recover at least 30 nondeclined bridge-lens evaluations without changing the raw low-level decline count.",
+          "prediction_id": "campaign017.atomic_molecular_primitives.primary_bridge.crn",
+          "prediction_type": "next-level_bridge_evaluability",
+          "projection_evidence": {
+            "basis": "atomic/molecular primitives as reaction-network ingredient summaries",
+            "declined_count": 18,
+            "evaluation_count": 48,
+            "nondeclined_count": 30,
+            "positive_label_count": 0,
+            "top_coverage": [
+              {
+                "components": {
+                  "compression_ratio": 0.022286062505,
+                  "compression_score": 0.976540986837,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.710481148026,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.autocatalytic_closure.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.022286062505,
+                  "compression_score": 0.976540986837,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.710481148026,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.repair.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.022286062505,
+                  "compression_score": 0.976540986837,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.710481148026,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.replication_lineage.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              }
+            ]
+          },
+          "ready_for_next_campaign": true,
+          "secondary_bridge_options": [
+            {
+              "basis": "atomic/molecular primitives as chemistry-like source records",
+              "nondeclined_count": 17,
+              "target_world_family": "origins_chemistry",
+              "target_world_level": "W9"
+            },
+            {
+              "basis": "atomic/molecular primitives as hyperedge-like relation summaries",
+              "nondeclined_count": 17,
+              "target_world_family": "hypergraph_reactions",
+              "target_world_level": "W10"
+            }
+          ],
+          "source_world_family": "atomic_molecular_primitives",
+          "source_world_level": "W-1",
+          "target_world_family": "crn",
+          "target_world_level": "W1"
+        },
+        {
+          "claim_eligible": false,
+          "falsifiers": [
+            "seeded target trace fails to reach the Campaign 016 projection nondeclined count",
+            "any bridge diagnostic is parsed as claim_eligible true",
+            "source-native degenerate controls fail after projection wiring",
+            "raw low-level formal-lens decline is overwritten or hidden"
+          ],
+          "mode_tag": "exploratory",
+          "preconditions": [
+            "source density falsifiers pass",
+            "source-native adversarial controls pass",
+            "raw 96/96 formal-lens decline remains unchanged",
+            "bridge report fields stay labeled as projection or bridge, not finding"
+          ],
+          "predicted_signal": "The next run should test bridge evaluability, not motif positivity: seeded target-world traces should recover at least 30 nondeclined bridge-lens evaluations without changing the raw low-level decline count.",
+          "prediction_id": "campaign017.math_primitives.primary_bridge.crn",
+          "prediction_type": "next-level_bridge_evaluability",
+          "projection_evidence": {
+            "basis": "math primitives as reaction-network closure surrogates",
+            "declined_count": 18,
+            "evaluation_count": 48,
+            "nondeclined_count": 30,
+            "positive_label_count": 0,
+            "top_coverage": [
+              {
+                "components": {
+                  "compression_ratio": 0.040503906873,
+                  "compression_score": 0.957364308555,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.707604646283,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.autocatalytic_closure.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.040503906873,
+                  "compression_score": 0.957364308555,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.707604646283,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.repair.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.040503906873,
+                  "compression_score": 0.957364308555,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.707604646283,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.replication_lineage.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              }
+            ]
+          },
+          "ready_for_next_campaign": true,
+          "secondary_bridge_options": [
+            {
+              "basis": "math primitives as field-like state-space trajectories",
+              "nondeclined_count": 19,
+              "target_world_family": "field",
+              "target_world_level": "W3"
+            },
+            {
+              "basis": "math primitives as executable-state transition signatures",
+              "nondeclined_count": 14,
+              "target_world_family": "digital",
+              "target_world_level": "W5"
+            }
+          ],
+          "source_world_family": "math_primitives",
+          "source_world_level": "W0",
+          "target_world_family": "crn",
+          "target_world_level": "W1"
+        }
+      ],
+      "gate": "C17-7 W1 CRN selected as primary bridge target",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "corrupt_artifact_quarantined": true,
+        "no_runtime_ai_required": true,
+        "valid_artifact_survived": true
+      },
+      "gate": "C17-8 Factory corrupt JSON quarantine passes",
+      "passed": true
+    },
+    {
+      "evidence": "claim_eligible_false",
+      "gate": "C17-9 bridge outputs cannot promote claims",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "methods_path": "papers\\methods\\CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+      },
+      "gate": "C17-10 methods doc generated",
+      "passed": true
+    }
+  ],
+  "mode_tag": "exploratory",
+  "passed_gate_count": 10,
+  "schema": "Campaign017FullReport.v1",
+  "source_campaign": {
+    "campaign_id": "campaign-016",
+    "content_hash": "sha256:5cb180404495a37945ecb84bac5be58de389d467158e8945f5d7b71415b10e0b",
+    "path": "reports\\campaign_016\\full_report.json"
+  },
+  "spec_version": "sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+  "status": "green",
+  "upward_predictions": {
+    "claim_eligible": false,
+    "content_hash": "sha256:c29a4eaa9aa21524605fcf1fcf67a6afa66486a61a9bab10093e234ebc7c0127",
+    "mode_tag": "exploratory",
+    "next_campaign_recommendation": {
+      "campaign_id_candidate": "campaign-018",
+      "must_not_do": [
+        "do not promote bridge nondeclines to motif findings",
+        "do not alter Campaign 016 raw decline counts",
+        "do not add biology-level adapters"
+      ],
+      "scope": "Generate W1 CRN bridge traces seeded independently from W-1 and W0 normalized references, then compare bridge evaluability against Campaign 016 projection counts."
+    },
+    "passed": true,
+    "prediction_count": 2,
+    "predictions": [
+      {
+        "claim_eligible": false,
+        "falsifiers": [
+          "seeded target trace fails to reach the Campaign 016 projection nondeclined count",
+          "any bridge diagnostic is parsed as claim_eligible true",
+          "source-native degenerate controls fail after projection wiring",
+          "raw low-level formal-lens decline is overwritten or hidden"
+        ],
+        "mode_tag": "exploratory",
+        "preconditions": [
+          "source density falsifiers pass",
+          "source-native adversarial controls pass",
+          "raw 96/96 formal-lens decline remains unchanged",
+          "bridge report fields stay labeled as projection or bridge, not finding"
+        ],
+        "predicted_signal": "The next run should test bridge evaluability, not motif positivity: seeded target-world traces should recover at least 30 nondeclined bridge-lens evaluations without changing the raw low-level decline count.",
+        "prediction_id": "campaign017.atomic_molecular_primitives.primary_bridge.crn",
+        "prediction_type": "next-level_bridge_evaluability",
+        "projection_evidence": {
+          "basis": "atomic/molecular primitives as reaction-network ingredient summaries",
+          "declined_count": 18,
+          "evaluation_count": 48,
+          "nondeclined_count": 30,
+          "positive_label_count": 0,
+          "top_coverage": [
+            {
+              "components": {
+                "compression_ratio": 0.022286062505,
+                "compression_score": 0.976540986837,
+                "encoding_success": 1.0,
+                "invariance_preservation": 1.0,
+                "prediction_accuracy": 0.0,
+                "prediction_baseline": 0.5,
+                "prediction_component": 0.0,
+                "reconstruction_score": 0.82
+              },
+              "coverage_score": 0.710481148026,
+              "decline_count": 0,
+              "holdout_count": 0,
+              "lens_id": "petri",
+              "motif_id": "motif.autocatalytic_closure.draft",
+              "nondeclined_count": 1,
+              "pair_count": 1
+            },
+            {
+              "components": {
+                "compression_ratio": 0.022286062505,
+                "compression_score": 0.976540986837,
+                "encoding_success": 1.0,
+                "invariance_preservation": 1.0,
+                "prediction_accuracy": 0.0,
+                "prediction_baseline": 0.5,
+                "prediction_component": 0.0,
+                "reconstruction_score": 0.82
+              },
+              "coverage_score": 0.710481148026,
+              "decline_count": 0,
+              "holdout_count": 0,
+              "lens_id": "petri",
+              "motif_id": "motif.repair.draft",
+              "nondeclined_count": 1,
+              "pair_count": 1
+            },
+            {
+              "components": {
+                "compression_ratio": 0.022286062505,
+                "compression_score": 0.976540986837,
+                "encoding_success": 1.0,
+                "invariance_preservation": 1.0,
+                "prediction_accuracy": 0.0,
+                "prediction_baseline": 0.5,
+                "prediction_component": 0.0,
+                "reconstruction_score": 0.82
+              },
+              "coverage_score": 0.710481148026,
+              "decline_count": 0,
+              "holdout_count": 0,
+              "lens_id": "petri",
+              "motif_id": "motif.replication_lineage.draft",
+              "nondeclined_count": 1,
+              "pair_count": 1
+            }
+          ]
+        },
+        "ready_for_next_campaign": true,
+        "secondary_bridge_options": [
+          {
+            "basis": "atomic/molecular primitives as chemistry-like source records",
+            "nondeclined_count": 17,
+            "target_world_family": "origins_chemistry",
+            "target_world_level": "W9"
+          },
+          {
+            "basis": "atomic/molecular primitives as hyperedge-like relation summaries",
+            "nondeclined_count": 17,
+            "target_world_family": "hypergraph_reactions",
+            "target_world_level": "W10"
+          }
+        ],
+        "source_world_family": "atomic_molecular_primitives",
+        "source_world_level": "W-1",
+        "target_world_family": "crn",
+        "target_world_level": "W1"
+      },
+      {
+        "claim_eligible": false,
+        "falsifiers": [
+          "seeded target trace fails to reach the Campaign 016 projection nondeclined count",
+          "any bridge diagnostic is parsed as claim_eligible true",
+          "source-native degenerate controls fail after projection wiring",
+          "raw low-level formal-lens decline is overwritten or hidden"
+        ],
+        "mode_tag": "exploratory",
+        "preconditions": [
+          "source density falsifiers pass",
+          "source-native adversarial controls pass",
+          "raw 96/96 formal-lens decline remains unchanged",
+          "bridge report fields stay labeled as projection or bridge, not finding"
+        ],
+        "predicted_signal": "The next run should test bridge evaluability, not motif positivity: seeded target-world traces should recover at least 30 nondeclined bridge-lens evaluations without changing the raw low-level decline count.",
+        "prediction_id": "campaign017.math_primitives.primary_bridge.crn",
+        "prediction_type": "next-level_bridge_evaluability",
+        "projection_evidence": {
+          "basis": "math primitives as reaction-network closure surrogates",
+          "declined_count": 18,
+          "evaluation_count": 48,
+          "nondeclined_count": 30,
+          "positive_label_count": 0,
+          "top_coverage": [
+            {
+              "components": {
+                "compression_ratio": 0.040503906873,
+                "compression_score": 0.957364308555,
+                "encoding_success": 1.0,
+                "invariance_preservation": 1.0,
+                "prediction_accuracy": 0.0,
+                "prediction_baseline": 0.5,
+                "prediction_component": 0.0,
+                "reconstruction_score": 0.82
+              },
+              "coverage_score": 0.707604646283,
+              "decline_count": 0,
+              "holdout_count": 0,
+              "lens_id": "petri",
+              "motif_id": "motif.autocatalytic_closure.draft",
+              "nondeclined_count": 1,
+              "pair_count": 1
+            },
+            {
+              "components": {
+                "compression_ratio": 0.040503906873,
+                "compression_score": 0.957364308555,
+                "encoding_success": 1.0,
+                "invariance_preservation": 1.0,
+                "prediction_accuracy": 0.0,
+                "prediction_baseline": 0.5,
+                "prediction_component": 0.0,
+                "reconstruction_score": 0.82
+              },
+              "coverage_score": 0.707604646283,
+              "decline_count": 0,
+              "holdout_count": 0,
+              "lens_id": "petri",
+              "motif_id": "motif.repair.draft",
+              "nondeclined_count": 1,
+              "pair_count": 1
+            },
+            {
+              "components": {
+                "compression_ratio": 0.040503906873,
+                "compression_score": 0.957364308555,
+                "encoding_success": 1.0,
+                "invariance_preservation": 1.0,
+                "prediction_accuracy": 0.0,
+                "prediction_baseline": 0.5,
+                "prediction_component": 0.0,
+                "reconstruction_score": 0.82
+              },
+              "coverage_score": 0.707604646283,
+              "decline_count": 0,
+              "holdout_count": 0,
+              "lens_id": "petri",
+              "motif_id": "motif.replication_lineage.draft",
+              "nondeclined_count": 1,
+              "pair_count": 1
+            }
+          ]
+        },
+        "ready_for_next_campaign": true,
+        "secondary_bridge_options": [
+          {
+            "basis": "math primitives as field-like state-space trajectories",
+            "nondeclined_count": 19,
+            "target_world_family": "field",
+            "target_world_level": "W3"
+          },
+          {
+            "basis": "math primitives as executable-state transition signatures",
+            "nondeclined_count": 14,
+            "target_world_family": "digital",
+            "target_world_level": "W5"
+          }
+        ],
+        "source_world_family": "math_primitives",
+        "source_world_level": "W0",
+        "target_world_family": "crn",
+        "target_world_level": "W1"
+      }
+    ],
+    "schema": "Campaign017UpwardPredictions.v1",
+    "source_campaign": "campaign-016"
+  }
+}

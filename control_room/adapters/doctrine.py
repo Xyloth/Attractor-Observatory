@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 
-_DOCTRINE_HEADING_RE = re.compile(r"^##\s+(D\d+(?:\.\d+)?(?:[-–]\D\d+(?:\.\d+)?)?)\s*[—–-]\s*(.+?)\s*$")
+_DOCTRINE_HEADING_RE = re.compile(r"^##\s+(D\d+(?:\.\d+)?(?:[-–]\D\d+(?:\.\d+)?)?)(?:\s+Candidate)?\s*[—–-]\s*(.+?)\s*$")
 
 
 def parse_doctrine(

@@ -1,0 +1,84 @@
+{
+  "records": [
+    {
+      "audit_flags": [],
+      "confidence": 0.92,
+      "empirical_record_id": "sha256:8a6677562b1348bad55e94c98cc8de6168c1648bae8d6ec9bec9e3504f76998c",
+      "interaction_channels": [
+        {
+          "channel_id": "channel.phase_flow",
+          "label": "phase_flow",
+          "predicate": {
+            "expression": "payload.state_equation != ''",
+            "observed": "dx/dt = -lambda*x",
+            "predicate": "state_equation_present",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "normalized_id": "sha256:2ad08fc613ee61f324ee7c782ba9bf5cd31507d62946970e0167c5847a478f7b",
+      "overlap_fields": [
+        {
+          "counterfactual": {
+            "expression": "len(payload.parameters) > 0",
+            "observed": {
+              "lambda": 1.0
+            },
+            "predicate": "parameter_counterfactual_declared",
+            "trace_checkable": true
+          },
+          "field_id": "overlap.state_space_flow_field",
+          "label": "state_space_flow_field",
+          "persist": {
+            "expression": "len(payload.invariants) > 0",
+            "observed": [
+              "negative_real_eigenvalue",
+              "single_basin"
+            ],
+            "predicate": "invariant_declared",
+            "trace_checkable": true
+          },
+          "read": {
+            "expression": "expected_stable_form derives from primitive_class",
+            "observed": "asymptotically_stable_fixed_point",
+            "predicate": "stable_form_reads_flow",
+            "trace_checkable": true
+          },
+          "write": {
+            "expression": "state_equation contains dx/dt or dtheta/dt",
+            "observed": "dx/dt = -lambda*x",
+            "predicate": "equation_writes_vector_field",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "process_roles": [
+        {
+          "label": "fixed_point",
+          "predicate": {
+            "expression": "payload.primitive_class != ''",
+            "observed": "fixed_point",
+            "predicate": "primitive_class_present",
+            "trace_checkable": true
+          },
+          "role_id": "process.math.fixed_point"
+        }
+      ],
+      "schema_version": "NormalizedReference.v1",
+      "state_space_effects": [
+        {
+          "effect_id": "effect.asymptotically_stable_fixed_point",
+          "label": "asymptotically_stable_fixed_point",
+          "predicate": {
+            "expression": "payload.expected_stable_form != ''",
+            "observed": "asymptotically_stable_fixed_point",
+            "predicate": "stable_form_declared",
+            "trace_checkable": true
+          }
+        }
+      ],
+      "world_family": "math_primitives"
+    }
+  ],
+  "schema": "LowLevelNormalizedReferenceSet.v1"
+}

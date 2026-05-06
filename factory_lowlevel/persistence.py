@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import os
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -111,7 +113,7 @@ class LowLevelFactoryStore:
         paths = {}
         for name, payload in payloads.items():
             path = self.root / f"{name}.json"
-            path.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+            atomic_write_json(path, payload)
             paths[name] = str(path)
         snapshot = {
             "schema": "LowLevelFactoryStoreSnapshot.v1",
@@ -125,7 +127,7 @@ class LowLevelFactoryStore:
             },
             "content_hash": sha256({name: payload for name, payload in payloads.items()}),
         }
-        (self.root / "snapshot.json").write_text(json.dumps(snapshot, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+        atomic_write_json(self.root / "snapshot.json", snapshot)
         return snapshot
 
     def content_hash(self) -> str:
@@ -141,7 +143,97 @@ class LowLevelFactoryStore:
 
 
 def write_json(path: str | Path, payload: Any) -> Any:
+    atomic_write_json(path, payload)
+    return payload
+
+
+def atomic_write_json(path: str | Path, payload: Any) -> Path:
+    """Write JSON via same-directory temp file and atomic replace."""
+
     out = Path(path)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, sort_keys=True, indent=2) + "\n", encoding="utf-8")
-    return payload
+    data = json.dumps(payload, sort_keys=True, indent=2) + "\n"
+    tmp_name: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            "w",
+            encoding="utf-8",
+            dir=out.parent,
+            prefix=f".{out.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as handle:
+            tmp_name = handle.name
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+        Path(tmp_name).replace(out)
+    finally:
+        if tmp_name is not None:
+            tmp_path = Path(tmp_name)
+            if tmp_path.exists():
+                tmp_path.unlink()
+    return out
+
+
+def recover_json_artifact(path: str | Path, *, quarantine_dir: str | Path | None = None) -> dict[str, Any]:
+    """Parse a JSON artifact or quarantine it if it is corrupt."""
+
+    target = Path(path)
+    if not target.exists():
+        return {
+            "schema": "LowLevelJsonRecoveryResult.v1",
+            "status": "missing",
+            "passed": False,
+            "path": str(target),
+            "quarantined": False,
+            "reason": "artifact_missing",
+        }
+    raw = target.read_bytes()
+    try:
+        json.loads(raw.decode("utf-8-sig"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        quarantine_root = Path(quarantine_dir) if quarantine_dir is not None else target.parent / ".quarantine"
+        quarantine_root.mkdir(parents=True, exist_ok=True)
+        corruption_hash = sha256(raw)
+        quarantine_path = quarantine_root / f"{target.name}.{corruption_hash.removeprefix('sha256:')[:16]}.corrupt"
+        target.replace(quarantine_path)
+        return {
+            "schema": "LowLevelJsonRecoveryResult.v1",
+            "status": "quarantined",
+            "passed": True,
+            "path": str(target),
+            "quarantined": True,
+            "quarantine_path": str(quarantine_path),
+            "corruption_hash": corruption_hash,
+            "error_type": exc.__class__.__name__,
+            "error": str(exc),
+        }
+    return {
+        "schema": "LowLevelJsonRecoveryResult.v1",
+        "status": "ok",
+        "passed": True,
+        "path": str(target),
+        "quarantined": False,
+        "content_hash": sha256(raw),
+    }
+
+
+def recover_json_tree(root: str | Path, *, quarantine_dir: str | Path | None = None) -> dict[str, Any]:
+    """Recover every top-level JSON artifact in a Factory store directory."""
+
+    root_path = Path(root)
+    paths = sorted(root_path.glob("*.json"))
+    results = [recover_json_artifact(path, quarantine_dir=quarantine_dir) for path in paths]
+    report = {
+        "schema": "LowLevelJsonRecoveryTree.v1",
+        "root": str(root_path),
+        "checked_count": len(results),
+        "ok_count": sum(1 for row in results if row["status"] == "ok"),
+        "quarantined_count": sum(1 for row in results if row["status"] == "quarantined"),
+        "missing_count": sum(1 for row in results if row["status"] == "missing"),
+        "passed": all(row["status"] in {"ok", "quarantined"} and row["passed"] for row in results),
+        "results": results,
+    }
+    report["content_hash"] = sha256({key: value for key, value in report.items() if key != "content_hash"})
+    return report

@@ -8,8 +8,8 @@ Usage::
 
     python docs/screenshots/capture_screenshots.py
 
-Requires playwright + chromium (``pip install playwright`` then
-``python -m playwright install chromium``).
+Requires dependencies from ``requirements.txt`` plus Chromium:
+``pip install -r requirements.txt`` then ``python -m playwright install chromium``.
 """
 from __future__ import annotations
 
@@ -17,7 +17,10 @@ import sys
 import time
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
+try:
+    from playwright.sync_api import sync_playwright
+except ImportError:  # pragma: no cover - exercised only when optional dependency is absent.
+    sync_playwright = None
 
 
 HERE = Path(__file__).resolve().parent
@@ -39,6 +42,16 @@ ROOMS = [
 
 
 def main() -> int:
+    if sync_playwright is None:
+        print(
+            "[capture] ERROR: Playwright is not installed.\n"
+            "  Install project dependencies: pip install -r requirements.txt\n"
+            "  Then install Chromium once: python -m playwright install chromium",
+            file=sys.stderr,
+            flush=True,
+        )
+        return 2
+
     out_dir = HERE
     out_dir.mkdir(parents=True, exist_ok=True)
 

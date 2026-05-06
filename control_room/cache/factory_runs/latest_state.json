@@ -1,0 +1,502 @@
+{
+  "audit_count": 0,
+  "latest_record": "NCBI HIV-1 HXB2 quasispecies pilot projection",
+  "life_form_count": 8,
+  "normalized_count": 8,
+  "record_count": 8,
+  "rejection_count": 0,
+  "routed_worlds": [
+    "crn",
+    "ecosystem",
+    "field",
+    "origins_chemistry",
+    "quasispecies"
+  ],
+  "run_id": "sha256:f17c14848991da217dd4e4ea743a3fc959948ebe79a57a8d40599146165132f4",
+  "run_path": "control_room\\cache\\factory_runs\\run_f17c14848991da21.json",
+  "source_count": 5,
+  "source_ids": [],
+  "stage": "audit",
+  "stage_history": [
+    {
+      "at": "2026-05-06T10:31:25Z",
+      "source_ids": [],
+      "stage": "download",
+      "started_at": "2026-05-06T10:31:25Z",
+      "status": "running",
+      "target_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ]
+    },
+    {
+      "at": "2026-05-06T10:31:25Z",
+      "record_count": 7,
+      "source_count": 4,
+      "stage": "parse",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:31:25Z",
+      "normalized_count": 7,
+      "stage": "normalize",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:31:25Z",
+      "rejection_count": 0,
+      "routed_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ],
+      "stage": "route",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:31:25Z",
+      "latest_record": "KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 1
+    },
+    {
+      "at": "2026-05-06T10:31:25Z",
+      "latest_record": "Schnakenberg reaction-diffusion spots",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 2
+    },
+    {
+      "at": "2026-05-06T10:31:53Z",
+      "source_ids": [],
+      "stage": "download",
+      "started_at": "2026-05-06T10:31:53Z",
+      "status": "running",
+      "target_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ]
+    },
+    {
+      "at": "2026-05-06T10:31:53Z",
+      "record_count": 7,
+      "source_count": 4,
+      "stage": "parse",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:31:53Z",
+      "normalized_count": 7,
+      "stage": "normalize",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:31:53Z",
+      "rejection_count": 0,
+      "routed_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ],
+      "stage": "route",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:31:53Z",
+      "latest_record": "KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 1
+    },
+    {
+      "at": "2026-05-06T10:31:53Z",
+      "latest_record": "Schnakenberg reaction-diffusion spots",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 2
+    },
+    {
+      "at": "2026-05-06T10:31:54Z",
+      "latest_record": "Brusselator reaction-diffusion oscillation",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 3
+    },
+    {
+      "at": "2026-05-06T10:31:54Z",
+      "latest_record": "Gray-Scott reaction-diffusion stripes",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 4
+    },
+    {
+      "at": "2026-05-06T10:31:54Z",
+      "latest_record": "Mineral-surface thioester prebiotic closure benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T10:31:54Z",
+      "latest_record": "Alkaline hydrothermal gradient protocell benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 6
+    },
+    {
+      "at": "2026-05-06T10:31:55Z",
+      "latest_record": "NCBI HIV-1 HXB2 quasispecies pilot projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 7
+    },
+    {
+      "at": "2026-05-06T10:31:58Z",
+      "life_form_count": 7,
+      "stage": "motif_evaluate",
+      "status": "running",
+      "trace_count": 7
+    },
+    {
+      "at": "2026-05-06T10:31:58Z",
+      "audit_count": 0,
+      "run_id": "sha256:a746ca32d510ca1e389f771cd3af521b072bba45c09d54d2636ea27397730ea9",
+      "run_path": "control_room\\cache\\factory_runs\\run_a746ca32d510ca1e.json",
+      "stage": "audit",
+      "status": "done"
+    },
+    {
+      "at": "2026-05-06T10:32:33Z",
+      "source_ids": [],
+      "stage": "download",
+      "started_at": "2026-05-06T10:32:33Z",
+      "status": "running",
+      "target_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ]
+    },
+    {
+      "at": "2026-05-06T10:32:33Z",
+      "record_count": 7,
+      "source_count": 4,
+      "stage": "parse",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:32:33Z",
+      "normalized_count": 7,
+      "stage": "normalize",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:32:33Z",
+      "rejection_count": 0,
+      "routed_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ],
+      "stage": "route",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:32:33Z",
+      "latest_record": "KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 1
+    },
+    {
+      "at": "2026-05-06T10:32:34Z",
+      "latest_record": "Schnakenberg reaction-diffusion spots",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 2
+    },
+    {
+      "at": "2026-05-06T10:32:34Z",
+      "latest_record": "Brusselator reaction-diffusion oscillation",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 3
+    },
+    {
+      "at": "2026-05-06T10:32:34Z",
+      "latest_record": "Gray-Scott reaction-diffusion stripes",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 4
+    },
+    {
+      "at": "2026-05-06T10:32:35Z",
+      "latest_record": "Mineral-surface thioester prebiotic closure benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T10:32:35Z",
+      "latest_record": "Alkaline hydrothermal gradient protocell benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 6
+    },
+    {
+      "at": "2026-05-06T10:32:35Z",
+      "latest_record": "NCBI HIV-1 HXB2 quasispecies pilot projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 7
+    },
+    {
+      "at": "2026-05-06T10:32:39Z",
+      "life_form_count": 7,
+      "stage": "motif_evaluate",
+      "status": "running",
+      "trace_count": 7
+    },
+    {
+      "at": "2026-05-06T10:32:39Z",
+      "audit_count": 0,
+      "run_id": "sha256:17693e665d5d025e319a6c0cf215932668900fe133d302c899e55565f7a5b8cd",
+      "run_path": "control_room\\cache\\factory_runs\\run_17693e665d5d025e.json",
+      "stage": "audit",
+      "status": "done"
+    },
+    {
+      "at": "2026-05-06T10:36:09Z",
+      "source_ids": [],
+      "stage": "download",
+      "started_at": "2026-05-06T10:36:09Z",
+      "status": "running",
+      "target_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ]
+    },
+    {
+      "at": "2026-05-06T10:36:09Z",
+      "record_count": 7,
+      "source_count": 4,
+      "stage": "parse",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:36:09Z",
+      "normalized_count": 7,
+      "stage": "normalize",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:36:09Z",
+      "rejection_count": 0,
+      "routed_worlds": [
+        "crn",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ],
+      "stage": "route",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:36:09Z",
+      "latest_record": "KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 1
+    },
+    {
+      "at": "2026-05-06T10:36:09Z",
+      "latest_record": "Schnakenberg reaction-diffusion spots",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 2
+    },
+    {
+      "at": "2026-05-06T10:36:10Z",
+      "latest_record": "Brusselator reaction-diffusion oscillation",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 3
+    },
+    {
+      "at": "2026-05-06T10:36:10Z",
+      "latest_record": "Gray-Scott reaction-diffusion stripes",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 4
+    },
+    {
+      "at": "2026-05-06T10:36:10Z",
+      "latest_record": "Mineral-surface thioester prebiotic closure benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T10:36:11Z",
+      "latest_record": "Alkaline hydrothermal gradient protocell benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 6
+    },
+    {
+      "at": "2026-05-06T10:36:11Z",
+      "latest_record": "NCBI HIV-1 HXB2 quasispecies pilot projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 7
+    },
+    {
+      "at": "2026-05-06T10:36:14Z",
+      "life_form_count": 7,
+      "stage": "motif_evaluate",
+      "status": "running",
+      "trace_count": 7
+    },
+    {
+      "at": "2026-05-06T10:36:14Z",
+      "audit_count": 0,
+      "run_id": "sha256:0772c1a89f5c693c07d2f79d25de42fffbb362e08b9d1feb9f9ed258f2492566",
+      "run_path": "control_room\\cache\\factory_runs\\run_0772c1a89f5c693c.json",
+      "stage": "audit",
+      "status": "done"
+    },
+    {
+      "at": "2026-05-06T10:47:05Z",
+      "source_ids": [],
+      "stage": "download",
+      "started_at": "2026-05-06T10:47:05Z",
+      "status": "running",
+      "target_worlds": [
+        "crn",
+        "field",
+        "ecosystem",
+        "origins_chemistry",
+        "quasispecies"
+      ]
+    },
+    {
+      "at": "2026-05-06T10:47:05Z",
+      "record_count": 8,
+      "source_count": 5,
+      "stage": "parse",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:47:05Z",
+      "normalized_count": 8,
+      "stage": "normalize",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:47:05Z",
+      "rejection_count": 0,
+      "routed_worlds": [
+        "crn",
+        "ecosystem",
+        "field",
+        "origins_chemistry",
+        "quasispecies"
+      ],
+      "stage": "route",
+      "status": "running"
+    },
+    {
+      "at": "2026-05-06T10:47:05Z",
+      "latest_record": "KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 1
+    },
+    {
+      "at": "2026-05-06T10:47:05Z",
+      "latest_record": "GBIF Jornada Basin ecosystem occurrence pilot",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 2
+    },
+    {
+      "at": "2026-05-06T10:47:06Z",
+      "latest_record": "Schnakenberg reaction-diffusion spots",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 3
+    },
+    {
+      "at": "2026-05-06T10:47:06Z",
+      "latest_record": "Brusselator reaction-diffusion oscillation",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 4
+    },
+    {
+      "at": "2026-05-06T10:47:06Z",
+      "latest_record": "Gray-Scott reaction-diffusion stripes",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 5
+    },
+    {
+      "at": "2026-05-06T10:47:07Z",
+      "latest_record": "Mineral-surface thioester prebiotic closure benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 6
+    },
+    {
+      "at": "2026-05-06T10:47:07Z",
+      "latest_record": "Alkaline hydrothermal gradient protocell benchmark",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 7
+    },
+    {
+      "at": "2026-05-06T10:47:07Z",
+      "latest_record": "NCBI HIV-1 HXB2 quasispecies pilot projection",
+      "stage": "world_simulate",
+      "status": "running",
+      "trace_count": 8
+    },
+    {
+      "at": "2026-05-06T10:47:11Z",
+      "life_form_count": 8,
+      "stage": "motif_evaluate",
+      "status": "running",
+      "trace_count": 8
+    },
+    {
+      "at": "2026-05-06T10:47:11Z",
+      "audit_count": 0,
+      "run_id": "sha256:f17c14848991da217dd4e4ea743a3fc959948ebe79a57a8d40599146165132f4",
+      "run_path": "control_room\\cache\\factory_runs\\run_f17c14848991da21.json",
+      "stage": "audit",
+      "status": "done"
+    }
+  ],
+  "started_at": "2026-05-06T10:47:05Z",
+  "status": "done",
+  "target_worlds": [
+    "crn",
+    "field",
+    "ecosystem",
+    "origins_chemistry",
+    "quasispecies"
+  ],
+  "trace_count": 8,
+  "updated_at": "2026-05-06T10:47:11Z"
+}

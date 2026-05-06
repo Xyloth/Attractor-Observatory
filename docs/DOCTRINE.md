@@ -1,6 +1,6 @@
 # Doctrine
 
-Twelve binding rules, plus the canonical operating principle. Each rule corresponds to a specific failure mode that has, in fact, been observed during this project's history. They are not aesthetic preferences. They are corrections.
+Twenty binding rules, plus the canonical operating principle. Each rule corresponds to a specific failure mode that has, in fact, been observed during this project's history. They are not aesthetic preferences. They are corrections.
 
 ---
 
@@ -169,6 +169,42 @@ See [`doctrine_d22.md`](doctrine_d22.md).
 **Class watch:** Class 12 candidate — *Decorative Completeness* — is on the mistake catalog watch list. Ratification follows observed bypass.
 
 **Authored by:** Architect Claude, TASK-CB-004 / Campaign 015 Phase 0 (Observatory Control Room Foundation). Ratified at module foundation rather than after-the-fact, in response to the structural pull of visual work.
+
+---
+
+## D23 — Dereferenceable evidence or explicit private boundary
+
+See [`doctrine_d23.md`](doctrine_d23.md).
+
+> Every artifact path used as evidence resolves in the shipped surface or carries an explicit machine-readable private/unshipped marker at point of use.
+
+**Failure mode caught:** DX-001 found public reports with thousands of trace-path references into gitignored private trace dumps. The reports were not scientifically false, but the public artifact boundary was implicit and therefore misleading.
+
+**TASK-033 ratification:** TASK-032 applied the candidate during the fix-all pass. TASK-033 ratifies it as binding: public reports may retain private trace paths only when the evidence row carries `evidence_private: true` with a reason, and live Factory run records must expose dereferenceable paths or explicit private boundaries.
+
+---
+
+## D24 — Freshness-bound sidecars
+
+See [`doctrine_d24.md`](doctrine_d24.md).
+
+> Snapshot/cache artifacts used for AI handoff bind to branch, commit, generation command, generation timestamp, and freshness status.
+
+**Failure mode caught:** DX-001 found `state_latest.json` could be stale while still looking like a current Control Room handoff artifact.
+
+**TASK-033 ratification:** TASK-032 applied the candidate during the fix-all pass. TASK-033 ratifies it as binding for Control Room snapshots and live Factory sidecars.
+
+---
+
+## D25 — Public verification honesty
+
+See [`doctrine_d25.md`](doctrine_d25.md).
+
+> Public docs may not claim public tests, screenshots, or reproducibility scripts unless those files are present in the public branch or explicitly scoped private.
+
+**Failure mode caught:** DX-001 found README and Control Room docs claiming public tests and screenshot assets that the shipped surface did not actually contain.
+
+**TASK-033 ratification:** TASK-032 applied the candidate during the fix-all pass. TASK-033 ratifies it as binding: public docs now distinguish shipped `public_tests/` from private implementation-side test suites, and screenshot references point to existing public PNGs.
 
 ---
 

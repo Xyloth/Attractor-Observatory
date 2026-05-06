@@ -29,10 +29,10 @@
 |---|---|
 | **Substrate** | 15 simulated worlds (W-1 atomic/molecular → W13 multiscale composition) |
 | **Campaigns shipped** | 16 (Campaigns 002–016 + 7 Builder campaigns) |
-| **Doctrine** | D7–D22, each rule from an observed failure mode |
+| **Doctrine** | D7–D25, each rule from an observed failure mode |
 | **Mistake catalog** | 12 classes (11 ratified + 1 candidate) |
 | **Calibration ledger** | 34 AI-builder tasks across 3 distinct builders |
-| **Tests** | 76 control-room (public) + ~210 scientific-core (private) |
+| **Tests** | Public smoke/invariant tests in `public_tests/`; full control-room and scientific-core suites held privately |
 | **Real-data ingestion** | NIST atomic spectra · PubChem · peer-reviewed math.DS catalog |
 | **Spec versions** | v1.0 → v1.1 → v1.2 (active), with Proposals #1 / #2 ratified |
 
@@ -44,7 +44,7 @@ The Attractor Observatory is two things at once.
 
 **A computational ALife research instrument.** Fifteen simulated worlds — pure dynamical-system primitives, atomic/molecular topology, autocatalytic chemistry (RAFs), protocells, reaction-diffusion fields, morphogenesis with gene-regulatory networks, an Avida-class executable digital organism world, ecosystems, swarms, proto-cognitive agents, mineral-surface origins chemistry, hypergraph reactions, quasispecies dynamics, symbiogenesis, and multi-scale composition — all exporting into a common process-trace format. Motif detectors mine the traces for recurring stable structures (closure, self-maintained boundary, externalised memory, repair, replication, floor connectivity). An eight-lens formalism battery (graph, CRNT, dynamical systems, topology, Petri nets, statistical mechanics, control theory, information) evaluates each motif for formal coverage. A null-model factory contests every claim. The work is gated by a doctrine that catches specific failure modes the project has actually observed and refused to repeat.
 
-**An AI-collaboration framework.** The project is built primarily by AI agents under a human PI: GPT in the Theorist role, Claude in the Architect role, three distinct AI builders (Codex Legacy, Codex 1.5x, Claude Builder) in the Builder role. Their interactions are governed by binding doctrine (D7–D22), a per-task **Estimation Calibration Loop**, a Truth Pass discipline, a three-mode artifact tagging system (`foundational` / `exploratory` / `claim-bearing`), Substance Audits when line-count proxies diverge from spec coverage, and a **cross-audit triangle** in which Architect, Codex, and Claude Builder check one another's work. The Estimation Loop has empirically taken AI builders from systematic 10× overestimation toward delta near 1.0; trajectory data is published per builder in `project_telemetry/ai_builder_tasks.jsonl`. The Truth Pass has retroactively downgraded six historical "green" claims that turned out to depend on cheats. The doctrine itself has expanded sixteen rules under live pressure from observed failure modes, including one (D18) authored by the Builder during the work. The mistake catalog has accumulated twelve classes, the most recent (Class 11 — categorical confound through pooling) catching a substrate-confound that retroactively falsified the project's leading L5 candidate.
+**An AI-collaboration framework.** The project is built primarily by AI agents under a human PI: GPT in the Theorist role, Claude in the Architect role, three distinct AI builders (Codex Legacy, Codex 1.5x, Claude Builder) in the Builder role. Their interactions are governed by binding doctrine (D7–D25), a per-task **Estimation Calibration Loop**, a Truth Pass discipline, a three-mode artifact tagging system (`foundational` / `exploratory` / `claim-bearing`), Substance Audits when line-count proxies diverge from spec coverage, and a **cross-audit triangle** in which Architect, Codex, and Claude Builder check one another's work. The Estimation Loop has empirically taken AI builders from systematic 10× overestimation toward delta near 1.0; trajectory data is published per builder in `project_telemetry/ai_builder_tasks.jsonl`. The Truth Pass has retroactively downgraded six historical "green" claims that turned out to depend on cheats. The doctrine itself has expanded twenty rules under live pressure from observed failure modes, including one (D18) authored by the Builder during the work. The mistake catalog has accumulated twelve classes, the most recent (Class 11 — categorical confound through pooling) catching a substrate-confound that retroactively falsified the project's leading L5 candidate.
 
 Both stories live in this repository. They are inseparable: the science could not have been built at this depth without the discipline, and the discipline would be vacuous without science it had to keep honest.
 
@@ -56,10 +56,10 @@ This is a **curated public surface** of the Attractor Observatory project. The f
 
 **What ships publicly:**
 
-- The complete **Observatory Control Room** (`control_room/`) — 11-room Streamlit dashboard, snapshot endpoint, launcher, design system, ~76 control-room-specific tests embedded in the dashboard's own test layer.
+- The complete **Observatory Control Room** (`control_room/`) — 11-room Streamlit dashboard, snapshot endpoint, launcher, and design system. Public invariant tests live in `public_tests/`; the full 76-test control-room suite is held privately with the scientific-core suite.
 - The complete **Autonomous Factory v0** (`factory_lowlevel/`) — schemas, adapters, normalization, persistence, daemon, audit queue, monitor.
 - All **specifications** (v1.0, v1.1, v1.2, Proposals #1 v2 and #2 v1).
-- The **doctrine** (`docs/DOCTRINE.md` + per-rule documents D7 through D22).
+- The **doctrine** (`docs/DOCTRINE.md` + per-rule documents D7 through D25).
 - The **AI-collaboration framework** documentation, the live Estimation Loop ledger (`project_telemetry/ai_builder_tasks.jsonl`), the cross-builder BUILD_LOG, and the per-task progress records.
 - All **methods documents** (`papers/methods/`) including substance audits W6–W13, the Truth Pass, the methodology validation records, and the Factory hardening spec.
 - All **falsifiers** (`papers/falsifiers/`) including the floor_connectivity falsification arc.
@@ -68,7 +68,7 @@ This is a **curated public surface** of the Attractor Observatory project. The f
 - The complete **visual design system** (`Visuals/`) — SVG icons, CSS design tokens, JSX component reference, preview HTMLs.
 - The **decision log** (`ai_os/memory/`) — markdown ledger; the executable AI OS modules are held privately.
 
-**What is held privately:** the substrate engines (W-1 through W13 implementations), motif detectors, validation gauntlet, null factory, kernel, trace plane, formalism layer, biology shadow, search/orchestration, the full ~210-test scientific-core suite, and reproducibility scripts. Access is available to collaborators via the Project PI.
+**What is held privately:** the substrate engines (W-1 through W13 implementations), motif detectors, validation gauntlet, null factory, kernel, trace plane, formalism layer, biology shadow, search/orchestration, the full 76-test control-room suite, the ~210-test scientific-core suite, and reproducibility scripts. Access is available to collaborators via the Project PI.
 
 The intent is to make the project's depth and discipline auditable from the public surface — read the audits, read the Truth Pass, read the substance audits, look at the empirical estimation-calibration ledger, walk the Control Room, inspect the Factory store JSON — without releasing the full implementation. The doctrine, the Estimation Loop, the Truth Pass, the Substance Audit pattern, the cross-audit triangle, and the Control Room architecture are all reusable under MIT.
 
@@ -91,12 +91,12 @@ The Control Room is the project's live observability layer: an 11-room native de
 | **Motif Atlas** | Motif registry, motif × world matrix, motif × process-role / interaction-channel maps, formal-coverage status |
 | **Basin-Floor Geometry Lab** | Floor metrics, perturbation outcomes, the floor_connectivity falsification arc as a worked example |
 | **Falsifier & Negative-Space Ledger** | Falsifier timeline, downgraded claims, negative-space map across five categories |
-| **Doctrine & Integrity Console** | D7–D22 registry, doctrine arc, mistake catalog cross-linked, pending candidates |
-| **Factory Intake Dock** | Quarantined preview of the autonomous low-level Factory state — empirical records, normalized refs, evidence graph |
+| **Doctrine & Integrity Console** | D7–D25 registry, doctrine arc, mistake catalog cross-linked, pending candidates |
+| **Factory Intake Dock** | Live multi-world Factory console — aim W1/W3/W6/W9/W11 sources, FIRE, watch traces and motif fires |
 | **Project Graph** | Force-directed living node-edge map: worlds, campaigns, motifs, agents, doctrines, falsifiers, reports, with eight edge typologies |
 | **Portfolio / Demo Mode** | Curated screenshot capture rig, demo scenario walk-through, README asset manifest |
 
-The Control Room enforces **D22** structurally: every "no data" surface routes through a single empty-state component; no mock data on user-facing surfaces. The `control_room/` test suite (76 tests) includes a read-only enforcement test that scans every `.py` for write patterns outside `control_room/cache/` and fails on violation. The dashboard generates a structured `state_<UTC-timestamp>.json` snapshot on each render so AI agents joining the project can read one file instead of fifty.
+The Control Room enforces **D22** structurally: every "no data" surface routes through a single empty-state component; no mock data on user-facing surfaces. The private `control_room/` test suite (76 tests) includes a read-only enforcement test that scans every `.py` for write patterns outside `control_room/cache/` and fails on violation. The public branch carries smoke/invariant tests under `public_tests/` for the shipped surface. The dashboard generates a structured `state_<UTC-timestamp>.json` snapshot on each render so AI agents joining the project can read one file instead of fifty.
 
 Detailed Control Room documentation lives in [`Control_Room_README.md`](Control_Room_README.md) and per-room docs in [`control_room/rooms/README.md`](control_room/rooms/README.md).
 
@@ -133,7 +133,7 @@ The Factory's hardening readiness checklist — 59 gates across source validity,
 **For AI-collaboration / AI-safety readers:**
 
 - **The Estimation Calibration Loop** is a live experiment in shifting AI builder behaviour through their own per-task data. The ledger spans **34 tasks across three distinct AI builders** (Codex Legacy, Codex 1.5x, Claude Builder). Each builder shows a different convergence pattern; calibration is **task-class-local AND reuse-density-local AND identity-bounded** — deployment configuration shifts (speed mode, subscription tier) function as new agents for calibration purposes. Trajectory plots live in the Control Room's AI Operations Tower.
-- **Doctrine D7–D22** are *observed failure modes turned into binding rules.* Each rule corresponds to a specific cheat the project has caught: number-generator corpora (D8), engineered pass criteria (D9), hardcoded science via dictionary lookup (D10), scenario-internal hardcoding inside simulation steps (D14), softening gate thresholds while still displaying the higher threshold (D17.5), equivalence-basis drift in floor detection (D18, authored by Codex), source-bound extraction (D19), extraction/detection separation (D20), densification before claim-bearing (D21), and empty-rooms-beat-stocked-with-mock-data (D22, ratified during the Control Room build).
+- **Doctrine D7–D25** are *observed failure modes turned into binding rules.* Each rule corresponds to a specific cheat the project has caught: number-generator corpora (D8), engineered pass criteria (D9), hardcoded science via dictionary lookup (D10), scenario-internal hardcoding inside simulation steps (D14), softening gate thresholds while still displaying the higher threshold (D17.5), equivalence-basis drift in floor detection (D18, authored by Codex), source-bound extraction (D19), extraction/detection separation (D20), densification before claim-bearing (D21), empty-rooms-beat-stocked-with-mock-data (D22, ratified during the Control Room build), dereferenceable evidence boundaries (D23), freshness-bound sidecars (D24), and public verification honesty (D25).
 - **The Mistake Catalog** has accumulated twelve classes. Class 10 (test-architecture / substrate-presence mismatch) was caught when Claude Builder defaulted to building a toy on motif-absent traces; Class 11 (categorical confound through pooling) was caught by Codex when Builder + Architect both missed that pooled-corpus labels were stratified by substrate identity; Class 12 (decorative completeness) is on watch as a candidate, with multiple observed avoidances during Control Room construction.
 - **Cross-audit triangle.** Architect / Codex / Claude Builder. Three different agent architectures, structurally independent. The triangle has caught eleven mistake classes across the work. The eleventh — Class 11 — is a worked example of cross-audit working as designed: Builder missed it, Architect missed it, Codex caught it during audit, doctrine and methodology both updated.
 - **The Truth Pass** has, on three occasions, retroactively downgraded "green" claims to `exploratory` once foundations turned out to be degenerate. The discipline works.
@@ -147,7 +147,7 @@ A five-minute guided tour lives in [`docs/TOUR.md`](docs/TOUR.md). For a deeper 
 
 1. **`The Attractor Observatory v1.2.md`** — the active spec. Read §0 (preamble + doctrine), §3 (AI Operating System), §12 (Estimation Loop), §13 (roadmap).
 2. **Launch the Control Room** (`Launch Control Room.bat` on Windows) and walk through the rooms in this order: Pulse Deck → World Observatory → Campaign Command → AI Operations Tower → Basin-Floor Lab → Doctrine Console. Project state in twenty minutes.
-3. **`docs/DOCTRINE.md`** + per-rule documents (`docs/doctrine_d*.md`) — D7 through D22 with the failure mode each rule catches and the audit that exposed it.
+3. **`docs/DOCTRINE.md`** + per-rule documents (`docs/doctrine_d*.md`) — D7 through D25 with the failure mode each rule catches and the audit that exposed it.
 4. **`docs/AI_COLLABORATION.md`** — Estimation Loop empirics, Truth Pass discipline, Substance Audits, role decision rights.
 5. **`project_telemetry/ai_builder_tasks.jsonl`** — the AI builder ledger across all three builders. Real data.
 6. **`papers/methods/TRUTH_PASS.md`** — the historical-claim downgrade record.
@@ -168,7 +168,7 @@ A five-minute guided tour lives in [`docs/TOUR.md`](docs/TOUR.md). For a deeper 
 | 6 | Biology grounding | **deferred — bottom-up substrate stratification first (W-1, W0 shipped; biology levels queued behind real-data validation at lower strata)** |
 | 7 | Formalism layer + deficit map | **green; one L5 candidate found, replicated, falsified honestly** |
 | 8 | Atlas + periodic table + paper bundles | **partial (negative-space registry seeded; deficit map active)** |
-| **C-15** | **Observatory Control Room** | **green — 11 rooms, 76 tests, D22 binding** |
+| **C-15** | **Observatory Control Room** | **green — 11 rooms, private 76-test suite, public invariant tests, D22 binding** |
 | **C-16** | **Substrate bottom-up + Factory v0** | **green — W-1, W0 added; autonomous Factory live; 96/96 lens decline preserved as signal** |
 
 **Claim-ladder position:**
@@ -235,7 +235,7 @@ The project's specifications are content-addressed and signed:
 
 ## Doctrine
 
-Sixteen binding rules, each derived from a specific failure mode caught during the work:
+Twenty binding rules, each derived from a specific failure mode caught during the work:
 
 - **D7** No toys.
 - **D8** No number-generator corpora.
@@ -254,6 +254,9 @@ Sixteen binding rules, each derived from a specific failure mode caught during t
 - **D20** Extraction / detection separation.
 - **D21** Densification before claim-bearing.
 - **D22** Empty rooms beat stocked rooms with mock data. *(Ratified during Control Room construction, May 2026.)*
+- **D23** Dereferenceable evidence or explicit private boundary.
+- **D24** Freshness-bound sidecars.
+- **D25** Public verification honesty.
 
 Plus the canonical operating principle: **`NO ARTIFICIAL CEILING DOCTRINE.txt`** — every task is a seed and a minimum standard, not a ceiling. The full doctrine commentary, with the failure mode each rule catches and the audit that exposed it, is in [`docs/DOCTRINE.md`](docs/DOCTRINE.md).
 
@@ -272,7 +275,7 @@ The project's AI Operating System defines the roles and the rules of their inter
 | **Theorist** | GPT | Research strategy, claim review, methodological pushback, biology-grounding plans |
 | **Builder (legacy)** | Codex | Original substrate engines, AI OS scaffold, calibration corpora K1–K10, validation gauntlet, doctrine D18 |
 | **Builder (1.5x)** | Codex 1.5x (fast-mode Pro) | Factory enhancement, hardening spec, adversarial controls, projection-basis comparison |
-| **Builder (UI)** | Claude (Builder) | Observatory Control Room (foundation through final polish), 76 control-room tests, snapshot endpoint, launcher hardening |
+| **Builder (UI)** | Claude (Builder) | Observatory Control Room (foundation through final polish), private 76-test control-room suite, public invariant tests, snapshot endpoint, launcher hardening |
 | **Red Team** | rotating | Adversarial perturbation, decoy worlds, detector ablation, dictionary-echo audits |
 
 The **Estimation Calibration Loop** is the project's primary mechanism for AI behaviour shaping. Every task records `scope_score`, `complexity_score`, `estimated_minutes`, `estimated_files`, `estimated_tests`, and `expansions_planned` *before* execution. The PI provides `actual_minutes` after completion. The record appends to `project_telemetry/ai_builder_tasks.jsonl`. The convergence pattern is per-builder, per-task-class, and per-deployment-configuration — agent infrastructure shifts (speed mode, subscription tier) function as new identities in the framework.
@@ -291,7 +294,7 @@ A longer treatment is in [`docs/AI_COLLABORATION.md`](docs/AI_COLLABORATION.md).
 
 ## Tests, reproducibility, CI
 
-The full repository contains an end-to-end test suite of ~290 tests (76 control-room tests publicly visible via the Control Room layer; ~210 scientific-core tests held privately, with 3 known pre-existing CLI subprocess failures documented). Per-campaign reproducibility scripts regenerate full reports from cold for Campaigns 002–016. The Control Room's read-only enforcement test AST-scans every `.py` under `control_room/` for write patterns outside `control_room/cache/` and fails on violation. The D14 AST lint runs as part of every campaign report and reports zero violations across all reconstructed worlds.
+The full private repository contains an end-to-end test suite of ~290 tests (76 control-room tests and ~210 scientific-core tests, with 3 known pre-existing CLI subprocess failures documented). This public branch ships a smaller `public_tests/` suite that verifies public-surface contracts: spec lineage hashes, doctrine registry coverage, telemetry ledger shape, Factory hardening readiness, PubChem schema-alias parsing, snapshot freshness binding, and private-evidence markers. Per-campaign reproducibility scripts for the private implementation regenerate full reports from cold for Campaigns 002–016. The D14 AST lint runs as part of those campaign reports and reports zero violations across all reconstructed worlds.
 
 The campaign summary JSONs in `reports/campaign_NNN/` are the *outputs* of those reproducibility runs. They contain numerical evidence — gate scores, ROC AUC and ECE per detector, basin-width point estimates with bootstrap CIs, FDR-corrected p-values per null, cross-detector kappa, K-corpus pass rates, Cahn-Hilliard biharmonic conservation residuals, substrate-blocked N=10,000 permutation results, etc. Read them for what the project actually measured, not for what it claims.
 
@@ -316,8 +319,8 @@ Determinism class is declared per world: `strict` for ODE-class worlds, `replaya
 ├── CLAUDE_BUILDER_INITIATION.md               # Builder discipline doc + Mistake Catalog 1–12
 ├── CODEX_INITIATION.md                        # Builder role spec
 ├── docs/
-│   ├── DOCTRINE.md                            # D7–D22 commentary
-│   ├── doctrine_d{7-13,14,18,19-21,22}.md     # per-rule failure modes
+│   ├── DOCTRINE.md                            # D7–D25 commentary
+│   ├── doctrine_d{7-13,14,18,19-21,22-25}.md  # per-rule failure modes
 │   ├── AI_COLLABORATION.md                    # roles, Estimation Loop, Truth Pass empirics
 │   ├── ARCHITECTURE.md                        # the six planes
 │   ├── TOUR.md                                # five-minute guided tour
@@ -342,7 +345,7 @@ Determinism class is declared per world: `strict` for ODE-class worlds, `replaya
 ├── atlas/
 │   └── negative_space/                        # negative-space registry
 ├── Visuals/                                   # design system: SVG icons, colors_and_type.css, JSX reference, preview HTMLs
-├── tests/                                     # ~290 tests
+├── public_tests/                              # shipped public-surface smoke and invariant tests
 ├── spec/
 │   ├── lineage.json                           # content-hash chain
 │   └── CHANGELOG.md
@@ -364,19 +367,20 @@ If you use this work in research or build on the AI-collaboration framework, ple
 
 MIT. See [`LICENSE`](LICENSE).
 
-The doctrine framework, the AI Operating System layer, the Estimation Calibration Loop methodology, and the Substance Audit pattern are released under the same license. If you reuse them in a different project, attribution is appreciated and the doctrine works best when its rules are kept faithfully — D7 through D22 are derived from observed failures, not aesthetic preferences.
+The doctrine framework, the AI Operating System layer, the Estimation Calibration Loop methodology, and the Substance Audit pattern are released under the same license. If you reuse them in a different project, attribution is appreciated and the doctrine works best when its rules are kept faithfully — D7 through D25 are derived from observed failures, not aesthetic preferences.
 
 ---
 
 ## Authors and acknowledgements
 
-- **Project PI** — direction, ambition envelope, actuals provider for the Estimation Loop, doctrine ratification, the original Basin-Floor proposal that became Campaigns 009–013, the math-shadow architectural target, the Control Room visual identity.
-- **GPT** as Theorist — original v1.0 seed, Seed v1.2 critique, methodological pushback throughout.
-- **Claude** as Architect — v1.1, v1.2, audits, doctrine D7–D17.5 and D19–D22, Mistake Catalog framework, campaign drivers.
-- **Codex** (Legacy) as Builder — substrate engines W1–W13, trace plane, AI OS scaffold, calibration corpora K1–K10, validation gauntlet, atlas seed, doctrine D18, the substrate-blocked control that honestly killed the project's leading L5 candidate.
-- **Codex 1.5x** as Builder — Factory enhancement, hardening spec, adversarial controls, projection-basis comparison.
-- **Claude (Builder)** as Builder — Observatory Control Room (foundation through final polish), 76 control-room tests, snapshot endpoint for AI consumption, launcher hardening, the floor_connectivity falsification arc rendered as canonical worked example in the Basin-Floor Lab.
+**Author:** James Dye — Xyflow Innovations.
 
-The discipline is what makes the science honest. The science is what gives the discipline something to be honest *about*.
+I architect multi-agent AI systems. The Attractor Observatory is a working example.
 
-— *The Attractor Observatory project, May 2026.*
+I designed and orchestrated a four-role AI builder architecture (Architect / Theorist / Builder / Destroyer), operating under a 25-rule binding doctrine I authored from observed failure modes. The discipline includes a per-task Estimation Calibration Loop with empirical convergence data across 34 builder tasks; a Truth Pass that retroactively downgrades green claims when foundations turn out degenerate; a cross-audit triangle for structural disagreement between builders; and a via-negativa Branch Falsification Bath that catalogs the instrument's shape by what's been adversarially attacked and survived. Every architectural call is mine: the bottom-up substrate stratification, the math-shadow projection framing, the Motif Contract artifact for predicate-lens decoupling, the parking of the publishing track once L5 candidate hunting proved premature, the live-console "aim with it" interaction model, the disposable-branch falsification design.
+
+The implementation — 15 simulated worlds spanning math primitives through multi-scale composition, an eight-lens formalism battery, the autonomous Factory ingestion pipeline against authoritative sources (NIST / NIH NCBI / EMBL-EBI ChEBI / KEGG / GBIF / peer-reviewed math.DS catalogs), the Observatory Control Room with a snapshot endpoint for AI consumption, the substrate-blocked permutation methodology that honestly killed the project's leading L5 candidate — was performed by AI agents (Claude, GPT, and Codex variants) operating as instruments under my direction. I wrote the system that wrote the code. I'm the only human in the loop.
+
+Background: B.S. in Geographic Information Systems. The methodology in this repository — doctrine framework, Estimation Loop, Truth Pass, Substance Audit, cross-audit triangle, Branch Falsification Bath, Motif Contract — is released under MIT for reuse in other AI-orchestrated projects.
+
+— *Xyflow Innovations, May 2026.*

@@ -1,0 +1,259 @@
+{
+  "claim_eligible": false,
+  "content_hash": "sha256:8559ae39b47765569ffabe484e64775db800ad5e71f5e78790129fcb4684e732",
+  "cross_world_tests": [
+    {
+      "evidence": {
+        "declared_projection_nondeclined_count": 36,
+        "declined_count": 96,
+        "evaluation_count": 96,
+        "interpretation": "Existing lenses were not tuned for low-level primitive worlds. Declines and low coverage are retained as honest signal for formalism extension rather than patched during Campaign 016.",
+        "lens_count": 8,
+        "motif_count": 6,
+        "nondeclined_count": 0,
+        "projection_basis_option_count": 6,
+        "source_native_adversarial_passed": true,
+        "source_native_detector_fire_count": 3,
+        "world_count": 2
+      },
+      "expectation": "formal-lens decline remains the load-bearing Campaign 016 signal",
+      "passed": true,
+      "test_id": "raw_96_of_96_decline_preserved"
+    },
+    {
+      "evidence": {
+        "case_count": 3,
+        "passed_case_count": 3
+      },
+      "expectation": "source-native detectors fire on real corpus and decline on degenerate inputs",
+      "passed": true,
+      "test_id": "source_native_adversarial_controls_still_green"
+    },
+    {
+      "evidence": {
+        "best_by_source_world": {
+          "atomic_molecular_primitives": {
+            "basis": "atomic/molecular primitives as reaction-network ingredient summaries",
+            "declined_count": 18,
+            "evaluation_count": 48,
+            "nondeclined_count": 30,
+            "positive_label_count": 0,
+            "projected_world_family": "crn",
+            "source_world_family": "atomic_molecular_primitives",
+            "top_coverage": [
+              {
+                "components": {
+                  "compression_ratio": 0.022286062505,
+                  "compression_score": 0.976540986837,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.710481148026,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.autocatalytic_closure.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.022286062505,
+                  "compression_score": 0.976540986837,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.710481148026,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.repair.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.022286062505,
+                  "compression_score": 0.976540986837,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.710481148026,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.replication_lineage.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              }
+            ]
+          },
+          "math_primitives": {
+            "basis": "math primitives as reaction-network closure surrogates",
+            "declined_count": 18,
+            "evaluation_count": 48,
+            "nondeclined_count": 30,
+            "positive_label_count": 0,
+            "projected_world_family": "crn",
+            "source_world_family": "math_primitives",
+            "top_coverage": [
+              {
+                "components": {
+                  "compression_ratio": 0.040503906873,
+                  "compression_score": 0.957364308555,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.707604646283,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.autocatalytic_closure.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.040503906873,
+                  "compression_score": 0.957364308555,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.707604646283,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.repair.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              },
+              {
+                "components": {
+                  "compression_ratio": 0.040503906873,
+                  "compression_score": 0.957364308555,
+                  "encoding_success": 1.0,
+                  "invariance_preservation": 1.0,
+                  "prediction_accuracy": 0.0,
+                  "prediction_baseline": 0.5,
+                  "prediction_component": 0.0,
+                  "reconstruction_score": 0.82
+                },
+                "coverage_score": 0.707604646283,
+                "decline_count": 0,
+                "holdout_count": 0,
+                "lens_id": "petri",
+                "motif_id": "motif.replication_lineage.draft",
+                "nondeclined_count": 1,
+                "pair_count": 1
+              }
+            ]
+          }
+        },
+        "interpretation": "Projection counts are bridge diagnostics for math-shadow design; they do not override the raw 96/96 low-level lens decline.",
+        "projection_option_count": 6
+      },
+      "expectation": "bridge nondeclines must stay separate from motif positives",
+      "passed": true,
+      "test_id": "projection_bridge_not_finding"
+    }
+  ],
+  "mode_tag": "exploratory",
+  "passed": true,
+  "schema": "Campaign017DensityFalsifiers.v1",
+  "source_campaign": "campaign-016",
+  "summary": {
+    "projection_bridge_claim_eligible": false,
+    "raw_decline_preserved": true,
+    "source_native_adversarial_passed": true,
+    "world_count": 2,
+    "worlds_ready_after_falsifiers": 2
+  },
+  "worlds": [
+    {
+      "density_ready_survives_falsifiers": true,
+      "record_count": 10,
+      "tests": [
+        {
+          "expectation": "as-built low-level density contract remains satisfied",
+          "passed": true,
+          "test_id": "atomic_molecular_primitives.as_built_density_survives"
+        },
+        {
+          "expectation": "removing overlap_fields must break density readiness",
+          "passed": true,
+          "test_id": "atomic_molecular_primitives.axis_drop_declines"
+        },
+        {
+          "expectation": "records without source_url provenance must not be density-ready",
+          "passed": true,
+          "test_id": "atomic_molecular_primitives.missing_source_url_declines"
+        },
+        {
+          "expectation": "restricted-license records must not enter normalized density output",
+          "passed": true,
+          "test_id": "atomic_molecular_primitives.restricted_license_declines"
+        },
+        {
+          "expectation": "density readiness cannot promote motif or claim eligibility",
+          "passed": true,
+          "test_id": "atomic_molecular_primitives.claim_bearing_leak_absent"
+        }
+      ],
+      "world_family": "atomic_molecular_primitives",
+      "world_level": "W-1"
+    },
+    {
+      "density_ready_survives_falsifiers": true,
+      "record_count": 6,
+      "tests": [
+        {
+          "expectation": "as-built low-level density contract remains satisfied",
+          "passed": true,
+          "test_id": "math_primitives.as_built_density_survives"
+        },
+        {
+          "expectation": "removing overlap_fields must break density readiness",
+          "passed": true,
+          "test_id": "math_primitives.axis_drop_declines"
+        },
+        {
+          "expectation": "records without source_url provenance must not be density-ready",
+          "passed": true,
+          "test_id": "math_primitives.missing_source_url_declines"
+        },
+        {
+          "expectation": "restricted-license records must not enter normalized density output",
+          "passed": true,
+          "test_id": "math_primitives.restricted_license_declines"
+        },
+        {
+          "expectation": "density readiness cannot promote motif or claim eligibility",
+          "passed": true,
+          "test_id": "math_primitives.claim_bearing_leak_absent"
+        }
+      ],
+      "world_family": "math_primitives",
+      "world_level": "W0"
+    }
+  ]
+}

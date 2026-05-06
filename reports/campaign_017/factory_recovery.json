@@ -1,0 +1,45 @@
+{
+  "atomic_write_path": "reports\\campaign_017\\recovery_fixture\\valid_artifact.json",
+  "checks": {
+    "corrupt_artifact_quarantined": true,
+    "no_runtime_ai_required": true,
+    "valid_artifact_survived": true
+  },
+  "claim_eligible": false,
+  "content_hash": "sha256:57dbad73816b42d79f50d57554034b913be4e9d2c0bfffff09ec24c71220f8ef",
+  "fixture_dir": "reports\\campaign_017\\recovery_fixture",
+  "mode_tag": "exploratory",
+  "passed": true,
+  "recovery": {
+    "checked_count": 2,
+    "content_hash": "sha256:c16cd7e6fe5146a9a5150cd363ad06f2b80c38f91cf16e78f660b2ddfd5ae4e2",
+    "missing_count": 0,
+    "ok_count": 1,
+    "passed": true,
+    "quarantined_count": 1,
+    "results": [
+      {
+        "corruption_hash": "sha256:91df93d1af3e37f0faf6290374586173fee19f5094d1eeac78a93e3f9a36f342",
+        "error": "Expecting value: line 1 column 43 (char 42)",
+        "error_type": "JSONDecodeError",
+        "passed": true,
+        "path": "reports\\campaign_017\\recovery_fixture\\partial_artifact.json",
+        "quarantine_path": "reports\\campaign_017\\recovery_fixture\\.quarantine\\partial_artifact.json.91df93d1af3e37f0.corrupt",
+        "quarantined": true,
+        "schema": "LowLevelJsonRecoveryResult.v1",
+        "status": "quarantined"
+      },
+      {
+        "content_hash": "sha256:04d4aec01034bbeead44b55cbf0bf7f6f53fec2863a8bc9705cf01accab27500",
+        "passed": true,
+        "path": "reports\\campaign_017\\recovery_fixture\\valid_artifact.json",
+        "quarantined": false,
+        "schema": "LowLevelJsonRecoveryResult.v1",
+        "status": "ok"
+      }
+    ],
+    "root": "reports\\campaign_017\\recovery_fixture",
+    "schema": "LowLevelJsonRecoveryTree.v1"
+  },
+  "schema": "Campaign017FactoryRecovery.v1"
+}

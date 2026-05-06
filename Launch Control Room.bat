@@ -6,6 +6,7 @@ REM Optional flags:
 REM   /quiet     - run without console window via pythonw (silent mode)
 REM   /no-window - skip native window; start Streamlit only (browser path)
 REM   /port=N    - use port N instead of the default 8765
+REM   /port-kill - opt in to killing a process that already holds the port
 
 cd /d "%~dp0"
 set PYTHONPATH=%~dp0;%PYTHONPATH%

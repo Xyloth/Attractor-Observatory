@@ -1,0 +1,441 @@
+{
+  "calibration_trajectory": {
+    "by_model": {
+      "Claude (Builder)": {
+        "latest_delta": 0.20973333333333333,
+        "max_delta": 0.5555555555555556,
+        "mean_delta": 0.2248122448979592,
+        "min_delta": 0.09066666666666667,
+        "task_count": 7
+      },
+      "Codex": {
+        "latest_delta": 0.7030957142857144,
+        "max_delta": 0.9337037037037037,
+        "mean_delta": 0.28895242453297376,
+        "min_delta": 0.018591269841269843,
+        "task_count": 21
+      },
+      "unknown": {
+        "latest_delta": 0.08466666666666667,
+        "max_delta": 0.9710261538461539,
+        "mean_delta": 0.2492132264957265,
+        "min_delta": 0.07846153846153846,
+        "task_count": 6
+      }
+    },
+    "status": "ok",
+    "summary": "3 models in trajectory"
+  },
+  "campaigns": {
+    "rows": [
+      {
+        "campaign_id": "campaign_002",
+        "gate_count": 20,
+        "passed_gate_count": 20,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_003",
+        "gate_count": 26,
+        "passed_gate_count": 26,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_004",
+        "gate_count": 22,
+        "passed_gate_count": 22,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_005",
+        "gate_count": 21,
+        "passed_gate_count": 21,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_006",
+        "gate_count": 68,
+        "passed_gate_count": 68,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_007",
+        "gate_count": null,
+        "passed_gate_count": null,
+        "status": null
+      },
+      {
+        "campaign_id": "campaign_008",
+        "gate_count": null,
+        "passed_gate_count": null,
+        "status": null
+      },
+      {
+        "campaign_id": "campaign_009",
+        "gate_count": 13,
+        "passed_gate_count": 13,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_010",
+        "gate_count": 24,
+        "passed_gate_count": 24,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_011",
+        "gate_count": 32,
+        "passed_gate_count": 32,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_012",
+        "gate_count": 24,
+        "passed_gate_count": 24,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_013",
+        "gate_count": 26,
+        "passed_gate_count": 26,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_014",
+        "gate_count": 9,
+        "passed_gate_count": 9,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_016",
+        "gate_count": 9,
+        "passed_gate_count": 9,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_017",
+        "gate_count": 10,
+        "passed_gate_count": 10,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_018",
+        "gate_count": 9,
+        "passed_gate_count": 9,
+        "status": "green"
+      },
+      {
+        "campaign_id": "campaign_019",
+        "gate_count": 4,
+        "passed_gate_count": 4,
+        "status": "green"
+      }
+    ],
+    "status": "ok",
+    "status_counts": {
+      "green": 15,
+      "unknown": 2
+    },
+    "summary": "17 campaigns; 15 green, 0 in_progress, 0 failed"
+  },
+  "consumer_guidance": {
+    "for_fresh_architect": [
+      "Read 'project_health' first (1 sentence summary).",
+      "Then 'recent_changes' (delta since last snapshot).",
+      "Then 'current_agent_telemetry' for ongoing tasks.",
+      "Then 'doctrine' for binding rules.",
+      "Reach for the source files only when a section's details are insufficient."
+    ],
+    "for_fresh_codex": [
+      "Read 'pytest_status' and 'campaigns' first.",
+      "Then 'detector_decline' (Campaign 016 honest-signal finding).",
+      "Then 'mistake_catalog' for the 12 ratified failure classes."
+    ],
+    "for_human_pi": [
+      "All sections are dashboard-grade summaries; click into Control Room rooms for visual detail."
+    ]
+  },
+  "current_agent_telemetry": {
+    "by_model": [
+      {
+        "delta_mean": 0.2889526287158408,
+        "model": "Codex",
+        "most_recent_task_id": "TASK-028",
+        "task_count": 46
+      },
+      {
+        "delta_mean": 1.7875583700146724,
+        "model": "Claude (Builder)",
+        "most_recent_task_id": "TASK-CB-007",
+        "task_count": 7
+      },
+      {
+        "delta_mean": null,
+        "model": "unknown",
+        "most_recent_task_id": "TASK-030",
+        "task_count": 6
+      },
+      {
+        "delta_mean": null,
+        "model": "Codex 1.5x",
+        "most_recent_task_id": "TASK-031",
+        "task_count": 3
+      }
+    ],
+    "status": "ok",
+    "summary": "4 agents with telemetry"
+  },
+  "detector_decline": {
+    "declined": 96,
+    "evaluations": 96,
+    "interpretation_note": "Campaign 016 detector decline at low-level primitives is a load-bearing finding (D17: floor falsifiers are publishable). The 96/96 decline is rendered as honest signal in the Doctrine Console, not patched.",
+    "rate": 1.0,
+    "status": "ok",
+    "summary": "detector_declined 96/96 (rate 1.00)"
+  },
+  "doctrine": {
+    "ids": [
+      "D18",
+      "D22",
+      "D14",
+      "D7-D13",
+      "D19",
+      "D20",
+      "D21"
+    ],
+    "registry_count": 7,
+    "status": "ok",
+    "summary": "7 registry entries"
+  },
+  "factory_state": {
+    "audit_queue_count": 0,
+    "claim_bearing_promotions": 0,
+    "detector_decline_rate": 1.0,
+    "detector_declined": 96,
+    "detector_evaluations": 96,
+    "edge_count": 19,
+    "empirical_count": 16,
+    "intake_dock_status": "active",
+    "normalized_count": 16,
+    "source_cache_count": 3,
+    "status": "ok",
+    "summary": "empirical=16 normalized=16 edges=19 audit_queue=0"
+  },
+  "falsifiers": {
+    "falsifier_count": 2,
+    "falsifier_files": [
+      "bfg_point_attractor_candidate.md",
+      "floor_connectivity_campaign013_replication.md"
+    ],
+    "method_count": 20,
+    "negative_space_count": 10,
+    "negative_space_files": [
+      "bio_only_campaign_004.md",
+      "biology_only_motifs.md",
+      "math_only_campaign_004.md",
+      "math_only_structures.md",
+      "predicted_empty_basins.md",
+      "predicted_empty_campaign_004.md",
+      "sim_only_campaign_004.md",
+      "simulation_only_attractors.md",
+      "unexplained_absence_campaign_004.md",
+      "unexplained_absences.md"
+    ],
+    "status": "ok",
+    "summary": "2 falsifiers; 10 negative-space entries"
+  },
+  "generated_at": "2026-05-06T01:26:32.585905+00:00",
+  "git_state": {
+    "branch": "main",
+    "last_commit": {
+      "author_email": "founder@xyflowinnovations.com",
+      "author_name": "Xyloth",
+      "hash": "5aabbe8c63ff545da6d72e7dc56134669b621dee",
+      "iso_date": "2026-05-05 20:38:23 -0400",
+      "short": "5aabbe8",
+      "subject": "Merge feature/control-room-v0: Campaigns 008-016 + Control Room + Factory v0"
+    },
+    "recent_commit_count": 4,
+    "status": "ok",
+    "summary": "branch main \u00b7 last commit 5aabbe8 (Merge feature/control-room-v0: Campaigns 008-016 + Control R)"
+  },
+  "mistake_catalog": {
+    "classes": [
+      {
+        "id": "1",
+        "name": "Static-input contamination",
+        "status": "ratified"
+      },
+      {
+        "id": "2",
+        "name": "Direction inversion",
+        "status": "ratified"
+      },
+      {
+        "id": "3",
+        "name": "Soft enforcement / strict display",
+        "status": "ratified"
+      },
+      {
+        "id": "4",
+        "name": "Scenario-internal hardcoding",
+        "status": "ratified"
+      },
+      {
+        "id": "5",
+        "name": "Surface-coverage-without-substance",
+        "status": "ratified"
+      },
+      {
+        "id": "6",
+        "name": "Engineered passing",
+        "status": "ratified"
+      },
+      {
+        "id": "7",
+        "name": "Surface-labels-as-primitives",
+        "status": "ratified"
+      },
+      {
+        "id": "8",
+        "name": "Abstract-scalar-standing-in",
+        "status": "ratified"
+      },
+      {
+        "id": "9",
+        "name": "Spec-detail mismatch",
+        "status": "ratified"
+      },
+      {
+        "id": "10",
+        "name": "Test-architecture / substrate-presence mismatch",
+        "status": "ratified"
+      },
+      {
+        "id": "11",
+        "name": "Categorical confound through pooling",
+        "status": "ratified"
+      },
+      {
+        "id": "12",
+        "name": "Decorative completeness",
+        "status": "candidate"
+      }
+    ],
+    "status": "ok",
+    "summary": "12 classes; 11 ratified, 1 candidate (Class 12 \u2014 Decorative Completeness)"
+  },
+  "project_health": {
+    "active_branch": "main",
+    "notes": [
+      "3 pytest tests failed last run",
+      "2 of 17 campaigns not green",
+      "2 falsifier records present (publishable per D17)"
+    ],
+    "score": 70,
+    "status": "ok",
+    "summary": "Project health score: 70/100. 3 pytest tests failed last run; 2 of 17 campaigns not green; 2 falsifier records present (publishable per D17)"
+  },
+  "purpose": "Single-file digest for AI agents starting a fresh session. Read this file before parsing the 50+ source files referenced below. Each section carries {status, summary, details}. status=='ok' means real adapter data; status=='missing' means the source artifact is not on disk; status=='malformed' means the source exists but did not parse.",
+  "pytest_status": {
+    "last_failed_count": 3,
+    "nodeid_count": 382,
+    "status": "ok",
+    "summary": "pytest cache: 3 last failed of 382 nodeids"
+  },
+  "raw_adapter_payloads": {
+    "build_log": {
+      "rationale": "parsed 35 entries from BUILD_LOG.md",
+      "status": "ok"
+    },
+    "builder_telemetry": {
+      "rationale": "parsed 62 records from project_telemetry/ai_builder_tasks.jsonl",
+      "status": "ok"
+    },
+    "campaign_reports": {
+      "rationale": "surveyed 17 campaign directories; 15 green; 2 missing full_report.json",
+      "status": "ok"
+    },
+    "doctrine": {
+      "rationale": "parsed 7 registry rows; 17 consolidated headings; 5 per-rule files",
+      "status": "ok"
+    },
+    "factory_store": {
+      "rationale": "factory store: 16 empirical records, 16 normalized refs, 19 evidence edges; detector decline 1.00 (96/96)",
+      "status": "ok"
+    },
+    "git_metadata": {
+      "rationale": "branch=main, last_commit=5aabbe8, recent_log_count=4",
+      "status": "ok"
+    },
+    "methods_falsifiers": {
+      "rationale": "indexed 20 methods, 2 falsifiers",
+      "status": "ok"
+    },
+    "negative_space": {
+      "rationale": "indexed 10 negative-space entries from atlas/negative_space",
+      "status": "ok"
+    },
+    "pytest_cache": {
+      "rationale": "pytest cache present at .pytest_cache; last_failed_count=3, nodeid_count=382",
+      "status": "ok"
+    }
+  },
+  "recent_changes": {
+    "recent_entries": [
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-031 starting] Campaign 020: Substrate-Blocked Sweep on Five Remaining Motifs",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-030 complete] Campaign 019: Factory Live-Mode Hardening",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-030 starting] Campaign 019: Factory Live-Mode Hardening",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-029 complete] Campaign 018: W1 CRN Bridge-Trace Generation",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-029 starting] Campaign 018: W1 CRN Bridge-Trace Generation",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-028 complete] Low-Level Density Falsifiers + Upward Prediction + Factory Recovery",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-028 starting] Low-Level Density Falsifiers + Upward Prediction + Factory Recovery",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-027 complete] Factory Enhancement + Hardening Spec",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-027 starting] Factory Enhancement + Hardening Spec",
+        "kind": "work"
+      },
+      {
+        "date": "2026-05-05",
+        "header": "[Codex Builder] [TASK-026 complete] Campaign 016: Substrate Bottom-Up + Factory v0",
+        "kind": "work"
+      }
+    ],
+    "status": "ok",
+    "summary": "10 most-recent BUILD_LOG entries"
+  },
+  "schema": "ControlRoomSnapshot.v1"
+}

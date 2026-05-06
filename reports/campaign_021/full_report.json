@@ -1,0 +1,557 @@
+{
+  "architectural_disclosures": [
+    "C020 methodology leak remains out of scope; no claim-bearing promotion is performed.",
+    "The formal lens registry currently exposes six draft motifs; TASK-033 does not fabricate additional motif ids to satisfy UI copy.",
+    "NCBI HIV-1 path is a pilot reference-sequence projection, not a sampled within-host quasispecies cohort."
+  ],
+  "campaign_id": "campaign_021",
+  "claim_promotion_allowed": false,
+  "doctrine_binding": [
+    "D14",
+    "D19",
+    "D22",
+    "D23",
+    "D24",
+    "D25"
+  ],
+  "life_form_count": 8,
+  "live_console_artifacts": {
+    "latest_run": "control_room/cache/factory_runs/latest_run.json",
+    "latest_state": "control_room/cache/factory_runs/latest_state.json",
+    "run_root": "control_room/cache/factory_runs/"
+  },
+  "mode_tag": "exploratory",
+  "motif_fire_rates": [
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "boundary",
+      "trace_count": 1,
+      "world_family": "crn"
+    },
+    {
+      "fire_count": 1,
+      "fire_rate": 1.0,
+      "motif": "closure",
+      "trace_count": 1,
+      "world_family": "crn"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "floor",
+      "trace_count": 1,
+      "world_family": "crn"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "lineage",
+      "trace_count": 1,
+      "world_family": "crn"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "memory",
+      "trace_count": 1,
+      "world_family": "crn"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "repair",
+      "trace_count": 1,
+      "world_family": "crn"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "boundary",
+      "trace_count": 1,
+      "world_family": "ecosystem"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "closure",
+      "trace_count": 1,
+      "world_family": "ecosystem"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "floor",
+      "trace_count": 1,
+      "world_family": "ecosystem"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "lineage",
+      "trace_count": 1,
+      "world_family": "ecosystem"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "memory",
+      "trace_count": 1,
+      "world_family": "ecosystem"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "repair",
+      "trace_count": 1,
+      "world_family": "ecosystem"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "boundary",
+      "trace_count": 3,
+      "world_family": "field"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "closure",
+      "trace_count": 3,
+      "world_family": "field"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "floor",
+      "trace_count": 3,
+      "world_family": "field"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "lineage",
+      "trace_count": 3,
+      "world_family": "field"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "memory",
+      "trace_count": 3,
+      "world_family": "field"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "repair",
+      "trace_count": 3,
+      "world_family": "field"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "boundary",
+      "trace_count": 2,
+      "world_family": "origins_chemistry"
+    },
+    {
+      "fire_count": 2,
+      "fire_rate": 1.0,
+      "motif": "closure",
+      "trace_count": 2,
+      "world_family": "origins_chemistry"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "floor",
+      "trace_count": 2,
+      "world_family": "origins_chemistry"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "lineage",
+      "trace_count": 2,
+      "world_family": "origins_chemistry"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "memory",
+      "trace_count": 2,
+      "world_family": "origins_chemistry"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "repair",
+      "trace_count": 2,
+      "world_family": "origins_chemistry"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "boundary",
+      "trace_count": 1,
+      "world_family": "quasispecies"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "closure",
+      "trace_count": 1,
+      "world_family": "quasispecies"
+    },
+    {
+      "fire_count": 1,
+      "fire_rate": 1.0,
+      "motif": "floor",
+      "trace_count": 1,
+      "world_family": "quasispecies"
+    },
+    {
+      "fire_count": 1,
+      "fire_rate": 1.0,
+      "motif": "lineage",
+      "trace_count": 1,
+      "world_family": "quasispecies"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "memory",
+      "trace_count": 1,
+      "world_family": "quasispecies"
+    },
+    {
+      "fire_count": 0,
+      "fire_rate": 0.0,
+      "motif": "repair",
+      "trace_count": 1,
+      "world_family": "quasispecies"
+    }
+  ],
+  "routed_worlds": [
+    {
+      "empirical_record_count": 1,
+      "empirical_record_ids": [
+        "sha256:14ffd09fc10fe90f140e79be8a0b82e9cb164857fa0235d356bb682787febd07"
+      ],
+      "normalized_ref_count": 1,
+      "normalized_ref_ids": [
+        "sha256:c2f9ec4951adfb026f1002292989b9e4173af91261e00d79231e7d541f7281b7"
+      ],
+      "routing_rejections": [],
+      "world_family": "crn"
+    },
+    {
+      "empirical_record_count": 1,
+      "empirical_record_ids": [
+        "sha256:807f3cb5211c91bbd51af2194b900f86a617142309878fb5707c9c15000aaa22"
+      ],
+      "normalized_ref_count": 1,
+      "normalized_ref_ids": [
+        "sha256:55a950d9ca64248fbc56d521522ab7291e9242c8c3ce8bdd15d260fcbd7f5c6f"
+      ],
+      "routing_rejections": [],
+      "world_family": "ecosystem"
+    },
+    {
+      "empirical_record_count": 3,
+      "empirical_record_ids": [
+        "sha256:3939af218d245b58de5f60286b0fea59af8ec2ae6cf5186a7b11a0e6a8e16406",
+        "sha256:3d81905703bb0ec3e7269394557736341078b4d18d3608a5e8d8126e7d9f7169",
+        "sha256:ebea905366bcf2b7b501106a0ae307a19d8746ea547caf1cbd196c1cac462262"
+      ],
+      "normalized_ref_count": 3,
+      "normalized_ref_ids": [
+        "sha256:16c554bba44b94889421b4243420eabd8bbc5db031b1ba16e048bc8cc7a0c2e1",
+        "sha256:40b6a4dcc585222b607310715fe77064569199b78ebab101b0a9a7e58fe2de4d",
+        "sha256:fedf361ff9976c88196674467607cc359133e89bb80a0931ac3eefbcae3c7e2b"
+      ],
+      "routing_rejections": [],
+      "world_family": "field"
+    },
+    {
+      "empirical_record_count": 2,
+      "empirical_record_ids": [
+        "sha256:0f8994085c4ce7b06677331c6d1a7703a2e84b371feac6ac13940d6343732a9f",
+        "sha256:a59565ec2f19a8c0e94c1257162771c4fb2b95d23ea3dc5445b60dc03050c14d"
+      ],
+      "normalized_ref_count": 2,
+      "normalized_ref_ids": [
+        "sha256:0bfdea34eb2f08c9f59773ce592878d49e69a7358a833df36f0c3c05629d924a",
+        "sha256:6816bb597e3d66ec0fee402576f90b8a9fd3c10e24752fa56f7439283820664c"
+      ],
+      "routing_rejections": [],
+      "world_family": "origins_chemistry"
+    },
+    {
+      "empirical_record_count": 1,
+      "empirical_record_ids": [
+        "sha256:c181e528786a64cc8d2a4a0f927ba3021d9f031a0fa55a3c9aa25beaeacc2704"
+      ],
+      "normalized_ref_count": 1,
+      "normalized_ref_ids": [
+        "sha256:3852c2ff06210b83980d02eb06691f95eb20631e7177b91bd40e440dd8605a29"
+      ],
+      "routing_rejections": [],
+      "world_family": "quasispecies"
+    }
+  ],
+  "routing_rejection_count": 0,
+  "run_id": "sha256:f17c14848991da217dd4e4ea743a3fc959948ebe79a57a8d40599146165132f4",
+  "schema": "Campaign021MultiWorldFactoryReport.v1",
+  "source_ids": [
+    "source.kegg.ecoli_mg1655.metabolic_network",
+    "source.peer_reviewed.reaction_diffusion_benchmarks",
+    "source.gbif.jornada_basin.ecosystem_occurrences",
+    "source.peer_reviewed.prebiotic_chemistry_catalog",
+    "source.ncbi.hiv1.reference_quasispecies_pilot"
+  ],
+  "status": "green",
+  "summary": {
+    "adapter_count": 5,
+    "mode_tag": "exploratory",
+    "motif_fire_rates": [
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "boundary",
+        "trace_count": 1,
+        "world_family": "crn"
+      },
+      {
+        "fire_count": 1,
+        "fire_rate": 1.0,
+        "motif": "closure",
+        "trace_count": 1,
+        "world_family": "crn"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "floor",
+        "trace_count": 1,
+        "world_family": "crn"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "lineage",
+        "trace_count": 1,
+        "world_family": "crn"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "memory",
+        "trace_count": 1,
+        "world_family": "crn"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "repair",
+        "trace_count": 1,
+        "world_family": "crn"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "boundary",
+        "trace_count": 1,
+        "world_family": "ecosystem"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "closure",
+        "trace_count": 1,
+        "world_family": "ecosystem"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "floor",
+        "trace_count": 1,
+        "world_family": "ecosystem"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "lineage",
+        "trace_count": 1,
+        "world_family": "ecosystem"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "memory",
+        "trace_count": 1,
+        "world_family": "ecosystem"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "repair",
+        "trace_count": 1,
+        "world_family": "ecosystem"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "boundary",
+        "trace_count": 3,
+        "world_family": "field"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "closure",
+        "trace_count": 3,
+        "world_family": "field"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "floor",
+        "trace_count": 3,
+        "world_family": "field"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "lineage",
+        "trace_count": 3,
+        "world_family": "field"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "memory",
+        "trace_count": 3,
+        "world_family": "field"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "repair",
+        "trace_count": 3,
+        "world_family": "field"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "boundary",
+        "trace_count": 2,
+        "world_family": "origins_chemistry"
+      },
+      {
+        "fire_count": 2,
+        "fire_rate": 1.0,
+        "motif": "closure",
+        "trace_count": 2,
+        "world_family": "origins_chemistry"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "floor",
+        "trace_count": 2,
+        "world_family": "origins_chemistry"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "lineage",
+        "trace_count": 2,
+        "world_family": "origins_chemistry"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "memory",
+        "trace_count": 2,
+        "world_family": "origins_chemistry"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "repair",
+        "trace_count": 2,
+        "world_family": "origins_chemistry"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "boundary",
+        "trace_count": 1,
+        "world_family": "quasispecies"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "closure",
+        "trace_count": 1,
+        "world_family": "quasispecies"
+      },
+      {
+        "fire_count": 1,
+        "fire_rate": 1.0,
+        "motif": "floor",
+        "trace_count": 1,
+        "world_family": "quasispecies"
+      },
+      {
+        "fire_count": 1,
+        "fire_rate": 1.0,
+        "motif": "lineage",
+        "trace_count": 1,
+        "world_family": "quasispecies"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "memory",
+        "trace_count": 1,
+        "world_family": "quasispecies"
+      },
+      {
+        "fire_count": 0,
+        "fire_rate": 0.0,
+        "motif": "repair",
+        "trace_count": 1,
+        "world_family": "quasispecies"
+      }
+    ],
+    "normalized_refs": 8,
+    "records_ingested": 8,
+    "routing_rejections": 0,
+    "run_id": "sha256:f17c14848991da217dd4e4ea743a3fc959948ebe79a57a8d40599146165132f4",
+    "schema": "Task033MultiWorldFactorySummary.v1",
+    "simulated_trace_count": 8,
+    "source_registry_bytes": 2997,
+    "traces_by_world": {
+      "crn": 1,
+      "ecosystem": 1,
+      "field": 3,
+      "origins_chemistry": 2,
+      "quasispecies": 1
+    },
+    "warnings": [],
+    "world_count": 5
+  },
+  "target_worlds": [
+    "crn",
+    "ecosystem",
+    "field",
+    "origins_chemistry",
+    "quasispecies"
+  ],
+  "task_id": "TASK-033",
+  "trace_record_count": 8,
+  "warnings": []
+}

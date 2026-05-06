@@ -1,0 +1,35 @@
+{
+  "records": [
+    {
+      "canonical_name": "source.fixture.ledger.fixed_point.0",
+      "license_class": "metadata_only",
+      "mode_tag": "exploratory",
+      "payload": {
+        "canonical_name": "source.fixture.ledger.fixed_point.0",
+        "dimension": 1,
+        "expected_stable_form": "asymptotically_stable_fixed_point",
+        "invariants": [
+          "negative_real_eigenvalue",
+          "single_basin"
+        ],
+        "parameters": {
+          "lambda": 1.0
+        },
+        "primitive_class": "fixed_point",
+        "state_equation": "dx/dt = -lambda*x"
+      },
+      "provenance": {
+        "authority": "campaign019_fixture",
+        "raw_exported": false,
+        "retrieved_at": "2026-05-06T02:22:50Z",
+        "source_url": "https://example.org/source.fixture.ledger"
+      },
+      "record_id": "sha256:27aefbfb109a6b9fa89e4f091f81a5d0c75199eae4194d06e3010427fae7d8ff",
+      "record_type": "canonical_dynamical_form",
+      "schema_version": "EmpiricalRecord.v1",
+      "source_id": "source.fixture.ledger",
+      "world_family": "math_primitives"
+    }
+  ],
+  "schema": "LowLevelEmpiricalRecordSet.v1"
+}

@@ -177,11 +177,32 @@ def world_icon_svg(world_family: str) -> str:
     return ""
 
 
-def world_card(name: str, world_family: str, status: str, meta_lines: list[str]) -> str:
-    """Render a world card matching Visuals/preview/world-card.html shape."""
-    glyph = world_icon_svg(world_family) or '<div style="width:40px;height:40px;background:var(--unavailable-soft);border-radius:6px;"></div>'
+def world_card(name: str, world_family: str, status: str, meta_lines: list[str] | list[dict[str, str]]) -> str:
+    """Render a world card matching Visuals/preview/world-card.html shape.
+
+    ``meta_lines`` accepts either:
+      * list of plain strings — rendered as-is;
+      * list of ``{"display": str, "tooltip": str}`` dicts — rendered with
+        a ``title`` attribute so hover surfaces the underlying variable
+        name (e.g., ``Family: math primitives`` displayed, with hover
+        ``world_family: math_primitives``). This is the path used by the
+        World Observatory after the CB-007 polish pass that asked for
+        humanized labels with the raw variable available on hover.
+    """
+    glyph = world_icon_svg(world_family) or '<div style="width:40px;height:40px;background:var(--unavailable-soft);border-radius:8px;"></div>'
     pill_html = status_pill(status, status=status)
-    meta_html = "<br>".join(escape(m) for m in meta_lines)
+    meta_pieces: list[str] = []
+    for m in meta_lines:
+        if isinstance(m, dict):
+            display = escape(str(m.get("display", "")))
+            tooltip = escape(str(m.get("tooltip", "")))
+            meta_pieces.append(
+                f'<span title="{tooltip}" '
+                f'style="border-bottom:1px dotted var(--fg5);cursor:help;">{display}</span>'
+            )
+        else:
+            meta_pieces.append(escape(str(m)))
+    meta_html = "<br>".join(meta_pieces)
     return (
         f'<div class="world-card">'
         f'<div class="world-glyph">{glyph}</div>'

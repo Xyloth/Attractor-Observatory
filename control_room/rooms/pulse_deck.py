@@ -294,14 +294,22 @@ def _calibration_chart(with_actuals: list[dict[str, Any]]) -> None:
             line=dict(color=color, width=2.5),
             marker=dict(size=10),
         ))
+    # Polish iteration: switch to log y so small actuals (12-25 min) stay
+    # visible alongside the huge legacy estimates (some Codex tasks
+    # estimated 1000+ min). Linear scale flattened the actuals into a
+    # single low line that was unreadable.
     fig.update_layout(
-        height=320,
+        height=340,
         margin=dict(l=20, r=20, t=10, b=40),
         plot_bgcolor="#121826",
         paper_bgcolor="#0a0e16",
         font=dict(family="JetBrains Mono, monospace", size=11, color="#9aa0ac"),
-        xaxis=dict(gridcolor="#283042", title="task"),
-        yaxis=dict(gridcolor="#283042", title="minutes"),
+        xaxis=dict(gridcolor="#283042", title="task", tickangle=-45),
+        yaxis=dict(
+            gridcolor="#283042",
+            title="minutes (log scale)",
+            type="log",
+        ),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
     )
     st.plotly_chart(fig, use_container_width=True)
