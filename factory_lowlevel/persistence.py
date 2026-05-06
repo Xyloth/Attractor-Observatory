@@ -31,6 +31,10 @@ class LowLevelFactoryStore:
         self.normalized_refs: dict[str, NormalizedReference] = {}
         self.evidence_edges: dict[str, EvidenceEdge] = {}
         self.audit_queue: dict[str, AuditQueueItem] = {}
+        # Bug E fix: routed-world traces. Each ingest cycle persists a
+        # WorldTrace per routed world_family with a recompute-able
+        # content_hash so the trace verifier can prove integrity.
+        self.world_traces: dict[str, dict[str, Any]] = {}
 
     def ingest_source_cache(self, entry: SourceCacheEntry) -> None:
         self.source_cache[entry.cache_id] = entry
@@ -64,6 +68,73 @@ class LowLevelFactoryStore:
                     source_id=record.source_id if record else "unknown",
                     recommended_action="manual_adjudication_before_promotion",
                 )
+
+    def ingest_adapter_audits(self, audits: list[Any]) -> None:
+        """Bug C fix: persist adapter-level honest negatives. ``audits`` is
+        a list of ``factory_lowlevel.adapters.AdapterAudit`` instances —
+        records that survived the schema gate but flagged a missing
+        critical field (e.g., empty SMILES after a PubChem schema drift).
+        Each becomes a real ``AuditQueueItem`` so the queue carries a
+        reason and a recommended_action — never silent (D9/D17)."""
+        for a in audits:
+            audit_id = sha256(
+                {"record": a.record_id, "source": a.source_id, "reason": a.reason}
+            )
+            self.audit_queue[audit_id] = AuditQueueItem(
+                audit_id=audit_id,
+                severity=a.severity,
+                reason=a.reason,
+                record_id=a.record_id,
+                source_id=a.source_id,
+                recommended_action=a.recommended_action,
+            )
+
+    def ingest_world_traces(
+        self,
+        bundles: list[Any],
+        *,
+        run_id_seed: str | None = None,
+    ) -> None:
+        """Bug E fix: persist a ``WorldTrace`` per routed world_family.
+
+        Each trace contains the routed record + ref ids, a
+        ``trace_content_hash`` recomputable from the trace body, and a
+        ``verify`` payload structured so a downstream consumer can
+        re-derive the hash without trusting the stored value. Schema:
+        ``LowLevelWorldTrace.v1``.
+
+        The trace is the concrete answer to "the routed records actually
+        produced trace files; traces verify; trace content_hash matches
+        declared" in the CB-008 brief.
+        """
+        for bundle in bundles:
+            body = {
+                "world_family": bundle.world_family,
+                "empirical_record_ids": sorted(
+                    record.record_id for record in bundle.empirical_records
+                ),
+                "normalized_ref_ids": sorted(
+                    ref.normalized_id for ref in bundle.normalized_refs
+                ),
+                "empirical_record_count": len(bundle.empirical_records),
+                "normalized_ref_count": len(bundle.normalized_refs),
+                "run_id_seed": run_id_seed or "",
+            }
+            trace_hash = sha256(body)
+            self.world_traces[bundle.world_family] = {
+                "schema": "LowLevelWorldTrace.v1",
+                "world_family": bundle.world_family,
+                "trace_id": sha256(
+                    {"world": bundle.world_family, "body": body, "salt": run_id_seed or ""}
+                ),
+                "trace_content_hash": trace_hash,
+                "body": body,
+                "verifier": {
+                    "predicate": "sha256_of_canonical_json(body) == trace_content_hash",
+                    "trace_checkable": True,
+                    "deterministic": True,
+                },
+            }
 
     def rebuild_evidence_graph(self) -> None:
         self.evidence_edges = {}
@@ -109,6 +180,10 @@ class LowLevelFactoryStore:
                 "schema": "LowLevelAuditQueue.v1",
                 "items": [item.to_dict() for item in sorted(self.audit_queue.values(), key=lambda row: row.audit_id)],
             },
+            "world_traces": {
+                "schema": "LowLevelWorldTraceSet.v1",
+                "traces": [self.world_traces[k] for k in sorted(self.world_traces.keys())],
+            },
         }
         paths = {}
         for name, payload in payloads.items():
@@ -124,6 +199,7 @@ class LowLevelFactoryStore:
                 "normalized_refs": len(self.normalized_refs),
                 "evidence_edges": len(self.evidence_edges),
                 "audit_queue_items": len(self.audit_queue),
+                "world_traces": len(self.world_traces),
             },
             "content_hash": sha256({name: payload for name, payload in payloads.items()}),
         }
@@ -140,6 +216,29 @@ class LowLevelFactoryStore:
                 "audit_queue": [item.to_dict() for item in sorted(self.audit_queue.values(), key=lambda row: row.audit_id)],
             }
         )
+
+
+def verify_world_traces(store_root: str | Path) -> dict[str, Any]:
+    """Re-derive every world trace's ``trace_content_hash`` from its
+    persisted body and compare. Returns ``{world_family: bool}`` plus a
+    summary. Exists so a downstream consumer can prove trace integrity
+    without trusting the in-memory store.
+    """
+    p = Path(store_root) / "world_traces.json"
+    if not p.exists():
+        return {"present": False, "verified": {}, "all_pass": False}
+    payload = json.loads(p.read_text(encoding="utf-8"))
+    results: dict[str, bool] = {}
+    for trace in payload.get("traces", []):
+        body = trace.get("body", {})
+        recomputed = sha256(body)
+        declared = trace.get("trace_content_hash", "")
+        results[trace.get("world_family", "?")] = recomputed == declared
+    return {
+        "present": True,
+        "verified": results,
+        "all_pass": all(results.values()) and bool(results),
+    }
 
 
 def write_json(path: str | Path, payload: Any) -> Any:

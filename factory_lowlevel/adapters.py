@@ -13,7 +13,7 @@ import io
 import re
 import urllib.parse
 import urllib.request
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -38,11 +38,25 @@ def _float_or_none(value: str) -> float | None:
 
 
 @dataclass(frozen=True)
+class AdapterAudit:
+    """Honest negative surfaced by an adapter post-parse — e.g., a record
+    that survived the schema gate but has empty critical fields. Caller
+    persists these as ``AuditQueueItem`` entries so D9/D17 are honored
+    (no silent acceptance of garbage)."""
+    record_id: str
+    source_id: str
+    severity: str
+    reason: str
+    recommended_action: str
+
+
+@dataclass(frozen=True)
 class AdapterResult:
     source: SourceDefinition
     cache_entry: SourceCacheEntry
     records: list[EmpiricalRecord]
     warnings: list[str]
+    audits: list[AdapterAudit] = field(default_factory=list)
 
 
 class NISTAtomicSpectraAdapter:
@@ -171,10 +185,14 @@ class NISTAtomicSpectraAdapter:
                 "reference_count": len(references),
                 "source_table": "NIST ASD energy levels CSV",
             }
+            # Bug B fix: retrieval_timestamp + parser_version per CB-008 brief.
+            retrieval_ts = utc_now()
             provenance = {
                 "source_url": self._query_url(spectrum),
                 "source_home": source.url,
-                "retrieved_at": utc_now(),
+                "retrieval_timestamp": retrieval_ts,
+                "retrieved_at": retrieval_ts,  # legacy alias, retained for back-compat
+                "parser_version": self.parser_version,
                 "authority": "NIST Standard Reference Database 78",
                 "raw_exported": False,
             }
@@ -231,11 +249,15 @@ class MathPrimitivesCatalogAdapter:
                     "citation",
                 }
             }
+            # Bug B fix: retrieval_timestamp + parser_version per CB-008 brief.
+            retrieval_ts = utc_now()
             provenance = {
                 "doi": seed["doi"],
                 "source_url": seed["source_url"],
                 "citation": seed["citation"],
-                "retrieved_at": utc_now(),
+                "retrieval_timestamp": retrieval_ts,
+                "retrieved_at": retrieval_ts,  # legacy alias, retained for back-compat
+                "parser_version": self.parser_version,
                 "authority": "peer_reviewed_math_ds_literature",
                 "raw_exported": False,
             }
@@ -298,7 +320,16 @@ class PubChemSmallMoleculeAdapter:
         )
 
     def _query_url(self, cid: int) -> str:
-        props = "MolecularFormula,CanonicalSMILES,IsomericSMILES,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity"
+        # PubChem PUG-REST property names (post-2024 deprecation cycle):
+        #   * ``CanonicalSMILES`` and ``IsomericSMILES`` were retired in
+        #     favor of ``SMILES`` (now equivalent to the former isomeric
+        #     form) and ``ConnectivitySMILES`` (canonical without stereo).
+        #   * Fetching the deprecated names yields no SMILES key in the
+        #     response — silently producing empty payloads downstream
+        #     (the "PubChem topology bug pattern" called out in CB-008).
+        # We request the live names; the parser still falls back to the
+        # legacy keys for any pre-2024 cached responses.
+        props = "MolecularFormula,SMILES,ConnectivitySMILES,MolecularWeight,HeavyAtomCount,Complexity"
         return f"{self.base_url}/{cid}/property/{props}/JSON"
 
     def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
@@ -330,6 +361,28 @@ class PubChemSmallMoleculeAdapter:
             raw_payloads.append(raw)
             property_rows.append(self._parse_property_row(raw, cid, name))
         records = [self._record_from_row(row, source) for row in property_rows]
+        # Bug C fix: surface "passed schema gate but empty critical field"
+        # honestly to the audit queue. SMILES==''  with the new schema is
+        # the canonical form of the PubChem topology bug; let it be
+        # publishable as an honest negative (D17) instead of silently
+        # persisted as garbage.
+        audits: list[AdapterAudit] = []
+        for record in records:
+            smiles = record.payload.get("canonical_smiles", "")
+            if not smiles:
+                audits.append(
+                    AdapterAudit(
+                        record_id=record.record_id,
+                        source_id=source.source_id,
+                        severity="high",
+                        reason="pubchem_smiles_empty_after_parse",
+                        recommended_action=(
+                            "investigate_source_schema_drift_or_purge_record; "
+                            "PubChem PUG-REST may have renamed the SMILES "
+                            "property again or this CID returned no entry"
+                        ),
+                    )
+                )
         raw_joined = "\n---CID---\n".join(raw_payloads)
         cache_entry = SourceCacheEntry(
             source_id=source.source_id,
@@ -344,7 +397,7 @@ class PubChemSmallMoleculeAdapter:
             record_count=len(records),
             retrieval_mode=retrieval_mode,
         )
-        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings)
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings, audits=audits)
 
     def _parse_property_row(self, raw: str, cid: int, fallback_name: str) -> dict[str, Any]:
         import json
@@ -365,15 +418,17 @@ class PubChemSmallMoleculeAdapter:
 
     def _record_from_row(self, row: dict[str, Any], source: SourceDefinition) -> EmpiricalRecord:
         cid = int(row["CID"])
-        smiles = _first_present(
-            row,
-            (
-                "CanonicalSMILES",
-                "IsomericSMILES",
-                "SMILES",
-                "ConnectivitySMILES",
-            ),
-            default="",
+        # Bug A fix: PubChem PUG-REST renamed CanonicalSMILES->SMILES and
+        # IsomericSMILES->SMILES around 2024-2025. Read the live name
+        # first, then fall back to the legacy keys for any pre-migration
+        # cached responses still on disk. ConnectivitySMILES is the new
+        # name for the canonical-without-stereo form.
+        smiles = str(
+            row.get("SMILES")
+            or row.get("ConnectivitySMILES")
+            or row.get("CanonicalSMILES")
+            or row.get("IsomericSMILES")
+            or ""
         )
         formula = str(row.get("MolecularFormula", ""))
         atom_count = _int_or(row.get("HeavyAtomCount"), _count_formula_atoms(formula))
@@ -393,11 +448,19 @@ class PubChemSmallMoleculeAdapter:
             "complexity": complexity,
             "source_table": "PubChem PUG-REST compound property JSON",
         }
+        # Bug B fix: include retrieval_timestamp + parser_version directly
+        # in the provenance dict. CB-008 brief requires both as part of
+        # the per-record provenance contract; previously parser_version
+        # only lived on the cache_entry, and the timestamp key was the
+        # legacy ``retrieved_at`` rather than ``retrieval_timestamp``.
+        retrieval_ts = utc_now()
         provenance = {
             "source_url": self._query_url(cid),
             "source_home": source.url,
             "compound_url": f"https://pubchem.ncbi.nlm.nih.gov/compound/{cid}",
-            "retrieved_at": utc_now(),
+            "retrieval_timestamp": retrieval_ts,
+            "retrieved_at": retrieval_ts,  # legacy alias, retained for back-compat
+            "parser_version": self.parser_version,
             "authority": "NIH NCBI PubChem PUG-REST",
             "raw_exported": False,
         }
