@@ -33,13 +33,24 @@ def run_low_level_factory(
         warnings.extend(result.warnings)
         store.ingest_source_cache(result.cache_entry)
         store.ingest_empirical_records(result.records)
+        # CB-008 Bug C fix: route adapter-level honest negatives into the
+        # audit queue so partial-data records never persist silently.
+        if getattr(result, "audits", None):
+            store.ingest_adapter_audits(result.audits)
         records.extend(result.records)
         normalized = [normalize_record(record) for record in result.records]
         store.ingest_normalized_refs(normalized)
         refs.extend(normalized)
     store.rebuild_evidence_graph()
-    snapshot = store.write()
     routed = route_records(records, refs)
+    # CB-008 Bug E fix: persist routed-world traces with content_hash so
+    # the trace verifier can prove every routed record produced a real
+    # trace file (was: routed bundles returned in-memory only, never
+    # persisted; the brief required "100% routed records produce
+    # verified traces"). Run id seed is the pre-trace content hash so
+    # subsequent runs with identical inputs get identical trace ids.
+    store.ingest_world_traces(routed, run_id_seed=store.content_hash())
+    snapshot = store.write()
     return {
         "schema": "LowLevelFactoryRun.v1",
         "run_id": snapshot["content_hash"],

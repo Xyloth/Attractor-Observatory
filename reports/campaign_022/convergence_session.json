@@ -1,0 +1,131 @@
+{
+  "branch": "feature/cb-008-ingestion-convergence",
+  "bugs_fixed": [
+    {
+      "evidence": "5/5 molecules had canonical_smiles=='' in baseline; bond_topology_proxy was all zeros; this is the 'PubChem topology bug pattern' the brief explicitly named",
+      "fix_location": "factory_lowlevel/adapters.py:_query_url + _record_from_row",
+      "id": "A",
+      "name": "PubChem SMILES schema drift",
+      "root_cause": "PubChem PUG-REST renamed CanonicalSMILES->SMILES around 2024-2025; adapter still reads deprecated keys",
+      "severity": "critical"
+    },
+    {
+      "evidence": "16/16 records had retrieved_at instead of retrieval_timestamp; parser_version absent from provenance entirely",
+      "fix_location": "factory_lowlevel/adapters.py \u2014 3 provenance dicts (NIST/Math/PubChem)",
+      "id": "B",
+      "name": "Provenance schema mismatch",
+      "root_cause": "Adapter built provenance dicts with legacy keys; brief requires retrieval_timestamp + parser_version per record",
+      "severity": "high"
+    },
+    {
+      "evidence": "5 PubChem records persisted with empty SMILES, audit_queue had 0 items \u2014 silent garbage acceptance, D9 violation",
+      "fix_location": "factory_lowlevel/adapters.py:AdapterAudit + PubChemSmallMoleculeAdapter.fetch; factory_lowlevel/persistence.py:ingest_adapter_audits; factory_lowlevel/pipeline.py:audit wiring",
+      "id": "C",
+      "name": "Silent acceptance of empty critical fields",
+      "root_cause": "Adapter had no post-parse validation; pipeline had no audit ingestion path",
+      "severity": "high"
+    },
+    {
+      "evidence": "Brief required '100% of routed records produced verified traces (content_hash matches)' \u2014 baseline produced 0 traces; route_records() returned RoutedWorldBundle in-memory only",
+      "fix_location": "factory_lowlevel/persistence.py:ingest_world_traces + verify_world_traces; LowLevelWorldTrace.v1 schema; factory_lowlevel/pipeline.py wiring",
+      "id": "E",
+      "name": "Routed records produced no traces",
+      "root_cause": "No persistence layer for traces; no verifier",
+      "severity": "high"
+    }
+  ],
+  "converged": true,
+  "convergence_criteria": "All 6 active components (records / refs / graph / traces / queue / idempotence) PASS for 3 consecutive cycles. Motif eval (component 6) is N/A by brief scope. World rejections (sub-component) is N/A \u2014 worlds/*/model.py from_empirical_records() does not exist on this branch, so no rejection path to test.",
+  "cycles_clean_in_a_row": 3,
+  "cycles_run": 4,
+  "final_audit": {
+    "graph": "PASS",
+    "idempotence": "PASS",
+    "motif": "N/A (separate stage, out of CB-008 scope)",
+    "queue": "PASS",
+    "records": "PASS",
+    "refs": "PASS",
+    "traces": "PASS"
+  },
+  "garbage_deleted": [
+    {
+      "category": "all_baseline_records",
+      "count": 16,
+      "files": [
+        "empirical_records.json",
+        "normalized_refs.json",
+        "evidence_graph.json",
+        "audit_queue.json",
+        "snapshot.json",
+        "source_cache_index.json"
+      ],
+      "producer_fix": "Fixes A+B+C+E ensure recurrence is impossible: schema gate + post-validation + trace persistence",
+      "reason": "Schema fixes (Bug A + Bug B) touched ALL records; partial purge would leave inconsistent provenance dicts and stale empty-SMILES records side-by-side with fresh ones. Clean rebuild was correct."
+    }
+  ],
+  "open_questions": [
+    "Q1: Should snapshot content_hash exclude retrieval_timestamp so the snapshot IS idempotent across cycles where the underlying ID set is identical? Currently records have stable IDs but the snapshot hash drifts each cycle when timestamps refresh. Argument for exclude: clearer 'no real change' signal. Argument for include: timestamp IS data, and the brief's idempotence criterion is 'No duplicate IDs across runs' which already holds.",
+    "Q2: live_pipeline.py was referenced in the brief but does not exist on codex/task-033-multi-world-factory. Should I have created it as part of this task, or is it a separate deliverable for a later branch?",
+    "Q3: Brief referenced reports/campaign_021/factory_store/ but the daemon defaults to reports/campaign_016/daemon_store. Are 017-021 future campaigns not yet started?",
+    "Q4: worlds/*/model.py with from_empirical_records() does not exist on this branch. The 'world rejections' sub-component of the audit could not be tested. Is this a future deliverable?"
+  ],
+  "per_cycle_log": [
+    {
+      "cycle": 1,
+      "notes": "Numbers looked clean but content was contaminated: 5/5 molecules had empty SMILES; all 16 records missing retrieval_timestamp + parser_version; no traces ever persisted",
+      "outcome": "FAIL \u2014 4 bugs found in audit",
+      "store_counts": {
+        "audit_queue_items": 0,
+        "empirical_records": 16,
+        "evidence_edges": 19,
+        "normalized_refs": 16,
+        "world_traces": 0
+      },
+      "trigger": "cb008_baseline"
+    },
+    {
+      "cycle": 2,
+      "notes": "All molecule SMILES populated (O / C / C(=O)=O / N / C1=CC=CC=C1); both world traces verify; no audit because all critical fields populated",
+      "outcome": "PASS \u2014 first clean cycle after wipe + 4 fixes",
+      "store_counts": {
+        "audit_queue_items": 0,
+        "empirical_records": 16,
+        "evidence_edges": 19,
+        "normalized_refs": 16,
+        "world_traces": 2
+      },
+      "trigger": "cb008_cycle_2"
+    },
+    {
+      "cycle": 3,
+      "notes": "Idempotent on all record_ids/normalized_ids/edge_ids/trace_ids; snapshot content_hash differs from cycle 2 only because retrieval_timestamp = utc_now() refreshes per cycle (see open question 1)",
+      "outcome": "PASS \u2014 clean, no fixes needed",
+      "store_counts": {
+        "audit_queue_items": 0,
+        "empirical_records": 16,
+        "evidence_edges": 19,
+        "normalized_refs": 16,
+        "world_traces": 2
+      },
+      "trigger": "cb008_cycle_3"
+    },
+    {
+      "cycle": 4,
+      "notes": "idempotent_duplicate_run_id=True (same as cycle 3 because both ran in the same wall-clock second; utc_now() is second-precision)",
+      "outcome": "PASS \u2014 clean, no fixes needed, fully idempotent",
+      "store_counts": {
+        "audit_queue_items": 0,
+        "empirical_records": 16,
+        "evidence_edges": 19,
+        "normalized_refs": 16,
+        "world_traces": 2
+      },
+      "trigger": "cb008_cycle_4"
+    }
+  ],
+  "schema": "IngestionConvergenceSession.v1",
+  "start_est": "2026-05-06 05:46:44 EST",
+  "stop_est": "2026-05-06 05:59:56 EST",
+  "task_id": "TASK-CB-008",
+  "timer_cap_minutes": 60
+}
