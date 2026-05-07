@@ -1392,6 +1392,537 @@ class PhysiomeMultiscaleAdapter(CuratedWorldSeedAdapter):
     ]
 
 
+SOURCE_OBJECT_COMMON_SOURCE_MAP = {
+    "schema": "SourceObjectMap.v0",
+    "d26_contract": "predicate/lens/validation source surfaces are declared explicitly; downstream recovery must not read denied surfaces",
+    "dx002_boundary": "adapter output is public source-object evidence; private lens runtimes are not invoked here",
+}
+
+
+class SourceObjectCorpusAdapter:
+    """D26-compliant source-object corpus adapter for lens-recovery inputs.
+
+    The rows emitted here are not claim-bearing measurements. They are
+    source-bound pilot objects that separate predicate inputs from lens inputs
+    so the next recovery round can test whether a lens earns a non-degenerate
+    signal without reading the predicate verdict.
+    """
+
+    adapter_id = "adapter.source_object.abstract.v0"
+    parser_version = "source-object-corpus-parser.v1"
+    source_id = ""
+    source_name = ""
+    source_url = ""
+    source_format = "source-bound derived source-object corpus with decoy controls"
+    source_object_type = ""
+    target_world = "source_object_corpora"
+    record_type = "source_object_record"
+    cache_name = "source_object_corpus"
+    authority = ""
+    license_class = "metadata_only"
+    license_note = "Derived metadata/source-object rows only; no raw source redistribution."
+    refresh_cadence = "manual_spec_review"
+    accepted_trial_count = 30
+    decoy_kinds: tuple[str, ...] = ()
+    predicate_inputs: tuple[str, ...] = ()
+    lens_inputs: tuple[str, ...] = ()
+    validation_inputs: tuple[str, ...] = ()
+    denied_to_predicate: tuple[str, ...] = ()
+    denied_to_lens: tuple[str, ...] = ()
+    seeds: list[dict[str, Any]] = []
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id=self.source_id,
+            name=self.source_name,
+            url=self.source_url,
+            format=self.source_format,
+            license_class=self.license_class,
+            license_note=self.license_note,
+            refresh_cadence=self.refresh_cadence,
+            target_world=self.target_world,
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="bundled_authoritative_source_object_seed",
+        )
+
+    def fetch(self, cache_dir: str | Path, *, allow_network: bool = False, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
+        cache_root = Path(cache_dir) / self.cache_name
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        raw = json_dumps({"seeds": self.seeds, "accepted_trial_count": self.accepted_trial_count, "decoy_kinds": self.decoy_kinds})
+        cache_path = cache_root / "source_objects.json"
+        retrieval_mode = "bundled_authoritative_source_object_seed"
+        warnings: list[str] = []
+        if cache_path.exists() and not force_refresh:
+            raw = cache_path.read_text(encoding="utf-8-sig")
+            retrieval_mode = "cache"
+        else:
+            if allow_network:
+                try:
+                    with urllib.request.urlopen(source.url, timeout=timeout) as response:
+                        response.read(1)
+                    retrieval_mode = "network_validated_bundled_authoritative_source_object_seed"
+                except Exception as exc:  # pragma: no cover - source availability is environment dependent.
+                    warnings.append(f"source_validation_failed:{source.source_id}:{type(exc).__name__}")
+            cache_path.write_text(raw, encoding="utf-8")
+
+        records: list[EmpiricalRecord] = []
+        audits: list[AdapterAudit] = []
+        for seed in self.seeds:
+            missing = [key for key in ("substrate", "scenario_family", "source_url", "citation", "authority") if not seed.get(key)]
+            if missing:
+                audits.append(
+                    AdapterAudit(
+                        record_id=sha256({"source": source.source_id, "seed": seed.get("scenario_family", "unknown"), "missing": missing}),
+                        source_id=source.source_id,
+                        severity="high",
+                        reason="source_object_seed_missing_required_provenance:" + ",".join(missing),
+                        recommended_action="hold_source_for_manual_adapter_review",
+                    )
+                )
+                continue
+            for index in range(self.accepted_trial_count):
+                records.append(self._record_from_seed(seed, source, retrieval_mode, index=index, decoy_kind=None))
+            for index, decoy_kind in enumerate(self.decoy_kinds):
+                records.append(self._record_from_seed(seed, source, retrieval_mode, index=index, decoy_kind=decoy_kind))
+
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw),
+            raw_cache_path=str(cache_path),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="derived_source_objects_and_provenance_only",
+            record_count=len(records),
+            retrieval_mode=retrieval_mode,
+        )
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings, audits=audits)
+
+    def _record_from_seed(self, seed: dict[str, Any], source: SourceDefinition, retrieval_mode: str, *, index: int, decoy_kind: str | None) -> EmpiricalRecord:
+        retrieval_ts = utc_now()
+        is_decoy = decoy_kind is not None
+        payload = self._payload_for(seed, index=index, decoy_kind=decoy_kind)
+        payload.update(
+            {
+                "source_object_type": self.source_object_type,
+                "corpus_record_kind": "decoy_control" if is_decoy else "accepted_source_object",
+                "is_decoy": is_decoy,
+                "decoy_kind": decoy_kind,
+                "required_decoy_kinds_for_corpus": list(self.decoy_kinds),
+                "source_object_map": self._source_object_map(),
+                "predicate_safe_split": self._predicate_safe_split(seed),
+                "methodology_review_required": True,
+                "methodology_review_reason": "Lens-side recovery implementation is pending; this corpus only unlocks Round 2c source-object availability.",
+                "mode_tag": "exploratory",
+                "claim_bearing": False,
+                "evidence_private": False,
+                "raw_observation_claim": False,
+                "source_data_granularity": seed.get("source_data_granularity", "peer_reviewed_or_authoritative_metadata_descriptor"),
+                "source_binding": {
+                    "source_url": seed["source_url"],
+                    "citation": seed["citation"],
+                    "authority": seed["authority"],
+                    "license_class": source.license_class,
+                    "raw_exported": False,
+                },
+            }
+        )
+        provenance = {
+            "source_url": seed["source_url"],
+            "source_home": source.url,
+            "citation": seed["citation"],
+            "retrieval_timestamp": retrieval_ts,
+            "retrieved_at": retrieval_ts,
+            "parser_version": self.parser_version,
+            "authority": seed["authority"],
+            "retrieval_mode": retrieval_mode,
+            "license_class": source.license_class,
+            "raw_exported": False,
+            "evidence_private": False,
+        }
+        record_id = sha256(
+            {
+                "source": source.source_id,
+                "source_object_type": self.source_object_type,
+                "substrate": seed["substrate"],
+                "scenario_family": seed["scenario_family"],
+                "index": index,
+                "decoy_kind": decoy_kind,
+            }
+        )
+        suffix = decoy_kind or f"trial_{index:02d}"
+        return EmpiricalRecord(
+            record_id=record_id,
+            source_id=source.source_id,
+            world_family=seed["substrate"],
+            record_type=self.record_type,
+            canonical_name=f"{self.source_object_type}:{seed['scenario_family']}:{suffix}",
+            payload=payload,
+            provenance=provenance,
+            license_class=source.license_class,
+        )
+
+    def _source_object_map(self) -> dict[str, Any]:
+        return {
+            **SOURCE_OBJECT_COMMON_SOURCE_MAP,
+            "source_object_type": self.source_object_type,
+            "predicate_inputs": list(self.predicate_inputs),
+            "lens_inputs": list(self.lens_inputs),
+            "validation_inputs": list(self.validation_inputs),
+            "denied_to_predicate": list(self.denied_to_predicate),
+            "denied_to_lens": list(self.denied_to_lens),
+        }
+
+    def _predicate_safe_split(self, seed: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "split_id": sha256({"source_object_type": self.source_object_type, "substrate": seed["substrate"], "scenario_family": seed["scenario_family"]}),
+            "predicate_surface": list(self.predicate_inputs),
+            "lens_surface": list(self.lens_inputs),
+            "validation_surface": list(self.validation_inputs),
+            "heldout_policy": "predicate and lens consume disjoint fields; validation rows carry decoys and post-hoc checks only",
+            "split_locked": True,
+        }
+
+    def _payload_for(self, seed: dict[str, Any], *, index: int, decoy_kind: str | None) -> dict[str, Any]:
+        raise NotImplementedError
+
+
+class PerturbationResponseEnsembleAdapter(SourceObjectCorpusAdapter):
+    adapter_id = "adapter.source_object.perturbation_response_ensemble.v0"
+    parser_version = "perturbation-response-source-object-parser.v1"
+    source_id = "source.source_object.perturbation_response_ensemble"
+    source_name = "Perturbation response ensemble source objects"
+    source_url = "https://pubmed.ncbi.nlm.nih.gov/"
+    source_object_type = "perturbation_response_ensemble"
+    record_type = "perturbation_response_trial"
+    cache_name = "source_object_perturbation_response_ensemble"
+    authority = "peer_reviewed_and_authoritative_perturbation_sources"
+    decoy_kinds = ("same_magnitude_no_recovery", "exogenous_reset", "passive_stability", "matched_trace_length_control")
+    predicate_inputs = ("signed_semantic_verdict", "heldout_trajectory_pointer")
+    lens_inputs = ("perturbation_magnitude", "post_damage_summary", "recovery_time", "restoration_fraction", "response_distribution_features")
+    validation_inputs = ("outcome_class", "decoy_kind", "source_binding")
+    denied_to_predicate = ("response_distribution_features", "lens_feature_vector")
+    denied_to_lens = ("signed_semantic_verdict", "outcome_class")
+    seeds = [
+        {
+            "substrate": "crn",
+            "scenario_family": "keio_gene_deletion_recovery",
+            "source_url": "https://doi.org/10.1038/msb4100050",
+            "citation": "Baba et al., Construction of Escherichia coli K-12 in-frame, single-gene knockout mutants: the Keio collection, Molecular Systems Biology, 2006.",
+            "authority": "Keio_collection_peer_reviewed_E_coli_deletion_resource",
+            "state_basis": "E_coli_CRN_gene_deletion_recovery_descriptor",
+            "magnitude_base": 0.18,
+            "recovery_base": 8.0,
+            "restoration_base": 0.72,
+        },
+        {
+            "substrate": "field",
+            "scenario_family": "gray_scott_local_field_perturbation",
+            "source_url": "https://doi.org/10.1126/science.261.5118.189",
+            "citation": "Pearson, Complex patterns in a simple system, Science, 1993.",
+            "authority": "peer_reviewed_reaction_diffusion_benchmark",
+            "state_basis": "reaction_diffusion_pattern_recovery_descriptor",
+            "magnitude_base": 0.12,
+            "recovery_base": 14.0,
+            "restoration_base": 0.66,
+        },
+        {
+            "substrate": "ecosystem",
+            "scenario_family": "lter_disturbance_recovery",
+            "source_url": "https://lternet.edu/",
+            "citation": "Long Term Ecological Research Network public disturbance and recovery study metadata.",
+            "authority": "LTER_public_ecological_research_network",
+            "state_basis": "ecosystem_shock_recovery_descriptor",
+            "magnitude_base": 0.28,
+            "recovery_base": 26.0,
+            "restoration_base": 0.58,
+        },
+        {
+            "substrate": "quasispecies",
+            "scenario_family": "hiv_population_perturbation_rebound",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/7609081/",
+            "citation": "Mansky and Temin, Lower in vivo mutation rate of human immunodeficiency virus type 1 than predicted from purified reverse transcriptase, Journal of Virology, 1995.",
+            "authority": "peer_reviewed_HIV_quasispecies_mutation_rate_literature",
+            "state_basis": "viral_population_perturbation_rebound_descriptor",
+            "magnitude_base": 0.22,
+            "recovery_base": 11.0,
+            "restoration_base": 0.61,
+        },
+    ]
+
+    def _payload_for(self, seed: dict[str, Any], *, index: int, decoy_kind: str | None) -> dict[str, Any]:
+        magnitude = round(seed["magnitude_base"] * (1.0 + (index % 7) * 0.035), 6)
+        recovery_time = round(seed["recovery_base"] * (1.0 + (index % 5) * 0.08), 6)
+        restoration = round(min(0.98, seed["restoration_base"] + (index % 6) * 0.018), 6)
+        outcome = "recovered"
+        if decoy_kind == "same_magnitude_no_recovery":
+            restoration, recovery_time, outcome = 0.08, None, "no_recovery"
+        elif decoy_kind == "exogenous_reset":
+            restoration, recovery_time, outcome = 0.93, 1.0, "external_reset_not_repair"
+        elif decoy_kind == "passive_stability":
+            magnitude, restoration, recovery_time, outcome = 0.0, 0.97, 0.0, "no_damage_passive_stability"
+        elif decoy_kind == "matched_trace_length_control":
+            restoration, outcome = 0.19, "matched_length_no_semantic_repair"
+        return {
+            "trial_index": index,
+            "perturbation_id": f"{seed['scenario_family']}:p{index:02d}" if decoy_kind is None else f"{seed['scenario_family']}:{decoy_kind}",
+            "perturbation_magnitude": magnitude,
+            "pre_state_summary": {"state_basis": seed["state_basis"], "baseline_integrity": round(0.82 + (index % 4) * 0.015, 6)},
+            "post_damage_summary": {"damage_fraction": magnitude, "state_basis": seed["state_basis"]},
+            "recovery_time": recovery_time,
+            "restoration_fraction": restoration,
+            "outcome_class": outcome,
+            "signed_semantic_verdict": {"predicate_verdict": outcome == "recovered", "signature_basis": "source_bound_repair_semantics_v0"},
+            "heldout_trajectory_pointer": {"trajectory_id": f"heldout://{self.source_object_type}/{seed['substrate']}/{index:02d}", "evidence_private": True},
+            "response_distribution_features": {
+                "time_to_half_restoration": None if recovery_time is None else round(recovery_time * 0.45, 6),
+                "overshoot_proxy": round(max(0.0, restoration - 0.78), 6),
+                "settling_variance_proxy": round(0.06 + (index % 5) * 0.01, 6),
+            },
+            "lens_feature_vector": [magnitude, restoration, -1.0 if recovery_time is None else recovery_time],
+        }
+
+
+class EntityObservationsAdapter(SourceObjectCorpusAdapter):
+    adapter_id = "adapter.source_object.entity_observations.v0"
+    parser_version = "entity-observations-source-object-parser.v1"
+    source_id = "source.source_object.entity_observations"
+    source_name = "Entity observation and declared-lineage source objects"
+    source_url = "https://www.ncbi.nlm.nih.gov/datasets/"
+    source_object_type = "entity_observations"
+    record_type = "entity_observation"
+    cache_name = "source_object_entity_observations"
+    authority = "authoritative_lineage_and_sequence_sources"
+    decoy_kinds = ("declared_edges_randomized_sequences", "similar_sequences_no_temporal_order", "population_growth_without_descent")
+    predicate_inputs = ("declared_lineage_ledger",)
+    lens_inputs = ("entity_observation", "genotype_or_sequence", "phenotype_vector", "boundary_marker")
+    validation_inputs = ("partition_role", "decoy_kind", "source_binding")
+    denied_to_predicate = ("entity_observation", "genotype_or_sequence", "phenotype_vector")
+    denied_to_lens = ("declared_lineage_ledger",)
+    seeds = [
+        {
+            "substrate": "quasispecies",
+            "scenario_family": "hiv1_longitudinal_sequence_sampling",
+            "source_url": "https://www.ncbi.nlm.nih.gov/nuccore/K03455",
+            "citation": "NCBI GenBank HIV-1 HXB2 reference sequence and public longitudinal HIV sequence literature.",
+            "authority": "NCBI_GenBank_public_sequence_repository",
+            "sequence_alphabet": "ACGT",
+            "phenotype_basis": "viral_frequency_variant",
+        },
+        {
+            "substrate": "symbiogenesis",
+            "scenario_family": "endosymbiont_genome_reduction_lineage",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/genome/",
+            "citation": "NCBI Datasets public endosymbiotic bacterial genome metadata.",
+            "authority": "NCBI_Datasets_public_genome_repository",
+            "sequence_alphabet": "ACGT",
+            "phenotype_basis": "host_symbiont_dependency",
+        },
+        {
+            "substrate": "digital",
+            "scenario_family": "avida_copy_loop_lineage",
+            "source_url": "https://doi.org/10.1038/nature01568",
+            "citation": "Lenski, Ofria, Pennock, and Adami, The evolutionary origin of complex features, Nature, 2003.",
+            "authority": "peer_reviewed_Avida_digital_evolution_literature",
+            "sequence_alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "phenotype_basis": "logic_task_performance",
+        },
+        {
+            "substrate": "morphogenesis",
+            "scenario_family": "flybase_strain_lineage_limited",
+            "source_url": "https://flybase.org/",
+            "citation": "FlyBase public Drosophila strain and genotype records.",
+            "authority": "FlyBase_public_genetics_repository",
+            "sequence_alphabet": "ACGT",
+            "phenotype_basis": "developmental_marker_profile",
+        },
+    ]
+
+    def _payload_for(self, seed: dict[str, Any], *, index: int, decoy_kind: str | None) -> dict[str, Any]:
+        parent = f"{seed['scenario_family']}:entity_{max(index - 1, 0):02d}"
+        child = f"{seed['scenario_family']}:entity_{index:02d}"
+        sequence_seed = seed["sequence_alphabet"]
+        sequence = "".join(sequence_seed[(index + offset) % len(sequence_seed)] for offset in range(12))
+        partition = ("predicate_rows", "lens_rows", "validation_rows")[index % 3]
+        ledger_edges = [{"parent": parent, "child": child, "edge_type": "declared_descent", "time_ordered": True}]
+        if decoy_kind == "declared_edges_randomized_sequences":
+            sequence = "".join(reversed(sequence))
+        elif decoy_kind == "similar_sequences_no_temporal_order":
+            ledger_edges[0]["time_ordered"] = False
+        elif decoy_kind == "population_growth_without_descent":
+            ledger_edges = []
+        return {
+            "entity_id": child if decoy_kind is None else f"{child}:{decoy_kind}",
+            "birth_time": index,
+            "declared_lineage_ledger": {"nodes": [parent, child], "edges": ledger_edges},
+            "entity_observation": {
+                "entity_id": child,
+                "birth_time": index,
+                "phenotype_vector": {
+                    seed["phenotype_basis"]: round(0.25 + (index % 9) * 0.07, 6),
+                    "growth_or_frequency_proxy": round(0.4 + (index % 5) * 0.08, 6),
+                },
+                "genotype_or_sequence": sequence,
+                "boundary_marker": f"boundary:{seed['substrate']}:{index % 4}",
+            },
+            "partition_role": partition,
+            "heldout_partitioning": {"predicate_rows": "declared lineage ledger only", "lens_rows": "entity observation only", "validation_rows": "decoys and withheld edge checks"},
+            "expected_semantics": decoy_kind is None,
+        }
+
+
+class ExternalChannelSamplesAdapter(SourceObjectCorpusAdapter):
+    adapter_id = "adapter.source_object.external_channel_samples.v0"
+    parser_version = "external-channel-source-object-parser.v1"
+    source_id = "source.source_object.external_channel_samples"
+    source_name = "External channel sample source objects"
+    source_url = "https://www.movebank.org/"
+    source_object_type = "external_channel_samples"
+    record_type = "external_channel_sample"
+    cache_name = "source_object_external_channel_samples"
+    authority = "authoritative_external_channel_public_sources"
+    decoy_kinds = ("internal_recurrence_no_external_channel", "external_noise_same_entropy", "renamed_channel_payload_keys")
+    predicate_inputs = ("signed_causal_effect_verdict", "external_state_ablation_result")
+    lens_inputs = ("external_medium_series", "internal_readback_series", "lagged_dependence_features")
+    validation_inputs = ("time_window_holdout", "decoy_kind", "source_binding")
+    denied_to_predicate = ("lagged_dependence_features",)
+    denied_to_lens = ("signed_causal_effect_verdict", "external_state_ablation_result")
+    seeds = [
+        {
+            "substrate": "swarm",
+            "scenario_family": "ant_pheromone_trail_external_channel",
+            "source_url": "https://www.movebank.org/",
+            "citation": "Movebank public animal movement repository and published collective movement study metadata.",
+            "authority": "Movebank_public_collective_movement_repository",
+            "channel_name": "pheromone_trail_intensity",
+            "readback_name": "forager_turning_bias",
+        },
+        {
+            "substrate": "morphogenesis",
+            "scenario_family": "drosophila_morphogen_gradient_channel",
+            "source_url": "https://flybase.org/reports/FBgn0000166",
+            "citation": "FlyBase Bicoid and Drosophila embryonic patterning references.",
+            "authority": "FlyBase_public_developmental_genetics_repository",
+            "channel_name": "bicoid_gradient",
+            "readback_name": "gap_gene_expression",
+        },
+        {
+            "substrate": "cognitive",
+            "scenario_family": "allen_external_stimulus_readback",
+            "source_url": "https://portal.brain-map.org/",
+            "citation": "Allen Brain Atlas / Brain Map public neural metadata.",
+            "authority": "Allen_Brain_Atlas_public_API",
+            "channel_name": "external_stimulus_channel",
+            "readback_name": "neural_response_projection",
+        },
+        {
+            "substrate": "digital",
+            "scenario_family": "avida_external_state_memory",
+            "source_url": "https://doi.org/10.1038/nature01568",
+            "citation": "Lenski, Ofria, Pennock, and Adami, The evolutionary origin of complex features, Nature, 2003.",
+            "authority": "peer_reviewed_Avida_digital_evolution_literature",
+            "channel_name": "external_grid_state",
+            "readback_name": "program_branch_response",
+        },
+    ]
+
+    def _payload_for(self, seed: dict[str, Any], *, index: int, decoy_kind: str | None) -> dict[str, Any]:
+        external = [round(((index + t) % 11) / 10.0, 6) for t in range(6)]
+        internal = [round(value * 0.72 + 0.05 * ((index + t) % 3), 6) for t, value in enumerate(external)]
+        causal = True
+        if decoy_kind == "internal_recurrence_no_external_channel":
+            external = [0.0 for _ in external]
+            causal = False
+        elif decoy_kind == "external_noise_same_entropy":
+            external = list(reversed(external))
+            internal = [round(((index + t) % 5) / 5.0, 6) for t in range(6)]
+            causal = False
+        elif decoy_kind == "renamed_channel_payload_keys":
+            causal = False
+        return {
+            "window_id": f"{seed['scenario_family']}:window_{index:02d}" if decoy_kind is None else f"{seed['scenario_family']}:{decoy_kind}",
+            "external_channel_name": seed["channel_name"] if decoy_kind != "renamed_channel_payload_keys" else "renamed_payload_channel",
+            "internal_readback_name": seed["readback_name"],
+            "external_medium_series": external,
+            "internal_readback_series": internal,
+            "signed_causal_effect_verdict": {"external_scramble_changes_future_internal_state": causal, "verdict_basis": "source_bound_external_channel_semantics_v0"},
+            "external_state_ablation_result": {"ablation_effect_size_proxy": round(0.41 + (index % 5) * 0.04, 6) if causal else 0.0},
+            "lagged_dependence_features": {"lag_1_dependence_proxy": round(0.52 + (index % 4) * 0.03, 6) if causal else 0.03, "lag_k": 1},
+            "time_window_holdout": {"predicate_window": [0, 1, 2], "lens_window": [3, 4, 5], "validation_window": [6, 7]},
+        }
+
+
+class BoundaryRegionSamplesAdapter(SourceObjectCorpusAdapter):
+    adapter_id = "adapter.source_object.boundary_region_samples.v0"
+    parser_version = "boundary-region-source-object-parser.v1"
+    source_id = "source.source_object.boundary_region_samples"
+    source_name = "Boundary region sample source objects"
+    source_url = "https://doi.org/10.1021/ja900919c"
+    source_object_type = "boundary_region_samples"
+    record_type = "boundary_region_sample"
+    cache_name = "source_object_boundary_region_samples"
+    authority = "authoritative_boundary_region_public_sources"
+    decoy_kinds = ("closed_shell_no_internal_maintenance", "external_reset_only", "randomized_region_adjacency")
+    predicate_inputs = ("operational_boundary_persistence", "internal_maintenance_fields")
+    lens_inputs = ("region_adjacency", "exchange_graph", "boundary_production_declarations", "compartment_topology")
+    validation_inputs = ("decoy_kind", "source_binding", "boundary_counterfactual")
+    denied_to_predicate = ("region_adjacency", "exchange_graph", "compartment_topology")
+    denied_to_lens = ("operational_boundary_persistence", "internal_maintenance_fields")
+    seeds = [
+        {
+            "substrate": "protocell",
+            "scenario_family": "szostak_liposome_membrane_boundary",
+            "source_url": "https://doi.org/10.1021/ja900919c",
+            "citation": "Zhu and Szostak, Coupled growth and division of model protocell membranes, Journal of the American Chemical Society, 2009.",
+            "authority": "peer_reviewed_Szostak_lab_protocell_literature",
+            "boundary_material": "fatty_acid_membrane",
+        },
+        {
+            "substrate": "morphogenesis",
+            "scenario_family": "flybase_tissue_compartment_boundary",
+            "source_url": "https://flybase.org/",
+            "citation": "FlyBase public Drosophila compartment-boundary and patterning references.",
+            "authority": "FlyBase_public_developmental_genetics_repository",
+            "boundary_material": "tissue_compartment_interface",
+        },
+        {
+            "substrate": "field",
+            "scenario_family": "reaction_diffusion_phase_boundary",
+            "source_url": "https://doi.org/10.1126/science.261.5118.189",
+            "citation": "Pearson, Complex patterns in a simple system, Science, 1993.",
+            "authority": "peer_reviewed_reaction_diffusion_benchmark",
+            "boundary_material": "phase_front_interface",
+        },
+    ]
+
+    def _payload_for(self, seed: dict[str, Any], *, index: int, decoy_kind: str | None) -> dict[str, Any]:
+        adjacency = [["inside", "boundary"], ["boundary", "outside"], ["boundary", f"region_{index % 4}"]]
+        persistence = round(0.68 + (index % 6) * 0.035, 6)
+        maintenance = round(0.55 + (index % 5) * 0.04, 6)
+        verdict = True
+        if decoy_kind == "closed_shell_no_internal_maintenance":
+            maintenance, verdict = 0.0, False
+        elif decoy_kind == "external_reset_only":
+            persistence, maintenance, verdict = 0.91, 0.05, False
+        elif decoy_kind == "randomized_region_adjacency":
+            adjacency = [["outside", "noise_a"], ["noise_b", "inside"]]
+            verdict = False
+        return {
+            "sample_id": f"{seed['scenario_family']}:region_{index:02d}" if decoy_kind is None else f"{seed['scenario_family']}:{decoy_kind}",
+            "boundary_material": seed["boundary_material"],
+            "operational_boundary_persistence": {"persistence_fraction": persistence, "counterfactual_boundary_removed": not verdict},
+            "internal_maintenance_fields": {"internal_production_proxy": maintenance, "maintenance_claim": verdict},
+            "region_adjacency": adjacency,
+            "exchange_graph": {"nodes": ["inside", "boundary", "outside"], "edges": adjacency, "directed_exchange": True},
+            "boundary_production_declarations": {"internal_produces_boundary": verdict, "external_reset_only": decoy_kind == "external_reset_only"},
+            "compartment_topology": {"compartment_count": 2 + (index % 3), "boundary_component_count": 1 + (index % 2)},
+            "boundary_counterfactual": {"passes_semantics": verdict, "reason": decoy_kind or "source_bound_boundary_maintenance"},
+        }
+
+
 def _seed_rows_to_csv(rows: list[dict[str, str]]) -> str:
     out = io.StringIO()
     writer = csv.DictWriter(out, fieldnames=["Configuration", "Term", "J", "Level (eV)", "Uncertainty (eV)", "Reference"])
