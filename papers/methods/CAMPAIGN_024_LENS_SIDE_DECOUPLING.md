@@ -1,5 +1,8 @@
 # Campaign 024: Lens-Side Methodology Decoupling
 
+> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as `evidence_private: true` / `private_unshipped`, not as public-runnable verification.
+
+
 Task: TASK-LENS-METHOD
 Status: exploratory; no claim-bearing promotion.
 

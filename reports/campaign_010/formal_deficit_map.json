@@ -909,7 +909,7 @@
     "artifact": "reports/campaign_024/full_report.json",
     "campaign_id": "campaign_024",
     "claim_promotion_allowed": false,
-    "lens_coupling_audit_hash": "sha256:727c28ab17048eb5544ef2d4ae4edddfc9598a176d7440a6aca49300a139110c",
+    "lens_coupling_audit_hash": "sha256:af2fc2ed3f23f71ecd2d6ba79ae9d57922e735eb85f0a578265b1e06fd578546",
     "mode": "predicate_and_lens_side_decoupled_rerun_no_promotion",
     "motif_verdicts": {
       "motif.autocatalytic_closure.draft": {
@@ -1117,17 +1117,9 @@
           "formal_gap": 0.3549345653383201,
           "mode": "candidate_replication",
           "verdict": "replicated"
-        },
-        {
-          "artifact": "reports/campaign_013/replication_verdict.json",
-          "basis_hash": "sha256:ce9e243429a69b0b23c84ce6ca4685f89efbb83e94532ebdb125f80949092dbb",
-          "campaign_id": "campaign-013",
-          "empirical_p": 0.000999000999000999,
-          "formal_gap": 0.3549345653383201,
-          "mode": "candidate_replication",
-          "verdict": "replicated"
         }
-      ]
+      ],
+      "replication_history_deduplicated_by": "TASK-DX-002-FIX"
     }
   ],
   "coverage_matrix": "reports/campaign_010/coverage_matrix.json",

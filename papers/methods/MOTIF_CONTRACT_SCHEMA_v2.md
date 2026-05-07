@@ -1,5 +1,8 @@
 # Motif Contract — Schema v2 (RATIFIED)
 
+> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as `evidence_private: true` / `private_unshipped`, not as public-runnable verification.
+
+
 **Status:** Three-way consensus locked. PI ratified, Architect Claude ratified, Codex 1.5x co-authored. Ready for implementation.
 **Predecessors:** `MOTIF_CONTRACT_SCHEMA_DRAFT.md` (v1, Architect first draft) → `MOTIF_CONTRACTS_v1_DRAFT.md` (Codex co-author with amendments) → this document.
 **Doctrine binding:** D26 (Predicate-Lens Independence) ratifies on this campaign's worked example. Class 13 (Predicate-Detector Surface Coupling) ratifies from candidate to active.

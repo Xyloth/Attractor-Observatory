@@ -1,112 +1,113 @@
 {
   "$schema": "https://attractor-observatory.local/spec-lineage.schema.v1.json",
-  "schema_version": "spec-lineage.v1",
-  "generated_at": "2026-05-06T02:07:37Z",
-  "generated_by": {
-    "role": "Builder",
-    "model_name": "Codex 1.5x",
-    "model_version": "gpt-5",
-    "task_id": "TASK-032"
-  },
   "active_spec_id": "spec-v1.2",
-  "hash_algorithm": "sha256",
-  "hash_scope": "raw file bytes as present in this workspace at TASK-032 verification time",
   "entries": [
     {
-      "id": "spec-v1.0",
-      "version": "v1.0",
-      "title": "The Attractor Observatory v1.0",
-      "source_path": "The Attractor Observatory v1.0.txt",
       "authored_by": "GPT",
-      "role": "Seed ambition substrate",
-      "parents": [],
-      "sha256": "5478d60f7d409ac3b0a6152730a510b36a605f0def7cc13f131478ea2f814762",
       "byte_size": 39443,
+      "id": "spec-v1.0",
+      "parents": [],
       "rationale": "Original ambition substrate: north-star claim, world ensemble, trace-first insight, motif mining, atlas, and formal-deficit ladder.",
-      "status": "immutable"
+      "role": "Seed ambition substrate",
+      "sha256": "5478d60f7d409ac3b0a6152730a510b36a605f0def7cc13f131478ea2f814762",
+      "source_path": "The Attractor Observatory v1.0.txt",
+      "status": "immutable",
+      "title": "The Attractor Observatory v1.0",
+      "version": "v1.0"
     },
     {
-      "id": "spec-v1.1",
-      "version": "v1.1",
-      "title": "The Attractor Observatory v1.1",
-      "source_path": "The Attractor Observatory v1.1.md",
       "authored_by": "Claude",
-      "role": "Rigor substrate",
+      "byte_size": 100735,
+      "id": "spec-v1.1",
       "parents": [
         "spec-v1.0"
       ],
-      "sha256": "24e4ac46c0fb0859ca41ff4994bd1f2ba5b9cbe04a1388fa4bfe69afc7d99d3e",
-      "byte_size": 100735,
       "rationale": "Implementation-grade expansion: versioned SystemTrace, validation gauntlet, calibration corpora, formal coverage, biology-bias controls, risk register, and task atoms.",
-      "status": "immutable"
+      "role": "Rigor substrate",
+      "sha256": "24e4ac46c0fb0859ca41ff4994bd1f2ba5b9cbe04a1388fa4bfe69afc7d99d3e",
+      "source_path": "The Attractor Observatory v1.1.md",
+      "status": "immutable",
+      "title": "The Attractor Observatory v1.1",
+      "version": "v1.1"
     },
     {
-      "id": "seed-v1.2",
-      "version": "Seed v1.2",
-      "title": "Seed v1.2",
-      "source_path": "Seed v1.2.txt",
       "authored_by": "GPT",
-      "role": "Theorist critique and doctrine merge seed",
+      "byte_size": 27171,
+      "id": "seed-v1.2",
       "parents": [
         "spec-v1.1"
       ],
-      "sha256": "cc1d73731d5cbe8e0eb0a4886ef9be3ff3636b4c52bfaa5adb804bc449823f12",
-      "byte_size": 27171,
       "rationale": "Critique that preserves v1.1 rigor while restoring the No Artificial Ceiling Doctrine, exploratory mode, AI-builder telemetry, emergent motifs, biology shadow track, and negative-space outputs.",
-      "status": "immutable"
+      "role": "Theorist critique and doctrine merge seed",
+      "sha256": "cc1d73731d5cbe8e0eb0a4886ef9be3ff3636b4c52bfaa5adb804bc449823f12",
+      "source_path": "Seed v1.2.txt",
+      "status": "immutable",
+      "title": "Seed v1.2",
+      "version": "Seed v1.2"
     },
     {
-      "id": "spec-v1.2",
-      "version": "v1.2",
-      "title": "The Attractor Observatory v1.2",
-      "source_path": "The Attractor Observatory v1.2.md",
       "authored_by": "Claude",
-      "role": "Active canonical synthesis",
+      "byte_size": 77765,
+      "id": "spec-v1.2",
       "parents": [
         "spec-v1.0",
         "spec-v1.1",
         "seed-v1.2"
       ],
-      "sha256": "492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
-      "byte_size": 77765,
       "rationale": "Canonical active spec: v1.0 ambition plus v1.1 rigor plus Seed-v1.2 doctrine and AI-operating-system corrections. Wins conflicts with prior versions.",
-      "status": "active"
+      "role": "Active canonical synthesis",
+      "sha256": "492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729",
+      "source_path": "The Attractor Observatory v1.2.md",
+      "status": "active",
+      "title": "The Attractor Observatory v1.2",
+      "version": "v1.2"
     }
   ],
-  "supporting_context": [
-    {
-      "id": "doctrine",
-      "title": "No Artificial Ceiling Doctrine",
-      "source_path": "NO ARTIFICIAL CEILING DOCTRINE.txt",
-      "sha256": "7c634bab4bbe18cdd01304f581c44c4a370d77d2a74f12ae029c0444bf0b24ba",
-      "byte_size": 1600,
-      "role": "Builder operating doctrine; canonical but not a numbered Observatory spec version."
-    },
-    {
-      "id": "codex-initiation",
-      "title": "Codex initiation message",
-      "source_path": "CODEX_INITIATION.md",
-      "sha256": "1f2cd546de9631b0881ffd48f02c11f290e80219285745def22481b31c8db464",
-      "byte_size": 13226,
-      "role": "Builder handoff and first-campaign instructions; supporting context for TASK-001."
-    }
-  ],
-  "signatures": [
-    {
-      "signature_id": "task-032-builder-self-attestation",
-      "signer_role": "Builder",
-      "signer": "Codex 1.5x",
-      "signed_at": "2026-05-06T02:07:37Z",
-      "signature_scheme": "sha256-self-attestation",
-      "signature_input": "spec-v1.0:5478d60f7d409ac3b0a6152730a510b36a605f0def7cc13f131478ea2f814762|spec-v1.1:24e4ac46c0fb0859ca41ff4994bd1f2ba5b9cbe04a1388fa4bfe69afc7d99d3e|seed-v1.2:cc1d73731d5cbe8e0eb0a4886ef9be3ff3636b4c52bfaa5adb804bc449823f12|spec-v1.2:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729|doctrine:7c634bab4bbe18cdd01304f581c44c4a370d77d2a74f12ae029c0444bf0b24ba|codex-initiation:1f2cd546de9631b0881ffd48f02c11f290e80219285745def22481b31c8db464|active:spec-v1.2|signed_by:Codex 1.5x Builder|signed_at:2026-05-06T02:07:37Z|task:TASK-032",
-      "signature_hash": "4f640787c6b8e6735dbd448cbbd76e88feaeca6d96744228a1e1ceb95f885260",
-      "limitations": "Self-attestation only; no external private key or PI signature was available during TASK-032."
-    }
-  ],
+  "generated_at": "2026-05-06T21:05:38-04:00",
+  "generated_by": {
+    "model_name": "Codex 1.5x",
+    "model_version": "gpt-5",
+    "role": "Builder",
+    "task_id": "TASK-DX-002-FIX"
+  },
+  "hash_algorithm": "sha256",
+  "hash_scope": "raw file bytes as present in this workspace at TASK-032 verification time",
   "notes": [
     "This lineage file is the machine-readable source for the active spec version.",
     "TASK-032 recomputed every entry and supporting-context hash against current raw file bytes after DX-001 detected drift.",
     "Public invariant tests now verify these hashes directly against source bytes.",
-    "Future contract changes to this lineage schema require a dedicated contract task atom and review."
+    "Future contract changes to this lineage schema require a dedicated contract task atom and review.",
+    "TASK-DX-002-FIX recomputed hashes against current raw file bytes after DX-002 detected lineage drift."
+  ],
+  "schema_version": "spec-lineage.v1",
+  "signatures": [
+    {
+      "limitations": "Self-attestation only; no external private key or PI signature was available during TASK-DX-002-FIX.",
+      "signature_hash": "a761a6027e1bddc9d080d6ade5f697a2597217f92a1e73dbeba2b9bd84a79113",
+      "signature_id": "task-dx-002-builder-self-attestation",
+      "signature_input": "spec-v1.0:5478d60f7d409ac3b0a6152730a510b36a605f0def7cc13f131478ea2f814762|spec-v1.1:24e4ac46c0fb0859ca41ff4994bd1f2ba5b9cbe04a1388fa4bfe69afc7d99d3e|seed-v1.2:cc1d73731d5cbe8e0eb0a4886ef9be3ff3636b4c52bfaa5adb804bc449823f12|spec-v1.2:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729|doctrine:7c634bab4bbe18cdd01304f581c44c4a370d77d2a74f12ae029c0444bf0b24ba|codex-initiation:1f2cd546de9631b0881ffd48f02c11f290e80219285745def22481b31c8db464|active:spec-v1.2|signed_by:Codex 1.5x Builder|signed_at:2026-05-06T21:05:38-04:00|task:TASK-DX-002-FIX",
+      "signature_scheme": "sha256-self-attestation",
+      "signed_at": "2026-05-06T21:05:38-04:00",
+      "signer": "Codex 1.5x",
+      "signer_role": "Builder"
+    }
+  ],
+  "supporting_context": [
+    {
+      "byte_size": 1600,
+      "id": "doctrine",
+      "role": "Builder operating doctrine; canonical but not a numbered Observatory spec version.",
+      "sha256": "7c634bab4bbe18cdd01304f581c44c4a370d77d2a74f12ae029c0444bf0b24ba",
+      "source_path": "NO ARTIFICIAL CEILING DOCTRINE.txt",
+      "title": "No Artificial Ceiling Doctrine"
+    },
+    {
+      "byte_size": 13226,
+      "id": "codex-initiation",
+      "role": "Builder handoff and first-campaign instructions; supporting context for TASK-001.",
+      "sha256": "1f2cd546de9631b0881ffd48f02c11f290e80219285745def22481b31c8db464",
+      "source_path": "CODEX_INITIATION.md",
+      "title": "Codex initiation message"
+    }
   ]
 }

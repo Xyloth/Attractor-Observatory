@@ -43,22 +43,22 @@ def test_spec_lineage_hashes_match_raw_bytes():
     signature = lineage["signatures"][0]
     digest = hashlib.sha256(signature["signature_input"].encode("utf-8")).hexdigest()
     assert signature["signature_hash"] == digest
-    assert signature["signature_id"] == "task-032-builder-self-attestation"
+    assert signature["signature_id"] in {"task-032-builder-self-attestation", "task-dx-002-builder-self-attestation"}
 
 
 def test_doctrine_registry_covers_all_binding_and_candidate_doctrines():
     registry = _load_json("docs/doctrine_registry.json")
     rows = registry["doctrines"]
     ids = {row["id"] for row in rows}
-    expected = {f"D{i}" for i in range(7, 23)} | {"D17.5", "D23", "D24", "D25"}
+    expected = {f"D{i}" for i in range(7, 31)} | {"D17.5"}
     assert expected <= ids
 
     for row in rows:
         assert row["content_hash"] == "sha256:" + _sha256_bytes(row["path"])
 
     ratified = {row["id"]: row for row in rows if row.get("status") == "ratified"}
-    assert {"D23", "D24", "D25"} <= set(ratified)
-    assert all(ratified[did]["mode"] == "foundational" for did in ("D23", "D24", "D25"))
+    assert {"D23", "D24", "D25", "D26", "D27", "D28", "D29", "D30"} <= set(ratified)
+    assert all(ratified[did]["mode"] == "foundational" for did in ("D23", "D24", "D25", "D26", "D27", "D28", "D29", "D30"))
 
 
 def test_telemetry_records_have_identity_and_one_active_estimate_per_task():
@@ -115,11 +115,13 @@ def test_snapshot_has_d24_generation_binding_and_staleness_detection():
     binding = snapshot["generation_binding"]
     for key in ("branch", "commit_sha", "generation_command", "generation_timestamp", "freshness_status"):
         assert key in binding
+    assert snapshot.get("freshness_status_advisory_only") is True or snapshot.get("freshness_status") in {"current", binding.get("freshness_status")}
 
     stale = json.loads(json.dumps(snapshot))
     stale["generation_binding"]["commit_sha"] = "sha256:not-current"
     checked = bind_snapshot_freshness(stale, repo_dir=ROOT)
     assert checked["freshness_status"].startswith("stale:")
+    assert checked["generation_binding"]["freshness_checked_at"]
     assert snapshot["evidence_boundaries"]["evidence_private_count"] >= 1344
 
 

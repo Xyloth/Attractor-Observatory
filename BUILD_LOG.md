@@ -1010,3 +1010,36 @@ Verification: `python make_campaign_024.py` green. `python -m pytest tests/test_
 
 **Stop condition.** Substantive W-1 ingestion completed before the 90-minute ceiling; no unresolved adapter/world/methodology issue remained after fixes. Audit items are source-limitation escalations, not parser failures.
 =======
+
+## 2026-05-06 - TASK-LENS-RECOVERY-R1 Start
+
+Codex 1.5x start: 2026-05-06 19:35:13 EST. Goal: Round 1 co-authorship/design review for lens recovery after Campaign 024, no implementation. Estimate 55 minutes. Scope: classify all 33 BAD motif x lens cells, improve Architect's recovery taxonomy and lens-variant proposals, assess repair/lineage/floor measurability, propose C025 methodology revisions and D27 candidate language if warranted.
+
+## 2026-05-06 - TASK-LENS-RECOVERY-R1 Complete
+
+Codex 1.5x complete: 2026-05-06 19:38:10 EST. Round 1 design draft shipped at `papers/methods/LENS_RECOVERY_v1_DRAFT.md`. No implementation performed.
+
+Draft contents: blind spots Architect missed, seven-class recovery taxonomy, explicit classification of all 33 Campaign 024 BAD cells, amended lens-variant proposals with `// CODEX:` comments, per-motif measurability analysis for repair/replication_lineage/floor_connectivity, C025 methodology revision, minimum source-object contracts for Round 2, C025 acceptance gates, and D27 candidate language.
+
+Core conclusion: the next move is not simply "recover 33 cells." Autocatalytic closure reaction graph/CRNT/Petri are diagnostic-only or BAD-ARCH without source split; repair needs perturbation-response ensembles; lineage needs declared-lineage vs entity-observation split; floor likely needs Phase 7 BFG formalism before recovery.
+
+## 2026-05-06 - TASK-MEAS-PLAN Start
+
+Codex 1.5x start: 2026-05-06 20:26:37 EST. Goal: author `papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md`, a signed per-cell measurability assessment for all 33 Campaign 024 BAD cells. Estimate 45 minutes. No implementation; this is a plan and classification artifact applying ratified D27.
+
+## 2026-05-06 - TASK-MEAS-PLAN Complete
+
+Codex 1.5x complete: 2026-05-06 20:30:08 EST. Measurability Recovery Plan v1 shipped at `papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md`; raw-byte signature at `papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json`; structure preregistration at `papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json`.
+
+Plan classifies all 33 Campaign 024 BAD cells exactly once: REF-STRUCT 0, NEW-ABST 3, SCHEMA-SPLIT 12, BAD-ARCH 0, DOMAIN-DECLINE 7, DIAG-ONLY 3, FORMALISM-REQ 8, NEEDS_PI_ARCHITECT_DECISION 0. Acceptance gates passed: floor_connectivity all FORMALISM-REQ / awaiting formalism; autocatalytic_closure graph/CRNT/Petri all DIAG-ONLY / permanent diagnostic-only; no implementation performed.
+
+Source-object campaigns required: perturbation_response_ensemble, entity_observations, external_channel_samples, boundary_region_samples, boundary_maintenance_reaction_network, boundary_maintenance_transition_system, heldout_perturbation_fiber_graph. Honest measurability count over the 33 BAD cells: 15 potentially recoverable as legitimate evidence after source work, 10 permanent non-evidence, 8 formalism-pending; 1 ready from current corpus.
+
+## 2026-05-06 - TASK-DX-002-FIX Start
+
+Codex 1.5x start: 2026-05-06 21:05:38 EST. Branch: codex/task-dx-002-fix. Goal: fix all technically repairable DX-002 findings from falsification pass at frozen HEAD a35aab1, ratify D28-D30, repair public/private evidence markers, doctrine registry integrity, telemetry, snapshot freshness, research packaging, and review-closure semantics. Estimate 95 minutes. Falsification branch is read-only; no motif/cell promotion or lens implementation.
+
+## 2026-05-06 21:24:19 EST ? TASK-DX-002-FIX complete
+- Dispositioned 433 non-held DX-002 findings: 50 technical repairs, 383 private-boundary marker repairs, 0 escalated, 0 acceptable skips.
+- Ratified D28-D30 and applied D27; rebuilt doctrine registry/spec lineage hashes, public tests, read-time snapshot freshness, and research-object packaging.
+- Verification: public_tests 33 passed; py_compile passed; explicit DX-002 invariants passed. Actual 18.69 min vs estimate 95 min (delta 0.20).

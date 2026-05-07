@@ -1,5 +1,8 @@
 # Campaign 014: Floor Corpus Foundry v0
 
+> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as `evidence_private: true` / `private_unshipped`, not as public-runnable verification.
+
+
 Task: TASK-025 / Campaign 014
 Status: exploratory
 Content hash: `sha256:0525d9a35c4b3018fc997eb50565f3bd9abae6589d9b20bc5fbc20bbdc5906d3`

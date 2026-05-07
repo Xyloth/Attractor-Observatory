@@ -1,0 +1,121 @@
+{
+  "authored_by": "Codex 1.5x",
+  "classified_at_est": "2026-05-06 21:24:19 EST",
+  "cluster_disposition": {
+    "Data-shape / idempotence drift": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Doctrine / expected-new-rule presence": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Doctrine / registry integrity": {
+      "count": 12,
+      "disposition": "technical_repair"
+    },
+    "Documentation drift / claimed tree absent from public HEAD": {
+      "count": 5,
+      "disposition": "technical_repair"
+    },
+    "Executable-substrate absence": {
+      "count": 8,
+      "disposition": "markered_as_private"
+    },
+    "Executable-substrate absence / importability": {
+      "count": 3,
+      "disposition": "technical_repair"
+    },
+    "Executable-substrate absence / live command": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Honest-failure honesty / methodology-review closure": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Methodology / lens-cell classification and executable support": {
+      "count": 15,
+      "disposition": "markered_as_private"
+    },
+    "Provenance / content-hash lineage": {
+      "count": 3,
+      "disposition": "technical_repair"
+    },
+    "Provenance / dereferenceability and private-boundary marking": {
+      "count": 360,
+      "disposition": "markered_as_private"
+    },
+    "Public verification / collection failure": {
+      "count": 4,
+      "disposition": "technical_repair"
+    },
+    "Public verification / self-disproving test": {
+      "count": 3,
+      "disposition": "technical_repair"
+    },
+    "Reality / FAIR data stewardship": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Reality / PROV graph compatibility": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Reality / computational reproducibility standard": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Reality / peer-review claim boundary": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Reality / research-object packaging": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Release-boundary / doctrine pre-ratification leakage": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Release-boundary / shadow artifact outside HEAD": {
+      "count": 4,
+      "disposition": "technical_repair"
+    },
+    "Snapshot sidecar / stale-current contradiction": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Snapshot sidecar / status-vs-current-test divergence": {
+      "count": 1,
+      "disposition": "technical_repair"
+    },
+    "Telemetry / identity and calibration integrity": {
+      "count": 4,
+      "disposition": "technical_repair"
+    }
+  },
+  "destroyer_pass": "dx-002-20260507T004214Z",
+  "frozen_head": "a35aab1",
+  "input_counts": {
+    "ambiguous": 7,
+    "broken": 425,
+    "fake_passed": 1,
+    "instrument_held": 3699,
+    "nonheld_total": 433,
+    "total_attacks": 4132
+  },
+  "nonheld_disposition": {
+    "acceptable": 0,
+    "architectural_discussion": 0,
+    "markered_as_private": 383,
+    "technical_repair": 50
+  },
+  "notes": [
+    "markered_as_private is a fix disposition: public artifacts retain narrative evidence while declaring private/unshipped evidence boundaries at point of use.",
+    "instrument_held attacks were not rewritten as project findings; they remain Destroyer-held controls outside the broken/fake/ambiguous repair set.",
+    "No claim-bearing motif promotion occurred in this pass."
+  ],
+  "schema": "TaskDX002FindingsDisposition.v1",
+  "task_id": "TASK-DX-002-FIX"
+}

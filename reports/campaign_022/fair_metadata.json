@@ -1,0 +1,31 @@
+{
+  "accessible": {
+    "private_trace_boundary": "reports/*/traces are private_unshipped unless explicitly shipped",
+    "public_report_present": false
+  },
+  "campaign_id": "campaign_022",
+  "findable": {
+    "identifiers": [
+      "campaign_022"
+    ],
+    "methods_docs": "papers/methods/",
+    "primary_report": "reports/campaign_022/full_report.json"
+  },
+  "generated_at": "2026-05-06T21:05:38-04:00",
+  "interoperable": {
+    "formats": [
+      "json",
+      "markdown"
+    ],
+    "schema_field_present": false
+  },
+  "limitations": [
+    "Public branch may not contain private runtime modules or trace dumps."
+  ],
+  "reusable": {
+    "license": "MIT for public repo unless artifact-specific source license applies",
+    "provenance_required": true,
+    "raw_private_traces_redistributed": false
+  },
+  "schema": "CampaignFAIRMetadata.v1"
+}

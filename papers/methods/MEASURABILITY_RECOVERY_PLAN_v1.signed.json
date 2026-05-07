@@ -1,0 +1,22 @@
+{
+  "schema": "MeasurabilityRecoveryPlanSignature.v1",
+  "task_id": "TASK-MEAS-PLAN",
+  "artifact": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+  "artifact_raw_sha256": "sha256:1d9d215e43d046ff0173af4ef821365a701e46e37b0dac480cb82914e9b934ad",
+  "signed_at_est": "2026-05-06 20:30:08 EST",
+  "signed_by": "Codex 1.5x",
+  "basis": {
+    "campaign_024_bad_cell_count": 33,
+    "all_bad_cells_classified_once": true,
+    "floor_cells_formalism_req": true,
+    "autocatalytic_reaction_cells_diagnostic_only": true,
+    "implementation_performed": false
+  },
+  "signature": {
+    "scheme": "sha256-raw-file-bytes",
+    "status": "resigned_after_dx002_boundary_notice"
+  },
+  "resigned_at_est": "2026-05-06 21:17:44 EST",
+  "resigned_by": "Codex 1.5x TASK-DX-002-FIX",
+  "resign_reason": "DX-002 public runtime boundary notice changed raw artifact bytes; D28 requires audit-live artifacts to bind to committed bytes."
+}
