@@ -2240,3 +2240,24 @@ This is producer-side data correctness -- same class as CB-008's PubChem SMILES 
 1. Hand off to PI for fix decision (TASK-CB-016 persistence load-on-init)
 2. While fix pends: do NOT relaunch the daemon multi-source. If interim ingestion needed, run one source per daemon launch (single-source cycles persist correctly)
 3. After fix: relaunch with --allow-network and let the cached NIST + KEGG raw responses replay into the store via the adapter cache hits (no re-fetch needed)
+
+
+## 2026-05-07 12:19:28 EST -- TASK-CB-016 complete: persistence fix + replay + resume
+
+D9 STOP from CB-015 T8 RESOLVED. LowLevelFactoryStore.__init__ now
+loads existing JSON state on construction; subsequent
+run_live_factory_cycle calls UPSERT via dict-keyed-by-id pattern.
+
+Cache replay recovered the 590 NIST + 50 KEGG + 200 math records
+that were overwritten in CB-015 T8. Cache hit confirmed; no new
+network fetches.
+
+Final aggregate: 4,963 records (was 4,123 pre-fix). 100% provenance
+complete. Per-world Phase-1 progress: W-1 atomic/molecular 84.2%,
+W0 math 100% (routing-rejected), W1 crn 100% (routing-rejected).
+
+W0/W1 routing-rejection captured in papers/methods/INCIDENT_CB016_
+W0W1_ROUTING.md as a separate ticket; persistence side is clean.
+
+Daemon resumed unbounded: PID 27532, sleep 3600s, --allow-network.
+First monitoring wake scheduled at +15 min per BUILDER_LAUNCH_PROTOCOL.
