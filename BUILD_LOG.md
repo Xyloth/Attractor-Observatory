@@ -2367,3 +2367,47 @@ Final state on main (b6b9164 + 7b7f2db CB-017 + f471e5a merge):
 the 12 new Phase-B sources will be due-now, the W0/W1 router
 contracts will accept the persisted records, and a relaunch will
 drive real cycles instead of cadence-locked no-ops.
+
+## 2026-05-07 15:05:22 EST - TASK-PHASE-B-INFRA Complete
+
+Codex complete. I did not monitor or manipulate Builder's live daemon;
+all verification that needed execution ran in isolated
+`reports/task_phase_b_verify/` paths.
+
+Landed on `codex/task-phase-b-adapters` and merged to `main` with
+no-ff merge `c0aa8aa`:
+
+* W0/W1 payload reconciliation chose canonical nested
+  `payload.world_parameters` for W1-W13, with W0 documented as a
+  `records_as_params` exception. Isolated W0/W1 cache-only replay:
+  250/250 persisted orphan records produced traces, zero routing
+  rejections (`crn`: 50, `math_primitives`: 200).
+* Added `factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md` so adapters
+  target the router contract explicitly before future phases.
+* Added continuous daemon `--force-refresh`,
+  `--force-refresh-source`, and `--progress-root`, with
+  `FactoryDaemonForceRefreshClearance.v1` session-ledger rows.
+* Added LF policy in `.gitattributes` for doctrine/spec/method files
+  and ran targeted renormalization; `public_tests/test_public_contracts.py`
+  stayed green.
+* Reapplied and expanded the 12 W2-W13 Phase-B adapters to 803
+  offline records, with focused public tests.
+* Refreshed `papers/methods/INGESTION_TARGETS.md` with Phase-A +
+  Phase-B landed status and content hash
+  `sha256:a83dd0ccbffe39d071cc317ddf6e97f5c6b1c87af91919271f9fa140b0508c6c`.
+
+Verification:
+
+* `python -m pytest public_tests/test_phase_b_adapters.py
+  public_tests/test_task035_world_adapters.py
+  public_tests/test_cb015_adapter_expansion.py
+  public_tests/test_public_contracts.py -q` -> 33 passed.
+* `python -m py_compile factory_lowlevel/adapters.py
+  factory_lowlevel/continuous_daemon.py` -> passed.
+* Full all-source isolated daemon cycle exceeded the Codex execution
+  budget and was stopped; this was not treated as live monitoring.
+  Partial trace output reached W-1, W0, W2, W3, W4, W6, W9, W11.
+  A smaller remaining-world replay partially reached W5, W8, W10,
+  W12, W13 before timeout. Focused adapter/router tests remain the
+  Codex-side acceptance check for payload compatibility; Builder owns
+  the live daemon relaunch and sustained progress monitoring.
