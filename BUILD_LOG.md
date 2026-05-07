@@ -2261,3 +2261,109 @@ W0W1_ROUTING.md as a separate ticket; persistence side is clean.
 
 Daemon resumed unbounded: PID 27532, sleep 3600s, --allow-network.
 First monitoring wake scheduled at +15 min per BUILDER_LAUNCH_PROTOCOL.
+## 2026-05-07 14:37:40 EST - TASK-PHASE-B-INFRA Start
+Codex start. Scope: W0/W1 schema reconciliation check/fix, adapter payload contract, force-refresh daemon flag, LF policy, Phase-B adapter merge, isolated offline verification, and INGESTION_TARGETS refresh. Live daemon monitoring and Control Room remain Builder's lane; verification uses separate task_phase_b paths.
+
+
+## 2026-05-07 14:30:00 EST -- TASK-CB-017 complete + daemon halt
+
+**CB-017 (Streamlit duplicate-element-id hotfix):** merged to main
+as f471e5a. Root cause: control_room/rooms/_world_drilldown.py
+emitted st.plotly_chart per record without `key=`, so phase
+portraits with similar parameter shapes (Lorenz/Rossler/Sprott)
+collided on Streamlit's auto-generated element ID. Two call sites
+fixed -- _render_math_primitives (direct-in-loop) and
+_render_atom_card (helper-called-from-loop via
+_render_atomic_molecular). Class-of-bug fix: AST audit across
+control_room/rooms/ + control_room/components/ for 14 chart APIs
+in for/while loops without key=, found exactly the two cases.
+Both now carry deterministic keys derived from record_id +
+canonical_name. New test file
+public_tests/test_cb017_streamlit_unique_keys.py (7 tests, 1.26s)
+pins the contract via AST lint + live AppTest render smokes.
+Total public_tests/ on main: 101 passed. (Three additional
+failures in public_tests/test_phase_b_adapters.py are in an
+**untracked file from Codex's Phase B work** -- not related to
+CB-017, pre-existing on main.)
+
+**Daemon halted on PI signal.** PI directive (14:30 EST):
+"SIGTERM the daemon, release lock, write final BUILD_LOG entry,
+cancel ScheduleWakeup. Daemon at PID 27532 is in monthly-cadence
+lockout -- 30 days of no-ops scheduled. Builder wake-up loop is
+also no-ops."
+
+Daemon Step-1/2/3 monitoring confirmed the lockout state:
+* Cycle 1 fired at 17:19:40Z (first cycle after CB-016 resume),
+  wrote 4,963 records via cache replay. Recoverable behavior.
+* Cycle 2 fired at 18:19:42Z (precise 1hr cadence per
+  --sleep-seconds 3600). State file
+  project_telemetry/factory_daemon_state.json updated; records
+  + audit unchanged. NO-OP cycle: all sources still under
+  monthly-cadence lockout from CB-015 / CB-016 cache replay.
+* Step-3 (14:24 EST) confirmed +0.2s CPU since Step-2 = idle.
+  Process alive but doing nothing. Projection: ~30 days of
+  no-op cycles until cadence releases.
+
+Halt sequence (14:54 EST):
+1. os.kill(27532, signal.SIGTERM) -> process exited within 1s.
+   On Windows, SIGTERM maps to TerminateProcess() which skips
+   Python signal handlers, so the daemon's lock-release atexit
+   did NOT run.
+2. Manual unlink of
+   reports/task_cb015_launch/factory_store/.daemon_lock.
+3. tasklist /FI "PID eq 27532" -> no match. Confirmed gone.
+4. ScheduleWakeup loop terminated (no further wake calls).
+
+Final state on main (b6b9164 + 7b7f2db CB-017 + f471e5a merge):
+* 4,963 records, 100% provenance complete
+* W-1 atomic_molecular 4,713 records (84.2% Phase-1)
+* W0 math_primitives 200 records (100% Phase-1, router-rejected)
+* W1 crn 50 records (100% Phase-1, router-rejected)
+* audit_queue 109 items: 59 nist_asd_no_energy_level_rows
+  (D17 honest non-evidence) + 50 routing_rejection (W1 schema
+  mismatch, documented in INCIDENT_CB016_W0W1_ROUTING.md)
+* No daemon running, no lock held, no scheduled wakes pending
+
+**Cumulative escalations awaiting TASK-PHASE-B-INFRA (Codex):**
+
+1. **Phase B adapter merge.** codex/task-phase-b-adapters branch
+   carries 12 new adapters (per CB-015 hand-off). Untracked
+   public_tests/test_phase_b_adapters.py exposes 3 contract
+   failures on main right now -- the routing/payload contract
+   between adapters and W*-routers is out of sync. Phase B merge
+   should bring this either green or surface the exact contract
+   needed.
+2. **W0 / W1 router schema reconciliation.** Per
+   papers/methods/INCIDENT_CB016_W0W1_ROUTING.md: 250 records
+   (200 math + 50 KEGG) persist with full provenance but the
+   routers reject them at run_live_factory_cycle's routing
+   stage. KEGG checks top-level keys, adapter emits nested
+   `payload.world_parameters` form. Math primitives' router
+   rejects an unknown set of fields. Two fix options documented
+   in the incident doc; pick the canonical one in
+   TASK-PHASE-B-INFRA.
+3. **Force-refresh / cadence override.** With monthly cadence
+   honored strictly, restarting the daemon today would re-enter
+   the lockout immediately. Need either (a) a per-source
+   force_refresh flag in factory_daemon_state.json, or (b) a
+   --force-refresh CLI flag on continuous_daemon, so the
+   post-Phase-B relaunch can drive real cycles instead of
+   no-ops.
+4. **.gitattributes for CRLF/LF stability.** 4th recurrence
+   across CB-014/015/016/(017): worktree checkouts pick up LF
+   line endings; main is CRLF. test_spec_lineage_hashes_match_
+   raw_bytes + test_doctrine_registry_covers_all_binding_and_
+   candidate_doctrines fail after every merge until I recompute.
+   Single-line fix in .gitattributes: force LF on
+   docs/doctrine_*.md + spec/lineage.json.
+5. **EmpiricalRecord.payload canonical contract.** The W0/W1
+   schema mismatch is a symptom of having no written contract
+   for which keys live where in `payload`. TASK-PHASE-B-INFRA
+   should pin that contract in spec/ alongside the router
+   reconciliation.
+
+**Resume condition.** Daemon resumes on PI / Architect signal
+*after* TASK-PHASE-B-INFRA lands all five items. At that point
+the 12 new Phase-B sources will be due-now, the W0/W1 router
+contracts will accept the persisted records, and a relaunch will
+drive real cycles instead of cadence-locked no-ops.
