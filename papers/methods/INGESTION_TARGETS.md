@@ -1,6 +1,6 @@
-# Ingestion Targets v1 — Phase 1 substantive
+﻿# Ingestion Targets v1 â€” Phase 1 substantive
 
-**Status:** **RATIFIED** — Phase 1 substantive targets per PI delegation.
+**Status:** **RATIFIED** â€” Phase 1 substantive targets per PI delegation.
 
 This document specifies the target record density per world that
 unattended ingestion drives toward. The continuous daemon reads the
@@ -24,19 +24,19 @@ toward the magnum-opus state.
 
 Target density per world reflects an honest joint estimate of:
 
-1. **Source availability** — what the configured external sources
+1. **Source availability** â€” what the configured external sources
    (NIST, PubChem, ChEBI, KEGG, DrugBank, GBIF, NCBI, GISAID,
    peer-reviewed catalogs) can deliver before saturation.
-2. **Methodology coverage** — minimum density required for the
+2. **Methodology coverage** â€” minimum density required for the
    substrate-blocked control battery (D26 binding) to be evaluable.
-3. **Per-substance audit ceilings** (D17.5) — line-count expectations
+3. **Per-substance audit ceilings** (D17.5) â€” line-count expectations
    from the substance audit pages.
-4. **Storage budget** — per-world budget cap from
+4. **Storage budget** â€” per-world budget cap from
    `factory_lowlevel/budget.py:DEFAULT_PER_WORLD_HARD_CAP_BYTES`.
 
 D22 binding: when a world has no source we know how to reach, the
 target is held to the ratified floor. W13 multiscale stays at 3
-because it is falsifier-active per the BFG floor work — inflating
+because it is falsifier-active per the BFG floor work â€” inflating
 its target would amount to silently overwriting the falsification.
 
 ## Per-world Phase 1 targets
@@ -48,8 +48,8 @@ without updating `progress.py:load_target_densities` to match.
 
 | world_family               | target_density | source_basis                                                                                                                                                  |
 |----------------------------|---------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| atomic_molecular_primitives|           5600 | Atomic 600 (full periodic table neutral spectra ×118 + canonical ionization states ~500) + Molecular 5000 (ChEBI biological-relevance + KEGG metabolites + DrugBank approved + chemistry foundations) |
-| math_primitives            |            200 | Full canonical peer-reviewed catalog: 1D/2D maps, autonomous ODEs (Lorenz/Rössler/Chua/Sprott/Chen/Lu families), 4D chaos, bifurcation normal forms, heteroclinic/homoclinic, limit-cycle/torus/strange-attractor families, intermittency, riddled basins |
+| atomic_molecular_primitives|           5600 | Atomic 600 (full periodic table neutral spectra Ã—118 + canonical ionization states ~500) + Molecular 5000 (ChEBI biological-relevance + KEGG metabolites + DrugBank approved + chemistry foundations) |
+| math_primitives            |            200 | Full canonical peer-reviewed catalog: 1D/2D maps, autonomous ODEs (Lorenz/RÃ¶ssler/Chua/Sprott/Chen/Lu families), 4D chaos, bifurcation normal forms, heteroclinic/homoclinic, limit-cycle/torus/strange-attractor families, intermittency, riddled basins |
 | crn                        |             50 | KEGG top-50 reference organisms                                                                                                                                |
 | protocell                  |             50 | Szostak lab archives + peer-reviewed protocell-membrane perturbation studies                                                                                   |
 | field                      |            100 | Brusselator / Schnakenberg / FitzHugh-Nagumo / Gray-Scott / Cahn-Hilliard at parameter scale                                                                   |
@@ -62,7 +62,7 @@ without updating `progress.py:load_target_densities` to match.
 | hypergraph_reactions       |             50 | BioModels reaction-network hypergraphs                                                                                                                          |
 | quasispecies               |            100 | NCBI HIV-1 longitudinal + GISAID flu pilot                                                                                                                      |
 | symbiogenesis              |             50 | NCBI endosymbiosis genome data                                                                                                                                  |
-| multiscale                 |              3 | Held low — W13 is falsifier-active per BFG floor work (D17 binding; falsification is publishable, never silently overwritten)                                 |
+| multiscale                 |              3 | Held low â€” W13 is falsifier-active per BFG floor work (D17 binding; falsification is publishable, never silently overwritten)                                 |
 
 <!-- ingestion-targets:end -->
 
@@ -94,10 +94,10 @@ clean three times in a row with no methodology violations:
 
 Long-horizon targets requiring tooling beyond Phase 2:
 
-* W-1 molecular: full PubChem subset (1M+ records) — needs index
+* W-1 molecular: full PubChem subset (1M+ records) â€” needs index
   + budget tuning + likely DuckDB swap for query speed
 * Tree-of-life biology grounding broadly (gigabase per phylum)
-* Per-substrate density to ≥ 50 for all leaning-eligible cells
+* Per-substrate density to â‰¥ 50 for all leaning-eligible cells
 
 These are NOT in scope for the daemon currently being launched.
 Phase 2 and Phase 3 each get their own ratification cycle; PI signs
@@ -105,19 +105,22 @@ each phase before the daemon promotes from one to the next.
 
 ## Aggregate ratification gates (Phase 1 launch)
 
-All five must hold before the daemon flips on. Status as of CB-014:
+All gates must hold before the daemon flips on. Status after TASK-PHASE-B-INFRA:
 
-1. ✅ PI signature on this Phase 1 table (delegated to Architect; see ratification block below).
-2. ✅ `make_source_object_generation` green for the four non-floor source-object adapters.
-3. ✅ `make_campaign_026` green (current `post_run_hash sha256:b746ea0e...` matches the one in `BUILD_LOG.md` TASK-FLOOR-BFG entry).
-4. ✅ `factory_daemon.bat` fail-fast check passes (CB-013 T1 deliverable).
-5. ✅ `BUILDER_INGESTION_MONITORING_PLAYBOOK.md` shipped (CB-013 T2 deliverable). Stop/resume drill executed in CB-013 tests + CB-014 first-cycle launch.
+1. âœ… PI signature on this Phase 1 table (delegated to Architect; see ratification block below).
+2. âœ… `make_source_object_generation` green for the four non-floor source-object adapters.
+3. âœ… `make_campaign_026` green (current `post_run_hash sha256:b746ea0e...` matches the one in `BUILD_LOG.md` TASK-FLOOR-BFG entry).
+4. âœ… `factory_daemon.bat` fail-fast check passes (CB-013 T1 deliverable).
+5. âœ… `BUILDER_INGESTION_MONITORING_PLAYBOOK.md` shipped (CB-013 T2 deliverable). Stop/resume drill executed in CB-013 tests + CB-014 first-cycle launch.
+6. âœ… Phase A W-1/W0/W1 adapters landed at Phase-1 envelope.
+7. âœ… Phase B W2-W13 adapters landed at Phase-1 envelope with 803 cache-only records available from source-bound bundled seeds.
+8. âœ… `factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md` documents canonical `payload.world_parameters` routing semantics for parameterized worlds.
 
 ## Re-ratification cadence
 
 This table is reviewed:
 
-* After every Phase boundary (Phase 1 → 2 → 3 ratifications).
+* After every Phase boundary (Phase 1 â†’ 2 â†’ 3 ratifications).
 * Monthly during steady-state monitoring.
 * After any source-object adapter change that materially affects
   available volume.
@@ -136,6 +139,12 @@ records to give and (b) per-world budget allows.
   "delegation_note": "PI's exact words: 'And anything I didn't answer, I trust your judgment, bro.' Architect Claude ratified Phase 1 targets per substantive-not-toy directive captured in PI directive section above. Builder (CB-014) re-stated the substantive-not-toy directive verbatim and applied it to every cell rather than collapsing to v0.1 floor numbers.",
   "phase": 1,
   "phase_total_records": 6653,
+  "phase_a_status": "landed",
+  "phase_b_status": "landed",
+  "phase_b_adapter_records_available_offline": 803,
+  "payload_contract": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+  "content_hash_scope": "sha256 over the canonical ingestion-targets table block between ingestion-targets:start and ingestion-targets:end",
+  "content_hash": "sha256:a83dd0ccbffe39d071cc317ddf6e97f5c6b1c87af91919271f9fa140b0508c6c",
   "next_phase_review_trigger": "three consecutive clean Phase 1 cycles with zero methodology violations"
 }
 ```
@@ -148,7 +157,7 @@ Builder note (CB-014): targets above were calibrated against:
   the substantive-not-toy directive: full periodic table coverage for
   atomic, ChEBI biological + KEGG metabolites + DrugBank approved
   for molecular. Adapter expansion may be required to reach the
-  ChEBI + DrugBank breadth — this is acceptable producer-side work
+  ChEBI + DrugBank breadth â€” this is acceptable producer-side work
   for Phase 1 and tracked under follow-up tickets, not within the
   daemon-launch ticket itself.
 * W0 math primitives: 200 covers the Strogatz + Guckenheimer-Holmes
@@ -166,5 +175,5 @@ Builder note (CB-014): targets above were calibrated against:
 If the daemon's Phase 1 cycle observes that any source named in the
 basis column is unreachable, rate-limited, or returns under the
 target volume, that goes to BUILD_LOG as a Phase 1 source-availability
-note and is escalated to PI in the next monitoring session — NOT
+note and is escalated to PI in the next monitoring session â€” NOT
 silently dropped (D14 / D17 / D22 binding).

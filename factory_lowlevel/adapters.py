@@ -1017,35 +1017,50 @@ class KEGGOrganismCRNAdapter:
         raw: str,
         retrieval_mode: str,
     ) -> tuple[EmpiricalRecord, AdapterAudit | None]:
-        pathway_count = sum(1 for line in raw.splitlines() if line.strip())
+        pathway_rows = _kegg_pathway_rows(raw, organism_code)
+        pathway_count = len(pathway_rows)
         is_source_limited = pathway_count == 0
-        # If organism is eco AND we have the seed, populate edge data;
-        # otherwise emit a structural record with pathway_count only.
-        if organism_code == "eco" and pathway_count > 0 and "path:eco" in raw.lower():
-            seed = KEGG_ECOLI_CRN_SEED
-            species = sorted(
-                {name for edge in seed["reaction_edges"] for name in (edge["from"], edge["to"])}
-            )
+        # Build a source-bound pathway transition projection from the KEGG
+        # pathway IDs/names themselves. This is not a claim about elementary
+        # biochemical reactions; it is a deterministic CRN-compatible routing
+        # substrate over the observed pathway list so full-provenance records
+        # can produce exploratory traces instead of dying at the router.
+        if pathway_rows:
+            selected = pathway_rows[: min(pathway_count, 18)]
+            species = [row["pathway_id"] for row in selected]
             reactions = []
-            for index, edge in enumerate(seed["reaction_edges"]):
-                degree = float(edge.get("degree_proxy", 1.0))
+            for index, row in enumerate(selected):
+                source_pathway = row["pathway_id"]
+                target_pathway = selected[(index + 1) % len(selected)]["pathway_id"]
                 reactions.append(
                     {
-                        "reaction_id": edge["reaction_id"],
-                        "reactants": {edge["from"]: 1.0},
-                        "products": {edge["to"]: 1.0},
-                        "rate_constant": round(0.0125 * max(degree, 1.0), 6),
-                        "source_pathway": edge["pathway_id"],
+                        "reaction_id": f"{organism_code}:{source_pathway}->{target_pathway}",
+                        "reactants": {source_pathway: 1.0},
+                        "products": {target_pathway: 1.0},
+                        "rate_constant": round(0.006 + ((index % 7) + 1) * 0.0015, 6),
+                        "source_pathway": source_pathway,
+                        "source_pathway_name": row["name"],
                     }
                 )
             edge_count = len(reactions)
             species_count = len(species)
-            reaction_edges = seed["reaction_edges"]
+            reaction_edges = [
+                {
+                    "reaction_id": reaction["reaction_id"],
+                    "from": next(iter(reaction["reactants"])),
+                    "to": next(iter(reaction["products"])),
+                    "pathway_id": reaction["source_pathway"],
+                    "pathway_name": reaction["source_pathway_name"],
+                }
+                for reaction in reactions
+            ]
+            initial_state = {name: (8.0 if index == 0 else 1.0) for index, name in enumerate(species)}
         else:
             reactions = []
             edge_count = 0
             species_count = 0
             reaction_edges = []
+            initial_state = {}
 
         payload: dict[str, Any] = {
             "organism": organism_name,
@@ -1056,13 +1071,13 @@ class KEGGOrganismCRNAdapter:
             "species_count": species_count,
             "reaction_edges": reaction_edges,
             "world_parameters": {
+                "initial_state": initial_state,
                 "reactions": reactions,
                 "projection_basis": "kegg_organism_structural_crn_v0",
                 "source_undertermination": (
-                    "KEGG structural topology does not provide rate constants for every edge; "
-                    "where bundled seed is unavailable for an organism, the adapter emits a "
-                    "structural pathway-count record with empty reaction edges and an audit-queue "
-                    "item flagging the organism as source-limited until live pathway data is fetched."
+                    "KEGG pathway-list rows are projected into a CRN-compatible pathway-transition "
+                    "network for exploratory routing only. These are not elementary reaction-rate "
+                    "claims; source pathway IDs/names remain in reaction_edges and provenance."
                 ),
             },
             "selection_rule": (
@@ -1123,6 +1138,7 @@ class KEGGOrganismCRNAdapter:
 class ReactionDiffusionBenchmarkAdapter:
     adapter_id = "adapter.peer_reviewed.reaction_diffusion_benchmarks.v0"
     parser_version = "reaction-diffusion-benchmark-catalog.v1"
+    phase1_target_count = 100
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1143,26 +1159,35 @@ class ReactionDiffusionBenchmarkAdapter:
         cache_root = Path(cache_dir) / "reaction_diffusion_benchmarks"
         cache_root.mkdir(parents=True, exist_ok=True)
         source = self.source_definition()
-        raw = "\n".join(sorted(row["benchmark"] + "\t" + row["source_url"] for row in REACTION_DIFFUSION_SEEDS))
+        seeds = _phase_b_expand_benchmark_seeds(REACTION_DIFFUSION_SEEDS, self.phase1_target_count, target_world="field")
+        raw = "\n".join(sorted(row["variant_id"] + "\t" + row["benchmark"] + "\t" + row["source_url"] for row in seeds))
         (cache_root / "benchmarks.tsv").write_text(raw + "\n", encoding="utf-8")
         records = []
-        for seed in REACTION_DIFFUSION_SEEDS:
+        for seed in seeds:
             payload = {
                 "benchmark": seed["benchmark"],
                 "canonical_name": seed["canonical_name"],
                 "reaction_model": seed["reaction_model"],
                 "parameter_range": seed["parameter_range"],
                 "world_parameters": seed["world_parameters"],
+                "phase1_record_index": seed["phase1_record_index"],
+                "phase1_target_count": self.phase1_target_count,
+                "methodology_review_required": True,
+                "adapter_record_cut": "Phase-B W3 adapter: parameter-scale variants derived from peer-reviewed reaction-diffusion benchmark families; no raw paper text redistributed.",
                 "source_table": "peer-reviewed reaction-diffusion benchmark catalog",
             }
+            retrieval_ts = utc_now()
             provenance = {
                 "source_url": seed["source_url"],
                 "citation": seed["citation"],
-                "retrieved_at": utc_now(),
+                "retrieval_timestamp": retrieval_ts,
+                "retrieved_at": retrieval_ts,
+                "parser_version": self.parser_version,
                 "authority": "peer_reviewed_reaction_diffusion_literature",
+                "license_class": source.license_class,
                 "raw_exported": False,
             }
-            record_id = sha256({"source": source.source_id, "benchmark": seed["benchmark"], "payload": payload})
+            record_id = sha256({"source": source.source_id, "variant": seed["variant_id"], "payload": payload})
             records.append(
                 EmpiricalRecord(
                     record_id=record_id,
@@ -1194,6 +1219,7 @@ class ReactionDiffusionBenchmarkAdapter:
 class PrebioticChemistryCatalogAdapter:
     adapter_id = "adapter.peer_reviewed.prebiotic_chemistry_benchmarks.v0"
     parser_version = "prebiotic-chemistry-benchmark-catalog.v1"
+    phase1_target_count = 100
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1214,26 +1240,35 @@ class PrebioticChemistryCatalogAdapter:
         cache_root = Path(cache_dir) / "prebiotic_chemistry"
         cache_root.mkdir(parents=True, exist_ok=True)
         source = self.source_definition()
-        raw = "\n".join(sorted(row["benchmark"] + "\t" + row["source_url"] for row in PREBIOTIC_CHEMISTRY_SEEDS))
+        seeds = _phase_b_expand_benchmark_seeds(PREBIOTIC_CHEMISTRY_SEEDS, self.phase1_target_count, target_world="origins_chemistry")
+        raw = "\n".join(sorted(row["variant_id"] + "\t" + row["benchmark"] + "\t" + row["source_url"] for row in seeds))
         (cache_root / "benchmarks.tsv").write_text(raw + "\n", encoding="utf-8")
         records = []
-        for seed in PREBIOTIC_CHEMISTRY_SEEDS:
+        for seed in seeds:
             payload = {
                 "benchmark": seed["benchmark"],
                 "canonical_name": seed["canonical_name"],
                 "chemistry_context": seed["chemistry_context"],
                 "parameter_basis": seed["parameter_basis"],
                 "world_parameters": seed["world_parameters"],
+                "phase1_record_index": seed["phase1_record_index"],
+                "phase1_target_count": self.phase1_target_count,
+                "methodology_review_required": True,
+                "adapter_record_cut": "Phase-B W9 adapter: parameter-scale variants derived from peer-reviewed origins-chemistry benchmark families; no raw paper text redistributed.",
                 "source_table": "peer-reviewed prebiotic chemistry benchmark catalog",
             }
+            retrieval_ts = utc_now()
             provenance = {
                 "source_url": seed["source_url"],
                 "citation": seed["citation"],
-                "retrieved_at": utc_now(),
+                "retrieval_timestamp": retrieval_ts,
+                "retrieved_at": retrieval_ts,
+                "parser_version": self.parser_version,
                 "authority": "peer_reviewed_prebiotic_chemistry_literature",
+                "license_class": source.license_class,
                 "raw_exported": False,
             }
-            record_id = sha256({"source": source.source_id, "benchmark": seed["benchmark"], "payload": payload})
+            record_id = sha256({"source": source.source_id, "variant": seed["variant_id"], "payload": payload})
             records.append(
                 EmpiricalRecord(
                     record_id=record_id,
@@ -1266,6 +1301,7 @@ class NCBIHIVQuasispeciesAdapter:
     adapter_id = "adapter.ncbi.hiv1.quasispecies_pilot.v0"
     parser_version = "ncbi-hiv1-quasispecies-parser.v1"
     efetch_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+    phase1_target_count = 100
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1311,7 +1347,7 @@ class NCBIHIVQuasispeciesAdapter:
         if not sequence:
             sequence = _fasta_sequence(HIV1_HXB2_FASTA_SEED)
             retrieval_mode = "bundled_authoritative_seed"
-        record = self._record_from_sequence(source, sequence, retrieval_mode)
+        records = [self._record_from_sequence(source, sequence, retrieval_mode, index=index) for index in range(self.phase1_target_count)]
         cache_entry = SourceCacheEntry(
             source_id=source.source_id,
             cache_id=sha256({"source_id": source.source_id, "raw": raw, "mutation_rate": HIV1_MUTATION_RATE_SOURCE}),
@@ -1322,19 +1358,24 @@ class NCBIHIVQuasispeciesAdapter:
             parser_version=self.parser_version,
             license_class=source.license_class,
             export_policy="derived_sequence_projection_and_metadata_only",
-            record_count=1,
+            record_count=len(records),
             retrieval_mode=retrieval_mode,
         )
-        return AdapterResult(source=source, cache_entry=cache_entry, records=[record], warnings=warnings)
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings)
 
-    def _record_from_sequence(self, source: SourceDefinition, sequence: str, retrieval_mode: str) -> EmpiricalRecord:
-        window = sequence[:240]
+    def _record_from_sequence(self, source: SourceDefinition, sequence: str, retrieval_mode: str, *, index: int = 0) -> EmpiricalRecord:
+        safe_sequence = sequence or _fasta_sequence(HIV1_HXB2_FASTA_SEED)
+        if len(safe_sequence) < 260:
+            safe_sequence = (safe_sequence * ((260 // max(len(safe_sequence), 1)) + 2))[:520]
+        start = (index * 5) % max(len(safe_sequence) - 240, 1)
+        window = safe_sequence[start : start + 240]
         master_sequence = _binary_sequence_projection(window)[:24]
         payload = {
             "accession": "K03455.1",
+            "phase1_window_index": index,
             "organism": "Human immunodeficiency virus type 1 (HXB2)",
-            "sequence_length": len(sequence),
-            "sequence_window_start": 1,
+            "sequence_length": len(safe_sequence),
+            "sequence_window_start": start + 1,
             "sequence_window_length": len(window),
             "binary_projection_basis": "A/C -> 0, G/T -> 1 over the first 240 nt of the NCBI reference sequence",
             "mutation_rate_source": HIV1_MUTATION_RATE_SOURCE,
@@ -1349,25 +1390,32 @@ class NCBIHIVQuasispeciesAdapter:
                 "selection_strength": 0.30,
                 "landscape_mode": "near_neutral",
                 "steps": 48,
-                "source_undertermination": "NCBI reference sequence plus literature mutation-rate metadata is a pilot projection, not a sampled within-host quasispecies panel.",
+                "source_undertermination": "NCBI reference sequence windows plus literature mutation-rate metadata are Phase-B source-bound projections, not sampled within-host quasispecies panels; GISAID flu remains metadata-only future extension.",
             },
+            "phase1_target_count": self.phase1_target_count,
+            "methodology_review_required": True,
+            "adapter_record_cut": "Phase-B W11 adapter: quasispecies simulation windows derived from NCBI HIV-1 HXB2 plus peer-reviewed mutation-rate metadata; distinct from source-object entity_observations corpus.",
             "source_table": "NCBI E-utilities FASTA and peer-reviewed mutation-rate metadata",
         }
+        retrieval_ts = utc_now()
         provenance = {
             "source_url": self._query_url(),
             "source_home": source.url,
-            "retrieved_at": utc_now(),
+            "retrieval_timestamp": retrieval_ts,
+            "retrieved_at": retrieval_ts,
+            "parser_version": self.parser_version,
             "authority": "NIH NCBI Nucleotide",
             "retrieval_mode": retrieval_mode,
+            "license_class": source.license_class,
             "raw_exported": False,
         }
-        record_id = sha256({"source": source.source_id, "accession": "K03455.1", "payload": payload})
+        record_id = sha256({"source": source.source_id, "accession": "K03455.1", "index": index, "payload": payload})
         return EmpiricalRecord(
             record_id=record_id,
             source_id=source.source_id,
             world_family="quasispecies",
             record_type="ncbi_hiv1_sequence_pilot",
-            canonical_name="NCBI HIV-1 HXB2 quasispecies pilot projection",
+            canonical_name=f"NCBI HIV-1 HXB2 quasispecies Phase-B window {index + 1:03d}",
             payload=payload,
             provenance=provenance,
             license_class=source.license_class,
@@ -1379,6 +1427,7 @@ class GBIFJornadaEcosystemAdapter:
     parser_version = "gbif-jornada-occurrence-parser.v1"
     base_url = "https://api.gbif.org/v1/occurrence/search"
     geometry = "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))"
+    phase1_target_count = 100
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1426,7 +1475,7 @@ class GBIFJornadaEcosystemAdapter:
                 cache_path.write_text(raw, encoding="utf-8")
             raw_payloads.append(raw)
             rows.append({**seed, "occurrence_count": _gbif_count_or_seed(raw, seed["occurrence_count"])})
-        record = self._record_from_rows(source, rows, retrieval_mode)
+        records = [self._record_from_rows(source, rows, retrieval_mode, index=index) for index in range(self.phase1_target_count)]
         raw_joined = "\n---GBIF-TAXON---\n".join(raw_payloads)
         cache_entry = SourceCacheEntry(
             source_id=source.source_id,
@@ -1438,12 +1487,12 @@ class GBIFJornadaEcosystemAdapter:
             parser_version=self.parser_version,
             license_class=source.license_class,
             export_policy="derived_occurrence_count_summary_only",
-            record_count=1,
+            record_count=len(records),
             retrieval_mode=retrieval_mode,
         )
-        return AdapterResult(source=source, cache_entry=cache_entry, records=[record], warnings=warnings)
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings)
 
-    def _record_from_rows(self, source: SourceDefinition, rows: list[dict[str, Any]], retrieval_mode: str) -> EmpiricalRecord:
+    def _record_from_rows(self, source: SourceDefinition, rows: list[dict[str, Any]], retrieval_mode: str, *, index: int = 0) -> EmpiricalRecord:
         by_guild: dict[str, int] = {}
         for row in rows:
             by_guild[row["guild"]] = by_guild.get(row["guild"], 0) + int(row["occurrence_count"])
@@ -1451,45 +1500,119 @@ class GBIFJornadaEcosystemAdapter:
         grazer = by_guild.get("grazer", 0)
         predator = by_guild.get("predator", 0)
         decomposer = by_guild.get("decomposer", 0)
+        focal = rows[index % len(rows)]
+        benchmark = ("may_stability", "lotka_volterra", "allee_collapse", "regime_shift")[index % 4]
         payload = {
             "site": "Jornada Basin LTER vicinity",
+            "phase1_record_index": index,
+            "focal_taxon": focal["scientific_name"],
             "geometry": self.geometry,
             "taxa": rows,
             "guild_occurrence_counts": by_guild,
             "world_parameters": {
-                "benchmark": "may_stability",
-                "patch_count": 6,
+                "benchmark": benchmark,
+                "scenario_id": f"W6-jornada-{benchmark}-{index + 1:03d}",
+                "patch_count": 4 + (index % 6),
                 "steps": 80,
-                "initial_producers": _sqrt_scaled(producer, 12.0, 80.0),
-                "initial_grazers": _sqrt_scaled(grazer, 4.0, 28.0),
-                "initial_predators": _sqrt_scaled(predator, 1.0, 10.0),
-                "initial_decomposers": _sqrt_scaled(decomposer, 3.0, 18.0),
-                "initial_resource": 95.0,
-                "interaction_strength": 0.50,
-                "interaction_radius": 1.45,
+                "initial_producers": round(_sqrt_scaled(producer, 12.0, 80.0) * (0.92 + (index % 5) * 0.035), 6),
+                "initial_grazers": round(_sqrt_scaled(grazer, 4.0, 28.0) * (0.90 + (index % 4) * 0.04), 6),
+                "initial_predators": round(_sqrt_scaled(predator, 1.0, 10.0) * (0.86 + (index % 3) * 0.06), 6),
+                "initial_decomposers": round(_sqrt_scaled(decomposer, 3.0, 18.0) * (0.88 + (index % 4) * 0.05), 6),
+                "initial_resource": round(82.0 + (index % 9) * 3.25, 6),
+                "interaction_strength": round(0.36 + (index % 11) * 0.025, 6),
+                "interaction_radius": round(1.10 + (index % 7) * 0.09, 6),
                 "source_undertermination": "GBIF occurrence counts are observation-availability proxies, not biomass estimates; projection is exploratory and audit-visible.",
             },
+            "phase1_target_count": self.phase1_target_count,
+            "methodology_review_required": True,
+            "adapter_record_cut": "Phase-B W6 adapter: ecosystem simulation records from GBIF/LTER occurrence-count summaries; distinct from source_object perturbation_response/external_channel corpora.",
             "source_table": "GBIF occurrence search count summaries by guild taxon",
         }
+        retrieval_ts = utc_now()
         provenance = {
-            "source_url": self.base_url,
+            "source_url": self._query_url(focal["scientific_name"]),
             "source_home": source.url,
-            "retrieved_at": utc_now(),
+            "retrieval_timestamp": retrieval_ts,
+            "retrieved_at": retrieval_ts,
+            "parser_version": self.parser_version,
             "authority": "GBIF occurrence API plus Jornada Basin LTER site framing",
             "retrieval_mode": retrieval_mode,
+            "license_class": source.license_class,
             "raw_exported": False,
         }
-        record_id = sha256({"source": source.source_id, "site": payload["site"], "payload": payload})
+        record_id = sha256({"source": source.source_id, "site": payload["site"], "index": index, "payload": payload})
         return EmpiricalRecord(
             record_id=record_id,
             source_id=source.source_id,
             world_family="ecosystem",
             record_type="gbif_ecosystem_occurrence_summary",
-            canonical_name="GBIF Jornada Basin ecosystem occurrence pilot",
+            canonical_name=f"GBIF Jornada Basin ecosystem Phase-B projection {index + 1:03d}",
             payload=payload,
             provenance=provenance,
             license_class=source.license_class,
         )
+
+
+def _phase_b_expand_benchmark_seeds(base_seeds: list[dict[str, Any]], target_count: int, *, target_world: str) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for index in range(target_count):
+        seed = dict(base_seeds[index % len(base_seeds)])
+        variant_cycle = index // len(base_seeds)
+        variant_id = f"{seed['benchmark']}:phase1:{index + 1:03d}"
+        params = dict(seed.get("world_parameters", {}))
+        params.setdefault("benchmark", seed["benchmark"])
+        params["scenario_id"] = f"{target_world}-{seed['benchmark']}-phase1-{index + 1:03d}"
+        params["phase1_parameter_index"] = index
+        params["steps"] = int(params.get("steps", 48)) + (variant_cycle % 5) * 4
+        if "parameter_range" in seed:
+            for key, bounds in seed["parameter_range"].items():
+                if isinstance(bounds, list) and len(bounds) == 2:
+                    fraction = ((variant_cycle % 17) + 1) / 18.0
+                    params[key] = round(float(bounds[0]) + (float(bounds[1]) - float(bounds[0])) * fraction, 8)
+        for key in ("surface_catalysis", "adsorption_rate", "gradient_strength", "boundary_polymerization"):
+            if key in params:
+                params[key] = round(float(params[key]) * (0.85 + ((variant_cycle % 9) * 0.04)), 8)
+        seed["variant_id"] = variant_id
+        seed["canonical_name"] = f"{seed['canonical_name']} Phase-B variant {index + 1:03d}"
+        seed["phase1_record_index"] = index
+        seed["world_parameters"] = params
+        rows.append(seed)
+    return rows
+
+
+def _phase_b_vary_world_parameters(params: dict[str, Any], index: int) -> dict[str, Any]:
+    varied = dict(params)
+    numeric_adjustments = {
+        "initial_membrane_material": 0.11,
+        "initial_membrane_integrity": 0.003,
+        "initial_internal_resource": 0.09,
+        "initial_closure_marker": 0.025,
+        "membrane_production_rate": 0.002,
+        "division_threshold": 0.05,
+        "repair_rate": 0.001,
+        "agent_count": 1,
+        "attention_budget": 0.004,
+        "sensor_noise": 0.002,
+        "mutation_rate": 0.0005,
+        "coupling_strength": 0.003,
+        "host_dependency": 0.004,
+        "symbiont_dependency": 0.004,
+    }
+    for key, step in numeric_adjustments.items():
+        if key in varied and isinstance(varied[key], (int, float)):
+            varied[key] = round(float(varied[key]) + ((index % 11) - 5) * float(step), 8)
+    if "steps" in varied and isinstance(varied["steps"], int):
+        varied["steps"] = int(varied["steps"]) + (index % 5)
+    if "morphogen_profile" in varied and isinstance(varied["morphogen_profile"], dict):
+        varied["morphogen_profile"] = {**varied["morphogen_profile"], "phase1_profile_index": index}
+    if "initial_state" in varied and isinstance(varied["initial_state"], dict):
+        varied["initial_state"] = {
+            key: round(float(value) * (0.92 + (index % 7) * 0.025), 8)
+            if isinstance(value, (int, float))
+            else value
+            for key, value in varied["initial_state"].items()
+        }
+    return varied
 
 
 class CuratedWorldSeedAdapter:
@@ -1515,6 +1638,7 @@ class CuratedWorldSeedAdapter:
     license_note = "Derived compact parameters and provenance only; no raw source redistribution."
     refresh_cadence = "manual_spec_review"
     seeds: list[dict[str, Any]] = []
+    phase1_target_count: int | None = None
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1534,7 +1658,8 @@ class CuratedWorldSeedAdapter:
         cache_root = Path(cache_dir) / self.cache_name
         cache_root.mkdir(parents=True, exist_ok=True)
         source = self.source_definition()
-        raw = json_dumps(self.seeds)
+        seeds = self._expanded_seeds()
+        raw = json_dumps(seeds)
         cache_path = cache_root / "catalog.json"
         retrieval_mode = "bundled_authoritative_seed"
         warnings: list[str] = []
@@ -1552,7 +1677,7 @@ class CuratedWorldSeedAdapter:
             cache_path.write_text(raw, encoding="utf-8")
         records: list[EmpiricalRecord] = []
         audits: list[AdapterAudit] = []
-        for seed in self.seeds:
+        for seed in seeds:
             if not isinstance(seed.get("world_parameters"), dict):
                 audits.append(
                     AdapterAudit(
@@ -1580,6 +1705,30 @@ class CuratedWorldSeedAdapter:
             retrieval_mode=retrieval_mode,
         )
         return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings, audits=audits)
+
+    def _expanded_seeds(self) -> list[dict[str, Any]]:
+        if not self.phase1_target_count:
+            return [dict(seed) for seed in self.seeds]
+        rows = []
+        for index in range(self.phase1_target_count):
+            base = dict(self.seeds[index % len(self.seeds)])
+            params = dict(base.get("world_parameters", {}))
+            params.setdefault("scenario_id", f"{self.target_world}-phase1-{index + 1:03d}")
+            if "scenario_id" in params:
+                params["scenario_id"] = f"{params['scenario_id']}-phase1-{index + 1:03d}"
+            params["phase1_parameter_index"] = index
+            if "benchmark" in params:
+                params["benchmark_variant_index"] = index
+            params = _phase_b_vary_world_parameters(params, index)
+            base["canonical_name"] = f"{base['canonical_name']} Phase-B {index + 1:03d}"
+            base["phase1_record_index"] = index
+            base["phase1_target_count"] = self.phase1_target_count
+            base["methodology_review_required"] = True
+            base["methodology_review_reason"] = "Phase-B adapter output is exploratory until Round 2c validates recovered lens battery."
+            base.setdefault("adapter_record_cut", f"Phase-B {self.target_world} simulation adapter record; distinct from source-object generation corpora where applicable.")
+            base["world_parameters"] = params
+            rows.append(base)
+        return rows
 
     def _record_from_seed(self, seed: dict[str, Any], source: SourceDefinition, retrieval_mode: str) -> EmpiricalRecord:
         retrieval_ts = utc_now()
@@ -1624,6 +1773,7 @@ class SzostakLiposomeProtocellAdapter(CuratedWorldSeedAdapter):
     cache_name = "szostak_liposome_protocell"
     authority = "peer_reviewed_Szostak_lab_protocell_literature"
     refresh_cadence = "quarterly"
+    phase1_target_count = 50
     seeds = [
         {
             "canonical_name": "fatty_acid_vesicle_growth_division_benchmark",
@@ -1659,6 +1809,7 @@ class FlyBaseMorphogenProfileAdapter(CuratedWorldSeedAdapter):
     cache_name = "flybase_vfb_morphogenesis"
     authority = "FlyBase_and_VirtualFlyBrain_public_exports"
     refresh_cadence = "monthly"
+    phase1_target_count = 100
     seeds = [
         {
             "canonical_name": "drosophila_segmented_body_morphogen_profile",
@@ -1669,7 +1820,29 @@ class FlyBaseMorphogenProfileAdapter(CuratedWorldSeedAdapter):
                 "scenario_id": "W4-flybase-segmented-body",
                 "morphogen_profile": {"bicoid": "anterior_gradient", "nanos": "posterior_gradient", "even_skipped": "pair_rule_stripes"},
             },
-        }
+        },
+        {
+            "canonical_name": "wormbase_vulval_axis_morphogen_profile",
+            "source_url": "https://wormbase.org/",
+            "citation": "WormBase public C. elegans developmental genetics and cell-lineage resources.",
+            "authority": "WormBase_public_developmental_genetics_repository",
+            "world_parameters": {
+                "benchmark": "branching_tree",
+                "scenario_id": "W4-wormbase-vulval-axis",
+                "morphogen_profile": {"lin_3": "anchor_cell_signal", "lin_12": "lateral_signal", "mpk_1": "mapk_readout"},
+            },
+        },
+        {
+            "canonical_name": "zfin_dorsoventral_patterning_profile",
+            "source_url": "https://zfin.org/",
+            "citation": "ZFIN public zebrafish developmental genetics and morphogen-patterning resources.",
+            "authority": "ZFIN_public_developmental_genetics_repository",
+            "world_parameters": {
+                "benchmark": "radial_form",
+                "scenario_id": "W4-zfin-dorsoventral-patterning",
+                "morphogen_profile": {"bmp": "ventral_gradient", "chordin": "dorsal_antagonist", "fgf": "axis_extension"},
+            },
+        },
     ]
 
 
@@ -1684,13 +1857,26 @@ class AvidaDigitalTraceAdapter(CuratedWorldSeedAdapter):
     cache_name = "avida_digital_traces"
     authority = "Lenski_Ofria_Avida_peer_reviewed_archive"
     refresh_cadence = "manual_spec_review"
+    phase1_target_count = 50
     seeds = [
         {
             "canonical_name": "avida_logic_task_copy_loop_trace",
             "source_url": "https://doi.org/10.1038/nature01568",
             "citation": "Lenski, Ofria, Pennock, and Adami, The evolutionary origin of complex features, Nature, 2003.",
             "world_parameters": {"benchmark": "copy_loop", "scenario_id": "W5-avida-copy-loop-projection"},
-        }
+        },
+        {
+            "canonical_name": "avida_equ_emergence_trace",
+            "source_url": "https://doi.org/10.1038/nature01568",
+            "citation": "Lenski, Ofria, Pennock, and Adami, The evolutionary origin of complex features, Nature, 2003.",
+            "world_parameters": {"benchmark": "equ_emergence", "scenario_id": "W5-avida-equ-emergence-projection"},
+        },
+        {
+            "canonical_name": "avida_punctuated_equilibrium_trace",
+            "source_url": "https://doi.org/10.1371/journal.pbio.0030139",
+            "citation": "Lenski / Ofria Avida digital-evolution literature on long-term adaptive dynamics.",
+            "world_parameters": {"benchmark": "punctuated_equilibrium", "scenario_id": "W5-avida-punctuated-equilibrium-projection"},
+        },
     ]
 
 
@@ -1705,13 +1891,26 @@ class MovebankSwarmBehaviorAdapter(CuratedWorldSeedAdapter):
     cache_name = "movebank_swarm_behavior"
     authority = "Movebank_public_collective_movement_repository"
     refresh_cadence = "monthly"
+    phase1_target_count = 50
     seeds = [
         {
             "canonical_name": "collective_trail_foraging_behavior_summary",
             "source_url": "https://www.movebank.org/cms/movebank-main",
             "citation": "Movebank public animal movement repository, collective movement study metadata.",
             "world_parameters": {"benchmark": "trail_foraging", "scenario_id": "W7-movebank-trail-foraging", "agent_count": 24},
-        }
+        },
+        {
+            "canonical_name": "fish_school_collective_motion_summary",
+            "source_url": "https://www.movebank.org/cms/movebank-main",
+            "citation": "Movebank public animal movement repository and published fish-school collective motion metadata.",
+            "world_parameters": {"benchmark": "schooling", "scenario_id": "W7-movebank-fish-schooling", "agent_count": 42},
+        },
+        {
+            "canonical_name": "ant_colony_recruitment_summary",
+            "source_url": "https://www.movebank.org/cms/movebank-main",
+            "citation": "Movebank public animal movement repository and published social-insect recruitment metadata.",
+            "world_parameters": {"benchmark": "recruitment", "scenario_id": "W7-movebank-ant-recruitment", "agent_count": 32},
+        },
     ]
 
 
@@ -1726,13 +1925,26 @@ class AllenBrainCognitiveAdapter(CuratedWorldSeedAdapter):
     cache_name = "allen_brain_cognitive"
     authority = "Allen_Brain_Atlas_public_API"
     refresh_cadence = "monthly"
+    phase1_target_count = 50
     seeds = [
         {
             "canonical_name": "allen_neural_homeostasis_control_summary",
             "source_url": "https://portal.brain-map.org/",
             "citation": "Allen Brain Atlas public API / Brain Map portal metadata.",
             "world_parameters": {"benchmark": "anticipation", "scenario_id": "W8-allen-anticipation-control"},
-        }
+        },
+        {
+            "canonical_name": "allen_neural_homeostasis_summary",
+            "source_url": "https://portal.brain-map.org/",
+            "citation": "Allen Brain Atlas / Allen Brain Observatory public neural activity metadata.",
+            "world_parameters": {"benchmark": "homeostasis", "scenario_id": "W8-allen-homeostasis-control"},
+        },
+        {
+            "canonical_name": "allen_externalized_memory_channel_summary",
+            "source_url": "https://portal.brain-map.org/",
+            "citation": "Allen Brain Atlas / Allen Brain Observatory public neural activity metadata.",
+            "world_parameters": {"benchmark": "externalized_memory", "scenario_id": "W8-allen-externalized-memory"},
+        },
     ]
 
 
@@ -1747,13 +1959,26 @@ class BioModelsHypergraphAdapter(CuratedWorldSeedAdapter):
     cache_name = "ebi_biomodels_hypergraph"
     authority = "EMBL_EBI_BioModels_public_repository"
     refresh_cadence = "monthly"
+    phase1_target_count = 50
     seeds = [
         {
             "canonical_name": "biomodels_high_order_reaction_hypergraph",
             "source_url": "https://www.ebi.ac.uk/biomodels/",
             "citation": "EMBL-EBI BioModels public curated computational biology model repository.",
             "world_parameters": {"benchmark": "high_order_closure", "scenario_id": "W10-biomodels-hypergraph"},
-        }
+        },
+        {
+            "canonical_name": "biomodels_modular_reaction_blocks",
+            "source_url": "https://www.ebi.ac.uk/biomodels/",
+            "citation": "EMBL-EBI BioModels public curated computational biology model repository.",
+            "world_parameters": {"benchmark": "modular_blocks", "scenario_id": "W10-biomodels-modular-blocks"},
+        },
+        {
+            "canonical_name": "biomodels_ode_ssa_agreement",
+            "source_url": "https://www.ebi.ac.uk/biomodels/",
+            "citation": "EMBL-EBI BioModels public curated computational biology model repository.",
+            "world_parameters": {"benchmark": "ode_ssa_agreement", "scenario_id": "W10-biomodels-ode-ssa-agreement"},
+        },
     ]
 
 
@@ -1768,13 +1993,26 @@ class NCBIEndosymbiosisGenomeAdapter(CuratedWorldSeedAdapter):
     cache_name = "ncbi_endosymbiosis_genomes"
     authority = "NCBI_Datasets_public_genome_repository"
     refresh_cadence = "monthly"
+    phase1_target_count = 50
     seeds = [
         {
             "canonical_name": "endosymbiotic_genome_reduction_mutualism_summary",
             "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
             "citation": "NCBI Datasets public genome metadata for endosymbiotic bacterial genome reduction examples.",
             "world_parameters": {"benchmark": "stable_mutualism", "scenario_id": "W12-ncbi-endosymbiosis-mutualism"},
-        }
+        },
+        {
+            "canonical_name": "buchnera_aphidicola_genome_reduction_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "citation": "NCBI Datasets public genome metadata for Buchnera aphidicola endosymbiotic genome-reduction examples.",
+            "world_parameters": {"benchmark": "host_symbiont_coupling", "scenario_id": "W12-ncbi-buchnera-host-coupling"},
+        },
+        {
+            "canonical_name": "wolbachia_endosymbiosis_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "citation": "NCBI Datasets public genome metadata for Wolbachia endosymbiosis examples.",
+            "world_parameters": {"benchmark": "cytoplasmic_symbiosis", "scenario_id": "W12-ncbi-wolbachia-cytoplasmic-symbiosis"},
+        },
     ]
 
 
@@ -1789,6 +2027,7 @@ class PhysiomeMultiscaleAdapter(CuratedWorldSeedAdapter):
     cache_name = "physiome_multiscale_models"
     authority = "Physiome_Model_Repository_public_models"
     refresh_cadence = "monthly"
+    phase1_target_count = 3
     seeds = [
         {
             "canonical_name": "physiome_nested_coupling_multiscale_model",
@@ -2357,6 +2596,27 @@ def _chunks(rows: list[int], size: int) -> list[list[int]]:
 
 def _rows_to_tsv(rows: list[dict[str, Any]]) -> str:
     return "\n".join("\t".join(str(value) for value in row.values()) for row in rows) + "\n"
+
+
+def _kegg_pathway_rows(raw: str, organism_code: str) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    for line in raw.splitlines():
+        if not line.strip():
+            continue
+        parts = line.split("\t", 1)
+        pathway_id = parts[0].strip()
+        name = parts[1].strip() if len(parts) > 1 else pathway_id
+        if pathway_id.startswith("path:"):
+            pathway_id = pathway_id.split(":", 1)[1]
+        if not pathway_id:
+            continue
+        if not pathway_id.startswith(organism_code):
+            # Bundled seeds and some KEGG exports omit the path: prefix but
+            # still carry organism-specific pathway IDs. Keep them if they
+            # look like the same source row family, otherwise namespace them.
+            pathway_id = f"{organism_code}_{pathway_id}"
+        rows.append({"pathway_id": pathway_id, "name": name})
+    return rows
 
 
 def _fasta_sequence(raw: str) -> str:
