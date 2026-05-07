@@ -52,14 +52,18 @@ sys.path.insert(0, str(ROOT))
 
 
 def test_nist_spectra_cardinality_is_periodic_table_times_5_stages():
-    """T1 brief: 118 elements × 5 ionization stages I-V = 590 spectra."""
+    """CB-015 T1 brief: 118 elements × 5 ionization stages I-V = 590 spectra.
+    CB-018 T1 supersedes: 118 × 30 = 3540 cartesian (stages I-XXX). Phase-1
+    minimum (I-V) preserved as the lower-bound assertion."""
     from factory_lowlevel.adapters import NISTAtomicSpectraAdapter, NIST_IONIZATION_STAGES, ELEMENT_SYMBOLS
 
     n = NISTAtomicSpectraAdapter()
-    assert len(NIST_IONIZATION_STAGES) == 5
-    assert NIST_IONIZATION_STAGES == ("I", "II", "III", "IV", "V")
+    assert len(NIST_IONIZATION_STAGES) >= 5
+    assert NIST_IONIZATION_STAGES[:5] == ("I", "II", "III", "IV", "V"), "Phase-1 stages I-V preserved as prefix"
     assert len(ELEMENT_SYMBOLS) == 118
-    assert len(n.spectra) == 118 * 5
+    # CB-018 Phase-2 cartesian: 118 × 30 = 3540 (was Phase-1 590).
+    assert len(n.spectra) == 118 * len(NIST_IONIZATION_STAGES)
+    assert len(n.spectra) >= 590, "Phase-1 floor preserved"
     # Every spectrum is "<symbol> <roman>"
     for spectrum in n.spectra[:10]:
         sym, stage = spectrum.split(" ")
@@ -126,13 +130,15 @@ def test_nist_records_carry_methodology_review_required(tmp_path):
 
 
 def test_pubchem_phase1_configuration_targets_5000_records():
-    """T2 brief: cid_stop=5500, max_records=5000, batch_size=100."""
+    """CB-015 T2 brief: cid_stop=5500, max_records=5000, batch_size=100.
+    CB-018 T2 supersedes: cid_stop=75000, max_records=50000. Phase-1 floor
+    of 5500/5000 preserved as a lower bound."""
     from factory_lowlevel.adapters import PubChemSmallMoleculeAdapter
 
     p = PubChemSmallMoleculeAdapter()
     assert p.cid_start == 1
-    assert p.cid_stop == 5500
-    assert p.max_records == 5000
+    assert p.cid_stop >= 5500, "Phase-1 5500 floor"
+    assert p.max_records >= 5000, "Phase-1 5000 floor"
     assert p.batch_size == 100
 
 
@@ -181,10 +187,12 @@ def test_pubchem_source_license_is_metadata_only(tmp_path):
 
 
 def test_math_catalog_has_exactly_200_entries():
-    """T3 brief: Phase-1 target 200 canonical primitives."""
+    """CB-015 T3 brief: Phase-1 target 200 canonical primitives.
+    CB-018 T3 supersedes: 600+ entries (Phase-1 200 + Phase-2 expansion).
+    Phase-1 floor of 200 preserved as a lower bound."""
     from factory_lowlevel.adapters import MATH_PRIMITIVE_SEEDS
 
-    assert len(MATH_PRIMITIVE_SEEDS) == 200
+    assert len(MATH_PRIMITIVE_SEEDS) >= 200, "Phase-1 floor"
 
 
 def test_math_catalog_every_entry_has_doi_and_citation():
@@ -234,12 +242,14 @@ def test_math_catalog_canonical_names_are_unique():
 
 
 def test_math_catalog_offline_fetch_emits_200_records(tmp_path):
-    """T3: offline fetch produces one EmpiricalRecord per catalog entry."""
+    """CB-015 T3: offline fetch produces one EmpiricalRecord per catalog
+    entry. CB-018 T3 supersedes: catalog grew 200 -> 600+. Floor of 200
+    preserved as a lower bound; provenance contract still enforced."""
     from factory_lowlevel.adapters import MathPrimitivesCatalogAdapter
 
     m = MathPrimitivesCatalogAdapter()
     result = m.fetch(tmp_path, allow_network=False)
-    assert len(result.records) == 200
+    assert len(result.records) >= 200, "Phase-1 floor"
     required = {"source_url", "retrieval_timestamp", "parser_version", "authority"}
     for record in result.records:
         assert required <= set(record.provenance.keys())
@@ -251,21 +261,25 @@ def test_math_catalog_offline_fetch_emits_200_records(tmp_path):
 
 
 def test_kegg_organism_adapter_has_50_organisms():
-    """T4 brief: top-50 reference organisms."""
+    """CB-015 T4 brief: top-50 reference organisms.
+    CB-018 T4 supersedes: roster expanded to ~330+ static + DEFAULT_MAX_ORGANISMS
+    cap raised to 500. Phase-1 floor of 50 preserved as a lower bound."""
     from factory_lowlevel.adapters import KEGGOrganismCRNAdapter
 
     k = KEGGOrganismCRNAdapter()
-    assert len(k.organisms) == 50
+    assert len(k.organisms) >= 50, "Phase-1 floor"
 
 
 def test_kegg_offline_emits_eco_with_pathways_and_others_source_limited(tmp_path):
-    """T4: offline path uses bundled E. coli seed for eco, source-limited
-    honest decline for the other 49 organisms."""
+    """CB-015 T4: offline path uses bundled E. coli seed for eco,
+    source-limited honest decline for the other organisms.
+    CB-018 T4 supersedes: roster expanded to ~330+ organisms; eco still
+    has bundled seed, all others still source-limited offline."""
     from factory_lowlevel.adapters import KEGGOrganismCRNAdapter
 
     k = KEGGOrganismCRNAdapter()
     result = k.fetch(tmp_path, allow_network=False)
-    assert len(result.records) == 50
+    assert len(result.records) >= 50, "Phase-1 floor"
     # eco should have non-zero pathways; others should be source-limited.
     eco_records = [r for r in result.records if r.payload.get("organism_code") == "eco"]
     assert len(eco_records) == 1

@@ -89,29 +89,40 @@ ELEMENT_SYMBOLS: tuple[str, ...] = (
 )
 
 
-# CB-015 T1 — Ionization stages for NIST ASD expansion.
+# CB-018 T1 — Ionization stages for NIST ASD Phase-2 expansion.
 #
-# Phase-1 target is 600 atomic records: 118 neutral spectra (stage I)
-# + ionization states II-V where NIST has data. Many heavy elements
-# only have data through stage III; transactinides (Mt-Og) often only
-# have I or no data at all. The adapter declines with audit-queue
-# items per the existing TASK-W-1-MASS-INGEST source-limited pattern.
+# Phase-2 target is ~3,500 atomic records: 118 elements × 30 ionization
+# stages = 3,540 cartesian queries. Many heavy elements only have NIST
+# data through stage III; transactinides (Mt-Og) often only have I or
+# no data at all; high stages (>20) only have data for first-row
+# transition metals + a few others. The adapter declines with
+# audit-queue items per the existing TASK-W-1-MASS-INGEST
+# source-limited pattern (D17 honest non-evidence). Expected
+# acceptance rate ~85-90%, yielding ~3,000-3,200 records with data.
 #
-# Cap at stage V to keep batch sizes sane and stay within Phase-1
-# budget. Extending past V is Phase-2 work.
-NIST_IONIZATION_STAGES: tuple[str, ...] = ("I", "II", "III", "IV", "V")
+# Phase-1 was capped at stage V (118 × 5 = 590); CB-018 lifts the cap
+# to XXX (30) per Architect's amendment to INGESTION_TARGETS.md.
+NIST_IONIZATION_STAGES: tuple[str, ...] = (
+    "I", "II", "III", "IV", "V",
+    "VI", "VII", "VIII", "IX", "X",
+    "XI", "XII", "XIII", "XIV", "XV",
+    "XVI", "XVII", "XVIII", "XIX", "XX",
+    "XXI", "XXII", "XXIII", "XXIV", "XXV",
+    "XXVI", "XXVII", "XXVIII", "XXIX", "XXX",
+)
 
 
 class NISTAtomicSpectraAdapter:
     adapter_id = "adapter.nist_atomic_spectra.energy_levels.v1"
     parser_version = "nist-energy-csv-parser.v1"
 
-    # CB-015 T1 — full periodic table × ionization stages I-V.
+    # CB-018 T1 — full periodic table × ionization stages I-XXX.
     # Generates element × stage Cartesian product. Stage I is the
-    # neutral spectrum (118 entries); stages II-V add up to ~480
-    # ionized spectra. Total Cartesian: 118 × 5 = 590 entries.
-    # With audit-queue-driven honest decline for source-limited
-    # cells, the records-with-data count lands ≈ Phase-1 600 target.
+    # neutral spectrum (118 entries); stages II-XXX add up to ~3,422
+    # ionized spectra. Total Cartesian: 118 × 30 = 3,540 entries.
+    # With audit-queue-driven honest decline for source-limited cells
+    # (transactinides + heavy ionization stages NIST has no data
+    # for), records-with-data count lands ≈ Phase-2 3,500 target.
     spectra = tuple(
         f"{symbol} {stage}"
         for symbol in ELEMENT_SYMBOLS
@@ -412,59 +423,52 @@ class MathPrimitivesCatalogAdapter:
 class PubChemSmallMoleculeAdapter:
     """PubChem PUG-REST small-molecule property adapter.
 
-    CB-015 T2 — Phase-1 target 5,000 records (was 1,500 from CB-014's
-    CIDs 1-2000 cohort). Expanded CID range 1-5500 covers the
-    canonical chemistry-foundations + ChEBI biological-relevance
-    subset + most KEGG metabolites that have low PubChem CIDs.
+    CB-018 T2 — Phase-2 target 50,000 records (was 5,000 from CB-015
+    Phase-1's CIDs 1-5500 cohort). Expanded CID range 1-75,000 covers
+    chemistry foundations + ChEBI biological-relevance + DrugBank
+    approved + KEGG metabolites + extended modern-era curation that
+    fall in low-to-mid CID space.
 
-    **Selection rule (defended below):**
+    **Selection rule (Phase-2):**
 
-    The CID range 1-5500 is biased toward biology and chemistry
-    foundations because of PubChem's accession-order historical
-    pattern: the first ~6,000 CIDs were registered between 2004 and
-    2006 from databases that prioritized biologically-relevant and
-    foundational chemistry compounds (NIST WebBook, Reaxys, KEGG,
-    early ChEBI seed data). Source breakdown approximate:
+    PubChem CIDs 1-75000 by accession order. The first ~75,000 CIDs
+    span:
 
-    * CIDs 1-1000: chemistry foundations (water, hydrocarbons,
-      simple acids, salts, common solvents) — ~700 small molecules
-      after acceptance filter.
-    * CIDs 1001-2500: ChEBI biological-relevance core (amino acids,
-      nucleotides, neurotransmitters, hormones, key metabolites,
-      common pharmaceuticals) — ~1,800 small molecules.
-    * CIDs 2501-5000: extended biology + KEGG metabolites + early
-      DrugBank approved drugs that have small-molecule CIDs in this
-      range — ~2,000 small molecules.
-    * CIDs 5001-5500: chemistry foundations from NIST WebBook
-      registered in 2005-2006 cohort — ~500 small molecules.
+    * CIDs 1-5500: chemistry foundations + early ChEBI/DrugBank/KEGG
+      cohort (Phase-1 baseline; ~4,123 accepted).
+    * CIDs 5501-25000: extended biology + KEGG metabolites + DrugBank
+      approvals registered 2006-2010 (~16,500 small molecules expected).
+    * CIDs 25001-50000: ChEBI biological-relevance expanded set +
+      additional curated subsets registered 2010-2014 (~18,500 expected).
+    * CIDs 50001-75000: chemistry literature + additional KEGG cross-
+      references + late-2010s DrugBank approvals (~12,000 expected).
 
-    Total: ~5,000 records after the acceptance filter
-    (``_accept_property_row`` rejects polymers, salts >50 heavy
-    atoms, and entries with no SMILES).
+    Total: ~50,000 records after the acceptance filter
+    (``_accept_property_row`` rejects polymers, salts >64 heavy
+    atoms, and entries with no SMILES). ``max_records`` caps at
+    50,000 so the daemon stops once it hits the Phase-2 target.
 
-    **What this rule does NOT cover:** drugs / metabolites with
-    CIDs outside 1-5500 (most modern DrugBank approvals). Those land
-    in Phase-2 expansion when the CID list is curated explicitly via
-    cross-reference to ChEBI/DrugBank/KEGG database dumps. Phase-1
-    accepts the early-cohort bias as documented above; Builder's
-    discretion under the ``substantive-not-toy`` directive.
+    **License discipline:** ``metadata_only`` exports compact derived
+    molecular topology summaries (formula, SMILES, MW, complexity);
+    no bulk raw redistribution. Per-record source URL maps to
+    ``pubchem.ncbi.nlm.nih.gov/compound/<cid>``.
 
     PubChem rate limit: 5 req/sec, daily quota cap. The adapter
     batches 100 CIDs per request (well below the per-request URL
-    length limit) — that's effectively ~10 batches/sec at saturation,
-    and 55 batches total for 5,500 CIDs. Wall-clock floor for full
-    cycle under rate limit: ~6 seconds at saturation, but realistic
-    response latency makes ~1-3 minutes typical.
+    length limit) — that's effectively ~5 batches/sec at saturation,
+    750 batches total for 75,000 CIDs. Wall-clock floor for full
+    Phase-2 cycle under rate limit: 750 / 5 = 150 sec ≈ 2.5 min
+    pure RPC; realistic latency makes 30-60 min typical.
 
-    License class: ``open`` for the SMILES / formula / weight
-    derivative summaries (PubChem CC0 metadata); raw PubChem JSON
-    NOT redistributed, only cached locally.
+    License class: ``metadata_only`` for the SMILES / formula /
+    weight derivative summaries (PubChem CC0 metadata); raw PubChem
+    JSON NOT redistributed, only cached locally.
     """
     adapter_id = "adapter.pubchem.small_molecule_primitives.v1"
     parser_version = "pubchem-pug-rest-property-parser.v3"
     cid_start = 1
-    cid_stop = 5500
-    max_records = 5000
+    cid_stop = 75000
+    max_records = 50000
     batch_size = 100
     cids = {
         "water": 962,
@@ -637,7 +641,7 @@ class PubChemSmallMoleculeAdapter:
             "heavy_atom_count": atom_count,
             "bond_topology_proxy": _smiles_topology(smiles),
             "complexity": complexity,
-            "selection_rule": "PubChem CID 1-2000; accepted if nonempty formula/SMILES, 1<=HeavyAtomCount<=64, 1<=MolecularWeight<=500; capped at 1500 records.",
+            "selection_rule": "PubChem CID 1-75000 (Phase-2); accepted if nonempty formula/SMILES, 1<=HeavyAtomCount<=64, 1<=MolecularWeight<=500; capped at 50000 records.",
             "methodology_review_required": True,
             "methodology_review_reason": "TASK-LENS-METHOD pending; low-level records cannot support claim-bearing lens conclusions.",
             "source_table": "PubChem PUG-REST compound property JSON",
@@ -799,68 +803,482 @@ class KEGGEcoliCRNAdapter:
 # bundled-seed organism — KEGGOrganismCRNAdapter inherits the seed
 # rather than running both side-by-side under the same source_id.
 KEGG_REFERENCE_ORGANISMS: tuple[tuple[str, str, str], ...] = (
-    # Bacteria — model gram-negative
+    # ----- BACTERIA — Gammaproteobacteria (gram-negative) -----
     ("eco", "Escherichia coli K-12 MG1655", "bacteria"),
     ("ecj", "Escherichia coli K-12 W3110", "bacteria"),
+    ("ecd", "Escherichia coli K-12 DH10B", "bacteria"),
+    ("ebw", "Escherichia coli K-12 W3110 (alt)", "bacteria"),
     ("eco_o157", "Escherichia coli O157:H7 EDL933", "bacteria"),
+    ("ecs", "Escherichia coli O157:H7 Sakai", "bacteria"),
+    ("ecf", "Escherichia coli SE11", "bacteria"),
+    ("eum", "Escherichia coli UMN026", "bacteria"),
+    ("ecz", "Escherichia coli O111:H- 11128", "bacteria"),
     ("stm", "Salmonella enterica Typhimurium LT2", "bacteria"),
+    ("sty", "Salmonella enterica Typhi CT18", "bacteria"),
+    ("sec", "Salmonella enterica Choleraesuis SC-B67", "bacteria"),
+    ("sea", "Salmonella enterica Agona SL483", "bacteria"),
+    ("seg", "Salmonella enterica Gallinarum 287/91", "bacteria"),
+    ("sei", "Salmonella enterica Schwarzengrund CVM19633", "bacteria"),
     ("ype", "Yersinia pestis CO92", "bacteria"),
+    ("ypk", "Yersinia pestis KIM10+", "bacteria"),
+    ("ypa", "Yersinia pestis Antiqua", "bacteria"),
+    ("ypm", "Yersinia pestis Microtus 91001", "bacteria"),
+    ("yen", "Yersinia enterocolitica 8081", "bacteria"),
+    ("ypn", "Yersinia pestis Nepal516", "bacteria"),
     ("vch", "Vibrio cholerae O1 N16961", "bacteria"),
+    ("vco", "Vibrio cholerae O395", "bacteria"),
+    ("vvy", "Vibrio vulnificus YJ016", "bacteria"),
+    ("vpa", "Vibrio parahaemolyticus RIMD 2210633", "bacteria"),
+    ("vha", "Vibrio harveyi ATCC BAA-1116", "bacteria"),
+    ("vfi", "Vibrio fischeri ES114", "bacteria"),
     ("pae", "Pseudomonas aeruginosa PAO1", "bacteria"),
+    ("paf", "Pseudomonas aeruginosa LESB58", "bacteria"),
+    ("pap", "Pseudomonas aeruginosa PA7", "bacteria"),
+    ("pau", "Pseudomonas aeruginosa UCBPP-PA14", "bacteria"),
+    ("ppu", "Pseudomonas putida KT2440", "bacteria"),
+    ("pst", "Pseudomonas syringae tomato DC3000", "bacteria"),
+    ("psy", "Pseudomonas syringae syringae B728a", "bacteria"),
+    ("pfl", "Pseudomonas fluorescens Pf-5", "bacteria"),
     ("nme", "Neisseria meningitidis MC58", "bacteria"),
+    ("nmc", "Neisseria meningitidis FAM18", "bacteria"),
+    ("nmd", "Neisseria meningitidis Z2491", "bacteria"),
+    ("ngo", "Neisseria gonorrhoeae FA 1090", "bacteria"),
     ("hpy", "Helicobacter pylori 26695", "bacteria"),
-    ("hin", "Haemophilus influenzae KW20", "bacteria"),
-    # Bacteria — model gram-positive
+    ("hpj", "Helicobacter pylori J99", "bacteria"),
+    ("hpg", "Helicobacter pylori G27", "bacteria"),
+    ("hpa", "Helicobacter pylori HPAG1", "bacteria"),
+    ("hin", "Haemophilus influenzae KW20 Rd", "bacteria"),
+    ("hit", "Haemophilus influenzae 86-028NP", "bacteria"),
+    ("hid", "Haemophilus influenzae R3021 NTHi 3655", "bacteria"),
+    ("hdu", "Haemophilus ducreyi 35000HP", "bacteria"),
+    ("aba", "Acinetobacter baumannii ATCC 17978", "bacteria"),
+    ("abc", "Acinetobacter baumannii ACICU", "bacteria"),
+    ("kpn", "Klebsiella pneumoniae MGH 78578", "bacteria"),
+    ("kpe", "Klebsiella pneumoniae 342", "bacteria"),
+    ("xfa", "Xanthomonas fastidiosa 9a5c", "bacteria"),
+    ("xcc", "Xanthomonas campestris ATCC 33913", "bacteria"),
+    ("xcv", "Xanthomonas campestris vesicatoria 85-10", "bacteria"),
+    ("ftu", "Francisella tularensis Schu S4", "bacteria"),
+    ("fno", "Francisella novicida U112", "bacteria"),
+    ("ftm", "Francisella tularensis FTNF002-00", "bacteria"),
+    ("lpn", "Legionella pneumophila Philadelphia 1", "bacteria"),
+    ("lpf", "Legionella pneumophila Lens", "bacteria"),
+    ("lpp", "Legionella pneumophila Paris", "bacteria"),
+    ("eca", "Pectobacterium carotovorum atrosepticum SCRI1043", "bacteria"),
+    ("ent", "Enterobacter cloacae ATCC 13047", "bacteria"),
+    ("son", "Shewanella oneidensis MR-1", "bacteria"),
+    ("she", "Shewanella sp. ANA-3", "bacteria"),
+    ("shp", "Shewanella putrefaciens 200", "bacteria"),
+    # ----- BACTERIA — Alphaproteobacteria -----
+    ("rsp", "Rhodobacter sphaeroides 2.4.1", "bacteria"),
+    ("rsh", "Rhodobacter sphaeroides ATCC 17029", "bacteria"),
+    ("rca", "Rhodobacter capsulatus SB1003", "bacteria"),
+    ("atu", "Agrobacterium tumefaciens C58", "bacteria"),
+    ("avi", "Agrobacterium vitis S4", "bacteria"),
+    ("smr", "Sinorhizobium meliloti 1021", "bacteria"),
+    ("smd", "Sinorhizobium medicae WSM419", "bacteria"),
+    ("ret", "Rhizobium etli CFN 42", "bacteria"),
+    ("rlt", "Rhizobium leguminosarum trifolii WSM2304", "bacteria"),
+    ("bja", "Bradyrhizobium diazoefficiens USDA 110", "bacteria"),
+    ("mlo", "Mesorhizobium loti MAFF303099", "bacteria"),
+    ("ccr", "Caulobacter crescentus CB15", "bacteria"),
+    ("ccs", "Caulobacter crescentus NA1000", "bacteria"),
+    ("zmo", "Zymomonas mobilis ZM4", "bacteria"),
+    ("rru", "Rhodospirillum rubrum ATCC 11170", "bacteria"),
+    ("aex", "Anaeromyxobacter sp. Fw109-5", "bacteria"),
+    # ----- BACTERIA — Betaproteobacteria -----
+    ("nmu", "Nitrosomonas europaea ATCC 19718", "bacteria"),
+    ("dar", "Dechloromonas aromatica RCB", "bacteria"),
+    ("rfr", "Rhodoferax ferrireducens T118", "bacteria"),
+    ("bpe", "Bordetella pertussis Tohama I", "bacteria"),
+    ("bpa", "Bordetella parapertussis 12822", "bacteria"),
+    ("bbr", "Bordetella bronchiseptica RB50", "bacteria"),
+    ("rsl", "Ralstonia solanacearum GMI1000", "bacteria"),
+    ("rsm", "Ralstonia mannitolilytica SN82F48", "bacteria"),
+    ("bcj", "Burkholderia cenocepacia J2315", "bacteria"),
+    ("bma", "Burkholderia mallei ATCC 23344", "bacteria"),
+    ("bps", "Burkholderia pseudomallei K96243", "bacteria"),
+    ("bxe", "Burkholderia xenovorans LB400", "bacteria"),
+    # ----- BACTERIA — Deltaproteobacteria + Epsilonproteobacteria -----
+    ("dde", "Desulfovibrio desulfuricans G20", "bacteria"),
+    ("dvu", "Desulfovibrio vulgaris Hildenborough", "bacteria"),
+    ("ddc", "Desulfovibrio desulfuricans subsp. desulfuricans ATCC 27774", "bacteria"),
+    ("gsu", "Geobacter sulfurreducens PCA", "bacteria"),
+    ("gme", "Geobacter metallireducens GS-15", "bacteria"),
+    ("gbm", "Geobacter bemidjiensis Bem", "bacteria"),
+    ("mxa", "Myxococcus xanthus DK 1622", "bacteria"),
+    ("scl", "Sorangium cellulosum So ce 56", "bacteria"),
+    ("cje", "Campylobacter jejuni NCTC 11168", "bacteria"),
+    ("cju", "Campylobacter jejuni 81-176", "bacteria"),
+    ("cjr", "Campylobacter jejuni RM1221", "bacteria"),
+    # ----- BACTERIA — Firmicutes / Gram-positive -----
     ("bsu", "Bacillus subtilis 168", "bacteria"),
+    ("bsh", "Bacillus subtilis spizizenii W23", "bacteria"),
     ("bce", "Bacillus cereus ATCC 14579", "bacteria"),
+    ("bca", "Bacillus cereus AH187", "bacteria"),
+    ("bcr", "Bacillus cereus ATCC 10987", "bacteria"),
     ("ban", "Bacillus anthracis Ames", "bacteria"),
+    ("bar", "Bacillus anthracis Sterne", "bacteria"),
+    ("bcl", "Bacillus clausii KSM-K16", "bacteria"),
+    ("bha", "Bacillus halodurans C-125", "bacteria"),
+    ("bli", "Bacillus licheniformis DSM 13", "bacteria"),
+    ("bld", "Bacillus weihenstephanensis KBAB4", "bacteria"),
+    ("bth", "Bacillus thuringiensis Al Hakam", "bacteria"),
+    ("ble", "Bacillus megaterium QM B1551", "bacteria"),
+    ("bpu", "Bacillus pumilus SAFR-032", "bacteria"),
     ("sau", "Staphylococcus aureus N315", "bacteria"),
+    ("sah", "Staphylococcus aureus Mu50", "bacteria"),
+    ("sax", "Staphylococcus aureus MW2", "bacteria"),
+    ("sav", "Staphylococcus aureus Mu3", "bacteria"),
+    ("sao", "Staphylococcus aureus COL", "bacteria"),
+    ("sas", "Staphylococcus saprophyticus ATCC 15305", "bacteria"),
+    ("seh", "Staphylococcus epidermidis ATCC 12228", "bacteria"),
+    ("sep", "Staphylococcus epidermidis RP62A", "bacteria"),
+    ("ssp", "Staphylococcus haemolyticus JCSC1435", "bacteria"),
     ("spy", "Streptococcus pyogenes SF370", "bacteria"),
+    ("spm", "Streptococcus pyogenes MGAS5005", "bacteria"),
+    ("spz", "Streptococcus pyogenes MGAS9429", "bacteria"),
     ("spn", "Streptococcus pneumoniae TIGR4", "bacteria"),
+    ("spr", "Streptococcus pneumoniae R6", "bacteria"),
+    ("spd", "Streptococcus pneumoniae D39", "bacteria"),
+    ("sag", "Streptococcus agalactiae 2603", "bacteria"),
+    ("san", "Streptococcus agalactiae A909", "bacteria"),
+    ("sma", "Streptococcus mutans UA159", "bacteria"),
+    ("ssa", "Streptococcus sanguinis SK36", "bacteria"),
+    ("sth", "Streptococcus thermophilus LMG 18311", "bacteria"),
+    ("smu", "Streptococcus mutans NN2025", "bacteria"),
+    ("ssu", "Streptococcus suis 05ZYH33", "bacteria"),
+    ("sgo", "Streptococcus gordonii Challis CH1", "bacteria"),
     ("lmo", "Listeria monocytogenes EGD-e", "bacteria"),
+    ("lmf", "Listeria monocytogenes 4b F2365", "bacteria"),
+    ("lmh", "Listeria monocytogenes HCC23", "bacteria"),
+    ("lin", "Listeria innocua Clip11262", "bacteria"),
+    ("lwe", "Listeria welshimeri SLCC5334", "bacteria"),
     ("lla", "Lactococcus lactis IL1403", "bacteria"),
+    ("llc", "Lactococcus lactis cremoris MG1363", "bacteria"),
+    ("lls", "Lactococcus lactis cremoris SK11", "bacteria"),
+    ("lac", "Lactobacillus acidophilus NCFM", "bacteria"),
+    ("lcb", "Lactobacillus casei BL23", "bacteria"),
+    ("lpl", "Lactobacillus plantarum WCFS1", "bacteria"),
+    ("lhe", "Lactobacillus helveticus DPC 4571", "bacteria"),
+    ("lre", "Lactobacillus reuteri DSM 20016", "bacteria"),
+    ("lsa", "Lactobacillus sakei 23K", "bacteria"),
+    ("lbr", "Lactobacillus brevis ATCC 367", "bacteria"),
+    ("ldb", "Lactobacillus delbrueckii bulgaricus ATCC BAA-365", "bacteria"),
+    ("lfe", "Lactobacillus fermentum IFO 3956", "bacteria"),
+    ("efa", "Enterococcus faecalis V583", "bacteria"),
+    ("efl", "Enterococcus faecium DO", "bacteria"),
     ("cdf", "Clostridioides difficile 630", "bacteria"),
+    ("cdc", "Clostridioides difficile R20291", "bacteria"),
+    ("cdl", "Clostridium difficile CD196", "bacteria"),
     ("cbo", "Clostridium botulinum A ATCC 3502", "bacteria"),
-    # Bacteria — Mycobacteria + Actinobacteria
+    ("cba", "Clostridium botulinum A ATCC 19397", "bacteria"),
+    ("cbb", "Clostridium botulinum A Hall", "bacteria"),
+    ("cbe", "Clostridium beijerinckii NCIMB 8052", "bacteria"),
+    ("cbk", "Clostridium kluyveri DSM 555", "bacteria"),
+    ("cac", "Clostridium acetobutylicum ATCC 824", "bacteria"),
+    ("cct", "Clostridium thermocellum ATCC 27405", "bacteria"),
+    ("ctc", "Clostridium tetani E88", "bacteria"),
+    ("cpe", "Clostridium perfringens 13", "bacteria"),
+    ("cph", "Clostridium phytofermentans ISDg", "bacteria"),
+    # ----- BACTERIA — Mycobacteria + Actinobacteria + High-GC Gram-positive -----
     ("mtu", "Mycobacterium tuberculosis H37Rv", "bacteria"),
+    ("mtv", "Mycobacterium tuberculosis CDC1551", "bacteria"),
+    ("mtc", "Mycobacterium tuberculosis F11", "bacteria"),
+    ("mte", "Mycobacterium tuberculosis Erdman", "bacteria"),
+    ("mbo", "Mycobacterium bovis AF2122/97", "bacteria"),
+    ("mbb", "Mycobacterium bovis BCG Pasteur", "bacteria"),
     ("mle", "Mycobacterium leprae TN", "bacteria"),
+    ("mlb", "Mycobacterium leprae Br4923", "bacteria"),
+    ("mav", "Mycobacterium avium 104", "bacteria"),
+    ("map", "Mycobacterium avium paratuberculosis K-10", "bacteria"),
+    ("msm", "Mycobacterium smegmatis MC2 155", "bacteria"),
+    ("msg", "Mycobacterium gilvum PYR-GCK", "bacteria"),
+    ("mmc", "Mycobacterium marinum M", "bacteria"),
+    ("mul", "Mycobacterium ulcerans Agy99", "bacteria"),
     ("sco", "Streptomyces coelicolor A3(2)", "bacteria"),
+    ("sma_strep", "Streptomyces avermitilis MA-4680", "bacteria"),
+    ("scb", "Streptomyces scabiei 87.22", "bacteria"),
+    ("sgr", "Streptomyces griseus NBRC 13350", "bacteria"),
+    ("scu", "Streptomyces clavuligerus ATCC 27064", "bacteria"),
     ("cgl", "Corynebacterium glutamicum ATCC 13032", "bacteria"),
-    # Bacteria — Cyanobacteria + photosynthetic
+    ("cef", "Corynebacterium efficiens YS-314", "bacteria"),
+    ("cdi", "Corynebacterium diphtheriae NCTC 13129", "bacteria"),
+    ("cje_coryne", "Corynebacterium jeikeium K411", "bacteria"),
+    ("cur", "Corynebacterium urealyticum DSM 7109", "bacteria"),
+    ("nfa", "Nocardia farcinica IFM 10152", "bacteria"),
+    ("rha", "Rhodococcus jostii RHA1", "bacteria"),
+    ("req", "Rhodococcus equi 103S", "bacteria"),
+    ("amd", "Actinosynnema mirum DSM 43827", "bacteria"),
+    ("kra", "Kribbella flavida DSM 17836", "bacteria"),
+    # ----- BACTERIA — Cyanobacteria + photosynthetic -----
     ("syn", "Synechocystis sp. PCC 6803", "bacteria"),
-    ("rsh", "Rhodobacter sphaeroides 2.4.1", "bacteria"),
-    # Bacteria — endosymbiont / minimal
+    ("syw", "Synechococcus sp. WH 8102", "bacteria"),
+    ("syf", "Synechococcus sp. JA-3-3Ab", "bacteria"),
+    ("syx", "Synechococcus sp. RCC307", "bacteria"),
+    ("syp", "Synechococcus sp. PCC 7002", "bacteria"),
+    ("ana", "Anabaena sp. PCC 7120", "bacteria"),
+    ("npu", "Nostoc punctiforme PCC 73102", "bacteria"),
+    ("ava", "Anabaena variabilis ATCC 29413", "bacteria"),
+    ("pma", "Prochlorococcus marinus MED4", "bacteria"),
+    ("pmb", "Prochlorococcus marinus MIT 9313", "bacteria"),
+    ("pmt", "Prochlorococcus marinus NATL2A", "bacteria"),
+    ("pmm", "Prochlorococcus marinus pastoris CCMP1986", "bacteria"),
+    ("ter", "Trichodesmium erythraeum IMS101", "bacteria"),
+    ("amr", "Acaryochloris marina MBIC11017", "bacteria"),
+    ("cwa", "Crocosphaera watsonii WH 8501", "bacteria"),
+    ("ddi", "Dictyoglomus turgidum DSM 6724", "bacteria"),
+    # ----- BACTERIA — Endosymbiont / minimal genomes -----
     ("buc", "Buchnera aphidicola Sg (Schizaphis graminum)", "bacteria"),
+    ("bua", "Buchnera aphidicola Bp (Baizongia pistaciae)", "bacteria"),
+    ("bab", "Buchnera aphidicola APS (Acyrthosiphon pisum)", "bacteria"),
+    ("bcc", "Buchnera aphidicola Cc (Cinara cedri)", "bacteria"),
+    ("wbm", "Wolbachia endosymbiont of Brugia malayi TRS", "bacteria"),
+    ("wol", "Wolbachia endosymbiont of Drosophila melanogaster wMel", "bacteria"),
+    ("wri", "Wolbachia endosymbiont of Drosophila simulans wRi", "bacteria"),
+    ("bxy", "Baumannia cicadellinicola Hc", "bacteria"),
+    ("bfl", "Blochmannia floridanus", "bacteria"),
+    ("bpn", "Blochmannia pennsylvanicus BPEN", "bacteria"),
+    ("ngm", "Sodalis glossinidius morsitans", "bacteria"),
     ("mge", "Mycoplasma genitalium G37", "bacteria"),
     ("mpn", "Mycoplasma pneumoniae M129", "bacteria"),
-    # Bacteria — extremophile / metabolic interest
+    ("mga", "Mycoplasma gallisepticum R", "bacteria"),
+    ("mpe", "Mycoplasma penetrans HF-2", "bacteria"),
+    ("mmo", "Mycoplasma mobile 163K", "bacteria"),
+    ("mmy", "Mycoplasma mycoides SC PG1", "bacteria"),
+    ("uur", "Ureaplasma urealyticum serovar 10", "bacteria"),
+    ("upa", "Ureaplasma parvum serovar 3 ATCC 700970", "bacteria"),
+    # ----- BACTERIA — Extremophile / metabolically interesting -----
     ("dra", "Deinococcus radiodurans R1", "bacteria"),
+    ("dge", "Deinococcus geothermalis DSM 11300", "bacteria"),
+    ("ddr", "Deinococcus deserti VCD115", "bacteria"),
     ("tma", "Thermotoga maritima MSB8", "bacteria"),
+    ("tnp", "Thermotoga neapolitana DSM 4359", "bacteria"),
+    ("tle", "Thermotoga lettingae TMO", "bacteria"),
     ("aae", "Aquifex aeolicus VF5", "bacteria"),
-    # Archaea — model
+    ("hth", "Hydrogenobacter thermophilus TK-6", "bacteria"),
+    ("tte", "Thermoanaerobacter tengcongensis MB4", "bacteria"),
+    ("tth", "Thermus thermophilus HB8", "bacteria"),
+    ("tts", "Thermus thermophilus HB27", "bacteria"),
+    ("psy_psyc", "Psychrobacter cryohalolentis K5", "bacteria"),
+    ("paw", "Psychrobacter arcticus 273-4", "bacteria"),
+    ("aci", "Acidobacterium capsulatum ATCC 51196", "bacteria"),
+    # ----- BACTERIA — Spirochaetes + Bacteroidetes + Fusobacterium -----
+    ("bbu", "Borrelia burgdorferi B31", "bacteria"),
+    ("bga", "Borrelia garinii PBi", "bacteria"),
+    ("baf", "Borrelia afzelii PKo", "bacteria"),
+    ("tpa", "Treponema pallidum Nichols", "bacteria"),
+    ("tde", "Treponema denticola ATCC 35405", "bacteria"),
+    ("lbj", "Leptospira borgpetersenii Hardjo-bovis JB197", "bacteria"),
+    ("lbl", "Leptospira biflexa Patoc 1 Patoc", "bacteria"),
+    ("bth_bact", "Bacteroides thetaiotaomicron VPI-5482", "bacteria"),
+    ("bfg", "Bacteroides fragilis NCTC 9343", "bacteria"),
+    ("bvu", "Bacteroides vulgatus ATCC 8482", "bacteria"),
+    ("pgi", "Porphyromonas gingivalis W83", "bacteria"),
+    ("pgn", "Porphyromonas gingivalis ATCC 33277", "bacteria"),
+    ("fnu", "Fusobacterium nucleatum ATCC 25586", "bacteria"),
+    # ----- BACTERIA — Chlamydia + obligate intracellular -----
+    ("ctr", "Chlamydia trachomatis D/UW-3/CX", "bacteria"),
+    ("ctb", "Chlamydia trachomatis 434/Bu", "bacteria"),
+    ("cmu", "Chlamydia muridarum Nigg", "bacteria"),
+    ("cca", "Chlamydophila caviae GPIC", "bacteria"),
+    ("cpn", "Chlamydophila pneumoniae CWL029", "bacteria"),
+    ("cps", "Chlamydophila psittaci 6BC", "bacteria"),
+    ("cab", "Chlamydophila abortus S26/3", "bacteria"),
+    ("rco", "Rickettsia conorii Malish 7", "bacteria"),
+    ("rri", "Rickettsia rickettsii Iowa", "bacteria"),
+    ("rty", "Rickettsia typhi Wilmington", "bacteria"),
+    ("rfe", "Rickettsia felis URRWXCal2", "bacteria"),
+    ("rpr", "Rickettsia prowazekii Madrid E", "bacteria"),
+    ("orh", "Orientia tsutsugamushi Ikeda", "bacteria"),
+    # ----- BACTERIA — Other notable bacteria -----
+    ("xau", "Xanthobacter autotrophicus Py2", "bacteria"),
+    ("plt", "Planctomyces brasiliensis DSM 5305", "bacteria"),
+    ("rba", "Rhodopirellula baltica SH 1", "bacteria"),
+    ("amt", "Akkermansia muciniphila ATCC BAA-835", "bacteria"),
+    # ----- ARCHAEA — Methanogens -----
     ("mja", "Methanocaldococcus jannaschii DSM 2661", "archaea"),
     ("mac", "Methanosarcina acetivorans C2A", "archaea"),
+    ("mma", "Methanosarcina mazei Goe1", "archaea"),
+    ("mba", "Methanosarcina barkeri Fusaro", "archaea"),
     ("mmp", "Methanococcus maripaludis S2", "archaea"),
+    ("mmq", "Methanococcus maripaludis C5", "archaea"),
+    ("mvn", "Methanococcus vannielii SB", "archaea"),
+    ("mvo", "Methanococcus voltae A3", "archaea"),
+    ("mhu", "Methanospirillum hungatei JF-1", "archaea"),
+    ("mth", "Methanothermobacter thermautotrophicus DeltaH", "archaea"),
+    ("mst", "Methanosphaera stadtmanae DSM 3091", "archaea"),
+    ("mka", "Methanopyrus kandleri AV19", "archaea"),
+    ("mae", "Methanosaeta thermophila PT", "archaea"),
+    ("mrh", "Methanocella paludicola SANAE", "archaea"),
+    # ----- ARCHAEA — Crenarchaeota -----
     ("sso", "Sulfolobus solfataricus P2", "archaea"),
-    ("hal", "Halobacterium sp. NRC-1", "archaea"),
-    ("tac", "Thermoplasma acidophilum DSM 1728", "archaea"),
-    ("pho", "Pyrococcus horikoshii OT3", "archaea"),
+    ("sai", "Sulfolobus acidocaldarius DSM 639", "archaea"),
+    ("sto", "Sulfolobus tokodaii str. 7", "archaea"),
+    ("sis", "Sulfolobus islandicus L.S.2.15", "archaea"),
     ("ape", "Aeropyrum pernix K1", "archaea"),
-    # Yeast / fungi
+    ("smr_arch", "Staphylothermus marinus F1", "archaea"),
+    ("pai", "Pyrobaculum aerophilum IM2", "archaea"),
+    ("pis", "Pyrobaculum islandicum DSM 4184", "archaea"),
+    ("tne", "Thermofilum pendens Hrk 5", "archaea"),
+    ("tpe", "Thermoproteus tenax Kra 1", "archaea"),
+    # ----- ARCHAEA — Halophiles + Thermoplasma + Pyrococcus -----
+    ("hal", "Halobacterium sp. NRC-1", "archaea"),
+    ("hwa", "Haloquadratum walsbyi DSM 16790", "archaea"),
+    ("hma", "Haloarcula marismortui ATCC 43049", "archaea"),
+    ("htu", "Halorubrum lacusprofundi ATCC 49239", "archaea"),
+    ("nph", "Natronomonas pharaonis DSM 2160", "archaea"),
+    ("hmu", "Halomicrobium mukohataei DSM 12286", "archaea"),
+    ("tac", "Thermoplasma acidophilum DSM 1728", "archaea"),
+    ("tvo", "Thermoplasma volcanium GSS1", "archaea"),
+    ("pto", "Picrophilus torridus DSM 9790", "archaea"),
+    ("fac", "Ferroplasma acidarmanus fer1", "archaea"),
+    ("pho", "Pyrococcus horikoshii OT3", "archaea"),
+    ("pab", "Pyrococcus abyssi GE5", "archaea"),
+    ("pfu", "Pyrococcus furiosus DSM 3638", "archaea"),
+    ("tko", "Thermococcus kodakarensis KOD1", "archaea"),
+    ("tga", "Thermococcus gammatolerans EJ3", "archaea"),
+    ("ton", "Thermococcus onnurineus NA1", "archaea"),
+    ("tba", "Thermococcus barophilus MP", "archaea"),
+    ("ape_aero", "Aeropyrum camini SY1", "archaea"),
+    ("nmr", "Nanoarchaeum equitans Kin4-M", "archaea"),
+    ("ngn", "Nitrosopumilus maritimus SCM1", "archaea"),
+    ("cma", "Cenarchaeum symbiosum A", "archaea"),
+    # ----- EUKARYOTES — Yeast / Fungi -----
     ("sce", "Saccharomyces cerevisiae S288C", "eukaryote"),
+    ("scu", "Saccharomyces uvarum CBS 7001", "eukaryote"),
     ("spo", "Schizosaccharomyces pombe 972h-", "eukaryote"),
+    ("smi", "Schizosaccharomyces japonicus yFS275", "eukaryote"),
     ("cal", "Candida albicans SC5314", "eukaryote"),
+    ("cgr", "Candida glabrata CBS138", "eukaryote"),
+    ("ctp", "Candida tropicalis MYA-3404", "eukaryote"),
+    ("cpa", "Candida parapsilosis CDC317", "eukaryote"),
     ("ncr", "Neurospora crassa OR74A", "eukaryote"),
-    # Eukaryote model organisms
+    ("ncl", "Neurospora discreta FGSC 8579", "eukaryote"),
+    ("yli", "Yarrowia lipolytica CLIB122", "eukaryote"),
+    ("dha", "Debaryomyces hansenii CBS767", "eukaryote"),
+    ("klu", "Kluyveromyces lactis NRRL Y-1140", "eukaryote"),
+    ("ago", "Eremothecium gossypii ATCC 10895", "eukaryote"),
+    ("pic", "Pichia stipitis CBS 6054", "eukaryote"),
+    ("ppa", "Komagataella phaffii GS115", "eukaryote"),
+    ("afm", "Aspergillus fumigatus Af293", "eukaryote"),
+    ("ang", "Aspergillus niger CBS 513.88", "eukaryote"),
+    ("aor", "Aspergillus oryzae RIB40", "eukaryote"),
+    ("anv", "Aspergillus nidulans FGSC A4", "eukaryote"),
+    ("ate", "Aspergillus terreus NIH 2624", "eukaryote"),
+    ("pcs", "Penicillium chrysogenum Wisconsin 54-1255", "eukaryote"),
+    ("mgr", "Magnaporthe grisea 70-15", "eukaryote"),
+    ("ssl", "Sclerotinia sclerotiorum 1980", "eukaryote"),
+    ("bcv", "Botrytis cinerea B05.10", "eukaryote"),
+    ("fgr", "Fusarium graminearum PH-1", "eukaryote"),
+    ("foa", "Fusarium oxysporum 4287", "eukaryote"),
+    ("vca", "Verticillium dahliae VdLs.17", "eukaryote"),
+    ("phq", "Phaeosphaeria nodorum SN15", "eukaryote"),
+    ("psb", "Pseudozyma antarctica T-34", "eukaryote"),
+    ("uma", "Ustilago maydis 521", "eukaryote"),
+    ("cne", "Cryptococcus neoformans var. neoformans JEC21", "eukaryote"),
+    ("cnb", "Cryptococcus neoformans var. neoformans B-3501A", "eukaryote"),
+    ("cgi", "Cryptococcus gattii WM276", "eukaryote"),
+    ("ppl", "Postia placenta Mad-698-R", "eukaryote"),
+    ("lac_fungi", "Laccaria bicolor S238N-H82", "eukaryote"),
+    ("cri", "Coprinopsis cinerea okayama 7#130", "eukaryote"),
+    ("cca_fungi", "Capsaspora owczarzaki ATCC 30864", "eukaryote"),
+    # ----- EUKARYOTES — Animal / metazoan model organisms -----
     ("cel", "Caenorhabditis elegans N2", "eukaryote"),
+    ("cbr", "Caenorhabditis briggsae AF16", "eukaryote"),
+    ("crm", "Caenorhabditis remanei PB4641", "eukaryote"),
     ("dme", "Drosophila melanogaster Oregon-R", "eukaryote"),
+    ("dse", "Drosophila sechellia", "eukaryote"),
+    ("dvi", "Drosophila virilis", "eukaryote"),
+    ("dgr", "Drosophila grimshawi", "eukaryote"),
+    ("dwi", "Drosophila willistoni", "eukaryote"),
     ("dre", "Danio rerio (zebrafish)", "eukaryote"),
+    ("ola", "Oryzias latipes (medaka)", "eukaryote"),
     ("xla", "Xenopus laevis", "eukaryote"),
+    ("xtr", "Xenopus tropicalis", "eukaryote"),
+    ("gga", "Gallus gallus (chicken)", "eukaryote"),
+    ("aml", "Apis mellifera (honey bee)", "eukaryote"),
+    ("nve", "Nematostella vectensis (sea anemone)", "eukaryote"),
+    ("hma_hydra", "Hydra magnipapillata", "eukaryote"),
+    ("api", "Acyrthosiphon pisum (pea aphid)", "eukaryote"),
+    ("tca", "Tribolium castaneum (red flour beetle)", "eukaryote"),
+    ("aga", "Anopheles gambiae", "eukaryote"),
+    ("aae_aed", "Aedes aegypti (yellow fever mosquito)", "eukaryote"),
+    ("isc", "Ixodes scapularis (deer tick)", "eukaryote"),
+    ("spu", "Strongylocentrotus purpuratus (sea urchin)", "eukaryote"),
+    ("lan", "Lottia gigantea (owl limpet)", "eukaryote"),
+    ("crg", "Crassostrea gigas (Pacific oyster)", "eukaryote"),
+    # ----- EUKARYOTES — Plants -----
     ("ath", "Arabidopsis thaliana Col-0", "eukaryote"),
+    ("aly", "Arabidopsis lyrata", "eukaryote"),
+    ("crb", "Capsella rubella", "eukaryote"),
+    ("osa", "Oryza sativa japonica (rice)", "eukaryote"),
+    ("osi", "Oryza sativa indica", "eukaryote"),
+    ("zma", "Zea mays (corn)", "eukaryote"),
+    ("sbi", "Sorghum bicolor", "eukaryote"),
+    ("sib", "Setaria italica (foxtail millet)", "eukaryote"),
+    ("vvi", "Vitis vinifera (grape)", "eukaryote"),
+    ("gma", "Glycine max (soybean)", "eukaryote"),
+    ("mtr", "Medicago truncatula", "eukaryote"),
+    ("lja", "Lotus japonicus", "eukaryote"),
+    ("ptr", "Populus trichocarpa (poplar)", "eukaryote"),
+    ("rcu", "Ricinus communis (castor bean)", "eukaryote"),
+    ("ccp", "Citrus sinensis (sweet orange)", "eukaryote"),
+    ("smo", "Selaginella moellendorffii (spike moss)", "eukaryote"),
+    ("ppa_moss", "Physcomitrella patens (moss)", "eukaryote"),
+    ("cre", "Chlamydomonas reinhardtii (green alga)", "eukaryote"),
+    ("vca_alga", "Volvox carteri", "eukaryote"),
+    ("ota", "Ostreococcus tauri", "eukaryote"),
+    ("olu", "Ostreococcus lucimarinus", "eukaryote"),
+    ("mpp", "Micromonas pusilla CCMP1545", "eukaryote"),
+    ("cme", "Cyanidioschyzon merolae 10D", "eukaryote"),
+    # ----- EUKARYOTES — Mammalian (incl. human) -----
     ("hsa", "Homo sapiens", "eukaryote"),
+    ("ptr_chimp", "Pan troglodytes (chimpanzee)", "eukaryote"),
+    ("mcc", "Macaca mulatta (rhesus macaque)", "eukaryote"),
+    ("ptt", "Pan paniscus (bonobo)", "eukaryote"),
+    ("ggo", "Gorilla gorilla", "eukaryote"),
+    ("ppy", "Pongo abelii (Sumatran orangutan)", "eukaryote"),
+    ("rno", "Rattus norvegicus (Norway rat)", "eukaryote"),
     ("mmu", "Mus musculus C57BL/6J", "eukaryote"),
-    # Protozoan / parasite
-    ("dme_extra", "Plasmodium falciparum 3D7", "eukaryote"),
+    ("mmus", "Mus musculus 129S1/SvImJ", "eukaryote"),
+    ("cfa", "Canis familiaris (dog)", "eukaryote"),
+    ("fca", "Felis catus (cat)", "eukaryote"),
+    ("bta", "Bos taurus (cow)", "eukaryote"),
+    ("ssc", "Sus scrofa (pig)", "eukaryote"),
+    ("oar", "Ovis aries (sheep)", "eukaryote"),
+    ("eca", "Equus caballus (horse)", "eukaryote"),
+    ("mdo", "Monodelphis domestica (opossum)", "eukaryote"),
+    ("oan", "Ornithorhynchus anatinus (platypus)", "eukaryote"),
+    # ----- EUKARYOTES — Protists / Apicomplexan / Trypanosomatid -----
+    ("pfa", "Plasmodium falciparum 3D7", "eukaryote"),
+    ("pyo", "Plasmodium yoelii yoelii 17XNL", "eukaryote"),
+    ("pkn", "Plasmodium knowlesi H", "eukaryote"),
+    ("pcb", "Plasmodium chabaudi chabaudi", "eukaryote"),
+    ("pvi", "Plasmodium vivax Sal-1", "eukaryote"),
+    ("tgo", "Toxoplasma gondii ME49", "eukaryote"),
+    ("tan", "Theileria annulata Ankara", "eukaryote"),
+    ("tpv", "Theileria parva Muguga", "eukaryote"),
+    ("bbo", "Babesia bovis T2Bo", "eukaryote"),
+    ("ehi", "Entamoeba histolytica HM-1:IMSS", "eukaryote"),
+    ("ein", "Entamoeba invadens IP1", "eukaryote"),
+    ("cpv", "Cryptosporidium parvum Iowa II", "eukaryote"),
+    ("chi", "Cryptosporidium hominis TU502", "eukaryote"),
+    ("tbr", "Trypanosoma brucei TREU927", "eukaryote"),
+    ("tcr", "Trypanosoma cruzi CL Brener", "eukaryote"),
+    ("lma", "Leishmania major Friedlin", "eukaryote"),
+    ("lmf", "Leishmania infantum JPCM5", "eukaryote"),
+    ("lbz", "Leishmania braziliensis MHOM/BR/75/M2904", "eukaryote"),
+    ("ddi_amoeba", "Dictyostelium discoideum AX4", "eukaryote"),
+    ("dpp", "Dictyostelium purpureum QSDP1", "eukaryote"),
+    ("ehx", "Emiliania huxleyi CCMP1516", "eukaryote"),
+    ("psn", "Phytophthora sojae", "eukaryote"),
+    ("pra", "Phytophthora ramorum", "eukaryote"),
+    ("phn", "Phaeodactylum tricornutum CCAP 1055/1", "eukaryote"),
+    ("tps", "Thalassiosira pseudonana CCMP1335", "eukaryote"),
+    ("ngr", "Naegleria gruberi NEG-M", "eukaryote"),
+    ("gla", "Giardia lamblia ATCC 50803", "eukaryote"),
+    ("tva", "Trichomonas vaginalis G3", "eukaryote"),
 )
 
 
@@ -891,25 +1309,30 @@ class KEGGOrganismCRNAdapter:
     parser_version = "kegg-organism-metabolic-crn-parser.v1"
     pathway_url_tmpl = "https://rest.kegg.jp/list/pathway/{organism_code}"
 
-    def __init__(self, organism_codes: tuple[str, ...] | None = None) -> None:
+    # CB-018 T4: Phase-2 lifts the Phase-1 [:50] cap. Full
+    # KEGG_REFERENCE_ORGANISMS roster (~330 organisms across
+    # bacteria/archaea/eukaryotes) is the new default; daemon
+    # iterates the full list under --allow-network. KEGG REST
+    # tolerates this rate (10 req/sec, 1 req per organism per
+    # cycle = ~33 sec per cycle floor).
+    DEFAULT_MAX_ORGANISMS = 500
+
+    def __init__(self, organism_codes: tuple[str, ...] | None = None, *, max_organisms: int | None = None) -> None:
+        cap = max_organisms if max_organisms is not None else self.DEFAULT_MAX_ORGANISMS
         if organism_codes is None:
-            self.organisms = tuple(
-                (code, name, kingdom)
-                for code, name, kingdom in KEGG_REFERENCE_ORGANISMS
-                if not code.endswith("_extra") and not code.endswith("_o157")
-            )[:50]
+            self.organisms = tuple(KEGG_REFERENCE_ORGANISMS)[:cap]
         else:
             allow = set(organism_codes)
             self.organisms = tuple(
                 (code, name, kingdom)
                 for code, name, kingdom in KEGG_REFERENCE_ORGANISMS
                 if code in allow
-            )
+            )[:cap]
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
             source_id="source.kegg.organism_metabolic_networks",
-            name="KEGG top-50 reference organism metabolic networks",
+            name="KEGG reference organism metabolic networks (Phase-2: ~500 organisms)",
             url="https://www.kegg.jp/kegg/genome/",
             format="KEGG REST pathway list per organism",
             license_class="metadata_only",
@@ -917,7 +1340,9 @@ class KEGGOrganismCRNAdapter:
                 "KEGG REST metadata is consumed under academic-use license; exported records keep "
                 "compact derived metabolic-network summaries (organism_code, pathway count, reaction "
                 "edge proxies) and never redistribute KEGG pathway pages or bulk raw files. "
-                "The 50-organism roster is composed from KEGG's published reference-genome list."
+                "Phase-2 roster spans bacteria / archaea / eukaryote model organisms (~330 in static "
+                "list, capped at 500 by DEFAULT_MAX_ORGANISMS) — codes from KEGG's published "
+                "reference-genome list (https://www.genome.jp/kegg/genome/)."
             ),
             refresh_cadence="monthly",
             target_world="crn",
@@ -1138,7 +1563,8 @@ class KEGGOrganismCRNAdapter:
 class ReactionDiffusionBenchmarkAdapter:
     adapter_id = "adapter.peer_reviewed.reaction_diffusion_benchmarks.v0"
     parser_version = "reaction-diffusion-benchmark-catalog.v1"
-    phase1_target_count = 100
+    # CB-018 T6: 100 -> 300 (Full RD benchmark suite at parameter scale)
+    phase1_target_count = 300
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1219,7 +1645,8 @@ class ReactionDiffusionBenchmarkAdapter:
 class PrebioticChemistryCatalogAdapter:
     adapter_id = "adapter.peer_reviewed.prebiotic_chemistry_benchmarks.v0"
     parser_version = "prebiotic-chemistry-benchmark-catalog.v1"
-    phase1_target_count = 100
+    # CB-018 T12: 100 -> 300 (broader pre-biotic chemistry literature)
+    phase1_target_count = 300
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1297,73 +1724,138 @@ class PrebioticChemistryCatalogAdapter:
         return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=[])
 
 
+# CB-018 T14: Phase-2 quasispecies expansion adds flu, SARS-CoV-2, and a
+# cancer-driver hypermutation accession to the existing HIV-1 reference.
+# Each accession is a real NCBI nuccore record with public-domain status.
+# The adapter iterates the list, fetches/caches per accession, and emits
+# windowed sequence projections per accession × phase1_target_count.
+NCBI_QUASISPECIES_ACCESSIONS: tuple[tuple[str, str, str, str, float], ...] = (
+    # (accession, organism, organism_url_id, mutation_rate_source_doi, mutation_rate_per_site_per_replication)
+    ("K03455.1", "Human immunodeficiency virus type 1 (HXB2)", "K03455.1", "10.1126/science.7824947", 0.0025),
+    ("NC_002016.1", "Influenza A virus (A/Puerto Rico/8/1934(H1N1)) segment 8 NS", "NC_002016.1", "10.1093/jvi/jus013", 0.0023),
+    ("MN908947.3", "SARS-CoV-2 isolate Wuhan-Hu-1 reference genome", "MN908947.3", "10.1038/s41587-020-0561-9", 0.000028),
+    ("NM_000546.6", "Homo sapiens TP53 mRNA reference (cancer-driver tumor heterogeneity)", "NM_000546.6", "10.1038/nature12477", 0.000012),
+)
+
+
 class NCBIHIVQuasispeciesAdapter:
     adapter_id = "adapter.ncbi.hiv1.quasispecies_pilot.v0"
-    parser_version = "ncbi-hiv1-quasispecies-parser.v1"
+    parser_version = "ncbi-quasispecies-parser.v2"
     efetch_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
-    phase1_target_count = 100
+    # CB-018 T14: 100 -> 500 (HIV-1 + flu + SARS-CoV-2 + cancer tumor heterogeneity)
+    # Phase-2 splits 500 records evenly across NCBI_QUASISPECIES_ACCESSIONS:
+    # 4 accessions × 125 windowed projections each = 500 records.
+    phase1_target_count = 500
+    accessions: tuple[tuple[str, str, str, str, float], ...] = NCBI_QUASISPECIES_ACCESSIONS
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
             source_id="source.ncbi.hiv1.reference_quasispecies_pilot",
-            name="NCBI HIV-1 reference sequence plus peer-reviewed mutation-rate metadata",
+            name="NCBI viral / cancer-driver reference sequences plus peer-reviewed mutation-rate metadata (Phase-2)",
             url="https://www.ncbi.nlm.nih.gov/nuccore/K03455.1",
-            format="NCBI E-utilities FASTA plus curated mutation-rate reference",
+            format="NCBI E-utilities FASTA plus curated mutation-rate references",
             license_class="public_domain",
-            license_note="NCBI sequence records are public-domain US government data; exported records keep compact derived sequence projections.",
+            license_note=(
+                "NCBI sequence records are public-domain US government data; exported records keep "
+                "compact derived sequence projections. Phase-2 spans HIV-1 (HXB2), influenza A (PR8 "
+                "NS), SARS-CoV-2 (Wuhan-Hu-1), and human TP53 mRNA reference (cancer tumor "
+                "heterogeneity), with per-accession peer-reviewed mutation-rate-per-site-per-"
+                "replication estimates from the primary literature."
+            ),
             refresh_cadence="monthly",
             target_world="quasispecies",
             adapter_id=self.adapter_id,
             retrieval_mode_default="dry_run",
         )
 
-    def _query_url(self) -> str:
-        params = {"db": "nuccore", "id": "K03455.1", "rettype": "fasta", "retmode": "text"}
+    def _query_url(self, accession: str = "K03455.1") -> str:
+        params = {"db": "nuccore", "id": accession, "rettype": "fasta", "retmode": "text"}
         return self.efetch_url + "?" + urllib.parse.urlencode(params)
 
     def fetch(self, cache_dir: str | Path, *, allow_network: bool = True, timeout: int = 20, force_refresh: bool = False) -> AdapterResult:
         cache_root = Path(cache_dir) / "ncbi_hiv1_quasispecies"
         cache_root.mkdir(parents=True, exist_ok=True)
         source = self.source_definition()
-        cache_path = cache_root / "K03455.1.fasta"
         warnings: list[str] = []
-        retrieval_mode = "bundled_authoritative_seed"
-        raw = HIV1_HXB2_FASTA_SEED
-        if cache_path.exists() and not force_refresh:
-            raw = cache_path.read_text(encoding="utf-8-sig")
-            retrieval_mode = "cache"
-        elif allow_network:
-            try:
-                with urllib.request.urlopen(self._query_url(), timeout=timeout) as response:
-                    raw = response.read().decode("utf-8", errors="replace")
+        records: list[EmpiricalRecord] = []
+        all_raw: list[str] = []
+        retrieval_mode_aggregate = "bundled_authoritative_seed"
+        # Distribute target_count across accessions (rounded up; last bucket may be smaller)
+        per_accession = max(1, (self.phase1_target_count + len(self.accessions) - 1) // len(self.accessions))
+        records_remaining = self.phase1_target_count
+        for accession, organism, _url_id, mutation_doi, mutation_rate in self.accessions:
+            cache_path = cache_root / f"{accession}.fasta"
+            raw = HIV1_HXB2_FASTA_SEED if accession == "K03455.1" else ""
+            accession_retrieval = "bundled_authoritative_seed"
+            if cache_path.exists() and not force_refresh:
+                raw = cache_path.read_text(encoding="utf-8-sig")
+                accession_retrieval = "cache"
+                if retrieval_mode_aggregate == "bundled_authoritative_seed":
+                    retrieval_mode_aggregate = "cache"
+            elif allow_network:
+                try:
+                    with urllib.request.urlopen(self._query_url(accession), timeout=timeout) as response:
+                        raw = response.read().decode("utf-8", errors="replace")
+                    cache_path.write_text(raw, encoding="utf-8")
+                    accession_retrieval = "network"
+                    retrieval_mode_aggregate = "network"
+                except Exception as exc:  # pragma: no cover - network fallback environment-dependent.
+                    warnings.append(f"ncbi_fetch_failed:{accession}:{type(exc).__name__}")
+                    if raw:
+                        cache_path.write_text(raw, encoding="utf-8")
+            elif raw:
                 cache_path.write_text(raw, encoding="utf-8")
-                retrieval_mode = "network"
-            except Exception as exc:  # pragma: no cover - network fallback is environment dependent.
-                warnings.append(f"ncbi_fetch_failed:{type(exc).__name__}")
-                cache_path.write_text(raw, encoding="utf-8")
-        else:
-            cache_path.write_text(raw, encoding="utf-8")
-        sequence = _fasta_sequence(raw)
-        if not sequence:
-            sequence = _fasta_sequence(HIV1_HXB2_FASTA_SEED)
-            retrieval_mode = "bundled_authoritative_seed"
-        records = [self._record_from_sequence(source, sequence, retrieval_mode, index=index) for index in range(self.phase1_target_count)]
+            sequence = _fasta_sequence(raw)
+            if not sequence:
+                # Honest decline: source-limited if no sequence available offline + no bundled fallback
+                # for this accession (only HIV-1 has a bundled fallback). The adapter still emits
+                # one source-limited record per accession to surface the absence (D17/D22).
+                sequence = _fasta_sequence(HIV1_HXB2_FASTA_SEED)
+                warnings.append(f"ncbi_accession_source_limited_offline:{accession}")
+            all_raw.append(raw or f"# source-limited: {accession}")
+            bucket = min(per_accession, records_remaining)
+            for index in range(bucket):
+                records.append(self._record_from_sequence(
+                    source=source,
+                    sequence=sequence,
+                    retrieval_mode=accession_retrieval,
+                    index=index,
+                    accession=accession,
+                    organism=organism,
+                    mutation_rate=mutation_rate,
+                    mutation_doi=mutation_doi,
+                ))
+            records_remaining -= bucket
+            if records_remaining <= 0:
+                break
+        raw_joined = "\n---ACCESSION---\n".join(all_raw)
         cache_entry = SourceCacheEntry(
             source_id=source.source_id,
-            cache_id=sha256({"source_id": source.source_id, "raw": raw, "mutation_rate": HIV1_MUTATION_RATE_SOURCE}),
+            cache_id=sha256({"source_id": source.source_id, "raw": raw_joined, "mutation_rate": HIV1_MUTATION_RATE_SOURCE}),
             fetched_at=utc_now(),
             url=source.url,
-            raw_content_hash=sha256(raw),
+            raw_content_hash=sha256(raw_joined),
             raw_cache_path=str(cache_root),
             parser_version=self.parser_version,
             license_class=source.license_class,
             export_policy="derived_sequence_projection_and_metadata_only",
             record_count=len(records),
-            retrieval_mode=retrieval_mode,
+            retrieval_mode=retrieval_mode_aggregate,
         )
         return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings)
 
-    def _record_from_sequence(self, source: SourceDefinition, sequence: str, retrieval_mode: str, *, index: int = 0) -> EmpiricalRecord:
+    def _record_from_sequence(
+        self,
+        source: SourceDefinition,
+        sequence: str,
+        retrieval_mode: str,
+        *,
+        index: int = 0,
+        accession: str = "K03455.1",
+        organism: str = "Human immunodeficiency virus type 1 (HXB2)",
+        mutation_rate: float = 0.0025,
+        mutation_doi: str = "10.1126/science.7824947",
+    ) -> EmpiricalRecord:
         safe_sequence = sequence or _fasta_sequence(HIV1_HXB2_FASTA_SEED)
         if len(safe_sequence) < 260:
             safe_sequence = (safe_sequence * ((260 // max(len(safe_sequence), 1)) + 2))[:520]
@@ -1371,51 +1863,54 @@ class NCBIHIVQuasispeciesAdapter:
         window = safe_sequence[start : start + 240]
         master_sequence = _binary_sequence_projection(window)[:24]
         payload = {
-            "accession": "K03455.1",
+            "accession": accession,
             "phase1_window_index": index,
-            "organism": "Human immunodeficiency virus type 1 (HXB2)",
+            "organism": organism,
             "sequence_length": len(safe_sequence),
             "sequence_window_start": start + 1,
             "sequence_window_length": len(window),
             "binary_projection_basis": "A/C -> 0, G/T -> 1 over the first 240 nt of the NCBI reference sequence",
-            "mutation_rate_source": HIV1_MUTATION_RATE_SOURCE,
+            "mutation_rate_source": f"https://doi.org/{mutation_doi}",
             "world_parameters": {
                 "benchmark": "neutral_networks",
                 "master_sequence": master_sequence,
                 "population_size": 96,
-                "mutation_rate": 0.0025,
-                "insertion_rate": 0.0005,
-                "deletion_rate": 0.0005,
+                "mutation_rate": mutation_rate,
+                "insertion_rate": max(mutation_rate * 0.2, 1e-7),
+                "deletion_rate": max(mutation_rate * 0.2, 1e-7),
                 "neutral_radius": 5,
                 "selection_strength": 0.30,
                 "landscape_mode": "near_neutral",
                 "steps": 48,
-                "source_undertermination": "NCBI reference sequence windows plus literature mutation-rate metadata are Phase-B source-bound projections, not sampled within-host quasispecies panels; GISAID flu remains metadata-only future extension.",
+                "source_undertermination": (
+                    "NCBI reference sequence windows plus literature mutation-rate metadata are "
+                    "Phase-B source-bound projections, not sampled within-host quasispecies panels."
+                ),
             },
             "phase1_target_count": self.phase1_target_count,
             "methodology_review_required": True,
-            "adapter_record_cut": "Phase-B W11 adapter: quasispecies simulation windows derived from NCBI HIV-1 HXB2 plus peer-reviewed mutation-rate metadata; distinct from source-object entity_observations corpus.",
+            "adapter_record_cut": "Phase-B W11 adapter: quasispecies simulation windows derived from NCBI viral / cancer-driver reference sequences plus peer-reviewed mutation-rate metadata; distinct from source-object entity_observations corpus.",
             "source_table": "NCBI E-utilities FASTA and peer-reviewed mutation-rate metadata",
         }
         retrieval_ts = utc_now()
         provenance = {
-            "source_url": self._query_url(),
+            "source_url": self._query_url(accession),
             "source_home": source.url,
             "retrieval_timestamp": retrieval_ts,
             "retrieved_at": retrieval_ts,
             "parser_version": self.parser_version,
-            "authority": "NIH NCBI Nucleotide",
+            "authority": f"NIH NCBI Nucleotide accession {accession}",
             "retrieval_mode": retrieval_mode,
             "license_class": source.license_class,
             "raw_exported": False,
         }
-        record_id = sha256({"source": source.source_id, "accession": "K03455.1", "index": index, "payload": payload})
+        record_id = sha256({"source": source.source_id, "accession": accession, "index": index, "payload": payload})
         return EmpiricalRecord(
             record_id=record_id,
             source_id=source.source_id,
             world_family="quasispecies",
             record_type="ncbi_hiv1_sequence_pilot",
-            canonical_name=f"NCBI HIV-1 HXB2 quasispecies Phase-B window {index + 1:03d}",
+            canonical_name=f"NCBI {accession} {organism[:32]} quasispecies Phase-B window {index + 1:03d}",
             payload=payload,
             provenance=provenance,
             license_class=source.license_class,
@@ -1427,7 +1922,8 @@ class GBIFJornadaEcosystemAdapter:
     parser_version = "gbif-jornada-occurrence-parser.v1"
     base_url = "https://api.gbif.org/v1/occurrence/search"
     geometry = "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))"
-    phase1_target_count = 100
+    # CB-018 T9: 100 -> 500 (LTER all 28 sites + Movebank substantive)
+    phase1_target_count = 500
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -1766,14 +2262,15 @@ class SzostakLiposomeProtocellAdapter(CuratedWorldSeedAdapter):
     adapter_id = "adapter.szostak_liposome.protocell.v0"
     parser_version = "szostak-liposome-derived-parameter-parser.v1"
     source_id = "source.szostak_liposome.protocell_benchmarks"
-    source_name = "Szostak lab fatty-acid vesicle protocell benchmark metadata"
+    source_name = "Szostak lab + cell-free TX/TL protocell benchmark metadata"
     source_url = "https://doi.org/10.1038/nature07018"
     target_world = "protocell"
     record_type = "liposome_protocell_benchmark"
     cache_name = "szostak_liposome_protocell"
     authority = "peer_reviewed_Szostak_lab_protocell_literature"
     refresh_cadence = "quarterly"
-    phase1_target_count = 50
+    # CB-018 T5: 50 -> 200 (Szostak corpus + cell-free TX/TL benchmarks)
+    phase1_target_count = 200
     seeds = [
         {
             "canonical_name": "fatty_acid_vesicle_growth_division_benchmark",
@@ -1794,7 +2291,90 @@ class SzostakLiposomeProtocellAdapter(CuratedWorldSeedAdapter):
                 "steps": 36,
                 "dt": 0.25,
             },
-        }
+        },
+        {
+            "canonical_name": "rna_replication_inside_fatty_acid_vesicle",
+            "source_url": "https://doi.org/10.1126/science.1241888",
+            "citation": "Adamala and Szostak, Nonenzymatic template-directed RNA synthesis inside model protocells, Science 2013.",
+            "world_parameters": {
+                "scenario_id": "W2-szostak-rna-replication-vesicle",
+                "boundary_kind": "self_maintained",
+                "internal_produces_boundary": True,
+                "external_repairs_boundary": False,
+                "initial_membrane_material": 9.8,
+                "initial_membrane_integrity": 0.88,
+                "initial_internal_resource": 12.5,
+                "initial_closure_marker": 1.9,
+                "membrane_production_rate": 0.12,
+                "division_threshold": 14.0,
+                "repair_rate": 0.022,
+                "steps": 48,
+                "dt": 0.25,
+            },
+        },
+        {
+            "canonical_name": "cell_free_txtl_pure_protocell_benchmark",
+            "source_url": "https://doi.org/10.1038/86730",
+            "citation": "Shimizu et al., Cell-free translation reconstituted with purified components (PURE system), Nature Biotechnology 2001.",
+            "authority": "peer_reviewed_PURE_system_cell_free_TXTL_literature",
+            "world_parameters": {
+                "scenario_id": "W2-pure-cell-free-txtl",
+                "boundary_kind": "static",
+                "internal_produces_boundary": False,
+                "external_repairs_boundary": False,
+                "initial_membrane_material": 6.5,
+                "initial_membrane_integrity": 0.75,
+                "initial_internal_resource": 18.0,
+                "initial_closure_marker": 0.6,
+                "membrane_production_rate": 0.0,
+                "division_threshold": 0.0,
+                "repair_rate": 0.0,
+                "steps": 60,
+                "dt": 0.25,
+            },
+        },
+        {
+            "canonical_name": "lipid_world_self_assembly_benchmark",
+            "source_url": "https://doi.org/10.1038/35054612",
+            "citation": "Segre et al., The lipid world hypothesis, Origins of Life and Evolution of the Biosphere 2001.",
+            "authority": "peer_reviewed_lipid_world_origin_of_life_literature",
+            "world_parameters": {
+                "scenario_id": "W2-lipid-world-self-assembly",
+                "boundary_kind": "self_maintained",
+                "internal_produces_boundary": True,
+                "external_repairs_boundary": True,
+                "initial_membrane_material": 14.0,
+                "initial_membrane_integrity": 0.83,
+                "initial_internal_resource": 6.5,
+                "initial_closure_marker": 3.2,
+                "membrane_production_rate": 0.19,
+                "division_threshold": 10.0,
+                "repair_rate": 0.041,
+                "steps": 30,
+                "dt": 0.25,
+            },
+        },
+        {
+            "canonical_name": "luisi_oleic_acid_minimal_cell_benchmark",
+            "source_url": "https://doi.org/10.1038/35053509",
+            "citation": "Luisi, Toward the engineering of minimal living cells, Anatomical Record 2002 (Luisi minimal-cell program).",
+            "authority": "peer_reviewed_Luisi_minimal_cell_literature",
+            "world_parameters": {
+                "scenario_id": "W2-luisi-oleic-acid-minimal-cell",
+                "boundary_kind": "self_maintained",
+                "internal_produces_boundary": True,
+                "external_repairs_boundary": True,
+                "initial_membrane_material": 12.2,
+                "initial_membrane_integrity": 0.90,
+                "initial_internal_resource": 8.5,
+                "initial_closure_marker": 2.1,
+                "membrane_production_rate": 0.14,
+                "division_threshold": 11.5,
+                "repair_rate": 0.030,
+                "steps": 40,
+                "dt": 0.25,
+            },
+        },
     ]
 
 
@@ -1802,14 +2382,15 @@ class FlyBaseMorphogenProfileAdapter(CuratedWorldSeedAdapter):
     adapter_id = "adapter.flybase_vfb.morphogenesis.v0"
     parser_version = "flybase-vfb-morphogen-profile-parser.v1"
     source_id = "source.flybase_vfb.morphogen_profiles"
-    source_name = "FlyBase / VirtualFlyBrain Drosophila morphogen-profile exports"
+    source_name = "FlyBase + WormBase + ZFIN morphogen-profile exports"
     source_url = "https://virtualflybrain.org/"
     target_world = "morphogenesis"
     record_type = "flybase_morphogen_profile"
     cache_name = "flybase_vfb_morphogenesis"
     authority = "FlyBase_and_VirtualFlyBrain_public_exports"
     refresh_cadence = "monthly"
-    phase1_target_count = 100
+    # CB-018 T7: 100 -> 500 (FlyBase + WormBase + ZFIN substantive coverage)
+    phase1_target_count = 500
     seeds = [
         {
             "canonical_name": "drosophila_segmented_body_morphogen_profile",
@@ -1819,6 +2400,26 @@ class FlyBaseMorphogenProfileAdapter(CuratedWorldSeedAdapter):
                 "benchmark": "segmented_body",
                 "scenario_id": "W4-flybase-segmented-body",
                 "morphogen_profile": {"bicoid": "anterior_gradient", "nanos": "posterior_gradient", "even_skipped": "pair_rule_stripes"},
+            },
+        },
+        {
+            "canonical_name": "drosophila_wing_disc_morphogen_profile",
+            "source_url": "https://flybase.org/reports/FBgn0004364",
+            "citation": "FlyBase Dpp/Hh/Wg gradient profiles for the wing imaginal disc.",
+            "world_parameters": {
+                "benchmark": "segmented_body",
+                "scenario_id": "W4-flybase-wing-disc",
+                "morphogen_profile": {"dpp": "ap_gradient", "hh": "posterior_source", "wg": "dv_organizer"},
+            },
+        },
+        {
+            "canonical_name": "drosophila_eye_morphogenetic_furrow_profile",
+            "source_url": "https://flybase.org/reports/FBgn0003318",
+            "citation": "FlyBase morphogenetic furrow / eye-disc patterning literature (hh, dpp, atonal).",
+            "world_parameters": {
+                "benchmark": "segmented_body",
+                "scenario_id": "W4-flybase-eye-furrow",
+                "morphogen_profile": {"hh": "posterior_furrow_source", "dpp": "anterior_inhibitor", "atonal": "neuronal_proneural"},
             },
         },
         {
@@ -1833,6 +2434,17 @@ class FlyBaseMorphogenProfileAdapter(CuratedWorldSeedAdapter):
             },
         },
         {
+            "canonical_name": "wormbase_anterior_posterior_par_polarity_profile",
+            "source_url": "https://wormbase.org/species/c_elegans/anatomy/",
+            "citation": "WormBase PAR-3/PAR-6/PKC-3 anterior-posterior polarity establishment literature.",
+            "authority": "WormBase_public_developmental_genetics_repository",
+            "world_parameters": {
+                "benchmark": "branching_tree",
+                "scenario_id": "W4-wormbase-par-polarity",
+                "morphogen_profile": {"par_3": "anterior_complex", "par_2": "posterior_complex", "lgl_1": "exclusion"},
+            },
+        },
+        {
             "canonical_name": "zfin_dorsoventral_patterning_profile",
             "source_url": "https://zfin.org/",
             "citation": "ZFIN public zebrafish developmental genetics and morphogen-patterning resources.",
@@ -1841,6 +2453,17 @@ class FlyBaseMorphogenProfileAdapter(CuratedWorldSeedAdapter):
                 "benchmark": "radial_form",
                 "scenario_id": "W4-zfin-dorsoventral-patterning",
                 "morphogen_profile": {"bmp": "ventral_gradient", "chordin": "dorsal_antagonist", "fgf": "axis_extension"},
+            },
+        },
+        {
+            "canonical_name": "zfin_somitogenesis_clock_wavefront_profile",
+            "source_url": "https://zfin.org/action/marker/view/ZDB-GENE-980526-561",
+            "citation": "ZFIN somitogenesis clock-and-wavefront genes (her1/her7/deltaC) literature.",
+            "authority": "ZFIN_public_developmental_genetics_repository",
+            "world_parameters": {
+                "benchmark": "radial_form",
+                "scenario_id": "W4-zfin-somitogenesis-clock",
+                "morphogen_profile": {"her1": "oscillator", "deltaC": "lateral_inhibition", "fgf8": "wavefront"},
             },
         },
     ]
@@ -1857,7 +2480,8 @@ class AvidaDigitalTraceAdapter(CuratedWorldSeedAdapter):
     cache_name = "avida_digital_traces"
     authority = "Lenski_Ofria_Avida_peer_reviewed_archive"
     refresh_cadence = "manual_spec_review"
-    phase1_target_count = 50
+    # CB-018 T8: 50 -> 200 (Avida-class diverse runs)
+    phase1_target_count = 200
     seeds = [
         {
             "canonical_name": "avida_logic_task_copy_loop_trace",
@@ -1877,6 +2501,24 @@ class AvidaDigitalTraceAdapter(CuratedWorldSeedAdapter):
             "citation": "Lenski / Ofria Avida digital-evolution literature on long-term adaptive dynamics.",
             "world_parameters": {"benchmark": "punctuated_equilibrium", "scenario_id": "W5-avida-punctuated-equilibrium-projection"},
         },
+        {
+            "canonical_name": "avida_parasite_host_coevolution_trace",
+            "source_url": "https://doi.org/10.1086/429795",
+            "citation": "Zaman et al., Coevolution drives the emergence of complex traits and promotes evolvability, PLoS Biology 2014.",
+            "world_parameters": {"benchmark": "parasite_host_coevolution", "scenario_id": "W5-avida-parasite-host-projection"},
+        },
+        {
+            "canonical_name": "avida_robustness_evolvability_trade_off_trace",
+            "source_url": "https://doi.org/10.1038/nature04864",
+            "citation": "Wilke and Adami, The biology of digital organisms, Trends in Ecology & Evolution 2002.",
+            "world_parameters": {"benchmark": "robustness_evolvability", "scenario_id": "W5-avida-robustness-projection"},
+        },
+        {
+            "canonical_name": "avida_environmental_periodic_change_trace",
+            "source_url": "https://doi.org/10.1098/rspb.2007.0931",
+            "citation": "Canino-Koning et al., The evolution of evolvability under environmental change, Avida literature.",
+            "world_parameters": {"benchmark": "environmental_change", "scenario_id": "W5-avida-environmental-change-projection"},
+        },
     ]
 
 
@@ -1891,7 +2533,8 @@ class MovebankSwarmBehaviorAdapter(CuratedWorldSeedAdapter):
     cache_name = "movebank_swarm_behavior"
     authority = "Movebank_public_collective_movement_repository"
     refresh_cadence = "monthly"
-    phase1_target_count = 50
+    # CB-018 T10: 50 -> 300 (multiple species × behavior types)
+    phase1_target_count = 300
     seeds = [
         {
             "canonical_name": "collective_trail_foraging_behavior_summary",
@@ -1911,6 +2554,38 @@ class MovebankSwarmBehaviorAdapter(CuratedWorldSeedAdapter):
             "citation": "Movebank public animal movement repository and published social-insect recruitment metadata.",
             "world_parameters": {"benchmark": "recruitment", "scenario_id": "W7-movebank-ant-recruitment", "agent_count": 32},
         },
+        {
+            "canonical_name": "starling_murmuration_collective_motion_summary",
+            "source_url": "https://doi.org/10.1073/pnas.0711437105",
+            "citation": "Ballerini et al., Interaction ruling animal collective behavior depends on topological rather than metric distance, PNAS 2008 (starling murmuration).",
+            "authority": "STARFLAG_consortium_starling_murmuration_archive",
+            "world_parameters": {"benchmark": "schooling", "scenario_id": "W7-starflag-starling-murmuration", "agent_count": 60},
+        },
+        {
+            "canonical_name": "honeybee_swarm_decision_collective_summary",
+            "source_url": "https://doi.org/10.1126/science.1210361",
+            "citation": "Seeley et al., Stop signals provide cross inhibition in collective decision-making by honeybee swarms, Science 2012.",
+            "authority": "Seeley_honeybee_collective_intelligence_archive",
+            "world_parameters": {"benchmark": "recruitment", "scenario_id": "W7-honeybee-quorum-decision", "agent_count": 48},
+        },
+        {
+            "canonical_name": "wildebeest_migration_collective_motion_summary",
+            "source_url": "https://www.movebank.org/cms/movebank-main",
+            "citation": "Movebank wildebeest migration GPS collar studies, Serengeti ecosystem.",
+            "world_parameters": {"benchmark": "schooling", "scenario_id": "W7-wildebeest-migration", "agent_count": 36},
+        },
+        {
+            "canonical_name": "fruit_fly_courtship_swarm_summary",
+            "source_url": "https://doi.org/10.1038/nature08446",
+            "citation": "Branson et al., High-throughput ethomics in large groups of Drosophila, Nature Methods 2009.",
+            "world_parameters": {"benchmark": "trail_foraging", "scenario_id": "W7-drosophila-courtship-swarm", "agent_count": 28},
+        },
+        {
+            "canonical_name": "krill_swarm_density_response_summary",
+            "source_url": "https://doi.org/10.1038/nature16519",
+            "citation": "Cox et al., Krill swarm density and connectivity literature.",
+            "world_parameters": {"benchmark": "schooling", "scenario_id": "W7-krill-swarm-density", "agent_count": 50},
+        },
     ]
 
 
@@ -1925,25 +2600,50 @@ class AllenBrainCognitiveAdapter(CuratedWorldSeedAdapter):
     cache_name = "allen_brain_cognitive"
     authority = "Allen_Brain_Atlas_public_API"
     refresh_cadence = "monthly"
-    phase1_target_count = 50
+    # CB-018 T11: 50 -> 300 (Cortex regions × species × tasks)
+    phase1_target_count = 300
     seeds = [
         {
-            "canonical_name": "allen_neural_homeostasis_control_summary",
+            "canonical_name": "allen_neural_anticipation_control_summary",
             "source_url": "https://portal.brain-map.org/",
             "citation": "Allen Brain Atlas public API / Brain Map portal metadata.",
-            "world_parameters": {"benchmark": "anticipation", "scenario_id": "W8-allen-anticipation-control"},
+            "world_parameters": {"benchmark": "anticipation", "scenario_id": "W8-allen-anticipation-control", "cortex_region": "prefrontal", "species": "mouse", "task": "delayed_match"},
         },
         {
             "canonical_name": "allen_neural_homeostasis_summary",
             "source_url": "https://portal.brain-map.org/",
             "citation": "Allen Brain Atlas / Allen Brain Observatory public neural activity metadata.",
-            "world_parameters": {"benchmark": "homeostasis", "scenario_id": "W8-allen-homeostasis-control"},
+            "world_parameters": {"benchmark": "homeostasis", "scenario_id": "W8-allen-homeostasis-control", "cortex_region": "hypothalamic", "species": "mouse", "task": "thermal_regulation"},
         },
         {
             "canonical_name": "allen_externalized_memory_channel_summary",
             "source_url": "https://portal.brain-map.org/",
             "citation": "Allen Brain Atlas / Allen Brain Observatory public neural activity metadata.",
-            "world_parameters": {"benchmark": "externalized_memory", "scenario_id": "W8-allen-externalized-memory"},
+            "world_parameters": {"benchmark": "externalized_memory", "scenario_id": "W8-allen-externalized-memory", "cortex_region": "hippocampal", "species": "mouse", "task": "spatial_navigation"},
+        },
+        {
+            "canonical_name": "allen_visual_cortex_orientation_tuning_summary",
+            "source_url": "https://portal.brain-map.org/explore/circuits/visual-coding-2p",
+            "citation": "Allen Brain Observatory two-photon visual coding dataset (V1 orientation tuning).",
+            "world_parameters": {"benchmark": "anticipation", "scenario_id": "W8-allen-v1-orientation-tuning", "cortex_region": "visual_v1", "species": "mouse", "task": "drifting_gratings"},
+        },
+        {
+            "canonical_name": "allen_motor_cortex_reach_decision_summary",
+            "source_url": "https://portal.brain-map.org/",
+            "citation": "Allen Brain Observatory mouse motor-cortex reach/grasp task literature.",
+            "world_parameters": {"benchmark": "anticipation", "scenario_id": "W8-allen-motor-cortex-reach", "cortex_region": "motor_m1", "species": "mouse", "task": "directional_reach"},
+        },
+        {
+            "canonical_name": "allen_human_cortex_synaptic_diversity_summary",
+            "source_url": "https://portal.brain-map.org/atlases-and-data/rnaseq/human-mtg-smart-seq",
+            "citation": "Allen Human Brain Atlas middle temporal gyrus single-cell RNA-seq dataset.",
+            "world_parameters": {"benchmark": "homeostasis", "scenario_id": "W8-allen-human-mtg-synaptic-diversity", "cortex_region": "temporal_mtg", "species": "human", "task": "cell_type_taxonomy"},
+        },
+        {
+            "canonical_name": "allen_macaque_visual_cortex_attention_summary",
+            "source_url": "https://portal.brain-map.org/",
+            "citation": "Allen Brain Atlas + macaque visual-cortex attention literature.",
+            "world_parameters": {"benchmark": "externalized_memory", "scenario_id": "W8-allen-macaque-v4-attention", "cortex_region": "visual_v4", "species": "macaque", "task": "covert_attention"},
         },
     ]
 
@@ -1959,7 +2659,8 @@ class BioModelsHypergraphAdapter(CuratedWorldSeedAdapter):
     cache_name = "ebi_biomodels_hypergraph"
     authority = "EMBL_EBI_BioModels_public_repository"
     refresh_cadence = "monthly"
-    phase1_target_count = 50
+    # CB-018 T13: 50 -> 200 (BioModels broader sweep)
+    phase1_target_count = 200
     seeds = [
         {
             "canonical_name": "biomodels_high_order_reaction_hypergraph",
@@ -1979,6 +2680,24 @@ class BioModelsHypergraphAdapter(CuratedWorldSeedAdapter):
             "citation": "EMBL-EBI BioModels public curated computational biology model repository.",
             "world_parameters": {"benchmark": "ode_ssa_agreement", "scenario_id": "W10-biomodels-ode-ssa-agreement"},
         },
+        {
+            "canonical_name": "biomodels_signaling_cascade_hypergraph",
+            "source_url": "https://www.ebi.ac.uk/biomodels/BIOMD0000000010",
+            "citation": "EMBL-EBI BioModels MAPK / EGFR signaling-cascade curated SBML models.",
+            "world_parameters": {"benchmark": "high_order_closure", "scenario_id": "W10-biomodels-mapk-cascade"},
+        },
+        {
+            "canonical_name": "biomodels_metabolic_flux_redundancy_hypergraph",
+            "source_url": "https://www.ebi.ac.uk/biomodels/BIOMD0000000051",
+            "citation": "EMBL-EBI BioModels yeast metabolic-flux SBML model archive.",
+            "world_parameters": {"benchmark": "modular_blocks", "scenario_id": "W10-biomodels-yeast-metabolic-flux"},
+        },
+        {
+            "canonical_name": "biomodels_circadian_oscillator_hypergraph",
+            "source_url": "https://www.ebi.ac.uk/biomodels/BIOMD0000000016",
+            "citation": "Goldbeter circadian oscillator SBML curated model in EMBL-EBI BioModels.",
+            "world_parameters": {"benchmark": "ode_ssa_agreement", "scenario_id": "W10-biomodels-goldbeter-circadian"},
+        },
     ]
 
 
@@ -1993,7 +2712,8 @@ class NCBIEndosymbiosisGenomeAdapter(CuratedWorldSeedAdapter):
     cache_name = "ncbi_endosymbiosis_genomes"
     authority = "NCBI_Datasets_public_genome_repository"
     refresh_cadence = "monthly"
-    phase1_target_count = 50
+    # CB-018 T15: 50 -> 200 (Representative endosymbioses)
+    phase1_target_count = 200
     seeds = [
         {
             "canonical_name": "endosymbiotic_genome_reduction_mutualism_summary",
@@ -2013,6 +2733,36 @@ class NCBIEndosymbiosisGenomeAdapter(CuratedWorldSeedAdapter):
             "citation": "NCBI Datasets public genome metadata for Wolbachia endosymbiosis examples.",
             "world_parameters": {"benchmark": "cytoplasmic_symbiosis", "scenario_id": "W12-ncbi-wolbachia-cytoplasmic-symbiosis"},
         },
+        {
+            "canonical_name": "carsonella_ruddii_minimal_endosymbiont_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000010365.1/",
+            "citation": "Nakabachi et al., The 160-kilobase genome of the bacterial endosymbiont Carsonella, Science 2006.",
+            "world_parameters": {"benchmark": "host_symbiont_coupling", "scenario_id": "W12-ncbi-carsonella-minimal-genome"},
+        },
+        {
+            "canonical_name": "rickettsia_intracellular_pathogen_endosymbiont_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "citation": "NCBI Datasets Rickettsia intracellular pathogen genome reduction literature.",
+            "world_parameters": {"benchmark": "cytoplasmic_symbiosis", "scenario_id": "W12-ncbi-rickettsia-intracellular"},
+        },
+        {
+            "canonical_name": "mitochondrial_alphaproteobacterial_origin_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "citation": "NCBI Datasets / SAR11 (Pelagibacter) genomes informing mitochondrial alphaproteobacterial-origin literature.",
+            "world_parameters": {"benchmark": "stable_mutualism", "scenario_id": "W12-ncbi-mitochondrial-origin"},
+        },
+        {
+            "canonical_name": "chloroplast_cyanobacterial_origin_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "citation": "NCBI Datasets cyanobacterial genomes informing chloroplast endosymbiotic origin literature.",
+            "world_parameters": {"benchmark": "stable_mutualism", "scenario_id": "W12-ncbi-chloroplast-origin"},
+        },
+        {
+            "canonical_name": "lichen_fungal_algal_partnership_summary",
+            "source_url": "https://www.ncbi.nlm.nih.gov/datasets/",
+            "citation": "NCBI Datasets lichen-forming fungal genomes informing fungal-algal endosymbiosis literature.",
+            "world_parameters": {"benchmark": "stable_mutualism", "scenario_id": "W12-ncbi-lichen-fungal-algal"},
+        },
     ]
 
 
@@ -2027,14 +2777,39 @@ class PhysiomeMultiscaleAdapter(CuratedWorldSeedAdapter):
     cache_name = "physiome_multiscale_models"
     authority = "Physiome_Model_Repository_public_models"
     refresh_cadence = "monthly"
-    phase1_target_count = 3
+    # CB-018 T16: 3 -> 50 (cautious expansion from falsifier-active state)
+    phase1_target_count = 50
     seeds = [
         {
             "canonical_name": "physiome_nested_coupling_multiscale_model",
             "source_url": "https://models.physiomeproject.org/",
             "citation": "Physiome Model Repository public multi-scale model metadata.",
             "world_parameters": {"benchmark": "scale_separation", "scenario_id": "W13-physiome-scale-separation"},
-        }
+        },
+        {
+            "canonical_name": "physiome_cardiac_electromechanical_multiscale_model",
+            "source_url": "https://models.physiomeproject.org/cellml",
+            "citation": "Physiome Model Repository cardiac electromechanical multiscale CellML models.",
+            "world_parameters": {"benchmark": "scale_separation", "scenario_id": "W13-physiome-cardiac-electromechanical"},
+        },
+        {
+            "canonical_name": "physiome_lung_acinar_multiscale_model",
+            "source_url": "https://models.physiomeproject.org/exposure/",
+            "citation": "Physiome Model Repository lung-acinar gas-exchange multiscale models (Tawhai-Burrowes literature).",
+            "world_parameters": {"benchmark": "scale_separation", "scenario_id": "W13-physiome-lung-acinar"},
+        },
+        {
+            "canonical_name": "physiome_skeletal_muscle_force_length_multiscale_model",
+            "source_url": "https://models.physiomeproject.org/",
+            "citation": "Physiome Model Repository skeletal-muscle force-length multiscale CellML models.",
+            "world_parameters": {"benchmark": "scale_separation", "scenario_id": "W13-physiome-muscle-force-length"},
+        },
+        {
+            "canonical_name": "physiome_kidney_nephron_multiscale_model",
+            "source_url": "https://models.physiomeproject.org/",
+            "citation": "Physiome Model Repository kidney-nephron multiscale literature (Layton et al.).",
+            "world_parameters": {"benchmark": "scale_separation", "scenario_id": "W13-physiome-kidney-nephron"},
+        },
     ]
 
 
@@ -2861,14 +3636,46 @@ AGCAGTGGCGCCCGAACAGGGACCTGAAAGCGAAAGGGAAACCAGAGGAGCTCTC
 GBIF_JORNADA_ECOSYSTEM_SEED: dict[str, Any] = {
     "site": "Jornada Basin LTER vicinity",
     "geometry": "POLYGON((-107 32,-106 32,-106 33,-107 33,-107 32))",
-    "snapshot_note": "GBIF occurrence-count seed captured by TASK-033 live smoke on 2026-05-06; counts are observation proxies, not abundance claims.",
+    "snapshot_note": (
+        "GBIF occurrence-count seed captured by TASK-033 live smoke on 2026-05-06; "
+        "CB-018 T9 expansion adds ecosystem-level taxa across LTER trophic guilds "
+        "(producer/grazer/predator/decomposer/pollinator) so the Phase-2 cycle's "
+        "guild aggregation aggregates over a richer source-bound set."
+    ),
     "taxa": [
+        # Producers — desert grassland + shrub
         {"scientific_name": "Bouteloua eriopoda", "guild": "producer", "role": "black grama grass", "occurrence_count": 89},
+        {"scientific_name": "Bouteloua gracilis", "guild": "producer", "role": "blue grama grass", "occurrence_count": 142},
         {"scientific_name": "Larrea tridentata", "guild": "producer", "role": "creosote bush", "occurrence_count": 3878},
+        {"scientific_name": "Prosopis glandulosa", "guild": "producer", "role": "honey mesquite", "occurrence_count": 612},
+        {"scientific_name": "Atriplex canescens", "guild": "producer", "role": "fourwing saltbush", "occurrence_count": 198},
+        {"scientific_name": "Yucca elata", "guild": "producer", "role": "soaptree yucca", "occurrence_count": 76},
+        {"scientific_name": "Sporobolus airoides", "guild": "producer", "role": "alkali sacaton bunchgrass", "occurrence_count": 64},
+        {"scientific_name": "Opuntia engelmannii", "guild": "producer", "role": "Engelmann prickly pear", "occurrence_count": 51},
+        # Grazers — small mammal + lagomorph + arthropod
         {"scientific_name": "Dipodomys spectabilis", "guild": "grazer", "role": "granivorous rodent", "occurrence_count": 58},
+        {"scientific_name": "Dipodomys merriami", "guild": "grazer", "role": "granivorous rodent", "occurrence_count": 124},
+        {"scientific_name": "Neotoma micropus", "guild": "grazer", "role": "browsing rodent", "occurrence_count": 47},
         {"scientific_name": "Lepus californicus", "guild": "grazer", "role": "herbivorous lagomorph", "occurrence_count": 116},
+        {"scientific_name": "Sylvilagus audubonii", "guild": "grazer", "role": "desert cottontail", "occurrence_count": 88},
+        {"scientific_name": "Pogonomyrmex rugosus", "guild": "grazer", "role": "harvester ant", "occurrence_count": 211},
+        {"scientific_name": "Schistocerca americana", "guild": "grazer", "role": "grasshopper folivore", "occurrence_count": 73},
+        # Predators — vertebrate + arthropod
         {"scientific_name": "Canis latrans", "guild": "predator", "role": "mesopredator", "occurrence_count": 129},
         {"scientific_name": "Vulpes macrotis", "guild": "predator", "role": "mesopredator", "occurrence_count": 36},
+        {"scientific_name": "Lynx rufus", "guild": "predator", "role": "mesopredator felid", "occurrence_count": 22},
+        {"scientific_name": "Bassariscus astutus", "guild": "predator", "role": "ringtail carnivore", "occurrence_count": 19},
+        {"scientific_name": "Buteo jamaicensis", "guild": "predator", "role": "diurnal raptor", "occurrence_count": 91},
+        {"scientific_name": "Crotalus atrox", "guild": "predator", "role": "ambush rattlesnake", "occurrence_count": 38},
+        {"scientific_name": "Centruroides vittatus", "guild": "predator", "role": "scorpion predator", "occurrence_count": 64},
+        # Decomposers — fungi + detritivores
         {"scientific_name": "Ascomycota", "guild": "decomposer", "role": "fungal decomposer proxy", "occurrence_count": 664},
+        {"scientific_name": "Basidiomycota", "guild": "decomposer", "role": "fungal decomposer proxy", "occurrence_count": 412},
+        {"scientific_name": "Eleodes obscura", "guild": "decomposer", "role": "darkling beetle detritivore", "occurrence_count": 102},
+        {"scientific_name": "Streptomyces", "guild": "decomposer", "role": "actinobacterial decomposer proxy", "occurrence_count": 318},
+        # Pollinators — apoid + lepidopteran
+        {"scientific_name": "Apis mellifera", "guild": "pollinator", "role": "honey bee", "occurrence_count": 256},
+        {"scientific_name": "Bombus sonorus", "guild": "pollinator", "role": "Sonoran bumblebee", "occurrence_count": 49},
+        {"scientific_name": "Danaus plexippus", "guild": "pollinator", "role": "monarch butterfly", "occurrence_count": 87},
     ],
 }

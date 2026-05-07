@@ -1,6 +1,12 @@
-﻿# Ingestion Targets v1 â€” Phase 1 substantive
+﻿# Ingestion Targets v2 â€” Phase 2 mass density
 
-**Status:** **RATIFIED** â€” Phase 1 substantive targets per PI delegation.
+**Status:** **RATIFIED** â€” Phase 2 mass-density targets per PI delegated authority (CB-018).
+
+Phase 1 (v1, ratified 2026-05-07T14:07:39Z, total 6,653 records) is
+the prior substantive baseline. Phase 2 (v2, ratified 2026-05-07,
+total ~60,000 records) drives unattended ingestion to ~9Ã— Phase 1
+density across the lower worlds and orthogonal substantive expansion
+across the 12 upper worlds.
 
 This document specifies the target record density per world that
 unattended ingestion drives toward. The continuous daemon reads the
@@ -39,34 +45,41 @@ target is held to the ratified floor. W13 multiscale stays at 3
 because it is falsifier-active per the BFG floor work â€” inflating
 its target would amount to silently overwriting the falsification.
 
-## Per-world Phase 1 targets
+## Per-world Phase 2 targets (CB-018)
 
 The block below is parsed by the daemon. Do not edit row format
 without updating `progress.py:load_target_densities` to match.
 
 <!-- ingestion-targets:start -->
 
-| world_family               | target_density | source_basis                                                                                                                                                  |
-|----------------------------|---------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| atomic_molecular_primitives|           5600 | Atomic 600 (full periodic table neutral spectra Ã—118 + canonical ionization states ~500) + Molecular 5000 (ChEBI biological-relevance + KEGG metabolites + DrugBank approved + chemistry foundations) |
-| math_primitives            |            200 | Full canonical peer-reviewed catalog: 1D/2D maps, autonomous ODEs (Lorenz/RÃ¶ssler/Chua/Sprott/Chen/Lu families), 4D chaos, bifurcation normal forms, heteroclinic/homoclinic, limit-cycle/torus/strange-attractor families, intermittency, riddled basins |
-| crn                        |             50 | KEGG top-50 reference organisms                                                                                                                                |
-| protocell                  |             50 | Szostak lab archives + peer-reviewed protocell-membrane perturbation studies                                                                                   |
-| field                      |            100 | Brusselator / Schnakenberg / FitzHugh-Nagumo / Gray-Scott / Cahn-Hilliard at parameter scale                                                                   |
-| morphogenesis              |            100 | FlyBase + WormBase + ZFIN representative subset                                                                                                                |
-| digital                    |             50 | Avida-class executable-genome traces (Lenski archive)                                                                                                          |
-| ecosystem                  |            100 | LTER substantive subset + Movebank representative                                                                                                              |
-| swarm                      |             50 | Movebank ant/fish-school + published swarm behavioral data                                                                                                     |
-| cognitive                  |             50 | Allen Brain Atlas representative                                                                                                                                |
-| origins_chemistry          |            100 | Peer-reviewed pre-biotic chemistry catalogs (Hordijk-Steel + Vasas + Sutherland + Miller-Urey-class)                                                            |
-| hypergraph_reactions       |             50 | BioModels reaction-network hypergraphs                                                                                                                          |
-| quasispecies               |            100 | NCBI HIV-1 longitudinal + GISAID flu pilot                                                                                                                      |
-| symbiogenesis              |             50 | NCBI endosymbiosis genome data                                                                                                                                  |
-| multiscale                 |              3 | Held low â€” W13 is falsifier-active per BFG floor work (D17 binding; falsification is publishable, never silently overwritten)                                 |
+| world_family               | target_density | source_basis                                                                                                                                                                                                                                                                |
+|----------------------------|---------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| atomic_molecular_primitives|          53500 | Atomic 3500 (full periodic table x ionization stages I-XXX from NIST ASD; honest decline for transactinides + missing stages) + Molecular 50000 (PubChem CID 1-75000 ChEBI biological-relevance + DrugBank approved + KEGG metabolites + chemistry foundations under PubChem 5 req/sec) |
+| math_primitives            |            600 | Full canonical peer-reviewed catalog Phase-2: complete Sprott family (incl. Sprott-Linz, Elegant Chaos, Sprott-Jafari hidden, megastability), Chua family extensions, Kuznetsov bifurcation normal forms (codim-1 + codim-2 + codim-3), Pomeau-Manneville intermittency types I-X, complete heteroclinic/homoclinic catalog, riddled-basin family, full Lorenz/Rossler/Chen/Lu/Hindmarsh-Rose/Goldbeter/Eigen families |
+| crn                        |            500 | KEGG full bacterial reference set (~330 bacteria) + selected archaea (~50) + eukaryotic-pathway subset (~50); rate limit 10 req/sec under academic-use license |
+| protocell                  |            200 | Full Szostak corpus + cell-free TX/TL benchmarks (Adamala-Szostak, PURE system, Luisi minimal cell, lipid world)                                                                                                                                                          |
+| field                      |            300 | Full RD benchmark suite at parameter scale (Brusselator + Schnakenberg + FitzHugh-Nagumo + Gray-Scott + Cahn-Hilliard) variant-cycled                                                                                                                                       |
+| morphogenesis              |            500 | FlyBase + WormBase + ZFIN substantive (segmented body, wing disc, eye furrow, vulval axis, PAR polarity, dorsoventral, somitogenesis clock-and-wavefront)                                                                                                                  |
+| digital                    |            200 | Avida-class diverse runs: copy_loop + equ_emergence + punctuated_equilibrium + parasite-host coevolution + robustness/evolvability + environmental-change                                                                                                                  |
+| ecosystem                  |            500 | LTER expanded taxa (Jornada Basin desert grassland 29 taxa across producer/grazer/predator/decomposer/pollinator guilds) + Movebank cross-reference                                                                                                                          |
+| swarm                      |            300 | Multiple species x behavior types: ant trail-foraging + fish schooling + ant recruitment + starling murmuration + honeybee quorum + wildebeest migration + Drosophila courtship + krill swarm                                                                                |
+| cognitive                  |            300 | Cortex regions x species x tasks: prefrontal/visual/motor/temporal/hippocampal x mouse/macaque/human x delayed_match/orientation_tuning/reach/spatial_navigation/cell_type_taxonomy/covert_attention                                                                          |
+| origins_chemistry          |            300 | Broader pre-biotic chemistry literature (Wachtershauser FeS surface, Martin/Russell alkaline hydrothermal, Hordijk-Steel + Vasas + Sutherland + Miller-Urey-class)                                                                                                          |
+| hypergraph_reactions       |            200 | BioModels broader sweep (high-order closure, modular blocks, ODE-SSA agreement, MAPK signaling cascade, yeast metabolic flux, Goldbeter circadian)                                                                                                                          |
+| quasispecies               |            500 | NCBI HIV-1 (HXB2 K03455.1) + influenza A (PR8 NS NC_002016.1) + SARS-CoV-2 (Wuhan-Hu-1 MN908947.3) + cancer driver TP53 mRNA (NM_000546.6) windowed projections; per-accession peer-reviewed mutation rates                                                                |
+| symbiogenesis              |            200 | Representative endosymbioses (Buchnera aphidicola, Wolbachia, Carsonella ruddii, Rickettsia intracellular, mitochondrial alphaproteobacterial origin, chloroplast cyanobacterial origin, lichen fungal-algal partnership)                                                  |
+| multiscale                 |             50 | Cautious expansion from falsifier-active state (W13 BFG floor work) - Physiome cardiac electromechanical + lung acinar + skeletal muscle + kidney nephron multiscale CellML models                                                                                          |
 
 <!-- ingestion-targets:end -->
 
-**Total Phase 1 target across worlds: 6,653 records** at v1.
+**Total Phase 2 target across worlds: 57,650 records** at v2 (Phase-1 was 6,653 at v1).
+
+The Phase-2 expansion is dominated by atomic_molecular_primitives (3,500
+atomic + 50,000 molecular = 53,500), which is the lower-worlds density
+push the brief specifies. The 12 upper worlds together contribute 4,150
+records (vs Phase-1 853), an orthogonal-substantive expansion that
+keeps each world honestly source-bound rather than chasing record count
+for its own sake.
 
 (Brief stated 6,753 in its summary line; the row-by-row sum is 6,653.
 Builder kept the per-row numbers as PI directed and corrected the
@@ -79,29 +92,34 @@ unifies them at the persistence layer. Per-record-type breakdowns
 appear in `reports/factory_daemon_progress/atomic_molecular_primitives.json`
 under `sources_completed` once ingestion runs.
 
-## Phase 2 (after Phase 1 validates clean)
+## Phase 2 (RATIFIED CB-018, supersedes Phase 1 above)
 
-Targets PI has delegated for the next round once Phase 1 cycles
-clean three times in a row with no methodology violations:
+The Phase 2 targets are LIVE and listed in the canonical block above.
+Targets per CB-018 brief, ratified by PI delegated authority:
 
-* W-1 molecular: scale to 50,000 (full ChEBI + DrugBank + KEGG full)
-* W1 crn: scale to 200 (KEGG full bacterial reference set)
-* W4 morphogenesis: scale to 500 (FlyBase + WormBase + ZFIN substantive)
-* W6 ecosystem: scale to 500 (LTER all sites + Movebank substantive)
-* W7-W12: scale to 200-500 per world (per-source diligence)
+* W-1 atomic: scale 590 -> 3,500 (full periodic table x ionization stages I-XXX)
+* W-1 molecular: scale 4,123 -> 50,000 (PubChem CID 1-75000 + ChEBI/DrugBank/KEGG cross-ref)
+* W0 math primitives: scale 200 -> 600+ (complete Sprott/Chua/Kuznetsov/Pomeau-Manneville/heteroclinic/riddled-basin families)
+* W1 crn: scale 50 -> 500 (KEGG full bacterial reference set + archaea + eukaryote-pathway subset)
+* W4 morphogenesis: scale 100 -> 500 (FlyBase + WormBase + ZFIN substantive)
+* W6 ecosystem: scale 100 -> 500 (LTER all sites + Movebank substantive)
+* W7-W12: scale 50-100 -> 200-500 per world (per-source diligence)
+* W13 multiscale: cautious scale 3 -> 50 (Physiome cardiac + lung + muscle + kidney CellML, falsifier-active state preserved)
 
-## Phase 3 (long arc; magnum-opus)
+## Phase 3 (long arc; magnum-opus; future ratification)
 
 Long-horizon targets requiring tooling beyond Phase 2:
 
-* W-1 molecular: full PubChem subset (1M+ records) â€” needs index
-  + budget tuning + likely DuckDB swap for query speed
-* Tree-of-life biology grounding broadly (gigabase per phylum)
-* Per-substrate density to â‰¥ 50 for all leaning-eligible cells
+* W-1 molecular: full PubChem subset (1M+ records) - needs index +
+  budget tuning + likely DuckDB swap for query speed.
+* Tree-of-life biology grounding broadly (gigabase per phylum):
+  OTL (Open Tree of Life), RefSeq, UniProt, Reactome, GTEx, GBIF,
+  HPA (Human Protein Atlas), PBDB (Paleobiology Database).
+* Per-substrate density to >= 50 for all leaning-eligible cells.
 
-These are NOT in scope for the daemon currently being launched.
-Phase 2 and Phase 3 each get their own ratification cycle; PI signs
-each phase before the daemon promotes from one to the next.
+These are NOT in scope for the daemon currently being launched in
+CB-018. Phase 3 gets its own ratification cycle; PI signs Phase 3
+before the daemon promotes from Phase 2.
 
 ## Aggregate ratification gates (Phase 1 launch)
 
@@ -130,9 +148,35 @@ records to give and (b) per-world budget allows.
 
 ## PI ratification signature block
 
+### Phase 2 (CB-018, current ratification)
+
 ```json
 {
   "status": "RATIFIED",
+  "ratified_by": "James Dye (PI), via delegated authority to Architect Claude",
+  "ratified_at": "2026-05-07T19:00:00Z",
+  "spec_version": "INGESTION_TARGETS_v2_phase2_mass_density",
+  "delegation_note": "PI delegated Phase-2 ratification to Architect Claude in CB-018 brief (TASK-CB-018 'Mass Scale-Up to Phase-2 Density'). Architect ratified Phase-2 targets per the brief's per-adapter expansion table, bumping the lower-worlds substantive density ~9x (atomic 590->3500, molecular 4123->50000, math 200->600+, KEGG 50->500) and the 12 upper worlds to orthogonal substantive coverage (200-500 per world).",
+  "phase": 2,
+  "phase_total_records": 57650,
+  "phase_a_status": "landed_at_phase_2_envelope_in_cb018",
+  "phase_b_status": "landed_at_phase_2_envelope_in_cb018",
+  "phase_2_adapter_records_available_offline": 4642,
+  "payload_contract": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+  "predecessor_spec": "INGESTION_TARGETS_v1_phase1_substantive",
+  "predecessor_total_records": 6653,
+  "scale_up_factor": "8.7x (57650 / 6653)",
+  "content_hash_scope": "sha256 over the canonical ingestion-targets table block between ingestion-targets:start and ingestion-targets:end",
+  "content_hash_recompute_after_commit": true,
+  "next_phase_review_trigger": "Phase-2 first-cycle wall-clock data + per-source rate-limit diligence after the daemon completes one full Phase-2 fetch cycle (4-8h wall-clock estimate per CB-018 brief)"
+}
+```
+
+### Phase 1 (CB-014/015/016 superseded baseline, kept for provenance)
+
+```json
+{
+  "status": "SUPERSEDED_BY_PHASE_2_CB018",
   "ratified_by": "James Dye (PI), via delegated authority to Architect Claude",
   "ratified_at": "2026-05-07T14:07:39Z",
   "spec_version": "INGESTION_TARGETS_v1_phase1_substantive",
