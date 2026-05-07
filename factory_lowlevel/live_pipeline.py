@@ -73,6 +73,7 @@ from .adapters import (
     FlyBaseMorphogenProfileAdapter,
     GBIFJornadaEcosystemAdapter,
     KEGGEcoliCRNAdapter,
+    KEGGOrganismCRNAdapter,
     MathPrimitivesCatalogAdapter,
     MovebankSwarmBehaviorAdapter,
     NCBIEndosymbiosisGenomeAdapter,
@@ -99,6 +100,15 @@ TASK033_ADAPTERS = (
     NCBIHIVQuasispeciesAdapter,
 )
 
+# CB-015 T4 — KEGG generalized to top-50 reference organisms.
+# Registered as a separate adapter from KEGGEcoliCRNAdapter so the
+# original eco-only path remains available for tests that pin the
+# legacy single-organism behavior. The generalized adapter emits one
+# record per organism (50 records when --allow-network).
+CB015_ADAPTERS = (
+    KEGGOrganismCRNAdapter,
+)
+
 TASK035_ADAPTERS = (
     SzostakLiposomeProtocellAdapter,
     FlyBaseMorphogenProfileAdapter,
@@ -116,6 +126,7 @@ ALL_FACTORY_ADAPTERS = (
     MathPrimitivesCatalogAdapter,
     *TASK033_ADAPTERS,
     *TASK035_ADAPTERS,
+    *CB015_ADAPTERS,
 )
 
 WORLD_LABELS = {
