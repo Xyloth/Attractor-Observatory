@@ -2104,3 +2104,46 @@ make_campaign_026 + make_source_object_generation both green; snapshot
 regen ok (15/15 status sections).
 
 Actual 18.58 min vs 30 min estimate. delta 0.6194.
+
+
+## 2026-05-07 09:24:21 EST — TASK-CB-014 Daemon launch + first-cycle clean check
+
+Claude Builder. Phase-1 substantive targets ratified, public-contract
+hash drift fixed, daemon launched with single-cycle drill on W-1
+(atomic_molecular_primitives, smallest fastest-validating world per
+brief).
+
+**Clean check at 09:24:21 EST.**
+
+- Heartbeat: `clean_shutdown` (cycle complete, lock released)
+- Cycle 0 session_id: sha256:378e9eea88ed48211545b03…
+- Due sources: 2 (NIST atomic spectra + PubChem small molecules)
+- Completed: 2; quarantined: 0; audits: 0
+- Records persisted to `reports/task_cb014_launch/factory_store/`: 5 (small_molecule_topology_summary)
+- Trace verification: world_traces.json present (no per-world traces from this offline cycle — adapter path dependent)
+- Per-world progress at `reports/factory_daemon_progress/atomic_molecular_primitives.json`: 5/5600 (0.1%)
+
+**Honest-state note (D14/D17/D22):** the 5-record outcome reflects
+the current adapter envelope. The bundled NIST seed has 5 elements
+(H I, He I, Li I, Ne I, Ar I); the PubChem adapter ships 5 CIDs
+(water/methane/CO2/ammonia/benzene). Network was OFF for the launch
+drill. To reach the Phase-1 W-1 target of 5,600 records, adapter
+expansion (full periodic table query + ChEBI/DrugBank/KEGG molecular
+batch) is producer-side work that has not yet shipped. The targets
+doc flags this in its Builder-note: "Adapter expansion may be
+required to reach the ChEBI + DrugBank breadth — this is acceptable
+producer-side work for Phase 1 and tracked under follow-up tickets,
+not within the daemon-launch ticket itself."
+
+**Daemon NOT continuing unbounded.** The drill cycle confirmed the
+launch chain works end-to-end (lock + signals + atomic checkpoint +
+resume verification + progress writer). I stopped after `cycles=1`
+because: (a) sources just completed, so a `cycles=0` run wouldn't
+fetch anything new for ~30 days under the default `monthly` cadence;
+(b) the actual ingestion volume target requires adapter expansion
+which is a separate ticket; (c) running an unbounded daemon that
+wakes once per hour but does nothing for 30 days is busywork, not
+monitoring. PI signal needed before flipping to unbounded.
+
+**Final main SHA:** `3a19f08` (post-merge, post-hash-resync).
+**68/68 public_tests passing.**
