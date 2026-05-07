@@ -1,16 +1,33 @@
-"""Continuous-cycle launcher for unattended Factory ingestion."""
+"""Continuous-cycle launcher for unattended Factory ingestion.
+
+CB-013 hardening: lock file, SIGINT/SIGTERM handlers, atomic
+checkpoint, resume-from-heartbeat verification. See
+``launch_safety.py`` for the underlying mechanics — this module wires
+them into ``run_continuous_daemon``.
+"""
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import signal
+import sys
 import time
 from pathlib import Path
 from typing import Any
 
+from .launch_safety import (
+    SignalState,
+    acquire_lock,
+    install_signal_handlers,
+    release_lock,
+    verify_resume,
+    write_checkpoint,
+)
 from .live_pipeline import available_adapters, run_live_factory_cycle
 from .persistence import atomic_write_json
+from .progress import write_ingestion_progress
 from .schemas import sha256, utc_now
 
 
@@ -19,6 +36,7 @@ DEFAULT_STATE = Path("project_telemetry/factory_daemon_state.json")
 DEFAULT_HEARTBEAT = Path("control_room/cache/factory_daemon_heartbeat.json")
 
 _STOP_REQUESTED = False
+_SIGNAL_STATE: SignalState = SignalState()
 
 
 def cadence_seconds(label: str) -> int:
@@ -62,9 +80,47 @@ def run_continuous_daemon(
     other due sources still run and write their own provenance-bound artifacts.
     """
 
-    global _STOP_REQUESTED
+    global _STOP_REQUESTED, _SIGNAL_STATE
     _STOP_REQUESTED = False
-    _install_signal_handler(heartbeat_path)
+    _SIGNAL_STATE = SignalState()
+
+    # CB-013 T4 — resume verification before any side-effects.
+    resume = verify_resume(heartbeat_path=heartbeat_path, store_root=store_root)
+    if not resume.proceed:
+        atomic_write_json(
+            Path(heartbeat_path),
+            {
+                "schema": "FactoryDaemonHeartbeat.v1",
+                "heartbeat_at": utc_now(),
+                "status": "resume_aborted",
+                "rationale": resume.rationale,
+                "prior_status": resume.prior_status,
+                "integrity_check": resume.integrity_check,
+            },
+        )
+        raise SystemExit(
+            f"\nDaemon refusing to start: {resume.rationale}\n"
+            f"Surface to Builder via control_room/cache/factory_daemon_heartbeat.json.\n"
+        )
+
+    # CB-013 T4 — exclusive lock file. Refuse second instance.
+    lock = acquire_lock(store_root=store_root, pid=os.getpid())
+    if not lock.acquired:
+        atomic_write_json(
+            Path(heartbeat_path),
+            {
+                "schema": "FactoryDaemonHeartbeat.v1",
+                "heartbeat_at": utc_now(),
+                "status": "start_refused_lock_held",
+                "rationale": lock.rationale,
+                "holder_pid": lock.holder_pid,
+                "holder_started_at": lock.holder_started_at,
+            },
+        )
+        raise SystemExit(f"\nDaemon refusing to start: {lock.rationale}\n")
+
+    # CB-013 T4 — SIGINT/SIGTERM handlers. Replace prior single-handler.
+    install_signal_handlers(_SIGNAL_STATE, heartbeat_path=heartbeat_path)
 
     state = _read_json(Path(state_path), default={"schema": "FactoryDaemonState.v1", "last_success_by_source": {}})
     session_records: list[dict[str, Any]] = []
@@ -103,7 +159,11 @@ def run_continuous_daemon(
             continue
 
         for row in due_sources:
-            if _STOP_REQUESTED:
+            # CB-013 T4: SIGINT (graceful) → finish current cycle then break;
+            # SIGTERM (hard) → break immediately. Both surface in heartbeat.
+            if _STOP_REQUESTED or _SIGNAL_STATE.stop_requested:
+                break
+            if _SIGNAL_STATE.hard_stop_requested:
                 break
             source_id = row["source_id"]
             result = _run_source_with_retries(
@@ -127,16 +187,66 @@ def run_continuous_daemon(
             _write_heartbeat(heartbeat_path, session=session, status="running")
 
         session["completed_at"] = utc_now()
-        session["status"] = "stop_requested" if _STOP_REQUESTED else "complete"
+        if _SIGNAL_STATE.hard_stop_requested:
+            session["status"] = "hard_shutdown"
+        elif _STOP_REQUESTED or _SIGNAL_STATE.stop_requested:
+            session["status"] = "stop_requested"
+        else:
+            session["status"] = "complete"
         atomic_write_json(Path(state_path), state)
         _append_jsonl(session_ledger, _with_session_id(session))
+        # CB-013 T4: atomic checkpoint of factory_store snapshot so a
+        # crash mid-write cannot corrupt downstream consumers.
+        snapshot_path = Path(store_root) / "snapshot.json"
+        if snapshot_path.exists():
+            try:
+                snap_payload = json.loads(snapshot_path.read_text(encoding="utf-8-sig"))
+                write_checkpoint(snapshot_path=snapshot_path, payload=snap_payload)
+            except (OSError, json.JSONDecodeError):
+                pass
         _write_heartbeat(heartbeat_path, session=session, status=session["status"])
+        # CB-013 T5: per-world progress tracking (one ingestion_progress.json
+        # per world per session) so the BUILDER playbook can read progress
+        # without parsing the full session ledger.
+        try:
+            write_ingestion_progress(
+                session=session,
+                state=state,
+                store_root=store_root,
+                source_rows=source_rows,
+            )
+        except Exception:  # pragma: no cover — progress write must never break the daemon
+            pass
         session_records.append(session)
-        if _STOP_REQUESTED:
+        if _STOP_REQUESTED or _SIGNAL_STATE.stop_requested or _SIGNAL_STATE.hard_stop_requested:
             break
         cycle_index += 1
         if cycles <= 0 or cycle_index < cycles:
-            time.sleep(sleep_seconds)
+            # CB-013 T4: SIGTERM check during sleep; sleep in 1s slices
+            # so a hard-stop signal is honored within ~1 second.
+            slept = 0
+            while slept < sleep_seconds:
+                if _SIGNAL_STATE.hard_stop_requested:
+                    break
+                time.sleep(1)
+                slept += 1
+    # CB-013 T4: clean shutdown finalize (lock release + final heartbeat).
+    final_status = (
+        "hard_shutdown" if _SIGNAL_STATE.hard_stop_requested
+        else "clean_shutdown"
+    )
+    atomic_write_json(
+        Path(heartbeat_path),
+        {
+            "schema": "FactoryDaemonHeartbeat.v1",
+            "heartbeat_at": utc_now(),
+            "status": final_status,
+            "cycles_completed": cycle_index,
+            "last_signal": _SIGNAL_STATE.last_signal,
+            "last_signal_at": _SIGNAL_STATE.last_signal_at,
+        },
+    )
+    release_lock(store_root=store_root, pid=os.getpid())
     return session_records
 
 
