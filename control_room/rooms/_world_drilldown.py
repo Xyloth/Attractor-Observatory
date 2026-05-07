@@ -135,6 +135,13 @@ def _render_math_primitives(records: list[dict[str, Any]]) -> None:
         invariants = payload.get("invariants") or []
         parameters = payload.get("parameters") or {}
         state_eq = payload.get("state_equation", "")
+        # CB-017: deterministic key prevents StreamlitDuplicateElementId
+        # when multiple math-primitive phase portraits share parameter
+        # signatures (Lorenz, Rössler, Sprott variants etc.). Derive
+        # from record_id (sha256, unique per ingested record) + canonical
+        # so the key survives re-renders and is human-readable in tracebacks.
+        record_id = str(rec.get("record_id") or "")
+        chart_key = f"math_primitive_chart_{i}_{record_id[:12]}_{canonical}"
 
         with cols[i % 2]:
             st.markdown(
@@ -159,7 +166,7 @@ def _render_math_primitives(records: list[dict[str, Any]]) -> None:
             )
             fig = _phase_portrait(canonical, parameters, dimension)
             if fig is not None:
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, key=chart_key)
 
 
 def _phase_portrait(canonical_name: str, parameters: dict, dimension: int | str):
@@ -357,6 +364,11 @@ def _render_atom_card(rec: dict[str, Any]) -> None:
     n_terms = payload.get("term_count", "?")
     source_url = (rec.get("provenance") or {}).get("source_url", "")
     canonical = rec.get("canonical_name", "?")
+    # CB-017: this helper is called from a for-loop in
+    # _render_atomic_molecular(). Without a unique key, the energy-ladder
+    # chart below collides with sibling atom cards (StreamlitDuplicateElementId).
+    record_id = str(rec.get("record_id") or "")
+    chart_key = f"atom_card_chart_{record_id[:12]}_{element}_{spectrum}".replace(" ", "_")
 
     st.markdown(
         f'<div style="background: var(--bg-panel); border: 1px solid var(--border); '
@@ -398,7 +410,7 @@ def _render_atom_card(rec: dict[str, Any]) -> None:
             yaxis=dict(gridcolor="#283042", color="#9aa0ac", title="E (eV)"),
             showlegend=False,
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key=chart_key)
 
 
 def _render_molecule_card(rec: dict[str, Any]) -> None:
