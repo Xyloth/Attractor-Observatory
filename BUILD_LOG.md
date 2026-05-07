@@ -2147,3 +2147,96 @@ monitoring. PI signal needed before flipping to unbounded.
 
 **Final main SHA:** `3a19f08` (post-merge, post-hash-resync).
 **68/68 public_tests passing.**
+
+
+## 2026-05-07 11:31:56 EST — TASK-CB-015 Phase-A adapter expansion + substantive launch
+
+Claude Builder. Phase-1 adapter expansion landed on main:
+
+- NIST atomic: 590 spectra (118 × 5 ionization stages)
+- PubChem: CIDs 1-5500, max_records 5000
+- Math primitives: 200-entry peer-reviewed catalog (85 unique DOIs)
+- KEGG: 50-organism reference roster (was eco-only)
+
+86/86 public_tests passing on main (`3f4890b`).
+
+Daemon launches:
+- First (PID 52236, math + KEGG, --allow-network): cycle clean in 60s.
+  KEGG hit 50/50 W1 target. Math primitives completed source but
+  routing rejected by W0 router schema mismatch (producer-side
+  follow-up; KEGG records persisted with full provenance).
+- Second (PID 58016, NIST + PubChem with cadence cleared,
+  --allow-network): currently running. First cycle expected to
+  complete in ~3 min (network-bound).
+
+Cadence-lockout note: NIST + PubChem had been fetched in CB-014's
+14:19Z run; the daemon's `monthly` refresh_cadence considers them
+not-due for ~30 days. Cleared the two state entries to force the
+substantive cycle this session — committed change is in
+`project_telemetry/factory_daemon_state.json` audit trail.
+
+Routing rejection note: 50 KEGG records were persisted to
+factory_store BUT all 50 emitted "crn_requires_initial_state_and_
+reactions" routing rejections — the W1 CRN simulator router checks
+top-level `initial_state` + `reactions` keys, while KEGG's payload
+nests them under `world_parameters`. Producer-side follow-up:
+either lift KEGG payload schema or extend W1 router to accept the
+nested form. Out of CB-015 scope (adapter, not router).
+## 2026-05-07 12:40:27 EST - TASK-PHASE-B-ADAPTERS Start
+Codex scoped by PI to adapter expansion only. Not running or monitoring the ingestion factory; Claude Builder owns live daemon monitoring and audit-depth recovery. Goal: expand W2-W13 Phase-1 adapters against existing router payload contract, add focused offline adapter tests, then stop.
+## 2026-05-07 12:43:26 EST - TASK-PHASE-B-ADAPTERS Complete
+Codex complete under PI-scoped lane: expanded W2-W13 adapter shells to Phase-1 record targets only. No live ingestion daemon run, no monitoring, no Control Room work, and no CB audit-queue recovery; those are Claude Builder's lane.
+
+Adapter totals available offline from bundled authoritative seeds: W2 protocell 50, W3 field 100, W4 morphogenesis 100, W5 digital 50, W6 ecosystem 100, W7 swarm 50, W8 cognitive 50, W9 origins_chemistry 100, W10 hypergraph_reactions 50, W11 quasispecies 100, W12 symbiogenesis 50, W13 multiscale 3. Total: 803.
+
+Verification: python -m pytest public_tests/test_phase_b_adapters.py public_tests/test_task035_world_adapters.py public_tests/test_cb015_adapter_expansion.py -q -> 23 passed; python -m py_compile factory_lowlevel/adapters.py -> passed. Actual 3m vs estimate 35m (delta 0.086).
+
+
+## 2026-05-07 11:45:08 EST -- TASK-CB-015 INCIDENT: persistence overwrite bug
+
+**D9 stop on systemic failure** (per BUILDER_INGESTION_MONITORING_PLAYBOOK).
+
+### What tripped
+
+Multi-source daemon cycle persistence is OVERWRITING prior-source records within the same cycle. Discovered when checking post-cycle state: launch 2 (NIST + PubChem with cadence cleared) produced 590 NIST cache files + 50 PubChem cache batches = real network ingestion, but factory_store/empirical_records.json ended with **4,123 PubChem records ONLY**, zero NIST records. The 50 KEGG records from launch 1 also wiped (replaced by launch 2's NIST run, then by PubChem run).
+
+### What was found
+
+`LowLevelFactoryStore.__init__` (factory_lowlevel/persistence.py) initializes empty in-memory dicts on every construction. Does NOT load existing JSON files from disk. Every `run_live_factory_cycle` call:
+
+1. Constructs a fresh empty store
+2. Ingests THIS run's records only
+3. Writes empirical_records.json (replaces file, doesn't merge)
+
+continuous_daemon.py runs ONE source per `run_live_factory_cycle` call, so each source's run wipes the prior source's records from the same store_root.
+
+### Records confirmed CLEAN (silver lining)
+
+Of the 4,123 PubChem records that survived:
+
+- 4123/4123 (100%) full provenance (source_url, retrieval_timestamp, parser_version, authority, raw_exported=False)
+- 4123/4123 (100%) canonical_smiles populated
+- 4123/4123 license_class = metadata_only
+- 4123/4123 methodology_review_required = True
+- Heaviest CID 4326 weight 499.50 g/mol
+
+NIST + KEGG fetch outputs are recoverable from the source_cache (590 NIST CSVs + 50 KEGG TSVs cached). The data was acquired; only the persisted store-state was overwritten.
+
+### Recommendation before resume
+
+Fix path: extend `LowLevelFactoryStore.__init__` to load existing factory_store/*.json from disk on construction so subsequent `store.write()` calls UPSERT (via the dict-keyed-by-id pattern) rather than REPLACE.
+
+This is producer-side data correctness -- same class as CB-008's PubChem SMILES schema fix. **Per CB-015 brief: 'real bug during verification, surface it; don't fix in this ticket.'** Surfacing as TASK-CB-016 candidate; daemon held until fix lands.
+
+### Daemon status
+
+- Lock released (clean_shutdown after launch 2 cycle)
+- 4,123 PubChem records persisted (real network volume; clean provenance)
+- Cache directories preserved: 590 NIST CSVs + 50 PubChem JSONs + 50 KEGG TSVs + 1 math TSV -- re-running on a fixed persistence layer would replay from cache without re-fetching
+- W-1 Phase-1 progress: 4,123 / 5,600 = 73.6% for molecular side; atomic side 0/600 because of the overwrite bug
+
+### Next steps
+
+1. Hand off to PI for fix decision (TASK-CB-016 persistence load-on-init)
+2. While fix pends: do NOT relaunch the daemon multi-source. If interim ingestion needed, run one source per daemon launch (single-source cycles persist correctly)
+3. After fix: relaunch with --allow-network and let the cached NIST + KEGG raw responses replay into the store via the adapter cache hits (no re-fetch needed)
