@@ -1,0 +1,22 @@
+{
+  "schema": "MeasurabilityRecoveryPlanSignature.v1",
+  "task_id": "TASK-MEAS-PLAN",
+  "artifact": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+  "artifact_raw_sha256": "sha256:86cd22a55b870299422aa7f34701937369e350f567f9daa5d8b64b16d2aee1f5",
+  "signed_at_est": "2026-05-06 20:30:08 EST",
+  "signed_by": "Codex 1.5x",
+  "basis": {
+    "campaign_024_bad_cell_count": 33,
+    "all_bad_cells_classified_once": true,
+    "floor_cells_formalism_req": true,
+    "autocatalytic_reaction_cells_diagnostic_only": true,
+    "implementation_performed": false
+  },
+  "signature": {
+    "scheme": "sha256-raw-file-bytes",
+    "status": "resigned_after_d31_floor_reclassification"
+  },
+  "resigned_at_est": "2026-05-07 07:27:57 EST",
+  "resigned_by": "Codex 1.5x TASK-FLOOR-BFG",
+  "resign_reason": "D31 ratified and floor_connectivity cells reclassified after Campaign 026."
+}

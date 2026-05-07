@@ -83,6 +83,8 @@ def build_snapshot() -> dict[str, Any]:
         "generated_at": now,
         "generation_binding": generation_binding,
         "freshness_status": generation_binding["freshness_status"],
+        "freshness_status_advisory_only": True,
+        "freshness_policy": "D30: persisted freshness is advisory; load_latest/load_prior recompute against current HEAD at read time.",
         "purpose": (
             "Single-file digest for AI agents starting a fresh session. Read this file "
             "before parsing the 50+ source files referenced below. Each section carries "

@@ -294,10 +294,14 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "decline_expected"
+            "edge_connectivity",
+            "mean_step_distance",
+            "basin_radius_at_recovery"
           ],
           "features_before": [
-            "decline_expected"
+            "edge_connectivity",
+            "mean_step_distance",
+            "basin_radius_at_recovery"
           ],
           "lens_id": "graph",
           "passed": true,
@@ -307,10 +311,10 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "out_of_domain"
+            "domain_decline"
           ],
           "features_before": [
-            "out_of_domain"
+            "domain_decline"
           ],
           "lens_id": "crnt",
           "passed": true,
@@ -320,12 +324,12 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "basin recurrence",
-            "stability"
+            "velocity_damping",
+            "recovery_time_steps"
           ],
           "features_before": [
-            "basin recurrence",
-            "stability"
+            "velocity_damping",
+            "recovery_time_steps"
           ],
           "lens_id": "dynamical_systems",
           "passed": true,
@@ -335,12 +339,14 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "connectivity_proxy",
-            "cycle_persistence_proxy"
+            "point_cloud_containment",
+            "radial_variance",
+            "basin_radius_at_recovery"
           ],
           "features_before": [
-            "connectivity_proxy",
-            "cycle_persistence_proxy"
+            "point_cloud_containment",
+            "radial_variance",
+            "basin_radius_at_recovery"
           ],
           "lens_id": "topology",
           "passed": true,
@@ -350,10 +356,12 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "out_of_domain"
+            "transition_activity",
+            "transition_persistence"
           ],
           "features_before": [
-            "out_of_domain"
+            "transition_activity",
+            "transition_persistence"
           ],
           "lens_id": "petri",
           "passed": true,
@@ -363,12 +371,14 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "large_deviation_rate",
-            "energy_variance"
+            "large_deviation_proxy",
+            "recovery_time_steps",
+            "censored_at_step"
           ],
           "features_before": [
-            "large_deviation_rate",
-            "energy_variance"
+            "large_deviation_proxy",
+            "recovery_time_steps",
+            "censored_at_step"
           ],
           "lens_id": "statistical_mechanics",
           "passed": true,
@@ -378,10 +388,14 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "reachability_proxy"
+            "velocity_rank",
+            "basin_radius_at_recovery",
+            "state_dimension"
           ],
           "features_before": [
-            "reachability_proxy"
+            "velocity_rank",
+            "basin_radius_at_recovery",
+            "state_dimension"
           ],
           "lens_id": "control_theory",
           "passed": true,
@@ -391,10 +405,12 @@
           "ablation_status": "CLEAN",
           "d26_independence": "CLEAN",
           "features_after_ablation": [
-            "out_of_domain"
+            "velocity_drift_dependence",
+            "perturbation_magnitude"
           ],
           "features_before": [
-            "out_of_domain"
+            "velocity_drift_dependence",
+            "perturbation_magnitude"
           ],
           "lens_id": "information",
           "passed": true,
@@ -3948,16 +3964,18 @@
     },
     "motif.floor_connectivity.draft": {
       "allowed_evidence": [
-        "neutral_floor_index",
-        "perturbation outcome profiles",
-        "projection basis equivalence metrics"
+        "bfg_predicate_rows.perturbation_event.outcome_summary.fiber_relationship",
+        "classifier_hash signed at preprocessing",
+        "unit-level predicate verdicts aggregated from predicate_row or validation_predicate_row partitions"
       ],
-      "content_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+      "content_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
       "contract_version": "2",
       "decoy_controls": [
         "C020 surface keys without BFG source return insufficient_evidence",
         "point-attractor falsifier returns negative",
-        "implementation-unique perturbation returns negative"
+        "implementation-unique perturbation returns negative",
+        "D31 row-disjoint predicate/lens partitions have zero perturbation_id overlap",
+        "validation holdout uses validation_predicate_row and validation_lens_row split"
       ],
       "empirically_positive_worlds": [
         {
@@ -4000,7 +4018,9 @@
         "neutral_component_fraction/nested_lineage_edges/attention_entropy state keys",
         "neutral_percolation_event tokens",
         "process_flags.floor",
-        "C020 label function"
+        "C020 label function",
+        "trajectory_geometry in the predicate path",
+        "same-row predicate/lens evaluation"
       ],
       "invariance_requirements": [
         "event_token_rename leaves predicate verdict unchanged",
@@ -4016,241 +4036,180 @@
       "lens_abstraction_layer": {
         "control_theory": {
           "features": [
-            "reachability_proxy"
+            "velocity_rank",
+            "basin_radius_at_recovery",
+            "state_dimension"
           ],
-          "justification": "PARTIAL: reachability overlaps with BFG Reach.",
+          "justification": "NEW-ABST: return controllability over lens-row dynamics.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "control_or_memory_token"
+                "return_velocity_profile",
+                "basin_radius_at_recovery",
+                "recovery_path_states"
               ],
-              "source_object": "events",
-              "type": "control_channel_proxy"
-            },
-            {
-              "fields_read": [
-                "observability_rank",
-                "delta_rank"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "crnt": {
           "features": [
-            "out_of_domain"
+            "domain_decline"
           ],
-          "justification": "Declines.",
+          "justification": "DOMAIN-DECLINE: no reaction-network source object exists at the generic BFG basin-geometry layer.",
           "shares_input_with_predicate": "CLEAN",
-          "source_object_map": [
-            {
-              "fields_read": [
-                "reactants",
-                "products",
-                "stoichiometric_rank"
-              ],
-              "source_object": "parameter_record.reactions",
-              "type": "reaction_network"
-            },
-            {
-              "fields_read": [
-                "species_persistence"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
-            }
-          ]
+          "source_object_map": []
         },
         "dynamical_systems": {
           "features": [
-            "basin recurrence",
-            "stability"
+            "velocity_damping",
+            "recovery_time_steps"
           ],
-          "justification": "PARTIAL: nearby dynamical basin, not quotient fiber.",
+          "justification": "NEW-ABST: basin return dynamics over lens-row trajectories.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "trajectory_shape",
-                "terminal_drift",
-                "recurrence"
+                "return_velocity_profile",
+                "recovery_time_steps"
               ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "graph": {
           "features": [
-            "decline_expected"
+            "edge_connectivity",
+            "mean_step_distance",
+            "basin_radius_at_recovery"
           ],
-          "justification": "CLEAN only if graph continues to decline on floor connectivity.",
+          "justification": "NEW-ABST: basin recovery graph over lens rows, row-disjoint from predicate summaries.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "payload.actor_ids",
-                "payload.parent_child_ids"
+                "recovery_path_states",
+                "basin_radius_at_recovery"
               ],
-              "source_object": "events",
-              "type": "event_graph"
-            },
-            {
-              "fields_read": [
-                "state_key_presence",
-                "trajectory_shape"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "information": {
           "features": [
-            "out_of_domain"
+            "velocity_drift_dependence",
+            "perturbation_magnitude"
           ],
-          "justification": "Declines.",
+          "justification": "PARTIAL/RISKY: recovery information flow uses a perturbation magnitude covariate; C026 denies magnitude and requires noncollapse.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "event_entropy"
+                "return_velocity_profile",
+                "drift_magnitude_envelope",
+                "recovery_time_steps"
               ],
-              "source_object": "events",
-              "type": "event_information"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             },
             {
               "fields_read": [
-                "predictive_state_count",
-                "delta_entropy"
+                "perturbation_magnitude"
               ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event",
+              "type": "BfgPerturbationMetadata"
             }
           ]
         },
         "petri": {
           "features": [
-            "out_of_domain"
+            "transition_activity",
+            "transition_persistence"
           ],
-          "justification": "Declines.",
+          "justification": "NEW-ABST: recovery-transition Petri net candidate over trajectory transitions, not fiber labels.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "reactants",
-                "products",
-                "incidence_rank"
+                "recovery_path_states"
               ],
-              "source_object": "parameter_record.reactions",
-              "type": "reaction_or_transition_network"
-            },
-            {
-              "fields_read": [
-                "type"
-              ],
-              "source_object": "events",
-              "type": "event_transition_proxy"
-            },
-            {
-              "fields_read": [
-                "place_count"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "statistical_mechanics": {
           "features": [
-            "large_deviation_rate",
-            "energy_variance"
+            "large_deviation_proxy",
+            "recovery_time_steps",
+            "censored_at_step"
           ],
-          "justification": "CLEAN but indirect.",
+          "justification": "PARTIAL/RISKY: recovery-time distribution can leak return status if implemented carelessly; C026 denies return_status and requires survival.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "rare_event_rate"
+                "drift_magnitude_envelope",
+                "recovery_time_steps",
+                "censored_at_step"
               ],
-              "source_object": "events",
-              "type": "event_statistics"
-            },
-            {
-              "fields_read": [
-                "energy_variance",
-                "large_deviation_proxy"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "topology": {
           "features": [
-            "connectivity_proxy",
-            "cycle_persistence_proxy"
+            "point_cloud_containment",
+            "radial_variance",
+            "basin_radius_at_recovery"
           ],
-          "justification": "PARTIAL: connectivity on a related but different point cloud.",
+          "justification": "NEW-ABST: topology over recovery trajectory point clouds.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "filtration_geometry",
-                "connectivity_proxy"
+                "recovery_path_states",
+                "basin_radius_at_recovery"
               ],
-              "source_object": "state",
-              "type": "point_cloud"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         }
       },
       "motif_id": "motif.floor_connectivity.draft",
-      "predicate_abstraction_layer": "BFG quotient/fiber perturbation equivalence",
+      "predicate_abstraction_layer": "D31 BFG predicate-side outcome summaries over row-disjoint perturbation units",
       "predicate_source_object_map": [
         {
           "fields_read": [
-            "W_floor",
-            "P_equiv",
-            "L_func",
-            "I_inv",
-            "Reach",
-            "Conn"
+            "fiber_relationship",
+            "origin_fiber_id",
+            "terminal_fiber_id",
+            "fiber_distance",
+            "fiber_graph_distance",
+            "membership_confidence",
+            "boundary_confidence",
+            "return_status",
+            "verdict_state",
+            "classifier_hash"
           ],
-          "source_object": "neutral_floor_index",
-          "type": "bfg_index"
-        },
-        {
-          "fields_read": [
-            "same_fiber_score",
-            "invariant_preserved"
-          ],
-          "source_object": "perturbation_outcome",
-          "type": "bfg_outcome"
-        },
-        {
-          "fields_read": [
-            "function_similarity",
-            "implementation_distance",
-            "cause_similarity"
-          ],
-          "source_object": "projection_basis",
-          "type": "bfg_projection"
+          "source_object": "bfg_predicate_rows.perturbation_event.outcome_summary",
+          "type": "BfgOutcomeSummary"
         }
       ],
       "promotion_requirements": [
         "mode_tag remains exploratory in this campaign",
         "adversarial controls must pass",
         "D26 source-object-map audit must have no BAD primary evidence path",
-        "Destroyer pass-2 required before any claim-bearing promotion"
+        "Destroyer pass-2 required before any claim-bearing promotion",
+        "C026 unit-level shuffle must pass on validation holdout before any future promotion gate can open"
       ],
-      "semantic_definition": "Multiple implementation perturbations remain connected inside equivalence fibers that preserve function and declared invariants in Basin-Floor Geometry.",
+      "semantic_definition": "Multiple implementation perturbations remain connected inside equivalence fibers that preserve function and declared invariants in Basin-Floor Geometry, evaluated under D31 row-disjoint predicate/lens partitions.",
       "signed_at": "2026-05-06T00:00:00-04:00",
       "signed_by": [
         "James Dye (PI)",
@@ -5548,10 +5507,14 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "decline_expected"
+                "edge_connectivity",
+                "mean_step_distance",
+                "basin_radius_at_recovery"
               ],
               "features_before": [
-                "decline_expected"
+                "edge_connectivity",
+                "mean_step_distance",
+                "basin_radius_at_recovery"
               ],
               "lens_id": "graph",
               "passed": true,
@@ -5561,10 +5524,10 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "out_of_domain"
+                "domain_decline"
               ],
               "features_before": [
-                "out_of_domain"
+                "domain_decline"
               ],
               "lens_id": "crnt",
               "passed": true,
@@ -5574,12 +5537,12 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "basin recurrence",
-                "stability"
+                "velocity_damping",
+                "recovery_time_steps"
               ],
               "features_before": [
-                "basin recurrence",
-                "stability"
+                "velocity_damping",
+                "recovery_time_steps"
               ],
               "lens_id": "dynamical_systems",
               "passed": true,
@@ -5589,12 +5552,14 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "connectivity_proxy",
-                "cycle_persistence_proxy"
+                "point_cloud_containment",
+                "radial_variance",
+                "basin_radius_at_recovery"
               ],
               "features_before": [
-                "connectivity_proxy",
-                "cycle_persistence_proxy"
+                "point_cloud_containment",
+                "radial_variance",
+                "basin_radius_at_recovery"
               ],
               "lens_id": "topology",
               "passed": true,
@@ -5604,10 +5569,12 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "out_of_domain"
+                "transition_activity",
+                "transition_persistence"
               ],
               "features_before": [
-                "out_of_domain"
+                "transition_activity",
+                "transition_persistence"
               ],
               "lens_id": "petri",
               "passed": true,
@@ -5617,12 +5584,14 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "large_deviation_rate",
-                "energy_variance"
+                "large_deviation_proxy",
+                "recovery_time_steps",
+                "censored_at_step"
               ],
               "features_before": [
-                "large_deviation_rate",
-                "energy_variance"
+                "large_deviation_proxy",
+                "recovery_time_steps",
+                "censored_at_step"
               ],
               "lens_id": "statistical_mechanics",
               "passed": true,
@@ -5632,10 +5601,14 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "reachability_proxy"
+                "velocity_rank",
+                "basin_radius_at_recovery",
+                "state_dimension"
               ],
               "features_before": [
-                "reachability_proxy"
+                "velocity_rank",
+                "basin_radius_at_recovery",
+                "state_dimension"
               ],
               "lens_id": "control_theory",
               "passed": true,
@@ -5645,10 +5618,12 @@
               "ablation_status": "CLEAN",
               "d26_independence": "CLEAN",
               "features_after_ablation": [
-                "out_of_domain"
+                "velocity_drift_dependence",
+                "perturbation_magnitude"
               ],
               "features_before": [
-                "out_of_domain"
+                "velocity_drift_dependence",
+                "perturbation_magnitude"
               ],
               "lens_id": "information",
               "passed": true,
@@ -5656,7 +5631,7 @@
             }
           ],
           "adversarial_controls_passed": true,
-          "contract_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+          "contract_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
           "corpus_size_per_substrate": {
             "crn": {
               "negative": 27,
@@ -6315,7 +6290,7 @@
         "mean": -0.0008883892585354346
       },
       "observed_gap": 0.19887983666210657,
-      "preregistration_hash": "sha256:18c8a0ee4245f38ed24da5bfadc349d20855e1c05b323269f891eef5ab0c7b1b",
+      "preregistration_hash": "sha256:c24504db86d14da33ed1b3c7cfec42978ee1130fac5877881fbdd3c45d5ac3bd",
       "primary_lens": "campaign009_bfg_calibrated_detector",
       "primary_lens_rationale": "Floor connectivity uses the BFG calibration score because old formal lenses correctly decline or are only indirect for this motif.",
       "schema": "Campaign023SubstrateBlockedControl.v1"

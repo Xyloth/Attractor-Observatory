@@ -1010,3 +1010,57 @@ Verification: `python make_campaign_024.py` green. `python -m pytest tests/test_
 
 **Stop condition.** Substantive W-1 ingestion completed before the 90-minute ceiling; no unresolved adapter/world/methodology issue remained after fixes. Audit items are source-limitation escalations, not parser failures.
 =======
+
+## 2026-05-06 - TASK-LENS-RECOVERY-R1 Start
+
+Codex 1.5x start: 2026-05-06 19:35:13 EST. Goal: Round 1 co-authorship/design review for lens recovery after Campaign 024, no implementation. Estimate 55 minutes. Scope: classify all 33 BAD motif x lens cells, improve Architect's recovery taxonomy and lens-variant proposals, assess repair/lineage/floor measurability, propose C025 methodology revisions and D27 candidate language if warranted.
+
+## 2026-05-06 - TASK-LENS-RECOVERY-R1 Complete
+
+Codex 1.5x complete: 2026-05-06 19:38:10 EST. Round 1 design draft shipped at `papers/methods/LENS_RECOVERY_v1_DRAFT.md`. No implementation performed.
+
+Draft contents: blind spots Architect missed, seven-class recovery taxonomy, explicit classification of all 33 Campaign 024 BAD cells, amended lens-variant proposals with `// CODEX:` comments, per-motif measurability analysis for repair/replication_lineage/floor_connectivity, C025 methodology revision, minimum source-object contracts for Round 2, C025 acceptance gates, and D27 candidate language.
+
+Core conclusion: the next move is not simply "recover 33 cells." Autocatalytic closure reaction graph/CRNT/Petri are diagnostic-only or BAD-ARCH without source split; repair needs perturbation-response ensembles; lineage needs declared-lineage vs entity-observation split; floor likely needs Phase 7 BFG formalism before recovery.
+
+## 2026-05-06 - TASK-MEAS-PLAN Start
+
+Codex 1.5x start: 2026-05-06 20:26:37 EST. Goal: author `papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md`, a signed per-cell measurability assessment for all 33 Campaign 024 BAD cells. Estimate 45 minutes. No implementation; this is a plan and classification artifact applying ratified D27.
+
+## 2026-05-06 - TASK-MEAS-PLAN Complete
+
+Codex 1.5x complete: 2026-05-06 20:30:08 EST. Measurability Recovery Plan v1 shipped at `papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md`; raw-byte signature at `papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json`; structure preregistration at `papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json`.
+
+Plan classifies all 33 Campaign 024 BAD cells exactly once: REF-STRUCT 0, NEW-ABST 3, SCHEMA-SPLIT 12, BAD-ARCH 0, DOMAIN-DECLINE 7, DIAG-ONLY 3, FORMALISM-REQ 8, NEEDS_PI_ARCHITECT_DECISION 0. Acceptance gates passed: floor_connectivity all FORMALISM-REQ / awaiting formalism; autocatalytic_closure graph/CRNT/Petri all DIAG-ONLY / permanent diagnostic-only; no implementation performed.
+
+Source-object campaigns required: perturbation_response_ensemble, entity_observations, external_channel_samples, boundary_region_samples, boundary_maintenance_reaction_network, boundary_maintenance_transition_system, heldout_perturbation_fiber_graph. Honest measurability count over the 33 BAD cells: 15 potentially recoverable as legitimate evidence after source work, 10 permanent non-evidence, 8 formalism-pending; 1 ready from current corpus.
+
+## 2026-05-06 - TASK-DX-002-FIX Start
+
+Codex 1.5x start: 2026-05-06 21:05:38 EST. Branch: codex/task-dx-002-fix. Goal: fix all technically repairable DX-002 findings from falsification pass at frozen HEAD a35aab1, ratify D28-D30, repair public/private evidence markers, doctrine registry integrity, telemetry, snapshot freshness, research packaging, and review-closure semantics. Estimate 95 minutes. Falsification branch is read-only; no motif/cell promotion or lens implementation.
+
+## 2026-05-06 21:24:19 EST ? TASK-DX-002-FIX complete
+- Dispositioned 433 non-held DX-002 findings: 50 technical repairs, 383 private-boundary marker repairs, 0 escalated, 0 acceptable skips.
+- Ratified D28-D30 and applied D27; rebuilt doctrine registry/spec lineage hashes, public tests, read-time snapshot freshness, and research-object packaging.
+- Verification: public_tests 33 passed; py_compile passed; explicit DX-002 invariants passed. Actual 18.69 min vs estimate 95 min (delta 0.20).
+
+## 2026-05-07 07:16:12 EST ? TASK-FLOOR-BFG start
+- Codex A implementing D31 floor BFG split: trace schema bump, locked classifier, trajectory-only floor lenses, grouped-stratified perturbation corpus, Campaign 026, D31 doctrine ratification.
+
+## 2026-05-07 07:17:34 EST - TASK-SOURCE-OBJ-GEN Start
+Codex B 1.5x start. Lane: source-object corpus generation for non-floor motifs only. Forbidden zones observed: formalism/, motif_contracts/, floor_connectivity*, factory_lowlevel/perturbation_*, control_room/. Estimate 85 minutes. Scope/complexity 8/8. Planned artifacts: four factory_lowlevel source-object adapters, deterministic corpus tests, MRP source_exists/ready status updates, source-object report. Calibration method: reference TASK-W-1 was 90m estimated / 15.47m actual because source-volume reused existing daemon scaffolding; this task has smaller runtime volume but more semantic design: 4 new adapter classes x ~12m, tests/report/MRP x ~25m, inspect/sync x ~12m, verification/debug buffer x ~0-20m. Fast mode and recent reuse compress naive 120m to 85m; do not shrink acceptance gates to meet estimate.
+
+## 2026-05-07 07:27:55 EST - TASK-SOURCE-OBJ-GEN Complete
+Codex B 1.5x complete. Built four non-floor source-object corpora/adapters: perturbation_response_ensemble, entity_observations, external_channel_samples, boundary_region_samples. Generated 499 source-object records total (450 accepted, 49 decoys) with D26 source_object_map, predicate-safe split metadata, D29 private evidence markers where applicable, methodology_review_required=true, metadata_only license enforcement, raw_exported=false, and zero claim-bearing promotions.
+
+Updated MEASURABILITY_RECOVERY_PLAN_v1.md so 13 non-floor cells are ready_for_round_2c_implementation. Left floor connectivity to Codex A and left boundary-maintenance CRNT/Petri source objects awaiting their separate corpora.
+
+Verification: python make_source_object_generation.py -> green (499 records); python -m pytest public_tests\test_source_object_generation.py tests\test_campaign016.py tests\test_world_adapters_task035.py public_tests\test_task035_world_adapters.py -q -> 19 passed; python -m py_compile factory_lowlevel\adapters.py factory_lowlevel\source_object_generation.py make_source_object_generation.py -> passed. Full pytest currently has an unrelated doctrine-registry hash failure from D31 doctrine work in the parallel floor lane; I did not touch that lane.
+
+TASK-SOURCE-OBJ-GEN post-completion verification addendum: public_tests full suite passed after the initial completion entry: python -m pytest public_tests -q -> 38 passed. Local wall-clock including this final public verification: approximately 13m00s from the estimate entry; PI UI timing remains authoritative if it differs.
+## 2026-05-07 07:36:04 EST - TASK-FLOOR-BFG Complete
+Codex A complete. Implemented D31 floor BFG split with signed predicate-side outcome summary, row-disjoint predicate/lens/validation partitions, trajectory-geometry lens variants, grouped-stratified perturbation corpus, Campaign 026 substrate-blocked sweep, D31 doctrine ratification, floor contract update, and Measurability Recovery Plan floor reclassification.
+
+Campaign 026 status: green. Per-cell verdicts: graph and topology signal_was_substrate_id; CRNT DOMAIN-DECLINE/not_evaluable; dynamical_systems, petri, statistical_mechanics, control_theory, and information signal_survives_shuffle. No claim-bearing promotion. D29 private-boundary markers applied to trace paths and private formalism path citations.
+
+Hashes: preregistration sha256:f0ceb553584dc974aed66024dcd6d9dacd1f2f5a8736cc94c8accaafc8a80ed4; post-run sha256:b746ea0efe781d82a136631857bd18b2bd610cef5191a4b19cf9079886c37eab. Verification: make_campaign_026 green; focused tests 16 passed; extended slice 24 passed before final marker patch; py_compile passed. Actual 19.87m vs estimate 115m (delta 0.173).

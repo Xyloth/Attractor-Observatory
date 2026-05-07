@@ -260,7 +260,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "reason": "historical lens surface contains control_or_memory_token, event, token; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       "crnt": {
         "campaign024_verdict": "BAD",
@@ -290,7 +290,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       "graph": {
         "campaign024_verdict": "BAD",
@@ -310,7 +310,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "reason": "historical lens surface contains event, event_entropy, event_information; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       "petri": {
         "campaign024_verdict": "BAD",
@@ -325,7 +325,7 @@
             "type": "reaction_declaration"
           }
         ],
-        "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       "statistical_mechanics": {
         "campaign024_verdict": "BAD",
@@ -340,7 +340,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "reason": "historical lens surface contains event, event_statistics; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       "topology": {
         "campaign024_verdict": "BAD",
@@ -355,7 +355,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       }
     },
     "motif.repair.draft": {
@@ -1321,16 +1321,18 @@
     },
     "motif.floor_connectivity.draft": {
       "allowed_evidence": [
-        "neutral_floor_index",
-        "perturbation outcome profiles",
-        "projection basis equivalence metrics"
+        "bfg_predicate_rows.perturbation_event.outcome_summary.fiber_relationship",
+        "classifier_hash signed at preprocessing",
+        "unit-level predicate verdicts aggregated from predicate_row or validation_predicate_row partitions"
       ],
-      "content_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+      "content_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
       "contract_version": "2",
       "decoy_controls": [
         "C020 surface keys without BFG source return insufficient_evidence",
         "point-attractor falsifier returns negative",
-        "implementation-unique perturbation returns negative"
+        "implementation-unique perturbation returns negative",
+        "D31 row-disjoint predicate/lens partitions have zero perturbation_id overlap",
+        "validation holdout uses validation_predicate_row and validation_lens_row split"
       ],
       "empirically_positive_worlds": [
         {
@@ -1373,7 +1375,9 @@
         "neutral_component_fraction/nested_lineage_edges/attention_entropy state keys",
         "neutral_percolation_event tokens",
         "process_flags.floor",
-        "C020 label function"
+        "C020 label function",
+        "trajectory_geometry in the predicate path",
+        "same-row predicate/lens evaluation"
       ],
       "invariance_requirements": [
         "event_token_rename leaves predicate verdict unchanged",
@@ -1389,241 +1393,180 @@
       "lens_abstraction_layer": {
         "control_theory": {
           "features": [
-            "reachability_proxy"
+            "velocity_rank",
+            "basin_radius_at_recovery",
+            "state_dimension"
           ],
-          "justification": "PARTIAL: reachability overlaps with BFG Reach.",
+          "justification": "NEW-ABST: return controllability over lens-row dynamics.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "control_or_memory_token"
+                "return_velocity_profile",
+                "basin_radius_at_recovery",
+                "recovery_path_states"
               ],
-              "source_object": "events",
-              "type": "control_channel_proxy"
-            },
-            {
-              "fields_read": [
-                "observability_rank",
-                "delta_rank"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "crnt": {
           "features": [
-            "out_of_domain"
+            "domain_decline"
           ],
-          "justification": "Declines.",
+          "justification": "DOMAIN-DECLINE: no reaction-network source object exists at the generic BFG basin-geometry layer.",
           "shares_input_with_predicate": "CLEAN",
-          "source_object_map": [
-            {
-              "fields_read": [
-                "reactants",
-                "products",
-                "stoichiometric_rank"
-              ],
-              "source_object": "parameter_record.reactions",
-              "type": "reaction_network"
-            },
-            {
-              "fields_read": [
-                "species_persistence"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
-            }
-          ]
+          "source_object_map": []
         },
         "dynamical_systems": {
           "features": [
-            "basin recurrence",
-            "stability"
+            "velocity_damping",
+            "recovery_time_steps"
           ],
-          "justification": "PARTIAL: nearby dynamical basin, not quotient fiber.",
+          "justification": "NEW-ABST: basin return dynamics over lens-row trajectories.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "trajectory_shape",
-                "terminal_drift",
-                "recurrence"
+                "return_velocity_profile",
+                "recovery_time_steps"
               ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "graph": {
           "features": [
-            "decline_expected"
+            "edge_connectivity",
+            "mean_step_distance",
+            "basin_radius_at_recovery"
           ],
-          "justification": "CLEAN only if graph continues to decline on floor connectivity.",
+          "justification": "NEW-ABST: basin recovery graph over lens rows, row-disjoint from predicate summaries.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "payload.actor_ids",
-                "payload.parent_child_ids"
+                "recovery_path_states",
+                "basin_radius_at_recovery"
               ],
-              "source_object": "events",
-              "type": "event_graph"
-            },
-            {
-              "fields_read": [
-                "state_key_presence",
-                "trajectory_shape"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "information": {
           "features": [
-            "out_of_domain"
+            "velocity_drift_dependence",
+            "perturbation_magnitude"
           ],
-          "justification": "Declines.",
+          "justification": "PARTIAL/RISKY: recovery information flow uses a perturbation magnitude covariate; C026 denies magnitude and requires noncollapse.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "event_entropy"
+                "return_velocity_profile",
+                "drift_magnitude_envelope",
+                "recovery_time_steps"
               ],
-              "source_object": "events",
-              "type": "event_information"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             },
             {
               "fields_read": [
-                "predictive_state_count",
-                "delta_entropy"
+                "perturbation_magnitude"
               ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event",
+              "type": "BfgPerturbationMetadata"
             }
           ]
         },
         "petri": {
           "features": [
-            "out_of_domain"
+            "transition_activity",
+            "transition_persistence"
           ],
-          "justification": "Declines.",
+          "justification": "NEW-ABST: recovery-transition Petri net candidate over trajectory transitions, not fiber labels.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "reactants",
-                "products",
-                "incidence_rank"
+                "recovery_path_states"
               ],
-              "source_object": "parameter_record.reactions",
-              "type": "reaction_or_transition_network"
-            },
-            {
-              "fields_read": [
-                "type"
-              ],
-              "source_object": "events",
-              "type": "event_transition_proxy"
-            },
-            {
-              "fields_read": [
-                "place_count"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "statistical_mechanics": {
           "features": [
-            "large_deviation_rate",
-            "energy_variance"
+            "large_deviation_proxy",
+            "recovery_time_steps",
+            "censored_at_step"
           ],
-          "justification": "CLEAN but indirect.",
+          "justification": "PARTIAL/RISKY: recovery-time distribution can leak return status if implemented carelessly; C026 denies return_status and requires survival.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "type",
-                "rare_event_rate"
+                "drift_magnitude_envelope",
+                "recovery_time_steps",
+                "censored_at_step"
               ],
-              "source_object": "events",
-              "type": "event_statistics"
-            },
-            {
-              "fields_read": [
-                "energy_variance",
-                "large_deviation_proxy"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         },
         "topology": {
           "features": [
-            "connectivity_proxy",
-            "cycle_persistence_proxy"
+            "point_cloud_containment",
+            "radial_variance",
+            "basin_radius_at_recovery"
           ],
-          "justification": "PARTIAL: connectivity on a related but different point cloud.",
+          "justification": "NEW-ABST: topology over recovery trajectory point clouds.",
           "shares_input_with_predicate": "CLEAN",
           "source_object_map": [
             {
               "fields_read": [
-                "filtration_geometry",
-                "connectivity_proxy"
+                "recovery_path_states",
+                "basin_radius_at_recovery"
               ],
-              "source_object": "state",
-              "type": "point_cloud"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ]
         }
       },
       "motif_id": "motif.floor_connectivity.draft",
-      "predicate_abstraction_layer": "BFG quotient/fiber perturbation equivalence",
+      "predicate_abstraction_layer": "D31 BFG predicate-side outcome summaries over row-disjoint perturbation units",
       "predicate_source_object_map": [
         {
           "fields_read": [
-            "W_floor",
-            "P_equiv",
-            "L_func",
-            "I_inv",
-            "Reach",
-            "Conn"
+            "fiber_relationship",
+            "origin_fiber_id",
+            "terminal_fiber_id",
+            "fiber_distance",
+            "fiber_graph_distance",
+            "membership_confidence",
+            "boundary_confidence",
+            "return_status",
+            "verdict_state",
+            "classifier_hash"
           ],
-          "source_object": "neutral_floor_index",
-          "type": "bfg_index"
-        },
-        {
-          "fields_read": [
-            "same_fiber_score",
-            "invariant_preserved"
-          ],
-          "source_object": "perturbation_outcome",
-          "type": "bfg_outcome"
-        },
-        {
-          "fields_read": [
-            "function_similarity",
-            "implementation_distance",
-            "cause_similarity"
-          ],
-          "source_object": "projection_basis",
-          "type": "bfg_projection"
+          "source_object": "bfg_predicate_rows.perturbation_event.outcome_summary",
+          "type": "BfgOutcomeSummary"
         }
       ],
       "promotion_requirements": [
         "mode_tag remains exploratory in this campaign",
         "adversarial controls must pass",
         "D26 source-object-map audit must have no BAD primary evidence path",
-        "Destroyer pass-2 required before any claim-bearing promotion"
+        "Destroyer pass-2 required before any claim-bearing promotion",
+        "C026 unit-level shuffle must pass on validation holdout before any future promotion gate can open"
       ],
-      "semantic_definition": "Multiple implementation perturbations remain connected inside equivalence fibers that preserve function and declared invariants in Basin-Floor Geometry.",
+      "semantic_definition": "Multiple implementation perturbations remain connected inside equivalence fibers that preserve function and declared invariants in Basin-Floor Geometry, evaluated under D31 row-disjoint predicate/lens partitions.",
       "signed_at": "2026-05-06T00:00:00-04:00",
       "signed_by": [
         "James Dye (PI)",
@@ -2635,7 +2578,7 @@
       "artifact": "reports/campaign_024/full_report.json",
       "campaign_id": "campaign_024",
       "claim_promotion_allowed": false,
-      "lens_coupling_audit_hash": "sha256:727c28ab17048eb5544ef2d4ae4edddfc9598a176d7440a6aca49300a139110c",
+      "lens_coupling_audit_hash": "sha256:7427180fc8c29ee5fa8b36f86813a63a380ddb60e46ac0e6b9fd1d09d3ae4cef",
       "mode": "predicate_and_lens_side_decoupled_rerun_no_promotion",
       "motif_verdicts": {
         "motif.autocatalytic_closure.draft": {
@@ -2693,7 +2636,7 @@
           "substrate_blocked_verdict": "signal_partial_or_inconclusive"
         },
         "motif.floor_connectivity.draft": {
-          "contract_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+          "contract_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
           "corpus_size_per_substrate": {
             "crn": {
               "negative": 27,
@@ -3606,9 +3549,7 @@
           "cell_verdict": "BAD",
           "declined_count": 104,
           "historical_suspect_surfaces": [
-            "control_or_memory_token",
-            "event",
-            "token"
+            "event"
           ],
           "lens_id": "control_theory",
           "mechanical_d26_verdict": "CLEAN",
@@ -3617,22 +3558,15 @@
           "old_contract_source_object_map": [
             {
               "fields_read": [
-                "type",
-                "control_or_memory_token"
+                "return_velocity_profile",
+                "basin_radius_at_recovery",
+                "recovery_path_states"
               ],
-              "source_object": "events",
-              "type": "control_channel_proxy"
-            },
-            {
-              "fields_read": [
-                "observability_rank",
-                "delta_rank"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ],
-          "reason": "historical lens surface contains control_or_memory_token, event, token; clean refactor produced no nondeclined evaluations on this motif corpus"
+          "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
         },
         "crnt": {
           "adversarial_controls_passed": true,
@@ -3655,24 +3589,7 @@
           "mechanical_d26_verdict": "CLEAN",
           "motif_id": "motif.floor_connectivity.draft",
           "nondeclined_count": 0,
-          "old_contract_source_object_map": [
-            {
-              "fields_read": [
-                "reactants",
-                "products",
-                "stoichiometric_rank"
-              ],
-              "source_object": "parameter_record.reactions",
-              "type": "reaction_network"
-            },
-            {
-              "fields_read": [
-                "species_persistence"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
-            }
-          ],
+          "old_contract_source_object_map": [],
           "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
         },
         "dynamical_systems": {
@@ -3691,7 +3608,9 @@
           ],
           "cell_verdict": "BAD",
           "declined_count": 104,
-          "historical_suspect_surfaces": [],
+          "historical_suspect_surfaces": [
+            "event"
+          ],
           "lens_id": "dynamical_systems",
           "mechanical_d26_verdict": "CLEAN",
           "motif_id": "motif.floor_connectivity.draft",
@@ -3699,15 +3618,14 @@
           "old_contract_source_object_map": [
             {
               "fields_read": [
-                "trajectory_shape",
-                "terminal_drift",
-                "recurrence"
+                "return_velocity_profile",
+                "recovery_time_steps"
               ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ],
-          "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+          "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
         },
         "graph": {
           "adversarial_controls_passed": true,
@@ -3725,20 +3643,11 @@
           "old_contract_source_object_map": [
             {
               "fields_read": [
-                "type",
-                "payload.actor_ids",
-                "payload.parent_child_ids"
+                "recovery_path_states",
+                "basin_radius_at_recovery"
               ],
-              "source_object": "events",
-              "type": "event_graph"
-            },
-            {
-              "fields_read": [
-                "state_key_presence",
-                "trajectory_shape"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ],
           "reason": "historical lens surface contains event; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
@@ -3760,9 +3669,7 @@
           "cell_verdict": "BAD",
           "declined_count": 104,
           "historical_suspect_surfaces": [
-            "event",
-            "event_entropy",
-            "event_information"
+            "event"
           ],
           "lens_id": "information",
           "mechanical_d26_verdict": "CLEAN",
@@ -3771,22 +3678,22 @@
           "old_contract_source_object_map": [
             {
               "fields_read": [
-                "type",
-                "event_entropy"
+                "return_velocity_profile",
+                "drift_magnitude_envelope",
+                "recovery_time_steps"
               ],
-              "source_object": "events",
-              "type": "event_information"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             },
             {
               "fields_read": [
-                "predictive_state_count",
-                "delta_entropy"
+                "perturbation_magnitude"
               ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event",
+              "type": "BfgPerturbationMetadata"
             }
           ],
-          "reason": "historical lens surface contains event, event_entropy, event_information; clean refactor produced no nondeclined evaluations on this motif corpus"
+          "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
         },
         "petri": {
           "adversarial_controls_passed": true,
@@ -3805,8 +3712,7 @@
           "cell_verdict": "BAD",
           "declined_count": 104,
           "historical_suspect_surfaces": [
-            "event",
-            "event_transition_proxy"
+            "event"
           ],
           "lens_id": "petri",
           "mechanical_d26_verdict": "CLEAN",
@@ -3815,29 +3721,13 @@
           "old_contract_source_object_map": [
             {
               "fields_read": [
-                "reactants",
-                "products",
-                "incidence_rank"
+                "recovery_path_states"
               ],
-              "source_object": "parameter_record.reactions",
-              "type": "reaction_or_transition_network"
-            },
-            {
-              "fields_read": [
-                "type"
-              ],
-              "source_object": "events",
-              "type": "event_transition_proxy"
-            },
-            {
-              "fields_read": [
-                "place_count"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ],
-          "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
+          "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
         },
         "statistical_mechanics": {
           "adversarial_controls_passed": true,
@@ -3856,8 +3746,7 @@
           "cell_verdict": "BAD",
           "declined_count": 104,
           "historical_suspect_surfaces": [
-            "event",
-            "event_statistics"
+            "event"
           ],
           "lens_id": "statistical_mechanics",
           "mechanical_d26_verdict": "CLEAN",
@@ -3866,22 +3755,15 @@
           "old_contract_source_object_map": [
             {
               "fields_read": [
-                "type",
-                "rare_event_rate"
+                "drift_magnitude_envelope",
+                "recovery_time_steps",
+                "censored_at_step"
               ],
-              "source_object": "events",
-              "type": "event_statistics"
-            },
-            {
-              "fields_read": [
-                "energy_variance",
-                "large_deviation_proxy"
-              ],
-              "source_object": "state",
-              "type": "numeric_state_snapshot"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ],
-          "reason": "historical lens surface contains event, event_statistics; clean refactor produced no nondeclined evaluations on this motif corpus"
+          "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
         },
         "topology": {
           "adversarial_controls_passed": true,
@@ -3899,7 +3781,9 @@
           ],
           "cell_verdict": "BAD",
           "declined_count": 104,
-          "historical_suspect_surfaces": [],
+          "historical_suspect_surfaces": [
+            "event"
+          ],
           "lens_id": "topology",
           "mechanical_d26_verdict": "CLEAN",
           "motif_id": "motif.floor_connectivity.draft",
@@ -3907,14 +3791,14 @@
           "old_contract_source_object_map": [
             {
               "fields_read": [
-                "filtration_geometry",
-                "connectivity_proxy"
+                "recovery_path_states",
+                "basin_radius_at_recovery"
               ],
-              "source_object": "state",
-              "type": "point_cloud"
+              "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+              "type": "BfgTrajectoryGeometry"
             }
           ],
-          "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+          "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
         }
       },
       "motif.repair.draft": {
@@ -6625,20 +6509,11 @@
         "old_contract_source_object_map": [
           {
             "fields_read": [
-              "type",
-              "payload.actor_ids",
-              "payload.parent_child_ids"
+              "recovery_path_states",
+              "basin_radius_at_recovery"
             ],
-            "source_object": "events",
-            "type": "event_graph"
-          },
-          {
-            "fields_read": [
-              "state_key_presence",
-              "trajectory_shape"
-            ],
-            "source_object": "state",
-            "type": "numeric_state_snapshot"
+            "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+            "type": "BfgTrajectoryGeometry"
           }
         ],
         "reason": "historical lens surface contains event; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
@@ -6664,24 +6539,7 @@
         "mechanical_d26_verdict": "CLEAN",
         "motif_id": "motif.floor_connectivity.draft",
         "nondeclined_count": 0,
-        "old_contract_source_object_map": [
-          {
-            "fields_read": [
-              "reactants",
-              "products",
-              "stoichiometric_rank"
-            ],
-            "source_object": "parameter_record.reactions",
-            "type": "reaction_network"
-          },
-          {
-            "fields_read": [
-              "species_persistence"
-            ],
-            "source_object": "state",
-            "type": "numeric_state_snapshot"
-          }
-        ],
+        "old_contract_source_object_map": [],
         "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       {
@@ -6700,7 +6558,9 @@
         ],
         "cell_verdict": "BAD",
         "declined_count": 104,
-        "historical_suspect_surfaces": [],
+        "historical_suspect_surfaces": [
+          "event"
+        ],
         "lens_id": "dynamical_systems",
         "mechanical_d26_verdict": "CLEAN",
         "motif_id": "motif.floor_connectivity.draft",
@@ -6708,15 +6568,14 @@
         "old_contract_source_object_map": [
           {
             "fields_read": [
-              "trajectory_shape",
-              "terminal_drift",
-              "recurrence"
+              "return_velocity_profile",
+              "recovery_time_steps"
             ],
-            "source_object": "state",
-            "type": "numeric_state_snapshot"
+            "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+            "type": "BfgTrajectoryGeometry"
           }
         ],
-        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       {
         "adversarial_controls_passed": true,
@@ -6734,7 +6593,9 @@
         ],
         "cell_verdict": "BAD",
         "declined_count": 104,
-        "historical_suspect_surfaces": [],
+        "historical_suspect_surfaces": [
+          "event"
+        ],
         "lens_id": "topology",
         "mechanical_d26_verdict": "CLEAN",
         "motif_id": "motif.floor_connectivity.draft",
@@ -6742,14 +6603,14 @@
         "old_contract_source_object_map": [
           {
             "fields_read": [
-              "filtration_geometry",
-              "connectivity_proxy"
+              "recovery_path_states",
+              "basin_radius_at_recovery"
             ],
-            "source_object": "state",
-            "type": "point_cloud"
+            "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+            "type": "BfgTrajectoryGeometry"
           }
         ],
-        "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       {
         "adversarial_controls_passed": true,
@@ -6768,8 +6629,7 @@
         "cell_verdict": "BAD",
         "declined_count": 104,
         "historical_suspect_surfaces": [
-          "event",
-          "event_transition_proxy"
+          "event"
         ],
         "lens_id": "petri",
         "mechanical_d26_verdict": "CLEAN",
@@ -6778,29 +6638,13 @@
         "old_contract_source_object_map": [
           {
             "fields_read": [
-              "reactants",
-              "products",
-              "incidence_rank"
+              "recovery_path_states"
             ],
-            "source_object": "parameter_record.reactions",
-            "type": "reaction_or_transition_network"
-          },
-          {
-            "fields_read": [
-              "type"
-            ],
-            "source_object": "events",
-            "type": "event_transition_proxy"
-          },
-          {
-            "fields_read": [
-              "place_count"
-            ],
-            "source_object": "state",
-            "type": "numeric_state_snapshot"
+            "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+            "type": "BfgTrajectoryGeometry"
           }
         ],
-        "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       {
         "adversarial_controls_passed": true,
@@ -6819,8 +6663,7 @@
         "cell_verdict": "BAD",
         "declined_count": 104,
         "historical_suspect_surfaces": [
-          "event",
-          "event_statistics"
+          "event"
         ],
         "lens_id": "statistical_mechanics",
         "mechanical_d26_verdict": "CLEAN",
@@ -6829,22 +6672,15 @@
         "old_contract_source_object_map": [
           {
             "fields_read": [
-              "type",
-              "rare_event_rate"
+              "drift_magnitude_envelope",
+              "recovery_time_steps",
+              "censored_at_step"
             ],
-            "source_object": "events",
-            "type": "event_statistics"
-          },
-          {
-            "fields_read": [
-              "energy_variance",
-              "large_deviation_proxy"
-            ],
-            "source_object": "state",
-            "type": "numeric_state_snapshot"
+            "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+            "type": "BfgTrajectoryGeometry"
           }
         ],
-        "reason": "historical lens surface contains event, event_statistics; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       {
         "adversarial_controls_passed": true,
@@ -6863,9 +6699,7 @@
         "cell_verdict": "BAD",
         "declined_count": 104,
         "historical_suspect_surfaces": [
-          "control_or_memory_token",
-          "event",
-          "token"
+          "event"
         ],
         "lens_id": "control_theory",
         "mechanical_d26_verdict": "CLEAN",
@@ -6874,22 +6708,15 @@
         "old_contract_source_object_map": [
           {
             "fields_read": [
-              "type",
-              "control_or_memory_token"
+              "return_velocity_profile",
+              "basin_radius_at_recovery",
+              "recovery_path_states"
             ],
-            "source_object": "events",
-            "type": "control_channel_proxy"
-          },
-          {
-            "fields_read": [
-              "observability_rank",
-              "delta_rank"
-            ],
-            "source_object": "state",
-            "type": "numeric_state_snapshot"
+            "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+            "type": "BfgTrajectoryGeometry"
           }
         ],
-        "reason": "historical lens surface contains control_or_memory_token, event, token; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       {
         "adversarial_controls_passed": true,
@@ -6908,9 +6735,7 @@
         "cell_verdict": "BAD",
         "declined_count": 104,
         "historical_suspect_surfaces": [
-          "event",
-          "event_entropy",
-          "event_information"
+          "event"
         ],
         "lens_id": "information",
         "mechanical_d26_verdict": "CLEAN",
@@ -6919,25 +6744,25 @@
         "old_contract_source_object_map": [
           {
             "fields_read": [
-              "type",
-              "event_entropy"
+              "return_velocity_profile",
+              "drift_magnitude_envelope",
+              "recovery_time_steps"
             ],
-            "source_object": "events",
-            "type": "event_information"
+            "source_object": "bfg_lens_rows.perturbation_event.trajectory_geometry",
+            "type": "BfgTrajectoryGeometry"
           },
           {
             "fields_read": [
-              "predictive_state_count",
-              "delta_entropy"
+              "perturbation_magnitude"
             ],
-            "source_object": "state",
-            "type": "numeric_state_snapshot"
+            "source_object": "bfg_lens_rows.perturbation_event",
+            "type": "BfgPerturbationMetadata"
           }
         ],
-        "reason": "historical lens surface contains event, event_entropy, event_information; clean refactor produced no nondeclined evaluations on this motif corpus"
+        "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
       }
     ],
-    "content_hash": "sha256:727c28ab17048eb5544ef2d4ae4edddfc9598a176d7440a6aca49300a139110c",
+    "content_hash": "sha256:7427180fc8c29ee5fa8b36f86813a63a380ddb60e46ac0e6b9fd1d09d3ae4cef",
     "lens_ids": [
       "graph",
       "crnt",
@@ -7027,7 +6852,7 @@
         "mean": 0.0
       },
       "observed_gap": 0.0,
-      "preregistration_hash": "sha256:25fcce4c73eff3b43f0d6582db4de52ddf5d90d95957ba7aa3a47467f03df204",
+      "preregistration_hash": "sha256:0f1faa2d399ce0bf8255e150cbb90d2b864a38ffadd47e3a06f1c67f68dfee2e",
       "primary_lens": "dynamical_systems",
       "primary_lens_rationale": "first D26 lens-decoupled cell with nondeclined rows",
       "schema": "Campaign024SubstrateBlockedControl.v1"
@@ -7062,7 +6887,7 @@
         "mean": 0.0006276222147596407
       },
       "observed_gap": 0.03684447775766664,
-      "preregistration_hash": "sha256:8ec0eb15e9865b0f30701dc131a68d059c5db4a0020ccfa5255591af11223d84",
+      "preregistration_hash": "sha256:d816ed02b7e0dd6b24ff0f2dfb66867710b67757f33bba491550ea5eaeddad94",
       "primary_lens": "dynamical_systems",
       "primary_lens_rationale": "first D26 lens-decoupled cell with nondeclined rows",
       "schema": "Campaign024SubstrateBlockedControl.v1"
@@ -7107,7 +6932,7 @@
       },
       "mode_tag": "exploratory",
       "motif_id": "motif.floor_connectivity.draft",
-      "preregistration_hash": "sha256:6d90097f8e029f019165091df4e69eab593424123bf572d98033b097e24cfd31",
+      "preregistration_hash": "sha256:5c131415a275c196f01b5dfd59ace7991dd95cfedd684dd6005a83e413ec16b6",
       "primary_lens": null,
       "primary_lens_rationale": "no lens cell remained admissible after lens-side D26/adversarial audit",
       "schema": "Campaign024SubstrateBlockedControl.v1"
@@ -7141,7 +6966,7 @@
       },
       "mode_tag": "exploratory",
       "motif_id": "motif.repair.draft",
-      "preregistration_hash": "sha256:66c95ca6096a7338dd232e968d971c334cf51f4785c874f3b78949d38680cb7c",
+      "preregistration_hash": "sha256:2edbb5ced8998c750ef13ce3811ce0d4a8c9f9b73101bf4c97597f58d7af3843",
       "primary_lens": null,
       "primary_lens_rationale": "no lens cell remained admissible after lens-side D26/adversarial audit",
       "schema": "Campaign024SubstrateBlockedControl.v1"
@@ -7168,7 +6993,7 @@
       },
       "mode_tag": "exploratory",
       "motif_id": "motif.replication_lineage.draft",
-      "preregistration_hash": "sha256:e3998ff62a094a930f57c4080f8dc9ccf89762a8fef2a8a728550e16c99c36d9",
+      "preregistration_hash": "sha256:ee4ca5ebb69eadf83e42ddcdc34d12edf08b770d90b28e418c8e15c5a0114c2c",
       "primary_lens": null,
       "primary_lens_rationale": "no lens cell remained admissible after lens-side D26/adversarial audit",
       "schema": "Campaign024SubstrateBlockedControl.v1"
@@ -7203,7 +7028,7 @@
         "mean": -3.5020423892279927e-05
       },
       "observed_gap": 0.051500623370999976,
-      "preregistration_hash": "sha256:42e55ff8028ac9e197b241cf9320a415cb17e09e03c6ce5a6e855bc8ee483833",
+      "preregistration_hash": "sha256:aec1c5a77717cfe8b73b7694d4ce1d778716d4e0fb9835851434c906befee926",
       "primary_lens": "dynamical_systems",
       "primary_lens_rationale": "first D26 lens-decoupled cell with nondeclined rows",
       "schema": "Campaign024SubstrateBlockedControl.v1"

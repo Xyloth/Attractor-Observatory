@@ -52,6 +52,9 @@ def parse_campaign_reports(reports_dir: str | Path = "reports") -> dict[str, Any
                 record["passed_gate_count"] = payload.get("passed_gate_count")
                 record["schema"] = payload.get("schema")
                 record["artifacts"] = payload.get("artifacts")
+                record["methodology_review_open"] = payload.get("methodology_review_open")
+                record["methodology_review_completed"] = payload.get("methodology_review_completed")
+                record["methodology_review_open_reason"] = payload.get("methodology_review_open_reason")
                 record["raw_top_level_keys"] = sorted(payload.keys()) if isinstance(payload, dict) else []
             except json.JSONDecodeError as exc:
                 record["status"] = "malformed_json"

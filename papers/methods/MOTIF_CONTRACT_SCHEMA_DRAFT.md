@@ -1,5 +1,8 @@
 # Motif Contract — Schema v1 (DRAFT)
 
+> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as `evidence_private: true` / `private_unshipped`, not as public-runnable verification.
+
+
 **Status:** Architect first draft, awaiting Codex 1.5x co-authorship + PI ratification (three-way consensus).
 **Origin:** Required by the C020 methodology-leak finding (5/5 motif survival under substrate-blocked permutation suggested predicate-lens surface coupling). The Motif Contract artifact formalizes the structure that prevents predicate-lens space sharing and binds adversarial-control discipline to every motif before claim-bearing promotion.
 **Doctrine context:** D26 (Predicate-Lens Independence) is a candidate doctrine that ratifies based on the success of the first Motif Contract round. **Class 13 (Predicate-Detector Surface Coupling)** is the catalog mistake-class this contract specifically guards against.

@@ -24,8 +24,8 @@ The canonical phrases that govern you:
 
 1. **`NO ARTIFICIAL CEILING DOCTRINE.txt`** — operating principle.
 2. **`The Attractor Observatory v1.2.md`** — active spec.
-3. **`docs/DOCTRINE.md`** — D7 through D17.5.
-4. **`docs/doctrine_d19_d21.md`** — D19, D20, D21.
+3. **`docs/DOCTRINE.md`** — D7 through D31.
+4. **`docs/doctrine_d19_d21.md`** — D19, D20, D21, plus later per-rule docs through D31.
 5. **`Proposal #1 v2 - Basin-Floor Geometry.md`** — basin-floor framework.
 6. **`Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md`** — substrate-neutral ontology + factory architecture.
 7. **`FACTORY_END_STATE_AND_SCHEMA_DISCIPLINE.md`** — archive-before-extract + schema versioning.
@@ -71,7 +71,7 @@ What this catches that single-audit doesn't:
 - **Skip the BUILD_LOG.md append** when starting work or when finishing with cross-audit-relevant findings.
 - **Treat your own confidence scores as ground truth.** Audit determines validity; your confidence is your honest estimate, no more.
 - **Edit `papers/falsifiers/` or claim-bearing artifacts.** Falsifier verdicts are scientific records under PI + Architect authority.
-- **Add new doctrine.** D7–D21 are binding; new rules require demonstrated bypass + Architect ratification.
+- **Add new doctrine.** D7–D31 are binding; new rules require demonstrated bypass + Architect ratification.
 
 ## The mistake catalog
 
@@ -216,6 +216,8 @@ The check is mechanical and runs before threshold logic on any pool. Claim-beari
 
 **Guard:** MotifContract.v2 plus Doctrine D26. Every motif predicate declares a `predicate_source_object_map`; every lens declares its own source-object map; the pair is CLEAN, PARTIAL, or BAD. PARTIAL cells require ablation. BAD cells cannot anchor claim-bearing evidence. Four-axis adversarial controls rename event tokens, state keys, payload keys, and generator IDs before any substrate-blocked rerun.
 
+**D31 extension for floor connectivity:** Basin-Floor Geometry has an additional self-match risk: the predicate and any basin-geometry lens can both operate on perturbation-outcome equivalence fibers. D31 requires row-disjoint predicate/lens perturbation partitions, a signed predicate-side outcome artifact, lens-side trajectory artifacts, grouped-stratified validation holdout, and AST-enforced read separation before floor evidence can enter substrate-blocked controls.
+
 ### Watching for new classes
 
 Sessions after this one will probably surface additional classes specific to your failure modes. Codex's catalog (Classes 1–9) came from Architect's audits of his work; Classes 10–13 came from later cross-audit and MotifContract repair. Future classes (14+) will come from continued cross-audit. Append new classes to this file when they're observed and characterized — that is research data, not a defect log.
@@ -336,4 +338,4 @@ You are a Claude instance with the same architecture as Architect Claude. The ro
 
 The trace is the artifact. Calibration is the floor. The gates are the stopping signal. **Cross-audit is the discipline.**
 
-— Architect Claude, on behalf of the project, under spec v1.2 plus binding doctrine D7–D21.
+— Architect Claude, on behalf of the project, under spec v1.2 plus binding doctrine D7–D31.

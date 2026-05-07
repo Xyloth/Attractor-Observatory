@@ -1,0 +1,48 @@
+{
+  "campaign_id": "campaign_026",
+  "claim_promotion_allowed": false,
+  "content_hash": "sha256:f0ceb553584dc974aed66024dcd6d9dacd1f2f5a8736cc94c8accaafc8a80ed4",
+  "forbidden_adjustments": [
+    "no same-row predicate/lens evaluation",
+    "no lens import of preprocessing classifier",
+    "no adjacent_fiber without formal adjacency",
+    "no claim-bearing promotion"
+  ],
+  "formalism": "D31 BFG Measurement Split",
+  "input_corpus_hash": "sha256:6b926f7a56161eddf1579e31b7563c8e640cf36c75601c5df04ae1bae50390ab",
+  "minimum_independent_units_per_substrate": 30,
+  "mode_tag": "exploratory",
+  "permutation_N": 10000,
+  "permutation_seed": 26026,
+  "read_separation_audit": {
+    "evidence_private": true,
+    "failures": [],
+    "implementation_path_status": "private_unshipped",
+    "join_module": "formalism/floor_bfg/floor_join.py",
+    "lens_module": "formalism/floor_bfg/lenses.py",
+    "passed": true,
+    "predicate_modules": [
+      "formalism/motif_contracts/predicates/floor_connectivity.py",
+      "formalism/motif_contracts/predicates/floor_connectivity_bfg_v2.py"
+    ],
+    "private_boundary_reason": "D29: formalism implementation modules are held outside the public branch; this audit records the private executable path names without claiming public-runnable evidence.",
+    "schema": "D31ReadSeparationAudit.v1"
+  },
+  "schema": "Campaign026BfgD31Preregistration.v1",
+  "signature": {
+    "scheme": "sha256-preregistration-content",
+    "signed_by": "Codex 1.5x",
+    "signed_hash": "sha256:f0ceb553584dc974aed66024dcd6d9dacd1f2f5a8736cc94c8accaafc8a80ed4",
+    "status": "signed_before_permutation"
+  },
+  "statistic": "mean lens-row unit score on predicate-row positive units minus predicate-row negative units",
+  "stratification": "within-world-family unit-level shuffle; rows grouped by origin_state_cluster_id/scenario_family_id before predicate/lens split",
+  "task_id": "TASK-FLOOR-BFG",
+  "validation_holdout": "validation_predicate_row and validation_lens_row are disjoint perturbation rows and are evaluated after preregistration",
+  "verdict_logic": {
+    "methodology_review_required": "shuffled mean < observed gap <= shuffled 97.5 percentile",
+    "not_evaluable": "domain decline, lens decline, or insufficient unit rows",
+    "signal_survives_shuffle": "observed gap > shuffled 97.5 percentile",
+    "signal_was_substrate_id": "observed gap <= shuffled mean"
+  }
+}

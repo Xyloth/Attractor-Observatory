@@ -1,0 +1,52 @@
+{
+  "schema": "MeasurabilityRecoveryPlanPreregistration.v1",
+  "task_id": "TASK-MEAS-PLAN",
+  "artifact": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+  "registered_at_est": "2026-05-06 20:26:37 EST",
+  "mode_tag": "planning_only",
+  "implementation_allowed": false,
+  "source_artifacts": [
+    "reports/campaign_024/lens_coupling_audit.json",
+    "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+    "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+  ],
+  "required_sections": [
+    "Purpose",
+    "Taxonomy",
+    "Forced-Class Rule And Escalation",
+    "D27 Ratified Language",
+    "Per-Cell Measurability Table",
+    "Per-Class Summary",
+    "Source-Object Generation Campaigns Required",
+    "Round 2b Sequencing Recommendation"
+  ],
+  "required_cell_count": 33,
+  "required_cell_fields": [
+    "cell_id",
+    "c024_status",
+    "primary_recovery_class",
+    "source_object_required",
+    "source_exists",
+    "lens_variant_proposed",
+    "d26_risk",
+    "required_decoys_and_ablations",
+    "next_action"
+  ],
+  "allowed_recovery_classes": [
+    "REF-STRUCT",
+    "NEW-ABST",
+    "SCHEMA-SPLIT",
+    "BAD-ARCH",
+    "DOMAIN-DECLINE",
+    "DIAG-ONLY",
+    "FORMALISM-REQ",
+    "NEEDS_PI_ARCHITECT_DECISION"
+  ],
+  "forced_class_rule": "Every Campaign 024 BAD cell receives exactly one primary_recovery_class; ambiguous cells use NEEDS_PI_ARCHITECT_DECISION.",
+  "content_hash": "sha256:7be03637a0a3ce68adb898ab94c99de7fa817f7dfb2808ed556b1e584b23e944",
+  "signature": {
+    "scheme": "sha256-canonical-json",
+    "signed_by": "Codex 1.5x",
+    "status": "signed_before_authoring"
+  }
+}

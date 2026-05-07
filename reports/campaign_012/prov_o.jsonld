@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "ao": "https://attractor-observatory.local/ns#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "ao:campaign_012",
+  "@type": "prov:Bundle",
+  "prov:activity": [
+    {
+      "@id": "ao:campaign_012_campaign_activity",
+      "@type": "prov:Activity",
+      "prov:used": "reports/campaign_012/full_report.json"
+    }
+  ],
+  "prov:entity": [
+    {
+      "@id": "reports/campaign_012/full_report.json",
+      "@type": "prov:Entity",
+      "ao:evidencePrivateBoundary": "private_unshipped traces may be referenced",
+      "prov:value": "campaign full report"
+    }
+  ],
+  "prov:generatedAtTime": "2026-05-06T21:05:38-04:00",
+  "prov:wasAttributedTo": [
+    {
+      "@id": "ao:PI_James_Dye",
+      "@type": "prov:Agent"
+    },
+    {
+      "@id": "ao:AI_Builders",
+      "@type": "prov:Agent"
+    }
+  ]
+}

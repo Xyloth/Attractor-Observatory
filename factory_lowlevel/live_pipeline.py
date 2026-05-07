@@ -9,12 +9,62 @@ router validates, world constructors simulate, and formal lenses evaluate.
 from __future__ import annotations
 
 import json
+import hashlib
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from formalism.lens_registry import MOTIFS, _label_feature_for_motif, evaluate_lenses
-from trace.schema.v1 import canonical_json, trace_content_hash
+try:  # D29: private formalism runtime is optional on the public branch.
+    from formalism.lens_registry import MOTIFS, _label_feature_for_motif, evaluate_lenses
+except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs.
+    if exc.name and exc.name.split(".")[0] != "formalism":
+        raise
+    MOTIFS = (
+        "motif.autocatalytic_closure.draft",
+        "motif.self_maintained_boundary.draft",
+        "motif.repair.draft",
+        "motif.replication_lineage.draft",
+        "motif.externalized_memory.draft",
+        "motif.floor_connectivity.draft",
+    )
+
+    def _label_feature_for_motif(motif_id: str, trace: dict[str, Any]) -> bool:
+        flags = trace.get("process_flags", {}) if isinstance(trace, dict) else {}
+        if not isinstance(flags, dict):
+            flags = {}
+        short = _motif_short(motif_id)
+        return bool(flags.get(short) or flags.get(motif_id) or flags.get(short.replace("closure", "autocatalytic_closure")))
+
+    def evaluate_lenses(evidence_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        rows = []
+        for evidence in evidence_rows:
+            trace = evidence.get("trace", {})
+            trace_id = trace.get("manifest", {}).get("trace_id", sha256(trace)) if isinstance(trace, dict) else sha256(evidence)
+            rows.append(
+                {
+                    "lens_id": "public_runtime_boundary",
+                    "motif_id": evidence.get("motif_id"),
+                    "trace_id": trace_id,
+                    "declined": True,
+                    "prediction_score": 0.0,
+                    "evidence_private": True,
+                    "trace_path_status": "private_unshipped",
+                    "decline_reason": "private formalism runtime is not shipped on the public branch; D29 narrative fallback",
+                }
+            )
+        return rows
+
+try:  # D29: trace schema lives in the private trace plane.
+    from trace.schema.v1 import canonical_json, trace_content_hash
+except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs.
+    if exc.name and exc.name.split(".")[0] != "trace":
+        raise
+
+    def canonical_json(payload: Any) -> str:
+        return json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+
+    def trace_content_hash(trace: dict[str, Any]) -> str:
+        return hashlib.sha256(canonical_json(trace).encode("utf-8")).hexdigest()
 
 from .adapters import (
     AllenBrainCognitiveAdapter,
@@ -238,6 +288,24 @@ def _select_adapters(*, target_worlds: list[str] | None, source_ids: list[str] |
 def _simulate_record(record: EmpiricalRecord, *, trace_root: Path) -> dict[str, Any]:
     record_trace_dir = trace_root / record.world_family
     trace_path = record_trace_dir / f"{record.record_id.removeprefix('sha256:')[:16]}.json"
+    if not (Path(__file__).resolve().parents[1] / "worlds").exists():
+        return {
+            "record_id": record.record_id,
+            "canonical_name": record.canonical_name,
+            "source_id": record.source_id,
+            "world_family": record.world_family,
+            "trace": None,
+            "trace_path": None,
+            "rejections": [
+                {
+                    "record_id": record.record_id,
+                    "reason": "private_world_runtime_unshipped",
+                    "evidence_private": True,
+                    "trace_path_status": "private_unshipped",
+                    "recommended_action": "use public campaign reports or request private runtime access from PI",
+                }
+            ],
+        }
     if record.world_family == "atomic_molecular_primitives":
         from worlds.atomic_molecular_primitives.model import AtomicMolecularPrimitivesWorld
 

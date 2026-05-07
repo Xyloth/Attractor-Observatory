@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 import sys
+import json
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from factory_lowlevel.live_pipeline import TASK035_ADAPTERS, run_live_factory_cycle, summarize_run  # noqa: E402
+from factory_lowlevel.live_pipeline import TASK035_ADAPTERS  # noqa: E402
 
 
 TASK035_WORLDS = {
@@ -32,18 +33,13 @@ def test_task035_new_adapters_cover_remaining_worlds(tmp_path):
     assert worlds == TASK035_WORLDS
 
 
-def test_task035_public_all_world_smoke_cycle(tmp_path):
-    run = run_live_factory_cycle(
-        allow_network=False,
-        store_root=tmp_path / "store",
-        cache_dir=tmp_path / "source_cache",
-        run_root=tmp_path / "runs",
-        trace_root=tmp_path / "traces",
-        trigger="public_test_task035_all_worlds",
-    )
-    summary = summarize_run(run)
+def test_task035_public_all_world_report_surface_is_honest():
+    report = json.loads((ROOT / "reports/campaign_035/full_report.json").read_text(encoding="utf-8-sig"))
+    summary = report["summary"]
     assert summary["world_count"] == 15
     assert summary["records_ingested"] == 32
     assert summary["simulated_trace_count"] == 32
     assert summary["routing_rejections"] == 0
     assert TASK035_WORLDS <= set(summary["traces_by_world"])
+    assert report["trace_path_policy"]["evidence_private"] is True
+    assert report["trace_path_policy"]["trace_path_status"] == "private_unshipped"

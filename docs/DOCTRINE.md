@@ -220,6 +220,57 @@ See [`doctrine_d26.md`](doctrine_d26.md).
 
 ---
 
+
+## D27 - Substantive lens recovery
+
+See [`doctrine_d27.md`](doctrine_d27.md).
+
+> A BAD motif-lens cell is not recovered by renaming a detector or moving the same computation behind a new interface. A recovered lens must demonstrate a substantive source-object split from the predicate, survive adversarial ablation, and resist matched-decoy controls.
+
+**Failure mode caught:** Campaign 024 left 33 BAD cells. The recovery planning pass showed that several tempting "fixes" would simply relabel self-matching evidence, especially autocatalytic closure reaction graph/CRNT/Petri cells and floor BFG basin-geometry cells.
+
+---
+
+## D28 - Release boundary
+
+See [`doctrine_d28.md`](doctrine_d28.md).
+
+> Plans, doctrines, contracts, and methodology artifacts are not audit-live until committed at the public target SHA. Untracked working-tree artifacts may not be cited as ratified evidence.
+
+**Failure mode caught:** DX-002 found D27/measurability recovery artifacts discussed as live while they were untracked working-tree artifacts outside frozen public HEAD.
+
+---
+
+## D29 - Runnable evidence
+
+See [`doctrine_d29.md`](doctrine_d29.md).
+
+> Reports naming enforcement modules, executable lenses, runtime paths, or implementation files must ship the named code, mark the citation private at point of use, or downgrade it to narrative evidence.
+
+**Failure mode caught:** DX-002 found public reports and methods docs naming private `formalism/*`, `trace/*`, `worlds/*`, and validation runtime paths without explicit private-evidence boundaries.
+
+---
+
+## D30 - Freshness computed at read
+
+See [`doctrine_d30.md`](doctrine_d30.md).
+
+> Stored freshness fields are advisory only; consumers that depend on freshness must recompute it at read time against current HEAD and current branch.
+
+**Failure mode caught:** DX-002 found a Control Room snapshot claiming `freshness_status: current` while its generation binding pointed at a different branch/commit than the audited HEAD.
+
+---
+
+## D31 - BFG measurement split
+
+See [`doctrine_d31.md`](doctrine_d31.md).
+
+> floor_connectivity-class predicates require a signed predicate-side outcome artifact, a field-disjoint lens-side trajectory artifact, grouped-stratified validation holdout, and enforced read separation. Heldout validation prevents tuning leakage; it does not by itself upgrade same-row field splits to CLEAN.
+
+**Failure mode caught:** Campaign 024 left floor connectivity formally unmeasurable because the BFG predicate and plausible basin-geometry lenses both operated on perturbation-outcome equivalence fibers. D31 requires row-disjoint unit-level predicate/lens measurement before a substrate-blocked floor result can be treated as evidence.
+
+---
+
 ## How the doctrine evolves
 
 A new doctrine rule is added when:

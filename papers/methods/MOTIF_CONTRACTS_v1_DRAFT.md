@@ -7,6 +7,9 @@ Origin: C020 methodology leak, where labels and lens features both depended on
 
 ## Blind Spots Architect Missed
 
+> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as `evidence_private: true` / `private_unshipped`, not as public-runnable verification.
+
+
 - Same source object is still shared input space. In the autocatalytic-closure
   exemplar, graph, CRNT, and Petri lenses are marked mostly independent even
   though they read the same reaction declarations as the predicate. Different
