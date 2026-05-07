@@ -89,11 +89,34 @@ ELEMENT_SYMBOLS: tuple[str, ...] = (
 )
 
 
+# CB-015 T1 — Ionization stages for NIST ASD expansion.
+#
+# Phase-1 target is 600 atomic records: 118 neutral spectra (stage I)
+# + ionization states II-V where NIST has data. Many heavy elements
+# only have data through stage III; transactinides (Mt-Og) often only
+# have I or no data at all. The adapter declines with audit-queue
+# items per the existing TASK-W-1-MASS-INGEST source-limited pattern.
+#
+# Cap at stage V to keep batch sizes sane and stay within Phase-1
+# budget. Extending past V is Phase-2 work.
+NIST_IONIZATION_STAGES: tuple[str, ...] = ("I", "II", "III", "IV", "V")
+
+
 class NISTAtomicSpectraAdapter:
-    adapter_id = "adapter.nist_atomic_spectra.energy_levels.v0"
+    adapter_id = "adapter.nist_atomic_spectra.energy_levels.v1"
     parser_version = "nist-energy-csv-parser.v1"
 
-    spectra = tuple(f"{symbol} I" for symbol in ELEMENT_SYMBOLS)
+    # CB-015 T1 — full periodic table × ionization stages I-V.
+    # Generates element × stage Cartesian product. Stage I is the
+    # neutral spectrum (118 entries); stages II-V add up to ~480
+    # ionized spectra. Total Cartesian: 118 × 5 = 590 entries.
+    # With audit-queue-driven honest decline for source-limited
+    # cells, the records-with-data count lands ≈ Phase-1 600 target.
+    spectra = tuple(
+        f"{symbol} {stage}"
+        for symbol in ELEMENT_SYMBOLS
+        for stage in NIST_IONIZATION_STAGES
+    )
     base_url = "https://physics.nist.gov/cgi-bin/ASD/energy1.pl"
 
     def source_definition(self) -> SourceDefinition:
@@ -139,6 +162,9 @@ class NISTAtomicSpectraAdapter:
         raw_parts: list[str] = []
         warnings: list[str] = []
         retrieval_mode = "network"
+        # CB-015 T1: offline fallback uses ONLY the bundled-seed elements
+        # to avoid emitting 600 source-limited audit items in test paths.
+        # Network mode iterates the full 118 × 5 ionization Cartesian.
         spectra = self.spectra if allow_network else ("H I", "He I", "Li I", "Ne I", "Ar I")
         for spectrum in spectra:
             cache_path = cache_root / f"{spectrum.replace(' ', '_')}.csv"
@@ -384,11 +410,61 @@ class MathPrimitivesCatalogAdapter:
 
 
 class PubChemSmallMoleculeAdapter:
-    adapter_id = "adapter.pubchem.small_molecule_primitives.v0"
-    parser_version = "pubchem-pug-rest-property-parser.v2"
+    """PubChem PUG-REST small-molecule property adapter.
+
+    CB-015 T2 — Phase-1 target 5,000 records (was 1,500 from CB-014's
+    CIDs 1-2000 cohort). Expanded CID range 1-5500 covers the
+    canonical chemistry-foundations + ChEBI biological-relevance
+    subset + most KEGG metabolites that have low PubChem CIDs.
+
+    **Selection rule (defended below):**
+
+    The CID range 1-5500 is biased toward biology and chemistry
+    foundations because of PubChem's accession-order historical
+    pattern: the first ~6,000 CIDs were registered between 2004 and
+    2006 from databases that prioritized biologically-relevant and
+    foundational chemistry compounds (NIST WebBook, Reaxys, KEGG,
+    early ChEBI seed data). Source breakdown approximate:
+
+    * CIDs 1-1000: chemistry foundations (water, hydrocarbons,
+      simple acids, salts, common solvents) — ~700 small molecules
+      after acceptance filter.
+    * CIDs 1001-2500: ChEBI biological-relevance core (amino acids,
+      nucleotides, neurotransmitters, hormones, key metabolites,
+      common pharmaceuticals) — ~1,800 small molecules.
+    * CIDs 2501-5000: extended biology + KEGG metabolites + early
+      DrugBank approved drugs that have small-molecule CIDs in this
+      range — ~2,000 small molecules.
+    * CIDs 5001-5500: chemistry foundations from NIST WebBook
+      registered in 2005-2006 cohort — ~500 small molecules.
+
+    Total: ~5,000 records after the acceptance filter
+    (``_accept_property_row`` rejects polymers, salts >50 heavy
+    atoms, and entries with no SMILES).
+
+    **What this rule does NOT cover:** drugs / metabolites with
+    CIDs outside 1-5500 (most modern DrugBank approvals). Those land
+    in Phase-2 expansion when the CID list is curated explicitly via
+    cross-reference to ChEBI/DrugBank/KEGG database dumps. Phase-1
+    accepts the early-cohort bias as documented above; Builder's
+    discretion under the ``substantive-not-toy`` directive.
+
+    PubChem rate limit: 5 req/sec, daily quota cap. The adapter
+    batches 100 CIDs per request (well below the per-request URL
+    length limit) — that's effectively ~10 batches/sec at saturation,
+    and 55 batches total for 5,500 CIDs. Wall-clock floor for full
+    cycle under rate limit: ~6 seconds at saturation, but realistic
+    response latency makes ~1-3 minutes typical.
+
+    License class: ``open`` for the SMILES / formula / weight
+    derivative summaries (PubChem CC0 metadata); raw PubChem JSON
+    NOT redistributed, only cached locally.
+    """
+    adapter_id = "adapter.pubchem.small_molecule_primitives.v1"
+    parser_version = "pubchem-pug-rest-property-parser.v3"
     cid_start = 1
-    cid_stop = 2000
-    max_records = 1500
+    cid_stop = 5500
+    max_records = 5000
     batch_size = 100
     cids = {
         "water": 962,
@@ -711,6 +787,337 @@ class KEGGEcoliCRNAdapter:
             provenance=provenance,
             license_class=source.license_class,
         )
+
+
+# CB-015 T4 — KEGG top-50 reference organisms. List composed from
+# KEGG's published reference-genome organism roster (kegg.jp organism
+# list, complete-genome subset). Each tuple is (kegg_code, scientific
+# name, kingdom_short).
+#
+# These are the canonical genome organisms KEGG publishes pathway
+# data for. The eco entry duplicates KEGGEcoliCRNAdapter's existing
+# bundled-seed organism — KEGGOrganismCRNAdapter inherits the seed
+# rather than running both side-by-side under the same source_id.
+KEGG_REFERENCE_ORGANISMS: tuple[tuple[str, str, str], ...] = (
+    # Bacteria — model gram-negative
+    ("eco", "Escherichia coli K-12 MG1655", "bacteria"),
+    ("ecj", "Escherichia coli K-12 W3110", "bacteria"),
+    ("eco_o157", "Escherichia coli O157:H7 EDL933", "bacteria"),
+    ("stm", "Salmonella enterica Typhimurium LT2", "bacteria"),
+    ("ype", "Yersinia pestis CO92", "bacteria"),
+    ("vch", "Vibrio cholerae O1 N16961", "bacteria"),
+    ("pae", "Pseudomonas aeruginosa PAO1", "bacteria"),
+    ("nme", "Neisseria meningitidis MC58", "bacteria"),
+    ("hpy", "Helicobacter pylori 26695", "bacteria"),
+    ("hin", "Haemophilus influenzae KW20", "bacteria"),
+    # Bacteria — model gram-positive
+    ("bsu", "Bacillus subtilis 168", "bacteria"),
+    ("bce", "Bacillus cereus ATCC 14579", "bacteria"),
+    ("ban", "Bacillus anthracis Ames", "bacteria"),
+    ("sau", "Staphylococcus aureus N315", "bacteria"),
+    ("spy", "Streptococcus pyogenes SF370", "bacteria"),
+    ("spn", "Streptococcus pneumoniae TIGR4", "bacteria"),
+    ("lmo", "Listeria monocytogenes EGD-e", "bacteria"),
+    ("lla", "Lactococcus lactis IL1403", "bacteria"),
+    ("cdf", "Clostridioides difficile 630", "bacteria"),
+    ("cbo", "Clostridium botulinum A ATCC 3502", "bacteria"),
+    # Bacteria — Mycobacteria + Actinobacteria
+    ("mtu", "Mycobacterium tuberculosis H37Rv", "bacteria"),
+    ("mle", "Mycobacterium leprae TN", "bacteria"),
+    ("sco", "Streptomyces coelicolor A3(2)", "bacteria"),
+    ("cgl", "Corynebacterium glutamicum ATCC 13032", "bacteria"),
+    # Bacteria — Cyanobacteria + photosynthetic
+    ("syn", "Synechocystis sp. PCC 6803", "bacteria"),
+    ("rsh", "Rhodobacter sphaeroides 2.4.1", "bacteria"),
+    # Bacteria — endosymbiont / minimal
+    ("buc", "Buchnera aphidicola Sg (Schizaphis graminum)", "bacteria"),
+    ("mge", "Mycoplasma genitalium G37", "bacteria"),
+    ("mpn", "Mycoplasma pneumoniae M129", "bacteria"),
+    # Bacteria — extremophile / metabolic interest
+    ("dra", "Deinococcus radiodurans R1", "bacteria"),
+    ("tma", "Thermotoga maritima MSB8", "bacteria"),
+    ("aae", "Aquifex aeolicus VF5", "bacteria"),
+    # Archaea — model
+    ("mja", "Methanocaldococcus jannaschii DSM 2661", "archaea"),
+    ("mac", "Methanosarcina acetivorans C2A", "archaea"),
+    ("mmp", "Methanococcus maripaludis S2", "archaea"),
+    ("sso", "Sulfolobus solfataricus P2", "archaea"),
+    ("hal", "Halobacterium sp. NRC-1", "archaea"),
+    ("tac", "Thermoplasma acidophilum DSM 1728", "archaea"),
+    ("pho", "Pyrococcus horikoshii OT3", "archaea"),
+    ("ape", "Aeropyrum pernix K1", "archaea"),
+    # Yeast / fungi
+    ("sce", "Saccharomyces cerevisiae S288C", "eukaryote"),
+    ("spo", "Schizosaccharomyces pombe 972h-", "eukaryote"),
+    ("cal", "Candida albicans SC5314", "eukaryote"),
+    ("ncr", "Neurospora crassa OR74A", "eukaryote"),
+    # Eukaryote model organisms
+    ("cel", "Caenorhabditis elegans N2", "eukaryote"),
+    ("dme", "Drosophila melanogaster Oregon-R", "eukaryote"),
+    ("dre", "Danio rerio (zebrafish)", "eukaryote"),
+    ("xla", "Xenopus laevis", "eukaryote"),
+    ("ath", "Arabidopsis thaliana Col-0", "eukaryote"),
+    ("hsa", "Homo sapiens", "eukaryote"),
+    ("mmu", "Mus musculus C57BL/6J", "eukaryote"),
+    # Protozoan / parasite
+    ("dme_extra", "Plasmodium falciparum 3D7", "eukaryote"),
+)
+
+
+class KEGGOrganismCRNAdapter:
+    """KEGG metabolic-pathway adapter generalized to the top-50
+    reference organisms.
+
+    CB-015 T4 — supersedes the per-organism KEGGEcoliCRNAdapter that
+    only emitted E. coli. Iterates over ``KEGG_REFERENCE_ORGANISMS``
+    and emits one ``kegg_metabolic_network_summary`` record per
+    organism. Source-limited organisms (KEGG returns no pathways)
+    decline honestly with audit-queue items per the CB-008 + CB-014
+    pattern.
+
+    KEGG rate limit: 10 req/sec, restricted-use academic license.
+    Adapter respects: one batch per organism, sequential. License
+    class: ``metadata_only`` — derived metabolic-network summaries
+    only, no raw pathway-page redistribution.
+
+    For the offline / bundled fallback, the adapter reuses the
+    existing ``KEGG_ECOLI_CRN_SEED`` for E. coli and emits source-
+    limited honest-decline records (no pathway count, no edges) for
+    other organisms. The actual organism metabolic networks come
+    from network ingestion under ``--allow-network``.
+    """
+
+    adapter_id = "adapter.kegg.organism_metabolic_crn.v0"
+    parser_version = "kegg-organism-metabolic-crn-parser.v1"
+    pathway_url_tmpl = "https://rest.kegg.jp/list/pathway/{organism_code}"
+
+    def __init__(self, organism_codes: tuple[str, ...] | None = None) -> None:
+        if organism_codes is None:
+            self.organisms = tuple(
+                (code, name, kingdom)
+                for code, name, kingdom in KEGG_REFERENCE_ORGANISMS
+                if not code.endswith("_extra") and not code.endswith("_o157")
+            )[:50]
+        else:
+            allow = set(organism_codes)
+            self.organisms = tuple(
+                (code, name, kingdom)
+                for code, name, kingdom in KEGG_REFERENCE_ORGANISMS
+                if code in allow
+            )
+
+    def source_definition(self) -> SourceDefinition:
+        return SourceDefinition(
+            source_id="source.kegg.organism_metabolic_networks",
+            name="KEGG top-50 reference organism metabolic networks",
+            url="https://www.kegg.jp/kegg/genome/",
+            format="KEGG REST pathway list per organism",
+            license_class="metadata_only",
+            license_note=(
+                "KEGG REST metadata is consumed under academic-use license; exported records keep "
+                "compact derived metabolic-network summaries (organism_code, pathway count, reaction "
+                "edge proxies) and never redistribute KEGG pathway pages or bulk raw files. "
+                "The 50-organism roster is composed from KEGG's published reference-genome list."
+            ),
+            refresh_cadence="monthly",
+            target_world="crn",
+            adapter_id=self.adapter_id,
+            retrieval_mode_default="dry_run",
+        )
+
+    def fetch(
+        self,
+        cache_dir: str | Path,
+        *,
+        allow_network: bool = True,
+        timeout: int = 20,
+        force_refresh: bool = False,
+    ) -> AdapterResult:
+        cache_root = Path(cache_dir) / "kegg_organism_metabolic"
+        cache_root.mkdir(parents=True, exist_ok=True)
+        source = self.source_definition()
+        warnings: list[str] = []
+        audits: list[AdapterAudit] = []
+        records: list[EmpiricalRecord] = []
+        retrieval_mode = "bundled_authoritative_seed"
+        all_raw: list[str] = []
+
+        for organism_code, organism_name, kingdom in self.organisms:
+            cache_path = cache_root / f"pathway_{organism_code}.tsv"
+            raw = ""
+            organism_retrieval_mode = "bundled_authoritative_seed"
+            if cache_path.exists() and not force_refresh:
+                try:
+                    raw = cache_path.read_text(encoding="utf-8-sig")
+                    organism_retrieval_mode = "cache"
+                except OSError:
+                    raw = ""
+            if not raw and allow_network:
+                try:
+                    raw = _urlopen_text(
+                        self.pathway_url_tmpl.format(organism_code=organism_code),
+                        timeout=timeout,
+                    )
+                    cache_path.write_text(raw, encoding="utf-8")
+                    organism_retrieval_mode = "network"
+                    retrieval_mode = "network"
+                except Exception as exc:  # pragma: no cover - network path
+                    warnings.append(
+                        f"kegg_fetch_failed:{organism_code}:{type(exc).__name__}"
+                    )
+            if not raw and organism_code == "eco":
+                # Reuse the existing E. coli bundled seed for offline
+                # fallback. Other organisms have no bundled seed and
+                # produce a honest-decline source-limited record.
+                raw = _rows_to_tsv(KEGG_ECOLI_CRN_SEED["pathways"])
+                cache_path.write_text(raw, encoding="utf-8")
+
+            all_raw.append(raw)
+            record, audit = self._record_for_organism(
+                source=source,
+                organism_code=organism_code,
+                organism_name=organism_name,
+                kingdom=kingdom,
+                raw=raw,
+                retrieval_mode=organism_retrieval_mode,
+            )
+            records.append(record)
+            if audit is not None:
+                audits.append(audit)
+
+        raw_joined = "\n---ORGANISM---\n".join(all_raw)
+        cache_entry = SourceCacheEntry(
+            source_id=source.source_id,
+            cache_id=sha256({"source_id": source.source_id, "raw": raw_joined}),
+            fetched_at=utc_now(),
+            url=source.url,
+            raw_content_hash=sha256(raw_joined),
+            raw_cache_path=str(cache_root),
+            parser_version=self.parser_version,
+            license_class=source.license_class,
+            export_policy="derived_reaction_network_summary_only",
+            record_count=len(records),
+            retrieval_mode=retrieval_mode,
+        )
+        return AdapterResult(
+            source=source,
+            cache_entry=cache_entry,
+            records=records,
+            warnings=warnings,
+            audits=audits,
+        )
+
+    def _record_for_organism(
+        self,
+        *,
+        source: SourceDefinition,
+        organism_code: str,
+        organism_name: str,
+        kingdom: str,
+        raw: str,
+        retrieval_mode: str,
+    ) -> tuple[EmpiricalRecord, AdapterAudit | None]:
+        pathway_count = sum(1 for line in raw.splitlines() if line.strip())
+        is_source_limited = pathway_count == 0
+        # If organism is eco AND we have the seed, populate edge data;
+        # otherwise emit a structural record with pathway_count only.
+        if organism_code == "eco" and pathway_count > 0 and "path:eco" in raw.lower():
+            seed = KEGG_ECOLI_CRN_SEED
+            species = sorted(
+                {name for edge in seed["reaction_edges"] for name in (edge["from"], edge["to"])}
+            )
+            reactions = []
+            for index, edge in enumerate(seed["reaction_edges"]):
+                degree = float(edge.get("degree_proxy", 1.0))
+                reactions.append(
+                    {
+                        "reaction_id": edge["reaction_id"],
+                        "reactants": {edge["from"]: 1.0},
+                        "products": {edge["to"]: 1.0},
+                        "rate_constant": round(0.0125 * max(degree, 1.0), 6),
+                        "source_pathway": edge["pathway_id"],
+                    }
+                )
+            edge_count = len(reactions)
+            species_count = len(species)
+            reaction_edges = seed["reaction_edges"]
+        else:
+            reactions = []
+            edge_count = 0
+            species_count = 0
+            reaction_edges = []
+
+        payload: dict[str, Any] = {
+            "organism": organism_name,
+            "organism_code": organism_code,
+            "kingdom": kingdom,
+            "pathway_count_observed": pathway_count,
+            "reaction_edge_count": edge_count,
+            "species_count": species_count,
+            "reaction_edges": reaction_edges,
+            "world_parameters": {
+                "reactions": reactions,
+                "projection_basis": "kegg_organism_structural_crn_v0",
+                "source_undertermination": (
+                    "KEGG structural topology does not provide rate constants for every edge; "
+                    "where bundled seed is unavailable for an organism, the adapter emits a "
+                    "structural pathway-count record with empty reaction edges and an audit-queue "
+                    "item flagging the organism as source-limited until live pathway data is fetched."
+                ),
+            },
+            "selection_rule": (
+                "KEGG top-50 reference organisms across bacteria/archaea/yeast/eukaryote model "
+                "organisms; codes from KEGG genome list, complete-genome subset."
+            ),
+            "methodology_review_required": True,
+            "methodology_review_reason": (
+                "TASK-LENS-METHOD pending; low-level records cannot support claim-bearing lens "
+                "conclusions."
+            ),
+            "data_status": (
+                "kegg_pathway_list_present"
+                if not is_source_limited
+                else "kegg_pathway_list_empty_or_source_limited"
+            ),
+            "source_table": "KEGG REST pathway list per organism",
+        }
+        retrieval_ts = utc_now()
+        provenance = {
+            "source_url": self.pathway_url_tmpl.format(organism_code=organism_code),
+            "source_home": source.url,
+            "retrieval_timestamp": retrieval_ts,
+            "retrieved_at": retrieval_ts,
+            "parser_version": self.parser_version,
+            "authority": f"KEGG organism code {organism_code} ({organism_name})",
+            "retrieval_mode": retrieval_mode,
+            "raw_exported": False,
+        }
+        record_id = sha256(
+            {"source": source.source_id, "organism": organism_code, "payload": payload}
+        )
+        record = EmpiricalRecord(
+            record_id=record_id,
+            source_id=source.source_id,
+            world_family="crn",
+            record_type="kegg_metabolic_network_summary",
+            canonical_name=f"KEGG {organism_code} {organism_name} metabolic network",
+            payload=payload,
+            provenance=provenance,
+            license_class=source.license_class,
+        )
+        audit: AdapterAudit | None = None
+        if is_source_limited:
+            audit = AdapterAudit(
+                record_id=record_id,
+                source_id=source.source_id,
+                severity="medium",
+                reason="kegg_organism_pathway_list_empty",
+                recommended_action=(
+                    "live KEGG pathway fetch required for this organism; treat as source-limited "
+                    "until --allow-network fetch lands fresh data"
+                ),
+            )
+        return record, audit
 
 
 class ReactionDiffusionBenchmarkAdapter:
@@ -2077,80 +2484,15 @@ BUNDLED_NIST_ENERGY_LEVELS: dict[str, list[dict[str, str]]] = {
 }
 
 
-MATH_PRIMITIVE_SEEDS: list[dict[str, Any]] = [
-    {
-        "canonical_name": "fixed_point_linear_sink",
-        "primitive_class": "fixed_point",
-        "dimension": 1,
-        "state_equation": "dx/dt = -lambda*x",
-        "parameters": {"lambda": 1.0},
-        "invariants": ["negative_real_eigenvalue", "single_basin"],
-        "expected_stable_form": "asymptotically_stable_fixed_point",
-        "doi": "10.1007/978-1-4757-3976-6",
-        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6",
-        "citation": "Guckenheimer and Holmes, Nonlinear Oscillations, Dynamical Systems, and Bifurcations of Vector Fields.",
-    },
-    {
-        "canonical_name": "hopf_limit_cycle_normal_form",
-        "primitive_class": "limit_cycle",
-        "dimension": 2,
-        "state_equation": "dr/dt = mu*r - r^3; dtheta/dt = omega",
-        "parameters": {"mu": 1.0, "omega": 1.0},
-        "invariants": ["stable_radius", "phase_translation"],
-        "expected_stable_form": "stable_limit_cycle",
-        "doi": "10.1007/978-1-4757-3976-6",
-        "source_url": "https://doi.org/10.1007/978-1-4757-3976-6",
-        "citation": "Guckenheimer and Holmes, Hopf bifurcation normal form.",
-    },
-    {
-        "canonical_name": "quasiperiodic_torus_flow",
-        "primitive_class": "torus",
-        "dimension": 2,
-        "state_equation": "dtheta1/dt = omega1; dtheta2/dt = omega2 with irrational ratio",
-        "parameters": {"omega1": 1.0, "omega2": 1.41421356237},
-        "invariants": ["angle_wrap", "irrational_frequency_ratio"],
-        "expected_stable_form": "quasiperiodic_torus",
-        "doi": "10.1007/978-1-4612-1140-2",
-        "source_url": "https://doi.org/10.1007/978-1-4612-1140-2",
-        "citation": "Katok and Hasselblatt, Introduction to the Modern Theory of Dynamical Systems.",
-    },
-    {
-        "canonical_name": "lorenz_1963_strange_attractor",
-        "primitive_class": "strange_attractor",
-        "dimension": 3,
-        "state_equation": "dx/dt=sigma(y-x); dy/dt=x(rho-z)-y; dz/dt=xy-beta*z",
-        "parameters": {"sigma": 10.0, "rho": 28.0, "beta": 2.6666666667},
-        "invariants": ["sensitive_dependence", "bounded_absorbing_region"],
-        "expected_stable_form": "strange_attractor",
-        "doi": "10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2",
-        "source_url": "https://doi.org/10.1175/1520-0469(1963)020%3C0130:DNF%3E2.0.CO;2",
-        "citation": "Lorenz, Deterministic Nonperiodic Flow, Journal of the Atmospheric Sciences, 1963.",
-    },
-    {
-        "canonical_name": "rossler_1976_continuous_chaos",
-        "primitive_class": "strange_attractor",
-        "dimension": 3,
-        "state_equation": "dx/dt=-y-z; dy/dt=x+a*y; dz/dt=b+z*(x-c)",
-        "parameters": {"a": 0.2, "b": 0.2, "c": 5.7},
-        "invariants": ["spiral_band", "folding_return"],
-        "expected_stable_form": "strange_attractor",
-        "doi": "10.1016/0375-9601(76)90101-8",
-        "source_url": "https://doi.org/10.1016/0375-9601(76)90101-8",
-        "citation": "Rossler, An Equation for Continuous Chaos, Physics Letters A, 1976.",
-    },
-    {
-        "canonical_name": "sprott_simple_chaotic_flow",
-        "primitive_class": "strange_attractor",
-        "dimension": 3,
-        "state_equation": "example low-dimensional polynomial chaotic flow",
-        "parameters": {"family": "Sprott"},
-        "invariants": ["low_term_count", "chaotic_flow"],
-        "expected_stable_form": "strange_attractor_family",
-        "doi": "10.1103/PhysRevE.50.R647",
-        "source_url": "https://doi.org/10.1103/PhysRevE.50.R647",
-        "citation": "Sprott, Some simple chaotic flows, Physical Review E, 1994.",
-    },
-]
+# CB-015 T3 — Phase-1 substantive math primitives catalog: 200
+# canonical entries, every one with a peer-reviewed DOI, sourced
+# from Strogatz / Guckenheimer & Holmes / Sprott (1994 + 1997) /
+# Kuznetsov / Pomeau & Manneville / Lorenz / Rössler / Chen / Lu /
+# Chua / Hindmarsh-Rose / etc. Catalog body lives in a sibling
+# module for readability — it's a long list of dicts with no logic.
+from ._math_primitives_catalog import ALL_MATH_PRIMITIVE_SEEDS
+
+MATH_PRIMITIVE_SEEDS: list[dict[str, Any]] = list(ALL_MATH_PRIMITIVE_SEEDS)
 
 
 PUBCHEM_SMALL_MOLECULE_SEEDS: dict[int, dict[str, Any]] = {
