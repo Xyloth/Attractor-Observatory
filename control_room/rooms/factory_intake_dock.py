@@ -144,14 +144,48 @@ def render() -> None:
     with options_cols[2]:
         render_html(panel("Route preview", _route_preview(sources, selected_source_ids)))
 
+    # CB-011 fix #7 — surface the FIRE-button confirmation marker.
+    # Builder ran a real cycle end-to-end on the date in the marker;
+    # James can see "confirmed working at <UTC>" without having to
+    # press FIRE blindly.
+    confirmation_path = CACHE_DIR / "fire_button_confirmed.json"
+    if confirmation_path.exists():
+        try:
+            confirm = json.loads(confirmation_path.read_text(encoding="utf-8-sig"))
+            ts = confirm.get("confirmed_working_at", "")
+            results = confirm.get("results", {})
+            render_html(
+                f'<div style="margin:8px 0;padding:10px 14px;'
+                f'background:rgba(61,220,132,0.06);border:1px solid var(--verified,#3ddc84);'
+                f'border-radius:12px;display:flex;align-items:center;gap:14px;">'
+                f'<span style="display:inline-block;width:10px;height:10px;border-radius:50%;'
+                f'background:var(--verified,#3ddc84);box-shadow:0 0 8px rgba(61,220,132,0.6);"></span>'
+                f'<div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--fg2);">'
+                f'<b style="color:var(--verified,#3ddc84);">FIRE button confirmed working</b> '
+                f'at {ts} · {results.get("wall_clock_seconds","?")}s cycle · '
+                f'{results.get("life_form_count","?")} life forms · '
+                f'<code style="color:var(--fg3);">{(results.get("run_id","")or"")[:30]}…</code>'
+                f'</div></div>',
+                unsafe_allow_html=True,
+            )
+        except (OSError, json.JSONDecodeError):
+            pass
+
     fire_disabled = in_flight or not selected_source_ids
     if st.button("FIRE - run multi-world Factory", type="primary", disabled=fire_disabled, use_container_width=True, key="factory_dock_fire"):
         _fire(allow_network=allow_network, target_worlds=selected_worlds, source_ids=selected_source_ids)
         st.rerun()
 
-    if in_flight or live_mode:
-        if hasattr(st, "autorefresh"):
-            st.autorefresh(interval=1500, key="factory_dock_live_refresh")
+    # CB-011 fix #8/#10 — smoothness: only poll FAST (1.5 s) while a
+    # cycle is actually in flight. When idle, slow to 8 s so the room
+    # stops re-rendering every 1.5 s and the rest of the dashboard
+    # feels iOS-smooth. James reported room-switching lag from the
+    # tight pre-CB-011 polling loop.
+    if hasattr(st, "autorefresh"):
+        if in_flight:
+            st.autorefresh(interval=1500, key="factory_dock_live_refresh_active")
+        elif live_mode:
+            st.autorefresh(interval=8000, key="factory_dock_live_refresh_idle")
 
     st.markdown('<span class="cap">pipeline - live stage state</span>', unsafe_allow_html=True)
     render_html(_pipeline_visual(live_state=live_state, in_flight=in_flight, latest_run=latest_run))
@@ -614,6 +648,58 @@ def _render_audit_inbox(audit_summary: dict[str, Any]) -> None:
             f'</div>'
         )
 
+    # CB-011 fix #9 — Bulk-resolve UI. James's complaint: 72 items
+    # most of which are auto-categorizable (NIST source-limited
+    # transactinides + planted-false-claim test fixtures + contradictory-
+    # polarity fixtures + stale-cache artifacts). Surface a one-click
+    # bulk action per known pattern, write sidecars under the existing
+    # CB-009 read-only-sidecar discipline.
+    pattern_buckets = _compute_bulk_resolve_buckets(audit_summary["unresolved"])
+    if any(b["count"] > 0 for b in pattern_buckets.values()):
+        st.markdown(
+            '<div style="margin-top:12px;padding:10px 14px;background:rgba(189,109,248,0.05);'
+            'border:1px dashed rgba(189,109,248,0.4);border-radius:12px;">'
+            '<div style="font-family:var(--font-mono);font-size:0.74rem;color:var(--motif,#bd6df8);'
+            'letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;">'
+            'bulk resolve · auto-categorizable patterns'
+            '</div>'
+            '</div>',
+            unsafe_allow_html=True,
+        )
+        bulk_cols = st.columns(len(pattern_buckets))
+        for i, (key, bucket) in enumerate(pattern_buckets.items()):
+            with bulk_cols[i]:
+                if bucket["count"] == 0:
+                    render_html(
+                        f'<div style="font-family:var(--font-mono);font-size:0.7rem;'
+                        f'color:var(--fg4,#6c7484);padding:6px 0;">'
+                        f'<b>{bucket["label"]}</b><br>0 items'
+                        f'</div>'
+                    )
+                    continue
+                btn_label = f'Resolve {bucket["count"]} · {bucket["label"]}'
+                if st.button(btn_label, key=f"audit_bulk_{key}", use_container_width=True):
+                    n = 0
+                    for item in bucket["items"]:
+                        _audit_resolution_write(
+                            item["audit_id"],
+                            note=f"bulk_resolve:{key}:{bucket['resolution_reason']}",
+                        )
+                        n += 1
+                    st.success(
+                        f"resolved {n} item(s) under reason "
+                        f'"{bucket["resolution_reason"]}" — sidecars at '
+                        f"control_room/cache/audit_resolutions/"
+                    )
+                    st.rerun()
+                render_html(
+                    f'<div style="font-family:var(--font-mono);font-size:0.66rem;'
+                    f'color:var(--fg4,#6c7484);margin-top:4px;">'
+                    f'reason: {bucket["resolution_reason"]}<br>'
+                    f'doctrine: {bucket["doctrine_binding"]}'
+                    f'</div>'
+                )
+
     # Apply filters
     def _passes_status(item: dict[str, Any]) -> bool:
         resolved = _audit_resolution_status(item["audit_id"]) is not None
@@ -853,4 +939,93 @@ def _find_source_cache_entry(source_id: str) -> dict[str, Any] | None:
             if isinstance(e, dict) and e.get("source_id") == source_id:
                 return e
     return None
+
+
+# ---------------------------------------------------------------------------
+# CB-011 fix #9 — bulk-resolve pattern matching
+# ---------------------------------------------------------------------------
+
+
+# Catalog of recognized auto-resolvable patterns. Each entry maps a
+# pattern key to (label, matcher predicate, resolution_reason,
+# doctrine_binding). The matcher predicate takes a normalized inbox
+# item dict and returns True iff the item belongs to this bucket.
+_BULK_PATTERNS: list[tuple[str, str, "object", str, str]] = [
+    (
+        "nist_source_limited",
+        "NIST source-limited (transactinides, etc.)",
+        lambda i: i.get("reason") == "nist_asd_no_energy_level_rows",
+        "D17_honest_no_source_data_available",
+        "D17 — honest absence; NIST has no spectra for this element",
+    ),
+    (
+        "fixture_planted_false_claim",
+        "C019 fixture · planted false claim rejected",
+        lambda i: "planted false claim rejected" in (i.get("reason") or "").lower(),
+        "D9_test_fixture_validation",
+        "D9 — fixture replay; predicate correctly rejected planted false claim",
+    ),
+    (
+        "fixture_contradictory_polarity",
+        "C011 fixture · contradictory polarity",
+        lambda i: i.get("reason") == "contradictory source-bound polarity",
+        "D9_test_fixture_validation",
+        "D9 — synthetic conflict driver; intentional contradictory inputs",
+    ),
+    (
+        "stale_cache_artifact",
+        "Stale cache artifact",
+        lambda i: (i.get("reason") or "").startswith("stale_cache:"),
+        "D17_stale_cache_artifact",
+        "D17 — cache surfaced as stale; not a live ingestion failure",
+    ),
+    (
+        "fixture_general",
+        "Other test-fixture audits",
+        lambda i: any(
+            tag in (i.get("source_file") or "").lower()
+            for tag in ("/fixtures/", "_fixture", "campaign_019/fixtures")
+        )
+        and (i.get("reason") or "")
+        not in {  # not already covered above
+            "nist_asd_no_energy_level_rows",
+            "contradictory source-bound polarity",
+        },
+        "D9_test_fixture_validation",
+        "D9 — fixture replay; expected audit emission",
+    ),
+]
+
+
+def _compute_bulk_resolve_buckets(
+    unresolved_items: list[dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    """Group ``unresolved_items`` by recognized auto-resolvable pattern.
+
+    Each item lands in AT MOST ONE bucket (first match wins; the
+    pattern order is deliberately the most-specific first). Items that
+    don't match any pattern are NOT placed in a bucket — they remain
+    in the manual-review pool, which is the whole point of bulk
+    categorization (extract the noise, leave the signal).
+    """
+    buckets: dict[str, dict[str, Any]] = {}
+    for key, label, matcher, reason, binding in _BULK_PATTERNS:
+        buckets[key] = {
+            "label": label,
+            "items": [],
+            "count": 0,
+            "resolution_reason": reason,
+            "doctrine_binding": binding,
+        }
+    for item in unresolved_items:
+        for key, _label, matcher, _reason, _binding in _BULK_PATTERNS:
+            try:
+                hit = matcher(item)
+            except Exception:
+                hit = False
+            if hit:
+                buckets[key]["items"].append(item)
+                buckets[key]["count"] += 1
+                break
+    return buckets
 

@@ -21,23 +21,47 @@ from pathlib import Path
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-FACTORY_STORE = REPO_ROOT / "reports" / "campaign_016" / "factory_store"
+# CB-011 fix #4: scan ALL factory stores under reports/, not just the
+# Campaign 016 store. The W-1 mass ingestion (TASK-W-1-MASS-INGEST)
+# wrote 1,375 records to reports/task_w1_mass_ingest/final_store/ which
+# the prior single-path scan missed — World Observatory was rendering
+# "0 records routed" while the disk held the records. The aggregator
+# below merges every empirical_records.json under reports/.
+_STORE_GLOBS = (
+    "reports/**/factory_store/empirical_records.json",
+    "reports/**/daemon_store/empirical_records.json",
+    "reports/**/daemon_store_expanded/empirical_records.json",
+    "reports/**/final_store/empirical_records.json",
+)
 
 
 def load_records_for_world(world_family: str) -> list[dict[str, Any]]:
-    """Read empirical_records.json and filter to records whose
-    world_family matches. Returns [] if the store is missing."""
-    p = FACTORY_STORE / "empirical_records.json"
-    if not p.exists():
-        return []
-    try:
-        data = json.loads(p.read_text(encoding="utf-8-sig"))
-    except (OSError, json.JSONDecodeError):
-        return []
-    records = data.get("records") if isinstance(data, dict) else data
-    if not isinstance(records, list):
-        return []
-    return [r for r in records if r.get("world_family") == world_family]
+    """Aggregate every ``empirical_records.json`` under ``reports/``
+    and return records whose ``world_family`` matches.
+
+    De-duplicates on ``record_id`` so a record persisted into multiple
+    stores (e.g. daemon_store + final_store of the same ingestion run)
+    is counted once. Empty list when no store contains the world
+    (D22 honest absence)."""
+    seen: dict[str, dict[str, Any]] = {}
+    for pattern in _STORE_GLOBS:
+        for p in REPO_ROOT.glob(pattern):
+            try:
+                data = json.loads(p.read_text(encoding="utf-8-sig"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            records = data.get("records") if isinstance(data, dict) else data
+            if not isinstance(records, list):
+                continue
+            for r in records:
+                if not isinstance(r, dict):
+                    continue
+                if r.get("world_family") != world_family:
+                    continue
+                rid = r.get("record_id")
+                if rid and rid not in seen:
+                    seen[rid] = r
+    return list(seen.values())
 
 
 def render_world_drilldown(world_family: str, world_id: str, world_name: str) -> None:
@@ -415,23 +439,96 @@ def _render_molecule_card(rec: dict[str, Any]) -> None:
 
 
 def _render_simulation_world(world_family: str, world_id: str, world_name: str) -> None:
-    """W1-W13 don't have factory ingestion (they're simulation worlds).
-    Surface what we DO know: density class, falsifier docs, references.
+    """W1-W13 may have BOTH ingestion records (W1 origins chemistry,
+    W6 ecosystem GBIF, etc.) AND simulation traces. Surface both.
+
+    CB-011 fix #5: per James — every world should show what's in it:
+    record counts, sample records, motif fires. Reads the
+    factory_lowlevel/index.py Parquet index when present (sub-100 ms
+    queries at scale) and falls back to the JSON aggregator when the
+    index hasn't been built yet (D22).
     """
     import streamlit as st
     from control_room.adapters import parse_methods_falsifiers
 
-    st.markdown(
-        '<div style="margin-top: 0.8rem; padding: 12px 14px; background: var(--bg-panel); '
-        'border: 1px solid var(--border); border-radius: 12px;">'
-        '<div style="font-family: var(--font-body); font-size: 0.92rem; color: var(--fg2);">'
-        f'<b>{world_id}</b> is a <b>simulation world</b>, not a Factory ingestion target. '
-        'Its records live in the world\'s own engine output (campaign reports, '
-        'trace stores, perturbation outcomes). Below: papers/falsifiers entries '
-        f'naming this world, if any.'
-        '</div></div>',
-        unsafe_allow_html=True,
-    )
+    # 1. Pull every persisted record for this world via the multi-store
+    #    aggregator (already used by atomic / molecular / math paths).
+    #    CB-011 fix #8/#10 — route through the cached wrapper so 1,394+
+    #    record scans don't re-run on every autorefresh tick.
+    try:
+        from control_room.cached_adapters import cached_records_for_world
+        records = cached_records_for_world(world_family)
+    except Exception:
+        records = load_records_for_world(world_family)
+
+    if records:
+        # Record-count headline — addresses the "0 records routed"
+        # dishonest signal James flagged on the W-1 panel.
+        st.markdown(
+            f'<div style="margin-top: 0.8rem; padding: 12px 14px; background: var(--bg-panel); '
+            f'border: 1px solid var(--motif, #bd6df8); border-radius: 12px; '
+            f'box-shadow: 0 0 18px rgba(189,109,248,0.12);">'
+            f'<div style="display:flex;align-items:baseline;gap:14px;">'
+            f'<div style="font-family: var(--font-display); font-size: 2.2rem; '
+            f'color: var(--motif, #bd6df8); font-weight: 600;">{len(records):,}</div>'
+            f'<div style="font-family: var(--font-body); font-size: 0.92rem; color: var(--fg2);">'
+            f'<b>{world_id}</b> has <b>{len(records):,} records</b> persisted across '
+            f'<code>reports/**/factory_store/</code>, <code>daemon_store/</code>, and '
+            f'<code>final_store/</code>. Sample records below.'
+            f'</div></div></div>',
+            unsafe_allow_html=True,
+        )
+
+        # 2. Sample records grid — first 6 rows so the surface is
+        # scannable but not overwhelming. Click "see all in index"
+        # for a fuller drill (future: link to a dedicated index room).
+        st.markdown(
+            '<div style="margin-top: 0.6rem;"><span class="cap">sample records · first 6</span></div>',
+            unsafe_allow_html=True,
+        )
+        cols = st.columns(2)
+        for i, rec in enumerate(records[:6]):
+            payload = rec.get("payload", {}) or {}
+            canonical = rec.get("canonical_name") or payload.get("canonical_name") or "?"
+            rec_type = rec.get("record_type", "?")
+            source = rec.get("source_id", "?")
+            with cols[i % 2]:
+                st.markdown(
+                    f'<div style="background: var(--bg-panel); border: 1px solid var(--border); '
+                    f'border-radius: 12px; padding: 10px 12px; margin-bottom: 8px;">'
+                    f'<div style="font-family: var(--font-display); font-size: 0.95rem; '
+                    f'color: var(--fg1, #f8f9fa); font-weight: 500;">{canonical[:80]}</div>'
+                    f'<div style="font-family: var(--font-mono); font-size: 0.7rem; '
+                    f'color: var(--fg4, #6c7484); margin-top: 4px;">'
+                    f'type: {rec_type} · source: {source[:32]}</div>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
+
+        if len(records) > 6:
+            st.markdown(
+                f'<div style="font-family: var(--font-mono); font-size: 0.74rem; '
+                f'color: var(--fg4, #6c7484); margin-top: 4px;">'
+                f'… {len(records) - 6:,} more records in the store. '
+                f'Use the index (<code>factory_lowlevel.index.IndexReader</code>) '
+                f'to query at scale.</div>',
+                unsafe_allow_html=True,
+            )
+    else:
+        # No persisted records — render the simulation-world note honestly.
+        st.markdown(
+            '<div style="margin-top: 0.8rem; padding: 12px 14px; background: var(--bg-panel); '
+            'border: 1px solid var(--border); border-radius: 12px;">'
+            '<div style="font-family: var(--font-body); font-size: 0.92rem; color: var(--fg2);">'
+            f'<b>{world_id}</b> has no persisted ingestion records yet. '
+            'Its activity lives in the world\'s own engine output (campaign reports, '
+            'trace stores, perturbation outcomes). Below: papers/falsifiers entries '
+            f'naming this world, if any.'
+            '</div></div>',
+            unsafe_allow_html=True,
+        )
+
+    # Always render the falsifier links section.
     falsifiers = parse_methods_falsifiers()
     if falsifiers["status"] != "ok":
         return

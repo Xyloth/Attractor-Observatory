@@ -1,0 +1,40 @@
+{
+  "schema": "FireButtonConfirmation.v1",
+  "task_id": "TASK-CB-011",
+  "confirmed_working_at": "2026-05-06T23:46:00Z",
+  "confirmed_by": "Claude (Builder) self-test",
+  "test_args": {
+    "allow_network": false,
+    "target_worlds": ["atomic_molecular_primitives"],
+    "source_ids": ["source.nist.asd.energy_levels"],
+    "rationale": "minimum cycle: NIST atomic spectra, offline (bundled seed), single world"
+  },
+  "results": {
+    "wall_clock_seconds": 0.13,
+    "run_id": "sha256:a4eab1306451ac196991bc7f94457c6876112e49a66f4c7331e7920a5cf63fba",
+    "life_form_count": 5,
+    "motif_fire_rates_emitted": true,
+    "routed_worlds": ["atomic_molecular_primitives"],
+    "records_routed_count": 5,
+    "warnings_count": 0,
+    "routing_rejections_count": 0,
+    "latest_run_json_committed": true,
+    "latest_run_json_size_bytes": 251349
+  },
+  "what_works": [
+    "Subprocess Popen pattern launches cleanly via factory_intake_dock._fire().",
+    "factory_lowlevel.daemon.run_multi_world_factory_cycle() completes a single cycle in well under a second offline.",
+    "control_room/cache/factory_runs/latest_run.json is written with all expected keys (life_forms, routed_worlds, motif_fire_rates, store_snapshot, lens_evaluations, trace_records).",
+    "Pipeline stages (download/parse/normalize/route/world_simulate/motif_evaluate/audit) are present in pipeline_stages.",
+    "5 life forms produced from the bundled NIST seed (5 elements: H I, He I, Li I, Ne I, Ar I)."
+  ],
+  "what_to_check_in_ui": [
+    "FIRE button enabled when target world(s) and source(s) are selected.",
+    "Pipeline visual updates as the cycle runs (live polling).",
+    "Life forms stream renders in the 'life forms - real trace outputs' panel.",
+    "Recent runs panel commits a new row to project_telemetry/low_level_factory_sessions.jsonl after each cycle."
+  ],
+  "blockers_found_and_fixed": [
+    "formalism/ and trace/ and worlds/ are gitignored — fresh worktrees lacked them, causing ModuleNotFoundError on the FIRE subprocess. Copied from main repo into worktree as untracked files for this confirmation. ESCALATION: this should land in the docs as a known dependency for CI/fresh-checkout (or the .gitignore should be amended to track these directories)."
+  ]
+}
