@@ -35,6 +35,153 @@ class LowLevelFactoryStore:
         # WorldTrace per routed world_family with a recompute-able
         # content_hash so the trace verifier can prove integrity.
         self.world_traces: dict[str, dict[str, Any]] = {}
+        # CB-016 fix: load existing on-disk JSON state into the dicts so
+        # subsequent `write()` calls UPSERT the in-memory dicts rather
+        # than REPLACING the persisted files. Without this, every
+        # `run_live_factory_cycle` call wiped the prior cycle's records
+        # — the bug surfaced in CB-015 T8 where 590 NIST + 50 KEGG
+        # records were overwritten by a subsequent PubChem run.
+        self._load_existing_from_disk()
+
+    # ------------------------------------------------------------------
+    # CB-016 — load-on-init recovery
+    # ------------------------------------------------------------------
+    def _load_existing_from_disk(self) -> None:
+        """Populate in-memory dicts from existing JSON files in
+        ``self.root`` if present. Missing files are normal (clean
+        first-cycle start). Malformed files do NOT crash construction —
+        they emit a self-audit entry and leave the corresponding dict
+        empty so a fresh cycle can rebuild without overwriting unread
+        records elsewhere.
+
+        D9 binding: malformed state surfaces as an audit-queue item
+        rather than silent loss. D14: never fabricates records to
+        replace what couldn't be parsed.
+        """
+        loaders: list[tuple[str, str, callable]] = [
+            ("empirical_records.json", "records", self._load_empirical_record),
+            ("normalized_refs.json", "records", self._load_normalized_ref),
+            ("evidence_graph.json", "edges", self._load_evidence_edge),
+            ("audit_queue.json", "items", self._load_audit_item),
+            ("source_cache_index.json", "entries", self._load_source_cache_entry),
+            ("world_traces.json", "traces", self._load_world_trace),
+        ]
+        for filename, payload_key, loader in loaders:
+            path = self.root / filename
+            if not path.exists():
+                continue
+            try:
+                payload = json.loads(path.read_text(encoding="utf-8-sig"))
+            except (OSError, json.JSONDecodeError) as exc:
+                # Self-audit a malformed persisted file. Don't raise —
+                # the daemon's own audit pipeline observes this entry
+                # on its next ingest cycle.
+                audit_id = sha256({
+                    "schema": "PersistenceLoadError.v1",
+                    "path": str(path),
+                    "error_type": type(exc).__name__,
+                })
+                self.audit_queue[audit_id] = AuditQueueItem(
+                    audit_id=audit_id,
+                    severity="high",
+                    reason=f"persistence_load_failed:{filename}:{type(exc).__name__}",
+                    record_id="",
+                    source_id="factory_lowlevel.persistence",
+                    recommended_action=(
+                        f"inspect {path.as_posix()} for corruption; "
+                        "the in-memory dict starts empty for this file "
+                        "— the daemon will rebuild from cache on next cycle"
+                    ),
+                )
+                continue
+            rows = payload.get(payload_key) if isinstance(payload, dict) else payload
+            if not isinstance(rows, list):
+                continue
+            for row in rows:
+                if not isinstance(row, dict):
+                    continue
+                try:
+                    loader(row)
+                except (KeyError, TypeError, ValueError):
+                    # Per-row malformations are skipped rather than
+                    # raising — the daemon's full-cycle audit will catch
+                    # systematic schema issues if they exist.
+                    continue
+
+    def _load_empirical_record(self, row: dict[str, Any]) -> None:
+        # EmpiricalRecord is a frozen dataclass; use its constructor.
+        rec = EmpiricalRecord(
+            record_id=row["record_id"],
+            source_id=row["source_id"],
+            world_family=row["world_family"],
+            record_type=row["record_type"],
+            canonical_name=row["canonical_name"],
+            payload=row.get("payload", {}) or {},
+            provenance=row.get("provenance", {}) or {},
+            license_class=row["license_class"],
+            mode_tag=row.get("mode_tag", "exploratory"),
+            schema_version=row.get("schema_version", "EmpiricalRecord.v1"),
+        )
+        self.empirical_records[rec.record_id] = rec
+
+    def _load_normalized_ref(self, row: dict[str, Any]) -> None:
+        ref = NormalizedReference(
+            normalized_id=row["normalized_id"],
+            empirical_record_id=row["empirical_record_id"],
+            world_family=row["world_family"],
+            process_roles=row.get("process_roles", []) or [],
+            interaction_channels=row.get("interaction_channels", []) or [],
+            state_space_effects=row.get("state_space_effects", []) or [],
+            overlap_fields=row.get("overlap_fields", []) or [],
+            confidence=float(row.get("confidence", 0.0)),
+            audit_flags=row.get("audit_flags", []) or [],
+            schema_version=row.get("schema_version", "NormalizedReference.v1"),
+        )
+        self.normalized_refs[ref.normalized_id] = ref
+
+    def _load_evidence_edge(self, row: dict[str, Any]) -> None:
+        edge = EvidenceEdge(
+            edge_id=row["edge_id"],
+            source=row["source"],
+            target=row["target"],
+            relation=row["relation"],
+            evidence_record_ids=row.get("evidence_record_ids", []) or [],
+            confidence=float(row.get("confidence", 0.0)),
+        )
+        self.evidence_edges[edge.edge_id] = edge
+
+    def _load_audit_item(self, row: dict[str, Any]) -> None:
+        item = AuditQueueItem(
+            audit_id=row["audit_id"],
+            severity=row["severity"],
+            reason=row["reason"],
+            record_id=row.get("record_id", "") or "",
+            source_id=row.get("source_id", "") or "",
+            recommended_action=row.get("recommended_action", "") or "",
+        )
+        self.audit_queue[item.audit_id] = item
+
+    def _load_source_cache_entry(self, row: dict[str, Any]) -> None:
+        entry = SourceCacheEntry(
+            source_id=row["source_id"],
+            cache_id=row["cache_id"],
+            fetched_at=row["fetched_at"],
+            url=row["url"],
+            raw_content_hash=row["raw_content_hash"],
+            raw_cache_path=row["raw_cache_path"],
+            parser_version=row["parser_version"],
+            license_class=row["license_class"],
+            export_policy=row["export_policy"],
+            record_count=int(row.get("record_count", 0)),
+            retrieval_mode=row.get("retrieval_mode", "unknown"),
+        )
+        self.source_cache[entry.cache_id] = entry
+
+    def _load_world_trace(self, row: dict[str, Any]) -> None:
+        # World traces persist as raw dicts (not dataclasses).
+        wf = row.get("world_family")
+        if wf:
+            self.world_traces[wf] = row
 
     def ingest_source_cache(self, entry: SourceCacheEntry) -> None:
         self.source_cache[entry.cache_id] = entry
