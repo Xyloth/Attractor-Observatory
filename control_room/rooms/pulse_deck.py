@@ -128,9 +128,30 @@ def render() -> None:
     warn_count = 0
     if pytest_cache["status"] == "ok":
         failed = pytest_cache["data"]["last_failed_count"]
+        # CB-011 fix #2: stale_cache flag — never display the failed
+        # count as live state if the cache mtime is older than the
+        # adapter's threshold. D17 binding (stale → flagged, not faked).
+        stale = pytest_cache["data"].get("stale_cache", False)
+        age = pytest_cache["data"].get("lastfailed_age_seconds")
         if failed and failed > 0:
-            failed_count += failed
-            alerts.append({"text": f"{failed} pytest tests failed last run", "when": "last test run"})
+            if stale:
+                # Still surface, but as a warn (not an active "tests
+                # are failing right now") alert. Age makes it concrete.
+                age_str = (
+                    f"~{int(age/3600)}h ago" if age and age >= 3600
+                    else f"~{int(age/60)}m ago" if age else "stale"
+                )
+                warn_count += 1
+                alerts.append({
+                    "text": f"{failed} pytest tests failed (STALE cache, last touched {age_str})",
+                    "when": "stale",
+                })
+            else:
+                failed_count += failed
+                alerts.append({
+                    "text": f"{failed} pytest tests failed last run",
+                    "when": "last test run",
+                })
     if campaigns["status"] == "ok":
         not_green = [c for c in campaigns["data"]["campaigns"] if c.get("status") not in (None, "green")]
         for c in not_green[:2]:
@@ -189,38 +210,100 @@ def render() -> None:
     else:
         render_empty_state(reason=telemetry["rationale"], expected_artifact="project_telemetry/ai_builder_tasks.jsonl")
 
-    # What-changed-since-last-session panel — diff against prior snapshot.
+    # What-changed-since-last-session panel.
+    # CB-011 fix #1: previously this rendered the raw snapshot diff,
+    # which dumped BUILD_LOG preamble text when the parser returned
+    # status=malformed. Now we render the LATEST BUILD_LOG work
+    # entries as titled event cards (date · header · first line of
+    # body) PLUS the structural snapshot diff alongside. This is what
+    # James asked for: "TASK-MOTIF-IMPL completed 17:30 EST",
+    # "TASK-W-1-MASS-INGEST: 1,375 records".
     st.markdown('<span class="cap">what changed since last session</span>', unsafe_allow_html=True)
-    prior_snap = load_prior()
-    current_snap = build_snapshot()
-    diff = diff_snapshots(prior_snap, current_snap)
-    if diff["status"] == "first_launch":
+    if build_log["status"] != "ok":
         render_empty_state(
-            reason=diff["rationale"],
-            expected_artifact="control_room/snapshots/state_prior.json (created on second render)",
+            reason=build_log["rationale"],
+            expected_artifact="BUILD_LOG.md (UTF-8 readable)",
         )
-    elif diff["delta_count"] == 0:
-        render_html(panel(
-            "delta · no changes",
-            '<div style="font-family: var(--font-body); font-size: var(--fs-body); color: var(--fg3);">'
-            f'No structured deltas between prior snapshot ({diff["prior_generated_at"][:19]}) '
-            f'and current ({diff["current_generated_at"][:19]}). The dashboard is in steady state.'
-            '</div>',
-        ))
     else:
-        delta_rows_html = ""
-        for d in diff["deltas"][:10]:
-            kind = d.get("kind", "?")
-            description = _describe_delta(d)
-            delta_rows_html += event_row(
-                when="delta",
-                text=description,
-                status="active" if "added" in kind or "new" in kind else "warning" if "changed" in kind else "trace",
+        recent_entries = build_log["data"]["entries"][-8:][::-1]
+        cards_html = ""
+        for entry in recent_entries:
+            date = entry.get("date") or "—"
+            header = entry.get("header") or "(untitled)"
+            body = (entry.get("body") or "").strip()
+            # First non-empty line of body, truncated.
+            first_line = next(
+                (ln.strip() for ln in body.splitlines() if ln.strip()),
+                "",
+            )[:140]
+            kind = entry.get("kind") or "other"
+            kind_color = {
+                "work":      "#4fc3f7",  # active
+                "audit":     "#f5a623",  # warning
+                "talk":      "#22d3ee",  # trace
+                "architect": "#bd6df8",  # motif
+            }.get(kind, "#9aa0ac")
+            first_line_html = (
+                '<div style="font-family:var(--font-mono);font-size:var(--fs-detail);'
+                f'color:var(--fg4);margin-top:2px;">{first_line}</div>'
+                if first_line else ""
+            )
+            cards_html += (
+                f'<div style="display:grid;grid-template-columns:90px 1fr 60px;gap:10px;'
+                f'padding:8px 0;border-bottom:1px dashed var(--border);align-items:start;">'
+                f'<span style="font-family:var(--font-mono);font-size:var(--fs-detail);'
+                f'color:var(--fg4);">{date}</span>'
+                f'<div>'
+                f'<div style="font-family:var(--font-display);font-size:var(--fs-body);'
+                f'color:var(--fg2);font-weight:500;">{header[:90]}</div>'
+                f'{first_line_html}'
+                f'</div>'
+                f'<span class="cap" style="color:{kind_color};text-align:right;">{kind}</span>'
+                f'</div>'
             )
         render_html(panel(
-            f"delta · {diff['delta_count']} changes since prior snapshot",
-            delta_rows_html,
+            f"latest {len(recent_entries)} BUILD_LOG entries · click into Doctrine Console for full audit trail",
+            cards_html,
         ))
+
+        # Then surface the structural snapshot diff alongside for non-
+        # BUILD_LOG changes (campaign status flips, falsifier counts,
+        # registry growth). Renders cleanly when prior snapshot exists.
+        prior_snap = load_prior()
+        current_snap = build_snapshot()
+        diff = diff_snapshots(prior_snap, current_snap)
+        if diff["status"] == "first_launch":
+            pass  # silent — the build_log cards above carry the load
+        elif diff["delta_count"] == 0:
+            render_html(panel(
+                "structural deltas · steady state",
+                '<div style="font-family: var(--font-body); font-size: var(--fs-detail); color: var(--fg4);">'
+                f'No campaign / falsifier / doctrine changes between '
+                f'{diff["prior_generated_at"][:19]} and {diff["current_generated_at"][:19]}.'
+                '</div>',
+            ))
+        else:
+            delta_rows_html = ""
+            for d in diff["deltas"][:10]:
+                kind = d.get("kind", "?")
+                # CB-011 hardening: only render deltas with KNOWN kinds;
+                # unknown kinds render as a typed pill rather than the
+                # f'{kind}: {d}' raw-dict dump that produced the
+                # docstring-leak bug.
+                description = _describe_delta(d)
+                if description.startswith(f'{kind}: ') and kind != "?":
+                    description = f'unknown delta kind={kind} (suppressed raw payload)'
+                delta_rows_html += event_row(
+                    when="delta",
+                    text=description,
+                    status="active" if "added" in kind or "new" in kind
+                          else "warning" if "changed" in kind
+                          else "trace",
+                )
+            render_html(panel(
+                f"structural deltas · {diff['delta_count']} since prior snapshot",
+                delta_rows_html,
+            ))
 
     # Recent falsifiers
     st.markdown('<span class="cap">recent falsifiers</span>', unsafe_allow_html=True)
