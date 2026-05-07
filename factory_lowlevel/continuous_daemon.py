@@ -68,10 +68,13 @@ def run_continuous_daemon(
     session_ledger: str | Path = DEFAULT_LEDGER,
     state_path: str | Path = DEFAULT_STATE,
     heartbeat_path: str | Path = DEFAULT_HEARTBEAT,
+    progress_root: str | Path = "reports/factory_daemon_progress",
     disk_budget_mb: int = 512,
     retry_ceiling: int = 3,
     retry_base_seconds: float = 2.0,
     cycle_backoff_seconds: int = 30,
+    force_refresh: bool = False,
+    force_refresh_source: list[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Run due source adapters repeatedly without AI runtime involvement.
 
@@ -123,6 +126,14 @@ def run_continuous_daemon(
     install_signal_handlers(_SIGNAL_STATE, heartbeat_path=heartbeat_path)
 
     state = _read_json(Path(state_path), default={"schema": "FactoryDaemonState.v1", "last_success_by_source": {}})
+    clearance = _apply_force_refresh(
+        state,
+        clear_all=force_refresh,
+        source_ids=force_refresh_source or [],
+    )
+    if clearance["cleared_source_ids"] or clearance["requested_missing_source_ids"]:
+        _append_jsonl(session_ledger, clearance)
+        atomic_write_json(Path(state_path), state)
     session_records: list[dict[str, Any]] = []
     cycle_index = 0
     while cycles <= 0 or cycle_index < cycles:
@@ -214,6 +225,7 @@ def run_continuous_daemon(
                 state=state,
                 store_root=store_root,
                 source_rows=source_rows,
+                progress_root=progress_root,
             )
         except Exception:  # pragma: no cover — progress write must never break the daemon
             pass
@@ -267,6 +279,38 @@ def _due_sources(source_rows: list[dict[str, Any]], state: dict[str, Any]) -> li
         if now - last_epoch >= cadence_seconds(row.get("refresh_cadence", "")):
             due.append(row)
     return due
+
+
+def _apply_force_refresh(
+    state: dict[str, Any],
+    *,
+    clear_all: bool,
+    source_ids: list[str],
+) -> dict[str, Any]:
+    last_success = state.setdefault("last_success_by_source", {})
+    before = set(last_success)
+    if clear_all:
+        requested = sorted(before)
+    else:
+        requested = sorted(set(source_ids))
+    cleared = []
+    missing = []
+    for source_id in requested:
+        if source_id in last_success:
+            last_success.pop(source_id, None)
+            cleared.append(source_id)
+        else:
+            missing.append(source_id)
+    return {
+        "schema": "FactoryDaemonForceRefreshClearance.v1",
+        "record_type": "force_refresh_clearance",
+        "cleared_at": utc_now(),
+        "clear_all": bool(clear_all),
+        "requested_source_ids": requested,
+        "cleared_source_ids": cleared,
+        "requested_missing_source_ids": missing,
+        "reason": "operator requested refresh-cadence bypass before cycle",
+    }
 
 
 def _filter_sources(
@@ -433,9 +477,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--session-ledger", default=str(DEFAULT_LEDGER))
     parser.add_argument("--state-path", default=str(DEFAULT_STATE))
     parser.add_argument("--heartbeat-path", default=str(DEFAULT_HEARTBEAT))
+    parser.add_argument("--progress-root", default="reports/factory_daemon_progress")
     parser.add_argument("--disk-budget-mb", type=int, default=512)
     parser.add_argument("--retry-ceiling", type=int, default=3)
     parser.add_argument("--retry-base-seconds", type=float, default=2.0)
+    parser.add_argument("--force-refresh", action="store_true", help="Clear all last_success_by_source entries before due-source selection.")
+    parser.add_argument("--force-refresh-source", action="append", default=None, help="Clear one source_id from last_success_by_source before due-source selection. Repeatable.")
     args = parser.parse_args(argv)
     run_continuous_daemon(**vars(args))
     return 0
