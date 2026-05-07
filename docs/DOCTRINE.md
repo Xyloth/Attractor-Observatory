@@ -261,6 +261,16 @@ See [`doctrine_d30.md`](doctrine_d30.md).
 
 ---
 
+## D31 - BFG measurement split
+
+See [`doctrine_d31.md`](doctrine_d31.md).
+
+> floor_connectivity-class predicates require a signed predicate-side outcome artifact, a field-disjoint lens-side trajectory artifact, grouped-stratified validation holdout, and enforced read separation. Heldout validation prevents tuning leakage; it does not by itself upgrade same-row field splits to CLEAN.
+
+**Failure mode caught:** Campaign 024 left floor connectivity formally unmeasurable because the BFG predicate and plausible basin-geometry lenses both operated on perturbation-outcome equivalence fibers. D31 requires row-disjoint unit-level predicate/lens measurement before a substrate-blocked floor result can be treated as evidence.
+
+---
+
 ## How the doctrine evolves
 
 A new doctrine rule is added when:

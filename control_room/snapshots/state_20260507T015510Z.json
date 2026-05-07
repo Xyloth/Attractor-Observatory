@@ -799,8 +799,8 @@
       {
         "delta_mean": null,
         "model": "Codex 1.5x",
-        "most_recent_task_id": "TASK-SOURCE-OBJ-GEN",
-        "task_count": 30
+        "most_recent_task_id": "TASK-DX-002-FIX",
+        "task_count": 28
       }
     ],
     "status": "ok",
@@ -997,18 +997,18 @@
   "freshness_policy": "D30: persisted freshness is advisory; load_latest/load_prior recompute against current HEAD at read time.",
   "freshness_status": "current",
   "freshness_status_advisory_only": true,
-  "generated_at": "2026-05-07T11:25:10.217999+00:00",
+  "generated_at": "2026-05-07T01:54:30.936277+00:00",
   "generation_binding": {
-    "branch": "codex/task-floor-bfg",
+    "branch": "codex/task-dx-002-fix",
     "commit_sha": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
     "commit_short": "2f804f0",
     "freshness_status": "current",
     "generation_command": "control_room.snapshot.write_snapshot()",
-    "generation_timestamp": "2026-05-07T11:25:10.217999+00:00",
+    "generation_timestamp": "2026-05-07T01:54:30.936277+00:00",
     "schema": "ControlRoomSnapshotGenerationBinding.v1"
   },
   "git_state": {
-    "branch": "codex/task-floor-bfg",
+    "branch": "codex/task-dx-002-fix",
     "last_commit": {
       "author_email": "founder@xyflowinnovations.com",
       "author_name": "Xyloth",
@@ -1019,7 +1019,7 @@
     },
     "recent_commit_count": 10,
     "status": "ok",
-    "summary": "branch codex/task-floor-bfg \u00b7 last commit 2f804f0 (Fix DX-002 findings and ratify D28-D30)"
+    "summary": "branch codex/task-dx-002-fix \u00b7 last commit 2f804f0 (Fix DX-002 findings and ratify D28-D30)"
   },
   "mistake_catalog": {
     "classes": [
@@ -1088,23 +1088,23 @@
     "summary": "12 classes; 11 ratified, 1 candidate (Class 12 \u2014 Decorative Completeness)"
   },
   "project_health": {
-    "active_branch": "codex/task-floor-bfg",
+    "active_branch": "codex/task-dx-002-fix",
     "notes": [
-      "5 pytest tests failed last run",
+      "4 pytest tests failed last run",
       "2 of 23 campaigns not green",
       "2 falsifier records present (publishable per D17)"
     ],
     "score": 70,
     "status": "ok",
-    "summary": "Project health score: 70/100. 5 pytest tests failed last run; 2 of 23 campaigns not green; 2 falsifier records present (publishable per D17)"
+    "summary": "Project health score: 70/100. 4 pytest tests failed last run; 2 of 23 campaigns not green; 2 falsifier records present (publishable per D17)"
   },
   "purpose": "Single-file digest for AI agents starting a fresh session. Read this file before parsing the 50+ source files referenced below. Each section carries {status, summary, details}. status=='ok' means real adapter data; status=='missing' means the source artifact is not on disk; status=='malformed' means the source exists but did not parse.",
   "pytest_status": {
     "coverage_status": "has_nodeids",
-    "last_failed_count": 5,
-    "nodeid_count": 453,
+    "last_failed_count": 4,
+    "nodeid_count": 448,
     "status": "ok",
-    "summary": "pytest cache: 5 last failed of 453 nodeids (has_nodeids)"
+    "summary": "pytest cache: 4 last failed of 448 nodeids (has_nodeids)"
   },
   "raw_adapter_payloads": {
     "build_log": {
@@ -1112,7 +1112,7 @@
       "status": "ok"
     },
     "builder_telemetry": {
-      "rationale": "parsed 92 records from project_telemetry/ai_builder_tasks.jsonl",
+      "rationale": "parsed 90 records from project_telemetry/ai_builder_tasks.jsonl",
       "status": "ok"
     },
     "campaign_reports": {
@@ -1120,7 +1120,7 @@
       "status": "ok"
     },
     "doctrine": {
-      "rationale": "parsed 25 registry rows; 26 consolidated headings; 14 per-rule files",
+      "rationale": "parsed 25 registry rows; 25 consolidated headings; 13 per-rule files",
       "status": "ok"
     },
     "factory_store": {
@@ -1128,7 +1128,7 @@
       "status": "ok"
     },
     "git_metadata": {
-      "rationale": "branch=codex/task-floor-bfg, last_commit=2f804f0, recent_log_count=10",
+      "rationale": "branch=codex/task-dx-002-fix, last_commit=2f804f0, recent_log_count=10",
       "status": "ok"
     },
     "methods_falsifiers": {
@@ -1140,7 +1140,7 @@
       "status": "ok"
     },
     "pytest_cache": {
-      "rationale": "pytest cache present at .pytest_cache; last_failed_count=5, nodeid_count=453",
+      "rationale": "pytest cache present at .pytest_cache; last_failed_count=4, nodeid_count=448",
       "status": "ok"
     }
   },

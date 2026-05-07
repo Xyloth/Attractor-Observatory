@@ -344,10 +344,14 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "decline_expected"
+              "edge_connectivity",
+              "mean_step_distance",
+              "basin_radius_at_recovery"
             ],
             "features_before": [
-              "decline_expected"
+              "edge_connectivity",
+              "mean_step_distance",
+              "basin_radius_at_recovery"
             ],
             "lens_id": "graph",
             "passed": true,
@@ -357,10 +361,10 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "out_of_domain"
+              "domain_decline"
             ],
             "features_before": [
-              "out_of_domain"
+              "domain_decline"
             ],
             "lens_id": "crnt",
             "passed": true,
@@ -370,12 +374,12 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "basin recurrence",
-              "stability"
+              "velocity_damping",
+              "recovery_time_steps"
             ],
             "features_before": [
-              "basin recurrence",
-              "stability"
+              "velocity_damping",
+              "recovery_time_steps"
             ],
             "lens_id": "dynamical_systems",
             "passed": true,
@@ -385,12 +389,14 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "connectivity_proxy",
-              "cycle_persistence_proxy"
+              "point_cloud_containment",
+              "radial_variance",
+              "basin_radius_at_recovery"
             ],
             "features_before": [
-              "connectivity_proxy",
-              "cycle_persistence_proxy"
+              "point_cloud_containment",
+              "radial_variance",
+              "basin_radius_at_recovery"
             ],
             "lens_id": "topology",
             "passed": true,
@@ -400,10 +406,12 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "out_of_domain"
+              "transition_activity",
+              "transition_persistence"
             ],
             "features_before": [
-              "out_of_domain"
+              "transition_activity",
+              "transition_persistence"
             ],
             "lens_id": "petri",
             "passed": true,
@@ -413,12 +421,14 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "large_deviation_rate",
-              "energy_variance"
+              "large_deviation_proxy",
+              "recovery_time_steps",
+              "censored_at_step"
             ],
             "features_before": [
-              "large_deviation_rate",
-              "energy_variance"
+              "large_deviation_proxy",
+              "recovery_time_steps",
+              "censored_at_step"
             ],
             "lens_id": "statistical_mechanics",
             "passed": true,
@@ -428,10 +438,14 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "reachability_proxy"
+              "velocity_rank",
+              "basin_radius_at_recovery",
+              "state_dimension"
             ],
             "features_before": [
-              "reachability_proxy"
+              "velocity_rank",
+              "basin_radius_at_recovery",
+              "state_dimension"
             ],
             "lens_id": "control_theory",
             "passed": true,
@@ -441,10 +455,12 @@
             "ablation_status": "CLEAN",
             "d26_independence": "CLEAN",
             "features_after_ablation": [
-              "out_of_domain"
+              "velocity_drift_dependence",
+              "perturbation_magnitude"
             ],
             "features_before": [
-              "out_of_domain"
+              "velocity_drift_dependence",
+              "perturbation_magnitude"
             ],
             "lens_id": "information",
             "passed": true,
@@ -452,7 +468,7 @@
           }
         ],
         "adversarial_controls_passed": true,
-        "contract_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+        "contract_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
         "corpus_size_per_substrate": {
           "crn": {
             "negative": 27,
@@ -909,7 +925,7 @@
     "artifact": "reports/campaign_024/full_report.json",
     "campaign_id": "campaign_024",
     "claim_promotion_allowed": false,
-    "lens_coupling_audit_hash": "sha256:af2fc2ed3f23f71ecd2d6ba79ae9d57922e735eb85f0a578265b1e06fd578546",
+    "lens_coupling_audit_hash": "sha256:7427180fc8c29ee5fa8b36f86813a63a380ddb60e46ac0e6b9fd1d09d3ae4cef",
     "mode": "predicate_and_lens_side_decoupled_rerun_no_promotion",
     "motif_verdicts": {
       "motif.autocatalytic_closure.draft": {
@@ -967,7 +983,7 @@
         "substrate_blocked_verdict": "signal_partial_or_inconclusive"
       },
       "motif.floor_connectivity.draft": {
-        "contract_hash": "sha256:79a1da87c41fb4b608cf61fe207c3df72de88e2df33f8800d0dd3186482d3cde",
+        "contract_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
         "corpus_size_per_substrate": {
           "crn": {
             "negative": 27,
@@ -1097,6 +1113,74 @@
     },
     "schema": "Campaign024DeficitMapUpdate.v1",
     "task_id": "TASK-LENS-METHOD"
+  },
+  "campaign_026_floor_bfg_d31": {
+    "artifact": "reports/campaign_026/full_report.json",
+    "campaign_id": "campaign_026",
+    "claim_promotion_allowed": false,
+    "floor_connectivity_lens_verdicts": {
+      "control_theory": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "NEW-ABST",
+        "substrate_blocked_verdict": "signal_survives_shuffle",
+        "validation_verdict": "signal_survives_shuffle"
+      },
+      "crnt": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "DOMAIN-DECLINE",
+        "substrate_blocked_verdict": "not_evaluable",
+        "validation_verdict": "not_evaluable"
+      },
+      "dynamical_systems": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "NEW-ABST",
+        "substrate_blocked_verdict": "signal_survives_shuffle",
+        "validation_verdict": "signal_survives_shuffle"
+      },
+      "graph": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "NEW-ABST",
+        "substrate_blocked_verdict": "signal_was_substrate_id",
+        "validation_verdict": "signal_was_substrate_id"
+      },
+      "information": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "PARTIAL-RISKY",
+        "substrate_blocked_verdict": "signal_survives_shuffle",
+        "validation_verdict": "signal_survives_shuffle"
+      },
+      "petri": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "NEW-ABST",
+        "substrate_blocked_verdict": "signal_survives_shuffle",
+        "validation_verdict": "signal_survives_shuffle"
+      },
+      "statistical_mechanics": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "PARTIAL-RISKY",
+        "substrate_blocked_verdict": "signal_survives_shuffle",
+        "validation_verdict": "signal_survives_shuffle"
+      },
+      "topology": {
+        "ablation_passed": true,
+        "adversarial_controls_passed": true,
+        "recovery_class": "NEW-ABST",
+        "substrate_blocked_verdict": "signal_was_substrate_id",
+        "validation_verdict": "signal_was_substrate_id"
+      }
+    },
+    "mode": "d31_bfg_row_disjoint_floor_recovery_no_promotion",
+    "post_run_hash": "sha256:b746ea0efe781d82a136631857bd18b2bd610cef5191a4b19cf9079886c37eab",
+    "preregistration_hash": "sha256:f0ceb553584dc974aed66024dcd6d9dacd1f2f5a8736cc94c8accaafc8a80ed4",
+    "schema": "Campaign026DeficitMapUpdate.v1",
+    "task_id": "TASK-FLOOR-BFG"
   },
   "campaign_id": "campaign-010",
   "candidates": [

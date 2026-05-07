@@ -50,15 +50,15 @@ def test_doctrine_registry_covers_all_binding_and_candidate_doctrines():
     registry = _load_json("docs/doctrine_registry.json")
     rows = registry["doctrines"]
     ids = {row["id"] for row in rows}
-    expected = {f"D{i}" for i in range(7, 31)} | {"D17.5"}
+    expected = {f"D{i}" for i in range(7, 32)} | {"D17.5"}
     assert expected <= ids
 
     for row in rows:
         assert row["content_hash"] == "sha256:" + _sha256_bytes(row["path"])
 
     ratified = {row["id"]: row for row in rows if row.get("status") == "ratified"}
-    assert {"D23", "D24", "D25", "D26", "D27", "D28", "D29", "D30"} <= set(ratified)
-    assert all(ratified[did]["mode"] == "foundational" for did in ("D23", "D24", "D25", "D26", "D27", "D28", "D29", "D30"))
+    assert {"D23", "D24", "D25", "D26", "D27", "D28", "D29", "D30", "D31"} <= set(ratified)
+    assert all(ratified[did]["mode"] == "foundational" for did in ("D23", "D24", "D25", "D26", "D27", "D28", "D29", "D30", "D31"))
 
 
 def test_telemetry_records_have_identity_and_one_active_estimate_per_task():

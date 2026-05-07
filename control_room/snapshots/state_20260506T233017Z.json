@@ -593,11 +593,11 @@
   "calibration_trajectory": {
     "by_model": {
       "Claude (Builder)": {
-        "latest_delta": 0.36,
+        "latest_delta": 0.26954545454545453,
         "max_delta": 0.5555555555555556,
-        "mean_delta": 0.24965645021645022,
+        "mean_delta": 0.2304038961038961,
         "min_delta": 0.09066666666666667,
-        "task_count": 10
+        "task_count": 8
       },
       "Codex": {
         "latest_delta": 0.10814285714285715,
@@ -607,15 +607,22 @@
         "task_count": 25
       },
       "Codex 1.5x": {
-        "latest_delta": 0.1718888888888889,
+        "latest_delta": 0.13166666666666665,
         "max_delta": 0.5543636363636363,
-        "mean_delta": 0.16020438109860308,
-        "min_delta": 0.05363636363636364,
-        "task_count": 15
+        "mean_delta": 0.17296194542057347,
+        "min_delta": 0.07291666666666667,
+        "task_count": 11
+      },
+      "unknown": {
+        "latest_delta": 0.1718888888888889,
+        "max_delta": 0.36,
+        "mean_delta": 0.2750740740740741,
+        "min_delta": 0.1718888888888889,
+        "task_count": 3
       }
     },
     "status": "ok",
-    "summary": "3 models in trajectory"
+    "summary": "4 models in trajectory"
   },
   "campaigns": {
     "rows": [
@@ -794,17 +801,23 @@
         "delta_mean": 1.5978067555810203,
         "model": "Claude (Builder)",
         "most_recent_task_id": "TASK-CB-009",
-        "task_count": 11
+        "task_count": 9
       },
       {
         "delta_mean": null,
         "model": "Codex 1.5x",
-        "most_recent_task_id": "TASK-SOURCE-OBJ-GEN",
-        "task_count": 30
+        "most_recent_task_id": "TASK-LENS-METHOD",
+        "task_count": 21
+      },
+      {
+        "delta_mean": null,
+        "model": "unknown",
+        "most_recent_task_id": "TASK-CB-009",
+        "task_count": 3
       }
     ],
     "status": "ok",
-    "summary": "3 agents with telemetry"
+    "summary": "4 agents with telemetry"
   },
   "detector_decline": {
     "declined": 96,
@@ -836,19 +849,15 @@
       "D23",
       "D24",
       "D25",
-      "D26",
-      "D27",
-      "D28",
-      "D29",
-      "D30"
+      "D26"
     ],
-    "registry_count": 25,
+    "registry_count": 21,
     "status": "ok",
-    "summary": "25 registry entries"
+    "summary": "21 registry entries"
   },
   "evidence_boundaries": {
-    "evidence_private_count": 2212,
-    "file_count": 25,
+    "evidence_private_count": 1850,
+    "file_count": 23,
     "files": [
       {
         "evidence_private_count": 4,
@@ -923,14 +932,6 @@
         "path": "reports/campaign_020/full_report.json"
       },
       {
-        "evidence_private_count": 181,
-        "path": "reports/campaign_023/full_report.json"
-      },
-      {
-        "evidence_private_count": 181,
-        "path": "reports/campaign_024/full_report.json"
-      },
-      {
         "evidence_private_count": 1,
         "path": "reports/campaign_035/full_report.json"
       },
@@ -953,7 +954,7 @@
     ],
     "interpretation": "D23 candidate boundary: private trace evidence remains lineage, but is not presented as dereferenceable public artifact.",
     "status": "ok",
-    "summary": "2212 private/unshipped evidence references explicitly marked across 25 files"
+    "summary": "1850 private/unshipped evidence references explicitly marked across 23 files"
   },
   "factory_state": {
     "audit_queue_count": 0,
@@ -977,7 +978,7 @@
       "bfg_point_attractor_candidate.md",
       "floor_connectivity_campaign013_replication.md"
     ],
-    "method_count": 32,
+    "method_count": 30,
     "negative_space_count": 10,
     "negative_space_files": [
       "bio_only_campaign_004.md",
@@ -994,32 +995,30 @@
     "status": "ok",
     "summary": "2 falsifiers; 10 negative-space entries"
   },
-  "freshness_policy": "D30: persisted freshness is advisory; load_latest/load_prior recompute against current HEAD at read time.",
   "freshness_status": "current",
-  "freshness_status_advisory_only": true,
-  "generated_at": "2026-05-07T11:25:10.217999+00:00",
+  "generated_at": "2026-05-06T23:29:53.857512+00:00",
   "generation_binding": {
-    "branch": "codex/task-floor-bfg",
-    "commit_sha": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
-    "commit_short": "2f804f0",
+    "branch": "main",
+    "commit_sha": "a35aab1064c059c4b07dde8b41d860d2bbe1cbf3",
+    "commit_short": "a35aab1",
     "freshness_status": "current",
     "generation_command": "control_room.snapshot.write_snapshot()",
-    "generation_timestamp": "2026-05-07T11:25:10.217999+00:00",
+    "generation_timestamp": "2026-05-06T23:29:53.857512+00:00",
     "schema": "ControlRoomSnapshotGenerationBinding.v1"
   },
   "git_state": {
-    "branch": "codex/task-floor-bfg",
+    "branch": "main",
     "last_commit": {
       "author_email": "founder@xyflowinnovations.com",
       "author_name": "Xyloth",
-      "hash": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
-      "iso_date": "2026-05-06 21:25:06 -0400",
-      "short": "2f804f0",
-      "subject": "Fix DX-002 findings and ratify D28-D30"
+      "hash": "a35aab1064c059c4b07dde8b41d860d2bbe1cbf3",
+      "iso_date": "2026-05-06 19:26:02 -0400",
+      "short": "a35aab1",
+      "subject": "Merge CB-009 atlas/bundle/inbox + CB-010 methodology surfacing & storage"
     },
     "recent_commit_count": 10,
     "status": "ok",
-    "summary": "branch codex/task-floor-bfg \u00b7 last commit 2f804f0 (Fix DX-002 findings and ratify D28-D30)"
+    "summary": "branch main \u00b7 last commit a35aab1 (Merge CB-009 atlas/bundle/inbox + CB-010 methodology surfaci)"
   },
   "mistake_catalog": {
     "classes": [
@@ -1088,23 +1087,23 @@
     "summary": "12 classes; 11 ratified, 1 candidate (Class 12 \u2014 Decorative Completeness)"
   },
   "project_health": {
-    "active_branch": "codex/task-floor-bfg",
+    "active_branch": "main",
     "notes": [
-      "5 pytest tests failed last run",
+      "4 pytest tests failed last run",
       "2 of 23 campaigns not green",
       "2 falsifier records present (publishable per D17)"
     ],
     "score": 70,
     "status": "ok",
-    "summary": "Project health score: 70/100. 5 pytest tests failed last run; 2 of 23 campaigns not green; 2 falsifier records present (publishable per D17)"
+    "summary": "Project health score: 70/100. 4 pytest tests failed last run; 2 of 23 campaigns not green; 2 falsifier records present (publishable per D17)"
   },
   "purpose": "Single-file digest for AI agents starting a fresh session. Read this file before parsing the 50+ source files referenced below. Each section carries {status, summary, details}. status=='ok' means real adapter data; status=='missing' means the source artifact is not on disk; status=='malformed' means the source exists but did not parse.",
   "pytest_status": {
     "coverage_status": "has_nodeids",
-    "last_failed_count": 5,
-    "nodeid_count": 453,
+    "last_failed_count": 4,
+    "nodeid_count": 430,
     "status": "ok",
-    "summary": "pytest cache: 5 last failed of 453 nodeids (has_nodeids)"
+    "summary": "pytest cache: 4 last failed of 430 nodeids (has_nodeids)"
   },
   "raw_adapter_payloads": {
     "build_log": {
@@ -1112,7 +1111,7 @@
       "status": "ok"
     },
     "builder_telemetry": {
-      "rationale": "parsed 92 records from project_telemetry/ai_builder_tasks.jsonl",
+      "rationale": "parsed 84 records from project_telemetry/ai_builder_tasks.jsonl",
       "status": "ok"
     },
     "campaign_reports": {
@@ -1120,7 +1119,7 @@
       "status": "ok"
     },
     "doctrine": {
-      "rationale": "parsed 25 registry rows; 26 consolidated headings; 14 per-rule files",
+      "rationale": "parsed 21 registry rows; 21 consolidated headings; 9 per-rule files",
       "status": "ok"
     },
     "factory_store": {
@@ -1128,11 +1127,11 @@
       "status": "ok"
     },
     "git_metadata": {
-      "rationale": "branch=codex/task-floor-bfg, last_commit=2f804f0, recent_log_count=10",
+      "rationale": "branch=main, last_commit=a35aab1, recent_log_count=10",
       "status": "ok"
     },
     "methods_falsifiers": {
-      "rationale": "indexed 32 methods, 2 falsifiers",
+      "rationale": "indexed 30 methods, 2 falsifiers",
       "status": "ok"
     },
     "negative_space": {
@@ -1140,7 +1139,7 @@
       "status": "ok"
     },
     "pytest_cache": {
-      "rationale": "pytest cache present at .pytest_cache; last_failed_count=5, nodeid_count=453",
+      "rationale": "pytest cache present at .pytest_cache; last_failed_count=4, nodeid_count=430",
       "status": "ok"
     }
   },
