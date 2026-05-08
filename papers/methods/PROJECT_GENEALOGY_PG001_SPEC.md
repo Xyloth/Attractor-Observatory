@@ -1,7 +1,10 @@
-# Project Genealogy PG-001 Spec v2
+# Project Genealogy PG-001 Spec v2.1
 
 Status: launch specification for PG-001
-Authoring pass: OG Builder / Codex
+Authoring passes:
+- v2 (OG Builder / Codex): pushbacks on v1, atom-decomposed birth predicate, DepthVector.v1, typed temporal multigraph, evidence-lock pre-pass, full schemas, falsifiability protocol, doctrine bindings, mistake-class targeting, 15 acceptance gates
+- v2.1 (Architect Claude): Project Mission and coherence Pass 4, mechanical removal-probe protocol replacing reference-count heuristic, Mission Control tab integration as a required deliverable, explicit deferral of the negative-space "cloud" layer to a future ticket
+
 Intended executor: fresh Claude Builder instance
 Scope: specification only; no audit execution in this ticket
 
@@ -212,6 +215,29 @@ Definitions:
 
 One-sentence test: if two files import each other, the runtime graph may cycle, but their birth edges must still have time direction or honest decline.
 
+### Project Mission
+
+The project mission is the apex predicate the entire codebase exists to satisfy. It sits one level above cohorts: variable -> file -> cohort -> mission. For Attractor Observatory the mission is to be a substrate-neutral computational research instrument that detects the named motifs across stratified substrates under predicate-lens-independent methodology, with research-grade evidence discipline.
+
+The mission is itself a set of `mission_atoms` reconstructed from existing artifacts in the pre-pass. PG-001 does not invent mission atoms. Allowed sources, in priority order:
+
+1. The doctrine corpus (`docs/DOCTRINE.md`, `docs/doctrine_*.md`, `docs/doctrine_registry.json`).
+2. Active campaign drivers (`CODEX_*.md`, `TASK-*.md`, `DX-*.md`, `CLAUDE_*.md`).
+3. `BUILD_LOG.md` headers and ratification entries.
+4. The project README and architectural method documents under `papers/methods/`.
+
+Each mission atom requires:
+
+- `mission_atom_id`
+- `statement`
+- `source_refs` (which doctrine line, which campaign brief, which BUILD_LOG entry)
+- `expected_artifact_families` (which artifact_family layers should serve this atom; e.g., `world`, `factory`, `formalism`, `report`, `control_room`)
+- `expected_drift_constraint` (under what change does drift away from this atom become bad)
+
+If a candidate mission claim cannot be tied to source refs, it is declined as `mission_atom_insufficient_source`. If it ties to sources but cannot name expected artifact families, it is declined as `mission_atom_too_abstract`. Declines are first-class outputs; an audit running on a project with unclear mission must say so.
+
+One-sentence test: a mission atom must cite at least one specific source ref and name at least one expected artifact_family, or it is declined.
+
 ## Curation Of The Twelve Proposed Axes
 
 | Axis | Decision | PG-001 treatment | Reason |
@@ -223,7 +249,7 @@ One-sentence test: if two files import each other, the runtime graph may cycle, 
 | Falsifiability per claim | Accept with constraint | Every finding needs a reproducer. Narrative summaries need evidence refs but not every sentence is a finding. | Achievable for findings, not for all prose without absurd overhead. |
 | D11 compliance for audit itself | Accept as core | Every finding and predicate atom carries evidence refs; source-less claims become hypotheses or declines. | The audit must be an evidence artifact. |
 | Cross-doctrine collision detection | Accept as core | Required cross-file pass over files claiming or enforcing the same Dxx. | Directly targets Class 13 and doctrine drift. |
-| Cohort analysis | Accept as core | Required cohort summaries and sibling consistency checks. | Files born together share intent; cohort-level drift is stronger than isolated drift. |
+| Cohort analysis | Accept as core (extended in Pass 4) | Required cohort summaries and sibling consistency checks; cohort alignment to mission atoms is computed in the project-level coherence pass. | Files born together share intent; cohort-level drift is stronger than isolated drift, and cohort-level alignment to mission is the apex coherence signal. |
 | Mistake-class mapping | Accept as core | Every finding maps to Class 1-13 or `unmapped_candidate`. | Keeps the audit connected to observed failure modes. |
 | Query API | Accept as core | Required Python API plus CLI query wrappers. | The research value is in interrogation, not only visualization. |
 | Living artifact with hooks | Accept, phased | Versioned atlases required; PR/CI hook specified but can run advisory in v1. | Hard-blocking CI on a new genealogy instrument is premature. |
@@ -329,8 +355,16 @@ Required JSON fields:
     "last_touched_date": "",
     "downstream_reference_count": 0,
     "runtime_reference_count": 0,
-    "cleanup_candidate": false,
-    "cleanup_reason": ""
+    "cleanup_candidate_status": "unknown|removable_clean|removable_with_warnings|not_removable|probe_declined",
+    "cleanup_reason": "",
+    "removal_probe": {
+      "ran_at": "",
+      "command": "",
+      "outcome": "",
+      "diff_summary": "",
+      "evidence_refs": [],
+      "decline_reason": ""
+    }
   },
   "consistency": {
     "cohort_findings": [],
@@ -414,11 +448,16 @@ Required fields:
     "decline_count": 0,
     "confirmed_finding_count": 0,
     "bad_drift_count": 0,
-    "cleanup_candidate_count": 0,
+    "cleanup_candidate_count_by_status": {},
     "cohort_count": 0,
     "edge_count_by_type": {},
     "depth_axis_distributions": {},
-    "drift_status_counts": {}
+    "drift_status_counts": {},
+    "mission_atom_count": 0,
+    "mission_coverage_status_counts": {},
+    "cohort_alignment_status_counts": {},
+    "coherence_report_path": "",
+    "coherence_report_hash": ""
   },
   "nodes": [],
   "edges": [],
@@ -473,6 +512,72 @@ Required edge shape:
 ```
 
 One-sentence test: the atlas graph must be reconstructable from dossier JSON files and the input manifest without reading prose.
+
+## Project Coherence Report Schema
+
+Schema name: `ProjectCoherenceReport.v1`
+
+Paths:
+
+- Versioned: `reports/project_genealogy/coherence_<YYYYMMDDTHHMMSSZ>.json`
+- Pointer: `reports/project_genealogy/coherence_latest.json`
+
+Required fields:
+
+```json
+{
+  "schema": "ProjectCoherenceReport.v1",
+  "run_binding": {
+    "input_manifest_hash": "",
+    "atlas_hash": "",
+    "branch": "",
+    "head_commit": "",
+    "generated_at": ""
+  },
+  "mission": {
+    "mission_predicate_id": "",
+    "atoms": [],
+    "source_refs": [],
+    "content_hash": ""
+  },
+  "coverage_by_atom": [
+    {
+      "mission_atom_id": "",
+      "statement": "",
+      "expected_artifact_families": [],
+      "serving_cohorts": [],
+      "serving_files": [],
+      "coverage_status": "covered|partial|orphan|declined",
+      "evidence_refs": [],
+      "decline_reason": ""
+    }
+  ],
+  "cohort_alignment": [
+    {
+      "cohort_id": "",
+      "spawn_ticket": "",
+      "members": [],
+      "served_mission_atoms": [],
+      "alignment_status": "aligned|partial|drifted|unmapped|declined",
+      "evidence_refs": [],
+      "decline_reason": ""
+    }
+  ],
+  "trajectory": {
+    "compared_atlas_versions": [],
+    "atoms_with_strengthening_drift": [],
+    "atoms_with_weakening_drift": [],
+    "trajectory_status": "improving|stable|degrading|insufficient_history|declined"
+  },
+  "findings": [],
+  "declines": [],
+  "content_hash": ""
+}
+```
+
+Coherence findings reuse the standard `finding` shape from the dossier schema, including reproducer requirements. A mission-coverage finding's reproducer is typically a `json_query` against the atlas plus dossier hashes.
+
+One-sentence test: every `coverage_by_atom` entry must either name serving cohorts/files or carry `coverage_status=orphan|declined` with a reason; mission atoms cannot quietly disappear from the report.
 
 ## Query API Surface
 
@@ -556,7 +661,6 @@ Required:
 
 Nice-to-have:
 
-- Time slider over versioned atlases.
 - Cohort hulls or group outlines.
 - Doctrine filter overlays.
 - Side-by-side diff between atlas versions.
@@ -569,6 +673,33 @@ Out of scope for v1:
 - Destroyer queue creation.
 
 One-sentence test: changing the 3D layout must not change any audit conclusion.
+
+### Mission Control Integration
+
+PG-001 ships a Streamlit Control Room tab named `Project Genealogy`. The tab is part of the existing Mission Control under `control_room/` and lives behind the same heartbeat-keyed token, autorefresh policy, and freshness-computed-at-read discipline as the rest of the dashboard.
+
+Required contract:
+
+- Tab loads only `reports/project_genealogy/atlas_latest.json` and the linked dossier JSON files. No mock or placeholder data; D22 absence-honest empty state when artifacts are missing.
+- Renders one Plotly `Scatter3d` trace per visible artifact_family with one marker per audited file under the default coordinates from the 3D Visualization Contract above (X: birth time, Y: artifact_family, Z: selected depth axis, color: drift_status, size: operational_load_bearingness, marker outline: liveness/honest-decline state).
+- Renders typed edges as Plotly 3D line traces filterable by edge type. Default visible edge types: `derived_from_file`, `spawned_by_ticket`, `contradicts_doctrine_peer`. All ten edge types selectable.
+- The view supports orbit, zoom, and pan; the Streamlit user resets view to the deterministic default with a one-click control.
+- Hover panel surfaces path, spawn_ticket, DepthVector summary (all five axes), drift_status, top finding (severity + claim + reproducer.last_run_status), and dossier_hash.
+- Click on a node opens the corresponding Markdown dossier in a side drawer or new section of the same page. The drawer never edits dossier content.
+- Filters surfaced in the sidebar: doctrine, drift_status, mistake_class, cohort, artifact_family, cleanup_candidate_status, honest_decline.
+- Time slider over versioned `atlas_<timestamp>.json` files in `reports/project_genealogy/`. When only one atlas exists, the slider is disabled with an honest "single snapshot" empty state.
+- Mission Coherence panel: shows mission atoms, `coverage_status` per atom (covered/partial/orphan/declined), cohort alignment heatmap, and trajectory verdict; all read from `coherence_latest.json` only.
+- A "Removable Files" panel lists `cleanup_candidate_status` distribution and the file list per status; each row shows the removal_probe outcome and links to the dossier. PG-001 surfaces candidates; it does not propose deletions.
+- Counts shown in any panel must equal counts in `atlas_latest.json` and `coherence_latest.json`. If they differ the tab renders a degraded-state banner naming the mismatch; it does not silently reconcile.
+
+Out of scope for v1:
+
+- Force-directed re-layouts that aren't deterministic from atlas data.
+- AI-generated relationship suggestions inside the tab.
+- Editing dossier, atlas, or coherence content from the tab.
+- Triggering audit reruns from the tab (audit reruns are CLI-only in v1).
+
+One-sentence test: closing and reopening the tab against the same `atlas_latest.json` and `coherence_latest.json` must produce an identical render; nondeterminism in coordinates, counts, or finding lists is a bug.
 
 ## Execution Plan
 
@@ -684,6 +815,31 @@ Acceptance criteria:
 
 One-sentence test: deleting one dossier causes atlas validation to fail, not silently shrink the graph.
 
+### Pass 4: Project-Level Coherence
+
+Inputs:
+
+- atlas from Pass 3
+- mission predicate (mission atoms + source refs) from input manifest
+- versioned atlas history under `reports/project_genealogy/` for trajectory analysis
+- doctrine registry
+
+Outputs:
+
+- `ProjectCoherenceReport.v1` versioned + `coherence_latest.json` pointer
+- atlas summary updated with `mission_atom_count`, `mission_coverage_status_counts`, `cohort_alignment_status_counts`, and `coherence_report_path/hash`
+- mission-coverage and cohort-alignment findings routed back into per-file dossiers where a specific file is implicated, with reproducer ref to the coherence report
+
+Acceptance criteria:
+
+- Every mission atom has either serving cohorts/files or `coverage_status ∈ {orphan, declined}` with a reason.
+- Every cohort has either served mission atoms or `alignment_status ∈ {unmapped, declined}` with a reason.
+- Trajectory analysis runs when at least two prior atlases exist; otherwise marks `trajectory_status=insufficient_history` honestly. Trajectory degradation findings cite specific atom diffs across atlas versions.
+- No prose-only mission claims; every coverage assertion cites cohort_id, file dossier_hash, or atom diff evidence.
+- Coherence findings reuse the standard `finding` shape and reproducer requirements.
+
+One-sentence test: a mission atom marked `covered` must name at least one serving file with a dossier hash; abstract or prose-only claims of coverage are forbidden.
+
 ## Falsifiability Protocol
 
 Every confirmed finding must include a reproducer. A reproducer is a minimal deterministic way to re-derive the finding from the bound input manifest.
@@ -706,6 +862,43 @@ Bias controls:
 5. If the current file is private or ignored, the public dossier may cite it only with `evidence_private=true` and cannot claim public reproducibility.
 
 One-sentence test: if an auditor cannot rerun or inspect the reproducer, the finding cannot be `confirmed`.
+
+## Removal Probe Protocol
+
+The `liveness.cleanup_candidate_status` field requires mechanical evidence, not reference-count heuristics. Reference counts are necessary but not sufficient: a file with zero imports may still be a CLI entry point, a generated artifact, a fixture loaded by name, or a private boundary marker. PG-001 distinguishes "looks unreferenced" from "removable without breaking verifiable behavior."
+
+Per-file removal probe:
+
+1. Stash the file in isolation (`git stash push <path>` or equivalent worktree-local move that does not touch other files).
+2. Run the public test suite: `python -m pytest public_tests/ -q`.
+3. Run any `artifact_family` smoke commands declared in the input manifest's probe registry. Examples:
+   - `factory` family: `python -m factory_lowlevel.continuous_daemon --dry-run --cycles 0`
+   - `report` family: re-validate any report-summary integrity checks that the file claims to feed.
+   - `control_room` family: `python -c "from control_room.launcher import main"` import-smoke, plus a deterministic Streamlit AppTest render where applicable.
+4. Capture pass/fail and an output diff vs the pre-stash baseline.
+5. Restore the file (`git stash pop`).
+
+Outcomes recorded in `liveness.removal_probe`:
+
+- `removable_clean`: tests pass and registered smokes pass with diff_summary empty.
+- `removable_with_warnings`: tests pass and smokes pass but observed output diffs in non-error fields (logs, ordering, timings); human review required before any cleanup.
+- `not_removable`: tests fail or registered smokes break; the file is load-bearing even if reference counts are low.
+- `probe_declined`: the file sits on a critical path where probing would risk irreversible state. Manifest must list these paths explicitly.
+
+Required `probe_declined` paths in the input manifest's probe registry include at minimum:
+
+- Persistence layer (anything that writes `factory_store/`, `daemon_state.json`, or `.daemon_lock`).
+- Lock acquisition / safety modules (`factory_lowlevel/launch_safety.py` and equivalents).
+- Schema definition modules whose removal would invalidate validation across the tree.
+- Adapters whose removal would silently drop substrate coverage (verify by Pass 1 import + spawn graph).
+- Test files themselves (probing a test by deleting it is meta-circular).
+- Files inside private gitignored paths (`worlds/`, `motifs/`, etc.) — these get `evidence_private=true` and the probe is declined under D23.
+
+The probe is itself the reproducer for any non-`unknown` `cleanup_candidate_status`. Without a recorded probe, the status defaults to `unknown` and the file is excluded from the cleanup_candidates list. PG-001 does not delete files; the Removable Files panel lists candidates with their probe outcomes for human triage.
+
+If running the full probe is too expensive in a single PG-001 run (e.g., thousands of files), the manifest may declare a probe-budget. Files exceeding the budget are recorded as `unknown` rather than `removable_clean`; under-claimed status is permitted, over-claimed is not.
+
+One-sentence test: a `cleanup_candidate_status ∈ {removable_clean, removable_with_warnings, not_removable}` finding without a corresponding `removal_probe.outcome` and recorded `command` is invalid and must be downgraded to `unknown`.
 
 ## Doctrine Bindings
 
@@ -734,8 +927,10 @@ Compliance checks:
 - `pg_manifest_thresholds_locked`: thresholds and filters exist before Pass 2.
 - `pg_evidence_ref_resolves_or_private`: all evidence refs pass D23/D29.
 - `pg_no_prose_only_findings`: all confirmed findings have JSON evidence and reproducer.
-- `pg_no_mock_viz_data`: visualization node/edge counts equal atlas node/edge counts.
+- `pg_no_mock_viz_data`: visualization node/edge counts equal atlas node/edge counts; coherence panel counts equal `coherence_latest.json` counts.
 - `pg_source_object_independence`: birth/current predicate comparisons declare source surfaces and overlap status.
+- `pg_mission_atoms_traceable`: every mission atom resolves to at least one source ref in the doctrine corpus, BUILD_LOG, campaign drivers, or method documents; AI-invented mission atoms are forbidden.
+- `pg_removal_probe_evidence`: every non-`unknown` `cleanup_candidate_status` has a recorded `removal_probe` with command and outcome.
 
 One-sentence test: PG-001 cannot criticize predicate-lens coupling in the project while using prose-only self-matched evidence in its own findings.
 
@@ -749,7 +944,7 @@ PG-001 targets the observed mistake catalog as follows:
 | Class 2 Direction inversion | Gate/test comparison fails adversarial sanity check or expected-bad fixture. Emits command/json reproducer showing bad input passes. |
 | Class 3 Soft enforcement, strict display | Displayed threshold differs from enforced code threshold. Emits pair of refs: report threshold and code threshold. |
 | Class 4 Scenario-internal hardcoding | AST branch on benchmark/scenario/source id inside step/update/apply/mutation path writes state. Emits AST reproducer. |
-| Class 5 Surface coverage without substance | Birth predicate atoms absent despite file/report/test presence. Emits missing atom list and shallow-test evidence. |
+| Class 5 Surface coverage without substance | Birth predicate atoms absent despite file/report/test presence. Emits missing atom list and shallow-test evidence. Pass 4 also emits a Class 5 candidate when a cohort claims to serve a mission atom but its member dossiers lack the predicate atoms that mission atom requires. |
 | Class 6 Engineered passing | Thresholds or coefficients appear tuned to expected outputs without locked null/spec source. Emits threshold provenance decline or reproducer. |
 | Class 7 Surface labels as primitives | Label used as evidence without operational predicate. Emits label surface and missing predicate atom. |
 | Class 8 Abstract scalar standing in | Scalar/summary object substitutes for richer state promised by birth predicate. Emits promised-rich-object atom and current scalar evidence. |
@@ -776,6 +971,11 @@ Required decline reasons:
 - `file_out_of_scope_by_manifest`
 - `public_runtime_boundary`
 - `doctrine_mapping_ambiguous`
+- `mission_atom_insufficient_source`
+- `mission_atom_too_abstract`
+- `removal_probe_declined_critical_path`
+- `removal_probe_over_budget`
+- `trajectory_insufficient_history`
 
 Declines are counted in the atlas and rendered in the 3D view. A decline is not a failure of PG-001; a fabricated reconstruction is.
 
@@ -786,7 +986,7 @@ One-sentence test: the number of declines must be visible in the atlas summary a
 PG-001 does not:
 
 - Build or run the Destroyer queue.
-- Delete files or propose automatic refactors.
+- Delete files or propose automatic refactors. The Removable Files panel is a candidate list, never a deletion order.
 - Prove line-by-line semantic correctness.
 - Replace the test suite, type checker, or static analyzer.
 - Run full mutation testing.
@@ -795,8 +995,9 @@ PG-001 does not:
 - Promote any scientific claim because a code genealogy looks healthy.
 - Make the 3D visualization a truth surface.
 - Require a hard-blocking CI gate on every PR in v1; advisory CI is enough until false-positive behavior is measured.
+- Map the project's negative-space "extrapolation surface" — what the project is NOT but could become. PG-001 audits interior fidelity to the existing mission. The exterior potential / cloud layer is a separate audit philosophy and a future ticket (PG-002 or NS-001). The `positive_deepening` drift status is the only mechanism in this spec that accommodates beneficial growth toward the mission; mapping the unrealized surface is explicitly deferred to preserve the research instrument's openness while PG-001 is bedded in.
 
-One-sentence test: if a proposed PG-001 output would change project code, delete files, or promote science, it belongs to a downstream ticket.
+One-sentence test: if a proposed PG-001 output would change project code, delete files, promote science, or harden the project against directions it has not yet explored, it belongs to a downstream ticket.
 
 ## Acceptance Gates
 
@@ -817,9 +1018,20 @@ PG-001 implementation must pass:
 13. `PG13_mistake_class_mapping`: every finding maps to Class 1-13 or `unmapped_candidate`.
 14. `PG14_public_verification_honesty`: public claims name shipped tests/scripts or private boundary.
 15. `PG15_versioned_atlas`: versioned atlas and latest pointer exist with freshness binding.
+16. `PG16_mission_atoms_locked`: input manifest contains mission atoms with source refs; the `ProjectCoherenceReport.v1` and every coherence finding cite the same mission predicate hash.
+17. `PG17_mission_coverage_complete`: every mission atom has either serving cohorts/files or `coverage_status ∈ {orphan, declined}` with a recorded reason; every cohort has either served mission atoms or `alignment_status ∈ {unmapped, declined}` with a reason.
+18. `PG18_removal_probe_evidence`: every `cleanup_candidate_status ∈ {removable_clean, removable_with_warnings, not_removable}` has a `removal_probe` with `command` and `outcome`; bare `unknown` and `probe_declined` are allowed and counted in the atlas summary.
+19. `PG19_control_room_tab_renders`: the Mission Control `Project Genealogy` tab renders deterministically from `atlas_latest.json` and `coherence_latest.json`, surfaces honest empty state when artifacts are absent, and reports node/edge/coverage counts equal to the underlying JSON.
+20. `PG20_trajectory_history_honest`: trajectory analysis runs when at least two prior atlases exist; otherwise the report records `trajectory_status=insufficient_history` rather than a fabricated verdict.
 
-One-sentence test: PG-001 is not complete because it wrote dossiers; it is complete when the gates above are measured and green or honestly declined with reasons.
+One-sentence test: PG-001 is not complete because it wrote dossiers; it is complete when the twenty gates above are measured and green or honestly declined with reasons.
 
 ## Launch Instruction For Fresh Claude
 
-Read this spec first, then read `CLAUDE_BUILDER_INITIATION.md` mistake catalog, `docs/DOCTRINE.md`, `docs/doctrine_registry.json`, and `BUILD_LOG.md`. Do not run the genealogy audit until the input manifest and threshold policy are written. If any field in this spec is impossible to populate mechanically, write a BLOCKER-PG001 note rather than filling it with interpretation.
+Read this spec first, then read `CLAUDE_BUILDER_INITIATION.md` mistake catalog, `docs/DOCTRINE.md`, `docs/doctrine_registry.json`, and `BUILD_LOG.md`. Sample several `papers/methods/*.md` documents and recent `CODEX_*.md` / `TASK-*.md` drivers so the mission-atom reconstruction has the corpus it needs.
+
+Do not run the genealogy audit until the pre-pass has produced a locked input manifest containing the file inclusion filters, the threshold policy, the mission atom set with source refs, the artifact_family probe registry for the removal probe, and the explicit list of `probe_declined` critical paths.
+
+If any field in this spec is impossible to populate mechanically, write a BLOCKER-PG001 note rather than filling it with interpretation. The honest-decline taxonomy exists for exactly this case; use it.
+
+The Mission Control tab is part of the v1 deliverable, not a follow-up. Pass 3 and Pass 4 outputs feed it; the tab is acceptance-gated under PG19. Do not ship dossiers + atlas + coherence report without also wiring the Streamlit tab.
