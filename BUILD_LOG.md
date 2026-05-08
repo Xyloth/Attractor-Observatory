@@ -2445,3 +2445,91 @@ artifact policy cleanup, KEGG CRN adapter offline sanity, one daemon
 cycle relaunch health check, and closeout to main. Explicit lane
 boundary: no live-daemon babysitting after the required short health
 check; sustained monitoring remains Builder's lane.
+
+## 2026-05-08 08:28:21 EST - TASK-CB-019 Complete
+
+Main landed and pushed.
+
+Commits:
+
+* `85bb893` - TASK-CB-019 implementation branch commit.
+* `9b1d410` - no-ff merge to main.
+* `5343a16`, `61c3f69`, `eb50e44` - prior CB-018 Phase-2 expansion
+  lineage documented above.
+
+P0 trace persistence:
+
+* Fixed `factory_lowlevel.live_pipeline.run_live_factory_cycle` to call
+  `store.ingest_world_traces(routed, run_id_seed=store.content_hash())`
+  before `store.write()`.
+* Added `public_tests/test_live_pipeline_world_traces.py`: verifies
+  `LowLevelWorldTrace.v1` persistence, `trace_content_hash`
+  recomputation from canonical body JSON, verifier predicate shape, and
+  idempotent rerun behavior.
+
+P0a stale tests:
+
+* `public_tests/test_phase_b_adapters.py` now derives Phase-2 adapter
+  targets from `papers/methods/INGESTION_TARGETS.md` via
+  `load_target_densities()`.
+* Math primitives assertion now checks target coverage (Phase-2 target
+  600; bundled catalog emits 626) instead of stale Phase-1 equality.
+* KEGG E. coli sanity fixed: `KEGGEcoliCRNAdapter` now emits 500
+  deterministic, source-bound E. coli CRN projection records offline
+  instead of silently staying at one record.
+
+Cleanup:
+
+* `scripts/setup_worktree.bat` and `.sh` now copy all 13 private
+  module directories from `.gitignore`: `worlds`, `motifs`,
+  `validation`, `nulls`, `core`, `trace`, `formalism`, `biology`,
+  `search`, `ops`, `experiments`, `evidence`, `tests`.
+* `.gitattributes` pins `scripts/*.sh` to LF and `scripts/*.bat` to
+  CRLF. `bash -n scripts/setup_worktree.sh` passes; the `.bat` script
+  was smoke-run against the main checkout and found all 13 modules.
+* Runtime artifact policy tightened in `.gitignore`: per-run Control
+  Room run snapshots, timestamped snapshots, daemon logs, raw
+  source-cache directories, `.daemon_lock`, and Codex scratch
+  `reports/task_phase_b_verify/` are ignored. `reports/task_cb014_launch/`
+  is treated as launch scratch rather than a publication report.
+* CL-5 decision: reverted the broken post-crash tracked daemon/store
+  mutation instead of committing it, because its snapshot carried
+  `world_traces: 0` and would have encoded the P0 bug into main.
+
+Verification before relaunch:
+
+* `python -m py_compile factory_lowlevel/live_pipeline.py
+  factory_lowlevel/adapters.py factory_lowlevel/continuous_daemon.py`
+  passed.
+* `python -m pytest public_tests/ -q` -> 131 passed, 2 protobuf
+  deprecation warnings, 267.28s.
+
+Daemon relaunch:
+
+* Old lock `reports/task_cb015_launch/factory_store/.daemon_lock`
+  held stale PID 50104. Launch against the same store replaced it with
+  PID 27516 via `orphaned_lock_overridden` behavior; no manual unlink
+  required.
+* Launch command included the requested flags plus explicit CB-015
+  store/cache/trace paths so the orphan lock and live store were the
+  ones exercised:
+  `python -m factory_lowlevel.continuous_daemon --cycles 1
+  --sleep-seconds 3600 --allow-network --force-refresh --progress-root
+  reports/factory_daemon_progress --store-root
+  reports/task_cb015_launch/factory_store --cache-dir
+  reports/task_cb015_launch/source_cache --trace-root
+  reports/task_cb015_launch/traces`
+* Health check after the short window: heartbeat `status=running`,
+  `due_source_count=17`, `quarantined_source_count=0`,
+  `completed_source_count=0`; no stderr. Latest state is still in the
+  NIST `download` stage, but cache files are actively advancing
+  (`reports/task_cb015_launch/source_cache/nist_atomic_spectra/`,
+  latest write at 08:27:41 EST). No rejection storm observed.
+* ETA: previous CB-018 observed throughput was 55,642 records in
+  ~66 minutes before host crash. Because CL-5 reverted the broken
+  tracked post-crash store and the relaunched cycle is rebuilding from
+  cache/network, expected completion is approximately 75-90 minutes
+  from 08:23 EST if NIST remains the bottleneck: 09:45-10:00 EST.
+
+Codex exits here per instruction. No ScheduleWakeup, no polling loop,
+no daemon babysitting; Builder owns sustained monitoring.
