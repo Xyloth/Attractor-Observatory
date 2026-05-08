@@ -26,6 +26,14 @@ from .launch_safety import (
     write_checkpoint,
 )
 from .live_pipeline import available_adapters, run_live_factory_cycle
+from .memory_guard import (
+    DEFAULT_MAX_RSS_GB,
+    DEFAULT_MIN_FREE_GB,
+    check_memory_budget,
+    consume_stop_flag,
+    measure_memory,
+    read_stop_flag,
+)
 from .persistence import atomic_write_json
 from .progress import write_ingestion_progress
 from .schemas import sha256, utc_now
@@ -176,6 +184,38 @@ def run_continuous_daemon(
                 break
             if _SIGNAL_STATE.hard_stop_requested:
                 break
+            # CB-021 M3: file-based stop flag (Windows-friendly safe stop).
+            stop_reason = read_stop_flag()
+            if stop_reason:
+                session.setdefault("audit_items", []).append({
+                    "reason": "operator_stop_flag_honored",
+                    "stop_reason": stop_reason,
+                    "severity": "info",
+                    "recommended_action": "operator_initiated_clean_shutdown",
+                })
+                consume_stop_flag()
+                break
+            # CB-021 M1: memory budget guard. After the 2026-05-08 incident
+            # where the daemon ate 40-50 GB RSS in one long-lived process
+            # and white-screened the desktop, refuse to start the next
+            # source if RSS or free-RAM are outside budget. Caller exits
+            # cleanly with audit item; operator restarts on a smaller scope.
+            mem_ok, snap, mem_reason = check_memory_budget()
+            if not mem_ok:
+                session.setdefault("audit_items", []).append({
+                    "reason": "memory_budget_exceeded",
+                    "diagnostic": mem_reason,
+                    "rss_gb": snap.rss_gb,
+                    "free_gb": snap.free_gb,
+                    "measurement_source": snap.source,
+                    "severity": "high",
+                    "recommended_action": (
+                        "abort cycle; restart daemon with smaller scope "
+                        "(--source-id or --target-world); investigate "
+                        "memory leak in trace_rows accumulation or store load"
+                    ),
+                })
+                break
             source_id = row["source_id"]
             result = _run_source_with_retries(
                 source_id=source_id,
@@ -195,6 +235,7 @@ def run_continuous_daemon(
             else:
                 session["quarantined_source_ids"].append(source_id)
                 session["audit_items"].append(result["audit"])
+            # CB-021 M4: enriched heartbeat with RSS for liveness diagnosis.
             _write_heartbeat(heartbeat_path, session=session, status="running")
 
         session["completed_at"] = utc_now()
@@ -425,6 +466,13 @@ def _with_session_id(session: dict[str, Any]) -> dict[str, Any]:
 
 
 def _write_heartbeat(path: str | Path, *, session: dict[str, Any], status: str) -> None:
+    # CB-021 M4: enrich heartbeat with PID, RSS, and free-RAM so a stale
+    # heartbeat is also a memory diagnostic. After the 2026-05-08 incident
+    # the heartbeat went stale at 19:45:22Z while RSS climbed to 40-50 GB
+    # — without per-heartbeat RSS the operator had no fine-grained signal
+    # to distinguish "stuck" from "OOM-crashing". Now every heartbeat
+    # carries enough state to triage in seconds.
+    snap = measure_memory()
     heartbeat = {
         "schema": "FactoryDaemonHeartbeat.v1",
         "heartbeat_at": utc_now(),
@@ -435,6 +483,10 @@ def _write_heartbeat(path: str | Path, *, session: dict[str, Any], status: str) 
         "quarantined_source_count": len(session["quarantined_source_ids"]),
         "run_ids": session["run_ids"],
         "audit_items": session["audit_items"],
+        "pid": os.getpid(),
+        "rss_gb": snap.rss_gb,
+        "free_ram_gb": snap.free_gb,
+        "memory_source": snap.source,
     }
     atomic_write_json(Path(path), heartbeat)
 

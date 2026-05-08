@@ -2626,3 +2626,162 @@ sources in completed/quarantined terminal state, the cycle
 counter increments to 1, and the daemon exits via release_lock.
 If --cycles 1 still doesn't exit after the fix, CB-021 surfaces
 that as a daemon-state-machine bug.
+
+
+## 2026-05-08 14:50:00 EST -- TASK-CB-020 + CB-021 close
+
+### CB-020 (write race) close
+
+CB-020 verify cycle (PID 15452, launched 14:38 EST under reader-loop
+load at 9.9 reads/sec) ran for ~67 minutes before PI termination.
+
+CB-020 race-fix outcome: PERFECT.
+* Zero quarantines (was 6 of 17 in CB-019 pre-fix)
+* Zero adapter_retry_ceiling_exceeded audit items
+* Zero reader-side OSError / PermissionError (was probabilistic per
+  refresh tick pre-fix). Reader-loop log:
+  ``[reader-loop] FINAL: reads=N (9.9/s); ... errors=0`` over ~67 min
+* 8 of 17 sources reached completed cleanly; ~56,641 records persisted
+* Audit queue: 808 items, all from honest-decline categories
+  (nist_asd_no_energy_level_rows, KEGG source-limited, etc.)
+  No write-race audit items.
+
+The race fix (F1+F2+F3+F5 + symmetric safe_read_json) IS the right
+fix and IS the load-bearing change for the write-side correctness.
+Acceptance criteria #1 (pytest green) and #3 (stale lock auto-clear)
+were met before the verify cycle started.
+
+Acceptance criterion #2 ("one full daemon cycle completes ... zero
+quarantines, all 17 traces persist") was NOT met because the daemon
+was terminated before completing the 17-source cycle. The reason
+was a SECOND, INDEPENDENT bug: memory blow-up.
+
+### CB-021 (memory guards) close
+
+PI terminated PID 15452 at ~67 min uptime when:
+* Process RSS: ~42-50 GB
+* Virtual size: ~106 GB
+* System free RAM: ~0.31 GB (was ~28 GB after kill)
+* Daemon stuck in world_simulate stage on
+  source.szostak_liposome.protocell_benchmarks (next source after
+  the 8 completed)
+* No CPU activity, no IO activity, no TCP connections, heartbeat
+  stale 5+ min — process holding memory while idle/stuck
+
+Full incident details: factory-daemon-incident-report-2026-05-08.md
+(Codex / PI authored; lives outside the public repo).
+
+Root cause analysis: ``run_live_factory_cycle`` accumulated full
+trace bodies into ``trace_rows`` across ALL 13 routed bundles
+before computing motif/lens/life-form output. With Phase-2 density
+(60K+ records, ~2 GB on-disk trace bytes), Python's JSON-to-object
+expansion made the in-memory peak ~40-50 GB.
+
+CB-021 ships memory-safety guardrails (4 changes + 1 new module +
+16 new tests):
+
+* M1 (factory_lowlevel/memory_guard.py): cross-platform memory
+  snapshot via psutil OR Windows ctypes (psapi.GetProcessMemoryInfo
+  + kernel32.GlobalMemoryStatusEx) OR Linux /proc. ``check_memory_budget``
+  enforces RSS <= 24 GB and free RAM >= 8 GB defaults; daemon
+  aborts cycle with audit item ``memory_budget_exceeded`` if
+  exceeded BEFORE starting next source. Defaults override-able
+  via FACTORY_DAEMON_MAX_RSS_GB / FACTORY_DAEMON_MIN_FREE_GB env.
+
+* M2 (factory_lowlevel/live_pipeline.py): restructured
+  ``run_live_factory_cycle`` trace_rows loop from one big
+  cross-bundle accumulation to per-bundle streaming. After each
+  routed bundle: simulate -> build_evidence -> evaluate_lenses ->
+  life_forms -> drop trace bodies (row['trace'] = None) -> gc.collect.
+  The slim metadata (record_id, canonical_name, source_id,
+  world_family, trace_path, trace_id, rejections) accumulates into
+  trace_rows; full trace bodies live ONLY on disk after each
+  bundle finishes. Estimated peak RAM goes from all-worlds-at-once
+  to one-world-at-a-time. Largest single bundle (origins_chemistry,
+  300 records, ~3 MB avg trace) = ~1 GB peak vs prior ~10-15 GB.
+
+* M3 (factory_lowlevel/memory_guard.py + continuous_daemon.py):
+  file-based stop flag at control_room/cache/factory_daemon_stop.flag.
+  Daemon checks this between sources and exits cleanly with audit
+  item ``operator_stop_flag_honored``. Replaces unreliable Windows
+  signal handling on detached nohup processes. Operator usage:
+    echo "user requested stop" > control_room/cache/factory_daemon_stop.flag
+  Daemon DELETES the flag after honoring it so the next launch
+  starts cleanly.
+
+* M4 (continuous_daemon.py + live_pipeline.py): heartbeat enriched
+  with pid, rss_gb, free_ram_gb, memory_source. latest_state.json
+  also enriched with rss_gb + free_ram_gb on every per-record
+  write during world_simulate. A stale heartbeat now also reports
+  the RSS at last write — operator can distinguish "stuck on slow
+  source" (RSS stable) from "memory wedge" (RSS climbing) in
+  seconds, not minutes. Per-record latest_state writes throttled
+  to every 50 records to avoid flooding the file.
+
+Tests (public_tests/test_cb021_memory_guard.py): 16 new tests
+covering memory_guard module + AST sanity for daemon plumbing.
+All pass in 0.08s.
+
+### Combined acceptance status
+
+| # | Criterion | Status |
+|---|-----------|--------|
+| 1 | pytest green | YES (151 passed pre-merge) |
+| 2 | daemon cycle completes with Control Room load, zero quarantines, 17 traces | PARTIAL: 8/17 completed cleanly, zero quarantines, but cycle aborted at memory blow-up. CB-021 guards prevent recurrence; full 17-source verify deferred to post-CB-021-merge re-launch under operator supervision |
+| 3 | stale lock auto-clear | YES (verified at CB-020 launch) |
+| 4 | CL-1 BUILD_LOG entry | YES (CB-020 commit 115afac) |
+| 5 | CB-020 close BUILD_LOG | YES (this section) |
+| 6 | branch merged to main | follows this commit |
+
+### Deferred to CB-022 (architectural redesign)
+
+The incident report's recommended architectural fixes are bigger
+than what the CB-021 guardrails ship. They're deferred to a separate
+ticket as documented escalations:
+
+1. **Per-source child process supervision**. Parent daemon spawns
+   one child per source, child loads/processes/writes/exits, OS
+   reclaims memory on each exit. Avoids any cross-source memory
+   accumulation in the parent.
+
+2. **Sharded persistence layer**. Replace whole-store JSON with
+   per-world / per-source NDJSON or SQLite. Eliminates the
+   load-entire-store-on-init pattern. Touches:
+   * factory_lowlevel/persistence.py (LowLevelFactoryStore)
+   * factory_lowlevel/index.py (Parquet index)
+   * Multiple read sites in control_room/
+
+3. **Streaming run_payload writer**. Run_payload at ~300+ MB JSON
+   is constructed entirely in memory before write. Stream writes
+   for records / normalized_refs / trace_records sections.
+
+4. **Disk budget extended**. Current disk-budget audit checks
+   source_cache + audit_queue but not factory_store or trace_root.
+   Should include store_root + trace_root totals + largest-file +
+   file count.
+
+5. **Trace trim policy**. Trace files at 904 MB (origins_chemistry)
+   and 734 MB (quasispecies) per-world dwarf the 156 MB atomic
+   bucket. Investigate whether origins/quasispecies trace bodies
+   carry redundant arrays; trim or compress.
+
+6. **Stop-flag check between RECORDS not just sources**. Currently
+   the file-flag is checked between sources. For long sources
+   (1000+ records simulating concurrently), the operator may need
+   sub-second stop response. Add per-record check inside the
+   bundle loop.
+
+These are documented as the CB-022 escalation list. None are
+required for CB-020 / CB-021 close: the guardrails ship now and
+prevent the system-killing case immediately, the architectural
+fixes can land at the cadence the team chooses.
+
+### Cleanup
+
+* Reader-loop process (PID 28752, scripts/cb020_reader_loop.py)
+  is still running per PI's note. ~25 MB RSS, harmless. Operator
+  can stop via ``echo > control_room/cache/cb020_reader_stop.flag``.
+* Stale CB-019 lock at main worktree's path is gone (auto-cleared
+  by CB-020 verify launch's launch_safety.acquire_lock).
+* CB-020 verify cycle's lock at cb-020 worktree's path was unlinked
+  by PI manually after the kill (per incident report).

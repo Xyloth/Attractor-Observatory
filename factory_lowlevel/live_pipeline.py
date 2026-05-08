@@ -8,6 +8,7 @@ router validates, world constructors simulate, and formal lenses evaluate.
 
 from __future__ import annotations
 
+import gc  # CB-021: explicit GC between bundles to release trace bodies
 import json
 import hashlib
 import time  # CB-020: backoff sleep in _safe_write_json fallback loop
@@ -225,24 +226,61 @@ def run_live_factory_cycle(
     routed = route_records(records, refs, requested_worlds)
     _write_live_state(live_state_path, stage="route", status="running", routed_worlds=[bundle.world_family for bundle in routed], rejection_count=len(route_rejections))
 
-    trace_rows = []
+    # CB-021 M2: per-bundle (per-world) streaming. The old loop accumulated
+    # ALL trace bodies across ALL bundles into one big trace_rows list,
+    # then built evidence rows + life forms over that monolith. With Phase-2
+    # density (60K records, ~2 GB total trace bytes), this peaked the
+    # process at 40-50 GB RSS and killed the desktop on 2026-05-08.
+    #
+    # New flow: for each routed bundle (one world family), simulate +
+    # build evidence + evaluate lenses + build life forms in a tight
+    # local scope, then drop trace bodies and gc.collect() before the
+    # next bundle. Final RAM peak is ~one-world-worth of traces, not
+    # all worlds at once. Slim metadata (record_id, source_id, trace_path,
+    # trace_id, motif_fires summary) accumulates into trace_rows so the
+    # downstream run_payload still has per-record provenance.
+    trace_rows: list[dict[str, Any]] = []
+    evaluations: list[dict[str, Any]] = []
+    life_forms: list[dict[str, Any]] = []
+    total_traces_simulated = 0
     for bundle in routed:
+        bundle_rows: list[dict[str, Any]] = []
         for record in bundle.empirical_records:
-            trace_rows.append(_simulate_record(record, trace_root=trace_root))
-            _write_live_state(
-                live_state_path,
-                stage="world_simulate",
-                status="running",
-                latest_record=record.canonical_name,
-                trace_count=len(trace_rows),
-            )
-    traces = [row["trace"] for row in trace_rows if row.get("trace") is not None]
+            bundle_rows.append(_simulate_record(record, trace_root=trace_root))
+            total_traces_simulated += 1
+            # CB-021 M4: heartbeat every 50 traces during world_simulate so
+            # a hung simulation is visible within seconds, not minutes.
+            if total_traces_simulated % 50 == 0 or total_traces_simulated == 1:
+                _write_live_state(
+                    live_state_path,
+                    stage="world_simulate",
+                    status="running",
+                    latest_record=record.canonical_name,
+                    trace_count=total_traces_simulated,
+                    bundle_world=bundle.world_family,
+                )
+        # Build evidence + evaluate lenses for THIS bundle only.
+        bundle_traces = [row["trace"] for row in bundle_rows if row.get("trace") is not None]
+        bundle_evidence = _build_evidence_rows(bundle_traces)
+        bundle_evals = evaluate_lenses(bundle_evidence) if bundle_evidence else []
+        bundle_life_forms = _life_forms(bundle_rows, bundle_evals)
+        evaluations.extend(bundle_evals)
+        life_forms.extend(bundle_life_forms)
+        # CB-021 M2: drop trace bodies + evidence rows. The trace files
+        # are durable on disk; downstream consumers re-read by trace_path.
+        # The slim metadata stays in bundle_rows for trace_records output.
+        for row in bundle_rows:
+            row["trace"] = None
+        trace_rows.extend(bundle_rows)
+        # Free per-bundle locals before next bundle. Without this Python's
+        # generational GC may not release the refs across the bundle
+        # boundary because evidence_rows and bundle_traces share a
+        # cycle through the lens evaluation tree.
+        del bundle_traces, bundle_evidence, bundle_evals, bundle_life_forms, bundle_rows
+        gc.collect()
 
-    evidence_rows = _build_evidence_rows(traces)
-    evaluations = evaluate_lenses(evidence_rows) if evidence_rows else []
-    life_forms = _life_forms(trace_rows, evaluations)
     motif_fire_rates = _motif_fire_rates(life_forms)
-    _write_live_state(live_state_path, stage="motif_evaluate", status="running", trace_count=len(traces), life_form_count=len(life_forms))
+    _write_live_state(live_state_path, stage="motif_evaluate", status="running", trace_count=total_traces_simulated, life_form_count=len(life_forms))
 
     store.rebuild_evidence_graph()
     store.ingest_world_traces(routed, run_id_seed=store.content_hash())
@@ -535,10 +573,20 @@ def _write_live_state(path: Path, **payload: Any) -> None:
             prior = {}
     stage_history = list(prior.get("stage_history", []))
     stage_history.append({"at": utc_now(), **payload})
+    # CB-021 M4: enrich live state with RSS so the operator can diagnose
+    # memory blow-up the moment it starts, not minutes later when the
+    # heartbeat updates. After the 2026-05-08 incident, latest_state.json
+    # is the most-frequently-updated runtime artifact (every 50 records
+    # during world_simulate); putting RSS here means stale-but-still-low-RSS
+    # = "stuck on slow source" while stale-AND-high-RSS = "memory wedge".
+    from .memory_guard import measure_memory
+    snap = measure_memory()
     state = {
         **prior,
         **payload,
         "updated_at": utc_now(),
+        "rss_gb": snap.rss_gb,
+        "free_ram_gb": snap.free_gb,
         "stage_history": stage_history[-200:],
     }
     _safe_write_json(path, state)
