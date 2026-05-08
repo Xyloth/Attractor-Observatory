@@ -1,0 +1,506 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-018",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function.",
+        "TASK-CB-018 Phase-2 mass-density expansion — per-adapter tests.\n\nPins the Phase-2 target counts and contract for each of the 16 adapters\nexpanded in CB-018. Each test does an offline cache-only fetch against\na tmp_path cache_dir and checks:\n\n* Record count meets the offline-mode floor (full Phase-2 counts only\n  emerge under --allow-network with a populated cache; offline mode\n  hits the bundled-s"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "5343a1692a9fb5023a110a10d9de8ac74a1f75b5",
+            "subject": "TASK-CB-018: Phase-2 mass-density expansion (16 adapters, ~57K target)",
+            "ticket": "TASK-CB-018"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb018_phase_2_density.py#header",
+            "ticket": "TASK-CB-018"
+          },
+          "statement": "TASK-CB-018 Phase-2 mass-density expansion — per-adapter tests.\n\nPins the Phase-2 target counts and contract for each of the 16 adapters\nexpanded in CB-018. Each test does an offline cache-only fetch against\na tmp_path cache_dir and checks:\n\n* Record count meets the offline-mode floor (full Phase-2 counts only\n  emerge under --allow-network with a populated cache; offline mode\n  hits the bundled-s"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb018_phase_2_density.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "5343a1692a9fb5023a110a10d9de8ac74a1f75b5",
+        "note": "TASK-CB-018: Phase-2 mass-density expansion (16 adapters, ~57K target)",
+        "ref_id": "birth::public_tests/test_cb018_phase_2_density.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-018",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb018_phase_2_density.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb018_phase_2_density.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::public_tests/test_cb018_phase_2_density.py::docstring"
+      }
+    ],
+    "first_seen_commit": "5343a1692a9fb5023a110a10d9de8ac74a1f75b5",
+    "first_seen_date": "2026-05-07T16:23:01-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-018",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:7c1f562e7f11d3cb7a3f37e475737a68928e3007df3db3f2a6c27d7158ea1665",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb018_phase_2_density.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_t10_movebank_swarm_phase_2, test_t11_allen_brain_cognitive_phase_2, test_t12_prebiotic_chemistry_phase_2, test_t13_biomodels_hypergraph_phase_2, test_t14_ncbi_quasispecies_phase_2, test_t15_ncbi_endosymbiosis_phase_2, test_t16_physiome_multiscale_phase_2, test_t17_aggregate_offline_cycle_no_exceptions..."
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb018_phase_2_density.py#tests"
+          },
+          "statement": "Module exposes 24 pytest functions: test_t1_nist_ionization_stages_extended_to_30, test_t1_nist_offline_fetch, test_t2_pubchem_phase_2_constants, test_t2_pubchem_offline_fetch, test_t3_math_primitives_catalog_size, test_t3_math_primitives_unique_canonical_names..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb018_phase_2_density.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, pathlib.Path, pytest, sys"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb018_phase_2_density.py"
+          },
+          "statement": "Tracked file with 465 lines / 20862 bytes at HEAD."
+        }
+      ],
+      "byte_count": 20862,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "pathlib.Path",
+        "pytest",
+        "sys"
+      ],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 465,
+      "observed_doctrine_bindings": [
+        "D19"
+      ],
+      "predicate_id": "current::public_tests/test_cb018_phase_2_density.py",
+      "public_symbols": [
+        "test_t10_movebank_swarm_phase_2",
+        "test_t11_allen_brain_cognitive_phase_2",
+        "test_t12_prebiotic_chemistry_phase_2",
+        "test_t13_biomodels_hypergraph_phase_2",
+        "test_t14_ncbi_quasispecies_phase_2",
+        "test_t15_ncbi_endosymbiosis_phase_2",
+        "test_t16_physiome_multiscale_phase_2",
+        "test_t17_aggregate_offline_cycle_no_exceptions",
+        "test_t1_nist_ionization_stages_extended_to_30",
+        "test_t1_nist_offline_fetch",
+        "test_t2_pubchem_offline_fetch",
+        "test_t2_pubchem_phase_2_constants",
+        "test_t3_math_primitives_catalog_size",
+        "test_t3_math_primitives_have_required_fields",
+        "test_t3_math_primitives_offline_fetch",
+        "test_t3_math_primitives_unique_canonical_names",
+        "test_t4_kegg_default_max_organisms_cap",
+        "test_t4_kegg_offline_fetch",
+        "test_t4_kegg_static_roster_expanded",
+        "test_t5_szostak_protocell_phase_2",
+        "test_t6_reaction_diffusion_phase_2",
+        "test_t7_morphogenesis_phase_2",
+        "test_t8_avida_digital_phase_2",
+        "test_t9_gbif_ecosystem_phase_2"
+      ],
+      "test_functions": [
+        "test_t1_nist_ionization_stages_extended_to_30",
+        "test_t1_nist_offline_fetch",
+        "test_t2_pubchem_phase_2_constants",
+        "test_t2_pubchem_offline_fetch",
+        "test_t3_math_primitives_catalog_size",
+        "test_t3_math_primitives_unique_canonical_names",
+        "test_t3_math_primitives_have_required_fields",
+        "test_t3_math_primitives_offline_fetch",
+        "test_t4_kegg_static_roster_expanded",
+        "test_t4_kegg_default_max_organisms_cap",
+        "test_t4_kegg_offline_fetch",
+        "test_t5_szostak_protocell_phase_2",
+        "test_t6_reaction_diffusion_phase_2",
+        "test_t7_morphogenesis_phase_2",
+        "test_t8_avida_digital_phase_2",
+        "test_t9_gbif_ecosystem_phase_2",
+        "test_t10_movebank_swarm_phase_2",
+        "test_t11_allen_brain_cognitive_phase_2",
+        "test_t12_prebiotic_chemistry_phase_2",
+        "test_t13_biomodels_hypergraph_phase_2",
+        "test_t14_ncbi_quasispecies_phase_2",
+        "test_t15_ncbi_endosymbiosis_phase_2",
+        "test_t16_physiome_multiscale_phase_2",
+        "test_t17_aggregate_offline_cycle_no_exceptions"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb018_phase_2_density.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb018_phase_2_density.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb018_phase_2_density.py::test_t1_nist_ionization_stages_extended_to_30,test_t1_nist_offline_fetch,test_t2_pubchem_phase_2_constants",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb018_phase_2_density.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D19"
+      ],
+      "verified": [
+        "D19"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 5,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 5,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 20862,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 465,
+    "path": "public_tests/test_cb018_phase_2_density.py",
+    "path_hash": "sha256:31ce0b1a0573dcd54790ebf90785889134481925adc6f4e5c7563de3fe750ab7",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb018_phase_2_density.py->reports/campaign_011/cli_full_report.json::2949",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::public_tests/test_cb018_phase_2_density.py::reports/campaign_011/cli_full_report.json"
+          }
+        ],
+        "target": "reports/campaign_011/cli_full_report.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-018",
+      "members": [
+        "public_tests/test_cb018_phase_2_density.py"
+      ],
+      "spawn_ticket": "TASK-CB-018"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "5343a1692a9fb5023a110a10d9de8ac74a1f75b5",
+        "edge_id": "spawned_by_ticket::TASK-CB-018->public_tests/test_cb018_phase_2_density.py::337",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "5343a1692a9fb5023a110a10d9de8ac74a1f75b5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb018_phase_2_density.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-018",
+        "target": "public_tests/test_cb018_phase_2_density.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb015_adapter_expansion.py->public_tests/test_cb018_phase_2_density.py::2948",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::public_tests/test_cb015_adapter_expansion.py::public_tests/test_cb018_phase_2_density.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb015_adapter_expansion.py",
+        "target": "public_tests/test_cb018_phase_2_density.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb018_phase_2_density.py->reports/campaign_011/cli_full_report.json::2949",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::public_tests/test_cb018_phase_2_density.py::reports/campaign_011/cli_full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb018_phase_2_density.py",
+        "target": "reports/campaign_011/cli_full_report.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-018->public_tests/test_cb018_phase_2_density.py::337",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "5343a1692a9fb5023a110a10d9de8ac74a1f75b5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb018_phase_2_density.py"
+          }
+        ],
+        "source": "TASK-CB-018"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb015_adapter_expansion.py->public_tests/test_cb018_phase_2_density.py::2948",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::public_tests/test_cb015_adapter_expansion.py::public_tests/test_cb018_phase_2_density.py"
+          }
+        ],
+        "source": "public_tests/test_cb015_adapter_expansion.py"
+      }
+    ],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb018_phase_2_density.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -1,0 +1,1071 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-033",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes runnable factory components consumed by the daemon/pipeline."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "factory_module_exposes_callable",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D14",
+            "D17.5"
+          ],
+          "forbidden_failure_modes": [
+            "module is a stub (Class 5)",
+            "module hardcodes scenario-internal answers (Class 4)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+            "subject": "TASK-033 multi-world factory live console",
+            "ticket": "TASK-033"
+          },
+          "statement": "Module exposes runnable factory components consumed by the daemon/pipeline."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "module hardcodes scenario-internal answers (Class 4)",
+        "module is a stub (Class 5)"
+      ],
+      "predicate_id": "birth::factory_lowlevel/hardening.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+        "note": "TASK-033 multi-world factory live console",
+        "ref_id": "birth::factory_lowlevel/hardening.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-033",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::factory_lowlevel/hardening.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/hardening.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::factory_lowlevel/hardening.py::docstring"
+      }
+    ],
+    "first_seen_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+    "first_seen_date": "2026-05-06T14:39:23-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-033",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:54f96e3a8e58c281794ed255433fca175ab0be45a15d85cec1c96efc28bc34bb",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "factory_lowlevel/hardening.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: FactoryRunLock, HardeningAuditQueue, LiveModeConfig, PartialResponseError, SchemaMismatchError, TransientFetchError, cache_age_seconds, cadence_to_seconds..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "factory_lowlevel/hardening.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, dataclasses.dataclass, dataclasses.field, datetime.datetime, datetime.timezone, json..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/hardening.py"
+          },
+          "statement": "Tracked file with 640 lines / 25911 bytes at HEAD."
+        }
+      ],
+      "byte_count": 25911,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "datetime.datetime",
+        "datetime.timezone",
+        "json",
+        "normalization.normalize_record",
+        "os",
+        "pathlib.Path",
+        "persistence.LowLevelFactoryStore",
+        "persistence.recover_json_tree",
+        "registry.SourceRegistry",
+        "router.route_records",
+        "schemas.AuditQueueItem",
+        "schemas.EmpiricalRecord",
+        "schemas.NormalizedReference",
+        "schemas.SourceCacheEntry",
+        "schemas.SourceDefinition",
+        "schemas.sha256",
+        "schemas.utc_now",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 145,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except FileExistsError:"
+        },
+        {
+          "line": 317,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except PartialResponseError as exc:"
+        },
+        {
+          "line": 326,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except SchemaMismatchError as exc:"
+        },
+        {
+          "line": 334,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except TimeoutError as exc:"
+        },
+        {
+          "line": 344,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except TransientFetchError as exc:"
+        },
+        {
+          "line": 398,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "if str(warning).startswith(\"detector_anomaly:\"):"
+        },
+        {
+          "line": 492,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except TypeError:"
+        },
+        {
+          "line": 579,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (KeyError, ValueError, TypeError) as exc:"
+        }
+      ],
+      "line_count": 640,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::factory_lowlevel/hardening.py",
+      "public_symbols": [
+        "FactoryRunLock",
+        "HardeningAuditQueue",
+        "LiveModeConfig",
+        "PartialResponseError",
+        "SchemaMismatchError",
+        "TransientFetchError",
+        "cache_age_seconds",
+        "cadence_to_seconds",
+        "fetch_with_policy",
+        "load_source_cache_entries",
+        "parse_utc",
+        "quarantine_payload",
+        "recover_session_ledger",
+        "refresh_due",
+        "replay_audit_queue",
+        "run_hardened_low_level_factory",
+        "stale_cache_audit",
+        "validate_adapter_result"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/hardening.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::factory_lowlevel/hardening.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 145
+        },
+        {
+          "id": "error_branch",
+          "line": 317
+        },
+        {
+          "id": "error_branch",
+          "line": 326
+        },
+        {
+          "id": "error_branch",
+          "line": 334
+        },
+        {
+          "id": "error_branch",
+          "line": 344
+        },
+        {
+          "id": "error_branch",
+          "line": 492
+        },
+        {
+          "id": "error_branch",
+          "line": 579
+        },
+        {
+          "id": "decline_branch",
+          "line": null
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 4.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D14",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D14",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D14::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D17.5",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D17.5",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D17.5::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 145,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except FileExistsError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 317,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except PartialResponseError as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 326,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except SchemaMismatchError as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 334,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except TimeoutError as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 344,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except TransientFetchError as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 398,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if str(warning).startswith(\"detector_anomaly:\"):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 492,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except TypeError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 579,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (KeyError, ValueError, TypeError) as exc:"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "factory",
+    "byte_count": 25911,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 640,
+    "path": "factory_lowlevel/hardening.py",
+    "path_hash": "sha256:3a00453175e996ee2de61c97c7ea5f432c29991053cee2a3ab2ce86b28b227f0",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 145: except FileExistsError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L145",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except FileExistsError:' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 317: except PartialResponseError as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L317",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except PartialResponseError as exc:' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 326: except SchemaMismatchError as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L326",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except SchemaMismatchError as exc:' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 334: except TimeoutError as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L334",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except TimeoutError as exc:' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 344: except TransientFetchError as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L344",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except TransientFetchError as exc:' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 398: if str(warning).startswith(\"detector_anomaly:\"):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L398",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::5"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-5",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if str(warning).startswith(\"detector_anomaly:\"):' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 492: except TypeError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L492",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::6"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-6",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except TypeError:' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 579: except (KeyError, ValueError, TypeError) as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/hardening.py#L579",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/hardening.py::lvs::7"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-lvs-7",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (KeyError, ValueError, TypeError) as exc:' -- factory_lowlevel/hardening.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/hardening.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/01a389fab74d_factory_lowlevel_hardening.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/hardening.py->factory_lowlevel/live_pipeline.py::1310",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "target": "factory_lowlevel/live_pipeline.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-033",
+      "members": [
+        "Branch Falsification Bath.txt",
+        "control_room/cache/agent_heartbeat.json",
+        "control_room/cache/factory_runs/latest_run.json",
+        "control_room/cache/factory_runs/latest_state.json",
+        "control_room/cache/factory_runs/run_0772c1a89f5c693c.json",
+        "control_room/cache/factory_runs/run_17693e665d5d025e.json",
+        "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+        "control_room/cache/factory_runs/run_f17c14848991da21.json",
+        "control_room/cache/factory_subprocess_state.json",
+        "control_room/cache/factory_subprocess_stderr.log",
+        "control_room/cache/factory_subprocess_stdout.log",
+        "control_room/cache/task033_streamlit_stderr.log",
+        "control_room/cache/task033_streamlit_stdout.log",
+        "control_room/heartbeat.py",
+        "control_room/rooms/_world_drilldown.py",
+        "control_room/snapshots/state_20260506T022504Z.json",
+        "control_room/snapshots/state_20260506T022538Z.json",
+        "control_room/snapshots/state_20260506T101212Z.json",
+        "control_room/snapshots/state_20260506T101232Z.json",
+        "control_room/snapshots/state_20260506T101242Z.json",
+        "control_room/snapshots/state_20260506T101244Z.json",
+        "control_room/snapshots/state_20260506T102509Z.json",
+        "control_room/snapshots/state_20260506T102522Z.json",
+        "control_room/snapshots/state_20260506T102637Z.json",
+        "control_room/snapshots/state_20260506T102641Z.json",
+        "control_room/snapshots/state_20260506T103929Z.json",
+        "control_room/snapshots/state_20260506T104000Z.json",
+        "control_room/snapshots/state_20260506T104018Z.json",
+        "control_room/snapshots/state_20260506T104040Z.json",
+        "control_room/snapshots/state_20260506T104915Z.json",
+        "docs/doctrine_d23.md",
+        "docs/doctrine_d24.md",
+        "docs/doctrine_d25.md",
+        "factory_lowlevel/hardening.py",
+        "factory_lowlevel/live_pipeline.py",
+        "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+        "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md",
+        "papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md",
+        "papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md",
+        "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md",
+        "papers/prereg/campaign_020/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_020/externalized_memory.signed.json",
+        "papers/prereg/campaign_020/repair.signed.json",
+        "papers/prereg/campaign_020/replication_lineage.signed.json",
+        "papers/prereg/campaign_020/self_maintained_boundary.signed.json",
+        "project_telemetry/low_level_factory_sessions.jsonl",
+        "public_tests/test_public_contracts.py",
+        "public_tests/test_task033_multiworld_factory.py",
+        "pytest.ini",
+        "reports/campaign_007/full_report.json",
+        "reports/campaign_008/full_report.json",
+        "reports/campaign_017/density_falsifiers.json",
+        "reports/campaign_017/factory_recovery.json",
+        "reports/campaign_017/full_report.json",
+        "reports/campaign_017/recovery_fixture/.quarantine/partial_artifact.json.91df93d1af3e37f0.corrupt",
+        "reports/campaign_017/recovery_fixture/valid_artifact.json",
+        "reports/campaign_017/upward_predictions.json",
+        "reports/campaign_018/bridge_traces.json",
+        "reports/campaign_018/detector_comparison.json",
+        "reports/campaign_018/full_report.json",
+        "reports/campaign_018/lens_audit.json",
+        "reports/campaign_018/native_w1_traces.json",
+        "reports/campaign_019/full_report.json",
+        "reports/campaign_020/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_020/corpus.json",
+        "reports/campaign_020/externalized_memory_substrate_blocked.json",
+        "reports/campaign_020/full_report.json",
+        "reports/campaign_020/repair_substrate_blocked.json",
+        "reports/campaign_020/replication_lineage_substrate_blocked.json",
+        "reports/campaign_020/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_021/factory_intake_dock_task033.png",
+        "reports/campaign_021/factory_intake_dock_task033_full.png",
+        "reports/campaign_021/factory_intake_dock_task033_results.png",
+        "reports/campaign_021/factory_store/empirical_records.json",
+        "reports/campaign_021/factory_store/evidence_graph.json",
+        "reports/campaign_021/factory_store/normalized_refs.json",
+        "reports/campaign_021/factory_store/snapshot.json",
+        "reports/campaign_021/factory_store/source_cache_index.json",
+        "reports/campaign_021/full_report.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Ascomycota.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Bouteloua_eriopoda.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Canis_latrans.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Dipodomys_spectabilis.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Larrea_tridentata.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Lepus_californicus.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Vulpes_macrotis.json",
+        "reports/campaign_021/source_cache/kegg_ecoli_mg1655/pathway_eco.tsv",
+        "reports/campaign_021/source_cache/ncbi_hiv1_quasispecies/K03455.1.fasta",
+        "reports/campaign_021/source_cache/prebiotic_chemistry/benchmarks.tsv",
+        "reports/campaign_021/source_cache/reaction_diffusion_benchmarks/benchmarks.tsv",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Ascomycota.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Bouteloua_eriopoda.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Canis_latrans.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Dipodomys_spectabilis.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Larrea_tridentata.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Lepus_californicus.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Vulpes_macrotis.json",
+        "reports/campaign_021/source_cache_live_smoke/kegg_ecoli_mg1655/pathway_eco.tsv",
+        "reports/campaign_021/source_cache_live_smoke/ncbi_hiv1_quasispecies/K03455.1.fasta",
+        "reports/task_032_dx001_disposition.json",
+        "reports/task_032_evidence_private_markers.json"
+      ],
+      "spawn_ticket": "TASK-033"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+        "edge_id": "spawned_by_ticket::TASK-033->factory_lowlevel/hardening.py::257",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/hardening.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-033",
+        "target": "factory_lowlevel/hardening.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/doctrine_d25.md->factory_lowlevel/hardening.py::1309",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_d25.md",
+        "target": "factory_lowlevel/hardening.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/hardening.py->factory_lowlevel/live_pipeline.py::1310",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/hardening.py",
+        "target": "factory_lowlevel/live_pipeline.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-033->factory_lowlevel/hardening.py::257",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/hardening.py"
+          }
+        ],
+        "source": "TASK-033"
+      },
+      {
+        "edge_id": "shares_birth_cohort::docs/doctrine_d25.md->factory_lowlevel/hardening.py::1309",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "source": "docs/doctrine_d25.md"
+      }
+    ],
+    "siblings": [
+      "Branch Falsification Bath.txt",
+      "control_room/cache/agent_heartbeat.json",
+      "control_room/cache/factory_runs/latest_run.json",
+      "control_room/cache/factory_runs/latest_state.json",
+      "control_room/cache/factory_runs/run_0772c1a89f5c693c.json",
+      "control_room/cache/factory_runs/run_17693e665d5d025e.json",
+      "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+      "control_room/cache/factory_runs/run_f17c14848991da21.json",
+      "control_room/cache/factory_subprocess_state.json",
+      "control_room/cache/factory_subprocess_stderr.log",
+      "control_room/cache/factory_subprocess_stdout.log",
+      "control_room/cache/task033_streamlit_stderr.log",
+      "control_room/cache/task033_streamlit_stdout.log",
+      "control_room/heartbeat.py",
+      "control_room/rooms/_world_drilldown.py",
+      "control_room/snapshots/state_20260506T022504Z.json",
+      "control_room/snapshots/state_20260506T022538Z.json",
+      "control_room/snapshots/state_20260506T101212Z.json",
+      "control_room/snapshots/state_20260506T101232Z.json",
+      "control_room/snapshots/state_20260506T101242Z.json",
+      "control_room/snapshots/state_20260506T101244Z.json",
+      "control_room/snapshots/state_20260506T102509Z.json",
+      "control_room/snapshots/state_20260506T102522Z.json",
+      "control_room/snapshots/state_20260506T102637Z.json",
+      "control_room/snapshots/state_20260506T102641Z.json",
+      "control_room/snapshots/state_20260506T103929Z.json",
+      "control_room/snapshots/state_20260506T104000Z.json",
+      "control_room/snapshots/state_20260506T104018Z.json",
+      "control_room/snapshots/state_20260506T104040Z.json",
+      "control_room/snapshots/state_20260506T104915Z.json",
+      "docs/doctrine_d23.md",
+      "docs/doctrine_d24.md",
+      "docs/doctrine_d25.md",
+      "factory_lowlevel/live_pipeline.py",
+      "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+      "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md",
+      "papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md",
+      "papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md",
+      "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md",
+      "papers/prereg/campaign_020/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_020/externalized_memory.signed.json",
+      "papers/prereg/campaign_020/repair.signed.json",
+      "papers/prereg/campaign_020/replication_lineage.signed.json",
+      "papers/prereg/campaign_020/self_maintained_boundary.signed.json",
+      "project_telemetry/low_level_factory_sessions.jsonl",
+      "public_tests/test_public_contracts.py",
+      "public_tests/test_task033_multiworld_factory.py",
+      "pytest.ini",
+      "reports/campaign_007/full_report.json",
+      "reports/campaign_008/full_report.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::factory_lowlevel/hardening.py::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

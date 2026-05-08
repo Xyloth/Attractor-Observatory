@@ -1,0 +1,959 @@
+{
+  "birth": {
+    "birth_cohort_id": "DX-002",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "# Measurability Recovery Plan v1\n> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as `ev"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "subject": "Fix DX-002 findings and ratify D28-D30",
+            "ticket": "DX-002"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D29"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md#header",
+            "ticket": "DX-002"
+          },
+          "statement": "# Measurability Recovery Plan v1\n> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as `ev"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "note": "Fix DX-002 findings and ratify D28-D30",
+        "ref_id": "birth::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "DX-002",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::ticket"
+      }
+    ],
+    "first_seen_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+    "first_seen_date": "2026-05-06T21:25:06-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "DX-002",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:80e9af6d33c9b31080ae1f27490c4726162d779baeabaee02f60004f1e676d17",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          },
+          "statement": "Tracked file with 193 lines / 31730 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 31730,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 193,
+      "observed_doctrine_bindings": [
+        "D26",
+        "D27",
+        "D29",
+        "D31"
+      ],
+      "predicate_id": "current::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D26",
+        "D27",
+        "D29",
+        "D31"
+      ],
+      "verified": [
+        "D26",
+        "D27",
+        "D29",
+        "D31"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 3.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D18",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D18",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D18::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 31730,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 193,
+    "path": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+    "path_hash": "sha256:566c4bba72d8cb777e8bc72437ff542ebd7472dab0c4bccb425fcc6e983ae41e",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/eddcb2ec2008_papers_methods_MEASURABILITY_RECOVERY_PLAN_v1.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::1384",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::4001",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+          }
+        ],
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4044",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4087",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4288",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4671",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md#papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+          }
+        ],
+        "target": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "DX-002",
+      "members": [
+        "FAIR_DATA_STEWARDSHIP.md",
+        "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+        "docs/doctrine_d27.md",
+        "docs/doctrine_d28.md",
+        "docs/doctrine_d29.md",
+        "docs/doctrine_d30.md",
+        "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+        "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+        "reports/campaign_002/fair_metadata.json",
+        "reports/campaign_002/prov_o.jsonld",
+        "reports/campaign_003/fair_metadata.json",
+        "reports/campaign_003/prov_o.jsonld",
+        "reports/campaign_004/fair_metadata.json",
+        "reports/campaign_004/prov_o.jsonld",
+        "reports/campaign_005/fair_metadata.json",
+        "reports/campaign_005/prov_o.jsonld",
+        "reports/campaign_006/fair_metadata.json",
+        "reports/campaign_006/prov_o.jsonld",
+        "reports/campaign_007/fair_metadata.json",
+        "reports/campaign_007/prov_o.jsonld",
+        "reports/campaign_008/fair_metadata.json",
+        "reports/campaign_008/prov_o.jsonld",
+        "reports/campaign_009/fair_metadata.json",
+        "reports/campaign_009/prov_o.jsonld",
+        "reports/campaign_010/fair_metadata.json",
+        "reports/campaign_010/prov_o.jsonld",
+        "reports/campaign_011/fair_metadata.json",
+        "reports/campaign_011/prov_o.jsonld",
+        "reports/campaign_012/fair_metadata.json",
+        "reports/campaign_012/prov_o.jsonld",
+        "reports/campaign_013/fair_metadata.json",
+        "reports/campaign_013/prov_o.jsonld",
+        "reports/campaign_014/fair_metadata.json",
+        "reports/campaign_014/prov_o.jsonld",
+        "reports/campaign_017/fair_metadata.json",
+        "reports/campaign_017/prov_o.jsonld",
+        "reports/campaign_018/fair_metadata.json",
+        "reports/campaign_018/prov_o.jsonld",
+        "reports/campaign_020/fair_metadata.json",
+        "reports/campaign_020/prov_o.jsonld",
+        "reports/campaign_021/fair_metadata.json",
+        "reports/campaign_021/prov_o.jsonld",
+        "reports/campaign_022/fair_metadata.json",
+        "reports/campaign_022/prov_o.jsonld",
+        "reports/campaign_fair_metadata_index.json",
+        "reports/task_dx002_findings_disposition.json",
+        "reports/task_dx002_public_boundary_markers.json",
+        "ro-crate-metadata.json"
+      ],
+      "spawn_ticket": "DX-002"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "edge_id": "spawned_by_ticket::DX-002->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::292",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "DX-002",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::1383",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4000",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4043",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/LENS_RECOVERY_v1_DRAFT.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4086",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/LENS_RECOVERY_v1_DRAFT.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4287",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/LENS_RECOVERY_v1_DRAFT.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4447",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4672",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::1384",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::4001",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4044",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4087",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4288",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4671",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md#papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "target": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::DX-002->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::292",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "source": "DX-002"
+      },
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::1383",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4000",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "source": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4043",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/LENS_RECOVERY_v1_DRAFT.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4086",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/LENS_RECOVERY_v1_DRAFT.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::papers/methods/LENS_RECOVERY_v1_DRAFT.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4287",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/LENS_RECOVERY_v1_DRAFT.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "source": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4447",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4672",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      }
+    ],
+    "siblings": [
+      "FAIR_DATA_STEWARDSHIP.md",
+      "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+      "docs/doctrine_d27.md",
+      "docs/doctrine_d28.md",
+      "docs/doctrine_d29.md",
+      "docs/doctrine_d30.md",
+      "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+      "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+      "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+      "reports/campaign_002/fair_metadata.json",
+      "reports/campaign_002/prov_o.jsonld",
+      "reports/campaign_003/fair_metadata.json",
+      "reports/campaign_003/prov_o.jsonld",
+      "reports/campaign_004/fair_metadata.json",
+      "reports/campaign_004/prov_o.jsonld",
+      "reports/campaign_005/fair_metadata.json",
+      "reports/campaign_005/prov_o.jsonld",
+      "reports/campaign_006/fair_metadata.json",
+      "reports/campaign_006/prov_o.jsonld",
+      "reports/campaign_007/fair_metadata.json",
+      "reports/campaign_007/prov_o.jsonld",
+      "reports/campaign_008/fair_metadata.json",
+      "reports/campaign_008/prov_o.jsonld",
+      "reports/campaign_009/fair_metadata.json",
+      "reports/campaign_009/prov_o.jsonld",
+      "reports/campaign_010/fair_metadata.json",
+      "reports/campaign_010/prov_o.jsonld",
+      "reports/campaign_011/fair_metadata.json",
+      "reports/campaign_011/prov_o.jsonld",
+      "reports/campaign_012/fair_metadata.json",
+      "reports/campaign_012/prov_o.jsonld",
+      "reports/campaign_013/fair_metadata.json",
+      "reports/campaign_013/prov_o.jsonld",
+      "reports/campaign_014/fair_metadata.json",
+      "reports/campaign_014/prov_o.jsonld",
+      "reports/campaign_017/fair_metadata.json",
+      "reports/campaign_017/prov_o.jsonld",
+      "reports/campaign_018/fair_metadata.json",
+      "reports/campaign_018/prov_o.jsonld",
+      "reports/campaign_020/fair_metadata.json",
+      "reports/campaign_020/prov_o.jsonld",
+      "reports/campaign_021/fair_metadata.json",
+      "reports/campaign_021/prov_o.jsonld",
+      "reports/campaign_022/fair_metadata.json",
+      "reports/campaign_022/prov_o.jsonld",
+      "reports/campaign_fair_metadata_index.json",
+      "reports/task_dx002_findings_disposition.json",
+      "reports/task_dx002_public_boundary_markers.json",
+      "ro-crate-metadata.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 2,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -1,0 +1,249 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-034",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Top-level artifact serves a repo-wide convention (license, citation, ignore, requirements, container)."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "root_artifact_serves_repo",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "0cc152a54f6bf453de8d00f95928dbc154a397c8",
+            "subject": "TASK-034 stabilize doctrine hash bytes",
+            "ticket": "TASK-034"
+          },
+          "statement": "Top-level artifact serves a repo-wide convention (license, citation, ignore, requirements, container)."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::.gitattributes"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "0cc152a54f6bf453de8d00f95928dbc154a397c8",
+        "note": "TASK-034 stabilize doctrine hash bytes",
+        "ref_id": "birth::.gitattributes::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-034",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::.gitattributes::ticket"
+      }
+    ],
+    "first_seen_commit": "0cc152a54f6bf453de8d00f95928dbc154a397c8",
+    "first_seen_date": "2026-05-06T14:42:21-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-034",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:d755b44a59dfaee56c3e4d5830458da19a781e11d8a65330da6f49fff045f661",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": ".gitattributes"
+          },
+          "statement": "Tracked file with 20 lines / 976 bytes at HEAD."
+        }
+      ],
+      "byte_count": 976,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 20,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::.gitattributes",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": ".gitattributes",
+        "note": "current contents at HEAD",
+        "ref_id": "current::.gitattributes::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "root_artifact",
+    "byte_count": 976,
+    "generated_status": "source",
+    "language": "text",
+    "line_count": 20,
+    "path": ".gitattributes",
+    "path_hash": "sha256:f7624477ff5fd783de34cc91e790b4b5889ed3a43f62d4d64e1f7848ad87d814",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [],
+    "cohort": {
+      "cohort_id": "TASK-034",
+      "members": [
+        ".gitattributes"
+      ],
+      "spawn_ticket": "TASK-034"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "0cc152a54f6bf453de8d00f95928dbc154a397c8",
+        "edge_id": "spawned_by_ticket::TASK-034->.gitattributes::2",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "0cc152a54f6bf453de8d00f95928dbc154a397c8",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::.gitattributes"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-034",
+        "target": ".gitattributes"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-034->.gitattributes::2",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "0cc152a54f6bf453de8d00f95928dbc154a397c8",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::.gitattributes"
+          }
+        ],
+        "source": "TASK-034"
+      }
+    ],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::.gitattributes::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:48Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:48Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

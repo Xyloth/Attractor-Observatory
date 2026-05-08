@@ -1,0 +1,2012 @@
+{
+  "birth": {
+    "birth_cohort_id": "PG-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "# Project Genealogy PG-001 Spec v2.1\nStatus: launch specification for PG-001\nAuthoring passes:\n- v2 (OG Builder / Codex): pushbacks on v1, atom-decomposed birth predicate, DepthVector.v1, typed temporal multigraph, evidence-lock pre-pass, full schemas, falsifiability protocol, doctrine bindings, mistake-class targeting, 15 acceptance gates\n- v2.1 (Architect Claude): Project Mission and coherence P"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "f2013deb7d742a77a649743982a787c18dabc36c",
+            "subject": "Add PG-001 project genealogy spec",
+            "ticket": "PG-001"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#header",
+            "ticket": "PG-001"
+          },
+          "statement": "# Project Genealogy PG-001 Spec v2.1\nStatus: launch specification for PG-001\nAuthoring passes:\n- v2 (OG Builder / Codex): pushbacks on v1, atom-decomposed birth predicate, DepthVector.v1, typed temporal multigraph, evidence-lock pre-pass, full schemas, falsifiability protocol, doctrine bindings, mistake-class targeting, 15 acceptance gates\n- v2.1 (Architect Claude): Project Mission and coherence P"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "f2013deb7d742a77a649743982a787c18dabc36c",
+        "note": "Add PG-001 project genealogy spec",
+        "ref_id": "birth::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "PG-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::ticket"
+      }
+    ],
+    "first_seen_commit": "f2013deb7d742a77a649743982a787c18dabc36c",
+    "first_seen_date": "2026-05-08T14:22:13-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "PG-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:994bac3ae3c5f529e6e54881e1abb39216d73c3007164b7a9df743fdf5f6d204",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          },
+          "statement": "Tracked file with 1037 lines / 51501 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 51501,
+      "class_pattern_matches": [
+        {
+          "class_id": "Class12",
+          "line": 683,
+          "note": "decorative completeness",
+          "snippet": "- Tab loads only `reports/project_genealogy/atlas_latest.json` and the linked dossier JSON files. No mock or placeholder data; D22 absence-honest empty state when artifacts are missing."
+        },
+        {
+          "class_id": "Class12",
+          "line": 954,
+          "note": "decorative completeness",
+          "snippet": "| Class 12 Decorative completeness | UI/report fills absent data with mock or placeholder content. Emits missing artifact plus rendered/display path. |"
+        }
+      ],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 1037,
+      "observed_doctrine_bindings": [
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "predicate_id": "current::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "verified": [
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 51501,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 1037,
+    "path": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+    "path_hash": "sha256:5610e7fad10eb0569a1f07fa3350dcc6c672e76da0cedddaa678752fb34b36e8",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 683",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#L683",
+          "note": "decorative completeness",
+          "ref_id": "finding::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::cls::0"
+        }
+      ],
+      "finding_id": "PG-papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md-class-0",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '- Tab loads only `reports/project_genealogy/atlas_latest.jso' -- papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 954",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#L954",
+          "note": "decorative completeness",
+          "ref_id": "finding::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::cls::1"
+        }
+      ],
+      "finding_id": "PG-papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md-class-1",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '| Class 12 Decorative completeness | UI/report fills absent ' -- papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "implements_same_doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1934",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2483",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/methods/SUBSTANCE_AUDIT_W10.md::2585",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/methods/SUBSTANCE_AUDIT_W10.md"
+          }
+        ],
+        "target": "papers/methods/SUBSTANCE_AUDIT_W10.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/TIME_CALIBRATION_REPORT.md::2770",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2944",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3111",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/TIME_CALIBRATION_REPORT.md::3480",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->public_tests/test_cb013_launch_readiness.py::3694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3897",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3988",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4003",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+          }
+        ],
+        "target": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_023/autocatalytic_closure.signed.json::4048",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_023/autocatalytic_closure.signed.json"
+          }
+        ],
+        "target": "papers/prereg/campaign_023/autocatalytic_closure.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4091",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+          }
+        ],
+        "target": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4182",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4269",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4289",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+          }
+        ],
+        "target": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4318",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->docs/DOCTRINE.md::4681",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#docs/DOCTRINE.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::docs/DOCTRINE.md"
+          }
+        ],
+        "target": "docs/DOCTRINE.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->docs/doctrine_registry.json::4682",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#docs/doctrine_registry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::docs/doctrine_registry.json"
+          }
+        ],
+        "target": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/adapters.py::4683",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#factory_lowlevel/adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::factory_lowlevel/adapters.py"
+          }
+        ],
+        "target": "factory_lowlevel/adapters.py"
+      },
+      {
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::4684",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "target": "factory_lowlevel/launch_safety.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "PG-001",
+      "members": [
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      ],
+      "spawn_ticket": "PG-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "f2013deb7d742a77a649743982a787c18dabc36c",
+        "edge_id": "spawned_by_ticket::PG-001->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::299",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f2013deb7d742a77a649743982a787c18dabc36c",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "PG-001",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D10",
+        "edge_id": "implements_same_doctrine::D10::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1605",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D10",
+            "note": "shared mention of doctrine D10",
+            "ref_id": "doctrine::D10::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1693",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D12",
+        "edge_id": "implements_same_doctrine::D12::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1781",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D13",
+        "edge_id": "implements_same_doctrine::D13::docs/screenshots/02-world-observatory.png->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1933",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::docs/screenshots/02-world-observatory.png::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/screenshots/02-world-observatory.png",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2482",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2769",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2943",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3110",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3479",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3693",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3896",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3987",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4002",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4047",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4090",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4181",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4268",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4288",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D30",
+        "edge_id": "implements_same_doctrine::D30::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4317",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D13",
+        "edge_id": "implements_same_doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1934",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2483",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/methods/SUBSTANCE_AUDIT_W10.md::2585",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/methods/SUBSTANCE_AUDIT_W10.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "papers/methods/SUBSTANCE_AUDIT_W10.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/TIME_CALIBRATION_REPORT.md::2770",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2944",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3111",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/TIME_CALIBRATION_REPORT.md::3480",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->public_tests/test_cb013_launch_readiness.py::3694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3897",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3988",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4003",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_023/autocatalytic_closure.signed.json::4048",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_023/autocatalytic_closure.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "papers/prereg/campaign_023/autocatalytic_closure.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4091",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4182",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4269",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4289",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D30",
+        "edge_id": "implements_same_doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4318",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->docs/DOCTRINE.md::4681",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#docs/DOCTRINE.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::docs/DOCTRINE.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "docs/DOCTRINE.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->docs/doctrine_registry.json::4682",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#docs/doctrine_registry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::docs/doctrine_registry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "docs/doctrine_registry.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/adapters.py::4683",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#factory_lowlevel/adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::factory_lowlevel/adapters.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "factory_lowlevel/adapters.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::4684",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "factory_lowlevel/launch_safety.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::PG-001->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::299",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f2013deb7d742a77a649743982a787c18dabc36c",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "PG-001"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D10::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1605",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D10",
+            "note": "shared mention of doctrine D10",
+            "ref_id": "doctrine::D10::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1693",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D12::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1781",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D13::docs/screenshots/02-world-observatory.png->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1933",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::docs/screenshots/02-world-observatory.png::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/screenshots/02-world-observatory.png"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2482",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2769",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2943",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3110",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3479",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3693",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3896",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::3987",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4002",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4047",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4090",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4181",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4268",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4288",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D30::docs/doctrine_registry.json->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::4317",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::docs/doctrine_registry.json::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      }
+    ],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

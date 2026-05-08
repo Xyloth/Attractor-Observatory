@@ -1,0 +1,383 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-011",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Doc serves the project handbook (doctrine support, methodology, audit notes).",
+        "# CB-011 Screenshot Baseline\nDirectory reserved for full-room screenshot baselines from the\nCB-011 polish round. Capture at 1480 px viewport (the canonical\n`max-width` set in `control_room/design_tokens.py`).\n## Capture targets\n| Filename                           | Room                  | Notes                                              |\n|------------------------------------|------------------"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "doc_serves_handbook",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "subject": "CB-011: Control Room polish + wiring audit + smoothness",
+            "ticket": "CB-011"
+          },
+          "statement": "Doc serves the project handbook (doctrine support, methodology, audit notes)."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "docs/screenshots/cb011_baseline/README.md#header",
+            "ticket": "CB-011"
+          },
+          "statement": "# CB-011 Screenshot Baseline\nDirectory reserved for full-room screenshot baselines from the\nCB-011 polish round. Capture at 1480 px viewport (the canonical\n`max-width` set in `control_room/design_tokens.py`).\n## Capture targets\n| Filename                           | Room                  | Notes                                              |\n|------------------------------------|------------------"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11"
+      ],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::docs/screenshots/cb011_baseline/README.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+        "note": "CB-011: Control Room polish + wiring audit + smoothness",
+        "ref_id": "birth::docs/screenshots/cb011_baseline/README.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-011",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::docs/screenshots/cb011_baseline/README.md::ticket"
+      }
+    ],
+    "first_seen_commit": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+    "first_seen_date": "2026-05-07T07:46:38-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-011",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:408ed6271a78f99e74ddf2e182e3bb16d323ab291275f8286ed94d5018151350",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "docs/screenshots/cb011_baseline/README.md"
+          },
+          "statement": "Tracked file with 56 lines / 3572 bytes at HEAD."
+        },
+        {
+          "atom_id": "doc_terms_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "docs/screenshots/cb011_baseline/README.md#pattern:doctrine|handbook|method|audit"
+          },
+          "statement": "Pattern /doctrine|handbook|method|audit/ matches in current file."
+        }
+      ],
+      "byte_count": 3572,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 56,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::docs/screenshots/cb011_baseline/README.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "docs/screenshots/cb011_baseline/README.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::docs/screenshots/cb011_baseline/README.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D11"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "doc_terms_present",
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "docs",
+    "byte_count": 3572,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 56,
+    "path": "docs/screenshots/cb011_baseline/README.md",
+    "path_hash": "sha256:49965d91b1e74abcac794ef974c88007dd0efdedae5c834ff15e3a31ff36657f",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::docs/screenshots/cb011_baseline/README.md->public_tests/test_cb011_polish_audit.py::1482",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "target": "public_tests/test_cb011_polish_audit.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-011",
+      "members": [
+        "control_room/cache/fire_button_confirmed.json",
+        "control_room/cached_adapters.py",
+        "docs/screenshots/cb011_baseline/README.md",
+        "public_tests/test_cb011_polish_audit.py"
+      ],
+      "spawn_ticket": "CB-011"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+        "edge_id": "spawned_by_ticket::CB-011->docs/screenshots/cb011_baseline/README.md::248",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::docs/screenshots/cb011_baseline/README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-011",
+        "target": "docs/screenshots/cb011_baseline/README.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::control_room/cached_adapters.py->docs/screenshots/cb011_baseline/README.md::1481",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cached_adapters.py",
+        "target": "docs/screenshots/cb011_baseline/README.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/screenshots/cb011_baseline/README.md->public_tests/test_cb011_polish_audit.py::1482",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/screenshots/cb011_baseline/README.md",
+        "target": "public_tests/test_cb011_polish_audit.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-011->docs/screenshots/cb011_baseline/README.md::248",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::docs/screenshots/cb011_baseline/README.md"
+          }
+        ],
+        "source": "CB-011"
+      },
+      {
+        "edge_id": "shares_birth_cohort::control_room/cached_adapters.py->docs/screenshots/cb011_baseline/README.md::1481",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "source": "control_room/cached_adapters.py"
+      }
+    ],
+    "siblings": [
+      "control_room/cache/fire_button_confirmed.json",
+      "control_room/cached_adapters.py",
+      "public_tests/test_cb011_polish_audit.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::docs/screenshots/cb011_baseline/README.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

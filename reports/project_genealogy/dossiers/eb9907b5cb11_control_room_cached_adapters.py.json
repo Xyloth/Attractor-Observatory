@@ -1,0 +1,636 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-011",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module renders a Control Room surface with honest empty state.",
+        "Streamlit-cached wrappers around the expensive adapter calls.\n\nCB-011 fix #8/#10 — smoothness: James reported lag on room switching.\nProfiling showed every render of every room calls\n``parse_build_log()``, ``parse_campaign_reports()``, ``build_snapshot()``,\nand ``load_records_for_world()`` from disk. With the W-1 mass-ingest\nadding 1,394 records and the BUILD_LOG growing to 41 entries with\nprose b"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "render_empty_state|EMPTY_STATE_HTML_MARKER|render\\("
+            }
+          ],
+          "atom_id": "control_room_surface_renders",
+          "doctrine_bindings_expected": [
+            "D22",
+            "D24",
+            "D30"
+          ],
+          "forbidden_failure_modes": [
+            "decorative completeness (Class 12)",
+            "mock data in absence"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "subject": "CB-011: Control Room polish + wiring audit + smoothness",
+            "ticket": "CB-011"
+          },
+          "statement": "Module renders a Control Room surface with honest empty state."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "control_room/cached_adapters.py#header",
+            "ticket": "CB-011"
+          },
+          "statement": "Streamlit-cached wrappers around the expensive adapter calls.\n\nCB-011 fix #8/#10 — smoothness: James reported lag on room switching.\nProfiling showed every render of every room calls\n``parse_build_log()``, ``parse_campaign_reports()``, ``build_snapshot()``,\nand ``load_records_for_world()`` from disk. With the W-1 mass-ingest\nadding 1,394 records and the BUILD_LOG growing to 41 entries with\nprose b"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D22",
+        "D24",
+        "D30"
+      ],
+      "forbidden_patterns": [
+        "decorative completeness (Class 12)",
+        "mock data in absence"
+      ],
+      "predicate_id": "birth::control_room/cached_adapters.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+        "note": "CB-011: Control Room polish + wiring audit + smoothness",
+        "ref_id": "birth::control_room/cached_adapters.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-011",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::control_room/cached_adapters.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "control_room/cached_adapters.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::control_room/cached_adapters.py::docstring"
+      }
+    ],
+    "first_seen_commit": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+    "first_seen_date": "2026-05-07T07:46:38-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-011",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:b5bdd25a526ac8755aa9ad9e786f4ca274d0363992c9b1d7ecf0e649720ad331",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "control_room/cached_adapters.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: cached_audit_inbox_summary, cached_build_log, cached_campaign_reports, cached_factory_store, cached_methods_falsifiers, cached_records_for_world"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "control_room/cached_adapters.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, typing.Any"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "control_room/cached_adapters.py"
+          },
+          "statement": "Tracked file with 71 lines / 2581 bytes at HEAD."
+        }
+      ],
+      "byte_count": 2581,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 32,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except Exception:"
+        }
+      ],
+      "line_count": 71,
+      "observed_doctrine_bindings": [
+        "D17"
+      ],
+      "predicate_id": "current::control_room/cached_adapters.py",
+      "public_symbols": [
+        "cached_audit_inbox_summary",
+        "cached_build_log",
+        "cached_campaign_reports",
+        "cached_factory_store",
+        "cached_methods_falsifiers",
+        "cached_records_for_world"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "control_room/cached_adapters.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::control_room/cached_adapters.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 32
+        }
+      ],
+      "missing_bad_cases": [
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.5
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D17"
+      ],
+      "verified": [
+        "D17"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 1,
+      "missing_atoms": [
+        "control_room_surface_renders"
+      ],
+      "value": 0.5
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D22",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D22",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D22::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D24",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D24",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D24::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D30",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D30",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D30::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 32,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except Exception:"
+      }
+    ],
+    "missing_birth_atoms": [
+      "control_room_surface_renders"
+    ],
+    "negative_space_flags": [
+      {
+        "atom_ids": [
+          "control_room_surface_renders"
+        ],
+        "kind": "missing_birth_atoms",
+        "note": "atoms promised at birth absent from current predicate"
+      }
+    ],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "control_room",
+    "byte_count": 2581,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 71,
+    "path": "control_room/cached_adapters.py",
+    "path_hash": "sha256:07c6f180b6995361ef6dcbd9b282bda8994fb81c35a36428521b55dc14703184",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 32: except Exception:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "control_room/cached_adapters.py#L32",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::control_room/cached_adapters.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-control_room/cached_adapters.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except Exception:' -- control_room/cached_adapters.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-control_room/cached_adapters.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/eb9907b5cb11_control_room_cached_adapters.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::control_room/cached_adapters.py->docs/screenshots/cb011_baseline/README.md::1481",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "target": "docs/screenshots/cb011_baseline/README.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::control_room/cached_adapters.py->control_room/rooms/README.md::2326",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/cached_adapters.py::control_room/rooms/README.md"
+          }
+        ],
+        "target": "control_room/rooms/README.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-011",
+      "members": [
+        "control_room/cache/fire_button_confirmed.json",
+        "control_room/cached_adapters.py",
+        "docs/screenshots/cb011_baseline/README.md",
+        "public_tests/test_cb011_polish_audit.py"
+      ],
+      "spawn_ticket": "CB-011"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+        "edge_id": "spawned_by_ticket::CB-011->control_room/cached_adapters.py::134",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::control_room/cached_adapters.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-011",
+        "target": "control_room/cached_adapters.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::control_room/cache/fire_button_confirmed.json->control_room/cached_adapters.py::1480",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cache/fire_button_confirmed.json",
+        "target": "control_room/cached_adapters.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::control_room/adapters/pytest_cache.py->control_room/cached_adapters.py::2325",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/adapters/pytest_cache.py::control_room/cached_adapters.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/adapters/pytest_cache.py",
+        "target": "control_room/cached_adapters.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::control_room/cached_adapters.py->docs/screenshots/cb011_baseline/README.md::1481",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cached_adapters.py",
+        "target": "docs/screenshots/cb011_baseline/README.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::control_room/cached_adapters.py->control_room/rooms/README.md::2326",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/cached_adapters.py::control_room/rooms/README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cached_adapters.py",
+        "target": "control_room/rooms/README.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-011->control_room/cached_adapters.py::134",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::control_room/cached_adapters.py"
+          }
+        ],
+        "source": "CB-011"
+      },
+      {
+        "edge_id": "shares_birth_cohort::control_room/cache/fire_button_confirmed.json->control_room/cached_adapters.py::1480",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "source": "control_room/cache/fire_button_confirmed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::control_room/adapters/pytest_cache.py->control_room/cached_adapters.py::2325",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/adapters/pytest_cache.py::control_room/cached_adapters.py"
+          }
+        ],
+        "source": "control_room/adapters/pytest_cache.py"
+      }
+    ],
+    "siblings": [
+      "control_room/cache/fire_button_confirmed.json",
+      "docs/screenshots/cb011_baseline/README.md",
+      "public_tests/test_cb011_polish_audit.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::control_room/cached_adapters.py::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:48Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:48Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

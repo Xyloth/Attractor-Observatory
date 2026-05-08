@@ -1,0 +1,630 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-MOTIF-IMPL",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes runnable factory components consumed by the daemon/pipeline."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "factory_module_exposes_callable",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D14",
+            "D17.5"
+          ],
+          "forbidden_failure_modes": [
+            "module is a stub (Class 5)",
+            "module hardcodes scenario-internal answers (Class 4)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "subject": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+            "ticket": "TASK-MOTIF-IMPL"
+          },
+          "statement": "Module exposes runnable factory components consumed by the daemon/pipeline."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "module hardcodes scenario-internal answers (Class 4)",
+        "module is a stub (Class 5)"
+      ],
+      "predicate_id": "birth::factory_lowlevel/world_construction.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "note": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+        "ref_id": "birth::factory_lowlevel/world_construction.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-MOTIF-IMPL",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::factory_lowlevel/world_construction.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/world_construction.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::factory_lowlevel/world_construction.py::docstring"
+      }
+    ],
+    "first_seen_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+    "first_seen_date": "2026-05-06T19:23:03-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-MOTIF-IMPL",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:38e817f37389ac7dd2c0d6103a769f4724708af1f8f5075804fc262bd03fc416",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "factory_lowlevel/world_construction.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: construct_world_from_records"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "factory_lowlevel/world_construction.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, typing.Any"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/world_construction.py"
+          },
+          "statement": "Tracked file with 85 lines / 3279 bytes at HEAD."
+        }
+      ],
+      "byte_count": 3279,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 54,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except Exception as exc:  # construction failures are routed as honest rejections."
+        }
+      ],
+      "line_count": 85,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::factory_lowlevel/world_construction.py",
+      "public_symbols": [
+        "construct_world_from_records"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/world_construction.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::factory_lowlevel/world_construction.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 54
+        }
+      ],
+      "missing_bad_cases": [
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.5
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D14",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D14",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D14::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D17.5",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D17.5",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D17.5::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 54,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except Exception as exc:  # construction failures are routed as honest rejections."
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "factory",
+    "byte_count": 3279,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 85,
+    "path": "factory_lowlevel/world_construction.py",
+    "path_hash": "sha256:0f8b685ed31036a91433bde4c1c8211b4abfb18a819f186f19c17cfb43a9ed96",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 54: except Exception as exc:  # construction failures are routed as honest rejections.",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/world_construction.py#L54",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/world_construction.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/world_construction.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except Exception as exc:  # construction failures are routed' -- factory_lowlevel/world_construction.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/world_construction.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/de2a2f364ae6_factory_lowlevel_world_construction.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/world_construction.py->papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md::1442",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "target": "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-MOTIF-IMPL",
+      "members": [
+        "control_room/cache/factory_daemon_heartbeat.json",
+        "control_room/snapshots/state_20260506T202841Z.json",
+        "control_room/snapshots/state_20260506T202843Z.json",
+        "control_room/snapshots/state_20260506T204718Z.json",
+        "control_room/snapshots/state_20260506T210130Z.json",
+        "control_room/snapshots/state_20260506T210134Z.json",
+        "control_room/snapshots/state_20260506T210149Z.json",
+        "control_room/snapshots/state_20260506T210210Z.json",
+        "control_room/snapshots/state_20260506T211546Z.json",
+        "control_room/snapshots/state_20260506T211559Z.json",
+        "control_room/snapshots/state_20260506T212300Z.json",
+        "control_room/snapshots/state_20260506T232021Z.json",
+        "docs/doctrine_d26.md",
+        "factory_daemon.bat",
+        "factory_lowlevel/README.md",
+        "factory_lowlevel/continuous_daemon.py",
+        "factory_lowlevel/world_construction.py",
+        "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+        "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+        "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+        "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+        "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+        "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_023/externalized_memory.signed.json",
+        "papers/prereg/campaign_023/floor_connectivity.signed.json",
+        "papers/prereg/campaign_023/repair.signed.json",
+        "papers/prereg/campaign_023/replication_lineage.signed.json",
+        "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+        "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_024/externalized_memory.signed.json",
+        "papers/prereg/campaign_024/floor_connectivity.signed.json",
+        "papers/prereg/campaign_024/repair.signed.json",
+        "papers/prereg/campaign_024/replication_lineage.signed.json",
+        "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+        "public_tests/test_task035_continuous_daemon.py",
+        "public_tests/test_task035_fire_integration.py",
+        "public_tests/test_task035_world_adapters.py",
+        "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_023/externalized_memory_substrate_blocked.json",
+        "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_023/full_report.json",
+        "reports/campaign_023/repair_substrate_blocked.json",
+        "reports/campaign_023/replication_lineage_substrate_blocked.json",
+        "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_024/externalized_memory_substrate_blocked.json",
+        "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_024/full_report.json",
+        "reports/campaign_024/lens_coupling_audit.json",
+        "reports/campaign_024/repair_substrate_blocked.json",
+        "reports/campaign_024/replication_lineage_substrate_blocked.json",
+        "reports/campaign_024/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_035/full_report.json"
+      ],
+      "spawn_ticket": "TASK-MOTIF-IMPL"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/world_construction.py::270",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/world_construction.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-MOTIF-IMPL",
+        "target": "factory_lowlevel/world_construction.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/continuous_daemon.py->factory_lowlevel/world_construction.py::1441",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/continuous_daemon.py",
+        "target": "factory_lowlevel/world_construction.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/world_construction.py->papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md::1442",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/world_construction.py",
+        "target": "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/world_construction.py::270",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/world_construction.py"
+          }
+        ],
+        "source": "TASK-MOTIF-IMPL"
+      },
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/continuous_daemon.py->factory_lowlevel/world_construction.py::1441",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "source": "factory_lowlevel/continuous_daemon.py"
+      }
+    ],
+    "siblings": [
+      "control_room/cache/factory_daemon_heartbeat.json",
+      "control_room/snapshots/state_20260506T202841Z.json",
+      "control_room/snapshots/state_20260506T202843Z.json",
+      "control_room/snapshots/state_20260506T204718Z.json",
+      "control_room/snapshots/state_20260506T210130Z.json",
+      "control_room/snapshots/state_20260506T210134Z.json",
+      "control_room/snapshots/state_20260506T210149Z.json",
+      "control_room/snapshots/state_20260506T210210Z.json",
+      "control_room/snapshots/state_20260506T211546Z.json",
+      "control_room/snapshots/state_20260506T211559Z.json",
+      "control_room/snapshots/state_20260506T212300Z.json",
+      "control_room/snapshots/state_20260506T232021Z.json",
+      "docs/doctrine_d26.md",
+      "factory_daemon.bat",
+      "factory_lowlevel/README.md",
+      "factory_lowlevel/continuous_daemon.py",
+      "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+      "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+      "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+      "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+      "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+      "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+      "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+      "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_023/externalized_memory.signed.json",
+      "papers/prereg/campaign_023/floor_connectivity.signed.json",
+      "papers/prereg/campaign_023/repair.signed.json",
+      "papers/prereg/campaign_023/replication_lineage.signed.json",
+      "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+      "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_024/externalized_memory.signed.json",
+      "papers/prereg/campaign_024/floor_connectivity.signed.json",
+      "papers/prereg/campaign_024/repair.signed.json",
+      "papers/prereg/campaign_024/replication_lineage.signed.json",
+      "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+      "public_tests/test_task035_continuous_daemon.py",
+      "public_tests/test_task035_fire_integration.py",
+      "public_tests/test_task035_world_adapters.py",
+      "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_023/externalized_memory_substrate_blocked.json",
+      "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_023/full_report.json",
+      "reports/campaign_023/repair_substrate_blocked.json",
+      "reports/campaign_023/replication_lineage_substrate_blocked.json",
+      "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+      "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_024/externalized_memory_substrate_blocked.json",
+      "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_024/full_report.json",
+      "reports/campaign_024/lens_coupling_audit.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::factory_lowlevel/world_construction.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

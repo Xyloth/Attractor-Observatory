@@ -1,0 +1,952 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-016",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "# INCIDENT — CB-016 — W0 / W1 Router Schema Mismatch\n**Status:** OPEN, surfaced for separate ticket. Records persist\nclean; routing-stage rejection prevents simulation only. D17 honest\nnon-evidence behavior preserved.\n## Summary\nAfter CB-016 persistence load-on-init fix, the cache replay\nrecovered all four CB-015 sources' records into a single coherent\n`factory_store/empirical_records.json` (4,378"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "5fb61becaaedfcf649f4a83ffd26635b780cdf18",
+            "subject": "TASK-CB-016 T3-T5: cache replay + W0/W1 incident doc + state files",
+            "ticket": "TASK-CB-016"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D17"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md#header",
+            "ticket": "CB-016"
+          },
+          "statement": "# INCIDENT — CB-016 — W0 / W1 Router Schema Mismatch\n**Status:** OPEN, surfaced for separate ticket. Records persist\nclean; routing-stage rejection prevents simulation only. D17 honest\nnon-evidence behavior preserved.\n## Summary\nAfter CB-016 persistence load-on-init fix, the cache replay\nrecovered all four CB-015 sources' records into a single coherent\n`factory_store/empirical_records.json` (4,378"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D17",
+        "D18",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "5fb61becaaedfcf649f4a83ffd26635b780cdf18",
+        "note": "TASK-CB-016 T3-T5: cache replay + W0/W1 incident doc + state files",
+        "ref_id": "birth::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-016",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::ticket"
+      }
+    ],
+    "first_seen_commit": "5fb61becaaedfcf649f4a83ffd26635b780cdf18",
+    "first_seen_date": "2026-05-07T13:18:05-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-016",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:d23c474edc405dc913c960d37d00fc0115fc7bab9c283ebe4f8f888671d6d55e",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          },
+          "statement": "Tracked file with 121 lines / 4826 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 4826,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 121,
+      "observed_doctrine_bindings": [
+        "D14",
+        "D17",
+        "D19",
+        "D22",
+        "D26",
+        "D9"
+      ],
+      "predicate_id": "current::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D14",
+        "D17",
+        "D19",
+        "D22",
+        "D26",
+        "D9"
+      ],
+      "verified": [
+        "D14",
+        "D17",
+        "D19",
+        "D22",
+        "D26",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D18",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D18",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D18::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 4826,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 121,
+    "path": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+    "path_hash": "sha256:8aeebfa6f41bc0a493a4b2145134091d4e2da1c459313178ee61a51e01588810",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-papers/methods/INCIDENT_CB016_W0W1_ROUTING.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/2b3d2848226f_papers_methods_INCIDENT_CB016_W0W1_ROUTING.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->public_tests/test_cb016_persistence_load_on_init.py::1501",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-016",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-016"
+          }
+        ],
+        "target": "public_tests/test_cb016_persistence_load_on_init.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::2106",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::2480",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::2942",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::3690",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::3892",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_TARGETS.md::4041",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-016",
+      "members": [
+        "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "public_tests/test_cb016_persistence_load_on_init.py",
+        "reports/factory_daemon_progress/atomic_molecular_primitives.json",
+        "reports/factory_daemon_progress/cognitive.json",
+        "reports/factory_daemon_progress/crn.json",
+        "reports/factory_daemon_progress/digital.json",
+        "reports/factory_daemon_progress/ecosystem.json",
+        "reports/factory_daemon_progress/field.json",
+        "reports/factory_daemon_progress/hypergraph_reactions.json",
+        "reports/factory_daemon_progress/math_primitives.json",
+        "reports/factory_daemon_progress/morphogenesis.json",
+        "reports/factory_daemon_progress/multiscale.json",
+        "reports/factory_daemon_progress/origins_chemistry.json",
+        "reports/factory_daemon_progress/protocell.json",
+        "reports/factory_daemon_progress/quasispecies.json",
+        "reports/factory_daemon_progress/swarm.json",
+        "reports/factory_daemon_progress/symbiogenesis.json"
+      ],
+      "spawn_ticket": "TASK-CB-016"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "5fb61becaaedfcf649f4a83ffd26635b780cdf18",
+        "edge_id": "spawned_by_ticket::TASK-CB-016->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::287",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "5fb61becaaedfcf649f4a83ffd26635b780cdf18",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-016",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2105",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2479",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/persistence.py",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::docs/doctrine_registry.json->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2941",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::docs/doctrine_registry.json::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::3689",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/persistence.py",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::3891",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::4040",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::4457",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->public_tests/test_cb016_persistence_load_on_init.py::1501",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-016",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-016"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "public_tests/test_cb016_persistence_load_on_init.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::2106",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::2480",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::2942",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::3690",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_CONVERGENCE_CB008.md::3892",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_CONVERGENCE_CB008.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_TARGETS.md::4041",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-016->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::287",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "5fb61becaaedfcf649f4a83ffd26635b780cdf18",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "TASK-CB-016"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2105",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2479",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "factory_lowlevel/persistence.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::docs/doctrine_registry.json->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2941",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::docs/doctrine_registry.json::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::3689",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "factory_lowlevel/persistence.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::3891",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::4040",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::4457",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      }
+    ],
+    "siblings": [
+      "public_tests/test_cb016_persistence_load_on_init.py",
+      "reports/factory_daemon_progress/atomic_molecular_primitives.json",
+      "reports/factory_daemon_progress/cognitive.json",
+      "reports/factory_daemon_progress/crn.json",
+      "reports/factory_daemon_progress/digital.json",
+      "reports/factory_daemon_progress/ecosystem.json",
+      "reports/factory_daemon_progress/field.json",
+      "reports/factory_daemon_progress/hypergraph_reactions.json",
+      "reports/factory_daemon_progress/math_primitives.json",
+      "reports/factory_daemon_progress/morphogenesis.json",
+      "reports/factory_daemon_progress/multiscale.json",
+      "reports/factory_daemon_progress/origins_chemistry.json",
+      "reports/factory_daemon_progress/protocell.json",
+      "reports/factory_daemon_progress/quasispecies.json",
+      "reports/factory_daemon_progress/swarm.json",
+      "reports/factory_daemon_progress/symbiogenesis.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -1,0 +1,807 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-MOTIF-IMPL",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "# Motif Contract — Schema v1 (DRAFT)\n> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "subject": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+            "ticket": "TASK-MOTIF-IMPL"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D29"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md#header",
+            "ticket": "DX-002"
+          },
+          "statement": "# Motif Contract — Schema v1 (DRAFT)\n> **DX-002 public runtime boundary:** References to `formalism/*`, `trace/*`, `worlds/*`, `motifs/*`, or `validation/*` in this document are narrative or private-runtime evidence unless a shipped public file is explicitly linked. The executable implementation is held outside the public branch; citations to private paths are governed by D29 and should be read as"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "note": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+        "ref_id": "birth::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-MOTIF-IMPL",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::ticket"
+      }
+    ],
+    "first_seen_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+    "first_seen_date": "2026-05-06T19:23:03-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-MOTIF-IMPL",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:de6c5ab28da271f92a0f5d063cac8d3f0ad83135930acd92424d79647eda05b5",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          },
+          "statement": "Tracked file with 370 lines / 20007 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 20007,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 370,
+      "observed_doctrine_bindings": [
+        "D26",
+        "D29"
+      ],
+      "predicate_id": "current::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D26",
+        "D29"
+      ],
+      "verified": [
+        "D26",
+        "D29"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md",
+        "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 3.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D18",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D18",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D18::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 20007,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 370,
+    "path": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+    "path_hash": "sha256:515931e3f960d8f438b5ab3c20596d59ea7013794e66f51cb69975cc45514fb9",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/906bbddd176d_papers_methods_MOTIF_CONTRACT_SCHEMA_DRAFT.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::1448",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::4046",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::4089",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4678",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md#papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-MOTIF-IMPL",
+      "members": [
+        "control_room/cache/factory_daemon_heartbeat.json",
+        "control_room/snapshots/state_20260506T202841Z.json",
+        "control_room/snapshots/state_20260506T202843Z.json",
+        "control_room/snapshots/state_20260506T204718Z.json",
+        "control_room/snapshots/state_20260506T210130Z.json",
+        "control_room/snapshots/state_20260506T210134Z.json",
+        "control_room/snapshots/state_20260506T210149Z.json",
+        "control_room/snapshots/state_20260506T210210Z.json",
+        "control_room/snapshots/state_20260506T211546Z.json",
+        "control_room/snapshots/state_20260506T211559Z.json",
+        "control_room/snapshots/state_20260506T212300Z.json",
+        "control_room/snapshots/state_20260506T232021Z.json",
+        "docs/doctrine_d26.md",
+        "factory_daemon.bat",
+        "factory_lowlevel/README.md",
+        "factory_lowlevel/continuous_daemon.py",
+        "factory_lowlevel/world_construction.py",
+        "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+        "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+        "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+        "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+        "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+        "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_023/externalized_memory.signed.json",
+        "papers/prereg/campaign_023/floor_connectivity.signed.json",
+        "papers/prereg/campaign_023/repair.signed.json",
+        "papers/prereg/campaign_023/replication_lineage.signed.json",
+        "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+        "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_024/externalized_memory.signed.json",
+        "papers/prereg/campaign_024/floor_connectivity.signed.json",
+        "papers/prereg/campaign_024/repair.signed.json",
+        "papers/prereg/campaign_024/replication_lineage.signed.json",
+        "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+        "public_tests/test_task035_continuous_daemon.py",
+        "public_tests/test_task035_fire_integration.py",
+        "public_tests/test_task035_world_adapters.py",
+        "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_023/externalized_memory_substrate_blocked.json",
+        "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_023/full_report.json",
+        "reports/campaign_023/repair_substrate_blocked.json",
+        "reports/campaign_023/replication_lineage_substrate_blocked.json",
+        "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_024/externalized_memory_substrate_blocked.json",
+        "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_024/full_report.json",
+        "reports/campaign_024/lens_coupling_audit.json",
+        "reports/campaign_024/repair_substrate_blocked.json",
+        "reports/campaign_024/replication_lineage_substrate_blocked.json",
+        "reports/campaign_024/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_035/full_report.json"
+      ],
+      "spawn_ticket": "TASK-MOTIF-IMPL"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::296",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-MOTIF-IMPL",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::1447",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4045",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4088",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4438",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4677",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md#papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::1448",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::4046",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md::4089",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4678",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md#papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::296",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "source": "TASK-MOTIF-IMPL"
+      },
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::1447",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4045",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4088",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4438",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4677",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md#papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "source": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      }
+    ],
+    "siblings": [
+      "control_room/cache/factory_daemon_heartbeat.json",
+      "control_room/snapshots/state_20260506T202841Z.json",
+      "control_room/snapshots/state_20260506T202843Z.json",
+      "control_room/snapshots/state_20260506T204718Z.json",
+      "control_room/snapshots/state_20260506T210130Z.json",
+      "control_room/snapshots/state_20260506T210134Z.json",
+      "control_room/snapshots/state_20260506T210149Z.json",
+      "control_room/snapshots/state_20260506T210210Z.json",
+      "control_room/snapshots/state_20260506T211546Z.json",
+      "control_room/snapshots/state_20260506T211559Z.json",
+      "control_room/snapshots/state_20260506T212300Z.json",
+      "control_room/snapshots/state_20260506T232021Z.json",
+      "docs/doctrine_d26.md",
+      "factory_daemon.bat",
+      "factory_lowlevel/README.md",
+      "factory_lowlevel/continuous_daemon.py",
+      "factory_lowlevel/world_construction.py",
+      "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+      "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+      "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+      "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+      "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+      "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+      "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_023/externalized_memory.signed.json",
+      "papers/prereg/campaign_023/floor_connectivity.signed.json",
+      "papers/prereg/campaign_023/repair.signed.json",
+      "papers/prereg/campaign_023/replication_lineage.signed.json",
+      "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+      "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_024/externalized_memory.signed.json",
+      "papers/prereg/campaign_024/floor_connectivity.signed.json",
+      "papers/prereg/campaign_024/repair.signed.json",
+      "papers/prereg/campaign_024/replication_lineage.signed.json",
+      "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+      "public_tests/test_task035_continuous_daemon.py",
+      "public_tests/test_task035_fire_integration.py",
+      "public_tests/test_task035_world_adapters.py",
+      "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_023/externalized_memory_substrate_blocked.json",
+      "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_023/full_report.json",
+      "reports/campaign_023/repair_substrate_blocked.json",
+      "reports/campaign_023/replication_lineage_substrate_blocked.json",
+      "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+      "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_024/externalized_memory_substrate_blocked.json",
+      "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_024/full_report.json",
+      "reports/campaign_024/lens_coupling_audit.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 2,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

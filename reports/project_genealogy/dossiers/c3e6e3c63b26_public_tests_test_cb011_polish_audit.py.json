@@ -1,0 +1,607 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-011",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function.",
+        "Tests for CB-011 polish + audit fixes.\n\nCovers:\n  * Issue 4 — W-1 records adapter scans ALL stores under reports/\n  * Issue 1 — BUILD_LOG parser produces structured entries (no docstring leak)\n  * Issue 2 — pytest cache stale_cache flag fires when mtime is old\n  * Issue 5 — other-world drilldown loader returns records for non-W-1 worlds\n  * Issue 7 — FIRE button confirmation marker is well-formed"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "subject": "CB-011: Control Room polish + wiring audit + smoothness",
+            "ticket": "CB-011"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb011_polish_audit.py#header",
+            "ticket": "CB-011"
+          },
+          "statement": "Tests for CB-011 polish + audit fixes.\n\nCovers:\n  * Issue 4 — W-1 records adapter scans ALL stores under reports/\n  * Issue 1 — BUILD_LOG parser produces structured entries (no docstring leak)\n  * Issue 2 — pytest cache stale_cache flag fires when mtime is old\n  * Issue 5 — other-world drilldown loader returns records for non-W-1 worlds\n  * Issue 7 — FIRE button confirmation marker is well-formed"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb011_polish_audit.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+        "note": "CB-011: Control Room polish + wiring audit + smoothness",
+        "ref_id": "birth::public_tests/test_cb011_polish_audit.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-011",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb011_polish_audit.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb011_polish_audit.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::public_tests/test_cb011_polish_audit.py::docstring"
+      }
+    ],
+    "first_seen_commit": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+    "first_seen_date": "2026-05-07T07:46:38-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-011",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:1edac77bd7b0baa0f36c03f99786a50598c8ab579f10de590810401f2de17780",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb011_polish_audit.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_build_log_handles_missing_file_gracefully, test_build_log_parses_to_structured_entries, test_bulk_resolve_buckets_classify_known_patterns, test_bulk_resolve_first_match_wins_no_double_counting, test_cached_adapters_module_exposes_expected_wrappers, test_cached_records_for_world_returns_same_payload_as_underlying, test_fire_button_confirmation_marker_well_formed, test_other_world_drilldown_loader_returns_records_when_present..."
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb011_polish_audit.py#tests"
+          },
+          "statement": "Module exposes 12 pytest functions: test_w1_records_aggregator_scans_multiple_stores, test_w1_records_aggregator_returns_empty_for_unknown_world, test_build_log_parses_to_structured_entries, test_build_log_handles_missing_file_gracefully, test_pytest_stale_cache_flag_fires_when_mtime_old, test_pytest_stale_cache_flag_does_not_fire_when_fresh..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb011_polish_audit.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, json, pathlib.Path, pytest, sys, time"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb011_polish_audit.py"
+          },
+          "statement": "Tracked file with 256 lines / 10843 bytes at HEAD."
+        }
+      ],
+      "byte_count": 10843,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "json",
+        "pathlib.Path",
+        "pytest",
+        "sys",
+        "time"
+      ],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 256,
+      "observed_doctrine_bindings": [
+        "D17",
+        "D22"
+      ],
+      "predicate_id": "current::public_tests/test_cb011_polish_audit.py",
+      "public_symbols": [
+        "test_build_log_handles_missing_file_gracefully",
+        "test_build_log_parses_to_structured_entries",
+        "test_bulk_resolve_buckets_classify_known_patterns",
+        "test_bulk_resolve_first_match_wins_no_double_counting",
+        "test_cached_adapters_module_exposes_expected_wrappers",
+        "test_cached_records_for_world_returns_same_payload_as_underlying",
+        "test_fire_button_confirmation_marker_well_formed",
+        "test_other_world_drilldown_loader_returns_records_when_present",
+        "test_pytest_stale_cache_flag_does_not_fire_when_fresh",
+        "test_pytest_stale_cache_flag_fires_when_mtime_old",
+        "test_w1_records_aggregator_returns_empty_for_unknown_world",
+        "test_w1_records_aggregator_scans_multiple_stores"
+      ],
+      "test_functions": [
+        "test_w1_records_aggregator_scans_multiple_stores",
+        "test_w1_records_aggregator_returns_empty_for_unknown_world",
+        "test_build_log_parses_to_structured_entries",
+        "test_build_log_handles_missing_file_gracefully",
+        "test_pytest_stale_cache_flag_fires_when_mtime_old",
+        "test_pytest_stale_cache_flag_does_not_fire_when_fresh",
+        "test_other_world_drilldown_loader_returns_records_when_present",
+        "test_fire_button_confirmation_marker_well_formed",
+        "test_bulk_resolve_buckets_classify_known_patterns",
+        "test_bulk_resolve_first_match_wins_no_double_counting",
+        "test_cached_adapters_module_exposes_expected_wrappers",
+        "test_cached_records_for_world_returns_same_payload_as_underlying"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb011_polish_audit.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb011_polish_audit.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb011_polish_audit.py::test_w1_records_aggregator_scans_multiple_stores,test_w1_records_aggregator_returns_empty_for_unknown_world,test_build_log_parses_to_structured_entries",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb011_polish_audit.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D17",
+        "D22"
+      ],
+      "verified": [
+        "D17",
+        "D22"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 5,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 5,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 10843,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 256,
+    "path": "public_tests/test_cb011_polish_audit.py",
+    "path_hash": "sha256:bdac7bbc81c21631596693b4fb92bff43a23f875f4c65e82f3b7b567f9290913",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb011_polish_audit.py->public_tests/test_cb015_adapter_expansion.py::2486",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::public_tests/test_cb011_polish_audit.py::public_tests/test_cb015_adapter_expansion.py"
+          }
+        ],
+        "target": "public_tests/test_cb015_adapter_expansion.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::3902",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb011_polish_audit.py::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-011",
+      "members": [
+        "control_room/cache/fire_button_confirmed.json",
+        "control_room/cached_adapters.py",
+        "docs/screenshots/cb011_baseline/README.md",
+        "public_tests/test_cb011_polish_audit.py"
+      ],
+      "spawn_ticket": "CB-011"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+        "edge_id": "spawned_by_ticket::CB-011->public_tests/test_cb011_polish_audit.py::332",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-011",
+        "target": "public_tests/test_cb011_polish_audit.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/screenshots/cb011_baseline/README.md->public_tests/test_cb011_polish_audit.py::1482",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/screenshots/cb011_baseline/README.md",
+        "target": "public_tests/test_cb011_polish_audit.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::project_telemetry/task_018_progress_record.json->public_tests/test_cb011_polish_audit.py::2485",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::project_telemetry/task_018_progress_record.json::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/task_018_progress_record.json",
+        "target": "public_tests/test_cb011_polish_audit.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::3901",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb009_atlas_bundle_inbox.py",
+        "target": "public_tests/test_cb011_polish_audit.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb011_polish_audit.py->public_tests/test_cb015_adapter_expansion.py::2486",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::public_tests/test_cb011_polish_audit.py::public_tests/test_cb015_adapter_expansion.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb011_polish_audit.py",
+        "target": "public_tests/test_cb015_adapter_expansion.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::3902",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb011_polish_audit.py::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb011_polish_audit.py",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-011->public_tests/test_cb011_polish_audit.py::332",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eba9d36d2bd24e11b9fcf23fc9e58e74b8cad85e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "source": "CB-011"
+      },
+      {
+        "edge_id": "shares_birth_cohort::docs/screenshots/cb011_baseline/README.md->public_tests/test_cb011_polish_audit.py::1482",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-011",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-011"
+          }
+        ],
+        "source": "docs/screenshots/cb011_baseline/README.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::project_telemetry/task_018_progress_record.json->public_tests/test_cb011_polish_audit.py::2485",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::project_telemetry/task_018_progress_record.json::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "source": "project_telemetry/task_018_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::3901",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "source": "public_tests/test_cb009_atlas_bundle_inbox.py"
+      }
+    ],
+    "siblings": [
+      "control_room/cache/fire_button_confirmed.json",
+      "control_room/cached_adapters.py",
+      "docs/screenshots/cb011_baseline/README.md"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb011_polish_audit.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

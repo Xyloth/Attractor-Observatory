@@ -1,0 +1,557 @@
+{
+  "birth": {
+    "birth_cohort_id": "DX-002",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Report serializes structured data for post-hoc analysis.",
+        "{\n\"@context\": {\n\"ao\": \"https://attractor-observatory.local/ns#\",\n\"prov\": \"http://www.w3.org/ns/prov#\"\n},\n\"@id\": \"ao:campaign_013\",\n\"@type\": \"prov:Bundle\",\n\"prov:activity\": [\n{\n\"@id\": \"ao:campaign_013_campaign_activity\",\n\"@type\": \"prov:Activity\",\n\"prov:used\": \"reports/campaign_013/full_report.json\"\n}\n],\n\"prov:entity\": [\n{\n\"@id\": \"reports/campaign_013/full_report.json\",\n\"@type\": \"prov:Entity\",\n\"ao:e"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "file_span"
+            }
+          ],
+          "atom_id": "report_records_data",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [
+            "report contents are mock or placeholder (Class 12)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "subject": "Fix DX-002 findings and ratify D28-D30",
+            "ticket": "DX-002"
+          },
+          "statement": "Report serializes structured data for post-hoc analysis."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_013/prov_o.jsonld#header",
+            "ticket": "campaign_013"
+          },
+          "statement": "{\n\"@context\": {\n\"ao\": \"https://attractor-observatory.local/ns#\",\n\"prov\": \"http://www.w3.org/ns/prov#\"\n},\n\"@id\": \"ao:campaign_013\",\n\"@type\": \"prov:Bundle\",\n\"prov:activity\": [\n{\n\"@id\": \"ao:campaign_013_campaign_activity\",\n\"@type\": \"prov:Activity\",\n\"prov:used\": \"reports/campaign_013/full_report.json\"\n}\n],\n\"prov:entity\": [\n{\n\"@id\": \"reports/campaign_013/full_report.json\",\n\"@type\": \"prov:Entity\",\n\"ao:e"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11"
+      ],
+      "forbidden_patterns": [
+        "report contents are mock or placeholder (Class 12)"
+      ],
+      "predicate_id": "birth::reports/campaign_013/prov_o.jsonld"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "note": "Fix DX-002 findings and ratify D28-D30",
+        "ref_id": "birth::reports/campaign_013/prov_o.jsonld::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "DX-002",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::reports/campaign_013/prov_o.jsonld::ticket"
+      }
+    ],
+    "first_seen_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+    "first_seen_date": "2026-05-06T21:25:06-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "DX-002",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:04b271eb3c2516f619c10df27da2150bed82cae296842848e2e16c7da01477c9",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_013/prov_o.jsonld"
+          },
+          "statement": "Tracked file with 34 lines / 828 bytes at HEAD."
+        }
+      ],
+      "byte_count": 828,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 34,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::reports/campaign_013/prov_o.jsonld",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "reports/campaign_013/prov_o.jsonld",
+        "note": "current contents at HEAD",
+        "ref_id": "current::reports/campaign_013/prov_o.jsonld::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D11"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "report",
+    "byte_count": 828,
+    "generated_status": "report",
+    "language": "json",
+    "line_count": 34,
+    "path": "reports/campaign_013/prov_o.jsonld",
+    "path_hash": "sha256:cd138bbf46c18ac031c9f90c8524b546cc9826d28de1394752c8e04170365dde",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-reports/campaign_013/prov_o.jsonld-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/e4fd7d079cf6_reports_campaign_013_prov_o.jsonld.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::reports/campaign_013/prov_o.jsonld->reports/campaign_014/fair_metadata.json::1410",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "target": "reports/campaign_014/fair_metadata.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_013/prov_o.jsonld->reports/campaign_013/full_report.json::4909",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_013/prov_o.jsonld#reports/campaign_013/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_013/prov_o.jsonld::reports/campaign_013/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_013/full_report.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "DX-002",
+      "members": [
+        "FAIR_DATA_STEWARDSHIP.md",
+        "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+        "docs/doctrine_d27.md",
+        "docs/doctrine_d28.md",
+        "docs/doctrine_d29.md",
+        "docs/doctrine_d30.md",
+        "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+        "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+        "reports/campaign_002/fair_metadata.json",
+        "reports/campaign_002/prov_o.jsonld",
+        "reports/campaign_003/fair_metadata.json",
+        "reports/campaign_003/prov_o.jsonld",
+        "reports/campaign_004/fair_metadata.json",
+        "reports/campaign_004/prov_o.jsonld",
+        "reports/campaign_005/fair_metadata.json",
+        "reports/campaign_005/prov_o.jsonld",
+        "reports/campaign_006/fair_metadata.json",
+        "reports/campaign_006/prov_o.jsonld",
+        "reports/campaign_007/fair_metadata.json",
+        "reports/campaign_007/prov_o.jsonld",
+        "reports/campaign_008/fair_metadata.json",
+        "reports/campaign_008/prov_o.jsonld",
+        "reports/campaign_009/fair_metadata.json",
+        "reports/campaign_009/prov_o.jsonld",
+        "reports/campaign_010/fair_metadata.json",
+        "reports/campaign_010/prov_o.jsonld",
+        "reports/campaign_011/fair_metadata.json",
+        "reports/campaign_011/prov_o.jsonld",
+        "reports/campaign_012/fair_metadata.json",
+        "reports/campaign_012/prov_o.jsonld",
+        "reports/campaign_013/fair_metadata.json",
+        "reports/campaign_013/prov_o.jsonld",
+        "reports/campaign_014/fair_metadata.json",
+        "reports/campaign_014/prov_o.jsonld",
+        "reports/campaign_017/fair_metadata.json",
+        "reports/campaign_017/prov_o.jsonld",
+        "reports/campaign_018/fair_metadata.json",
+        "reports/campaign_018/prov_o.jsonld",
+        "reports/campaign_020/fair_metadata.json",
+        "reports/campaign_020/prov_o.jsonld",
+        "reports/campaign_021/fair_metadata.json",
+        "reports/campaign_021/prov_o.jsonld",
+        "reports/campaign_022/fair_metadata.json",
+        "reports/campaign_022/prov_o.jsonld",
+        "reports/campaign_fair_metadata_index.json",
+        "reports/task_dx002_findings_disposition.json",
+        "reports/task_dx002_public_boundary_markers.json",
+        "ro-crate-metadata.json"
+      ],
+      "spawn_ticket": "DX-002"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_013/prov_o.jsonld::460",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_013/prov_o.jsonld"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "DX-002",
+        "target": "reports/campaign_013/prov_o.jsonld"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/fair_metadata.json->reports/campaign_013/prov_o.jsonld::1409",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_013/fair_metadata.json",
+        "target": "reports/campaign_013/prov_o.jsonld"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/prov_o.jsonld->reports/campaign_014/fair_metadata.json::1410",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_013/prov_o.jsonld",
+        "target": "reports/campaign_014/fair_metadata.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_013/prov_o.jsonld->reports/campaign_013/full_report.json::4909",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_013/prov_o.jsonld#reports/campaign_013/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_013/prov_o.jsonld::reports/campaign_013/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_013/prov_o.jsonld",
+        "target": "reports/campaign_013/full_report.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_013/prov_o.jsonld::460",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_013/prov_o.jsonld"
+          }
+        ],
+        "source": "DX-002"
+      },
+      {
+        "edge_id": "shares_birth_cohort::reports/campaign_013/fair_metadata.json->reports/campaign_013/prov_o.jsonld::1409",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "source": "reports/campaign_013/fair_metadata.json"
+      }
+    ],
+    "siblings": [
+      "FAIR_DATA_STEWARDSHIP.md",
+      "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+      "docs/doctrine_d27.md",
+      "docs/doctrine_d28.md",
+      "docs/doctrine_d29.md",
+      "docs/doctrine_d30.md",
+      "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+      "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+      "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+      "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+      "reports/campaign_002/fair_metadata.json",
+      "reports/campaign_002/prov_o.jsonld",
+      "reports/campaign_003/fair_metadata.json",
+      "reports/campaign_003/prov_o.jsonld",
+      "reports/campaign_004/fair_metadata.json",
+      "reports/campaign_004/prov_o.jsonld",
+      "reports/campaign_005/fair_metadata.json",
+      "reports/campaign_005/prov_o.jsonld",
+      "reports/campaign_006/fair_metadata.json",
+      "reports/campaign_006/prov_o.jsonld",
+      "reports/campaign_007/fair_metadata.json",
+      "reports/campaign_007/prov_o.jsonld",
+      "reports/campaign_008/fair_metadata.json",
+      "reports/campaign_008/prov_o.jsonld",
+      "reports/campaign_009/fair_metadata.json",
+      "reports/campaign_009/prov_o.jsonld",
+      "reports/campaign_010/fair_metadata.json",
+      "reports/campaign_010/prov_o.jsonld",
+      "reports/campaign_011/fair_metadata.json",
+      "reports/campaign_011/prov_o.jsonld",
+      "reports/campaign_012/fair_metadata.json",
+      "reports/campaign_012/prov_o.jsonld",
+      "reports/campaign_013/fair_metadata.json",
+      "reports/campaign_014/fair_metadata.json",
+      "reports/campaign_014/prov_o.jsonld",
+      "reports/campaign_017/fair_metadata.json",
+      "reports/campaign_017/prov_o.jsonld",
+      "reports/campaign_018/fair_metadata.json",
+      "reports/campaign_018/prov_o.jsonld",
+      "reports/campaign_020/fair_metadata.json",
+      "reports/campaign_020/prov_o.jsonld",
+      "reports/campaign_021/fair_metadata.json",
+      "reports/campaign_021/prov_o.jsonld",
+      "reports/campaign_022/fair_metadata.json",
+      "reports/campaign_022/prov_o.jsonld",
+      "reports/campaign_fair_metadata_index.json",
+      "reports/task_dx002_findings_disposition.json",
+      "reports/task_dx002_public_boundary_markers.json",
+      "ro-crate-metadata.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::reports/campaign_013/prov_o.jsonld::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:50Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:50Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

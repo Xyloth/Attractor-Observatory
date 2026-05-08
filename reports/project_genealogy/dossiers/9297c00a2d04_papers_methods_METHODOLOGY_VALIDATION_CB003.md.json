@@ -1,0 +1,1534 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "# Methodology Validation: TASK-CB-003\nTask: TASK-CB-003 (Claude Builder Session 003)\nStatus: exploratory\nLocked instruments: Campaign 009 BFG-PR basis `sha256:ce9e24...`; Campaign 010 lens registry `sha256:7c325d...`. Verified before each control ran.\n## Headline finding\n- **Adversarial control** (motif.replication_lineage.draft × graph, K2 coverage 0.959240): **`methodology_sound`**. formal_gap ="
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+            "subject": "Campaigns 008-016 + Observatory Control Room + Autonomous Factory v0",
+            "ticket": "TASK-CB-001"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#header",
+            "ticket": "TASK-CB-003"
+          },
+          "statement": "# Methodology Validation: TASK-CB-003\nTask: TASK-CB-003 (Claude Builder Session 003)\nStatus: exploratory\nLocked instruments: Campaign 009 BFG-PR basis `sha256:ce9e24...`; Campaign 010 lens registry `sha256:7c325d...`. Verified before each control ran.\n## Headline finding\n- **Adversarial control** (motif.replication_lineage.draft × graph, K2 coverage 0.959240): **`methodology_sound`**. formal_gap ="
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+        "note": "Campaigns 008-016 + Observatory Control Room + Autonomous Factory v0",
+        "ref_id": "birth::papers/methods/METHODOLOGY_VALIDATION_CB003.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/METHODOLOGY_VALIDATION_CB003.md::ticket"
+      }
+    ],
+    "first_seen_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+    "first_seen_date": "2026-05-05T20:37:55-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:bf287656777415969d74fd7feee07065d581f4ab0d66cd28f8f16c58191e36e0",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          },
+          "statement": "Tracked file with 130 lines / 11161 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 11161,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 130,
+      "observed_doctrine_bindings": [
+        "D14",
+        "D18",
+        "D21",
+        "D22",
+        "D7",
+        "D9"
+      ],
+      "predicate_id": "current::papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/METHODOLOGY_VALIDATION_CB003.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D14",
+        "D18",
+        "D21",
+        "D22",
+        "D7",
+        "D9"
+      ],
+      "verified": [
+        "D14",
+        "D18",
+        "D21",
+        "D22",
+        "D7",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        ".architect_state_checkpoint.md",
+        "BUILD_LOG.md",
+        "TASK-CB-003_METHODOLOGY_VALIDATION.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 4.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 11161,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 130,
+    "path": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+    "path_hash": "sha256:29ba2eaf7e0704e827c403cbb474b6a60a4a485e6c53b72441a2284f0492e492",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-papers/methods/METHODOLOGY_VALIDATION_CB003.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/9297c00a2d04_papers_methods_METHODOLOGY_VALIDATION_CB003.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::925",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::2109",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::2768",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3284",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3478",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3692",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3895",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_010/coverage_matrix.json::4673",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_010/coverage_matrix.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_010/coverage_matrix.json"
+          }
+        ],
+        "target": "reports/campaign_010/coverage_matrix.json"
+      },
+      {
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_010/formal_deficit_map.json::4674",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_010/formal_deficit_map.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_010/formal_deficit_map.json"
+          }
+        ],
+        "target": "reports/campaign_010/formal_deficit_map.json"
+      },
+      {
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_013/methodology_adversarial_control.json::4675",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_013/methodology_adversarial_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_013/methodology_adversarial_control.json"
+          }
+        ],
+        "target": "reports/campaign_013/methodology_adversarial_control.json"
+      },
+      {
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_013/substrate_blocked_control.json::4676",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_013/substrate_blocked_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_013/substrate_blocked_control.json"
+          }
+        ],
+        "target": "reports/campaign_013/substrate_blocked_control.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-001",
+      "members": [
+        ".architect_state_checkpoint.md",
+        "BUILD_LOG.md",
+        "CLAUDE_BUILDER_INITIATION.md",
+        "CLAUDE_FACTORY_INITIATION.md",
+        "CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md",
+        "CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md",
+        "CODEX_TASK_021_DRIVE.md",
+        "CODEX_TASK_022_DRIVE.md",
+        "CODEX_TASK_023_DRIVE.md",
+        "CODEX_TASK_024_DRIVE.md",
+        "Control Room v0.txt",
+        "Control_Room_README.md",
+        "FACTORY_END_STATE_AND_SCHEMA_DISCIPLINE.md",
+        "Launch Control Room.bat",
+        "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md",
+        "TASK-CB-003_METHODOLOGY_VALIDATION.md",
+        "Visuals/README.md",
+        "Visuals/SKILL.md",
+        "Visuals/assets/logo-lockup.svg",
+        "Visuals/assets/logo-mark.svg",
+        "Visuals/assets/room-icons/ai-ops-tower.svg",
+        "Visuals/assets/room-icons/basin-floor-lab.svg",
+        "Visuals/assets/room-icons/campaign-command.svg",
+        "Visuals/assets/room-icons/doctrine-console.svg",
+        "Visuals/assets/room-icons/factory-intake.svg",
+        "Visuals/assets/room-icons/falsifier-ledger.svg",
+        "Visuals/assets/room-icons/motif-atlas.svg",
+        "Visuals/assets/room-icons/portfolio-demo.svg",
+        "Visuals/assets/room-icons/pulse-deck.svg",
+        "Visuals/assets/room-icons/world-observatory.svg",
+        "Visuals/assets/world-icons/w1-chemistry.svg",
+        "Visuals/assets/world-icons/w10-hypergraph.svg",
+        "Visuals/assets/world-icons/w11-quasispecies.svg",
+        "Visuals/assets/world-icons/w12-symbiogenesis.svg",
+        "Visuals/assets/world-icons/w13-multiscale.svg",
+        "Visuals/assets/world-icons/w2-protocell.svg",
+        "Visuals/assets/world-icons/w3-field.svg",
+        "Visuals/assets/world-icons/w4-morphogenesis.svg",
+        "Visuals/assets/world-icons/w5-digital.svg",
+        "Visuals/assets/world-icons/w6-ecosystem.svg",
+        "Visuals/assets/world-icons/w7-swarm.svg",
+        "Visuals/assets/world-icons/w8-cognitive.svg",
+        "Visuals/assets/world-icons/w9-origins.svg",
+        "Visuals/brief.md",
+        "Visuals/colors_and_type.css",
+        "Visuals/preview/_card.css",
+        "Visuals/preview/color-accents.html",
+        "Visuals/preview/color-status.html",
+        "Visuals/preview/color-surfaces.html",
+        "Visuals/preview/color-worlds.html",
+        "Visuals/preview/doctrine-tablet.html",
+        "Visuals/preview/empty-state.html",
+        "Visuals/preview/gate-grid.html",
+        "Visuals/preview/health-badge.html",
+        "Visuals/preview/pills.html",
+        "Visuals/preview/quarantine.html",
+        "Visuals/preview/radii-shadows.html",
+        "Visuals/preview/room-glyphs.html",
+        "Visuals/preview/spacing.html",
+        "Visuals/preview/type-display.html",
+        "Visuals/preview/type-mono.html",
+        "Visuals/preview/type-scale.html",
+        "Visuals/preview/world-card.html",
+        "Visuals/ui_kits/control_room/AgentIdentity.jsx",
+        "Visuals/ui_kits/control_room/BasinFloor.jsx",
+        "Visuals/ui_kits/control_room/CampaignTimeline.jsx",
+        "Visuals/ui_kits/control_room/DoctrineTablet.jsx",
+        "Visuals/ui_kits/control_room/EmptyState.jsx",
+        "Visuals/ui_kits/control_room/FalsifierEvent.jsx",
+        "Visuals/ui_kits/control_room/GateGrid.jsx",
+        "Visuals/ui_kits/control_room/HealthBadge.jsx",
+        "Visuals/ui_kits/control_room/MotifNode.jsx",
+        "Visuals/ui_kits/control_room/Panel.jsx",
+        "Visuals/ui_kits/control_room/Pill.jsx",
+        "Visuals/ui_kits/control_room/ProjectGraph.jsx",
+        "Visuals/ui_kits/control_room/README.md",
+        "Visuals/ui_kits/control_room/RoomGlyph.jsx",
+        "Visuals/ui_kits/control_room/Sidebar.jsx",
+        "Visuals/ui_kits/control_room/TopBar.jsx",
+        "Visuals/ui_kits/control_room/WorldCard.jsx",
+        "Visuals/ui_kits/control_room/WorldGlyph.jsx",
+        "Visuals/ui_kits/control_room/WorldThumbnail.jsx",
+        "Visuals/ui_kits/control_room/index.html",
+        "Visuals/ui_kits/control_room/mockData.js",
+        "Visuals/ui_kits/control_room/rooms/AIOperationsTower.jsx",
+        "Visuals/ui_kits/control_room/rooms/BasinFloorLab.jsx",
+        "Visuals/ui_kits/control_room/rooms/CampaignCommand.jsx",
+        "Visuals/ui_kits/control_room/rooms/FactoryAndPortfolio.jsx",
+        "Visuals/ui_kits/control_room/rooms/FalsifierAndDoctrine.jsx",
+        "Visuals/ui_kits/control_room/rooms/MotifAtlas.jsx",
+        "Visuals/ui_kits/control_room/rooms/PulseDeck.jsx",
+        "Visuals/ui_kits/control_room/rooms/WorldObservatory.jsx",
+        "WAITING_TO_BE_PUBLISHED.md",
+        "ai_os/memory/factory_session_log.md",
+        "atlas/entries/atlas.autocatalytic_closure.001.json",
+        "atlas/entries/atlas.externalized_memory.001.json",
+        "atlas/entries/atlas.floor_connectivity.001.json",
+        "atlas/entries/atlas.repair.001.json",
+        "atlas/entries/atlas.replication_lineage.001.json",
+        "atlas/entries/atlas.self_boundary.001.json",
+        "control_room/README.md",
+        "control_room/__init__.py",
+        "control_room/adapters/__init__.py",
+        "control_room/adapters/build_log.py",
+        "control_room/adapters/builder_telemetry.py",
+        "control_room/adapters/campaign_reports.py",
+        "control_room/adapters/doctrine.py",
+        "control_room/adapters/factory_store.py",
+        "control_room/adapters/git_metadata.py",
+        "control_room/adapters/methods_falsifiers.py",
+        "control_room/adapters/negative_space.py",
+        "control_room/adapters/pytest_cache.py",
+        "control_room/app.py",
+        "control_room/cache/.gitkeep",
+        "control_room/components/__init__.py",
+        "control_room/components/chrome.py",
+        "control_room/components/empty_state.py",
+        "control_room/design_tokens.py",
+        "control_room/launcher.py",
+        "control_room/rooms/README.md",
+        "control_room/rooms/__init__.py",
+        "control_room/rooms/_placeholder.py",
+        "control_room/rooms/ai_operations_tower.py",
+        "control_room/rooms/basin_floor_lab.py",
+        "control_room/rooms/campaign_command.py",
+        "control_room/rooms/doctrine_console.py",
+        "control_room/rooms/factory_intake_dock.py",
+        "control_room/rooms/falsifier_ledger.py",
+        "control_room/rooms/motif_atlas.py",
+        "control_room/rooms/portfolio_demo.py",
+        "control_room/rooms/project_graph.py",
+        "control_room/rooms/pulse_deck.py",
+        "control_room/rooms/world_observatory.py",
+        "control_room/snapshot.py",
+        "control_room/snapshots/state_20260505T235234Z.json",
+        "control_room/snapshots/state_20260506T002121Z.json",
+        "control_room/snapshots/state_20260506T002212Z.json",
+        "control_room/snapshots/state_20260506T002510Z.json",
+        "control_room/snapshots/state_20260506T002516Z.json",
+        "control_room/snapshots/state_20260506T002517Z.json",
+        "control_room/snapshots/state_20260506T002518Z.json",
+        "control_room/snapshots/state_20260506T002538Z.json",
+        "control_room/snapshots/state_20260506T002540Z.json",
+        "control_room/snapshots/state_20260506T002541Z.json",
+        "control_room/snapshots/state_20260506T002911Z.json",
+        "control_room/snapshots/state_20260506T002917Z.json",
+        "control_room/snapshots/state_20260506T002920Z.json",
+        "control_room/snapshots/state_20260506T002923Z.json",
+        "control_room/snapshots/state_20260506T002926Z.json",
+        "control_room/snapshots/state_20260506T002929Z.json",
+        "control_room/snapshots/state_20260506T002932Z.json",
+        "control_room/snapshots/state_20260506T003103Z.json",
+        "control_room/snapshots/state_latest.json",
+        "control_room/snapshots/state_prior.json",
+        "control_room/static/logo/logo-lockup.svg",
+        "control_room/static/logo/logo-mark.svg",
+        "control_room/static/room-icons/ai-ops-tower.svg",
+        "control_room/static/room-icons/basin-floor-lab.svg",
+        "control_room/static/room-icons/campaign-command.svg",
+        "control_room/static/room-icons/doctrine-console.svg",
+        "control_room/static/room-icons/factory-intake.svg",
+        "control_room/static/room-icons/falsifier-ledger.svg",
+        "control_room/static/room-icons/motif-atlas.svg",
+        "control_room/static/room-icons/portfolio-demo.svg",
+        "control_room/static/room-icons/pulse-deck.svg",
+        "control_room/static/room-icons/world-observatory.svg",
+        "control_room/static/world-icons/w1-chemistry.svg",
+        "control_room/static/world-icons/w10-hypergraph.svg",
+        "control_room/static/world-icons/w11-quasispecies.svg",
+        "control_room/static/world-icons/w12-symbiogenesis.svg",
+        "control_room/static/world-icons/w13-multiscale.svg",
+        "control_room/static/world-icons/w2-protocell.svg",
+        "control_room/static/world-icons/w3-field.svg",
+        "control_room/static/world-icons/w4-morphogenesis.svg",
+        "control_room/static/world-icons/w5-digital.svg",
+        "control_room/static/world-icons/w6-ecosystem.svg",
+        "control_room/static/world-icons/w7-swarm.svg",
+        "control_room/static/world-icons/w8-cognitive.svg",
+        "control_room/static/world-icons/w9-origins.svg",
+        "docs/doctrine_d19_d21.md",
+        "docs/doctrine_d22.md",
+        "docs/screenshots/01-pulse-deck.png",
+        "docs/screenshots/02-world-observatory.png",
+        "docs/screenshots/03-campaign-command.png",
+        "docs/screenshots/04-ai-operations-tower.png",
+        "docs/screenshots/05-project-graph.png",
+        "docs/screenshots/06-basin-floor-lab.png",
+        "docs/screenshots/07-doctrine-console.png",
+        "docs/screenshots/capture_screenshots.py",
+        "factory_lowlevel/__init__.py",
+        "factory_lowlevel/adapters.py",
+        "factory_lowlevel/daemon.py",
+        "factory_lowlevel/monitor.py",
+        "factory_lowlevel/normalization.py",
+        "factory_lowlevel/persistence.py",
+        "factory_lowlevel/pipeline.py",
+        "factory_lowlevel/registry.py",
+        "factory_lowlevel/router.py",
+        "factory_lowlevel/scheduler.py",
+        "factory_lowlevel/schemas.py",
+        "papers/falsifiers/floor_connectivity_campaign013_replication.md",
+        "papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md",
+        "papers/methods/FACTORY_HARDENING_SPEC.md",
+        "papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md",
+        "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md",
+        "papers/methods/L3_OVERLAP_INSECTS_W7.md",
+        "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "papers/prereg/deficit_map_v0.signed.json",
+        "project_telemetry/codex_audit_001_progress_record.json",
+        "project_telemetry/codex_audit_002_progress_record.json",
+        "project_telemetry/factory_session_records.jsonl",
+        "project_telemetry/task_020_progress_record.json",
+        "project_telemetry/task_021_progress_record.json",
+        "project_telemetry/task_022_progress_record.json",
+        "project_telemetry/task_023_progress_record.json",
+        "project_telemetry/task_024_progress_record.json",
+        "reports/campaign_010/bfg_post_deepening.json",
+        "reports/campaign_010/bfg_w8_w11_w12.json",
+        "reports/campaign_010/cli_full_report.json",
+        "reports/campaign_010/coverage_matrix.json",
+        "reports/campaign_010/deepening_actions.json",
+        "reports/campaign_010/encoding_compression.json",
+        "reports/campaign_010/falsifier_refresh.json",
+        "reports/campaign_010/formal_deficit_map.json",
+        "reports/campaign_010/formal_gap.json",
+        "reports/campaign_010/full_report.json",
+        "reports/campaign_010/lens_ast_lint.json",
+        "reports/campaign_010/lens_compositionality.json",
+        "reports/campaign_010/lens_domains.json",
+        "reports/campaign_010/lens_evaluations.json",
+        "reports/campaign_010/lens_invariance.json",
+        "reports/campaign_010/lens_predictive.json",
+        "reports/campaign_010/lens_roundtrip.json",
+        "reports/campaign_010/n7_lens_permutation.json",
+        "reports/campaign_010/residual_structure.json",
+        "reports/campaign_010/substance_audit_refresh.json",
+        "reports/campaign_010/truth_pass_refresh.json",
+        "reports/campaign_011/audit_queue.json",
+        "reports/campaign_011/background_jobs.json",
+        "reports/campaign_011/calibration_full.json",
+        "reports/campaign_011/claim_store.json",
+        "reports/campaign_011/cli_full_report.json",
+        "reports/campaign_011/d19_audit.json",
+        "reports/campaign_011/d20_audit.json",
+        "reports/campaign_011/d21_audit.json",
+        "reports/campaign_011/detector_registry_consults.json",
+        "reports/campaign_011/evidence_graph.json",
+        "reports/campaign_011/full_report.json",
+        "reports/campaign_011/ingestion_factory.json",
+        "reports/campaign_011/ingestion_summary.json",
+        "reports/campaign_011/ke1_calibration.json",
+        "reports/campaign_011/ke2_calibration.json",
+        "reports/campaign_011/kp1_calibration.json",
+        "reports/campaign_011/kp2_calibration.json",
+        "reports/campaign_011/kp3_calibration.json",
+        "reports/campaign_011/kp4_calibration.json",
+        "reports/campaign_011/license_enforcement.json",
+        "reports/campaign_011/normalizers.json",
+        "reports/campaign_011/ontology_channels.json",
+        "reports/campaign_011/ontology_effects.json",
+        "reports/campaign_011/ontology_full.json",
+        "reports/campaign_011/ontology_overlap_fields.json",
+        "reports/campaign_011/ontology_process_roles.json",
+        "reports/campaign_011/ontology_registry.json",
+        "reports/campaign_011/ontology_trait_decomposition.json",
+        "reports/campaign_011/regression.json",
+        "reports/campaign_011/source_registry.json",
+        "reports/campaign_011/synthetic_extraction.json",
+        "reports/campaign_011/w7_coverage.json",
+        "reports/campaign_011/w7_densification.json",
+        "reports/campaign_011/w7_densification_report.json",
+        "reports/campaign_011/w7_recommendations.json",
+        "reports/campaign_012/calibration_hardening.json",
+        "reports/campaign_012/cli_full_report.json",
+        "reports/campaign_012/factory_initiation_pointer_audit.json",
+        "reports/campaign_012/factory_scaffolding.json",
+        "reports/campaign_012/factory_session_harness.json",
+        "reports/campaign_012/full_report.json",
+        "reports/campaign_012/itis_family_cache.json",
+        "reports/campaign_012/ke1_subtle_calibration.json",
+        "reports/campaign_012/kp1h_hardening.json",
+        "reports/campaign_012/kp2h_hardening.json",
+        "reports/campaign_012/kp3h_hardening.json",
+        "reports/campaign_012/kp4h_hardening.json",
+        "reports/campaign_012/kp_aggregate_hardening.json",
+        "reports/campaign_012/real_lane1_extraction.json",
+        "reports/campaign_012/real_lane1_license_closure.json",
+        "reports/campaign_012/regression.json",
+        "reports/campaign_012/replication_basis_lock.json",
+        "reports/campaign_012/w7_densification_renamed.json",
+        "reports/campaign_012/w7_template_lint.json",
+        "reports/campaign_012/w7_template_renaming.json",
+        "reports/campaign_013/atlas_seed.json",
+        "reports/campaign_013/cache_integrity.json",
+        "reports/campaign_013/cross_reference.json",
+        "reports/campaign_013/full_report.json",
+        "reports/campaign_013/itis_family_cache.json",
+        "reports/campaign_013/itis_insect_extraction.json",
+        "reports/campaign_013/itis_normalization_summary.json",
+        "reports/campaign_013/l3_overlap_report.json",
+        "reports/campaign_013/methodology_adversarial_control.json",
+        "reports/campaign_013/multisubstrate_floor_connectivity.json",
+        "reports/campaign_013/multisubstrate_floor_connectivity_v2.json",
+        "reports/campaign_013/phylogenetic_correction.json",
+        "reports/campaign_013/regression.json",
+        "reports/campaign_013/replication_basis_lock.json",
+        "reports/campaign_013/replication_corpus.json",
+        "reports/campaign_013/replication_gap.json",
+        "reports/campaign_013/replication_n7.json",
+        "reports/campaign_013/replication_verdict.json",
+        "reports/campaign_013/sampling_bias.json",
+        "reports/campaign_013/schema_migration.json",
+        "reports/campaign_013/schema_version_lint.json",
+        "reports/campaign_013/substrate_blocked_control.json",
+        "reports/campaign_013/w7_motif_detection.json",
+        "reports/campaign_014/floor_corpus_foundry.json",
+        "reports/campaign_014/full_report.json",
+        "reports/campaign_016/full_report.json"
+      ],
+      "spawn_ticket": "TASK-CB-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->papers/methods/METHODOLOGY_VALIDATION_CB003.md::294",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-001",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/L3_OVERLAP_INSECTS_W7.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::924",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/L3_OVERLAP_INSECTS_W7.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::2108",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::2767",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::papers/methods/L3_OVERLAP_INSECTS_W7.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3283",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::papers/methods/L3_OVERLAP_INSECTS_W7.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/L3_OVERLAP_INSECTS_W7.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3477",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3691",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3894",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::.architect_state_checkpoint.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4378",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": ".architect_state_checkpoint.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::.architect_state_checkpoint.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": ".architect_state_checkpoint.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4405",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::TASK-CB-003_METHODOLOGY_VALIDATION.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4626",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "TASK-CB-003_METHODOLOGY_VALIDATION.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::TASK-CB-003_METHODOLOGY_VALIDATION.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-003_METHODOLOGY_VALIDATION.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::925",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::2109",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::2768",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3284",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3478",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3692",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/METHODOLOGY_VALIDATION_CB003.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::3895",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/METHODOLOGY_VALIDATION_CB003.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_010/coverage_matrix.json::4673",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_010/coverage_matrix.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_010/coverage_matrix.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "reports/campaign_010/coverage_matrix.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_010/formal_deficit_map.json::4674",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_010/formal_deficit_map.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_010/formal_deficit_map.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "reports/campaign_010/formal_deficit_map.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_013/methodology_adversarial_control.json::4675",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_013/methodology_adversarial_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_013/methodology_adversarial_control.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "reports/campaign_013/methodology_adversarial_control.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/METHODOLOGY_VALIDATION_CB003.md->reports/campaign_013/substrate_blocked_control.json::4676",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/METHODOLOGY_VALIDATION_CB003.md#reports/campaign_013/substrate_blocked_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/METHODOLOGY_VALIDATION_CB003.md::reports/campaign_013/substrate_blocked_control.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "target": "reports/campaign_013/substrate_blocked_control.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-001->papers/methods/METHODOLOGY_VALIDATION_CB003.md::294",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "TASK-CB-001"
+      },
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/L3_OVERLAP_INSECTS_W7.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::924",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "source": "papers/methods/L3_OVERLAP_INSECTS_W7.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::2108",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::2767",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::papers/methods/L3_OVERLAP_INSECTS_W7.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3283",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::papers/methods/L3_OVERLAP_INSECTS_W7.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "papers/methods/L3_OVERLAP_INSECTS_W7.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3477",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3691",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3894",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "edge_id": "cites::.architect_state_checkpoint.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4378",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": ".architect_state_checkpoint.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::.architect_state_checkpoint.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": ".architect_state_checkpoint.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4405",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "cites::TASK-CB-003_METHODOLOGY_VALIDATION.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4626",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "TASK-CB-003_METHODOLOGY_VALIDATION.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::TASK-CB-003_METHODOLOGY_VALIDATION.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "source": "TASK-CB-003_METHODOLOGY_VALIDATION.md"
+      }
+    ],
+    "siblings": [
+      ".architect_state_checkpoint.md",
+      "BUILD_LOG.md",
+      "CLAUDE_BUILDER_INITIATION.md",
+      "CLAUDE_FACTORY_INITIATION.md",
+      "CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md",
+      "CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md",
+      "CODEX_TASK_021_DRIVE.md",
+      "CODEX_TASK_022_DRIVE.md",
+      "CODEX_TASK_023_DRIVE.md",
+      "CODEX_TASK_024_DRIVE.md",
+      "Control Room v0.txt",
+      "Control_Room_README.md",
+      "FACTORY_END_STATE_AND_SCHEMA_DISCIPLINE.md",
+      "Launch Control Room.bat",
+      "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md",
+      "TASK-CB-003_METHODOLOGY_VALIDATION.md",
+      "Visuals/README.md",
+      "Visuals/SKILL.md",
+      "Visuals/assets/logo-lockup.svg",
+      "Visuals/assets/logo-mark.svg",
+      "Visuals/assets/room-icons/ai-ops-tower.svg",
+      "Visuals/assets/room-icons/basin-floor-lab.svg",
+      "Visuals/assets/room-icons/campaign-command.svg",
+      "Visuals/assets/room-icons/doctrine-console.svg",
+      "Visuals/assets/room-icons/factory-intake.svg",
+      "Visuals/assets/room-icons/falsifier-ledger.svg",
+      "Visuals/assets/room-icons/motif-atlas.svg",
+      "Visuals/assets/room-icons/portfolio-demo.svg",
+      "Visuals/assets/room-icons/pulse-deck.svg",
+      "Visuals/assets/room-icons/world-observatory.svg",
+      "Visuals/assets/world-icons/w1-chemistry.svg",
+      "Visuals/assets/world-icons/w10-hypergraph.svg",
+      "Visuals/assets/world-icons/w11-quasispecies.svg",
+      "Visuals/assets/world-icons/w12-symbiogenesis.svg",
+      "Visuals/assets/world-icons/w13-multiscale.svg",
+      "Visuals/assets/world-icons/w2-protocell.svg",
+      "Visuals/assets/world-icons/w3-field.svg",
+      "Visuals/assets/world-icons/w4-morphogenesis.svg",
+      "Visuals/assets/world-icons/w5-digital.svg",
+      "Visuals/assets/world-icons/w6-ecosystem.svg",
+      "Visuals/assets/world-icons/w7-swarm.svg",
+      "Visuals/assets/world-icons/w8-cognitive.svg",
+      "Visuals/assets/world-icons/w9-origins.svg",
+      "Visuals/brief.md",
+      "Visuals/colors_and_type.css",
+      "Visuals/preview/_card.css",
+      "Visuals/preview/color-accents.html",
+      "Visuals/preview/color-status.html",
+      "Visuals/preview/color-surfaces.html",
+      "Visuals/preview/color-worlds.html"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 3,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/METHODOLOGY_VALIDATION_CB003.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

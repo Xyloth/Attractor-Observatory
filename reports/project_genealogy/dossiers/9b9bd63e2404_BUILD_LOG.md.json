@@ -1,0 +1,4792 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Driver/root doc declares a task or campaign intent that other artifacts can cite.",
+        "# Build Log\n*Append-only chronological timeline of cross-builder work. Both Codex Builder and Claude Builder append. Architect Claude reads. The PI relays appends between builders when usage permits.*\n*Two entry types:*\n- **Work entry** â€” `[timestamp] [builder] [task_id] [pillar/sub-task]`. Started X, touching Y, estimated Z minutes. Posted at start of substantive work.\n- **Talk entry** â€” `[ti"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "Goal|Acceptance|Task|Driver|Mission"
+            }
+          ],
+          "atom_id": "driver_states_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [
+            "intent without acceptance gates or hand-off"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+            "subject": "Campaigns 008-016 + Observatory Control Room + Autonomous Factory v0",
+            "ticket": "TASK-CB-001"
+          },
+          "statement": "Driver/root doc declares a task or campaign intent that other artifacts can cite."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "BUILD_LOG.md#header",
+            "ticket": "task_id"
+          },
+          "statement": "# Build Log\n*Append-only chronological timeline of cross-builder work. Both Codex Builder and Claude Builder append. Architect Claude reads. The PI relays appends between builders when usage permits.*\n*Two entry types:*\n- **Work entry** â€” `[timestamp] [builder] [task_id] [pillar/sub-task]`. Started X, touching Y, estimated Z minutes. Posted at start of substantive work.\n- **Talk entry** â€” `[ti"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [
+        "intent without acceptance gates or hand-off"
+      ],
+      "predicate_id": "birth::BUILD_LOG.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+        "note": "Campaigns 008-016 + Observatory Control Room + Autonomous Factory v0",
+        "ref_id": "birth::BUILD_LOG.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::BUILD_LOG.md::ticket"
+      }
+    ],
+    "first_seen_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+    "first_seen_date": "2026-05-05T20:37:55-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:aa7db9113b3408f80005922d35efc94d2aa67a86166dab2572522e0c30996612",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "BUILD_LOG.md"
+          },
+          "statement": "Tracked file with 2535 lines / 175579 bytes at HEAD."
+        },
+        {
+          "atom_id": "driver_intent_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#pattern:Goal|Acceptance|Task|Driver|Mission"
+          },
+          "statement": "Pattern /Goal|Acceptance|Task|Driver|Mission/ matches in current file."
+        }
+      ],
+      "byte_count": 175579,
+      "class_pattern_matches": [
+        {
+          "class_id": "Class12",
+          "line": 795,
+          "note": "decorative completeness",
+          "snippet": "9. **W0 / W-1 icon integration** â€” `chrome.WORLD_ICON_FILE` extended with canonical filenames; `chrome.WORLD_ICON_ALTERNATES` lists likely Codex naming variants; `world_icon_svg()` tries each in ord"
+        },
+        {
+          "class_id": "Class12",
+          "line": 937,
+          "note": "decorative completeness",
+          "snippet": "**What shipped.** New `factory_store` adapter for Campaign 016 (`empirical_records.json`, `normalized_refs.json`, `evidence_graph.json`, `factory_intake_dock_state.json`, `detector_coverage.json`). Vi"
+        },
+        {
+          "class_id": "Class12",
+          "line": 975,
+          "note": "decorative completeness",
+          "snippet": "1. **W-1 and W0 icons.** The 13 SVG world icons cover W1-W13. The Campaign 016 additions W-1 (atomic/molecular) and W0 (math primitives) have no icons; cards render with a gray placeholder block. Phas"
+        },
+        {
+          "class_id": "Class12",
+          "line": 995,
+          "note": "decorative completeness",
+          "snippet": "**What shipped (all Phase 0 acceptance gates green).** Branch `feature/control-room-v0` isolated from main. `streamlit>=1.50` + `plotly>=5.20` installed; Streamlit boots cleanly on `localhost:8765` wi"
+        },
+        {
+          "class_id": "Class12",
+          "line": 1003,
+          "note": "decorative completeness",
+          "snippet": "**Mistake catalog status.** Class 12 candidate (Decorative Completeness) on watch per D22. None observed in this build â€” every empty body went through `render_empty_state`; no fabricated rows, no pl"
+        },
+        {
+          "class_id": "Class12",
+          "line": 1007,
+          "note": "decorative completeness",
+          "snippet": "**Files written (full list).** `requirements.txt` (streamlit/plotly). `docs/doctrine_d22.md`, `docs/doctrine_registry.json`, `docs/DOCTRINE.md`. `control_room/{__init__.py, app.py, design_tokens.py, R"
+        },
+        {
+          "class_id": "Class12",
+          "line": 1015,
+          "note": "decorative completeness",
+          "snippet": "**Predicted Phase 1 envelope.** Phase 1 fills 4 rooms consuming adapters that already exist. Estimating ~50-90 min based on this task's actual rate (16 min for 10 placeholder rooms + 8 adapters + 20 t"
+        }
+      ],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 2535,
+      "observed_doctrine_bindings": [
+        "D14",
+        "D15",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "predicate_id": "current::BUILD_LOG.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "BUILD_LOG.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::BUILD_LOG.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D14",
+        "D15",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "verified": [
+        "D14",
+        "D15",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "driver_intent_present",
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "driver_or_root_doc",
+    "byte_count": 175579,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 2535,
+    "path": "BUILD_LOG.md",
+    "path_hash": "sha256:9e411d75c4a308f3fd1c5fa56155563daf3631417f9a9ba01ebd93577c8b0e86",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 795",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "BUILD_LOG.md#L795",
+          "note": "decorative completeness",
+          "ref_id": "finding::BUILD_LOG.md::cls::0"
+        }
+      ],
+      "finding_id": "PG-BUILD_LOG.md-class-0",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '9. **W0 / W-1 icon integration** â€” `chrome.WORLD_ICON_FILE' -- BUILD_LOG.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 937",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "BUILD_LOG.md#L937",
+          "note": "decorative completeness",
+          "ref_id": "finding::BUILD_LOG.md::cls::1"
+        }
+      ],
+      "finding_id": "PG-BUILD_LOG.md-class-1",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '**What shipped.** New `factory_store` adapter for Campaign 0' -- BUILD_LOG.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 975",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "BUILD_LOG.md#L975",
+          "note": "decorative completeness",
+          "ref_id": "finding::BUILD_LOG.md::cls::2"
+        }
+      ],
+      "finding_id": "PG-BUILD_LOG.md-class-2",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '1. **W-1 and W0 icons.** The 13 SVG world icons cover W1-W13' -- BUILD_LOG.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 995",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "BUILD_LOG.md#L995",
+          "note": "decorative completeness",
+          "ref_id": "finding::BUILD_LOG.md::cls::3"
+        }
+      ],
+      "finding_id": "PG-BUILD_LOG.md-class-3",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '**What shipped (all Phase 0 acceptance gates green).** Branc' -- BUILD_LOG.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 1003",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "BUILD_LOG.md#L1003",
+          "note": "decorative completeness",
+          "ref_id": "finding::BUILD_LOG.md::cls::4"
+        }
+      ],
+      "finding_id": "PG-BUILD_LOG.md-class-4",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '**Mistake catalog status.** Class 12 candidate (Decorative C' -- BUILD_LOG.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 1007",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "BUILD_LOG.md#L1007",
+          "note": "decorative completeness",
+          "ref_id": "finding::BUILD_LOG.md::cls::5"
+        }
+      ],
+      "finding_id": "PG-BUILD_LOG.md-class-5",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '**Files written (full list).** `requirements.txt` (streamlit' -- BUILD_LOG.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 1015",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "BUILD_LOG.md#L1015",
+          "note": "decorative completeness",
+          "ref_id": "finding::BUILD_LOG.md::cls::6"
+        }
+      ],
+      "finding_id": "PG-BUILD_LOG.md-class-6",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '**Predicted Phase 1 envelope.** Phase 1 fills 4 rooms consum' -- BUILD_LOG.md",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::720",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::1940",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2129",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::BUILD_LOG.md->CODEX_CAMPAIGN_008.md::2309",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILD_LOG.md::CODEX_CAMPAIGN_008.md"
+          }
+        ],
+        "target": "CODEX_CAMPAIGN_008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2489",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::BUILD_LOG.md->CITATION.cff::2600",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::BUILD_LOG.md::CITATION.cff"
+          }
+        ],
+        "target": "CITATION.cff"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2783",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2956",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3120",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3300",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3585",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::BUILD_LOG.md->CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md::3703",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILD_LOG.md::CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md"
+          }
+        ],
+        "target": "CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::BUILD_LOG.md->README.md::3908",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILD_LOG.md::README.md"
+          }
+        ],
+        "target": "README.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3994",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::4010",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::BUILD_LOG.md->README.md::4071",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::BUILD_LOG.md::README.md"
+          }
+        ],
+        "target": "README.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::BUILD_LOG.md->CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md::4095",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::BUILD_LOG.md::CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md"
+          }
+        ],
+        "target": "CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::BUILD_LOG.md->Control_Room_README.md::4187",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::BUILD_LOG.md::Control_Room_README.md"
+          }
+        ],
+        "target": "Control_Room_README.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::BUILD_LOG.md->README.md::4273",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::BUILD_LOG.md::README.md"
+          }
+        ],
+        "target": "README.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D28::BUILD_LOG.md->README.md::4292",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::BUILD_LOG.md::README.md"
+          }
+        ],
+        "target": "README.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D30::BUILD_LOG.md->README.md::4305",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::BUILD_LOG.md::README.md"
+          }
+        ],
+        "target": "README.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/multisubstrate_floor_connectivity.json::4397",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/multisubstrate_floor_connectivity.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/multisubstrate_floor_connectivity.json"
+          }
+        ],
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::4398",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/deficit_map_v0.signed.json::4399",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/prereg/deficit_map_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/prereg/deficit_map_v0.signed.json"
+          }
+        ],
+        "target": "papers/prereg/deficit_map_v0.signed.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/bfg_v0.signed.json::4400",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/prereg/bfg_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "target": "papers/prereg/bfg_v0.signed.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/multisubstrate_floor_connectivity_v2.json::4401",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/multisubstrate_floor_connectivity_v2.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+          }
+        ],
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_010/coverage_matrix.json::4402",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_010/coverage_matrix.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_010/coverage_matrix.json"
+          }
+        ],
+        "target": "reports/campaign_010/coverage_matrix.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/methodology_adversarial_control.json::4403",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/methodology_adversarial_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/methodology_adversarial_control.json"
+          }
+        ],
+        "target": "reports/campaign_013/methodology_adversarial_control.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/substrate_blocked_control.json::4404",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/substrate_blocked_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/substrate_blocked_control.json"
+          }
+        ],
+        "target": "reports/campaign_013/substrate_blocked_control.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4405",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_010/formal_deficit_map.json::4406",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_010/formal_deficit_map.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_010/formal_deficit_map.json"
+          }
+        ],
+        "target": "reports/campaign_010/formal_deficit_map.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/cache/factory_subprocess_state.json::4407",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/cache/factory_subprocess_state.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/cache/factory_subprocess_state.json"
+          }
+        ],
+        "target": "control_room/cache/factory_subprocess_state.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/factory_intake_dock.py::4408",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/factory_intake_dock.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/factory_intake_dock.py"
+          }
+        ],
+        "target": "control_room/rooms/factory_intake_dock.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/design_tokens.py::4409",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/design_tokens.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/design_tokens.py"
+          }
+        ],
+        "target": "control_room/design_tokens.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/world_observatory.py::4410",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/world_observatory.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/world_observatory.py"
+          }
+        ],
+        "target": "control_room/rooms/world_observatory.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/launcher.py::4411",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/launcher.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/launcher.py"
+          }
+        ],
+        "target": "control_room/launcher.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/snapshot.py::4412",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/snapshot.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/snapshot.py"
+          }
+        ],
+        "target": "control_room/snapshot.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/README.md::4413",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/README.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/README.md"
+          }
+        ],
+        "target": "control_room/rooms/README.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->docs/doctrine_d22.md::4414",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/doctrine_d22.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/doctrine_d22.md"
+          }
+        ],
+        "target": "docs/doctrine_d22.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->docs/doctrine_registry.json::4415",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/doctrine_registry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/doctrine_registry.json"
+          }
+        ],
+        "target": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->docs/DOCTRINE.md::4416",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/DOCTRINE.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/DOCTRINE.md"
+          }
+        ],
+        "target": "docs/DOCTRINE.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/app.py::4417",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/app.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/app.py"
+          }
+        ],
+        "target": "control_room/app.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/floor_corpus_foundry.json::4418",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_014/floor_corpus_foundry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "target": "reports/campaign_014/floor_corpus_foundry.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/full_report.json::4419",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_014/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_014/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_014/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_016/full_report.json::4420",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_016/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_016/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_016/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/FACTORY_HARDENING_SPEC.md::4421",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/FACTORY_HARDENING_SPEC.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/FACTORY_HARDENING_SPEC.md"
+          }
+        ],
+        "target": "papers/methods/FACTORY_HARDENING_SPEC.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::4422",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+          }
+        ],
+        "target": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_018/detector_comparison.json::4423",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_018/detector_comparison.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_018/detector_comparison.json"
+          }
+        ],
+        "target": "reports/campaign_018/detector_comparison.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_018/lens_audit.json::4424",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_018/lens_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_018/lens_audit.json"
+          }
+        ],
+        "target": "reports/campaign_018/lens_audit.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md::4425",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md"
+          }
+        ],
+        "target": "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md::4426",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md"
+          }
+        ],
+        "target": "papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_020/full_report.json::4427",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_020/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_020/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_020/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_020/corpus.json::4428",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_020/corpus.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_020/corpus.json"
+          }
+        ],
+        "target": "reports/campaign_020/corpus.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md::4429",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md"
+          }
+        ],
+        "target": "papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/task_032_dx001_disposition.json::4430",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/task_032_dx001_disposition.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/task_032_dx001_disposition.json"
+          }
+        ],
+        "target": "reports/task_032_dx001_disposition.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_019/full_report.json::4431",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_019/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_019/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_019/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_021/full_report.json::4432",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_021/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_021/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_021/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_021/factory_intake_dock_task033_full.png::4433",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_021/factory_intake_dock_task033_full.png",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_021/factory_intake_dock_task033_full.png"
+          }
+        ],
+        "target": "reports/campaign_021/factory_intake_dock_task033_full.png"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/adapters.py::4434",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/adapters.py"
+          }
+        ],
+        "target": "factory_lowlevel/adapters.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/README.md::4435",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/README.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/README.md"
+          }
+        ],
+        "target": "factory_lowlevel/README.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_035/full_report.json::4436",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_035/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_035/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_035/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4437",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4438",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_023/full_report.json::4439",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_023/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_023/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_023/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md::4440",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+          }
+        ],
+        "target": "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->docs/doctrine_d26.md::4441",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/doctrine_d26.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/doctrine_d26.md"
+          }
+        ],
+        "target": "docs/doctrine_d26.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_public_contracts.py::4442",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_public_contracts.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_024/full_report.json::4443",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_024/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_024/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_024/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_024/lens_coupling_audit.json::4444",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_024/lens_coupling_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_024/lens_coupling_audit.json"
+          }
+        ],
+        "target": "reports/campaign_024/lens_coupling_audit.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md::4445",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md"
+          }
+        ],
+        "target": "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/LENS_RECOVERY_v1_DRAFT.md::4446",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+          }
+        ],
+        "target": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4447",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::4448",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+          }
+        ],
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4449",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+          }
+        ],
+        "target": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/factory_daemon_progress/atomic_molecular_primitives.json::4450",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/factory_daemon_progress/atomic_molecular_primitives.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/factory_daemon_progress/atomic_molecular_primitives.json"
+          }
+        ],
+        "target": "reports/factory_daemon_progress/atomic_molecular_primitives.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_phase_b_adapters.py::4451",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_phase_b_adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_phase_b_adapters.py"
+          }
+        ],
+        "target": "public_tests/test_phase_b_adapters.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_task035_world_adapters.py::4452",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_task035_world_adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_task035_world_adapters.py"
+          }
+        ],
+        "target": "public_tests/test_task035_world_adapters.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb015_adapter_expansion.py::4453",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_cb015_adapter_expansion.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_cb015_adapter_expansion.py"
+          }
+        ],
+        "target": "public_tests/test_cb015_adapter_expansion.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/persistence.py::4454",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/persistence.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/persistence.py"
+          }
+        ],
+        "target": "factory_lowlevel/persistence.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/_world_drilldown.py::4455",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/_world_drilldown.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/_world_drilldown.py"
+          }
+        ],
+        "target": "control_room/rooms/_world_drilldown.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb017_streamlit_unique_keys.py::4456",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_cb017_streamlit_unique_keys.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_cb017_streamlit_unique_keys.py"
+          }
+        ],
+        "target": "public_tests/test_cb017_streamlit_unique_keys.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::4457",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4458",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "target": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INGESTION_TARGETS.md::4459",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/continuous_daemon.py::4460",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/continuous_daemon.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/continuous_daemon.py"
+          }
+        ],
+        "target": "factory_lowlevel/continuous_daemon.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_live_pipeline_world_traces.py::4461",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_live_pipeline_world_traces.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_live_pipeline_world_traces.py"
+          }
+        ],
+        "target": "public_tests/test_live_pipeline_world_traces.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/live_pipeline.py::4462",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/live_pipeline.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/live_pipeline.py"
+          }
+        ],
+        "target": "factory_lowlevel/live_pipeline.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-001",
+      "members": [
+        ".architect_state_checkpoint.md",
+        "BUILD_LOG.md",
+        "CLAUDE_BUILDER_INITIATION.md",
+        "CLAUDE_FACTORY_INITIATION.md",
+        "CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md",
+        "CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md",
+        "CODEX_TASK_021_DRIVE.md",
+        "CODEX_TASK_022_DRIVE.md",
+        "CODEX_TASK_023_DRIVE.md",
+        "CODEX_TASK_024_DRIVE.md",
+        "Control Room v0.txt",
+        "Control_Room_README.md",
+        "FACTORY_END_STATE_AND_SCHEMA_DISCIPLINE.md",
+        "Launch Control Room.bat",
+        "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md",
+        "TASK-CB-003_METHODOLOGY_VALIDATION.md",
+        "Visuals/README.md",
+        "Visuals/SKILL.md",
+        "Visuals/assets/logo-lockup.svg",
+        "Visuals/assets/logo-mark.svg",
+        "Visuals/assets/room-icons/ai-ops-tower.svg",
+        "Visuals/assets/room-icons/basin-floor-lab.svg",
+        "Visuals/assets/room-icons/campaign-command.svg",
+        "Visuals/assets/room-icons/doctrine-console.svg",
+        "Visuals/assets/room-icons/factory-intake.svg",
+        "Visuals/assets/room-icons/falsifier-ledger.svg",
+        "Visuals/assets/room-icons/motif-atlas.svg",
+        "Visuals/assets/room-icons/portfolio-demo.svg",
+        "Visuals/assets/room-icons/pulse-deck.svg",
+        "Visuals/assets/room-icons/world-observatory.svg",
+        "Visuals/assets/world-icons/w1-chemistry.svg",
+        "Visuals/assets/world-icons/w10-hypergraph.svg",
+        "Visuals/assets/world-icons/w11-quasispecies.svg",
+        "Visuals/assets/world-icons/w12-symbiogenesis.svg",
+        "Visuals/assets/world-icons/w13-multiscale.svg",
+        "Visuals/assets/world-icons/w2-protocell.svg",
+        "Visuals/assets/world-icons/w3-field.svg",
+        "Visuals/assets/world-icons/w4-morphogenesis.svg",
+        "Visuals/assets/world-icons/w5-digital.svg",
+        "Visuals/assets/world-icons/w6-ecosystem.svg",
+        "Visuals/assets/world-icons/w7-swarm.svg",
+        "Visuals/assets/world-icons/w8-cognitive.svg",
+        "Visuals/assets/world-icons/w9-origins.svg",
+        "Visuals/brief.md",
+        "Visuals/colors_and_type.css",
+        "Visuals/preview/_card.css",
+        "Visuals/preview/color-accents.html",
+        "Visuals/preview/color-status.html",
+        "Visuals/preview/color-surfaces.html",
+        "Visuals/preview/color-worlds.html",
+        "Visuals/preview/doctrine-tablet.html",
+        "Visuals/preview/empty-state.html",
+        "Visuals/preview/gate-grid.html",
+        "Visuals/preview/health-badge.html",
+        "Visuals/preview/pills.html",
+        "Visuals/preview/quarantine.html",
+        "Visuals/preview/radii-shadows.html",
+        "Visuals/preview/room-glyphs.html",
+        "Visuals/preview/spacing.html",
+        "Visuals/preview/type-display.html",
+        "Visuals/preview/type-mono.html",
+        "Visuals/preview/type-scale.html",
+        "Visuals/preview/world-card.html",
+        "Visuals/ui_kits/control_room/AgentIdentity.jsx",
+        "Visuals/ui_kits/control_room/BasinFloor.jsx",
+        "Visuals/ui_kits/control_room/CampaignTimeline.jsx",
+        "Visuals/ui_kits/control_room/DoctrineTablet.jsx",
+        "Visuals/ui_kits/control_room/EmptyState.jsx",
+        "Visuals/ui_kits/control_room/FalsifierEvent.jsx",
+        "Visuals/ui_kits/control_room/GateGrid.jsx",
+        "Visuals/ui_kits/control_room/HealthBadge.jsx",
+        "Visuals/ui_kits/control_room/MotifNode.jsx",
+        "Visuals/ui_kits/control_room/Panel.jsx",
+        "Visuals/ui_kits/control_room/Pill.jsx",
+        "Visuals/ui_kits/control_room/ProjectGraph.jsx",
+        "Visuals/ui_kits/control_room/README.md",
+        "Visuals/ui_kits/control_room/RoomGlyph.jsx",
+        "Visuals/ui_kits/control_room/Sidebar.jsx",
+        "Visuals/ui_kits/control_room/TopBar.jsx",
+        "Visuals/ui_kits/control_room/WorldCard.jsx",
+        "Visuals/ui_kits/control_room/WorldGlyph.jsx",
+        "Visuals/ui_kits/control_room/WorldThumbnail.jsx",
+        "Visuals/ui_kits/control_room/index.html",
+        "Visuals/ui_kits/control_room/mockData.js",
+        "Visuals/ui_kits/control_room/rooms/AIOperationsTower.jsx",
+        "Visuals/ui_kits/control_room/rooms/BasinFloorLab.jsx",
+        "Visuals/ui_kits/control_room/rooms/CampaignCommand.jsx",
+        "Visuals/ui_kits/control_room/rooms/FactoryAndPortfolio.jsx",
+        "Visuals/ui_kits/control_room/rooms/FalsifierAndDoctrine.jsx",
+        "Visuals/ui_kits/control_room/rooms/MotifAtlas.jsx",
+        "Visuals/ui_kits/control_room/rooms/PulseDeck.jsx",
+        "Visuals/ui_kits/control_room/rooms/WorldObservatory.jsx",
+        "WAITING_TO_BE_PUBLISHED.md",
+        "ai_os/memory/factory_session_log.md",
+        "atlas/entries/atlas.autocatalytic_closure.001.json",
+        "atlas/entries/atlas.externalized_memory.001.json",
+        "atlas/entries/atlas.floor_connectivity.001.json",
+        "atlas/entries/atlas.repair.001.json",
+        "atlas/entries/atlas.replication_lineage.001.json",
+        "atlas/entries/atlas.self_boundary.001.json",
+        "control_room/README.md",
+        "control_room/__init__.py",
+        "control_room/adapters/__init__.py",
+        "control_room/adapters/build_log.py",
+        "control_room/adapters/builder_telemetry.py",
+        "control_room/adapters/campaign_reports.py",
+        "control_room/adapters/doctrine.py",
+        "control_room/adapters/factory_store.py",
+        "control_room/adapters/git_metadata.py",
+        "control_room/adapters/methods_falsifiers.py",
+        "control_room/adapters/negative_space.py",
+        "control_room/adapters/pytest_cache.py",
+        "control_room/app.py",
+        "control_room/cache/.gitkeep",
+        "control_room/components/__init__.py",
+        "control_room/components/chrome.py",
+        "control_room/components/empty_state.py",
+        "control_room/design_tokens.py",
+        "control_room/launcher.py",
+        "control_room/rooms/README.md",
+        "control_room/rooms/__init__.py",
+        "control_room/rooms/_placeholder.py",
+        "control_room/rooms/ai_operations_tower.py",
+        "control_room/rooms/basin_floor_lab.py",
+        "control_room/rooms/campaign_command.py",
+        "control_room/rooms/doctrine_console.py",
+        "control_room/rooms/factory_intake_dock.py",
+        "control_room/rooms/falsifier_ledger.py",
+        "control_room/rooms/motif_atlas.py",
+        "control_room/rooms/portfolio_demo.py",
+        "control_room/rooms/project_graph.py",
+        "control_room/rooms/pulse_deck.py",
+        "control_room/rooms/world_observatory.py",
+        "control_room/snapshot.py",
+        "control_room/snapshots/state_20260505T235234Z.json",
+        "control_room/snapshots/state_20260506T002121Z.json",
+        "control_room/snapshots/state_20260506T002212Z.json",
+        "control_room/snapshots/state_20260506T002510Z.json",
+        "control_room/snapshots/state_20260506T002516Z.json",
+        "control_room/snapshots/state_20260506T002517Z.json",
+        "control_room/snapshots/state_20260506T002518Z.json",
+        "control_room/snapshots/state_20260506T002538Z.json",
+        "control_room/snapshots/state_20260506T002540Z.json",
+        "control_room/snapshots/state_20260506T002541Z.json",
+        "control_room/snapshots/state_20260506T002911Z.json",
+        "control_room/snapshots/state_20260506T002917Z.json",
+        "control_room/snapshots/state_20260506T002920Z.json",
+        "control_room/snapshots/state_20260506T002923Z.json",
+        "control_room/snapshots/state_20260506T002926Z.json",
+        "control_room/snapshots/state_20260506T002929Z.json",
+        "control_room/snapshots/state_20260506T002932Z.json",
+        "control_room/snapshots/state_20260506T003103Z.json",
+        "control_room/snapshots/state_latest.json",
+        "control_room/snapshots/state_prior.json",
+        "control_room/static/logo/logo-lockup.svg",
+        "control_room/static/logo/logo-mark.svg",
+        "control_room/static/room-icons/ai-ops-tower.svg",
+        "control_room/static/room-icons/basin-floor-lab.svg",
+        "control_room/static/room-icons/campaign-command.svg",
+        "control_room/static/room-icons/doctrine-console.svg",
+        "control_room/static/room-icons/factory-intake.svg",
+        "control_room/static/room-icons/falsifier-ledger.svg",
+        "control_room/static/room-icons/motif-atlas.svg",
+        "control_room/static/room-icons/portfolio-demo.svg",
+        "control_room/static/room-icons/pulse-deck.svg",
+        "control_room/static/room-icons/world-observatory.svg",
+        "control_room/static/world-icons/w1-chemistry.svg",
+        "control_room/static/world-icons/w10-hypergraph.svg",
+        "control_room/static/world-icons/w11-quasispecies.svg",
+        "control_room/static/world-icons/w12-symbiogenesis.svg",
+        "control_room/static/world-icons/w13-multiscale.svg",
+        "control_room/static/world-icons/w2-protocell.svg",
+        "control_room/static/world-icons/w3-field.svg",
+        "control_room/static/world-icons/w4-morphogenesis.svg",
+        "control_room/static/world-icons/w5-digital.svg",
+        "control_room/static/world-icons/w6-ecosystem.svg",
+        "control_room/static/world-icons/w7-swarm.svg",
+        "control_room/static/world-icons/w8-cognitive.svg",
+        "control_room/static/world-icons/w9-origins.svg",
+        "docs/doctrine_d19_d21.md",
+        "docs/doctrine_d22.md",
+        "docs/screenshots/01-pulse-deck.png",
+        "docs/screenshots/02-world-observatory.png",
+        "docs/screenshots/03-campaign-command.png",
+        "docs/screenshots/04-ai-operations-tower.png",
+        "docs/screenshots/05-project-graph.png",
+        "docs/screenshots/06-basin-floor-lab.png",
+        "docs/screenshots/07-doctrine-console.png",
+        "docs/screenshots/capture_screenshots.py",
+        "factory_lowlevel/__init__.py",
+        "factory_lowlevel/adapters.py",
+        "factory_lowlevel/daemon.py",
+        "factory_lowlevel/monitor.py",
+        "factory_lowlevel/normalization.py",
+        "factory_lowlevel/persistence.py",
+        "factory_lowlevel/pipeline.py",
+        "factory_lowlevel/registry.py",
+        "factory_lowlevel/router.py",
+        "factory_lowlevel/scheduler.py",
+        "factory_lowlevel/schemas.py",
+        "papers/falsifiers/floor_connectivity_campaign013_replication.md",
+        "papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md",
+        "papers/methods/FACTORY_HARDENING_SPEC.md",
+        "papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md",
+        "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md",
+        "papers/methods/L3_OVERLAP_INSECTS_W7.md",
+        "papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+        "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "papers/prereg/deficit_map_v0.signed.json",
+        "project_telemetry/codex_audit_001_progress_record.json",
+        "project_telemetry/codex_audit_002_progress_record.json",
+        "project_telemetry/factory_session_records.jsonl",
+        "project_telemetry/task_020_progress_record.json",
+        "project_telemetry/task_021_progress_record.json",
+        "project_telemetry/task_022_progress_record.json",
+        "project_telemetry/task_023_progress_record.json",
+        "project_telemetry/task_024_progress_record.json",
+        "reports/campaign_010/bfg_post_deepening.json",
+        "reports/campaign_010/bfg_w8_w11_w12.json",
+        "reports/campaign_010/cli_full_report.json",
+        "reports/campaign_010/coverage_matrix.json",
+        "reports/campaign_010/deepening_actions.json",
+        "reports/campaign_010/encoding_compression.json",
+        "reports/campaign_010/falsifier_refresh.json",
+        "reports/campaign_010/formal_deficit_map.json",
+        "reports/campaign_010/formal_gap.json",
+        "reports/campaign_010/full_report.json",
+        "reports/campaign_010/lens_ast_lint.json",
+        "reports/campaign_010/lens_compositionality.json",
+        "reports/campaign_010/lens_domains.json",
+        "reports/campaign_010/lens_evaluations.json",
+        "reports/campaign_010/lens_invariance.json",
+        "reports/campaign_010/lens_predictive.json",
+        "reports/campaign_010/lens_roundtrip.json",
+        "reports/campaign_010/n7_lens_permutation.json",
+        "reports/campaign_010/residual_structure.json",
+        "reports/campaign_010/substance_audit_refresh.json",
+        "reports/campaign_010/truth_pass_refresh.json",
+        "reports/campaign_011/audit_queue.json",
+        "reports/campaign_011/background_jobs.json",
+        "reports/campaign_011/calibration_full.json",
+        "reports/campaign_011/claim_store.json",
+        "reports/campaign_011/cli_full_report.json",
+        "reports/campaign_011/d19_audit.json",
+        "reports/campaign_011/d20_audit.json",
+        "reports/campaign_011/d21_audit.json",
+        "reports/campaign_011/detector_registry_consults.json",
+        "reports/campaign_011/evidence_graph.json",
+        "reports/campaign_011/full_report.json",
+        "reports/campaign_011/ingestion_factory.json",
+        "reports/campaign_011/ingestion_summary.json",
+        "reports/campaign_011/ke1_calibration.json",
+        "reports/campaign_011/ke2_calibration.json",
+        "reports/campaign_011/kp1_calibration.json",
+        "reports/campaign_011/kp2_calibration.json",
+        "reports/campaign_011/kp3_calibration.json",
+        "reports/campaign_011/kp4_calibration.json",
+        "reports/campaign_011/license_enforcement.json",
+        "reports/campaign_011/normalizers.json",
+        "reports/campaign_011/ontology_channels.json",
+        "reports/campaign_011/ontology_effects.json",
+        "reports/campaign_011/ontology_full.json",
+        "reports/campaign_011/ontology_overlap_fields.json",
+        "reports/campaign_011/ontology_process_roles.json",
+        "reports/campaign_011/ontology_registry.json",
+        "reports/campaign_011/ontology_trait_decomposition.json",
+        "reports/campaign_011/regression.json",
+        "reports/campaign_011/source_registry.json",
+        "reports/campaign_011/synthetic_extraction.json",
+        "reports/campaign_011/w7_coverage.json",
+        "reports/campaign_011/w7_densification.json",
+        "reports/campaign_011/w7_densification_report.json",
+        "reports/campaign_011/w7_recommendations.json",
+        "reports/campaign_012/calibration_hardening.json",
+        "reports/campaign_012/cli_full_report.json",
+        "reports/campaign_012/factory_initiation_pointer_audit.json",
+        "reports/campaign_012/factory_scaffolding.json",
+        "reports/campaign_012/factory_session_harness.json",
+        "reports/campaign_012/full_report.json",
+        "reports/campaign_012/itis_family_cache.json",
+        "reports/campaign_012/ke1_subtle_calibration.json",
+        "reports/campaign_012/kp1h_hardening.json",
+        "reports/campaign_012/kp2h_hardening.json",
+        "reports/campaign_012/kp3h_hardening.json",
+        "reports/campaign_012/kp4h_hardening.json",
+        "reports/campaign_012/kp_aggregate_hardening.json",
+        "reports/campaign_012/real_lane1_extraction.json",
+        "reports/campaign_012/real_lane1_license_closure.json",
+        "reports/campaign_012/regression.json",
+        "reports/campaign_012/replication_basis_lock.json",
+        "reports/campaign_012/w7_densification_renamed.json",
+        "reports/campaign_012/w7_template_lint.json",
+        "reports/campaign_012/w7_template_renaming.json",
+        "reports/campaign_013/atlas_seed.json",
+        "reports/campaign_013/cache_integrity.json",
+        "reports/campaign_013/cross_reference.json",
+        "reports/campaign_013/full_report.json",
+        "reports/campaign_013/itis_family_cache.json",
+        "reports/campaign_013/itis_insect_extraction.json",
+        "reports/campaign_013/itis_normalization_summary.json",
+        "reports/campaign_013/l3_overlap_report.json",
+        "reports/campaign_013/methodology_adversarial_control.json",
+        "reports/campaign_013/multisubstrate_floor_connectivity.json",
+        "reports/campaign_013/multisubstrate_floor_connectivity_v2.json",
+        "reports/campaign_013/phylogenetic_correction.json",
+        "reports/campaign_013/regression.json",
+        "reports/campaign_013/replication_basis_lock.json",
+        "reports/campaign_013/replication_corpus.json",
+        "reports/campaign_013/replication_gap.json",
+        "reports/campaign_013/replication_n7.json",
+        "reports/campaign_013/replication_verdict.json",
+        "reports/campaign_013/sampling_bias.json",
+        "reports/campaign_013/schema_migration.json",
+        "reports/campaign_013/schema_version_lint.json",
+        "reports/campaign_013/substrate_blocked_control.json",
+        "reports/campaign_013/w7_motif_detection.json",
+        "reports/campaign_014/floor_corpus_foundry.json",
+        "reports/campaign_014/full_report.json",
+        "reports/campaign_016/full_report.json"
+      ],
+      "spawn_ticket": "TASK-CB-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->BUILD_LOG.md::5",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-001",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::.architect_state_checkpoint.md->BUILD_LOG.md::719",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": ".architect_state_checkpoint.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::1939",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::.architect_state_checkpoint.md->BUILD_LOG.md::2128",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": ".architect_state_checkpoint.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2308",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->BUILD_LOG.md::2488",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::.architect_state_checkpoint.md->BUILD_LOG.md::2599",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": ".architect_state_checkpoint.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2782",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::.architect_state_checkpoint.md->BUILD_LOG.md::2955",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": ".architect_state_checkpoint.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::.architect_state_checkpoint.md->BUILD_LOG.md::3119",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": ".architect_state_checkpoint.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3299",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3702",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3907",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3993",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4009",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4070",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::720",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::1940",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2129",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::BUILD_LOG.md->CODEX_CAMPAIGN_008.md::2309",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILD_LOG.md::CODEX_CAMPAIGN_008.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CODEX_CAMPAIGN_008.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2489",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::BUILD_LOG.md->CITATION.cff::2600",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::BUILD_LOG.md::CITATION.cff"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CITATION.cff"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2783",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::2956",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3120",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3300",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3585",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::BUILD_LOG.md->CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md::3703",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILD_LOG.md::CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::BUILD_LOG.md->README.md::3908",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILD_LOG.md::README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "README.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::3994",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::BUILD_LOG.md->CLAUDE_BUILDER_INITIATION.md::4010",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::BUILD_LOG.md::CLAUDE_BUILDER_INITIATION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CLAUDE_BUILDER_INITIATION.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::BUILD_LOG.md->README.md::4071",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::BUILD_LOG.md::README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "README.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::BUILD_LOG.md->CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md::4095",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::BUILD_LOG.md::CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::BUILD_LOG.md->Control_Room_README.md::4187",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::BUILD_LOG.md::Control_Room_README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "Control_Room_README.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::BUILD_LOG.md->README.md::4273",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::BUILD_LOG.md::README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "README.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D28",
+        "edge_id": "implements_same_doctrine::D28::BUILD_LOG.md->README.md::4292",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::BUILD_LOG.md::README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "README.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D30",
+        "edge_id": "implements_same_doctrine::D30::BUILD_LOG.md->README.md::4305",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::BUILD_LOG.md::README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "README.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/multisubstrate_floor_connectivity.json::4397",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/multisubstrate_floor_connectivity.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/multisubstrate_floor_connectivity.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::4398",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/deficit_map_v0.signed.json::4399",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/prereg/deficit_map_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/prereg/deficit_map_v0.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/prereg/deficit_map_v0.signed.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/bfg_v0.signed.json::4400",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/prereg/bfg_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/prereg/bfg_v0.signed.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/multisubstrate_floor_connectivity_v2.json::4401",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/multisubstrate_floor_connectivity_v2.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_010/coverage_matrix.json::4402",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_010/coverage_matrix.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_010/coverage_matrix.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_010/coverage_matrix.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/methodology_adversarial_control.json::4403",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/methodology_adversarial_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/methodology_adversarial_control.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_013/methodology_adversarial_control.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_013/substrate_blocked_control.json::4404",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_013/substrate_blocked_control.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_013/substrate_blocked_control.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_013/substrate_blocked_control.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::4405",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/METHODOLOGY_VALIDATION_CB003.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_010/formal_deficit_map.json::4406",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_010/formal_deficit_map.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_010/formal_deficit_map.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_010/formal_deficit_map.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/cache/factory_subprocess_state.json::4407",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/cache/factory_subprocess_state.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/cache/factory_subprocess_state.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/cache/factory_subprocess_state.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/factory_intake_dock.py::4408",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/factory_intake_dock.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/factory_intake_dock.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/rooms/factory_intake_dock.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/design_tokens.py::4409",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/design_tokens.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/design_tokens.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/design_tokens.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/world_observatory.py::4410",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/world_observatory.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/world_observatory.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/rooms/world_observatory.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/launcher.py::4411",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/launcher.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/launcher.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/launcher.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/snapshot.py::4412",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/snapshot.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/snapshot.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/snapshot.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/README.md::4413",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/README.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/rooms/README.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->docs/doctrine_d22.md::4414",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/doctrine_d22.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/doctrine_d22.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "docs/doctrine_d22.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->docs/doctrine_registry.json::4415",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/doctrine_registry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/doctrine_registry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "docs/doctrine_registry.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->docs/DOCTRINE.md::4416",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/DOCTRINE.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/DOCTRINE.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "docs/DOCTRINE.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/app.py::4417",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/app.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/app.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/app.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/floor_corpus_foundry.json::4418",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_014/floor_corpus_foundry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_014/floor_corpus_foundry.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/full_report.json::4419",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_014/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_014/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_014/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_016/full_report.json::4420",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_016/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_016/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_016/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/FACTORY_HARDENING_SPEC.md::4421",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/FACTORY_HARDENING_SPEC.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/FACTORY_HARDENING_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/FACTORY_HARDENING_SPEC.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::4422",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_018/detector_comparison.json::4423",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_018/detector_comparison.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_018/detector_comparison.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_018/detector_comparison.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_018/lens_audit.json::4424",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_018/lens_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_018/lens_audit.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_018/lens_audit.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md::4425",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md::4426",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_020/full_report.json::4427",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_020/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_020/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_020/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_020/corpus.json::4428",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_020/corpus.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_020/corpus.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_020/corpus.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md::4429",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/task_032_dx001_disposition.json::4430",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/task_032_dx001_disposition.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/task_032_dx001_disposition.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/task_032_dx001_disposition.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_019/full_report.json::4431",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_019/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_019/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_019/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_021/full_report.json::4432",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_021/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_021/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_021/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_021/factory_intake_dock_task033_full.png::4433",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_021/factory_intake_dock_task033_full.png",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_021/factory_intake_dock_task033_full.png"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_021/factory_intake_dock_task033_full.png"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/adapters.py::4434",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/adapters.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "factory_lowlevel/adapters.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/README.md::4435",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/README.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/README.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "factory_lowlevel/README.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_035/full_report.json::4436",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_035/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_035/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_035/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md::4437",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md::4438",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_023/full_report.json::4439",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_023/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_023/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_023/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md::4440",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->docs/doctrine_d26.md::4441",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#docs/doctrine_d26.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::docs/doctrine_d26.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "docs/doctrine_d26.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_public_contracts.py::4442",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_public_contracts.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_024/full_report.json::4443",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_024/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_024/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_024/full_report.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_024/lens_coupling_audit.json::4444",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/campaign_024/lens_coupling_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/campaign_024/lens_coupling_audit.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/campaign_024/lens_coupling_audit.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md::4445",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/LENS_RECOVERY_v1_DRAFT.md::4446",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4447",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json::4448",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4449",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->reports/factory_daemon_progress/atomic_molecular_primitives.json::4450",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#reports/factory_daemon_progress/atomic_molecular_primitives.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::reports/factory_daemon_progress/atomic_molecular_primitives.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "reports/factory_daemon_progress/atomic_molecular_primitives.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_phase_b_adapters.py::4451",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_phase_b_adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_phase_b_adapters.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_phase_b_adapters.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_task035_world_adapters.py::4452",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_task035_world_adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_task035_world_adapters.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_task035_world_adapters.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb015_adapter_expansion.py::4453",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_cb015_adapter_expansion.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_cb015_adapter_expansion.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_cb015_adapter_expansion.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/persistence.py::4454",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/persistence.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/persistence.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "factory_lowlevel/persistence.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/_world_drilldown.py::4455",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/_world_drilldown.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/_world_drilldown.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/rooms/_world_drilldown.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb017_streamlit_unique_keys.py::4456",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_cb017_streamlit_unique_keys.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_cb017_streamlit_unique_keys.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_cb017_streamlit_unique_keys.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::4457",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4458",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INGESTION_TARGETS.md::4459",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/continuous_daemon.py::4460",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/continuous_daemon.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/continuous_daemon.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "factory_lowlevel/continuous_daemon.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_live_pipeline_world_traces.py::4461",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_live_pipeline_world_traces.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_live_pipeline_world_traces.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_live_pipeline_world_traces.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/live_pipeline.py::4462",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/live_pipeline.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/live_pipeline.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "factory_lowlevel/live_pipeline.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-001->BUILD_LOG.md::5",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::BUILD_LOG.md"
+          }
+        ],
+        "source": "TASK-CB-001"
+      },
+      {
+        "edge_id": "shares_birth_cohort::.architect_state_checkpoint.md->BUILD_LOG.md::719",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-001"
+          }
+        ],
+        "source": ".architect_state_checkpoint.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::1939",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::.architect_state_checkpoint.md->BUILD_LOG.md::2128",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "source": ".architect_state_checkpoint.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2308",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->BUILD_LOG.md::2488",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::.architect_state_checkpoint.md->BUILD_LOG.md::2599",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "source": ".architect_state_checkpoint.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2782",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::.architect_state_checkpoint.md->BUILD_LOG.md::2955",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "source": ".architect_state_checkpoint.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::.architect_state_checkpoint.md->BUILD_LOG.md::3119",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::.architect_state_checkpoint.md::BUILD_LOG.md"
+          }
+        ],
+        "source": ".architect_state_checkpoint.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3299",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3702",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3907",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3993",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4009",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4070",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      }
+    ],
+    "siblings": [
+      ".architect_state_checkpoint.md",
+      "CLAUDE_BUILDER_INITIATION.md",
+      "CLAUDE_FACTORY_INITIATION.md",
+      "CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md",
+      "CODEX_AUDIT_002_CLAUDE_BUILDER_TASK_CB_002.md",
+      "CODEX_TASK_021_DRIVE.md",
+      "CODEX_TASK_022_DRIVE.md",
+      "CODEX_TASK_023_DRIVE.md",
+      "CODEX_TASK_024_DRIVE.md",
+      "Control Room v0.txt",
+      "Control_Room_README.md",
+      "FACTORY_END_STATE_AND_SCHEMA_DISCIPLINE.md",
+      "Launch Control Room.bat",
+      "Proposal #2 v1 - Densification + Ontology + Ingestion Factory.md",
+      "TASK-CB-003_METHODOLOGY_VALIDATION.md",
+      "Visuals/README.md",
+      "Visuals/SKILL.md",
+      "Visuals/assets/logo-lockup.svg",
+      "Visuals/assets/logo-mark.svg",
+      "Visuals/assets/room-icons/ai-ops-tower.svg",
+      "Visuals/assets/room-icons/basin-floor-lab.svg",
+      "Visuals/assets/room-icons/campaign-command.svg",
+      "Visuals/assets/room-icons/doctrine-console.svg",
+      "Visuals/assets/room-icons/factory-intake.svg",
+      "Visuals/assets/room-icons/falsifier-ledger.svg",
+      "Visuals/assets/room-icons/motif-atlas.svg",
+      "Visuals/assets/room-icons/portfolio-demo.svg",
+      "Visuals/assets/room-icons/pulse-deck.svg",
+      "Visuals/assets/room-icons/world-observatory.svg",
+      "Visuals/assets/world-icons/w1-chemistry.svg",
+      "Visuals/assets/world-icons/w10-hypergraph.svg",
+      "Visuals/assets/world-icons/w11-quasispecies.svg",
+      "Visuals/assets/world-icons/w12-symbiogenesis.svg",
+      "Visuals/assets/world-icons/w13-multiscale.svg",
+      "Visuals/assets/world-icons/w2-protocell.svg",
+      "Visuals/assets/world-icons/w3-field.svg",
+      "Visuals/assets/world-icons/w4-morphogenesis.svg",
+      "Visuals/assets/world-icons/w5-digital.svg",
+      "Visuals/assets/world-icons/w6-ecosystem.svg",
+      "Visuals/assets/world-icons/w7-swarm.svg",
+      "Visuals/assets/world-icons/w8-cognitive.svg",
+      "Visuals/assets/world-icons/w9-origins.svg",
+      "Visuals/brief.md",
+      "Visuals/colors_and_type.css",
+      "Visuals/preview/_card.css",
+      "Visuals/preview/color-accents.html",
+      "Visuals/preview/color-status.html",
+      "Visuals/preview/color-surfaces.html",
+      "Visuals/preview/color-worlds.html",
+      "Visuals/preview/doctrine-tablet.html"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::BUILD_LOG.md::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:48Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:48Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

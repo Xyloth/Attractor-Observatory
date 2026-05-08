@@ -1,0 +1,569 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-FLOOR-BFG",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "# Campaign 026: Floor BFG Under D31\nTask: TASK-FLOOR-BFG\nStatus: exploratory; no claim-bearing promotion.\n## D31 Split\n- Predicate rows read signed `outcome_summary` only.\n- Lens rows read `trajectory_geometry` only, except the explicitly risky information variant's perturbation magnitude covariate.\n- Predicate rows, lens rows, validation predicate rows, and validation lens rows are disjoint pertu"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "60d3171a987fb3de940669461c63d084a8e3dd32",
+            "subject": "TASK-FLOOR-BFG: D31 ratification + Campaign 026 + lens variants + locked classifier",
+            "ticket": "TASK-FLOOR-BFG"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D31",
+            "D31"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md#header",
+            "ticket": "TASK-FLOOR-BFG"
+          },
+          "statement": "# Campaign 026: Floor BFG Under D31\nTask: TASK-FLOOR-BFG\nStatus: exploratory; no claim-bearing promotion.\n## D31 Split\n- Predicate rows read signed `outcome_summary` only.\n- Lens rows read `trajectory_geometry` only, except the explicitly risky information variant's perturbation magnitude covariate.\n- Predicate rows, lens rows, validation predicate rows, and validation lens rows are disjoint pertu"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D18",
+        "D29",
+        "D31"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "60d3171a987fb3de940669461c63d084a8e3dd32",
+        "note": "TASK-FLOOR-BFG: D31 ratification + Campaign 026 + lens variants + locked classifier",
+        "ref_id": "birth::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-FLOOR-BFG",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::ticket"
+      }
+    ],
+    "first_seen_commit": "60d3171a987fb3de940669461c63d084a8e3dd32",
+    "first_seen_date": "2026-05-07T07:50:30-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-FLOOR-BFG",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:6b9beafbeb77573433b6ae126897c72cc75ce79f875e118f637d4d5dcd785944",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+          },
+          "statement": "Tracked file with 31 lines / 1779 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 1779,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 31,
+      "observed_doctrine_bindings": [
+        "D31"
+      ],
+      "predicate_id": "current::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D31"
+      ],
+      "verified": [
+        "D31"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "reports/campaign_026/full_report.json"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D18",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D18",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D18::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 1779,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 31,
+    "path": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+    "path_hash": "sha256:7e82878ff14e989742ba33166b7670fdd61a9c62a669db43333bc65fe1075dfc",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/741dc2b7bb59_papers_methods_CAMPAIGN_026_FLOOR_BFG_D31.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::1484",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-FLOOR-BFG",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-FLOOR-BFG"
+          }
+        ],
+        "target": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4000",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-FLOOR-BFG",
+      "members": [
+        "docs/doctrine_d31.md",
+        "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+        "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
+        "reports/campaign_026/full_report.json"
+      ],
+      "spawn_ticket": "TASK-FLOOR-BFG"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "60d3171a987fb3de940669461c63d084a8e3dd32",
+        "edge_id": "spawned_by_ticket::TASK-FLOOR-BFG->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::281",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "60d3171a987fb3de940669461c63d084a8e3dd32",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-FLOOR-BFG",
+        "target": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/doctrine_d31.md->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::1483",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-FLOOR-BFG",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-FLOOR-BFG"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_d31.md",
+        "target": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::docs/doctrine_registry.json->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::3999",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::docs/doctrine_registry.json::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_026/full_report.json->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::4949",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_026/full_report.json#papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_026/full_report.json::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_026/full_report.json",
+        "target": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::1484",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-FLOOR-BFG",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-FLOOR-BFG"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+        "target": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md::4000",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+        "target": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-FLOOR-BFG->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::281",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "60d3171a987fb3de940669461c63d084a8e3dd32",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+          }
+        ],
+        "source": "TASK-FLOOR-BFG"
+      },
+      {
+        "edge_id": "shares_birth_cohort::docs/doctrine_d31.md->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::1483",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-FLOOR-BFG",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-FLOOR-BFG"
+          }
+        ],
+        "source": "docs/doctrine_d31.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::docs/doctrine_registry.json->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::3999",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::docs/doctrine_registry.json::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_026/full_report.json->papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::4949",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_026/full_report.json#papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_026/full_report.json::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
+          }
+        ],
+        "source": "reports/campaign_026/full_report.json"
+      }
+    ],
+    "siblings": [
+      "docs/doctrine_d31.md",
+      "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
+      "reports/campaign_026/full_report.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

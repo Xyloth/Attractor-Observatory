@@ -1,0 +1,599 @@
+{
+  "birth": {
+    "birth_cohort_id": "",
+    "birth_predicate": {
+      "acceptance_criteria": [],
+      "atoms": [],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::reports/campaign_009/cli_full_report.json"
+    },
+    "decline_reason": "private_history_unavailable",
+    "evidence_refs": [],
+    "first_seen_commit": "",
+    "first_seen_date": "",
+    "parent_refs": [],
+    "spawn_ticket": "",
+    "status": "honest_decline"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:da24e846b382a4805f7838b42c3e4c240fe193624ad122f1fa5b4615714ca7a7",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_009/cli_full_report.json"
+          },
+          "statement": "Tracked file with 218 lines / 6208 bytes at HEAD."
+        },
+        {
+          "atom_id": "provenance_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#pattern:content_hash|evidence_private|generated_at|locked_instrument|provenance"
+          },
+          "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
+        }
+      ],
+      "byte_count": 6208,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 218,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::reports/campaign_009/cli_full_report.json",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "reports/campaign_009/cli_full_report.json",
+        "note": "current contents at HEAD",
+        "ref_id": "current::reports/campaign_009/cli_full_report.json::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [
+    {
+      "evidence_ref": {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "git_query",
+        "locator": "git log --diff-filter=A --follow -- reports/campaign_009/cli_full_report.json",
+        "note": "first-add commit not resolvable",
+        "ref_id": "decline::reports/campaign_009/cli_full_report.json::birth"
+      },
+      "kind": "birth",
+      "reason": "private_history_unavailable"
+    },
+    {
+      "evidence_ref": {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "reports/project_genealogy/dossiers/4ffa563d0c75_reports_campaign_009_cli_full_report.json.json#drift_assessment",
+        "note": "drift cannot be assessed without recoverable predicates",
+        "ref_id": "decline::reports/campaign_009/cli_full_report.json::drift"
+      },
+      "kind": "drift",
+      "reason": "private_history_unavailable"
+    }
+  ],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 1,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 1,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 0,
+      "covered_atoms": 0,
+      "missing_atoms": [],
+      "value": null
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "decline_reason": "private_history_unavailable",
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [],
+    "reproducer_refs": [],
+    "status": "honest_decline"
+  },
+  "file": {
+    "artifact_family": "report",
+    "byte_count": 6208,
+    "generated_status": "report",
+    "language": "json",
+    "line_count": 218,
+    "path": "reports/campaign_009/cli_full_report.json",
+    "path_hash": "sha256:7542e6a39ced3073dc9d6d137c914602e278e2ba9db4cc2f2f4ef7327001696a",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/falsifier_audit.json::4769",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/falsifier_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/falsifier_audit.json"
+          }
+        ],
+        "target": "reports/campaign_009/falsifier_audit.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/floor_seed_calibration.json::4770",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/floor_seed_calibration.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/floor_seed_calibration.json"
+          }
+        ],
+        "target": "reports/campaign_009/floor_seed_calibration.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/floor_calibration_full.json::4771",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/floor_calibration_full.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/floor_calibration_full.json"
+          }
+        ],
+        "target": "reports/campaign_009/floor_calibration_full.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/nfi_vectors.json::4772",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/nfi_vectors.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/nfi_vectors.json"
+          }
+        ],
+        "target": "reports/campaign_009/nfi_vectors.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/prereg/bfg_v0.signed.json::4773",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#papers/prereg/bfg_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "target": "papers/prereg/bfg_v0.signed.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/cross_substrate_signatures.json::4774",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/cross_substrate_signatures.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/cross_substrate_signatures.json"
+          }
+        ],
+        "target": "reports/campaign_009/cross_substrate_signatures.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/schema_roundtrip.json::4775",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/schema_roundtrip.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/schema_roundtrip.json"
+          }
+        ],
+        "target": "reports/campaign_009/schema_roundtrip.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/falsifiers/bfg_point_attractor_candidate.md::4776",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#papers/falsifiers/bfg_point_attractor_candidate.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::papers/falsifiers/bfg_point_attractor_candidate.md"
+          }
+        ],
+        "target": "papers/falsifiers/bfg_point_attractor_candidate.md"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/d14_world_audit.json::4777",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/d14_world_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/d14_world_audit.json"
+          }
+        ],
+        "target": "reports/campaign_009/d14_world_audit.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/bfg_preregistration_gate.json::4778",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/bfg_preregistration_gate.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/bfg_preregistration_gate.json"
+          }
+        ],
+        "target": "reports/campaign_009/bfg_preregistration_gate.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "",
+      "members": [
+        "reports/campaign_009/cli_full_report.json"
+      ],
+      "spawn_ticket": ""
+    },
+    "edges": [
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/falsifier_audit.json::4769",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/falsifier_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/falsifier_audit.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/falsifier_audit.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/floor_seed_calibration.json::4770",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/floor_seed_calibration.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/floor_seed_calibration.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/floor_seed_calibration.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/floor_calibration_full.json::4771",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/floor_calibration_full.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/floor_calibration_full.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/floor_calibration_full.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/nfi_vectors.json::4772",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/nfi_vectors.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/nfi_vectors.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/nfi_vectors.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/prereg/bfg_v0.signed.json::4773",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#papers/prereg/bfg_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "papers/prereg/bfg_v0.signed.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/cross_substrate_signatures.json::4774",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/cross_substrate_signatures.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/cross_substrate_signatures.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/cross_substrate_signatures.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/schema_roundtrip.json::4775",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/schema_roundtrip.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/schema_roundtrip.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/schema_roundtrip.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/falsifiers/bfg_point_attractor_candidate.md::4776",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#papers/falsifiers/bfg_point_attractor_candidate.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::papers/falsifiers/bfg_point_attractor_candidate.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "papers/falsifiers/bfg_point_attractor_candidate.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/d14_world_audit.json::4777",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/d14_world_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/d14_world_audit.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/d14_world_audit.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->reports/campaign_009/bfg_preregistration_gate.json::4778",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_009/cli_full_report.json#reports/campaign_009/bfg_preregistration_gate.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_009/cli_full_report.json::reports/campaign_009/bfg_preregistration_gate.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_009/cli_full_report.json",
+        "target": "reports/campaign_009/bfg_preregistration_gate.json"
+      }
+    ],
+    "parents": [],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::reports/campaign_009/cli_full_report.json::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

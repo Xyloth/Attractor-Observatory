@@ -1,0 +1,1266 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-013",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Driver/root doc declares a task or campaign intent that other artifacts can cite."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "Goal|Acceptance|Task|Driver|Mission"
+            }
+          ],
+          "atom_id": "driver_states_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [
+            "intent without acceptance gates or hand-off"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "subject": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+            "ticket": "CB-013"
+          },
+          "statement": "Driver/root doc declares a task or campaign intent that other artifacts can cite."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [
+        "intent without acceptance gates or hand-off"
+      ],
+      "predicate_id": "birth::BUILDER_LAUNCH_PROTOCOL.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "note": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+        "ref_id": "birth::BUILDER_LAUNCH_PROTOCOL.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-013",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::BUILDER_LAUNCH_PROTOCOL.md::ticket"
+      }
+    ],
+    "first_seen_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+    "first_seen_date": "2026-05-07T08:59:39-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-013",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:f2eecd1434daadb7c2e586c616204c7a0f15b34a3ca8fcb1a543896c78a4898a",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md"
+          },
+          "statement": "Tracked file with 163 lines / 7888 bytes at HEAD."
+        },
+        {
+          "atom_id": "driver_intent_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#pattern:Goal|Acceptance|Task|Driver|Mission"
+          },
+          "statement": "Pattern /Goal|Acceptance|Task|Driver|Mission/ matches in current file."
+        }
+      ],
+      "byte_count": 7888,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 163,
+      "observed_doctrine_bindings": [
+        "D11",
+        "D14",
+        "D17",
+        "D19",
+        "D22",
+        "D24",
+        "D26",
+        "D29",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "predicate_id": "current::BUILDER_LAUNCH_PROTOCOL.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "BUILDER_LAUNCH_PROTOCOL.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::BUILDER_LAUNCH_PROTOCOL.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11",
+        "D14",
+        "D17",
+        "D19",
+        "D22",
+        "D24",
+        "D26",
+        "D29",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "verified": [
+        "D11",
+        "D14",
+        "D17",
+        "D19",
+        "D22",
+        "D24",
+        "D26",
+        "D29",
+        "D31",
+        "D7",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "driver_intent_present",
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "driver_or_root_doc",
+    "byte_count": 7888,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 163,
+    "path": "BUILDER_LAUNCH_PROTOCOL.md",
+    "path_hash": "sha256:3997e38f403ecfd1ef78f709bb313d1bdc5be9ecae1a5a63b107640bd62280fc",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1270",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::BUILDER_LAUNCH_PROTOCOL.md->CODEX_CAMPAIGN_007.md::1608",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::BUILDER_LAUNCH_PROTOCOL.md::CODEX_CAMPAIGN_007.md"
+          }
+        ],
+        "target": "CODEX_CAMPAIGN_007.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::1939",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2308",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2782",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3299",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3702",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3907",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3993",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4009",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4070",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->papers/methods/INGESTION_TARGETS.md::4394",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4395",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->control_room/cache/factory_daemon_heartbeat.json::4396",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#control_room/cache/factory_daemon_heartbeat.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::control_room/cache/factory_daemon_heartbeat.json"
+          }
+        ],
+        "target": "control_room/cache/factory_daemon_heartbeat.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-013",
+      "members": [
+        "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "BUILDER_LAUNCH_PROTOCOL.md",
+        "factory_lowlevel/launch_safety.py",
+        "factory_lowlevel/progress.py",
+        "papers/methods/INGESTION_TARGETS.md",
+        "public_tests/test_cb013_launch_readiness.py",
+        "scripts/SETUP_WORKTREE.md",
+        "scripts/setup_worktree.bat",
+        "scripts/setup_worktree.sh"
+      ],
+      "spawn_ticket": "CB-013"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "edge_id": "spawned_by_ticket::CB-013->BUILDER_LAUNCH_PROTOCOL.md::4",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-013",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::1269",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::1607",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->BUILDER_LAUNCH_PROTOCOL.md::1938",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::2307",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::2781",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3298",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3583",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3701",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3906",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3992",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1270",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::BUILDER_LAUNCH_PROTOCOL.md->CODEX_CAMPAIGN_007.md::1608",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::BUILDER_LAUNCH_PROTOCOL.md::CODEX_CAMPAIGN_007.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "CODEX_CAMPAIGN_007.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::1939",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2308",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::2782",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3299",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3702",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3907",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::3993",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4009",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md->BUILD_LOG.md::4070",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::BUILDER_LAUNCH_PROTOCOL.md::BUILD_LOG.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "BUILD_LOG.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->papers/methods/INGESTION_TARGETS.md::4394",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4395",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->control_room/cache/factory_daemon_heartbeat.json::4396",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#control_room/cache/factory_daemon_heartbeat.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::control_room/cache/factory_daemon_heartbeat.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "control_room/cache/factory_daemon_heartbeat.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-013->BUILDER_LAUNCH_PROTOCOL.md::4",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "CB-013"
+      },
+      {
+        "edge_id": "shares_birth_cohort::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::1269",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::1607",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->BUILDER_LAUNCH_PROTOCOL.md::1938",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::2307",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::2781",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3298",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3583",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3701",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3906",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->BUILDER_LAUNCH_PROTOCOL.md::3992",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::BUILDER_LAUNCH_PROTOCOL.md"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      }
+    ],
+    "siblings": [
+      "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+      "factory_lowlevel/launch_safety.py",
+      "factory_lowlevel/progress.py",
+      "papers/methods/INGESTION_TARGETS.md",
+      "public_tests/test_cb013_launch_readiness.py",
+      "scripts/SETUP_WORKTREE.md",
+      "scripts/setup_worktree.bat",
+      "scripts/setup_worktree.sh"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::BUILDER_LAUNCH_PROTOCOL.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:48Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:48Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

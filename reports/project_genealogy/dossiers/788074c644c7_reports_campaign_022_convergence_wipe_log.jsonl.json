@@ -1,0 +1,436 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-008",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Report serializes structured data for post-hoc analysis.",
+        "{\"counts_before_wipe\": {\"audit_queue.json\": 0, \"empirical_records.json\": 16, \"evidence_graph.json\": 19, \"normalized_refs.json\": 16, \"snapshot.json\": \"snapshot\", \"source_cache_index.json\": 3}, \"reason\": \"CB-008 cycle 2 prep \\u2014 Bug A (PubChem SMILES schema), Bug B (provenance schema), Bug C (silent garbage), Bug E (no traces) fixed; baseline contained schema-violating records and zero traces. Wi"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "file_span"
+            }
+          ],
+          "atom_id": "report_records_data",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [
+            "report contents are mock or placeholder (Class 12)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "e857373697552dd0ce702266d931384299ea053b",
+            "subject": "CB-008 ingestion convergence",
+            "ticket": "CB-008"
+          },
+          "statement": "Report serializes structured data for post-hoc analysis."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_022/convergence_wipe_log.jsonl#header",
+            "ticket": "CB-008"
+          },
+          "statement": "{\"counts_before_wipe\": {\"audit_queue.json\": 0, \"empirical_records.json\": 16, \"evidence_graph.json\": 19, \"normalized_refs.json\": 16, \"snapshot.json\": \"snapshot\", \"source_cache_index.json\": 3}, \"reason\": \"CB-008 cycle 2 prep \\u2014 Bug A (PubChem SMILES schema), Bug B (provenance schema), Bug C (silent garbage), Bug E (no traces) fixed; baseline contained schema-violating records and zero traces. Wi"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11"
+      ],
+      "forbidden_patterns": [
+        "report contents are mock or placeholder (Class 12)"
+      ],
+      "predicate_id": "birth::reports/campaign_022/convergence_wipe_log.jsonl"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "e857373697552dd0ce702266d931384299ea053b",
+        "note": "CB-008 ingestion convergence",
+        "ref_id": "birth::reports/campaign_022/convergence_wipe_log.jsonl::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-008",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::reports/campaign_022/convergence_wipe_log.jsonl::ticket"
+      }
+    ],
+    "first_seen_commit": "e857373697552dd0ce702266d931384299ea053b",
+    "first_seen_date": "2026-05-06T14:39:36-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-008",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:05b18f0f6f7aa96719de15b1b63618989f1cd0215149f78ef9b41a6c61f2fe48",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_022/convergence_wipe_log.jsonl"
+          },
+          "statement": "Tracked file with 1 lines / 646 bytes at HEAD."
+        },
+        {
+          "atom_id": "provenance_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_wipe_log.jsonl#pattern:content_hash|evidence_private|generated_at|locked_instrument|provenance"
+          },
+          "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
+        }
+      ],
+      "byte_count": 646,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 1,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::reports/campaign_022/convergence_wipe_log.jsonl",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "reports/campaign_022/convergence_wipe_log.jsonl",
+        "note": "current contents at HEAD",
+        "ref_id": "current::reports/campaign_022/convergence_wipe_log.jsonl::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D11"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "provenance_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "report",
+    "byte_count": 646,
+    "generated_status": "report",
+    "language": "text",
+    "line_count": 1,
+    "path": "reports/campaign_022/convergence_wipe_log.jsonl",
+    "path_hash": "sha256:2f2b7e318ff4ebd5dadc107419215b7f163ccc080dd4f3c44be2bae2bf75265f",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-reports/campaign_022/convergence_wipe_log.jsonl-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/788074c644c7_reports_campaign_022_convergence_wipe_log.jsonl.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [],
+    "cohort": {
+      "cohort_id": "CB-008",
+      "members": [
+        "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "reports/campaign_022/convergence_session.json",
+        "reports/campaign_022/convergence_wipe_log.jsonl"
+      ],
+      "spawn_ticket": "CB-008"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "e857373697552dd0ce702266d931384299ea053b",
+        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_wipe_log.jsonl::534",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "e857373697552dd0ce702266d931384299ea053b",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_022/convergence_wipe_log.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-008",
+        "target": "reports/campaign_022/convergence_wipe_log.jsonl"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1518",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-008",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-008"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/convergence_session.json",
+        "target": "reports/campaign_022/convergence_wipe_log.jsonl"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_wipe_log.jsonl::4666",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_CONVERGENCE_CB008.md#reports/campaign_022/convergence_wipe_log.jsonl",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_CONVERGENCE_CB008.md::reports/campaign_022/convergence_wipe_log.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "reports/campaign_022/convergence_wipe_log.jsonl"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_wipe_log.jsonl::534",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "e857373697552dd0ce702266d931384299ea053b",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_022/convergence_wipe_log.jsonl"
+          }
+        ],
+        "source": "CB-008"
+      },
+      {
+        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1518",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-008",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-008"
+          }
+        ],
+        "source": "reports/campaign_022/convergence_session.json"
+      },
+      {
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_wipe_log.jsonl::4666",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_CONVERGENCE_CB008.md#reports/campaign_022/convergence_wipe_log.jsonl",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_CONVERGENCE_CB008.md::reports/campaign_022/convergence_wipe_log.jsonl"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      }
+    ],
+    "siblings": [
+      "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+      "reports/campaign_022/convergence_session.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::reports/campaign_022/convergence_wipe_log.jsonl::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:50Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:50Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

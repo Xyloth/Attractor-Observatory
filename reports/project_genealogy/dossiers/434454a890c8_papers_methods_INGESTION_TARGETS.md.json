@@ -1,0 +1,1040 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-013",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "﻿# Ingestion Targets v2 â€” Phase 2 mass density\n**Status:** **RATIFIED** â€” Phase 2 mass-density targets per PI delegated authority (CB-018).\nPhase 1 (v1, ratified 2026-05-07T14:07:39Z, total 6,653 records) is\nthe prior substantive baseline. Phase 2 (v2, ratified 2026-05-07,\ntotal ~60,000 records) drives unattended ingestion to ~9Ã— Phase 1\ndensity across the lower worlds and orthogonal substant"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "subject": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+            "ticket": "CB-013"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/INGESTION_TARGETS.md#header",
+            "ticket": "CB-018"
+          },
+          "statement": "﻿# Ingestion Targets v2 â€” Phase 2 mass density\n**Status:** **RATIFIED** â€” Phase 2 mass-density targets per PI delegated authority (CB-018).\nPhase 1 (v1, ratified 2026-05-07T14:07:39Z, total 6,653 records) is\nthe prior substantive baseline. Phase 2 (v2, ratified 2026-05-07,\ntotal ~60,000 records) drives unattended ingestion to ~9Ã— Phase 1\ndensity across the lower worlds and orthogonal substant"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/INGESTION_TARGETS.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "note": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+        "ref_id": "birth::papers/methods/INGESTION_TARGETS.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-013",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/INGESTION_TARGETS.md::ticket"
+      }
+    ],
+    "first_seen_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+    "first_seen_date": "2026-05-07T08:59:39-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-013",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:d0dce511644e5a02c4a2908decab575bda108cf6669e78d79e7700692d70202c",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/INGESTION_TARGETS.md"
+          },
+          "statement": "Tracked file with 223 lines / 16244 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 16244,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 223,
+      "observed_doctrine_bindings": [
+        "D14",
+        "D17",
+        "D17.5",
+        "D22",
+        "D26"
+      ],
+      "predicate_id": "current::papers/methods/INGESTION_TARGETS.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/INGESTION_TARGETS.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/INGESTION_TARGETS.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D14",
+        "D17",
+        "D17.5",
+        "D22",
+        "D26"
+      ],
+      "verified": [
+        "D14",
+        "D17",
+        "D17.5",
+        "D22",
+        "D26"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILDER_LAUNCH_PROTOCOL.md",
+        "BUILD_LOG.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 3.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D18",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D18",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D18::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 16244,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 223,
+    "path": "papers/methods/INGESTION_TARGETS.md",
+    "path_hash": "sha256:b45fba647f4ec7ae704bd67a7d95c229ec550fd86e37a597cbb51e9f785f3bc3",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-papers/methods/INGESTION_TARGETS.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/434454a890c8_papers_methods_INGESTION_TARGETS.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1273",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::2108",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2482",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3894",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/INGESTION_TARGETS.md->papers/methods/LENS_RECOVERY_v1_DRAFT.md::4042",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/INGESTION_TARGETS.md::papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+          }
+        ],
+        "target": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/progress.py::4667",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#factory_lowlevel/progress.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::factory_lowlevel/progress.py"
+          }
+        ],
+        "target": "factory_lowlevel/progress.py"
+      },
+      {
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->reports/factory_daemon_progress/atomic_molecular_primitives.json::4668",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#reports/factory_daemon_progress/atomic_molecular_primitives.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::reports/factory_daemon_progress/atomic_molecular_primitives.json"
+          }
+        ],
+        "target": "reports/factory_daemon_progress/atomic_molecular_primitives.json"
+      },
+      {
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4669",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "target": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-013",
+      "members": [
+        "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "BUILDER_LAUNCH_PROTOCOL.md",
+        "factory_lowlevel/launch_safety.py",
+        "factory_lowlevel/progress.py",
+        "papers/methods/INGESTION_TARGETS.md",
+        "public_tests/test_cb013_launch_readiness.py",
+        "scripts/SETUP_WORKTREE.md",
+        "scripts/setup_worktree.bat",
+        "scripts/setup_worktree.sh"
+      ],
+      "spawn_ticket": "CB-013"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "edge_id": "spawned_by_ticket::CB-013->papers/methods/INGESTION_TARGETS.md::289",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-013",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/progress.py->papers/methods/INGESTION_TARGETS.md::1272",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/progress.py",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/INGESTION_TARGETS.md::2107",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/INGESTION_TARGETS.md::2481",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::docs/doctrine_registry.json->papers/methods/INGESTION_TARGETS.md::2583",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::docs/doctrine_registry.json::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/INGESTION_TARGETS.md::3893",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_TARGETS.md::4041",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->papers/methods/INGESTION_TARGETS.md::4394",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INGESTION_TARGETS.md::4459",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1273",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::2108",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2482",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::papers/methods/INGESTION_TARGETS.md->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::2584",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::papers/methods/INGESTION_TARGETS.md::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INGESTION_TARGETS.md->papers/methods/METHODOLOGY_VALIDATION_CB003.md::3894",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INGESTION_TARGETS.md::papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/METHODOLOGY_VALIDATION_CB003.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/methods/INGESTION_TARGETS.md->papers/methods/LENS_RECOVERY_v1_DRAFT.md::4042",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/INGESTION_TARGETS.md::papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "papers/methods/LENS_RECOVERY_v1_DRAFT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/progress.py::4667",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#factory_lowlevel/progress.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::factory_lowlevel/progress.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "factory_lowlevel/progress.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->reports/factory_daemon_progress/atomic_molecular_primitives.json::4668",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#reports/factory_daemon_progress/atomic_molecular_primitives.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::reports/factory_daemon_progress/atomic_molecular_primitives.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "reports/factory_daemon_progress/atomic_molecular_primitives.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4669",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-013->papers/methods/INGESTION_TARGETS.md::289",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "CB-013"
+      },
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/progress.py->papers/methods/INGESTION_TARGETS.md::1272",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "source": "factory_lowlevel/progress.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/INGESTION_TARGETS.md::2107",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/INGESTION_TARGETS.md::2481",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::docs/doctrine_registry.json->papers/methods/INGESTION_TARGETS.md::2583",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::docs/doctrine_registry.json::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/INGESTION_CONVERGENCE_CB008.md->papers/methods/INGESTION_TARGETS.md::3893",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/INGESTION_CONVERGENCE_CB008.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md->papers/methods/INGESTION_TARGETS.md::4041",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+      },
+      {
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->papers/methods/INGESTION_TARGETS.md::4394",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/INGESTION_TARGETS.md::4459",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/INGESTION_TARGETS.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/INGESTION_TARGETS.md"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      }
+    ],
+    "siblings": [
+      "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+      "BUILDER_LAUNCH_PROTOCOL.md",
+      "factory_lowlevel/launch_safety.py",
+      "factory_lowlevel/progress.py",
+      "public_tests/test_cb013_launch_readiness.py",
+      "scripts/SETUP_WORKTREE.md",
+      "scripts/setup_worktree.bat",
+      "scripts/setup_worktree.sh"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 2,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/INGESTION_TARGETS.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

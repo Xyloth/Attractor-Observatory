@@ -1,0 +1,562 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-MOTIF-IMPL",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module renders a Control Room surface with honest empty state."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "render_empty_state|EMPTY_STATE_HTML_MARKER|render\\("
+            }
+          ],
+          "atom_id": "control_room_surface_renders",
+          "doctrine_bindings_expected": [
+            "D22",
+            "D24",
+            "D30"
+          ],
+          "forbidden_failure_modes": [
+            "decorative completeness (Class 12)",
+            "mock data in absence"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "subject": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+            "ticket": "TASK-MOTIF-IMPL"
+          },
+          "statement": "Module renders a Control Room surface with honest empty state."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D22",
+        "D24",
+        "D30"
+      ],
+      "forbidden_patterns": [
+        "decorative completeness (Class 12)",
+        "mock data in absence"
+      ],
+      "predicate_id": "birth::control_room/cache/factory_daemon_heartbeat.json"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "note": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+        "ref_id": "birth::control_room/cache/factory_daemon_heartbeat.json::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-MOTIF-IMPL",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::control_room/cache/factory_daemon_heartbeat.json::ticket"
+      }
+    ],
+    "first_seen_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+    "first_seen_date": "2026-05-06T19:23:03-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-MOTIF-IMPL",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:cf716517015bffa28251a340085c7810354bfeda4e436b48b117fa4b396ba195",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "control_room/cache/factory_daemon_heartbeat.json"
+          },
+          "statement": "Tracked file with 11 lines / 257 bytes at HEAD."
+        }
+      ],
+      "byte_count": 257,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 11,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::control_room/cache/factory_daemon_heartbeat.json",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "control_room/cache/factory_daemon_heartbeat.json",
+        "note": "current contents at HEAD",
+        "ref_id": "current::control_room/cache/factory_daemon_heartbeat.json::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D22",
+        "D24",
+        "D30"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D22",
+        "D24",
+        "D30"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILDER_LAUNCH_PROTOCOL.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 0,
+      "missing_atoms": [
+        "control_room_surface_renders"
+      ],
+      "value": 0.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D22",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D22",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D22::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D24",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D24",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D24::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D30",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D30",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D30::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [
+      "control_room_surface_renders"
+    ],
+    "negative_space_flags": [
+      {
+        "atom_ids": [
+          "control_room_surface_renders"
+        ],
+        "kind": "missing_birth_atoms",
+        "note": "atoms promised at birth absent from current predicate"
+      }
+    ],
+    "new_atoms": [
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "control_room",
+    "byte_count": 257,
+    "generated_status": "source",
+    "language": "json",
+    "line_count": 11,
+    "path": "control_room/cache/factory_daemon_heartbeat.json",
+    "path_hash": "sha256:737eb1cad61aefadec77fea6fab23aa3c2b83bd5668efad656bd170ad57d2e9c",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-control_room/cache/factory_daemon_heartbeat.json-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/0bde5a00cefb_control_room_cache_factory_daemon_heartbeat.json.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_daemon_heartbeat.json->control_room/snapshots/state_20260506T202841Z.json::1426",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T202841Z.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-MOTIF-IMPL",
+      "members": [
+        "control_room/cache/factory_daemon_heartbeat.json",
+        "control_room/snapshots/state_20260506T202841Z.json",
+        "control_room/snapshots/state_20260506T202843Z.json",
+        "control_room/snapshots/state_20260506T204718Z.json",
+        "control_room/snapshots/state_20260506T210130Z.json",
+        "control_room/snapshots/state_20260506T210134Z.json",
+        "control_room/snapshots/state_20260506T210149Z.json",
+        "control_room/snapshots/state_20260506T210210Z.json",
+        "control_room/snapshots/state_20260506T211546Z.json",
+        "control_room/snapshots/state_20260506T211559Z.json",
+        "control_room/snapshots/state_20260506T212300Z.json",
+        "control_room/snapshots/state_20260506T232021Z.json",
+        "docs/doctrine_d26.md",
+        "factory_daemon.bat",
+        "factory_lowlevel/README.md",
+        "factory_lowlevel/continuous_daemon.py",
+        "factory_lowlevel/world_construction.py",
+        "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+        "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+        "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+        "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+        "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+        "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_023/externalized_memory.signed.json",
+        "papers/prereg/campaign_023/floor_connectivity.signed.json",
+        "papers/prereg/campaign_023/repair.signed.json",
+        "papers/prereg/campaign_023/replication_lineage.signed.json",
+        "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+        "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_024/externalized_memory.signed.json",
+        "papers/prereg/campaign_024/floor_connectivity.signed.json",
+        "papers/prereg/campaign_024/repair.signed.json",
+        "papers/prereg/campaign_024/replication_lineage.signed.json",
+        "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+        "public_tests/test_task035_continuous_daemon.py",
+        "public_tests/test_task035_fire_integration.py",
+        "public_tests/test_task035_world_adapters.py",
+        "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_023/externalized_memory_substrate_blocked.json",
+        "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_023/full_report.json",
+        "reports/campaign_023/repair_substrate_blocked.json",
+        "reports/campaign_023/replication_lineage_substrate_blocked.json",
+        "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_024/externalized_memory_substrate_blocked.json",
+        "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_024/full_report.json",
+        "reports/campaign_024/lens_coupling_audit.json",
+        "reports/campaign_024/repair_substrate_blocked.json",
+        "reports/campaign_024/replication_lineage_substrate_blocked.json",
+        "reports/campaign_024/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_035/full_report.json"
+      ],
+      "spawn_ticket": "TASK-MOTIF-IMPL"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->control_room/cache/factory_daemon_heartbeat.json::121",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::control_room/cache/factory_daemon_heartbeat.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-MOTIF-IMPL",
+        "target": "control_room/cache/factory_daemon_heartbeat.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->control_room/cache/factory_daemon_heartbeat.json::4396",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#control_room/cache/factory_daemon_heartbeat.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::control_room/cache/factory_daemon_heartbeat.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "control_room/cache/factory_daemon_heartbeat.json"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_daemon_heartbeat.json->control_room/snapshots/state_20260506T202841Z.json::1426",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cache/factory_daemon_heartbeat.json",
+        "target": "control_room/snapshots/state_20260506T202841Z.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->control_room/cache/factory_daemon_heartbeat.json::121",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::control_room/cache/factory_daemon_heartbeat.json"
+          }
+        ],
+        "source": "TASK-MOTIF-IMPL"
+      },
+      {
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->control_room/cache/factory_daemon_heartbeat.json::4396",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#control_room/cache/factory_daemon_heartbeat.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::control_room/cache/factory_daemon_heartbeat.json"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      }
+    ],
+    "siblings": [
+      "control_room/snapshots/state_20260506T202841Z.json",
+      "control_room/snapshots/state_20260506T202843Z.json",
+      "control_room/snapshots/state_20260506T204718Z.json",
+      "control_room/snapshots/state_20260506T210130Z.json",
+      "control_room/snapshots/state_20260506T210134Z.json",
+      "control_room/snapshots/state_20260506T210149Z.json",
+      "control_room/snapshots/state_20260506T210210Z.json",
+      "control_room/snapshots/state_20260506T211546Z.json",
+      "control_room/snapshots/state_20260506T211559Z.json",
+      "control_room/snapshots/state_20260506T212300Z.json",
+      "control_room/snapshots/state_20260506T232021Z.json",
+      "docs/doctrine_d26.md",
+      "factory_daemon.bat",
+      "factory_lowlevel/README.md",
+      "factory_lowlevel/continuous_daemon.py",
+      "factory_lowlevel/world_construction.py",
+      "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+      "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+      "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+      "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+      "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+      "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+      "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+      "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_023/externalized_memory.signed.json",
+      "papers/prereg/campaign_023/floor_connectivity.signed.json",
+      "papers/prereg/campaign_023/repair.signed.json",
+      "papers/prereg/campaign_023/replication_lineage.signed.json",
+      "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+      "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_024/externalized_memory.signed.json",
+      "papers/prereg/campaign_024/floor_connectivity.signed.json",
+      "papers/prereg/campaign_024/repair.signed.json",
+      "papers/prereg/campaign_024/replication_lineage.signed.json",
+      "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+      "public_tests/test_task035_continuous_daemon.py",
+      "public_tests/test_task035_fire_integration.py",
+      "public_tests/test_task035_world_adapters.py",
+      "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_023/externalized_memory_substrate_blocked.json",
+      "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_023/full_report.json",
+      "reports/campaign_023/repair_substrate_blocked.json",
+      "reports/campaign_023/replication_lineage_substrate_blocked.json",
+      "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+      "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_024/externalized_memory_substrate_blocked.json",
+      "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_024/full_report.json",
+      "reports/campaign_024/lens_coupling_audit.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::control_room/cache/factory_daemon_heartbeat.json::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:48Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:48Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

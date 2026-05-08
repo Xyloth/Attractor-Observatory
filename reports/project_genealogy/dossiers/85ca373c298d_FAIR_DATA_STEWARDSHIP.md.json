@@ -1,0 +1,491 @@
+{
+  "birth": {
+    "birth_cohort_id": "DX-002",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Driver/root doc declares a task or campaign intent that other artifacts can cite.",
+        "# FAIR Data Stewardship Statement\nStatus: public-surface policy, TASK-DX-002-FIX.\nThis repository is a curated public research surface. It is FAIR-aligned for public artifacts and explicitly private-bounded for generated traces and private runtime code.\n## Findable\n- Campaign reports live under `reports/campaign_*/full_report.json`.\n- Methodology documents live under `papers/methods/`.\n- Doctrine"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "Goal|Acceptance|Task|Driver|Mission"
+            }
+          ],
+          "atom_id": "driver_states_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [
+            "intent without acceptance gates or hand-off"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "subject": "Fix DX-002 findings and ratify D28-D30",
+            "ticket": "DX-002"
+          },
+          "statement": "Driver/root doc declares a task or campaign intent that other artifacts can cite."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "FAIR_DATA_STEWARDSHIP.md#header",
+            "ticket": "TASK-DX-002-FIX"
+          },
+          "statement": "# FAIR Data Stewardship Statement\nStatus: public-surface policy, TASK-DX-002-FIX.\nThis repository is a curated public research surface. It is FAIR-aligned for public artifacts and explicitly private-bounded for generated traces and private runtime code.\n## Findable\n- Campaign reports live under `reports/campaign_*/full_report.json`.\n- Methodology documents live under `papers/methods/`.\n- Doctrine"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [
+        "intent without acceptance gates or hand-off"
+      ],
+      "predicate_id": "birth::FAIR_DATA_STEWARDSHIP.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "note": "Fix DX-002 findings and ratify D28-D30",
+        "ref_id": "birth::FAIR_DATA_STEWARDSHIP.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "DX-002",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::FAIR_DATA_STEWARDSHIP.md::ticket"
+      }
+    ],
+    "first_seen_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+    "first_seen_date": "2026-05-06T21:25:06-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "DX-002",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:e810c40c50099f0d4d0724053da541cf907b1f401cb6427d6e4c5d531fb31898",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "FAIR_DATA_STEWARDSHIP.md"
+          },
+          "statement": "Tracked file with 34 lines / 1489 bytes at HEAD."
+        },
+        {
+          "atom_id": "driver_intent_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "FAIR_DATA_STEWARDSHIP.md#pattern:Goal|Acceptance|Task|Driver|Mission"
+          },
+          "statement": "Pattern /Goal|Acceptance|Task|Driver|Mission/ matches in current file."
+        }
+      ],
+      "byte_count": 1489,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 34,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::FAIR_DATA_STEWARDSHIP.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "FAIR_DATA_STEWARDSHIP.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::FAIR_DATA_STEWARDSHIP.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "driver_intent_present",
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "driver_or_root_doc",
+    "byte_count": 1489,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 34,
+    "path": "FAIR_DATA_STEWARDSHIP.md",
+    "path_hash": "sha256:f02ae0cad07c216da27c66b28cdd75f072482266c689f2c3c9801911c7d93388",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::FAIR_DATA_STEWARDSHIP.md->docs/ACM_ARTIFACT_BADGING_POLICY.md::1377",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "target": "docs/ACM_ARTIFACT_BADGING_POLICY.md"
+      },
+      {
+        "edge_id": "cites::FAIR_DATA_STEWARDSHIP.md->docs/DOCTRINE.md::4599",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "FAIR_DATA_STEWARDSHIP.md#docs/DOCTRINE.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::FAIR_DATA_STEWARDSHIP.md::docs/DOCTRINE.md"
+          }
+        ],
+        "target": "docs/DOCTRINE.md"
+      },
+      {
+        "edge_id": "cites::FAIR_DATA_STEWARDSHIP.md->docs/doctrine_registry.json::4600",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "FAIR_DATA_STEWARDSHIP.md#docs/doctrine_registry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::FAIR_DATA_STEWARDSHIP.md::docs/doctrine_registry.json"
+          }
+        ],
+        "target": "docs/doctrine_registry.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "DX-002",
+      "members": [
+        "FAIR_DATA_STEWARDSHIP.md",
+        "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+        "docs/doctrine_d27.md",
+        "docs/doctrine_d28.md",
+        "docs/doctrine_d29.md",
+        "docs/doctrine_d30.md",
+        "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+        "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+        "reports/campaign_002/fair_metadata.json",
+        "reports/campaign_002/prov_o.jsonld",
+        "reports/campaign_003/fair_metadata.json",
+        "reports/campaign_003/prov_o.jsonld",
+        "reports/campaign_004/fair_metadata.json",
+        "reports/campaign_004/prov_o.jsonld",
+        "reports/campaign_005/fair_metadata.json",
+        "reports/campaign_005/prov_o.jsonld",
+        "reports/campaign_006/fair_metadata.json",
+        "reports/campaign_006/prov_o.jsonld",
+        "reports/campaign_007/fair_metadata.json",
+        "reports/campaign_007/prov_o.jsonld",
+        "reports/campaign_008/fair_metadata.json",
+        "reports/campaign_008/prov_o.jsonld",
+        "reports/campaign_009/fair_metadata.json",
+        "reports/campaign_009/prov_o.jsonld",
+        "reports/campaign_010/fair_metadata.json",
+        "reports/campaign_010/prov_o.jsonld",
+        "reports/campaign_011/fair_metadata.json",
+        "reports/campaign_011/prov_o.jsonld",
+        "reports/campaign_012/fair_metadata.json",
+        "reports/campaign_012/prov_o.jsonld",
+        "reports/campaign_013/fair_metadata.json",
+        "reports/campaign_013/prov_o.jsonld",
+        "reports/campaign_014/fair_metadata.json",
+        "reports/campaign_014/prov_o.jsonld",
+        "reports/campaign_017/fair_metadata.json",
+        "reports/campaign_017/prov_o.jsonld",
+        "reports/campaign_018/fair_metadata.json",
+        "reports/campaign_018/prov_o.jsonld",
+        "reports/campaign_020/fair_metadata.json",
+        "reports/campaign_020/prov_o.jsonld",
+        "reports/campaign_021/fair_metadata.json",
+        "reports/campaign_021/prov_o.jsonld",
+        "reports/campaign_022/fair_metadata.json",
+        "reports/campaign_022/prov_o.jsonld",
+        "reports/campaign_fair_metadata_index.json",
+        "reports/task_dx002_findings_disposition.json",
+        "reports/task_dx002_public_boundary_markers.json",
+        "ro-crate-metadata.json"
+      ],
+      "spawn_ticket": "DX-002"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "edge_id": "spawned_by_ticket::DX-002->FAIR_DATA_STEWARDSHIP.md::18",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::FAIR_DATA_STEWARDSHIP.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "DX-002",
+        "target": "FAIR_DATA_STEWARDSHIP.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::FAIR_DATA_STEWARDSHIP.md->docs/ACM_ARTIFACT_BADGING_POLICY.md::1377",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "FAIR_DATA_STEWARDSHIP.md",
+        "target": "docs/ACM_ARTIFACT_BADGING_POLICY.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::FAIR_DATA_STEWARDSHIP.md->docs/DOCTRINE.md::4599",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "FAIR_DATA_STEWARDSHIP.md#docs/DOCTRINE.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::FAIR_DATA_STEWARDSHIP.md::docs/DOCTRINE.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "FAIR_DATA_STEWARDSHIP.md",
+        "target": "docs/DOCTRINE.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::FAIR_DATA_STEWARDSHIP.md->docs/doctrine_registry.json::4600",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "FAIR_DATA_STEWARDSHIP.md#docs/doctrine_registry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::FAIR_DATA_STEWARDSHIP.md::docs/doctrine_registry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "FAIR_DATA_STEWARDSHIP.md",
+        "target": "docs/doctrine_registry.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::DX-002->FAIR_DATA_STEWARDSHIP.md::18",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::FAIR_DATA_STEWARDSHIP.md"
+          }
+        ],
+        "source": "DX-002"
+      }
+    ],
+    "siblings": [
+      "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+      "docs/doctrine_d27.md",
+      "docs/doctrine_d28.md",
+      "docs/doctrine_d29.md",
+      "docs/doctrine_d30.md",
+      "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+      "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+      "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+      "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+      "reports/campaign_002/fair_metadata.json",
+      "reports/campaign_002/prov_o.jsonld",
+      "reports/campaign_003/fair_metadata.json",
+      "reports/campaign_003/prov_o.jsonld",
+      "reports/campaign_004/fair_metadata.json",
+      "reports/campaign_004/prov_o.jsonld",
+      "reports/campaign_005/fair_metadata.json",
+      "reports/campaign_005/prov_o.jsonld",
+      "reports/campaign_006/fair_metadata.json",
+      "reports/campaign_006/prov_o.jsonld",
+      "reports/campaign_007/fair_metadata.json",
+      "reports/campaign_007/prov_o.jsonld",
+      "reports/campaign_008/fair_metadata.json",
+      "reports/campaign_008/prov_o.jsonld",
+      "reports/campaign_009/fair_metadata.json",
+      "reports/campaign_009/prov_o.jsonld",
+      "reports/campaign_010/fair_metadata.json",
+      "reports/campaign_010/prov_o.jsonld",
+      "reports/campaign_011/fair_metadata.json",
+      "reports/campaign_011/prov_o.jsonld",
+      "reports/campaign_012/fair_metadata.json",
+      "reports/campaign_012/prov_o.jsonld",
+      "reports/campaign_013/fair_metadata.json",
+      "reports/campaign_013/prov_o.jsonld",
+      "reports/campaign_014/fair_metadata.json",
+      "reports/campaign_014/prov_o.jsonld",
+      "reports/campaign_017/fair_metadata.json",
+      "reports/campaign_017/prov_o.jsonld",
+      "reports/campaign_018/fair_metadata.json",
+      "reports/campaign_018/prov_o.jsonld",
+      "reports/campaign_020/fair_metadata.json",
+      "reports/campaign_020/prov_o.jsonld",
+      "reports/campaign_021/fair_metadata.json",
+      "reports/campaign_021/prov_o.jsonld",
+      "reports/campaign_022/fair_metadata.json",
+      "reports/campaign_022/prov_o.jsonld",
+      "reports/campaign_fair_metadata_index.json",
+      "reports/task_dx002_findings_disposition.json",
+      "reports/task_dx002_public_boundary_markers.json",
+      "ro-crate-metadata.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::FAIR_DATA_STEWARDSHIP.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:48Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:48Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}
