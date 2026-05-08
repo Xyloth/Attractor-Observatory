@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import errno
 import json
 import os
 import tempfile
+import time
 from pathlib import Path
 from typing import Any
 
@@ -18,6 +20,19 @@ from .schemas import (
     canonical_json,
     sha256,
 )
+
+
+# CB-020: errno values that indicate transient Windows file-lock contention
+# (anti-virus scan, Streamlit reader, Atlas reader, OneDrive sync, etc.).
+# All five are recoverable with a backoff retry; ENOSPC / EROFS / etc. are
+# real bugs that must propagate rather than be swallowed.
+_TRANSIENT_WRITE_ERRNOS: frozenset[int] = frozenset({
+    errno.EACCES,   # 13 — PermissionError (WinError 5 "Access is denied")
+    errno.EAGAIN,   # 11 — Resource temporarily unavailable
+    errno.EBUSY,    # 16 — Device or resource busy
+    errno.EINVAL,   # 22 — Invalid argument (Windows MoveFileEx race on open dest)
+    errno.ENOENT,   # 2  — temp-file vanished mid-replace (rare, but seen on Windows)
+})
 
 
 class LowLevelFactoryStore:
@@ -393,8 +408,93 @@ def write_json(path: str | Path, payload: Any) -> Any:
     return payload
 
 
-def atomic_write_json(path: str | Path, payload: Any) -> Path:
-    """Write JSON via same-directory temp file and atomic replace."""
+def safe_read_json(
+    path: str | Path,
+    *,
+    max_attempts: int = 6,
+    base_backoff_seconds: float = 0.02,
+    default: Any = None,
+) -> Any:
+    """Read JSON from ``path``; ride out transient Windows file-lock contention.
+
+    CB-020 symmetric helper for ``atomic_write_json``. The Control Room
+    Streamlit autorefresh + the daemon writer race on Windows: while
+    ``Path.replace()`` swaps the destination, a concurrent reader's
+    ``read_text()`` can see ``PermissionError [Errno 13]`` for the few
+    milliseconds the OS holds the destination's exclusive lock. Without
+    a retry, every Streamlit refresh tick has a small probability of
+    showing stale-or-empty state to the user.
+
+    On exhausted retries, returns ``default`` (default ``None``).
+    Readers that want to distinguish "not present" from "race lost"
+    should pass ``default=...`` and check the result; the typical
+    reader is fine with ``None`` meaning "render empty state" because
+    the next autorefresh tick will succeed.
+
+    Backoff schedule: 20ms, 40ms, 80ms, 160ms, 320ms, 640ms ≈ 1.3s
+    worst-case. Shorter than the writer budget because readers are
+    expected to fail-soft (UI tolerates "no data this tick").
+    """
+    target = Path(path)
+    if not target.exists():
+        return default
+    last_exc: OSError | None = None
+    for attempt in range(max_attempts):
+        try:
+            raw = target.read_text(encoding="utf-8-sig")
+        except OSError as exc:
+            if exc.errno not in _TRANSIENT_WRITE_ERRNOS:
+                raise
+            last_exc = exc
+            if attempt == max_attempts - 1:
+                return default
+            time.sleep(base_backoff_seconds * (2 ** attempt))
+            continue
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            # Truncated mid-replace; backoff + retry. Replace is atomic
+            # at the OS level but reader scheduling can produce partials.
+            if attempt == max_attempts - 1:
+                return default
+            time.sleep(base_backoff_seconds * (2 ** attempt))
+            continue
+    # Unreachable; covered by `last_exc` paths above.
+    if last_exc is not None:
+        raise last_exc
+    return default
+
+
+def atomic_write_json(
+    path: str | Path,
+    payload: Any,
+    *,
+    max_attempts: int = 8,
+    base_backoff_seconds: float = 0.05,
+) -> Path:
+    """Write JSON via same-directory temp file and atomic replace.
+
+    CB-020 hardening: on Windows, when another process holds a transient
+    handle on the destination file (Streamlit autorefresh reader, Atlas
+    Tower poller, anti-virus scanner, OneDrive sync), the underlying
+    ``os.replace`` raises one of:
+
+    * ``OSError [Errno 22]`` (EINVAL) — Windows MoveFileEx fails because the
+      destination already exists with an open handle.
+    * ``PermissionError [WinError 5]`` (EACCES) — anti-virus or AV-class
+      reader has the file locked.
+    * ``OSError [Errno 16]`` (EBUSY) — same resource-busy class.
+
+    All three are *transient*: a few hundred milliseconds of backoff is
+    enough to ride out the race. A real bug (ENOSPC = disk full,
+    EROFS = read-only filesystem, EISDIR = caller passed a directory) is
+    NOT in the transient set — it propagates immediately so the caller
+    sees the real failure, not an opaque timeout.
+
+    Backoff schedule: 50ms, 100ms, 200ms, 400ms, 800ms, 1.6s, 3.2s, 6.4s
+    = ~12.7s worst-case (within the daemon's per-source retry budget but
+    generous enough to ride out a long anti-virus scan).
+    """
 
     out = Path(path)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -413,7 +513,23 @@ def atomic_write_json(path: str | Path, payload: Any) -> Path:
             handle.write(data)
             handle.flush()
             os.fsync(handle.fileno())
-        Path(tmp_name).replace(out)
+        # CB-020 retry loop: replace() is the contention point.
+        last_exc: OSError | None = None
+        for attempt in range(max_attempts):
+            try:
+                Path(tmp_name).replace(out)
+                last_exc = None
+                break
+            except OSError as exc:
+                if exc.errno not in _TRANSIENT_WRITE_ERRNOS:
+                    # Real bug — disk full, ROFS, etc. Propagate immediately.
+                    raise
+                last_exc = exc
+                if attempt == max_attempts - 1:
+                    # Exhausted budget — propagate the last transient error
+                    # so the caller's retry logic / audit queue can surface it.
+                    raise
+                time.sleep(base_backoff_seconds * (2 ** attempt))
     finally:
         if tmp_name is not None:
             tmp_path = Path(tmp_name)

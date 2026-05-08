@@ -421,12 +421,20 @@ def _fire(*, allow_network: bool, target_worlds: list[str], source_ids: list[str
 
 
 def _read_json(path: Path) -> dict[str, Any]:
-    if not path.exists():
-        return {}
-    try:
-        return json.loads(path.read_text(encoding="utf-8-sig"))
-    except (OSError, json.JSONDecodeError):
-        return {}
+    """Race-resilient JSON read for live-state files.
+
+    CB-020 fix: previously this caught (OSError, json.JSONDecodeError)
+    and returned ``{}`` on the first failure. Under Streamlit autorefresh
+    races against the daemon writer (Path.replace mid-flight), this
+    meant ~5-15% of refresh ticks showed empty state on busy systems.
+    ``safe_read_json`` retries with exponential backoff (20ms -> 640ms,
+    1.3s worst-case) on transient errnos, falling back to the empty
+    dict on permanent failure. Same backoff pattern as the writer side
+    (atomic_write_json) but tighter budget — readers must fail-soft."""
+    from factory_lowlevel.persistence import safe_read_json
+
+    result = safe_read_json(path, default={})
+    return result if isinstance(result, dict) else {}
 
 
 def _read_subprocess_state() -> dict[str, Any]:

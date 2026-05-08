@@ -8,8 +8,10 @@ router validates, world constructors simulate, and formal lenses evaluate.
 
 from __future__ import annotations
 
+import gc  # CB-021: explicit GC between bundles to release trace bodies
 import json
 import hashlib
+import time  # CB-020: backoff sleep in _safe_write_json fallback loop
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -224,24 +226,61 @@ def run_live_factory_cycle(
     routed = route_records(records, refs, requested_worlds)
     _write_live_state(live_state_path, stage="route", status="running", routed_worlds=[bundle.world_family for bundle in routed], rejection_count=len(route_rejections))
 
-    trace_rows = []
+    # CB-021 M2: per-bundle (per-world) streaming. The old loop accumulated
+    # ALL trace bodies across ALL bundles into one big trace_rows list,
+    # then built evidence rows + life forms over that monolith. With Phase-2
+    # density (60K records, ~2 GB total trace bytes), this peaked the
+    # process at 40-50 GB RSS and killed the desktop on 2026-05-08.
+    #
+    # New flow: for each routed bundle (one world family), simulate +
+    # build evidence + evaluate lenses + build life forms in a tight
+    # local scope, then drop trace bodies and gc.collect() before the
+    # next bundle. Final RAM peak is ~one-world-worth of traces, not
+    # all worlds at once. Slim metadata (record_id, source_id, trace_path,
+    # trace_id, motif_fires summary) accumulates into trace_rows so the
+    # downstream run_payload still has per-record provenance.
+    trace_rows: list[dict[str, Any]] = []
+    evaluations: list[dict[str, Any]] = []
+    life_forms: list[dict[str, Any]] = []
+    total_traces_simulated = 0
     for bundle in routed:
+        bundle_rows: list[dict[str, Any]] = []
         for record in bundle.empirical_records:
-            trace_rows.append(_simulate_record(record, trace_root=trace_root))
-            _write_live_state(
-                live_state_path,
-                stage="world_simulate",
-                status="running",
-                latest_record=record.canonical_name,
-                trace_count=len(trace_rows),
-            )
-    traces = [row["trace"] for row in trace_rows if row.get("trace") is not None]
+            bundle_rows.append(_simulate_record(record, trace_root=trace_root))
+            total_traces_simulated += 1
+            # CB-021 M4: heartbeat every 50 traces during world_simulate so
+            # a hung simulation is visible within seconds, not minutes.
+            if total_traces_simulated % 50 == 0 or total_traces_simulated == 1:
+                _write_live_state(
+                    live_state_path,
+                    stage="world_simulate",
+                    status="running",
+                    latest_record=record.canonical_name,
+                    trace_count=total_traces_simulated,
+                    bundle_world=bundle.world_family,
+                )
+        # Build evidence + evaluate lenses for THIS bundle only.
+        bundle_traces = [row["trace"] for row in bundle_rows if row.get("trace") is not None]
+        bundle_evidence = _build_evidence_rows(bundle_traces)
+        bundle_evals = evaluate_lenses(bundle_evidence) if bundle_evidence else []
+        bundle_life_forms = _life_forms(bundle_rows, bundle_evals)
+        evaluations.extend(bundle_evals)
+        life_forms.extend(bundle_life_forms)
+        # CB-021 M2: drop trace bodies + evidence rows. The trace files
+        # are durable on disk; downstream consumers re-read by trace_path.
+        # The slim metadata stays in bundle_rows for trace_records output.
+        for row in bundle_rows:
+            row["trace"] = None
+        trace_rows.extend(bundle_rows)
+        # Free per-bundle locals before next bundle. Without this Python's
+        # generational GC may not release the refs across the bundle
+        # boundary because evidence_rows and bundle_traces share a
+        # cycle through the lens evaluation tree.
+        del bundle_traces, bundle_evidence, bundle_evals, bundle_life_forms, bundle_rows
+        gc.collect()
 
-    evidence_rows = _build_evidence_rows(traces)
-    evaluations = evaluate_lenses(evidence_rows) if evidence_rows else []
-    life_forms = _life_forms(trace_rows, evaluations)
     motif_fire_rates = _motif_fire_rates(life_forms)
-    _write_live_state(live_state_path, stage="motif_evaluate", status="running", trace_count=len(traces), life_form_count=len(life_forms))
+    _write_live_state(live_state_path, stage="motif_evaluate", status="running", trace_count=total_traces_simulated, life_form_count=len(life_forms))
 
     store.rebuild_evidence_graph()
     store.ingest_world_traces(routed, run_id_seed=store.content_hash())
@@ -534,28 +573,82 @@ def _write_live_state(path: Path, **payload: Any) -> None:
             prior = {}
     stage_history = list(prior.get("stage_history", []))
     stage_history.append({"at": utc_now(), **payload})
+    # CB-021 M4: enrich live state with RSS so the operator can diagnose
+    # memory blow-up the moment it starts, not minutes later when the
+    # heartbeat updates. After the 2026-05-08 incident, latest_state.json
+    # is the most-frequently-updated runtime artifact (every 50 records
+    # during world_simulate); putting RSS here means stale-but-still-low-RSS
+    # = "stuck on slow source" while stale-AND-high-RSS = "memory wedge".
+    from .memory_guard import measure_memory
+    snap = measure_memory()
     state = {
         **prior,
         **payload,
         "updated_at": utc_now(),
+        "rss_gb": snap.rss_gb,
+        "free_ram_gb": snap.free_gb,
         "stage_history": stage_history[-200:],
     }
     _safe_write_json(path, state)
 
 
 def _safe_write_json(path: Path, payload: Any) -> None:
+    """Write JSON to ``path``; ride out transient Windows file-lock contention.
+
+    CB-020 fix: previously this caught only ``PermissionError`` (errno
+    EACCES = WinError 5), so the ``OSError [Errno 22] Invalid argument``
+    that ``Path.replace()`` raises when MoveFileEx loses a race against
+    a Streamlit reader propagated past this function. The adapter then
+    retried 3x in ``continuous_daemon`` and quarantined with
+    ``adapter_retry_ceiling_exceeded`` (this is the CB-019 hang root
+    cause documented in BUILD_LOG TASK-CB-020).
+
+    Now ``atomic_write_json`` itself does the backoff retry on the full
+    set of transient errnos (EACCES, EAGAIN, EBUSY, EINVAL, ENOENT) up
+    to ~12.7s worst-case. This wrapper keeps a final non-atomic fallback
+    that ALWAYS targets the canonical path (CB-020 F5) rather than
+    writing to a timestamped orphan that the daemon never reads back.
+    Reaching the fallback is itself an audit-queue-worthy event because
+    the atomic-write retry budget is generous — but this wrapper does
+    not currently surface that to audit (the caller emits an
+    AdapterAudit when the per-source retry ceiling triggers).
+    """
     try:
         atomic_write_json(path, payload)
         return
-    except PermissionError:
-        data = json.dumps(payload, sort_keys=True, indent=2) + "\n"
+    except OSError:
+        # CB-020 F1: catch the broader OSError surface (PermissionError,
+        # FileNotFoundError, BlockingIOError, etc. are all subclasses).
+        # The atomic_write_json retry already burned through 8 attempts;
+        # if we landed here, the destination is *deeply* contended.
+        # Fall through to the non-atomic last-resort path below.
+        pass
+
+    data = json.dumps(payload, sort_keys=True, indent=2) + "\n"
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    # CB-020 F5: last-resort fallback. ALWAYS write to the canonical
+    # ``path`` (loop until it works or we hit a hard ceiling). Never
+    # write to an orphan timestamped sibling — that's data loss
+    # masquerading as success because the daemon never reads back the
+    # orphan file. If even this fallback fails after the ceiling, raise
+    # so the caller (continuous_daemon retry loop + audit queue)
+    # surfaces the failure honestly.
+    last_exc: OSError | None = None
+    for attempt in range(8):
         try:
-            path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(data, encoding="utf-8")
             return
-        except PermissionError:
-            fallback = path.parent / f"{path.stem}_{utc_now().replace(':', '').replace('-', '')}{path.suffix}"
-            atomic_write_json(fallback, payload)
+        except OSError as exc:
+            last_exc = exc
+            if attempt == 7:
+                # Hard ceiling reached; surface the contention to the
+                # caller. The daemon's per-source retry loop will record
+                # this in the audit queue with the original errno.
+                raise
+            time.sleep(0.05 * (2 ** attempt))
+    if last_exc is not None:
+        raise last_exc
 
 
 def summarize_run(run: dict[str, Any]) -> dict[str, Any]:
