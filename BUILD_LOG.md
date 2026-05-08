@@ -2533,3 +2533,96 @@ Daemon relaunch:
 
 Codex exits here per instruction. No ScheduleWakeup, no polling loop,
 no daemon babysitting; Builder owns sustained monitoring.
+
+
+## 2026-05-08 14:30:00 EST -- TASK-CB-020 CL-1: CB-019 daemon hang post-mortem
+
+The CB-019 daemon relaunch (08:23:10 EST today, PID 27516,
+--cycles 1 --sleep-seconds 3600 --allow-network --force-refresh)
+DID NOT exit cleanly and DID NOT complete the cycle. Codex's
+CB-019 close referenced "expected completion ~09:45-10:00 EST"
+and exited the session without writing the actual outcome.
+Builder writes the post-mortem here per CB-020 CL-1.
+
+Outcome at 10:22:20 EST (last heartbeat write before hang):
+
+* status: running
+* due_sources: 17, completed: 2, quarantined: 6
+* audit_items: 6 entries, all severity:high, all reason
+  adapter_retry_ceiling_exceeded
+* All 6 quarantined sources share the same root cause:
+  OSError [Errno 22] Invalid argument: 'control_room/cache/
+  factory_runs/latest_run.json' (or latest_state.json)
+* Two sources (GBIF and HIV-1) also surfaced PermissionError
+  [WinError 5] Access is denied on '.evidence_graph.json.tmp'
+  and '.normalized_refs.json.tmp' atomic-write tmp files
+
+Quarantined source list:
+
+* source.math_primitives.peer_reviewed_catalog
+* source.kegg.ecoli_mg1655.metabolic_network
+* source.peer_reviewed.reaction_diffusion_benchmarks
+* source.gbif.jornada_basin.ecosystem_occurrences
+* source.peer_reviewed.prebiotic_chemistry_catalog
+* source.ncbi.hiv1.reference_quasispecies_pilot
+
+Records persisted at hang time: 999 records across 2 successful
+sources (KEGG ecoli 500 + NCBI HIV1 500). World traces went
+0 to 6 entries. With 6 of 17 sources quarantined, 11 sources
+either succeeded silently or didn't reach the routing stage.
+
+Hang mechanism: --cycles 1 should have exited cleanly via
+release_lock once the cycle reached "done" stage. Instead the
+daemon hung in world_simulate because the cycle counter
+incrementing path is gated on stage transition to "done", and
+the stage transition is gated on all due sources reaching a
+terminal state (completed OR quarantined). With 6 sources
+quarantined but the writer-side state-write race persistently
+re-firing, the audit-queue write itself failed in some cases,
+preventing terminal-state transition. Process did NOT crash
+(no Python in tasklist, but lock file from PID 27516 left on
+disk; Codex's close note also says no Python processes).
+Inference: lock cleanup ran via launch_safety atexit hook
+when the process exited, but the cycle "done" signal never
+fired so the heartbeat status remained "running".
+
+Root cause analysis (now resolved by CB-020 F1+F2+F5):
+
+factory_lowlevel/live_pipeline.py::_safe_write_json (pre-fix):
+
+    def _safe_write_json(path, payload):
+        try:
+            atomic_write_json(path, payload)
+            return
+        except PermissionError:  # <--- BUG: too narrow
+            ...
+
+PermissionError covers WinError 5 (errno EACCES = 13). It does
+NOT cover OSError [Errno 22] Invalid argument (errno EINVAL),
+which is what Windows MoveFileEx raises when the destination
+file has any open handle (Streamlit reader, Atlas Tower
+poller, anti-virus scanner, OneDrive sync). Pre-fix, EINVAL
+propagated past _safe_write_json, the adapter retried 3x in
+continuous_daemon, then quarantined.
+
+CB-020 F2 fix: atomic_write_json itself does the backoff retry
+on the full transient errno set (EACCES, EAGAIN, EBUSY,
+EINVAL, ENOENT) up to 12.7s worst-case (50ms doubling 8x).
+F1 broadens _safe_write_json's catch to OSError. F5 fixes the
+last-resort fallback to loop on the canonical path (no orphan
+timestamped sibling). Symmetric F3-style helper safe_read_json
+on the reader side prevents the equivalent reader-mid-write
+PermissionError.
+
+Lock cleanup at CL-1 time: the stale lock at PID 27516
+(2026-05-08T12:23:10Z) is still on disk. launch_safety.acquire_lock
+will auto-clear it on the next launch as orphaned_lock_overridden,
+so no manual unlink needed; documented here for the audit trail.
+
+Out-of-scope for CB-020 (separate ticket if it persists post-fix):
+the --cycles 1 not-exiting-cleanly bug. After F1+F2+F5 land, the
+expected behavior is the cycle reaches "done" stage with all 17
+sources in completed/quarantined terminal state, the cycle
+counter increments to 1, and the daemon exits via release_lock.
+If --cycles 1 still doesn't exit after the fix, CB-021 surfaces
+that as a daemon-state-machine bug.

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import time  # CB-020: backoff sleep in _safe_write_json fallback loop
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -544,18 +545,62 @@ def _write_live_state(path: Path, **payload: Any) -> None:
 
 
 def _safe_write_json(path: Path, payload: Any) -> None:
+    """Write JSON to ``path``; ride out transient Windows file-lock contention.
+
+    CB-020 fix: previously this caught only ``PermissionError`` (errno
+    EACCES = WinError 5), so the ``OSError [Errno 22] Invalid argument``
+    that ``Path.replace()`` raises when MoveFileEx loses a race against
+    a Streamlit reader propagated past this function. The adapter then
+    retried 3x in ``continuous_daemon`` and quarantined with
+    ``adapter_retry_ceiling_exceeded`` (this is the CB-019 hang root
+    cause documented in BUILD_LOG TASK-CB-020).
+
+    Now ``atomic_write_json`` itself does the backoff retry on the full
+    set of transient errnos (EACCES, EAGAIN, EBUSY, EINVAL, ENOENT) up
+    to ~12.7s worst-case. This wrapper keeps a final non-atomic fallback
+    that ALWAYS targets the canonical path (CB-020 F5) rather than
+    writing to a timestamped orphan that the daemon never reads back.
+    Reaching the fallback is itself an audit-queue-worthy event because
+    the atomic-write retry budget is generous — but this wrapper does
+    not currently surface that to audit (the caller emits an
+    AdapterAudit when the per-source retry ceiling triggers).
+    """
     try:
         atomic_write_json(path, payload)
         return
-    except PermissionError:
-        data = json.dumps(payload, sort_keys=True, indent=2) + "\n"
+    except OSError:
+        # CB-020 F1: catch the broader OSError surface (PermissionError,
+        # FileNotFoundError, BlockingIOError, etc. are all subclasses).
+        # The atomic_write_json retry already burned through 8 attempts;
+        # if we landed here, the destination is *deeply* contended.
+        # Fall through to the non-atomic last-resort path below.
+        pass
+
+    data = json.dumps(payload, sort_keys=True, indent=2) + "\n"
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    # CB-020 F5: last-resort fallback. ALWAYS write to the canonical
+    # ``path`` (loop until it works or we hit a hard ceiling). Never
+    # write to an orphan timestamped sibling — that's data loss
+    # masquerading as success because the daemon never reads back the
+    # orphan file. If even this fallback fails after the ceiling, raise
+    # so the caller (continuous_daemon retry loop + audit queue)
+    # surfaces the failure honestly.
+    last_exc: OSError | None = None
+    for attempt in range(8):
         try:
-            path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(data, encoding="utf-8")
             return
-        except PermissionError:
-            fallback = path.parent / f"{path.stem}_{utc_now().replace(':', '').replace('-', '')}{path.suffix}"
-            atomic_write_json(fallback, payload)
+        except OSError as exc:
+            last_exc = exc
+            if attempt == 7:
+                # Hard ceiling reached; surface the contention to the
+                # caller. The daemon's per-source retry loop will record
+                # this in the audit queue with the original errno.
+                raise
+            time.sleep(0.05 * (2 ** attempt))
+    if last_exc is not None:
+        raise last_exc
 
 
 def summarize_run(run: dict[str, Any]) -> dict[str, Any]:
