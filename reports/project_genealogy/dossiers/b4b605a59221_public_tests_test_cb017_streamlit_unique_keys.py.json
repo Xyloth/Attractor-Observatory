@@ -1,0 +1,805 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-017",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function.",
+        "Tests for CB-017 Streamlit duplicate-element-id hotfix.\n\nSymptom: ``World Observatory → math primitives drill-down`` raised\n``StreamlitDuplicateElementId`` because ``_render_math_primitives``\nemitted ``st.plotly_chart`` per record without a ``key=`` argument.\nStreamlit auto-generates element IDs from chart parameters, so\nmultiple charts whose serialized parameters happen to hash alike\ncollide.\n\nFi"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "7b7f2db989b96ab9db88855077015a5373ad3c2e",
+            "subject": "TASK-CB-017: hotfix Streamlit duplicate-element-id in drill-downs",
+            "ticket": "TASK-CB-017"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb017_streamlit_unique_keys.py#header",
+            "ticket": "CB-017"
+          },
+          "statement": "Tests for CB-017 Streamlit duplicate-element-id hotfix.\n\nSymptom: ``World Observatory → math primitives drill-down`` raised\n``StreamlitDuplicateElementId`` because ``_render_math_primitives``\nemitted ``st.plotly_chart`` per record without a ``key=`` argument.\nStreamlit auto-generates element IDs from chart parameters, so\nmultiple charts whose serialized parameters happen to hash alike\ncollide.\n\nFi"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb017_streamlit_unique_keys.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "7b7f2db989b96ab9db88855077015a5373ad3c2e",
+        "note": "TASK-CB-017: hotfix Streamlit duplicate-element-id in drill-downs",
+        "ref_id": "birth::public_tests/test_cb017_streamlit_unique_keys.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-017",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb017_streamlit_unique_keys.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb017_streamlit_unique_keys.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::public_tests/test_cb017_streamlit_unique_keys.py::docstring"
+      }
+    ],
+    "first_seen_commit": "7b7f2db989b96ab9db88855077015a5373ad3c2e",
+    "first_seen_date": "2026-05-07T13:37:03-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-017",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:e5ed5d77a957a2e9627e45750a6990ed550f8d9d036e8558839be103913aa2d5",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb017_streamlit_unique_keys.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_lint_finds_violation_in_synthetic_module, test_lint_helper_walker_finds_synthetic_pattern, test_lint_ignores_chart_with_key, test_no_chart_call_in_loop_without_key, test_no_helper_called_from_loop_emits_chart_without_key, test_render_atomic_molecular_two_atoms_no_collision, test_render_math_primitives_two_records_no_collision"
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb017_streamlit_unique_keys.py#tests"
+          },
+          "statement": "Module exposes 7 pytest functions: test_no_chart_call_in_loop_without_key, test_no_helper_called_from_loop_emits_chart_without_key, test_render_math_primitives_two_records_no_collision, test_render_atomic_molecular_two_atoms_no_collision, test_lint_finds_violation_in_synthetic_module, test_lint_ignores_chart_with_key..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb017_streamlit_unique_keys.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, ast, pathlib.Path, pytest, sys"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb017_streamlit_unique_keys.py"
+          },
+          "statement": "Tracked file with 521 lines / 18919 bytes at HEAD."
+        }
+      ],
+      "byte_count": 18919,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "ast",
+        "pathlib.Path",
+        "pytest",
+        "sys"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 232,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except SyntaxError:"
+        },
+        {
+          "line": 248,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except ValueError:"
+        },
+        {
+          "line": 267,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except SyntaxError:"
+        },
+        {
+          "line": 284,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except ValueError:"
+        },
+        {
+          "line": 303,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except Exception:"
+        },
+        {
+          "line": 345,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except Exception:"
+        },
+        {
+          "line": 408,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except Exception:"
+        }
+      ],
+      "line_count": 521,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::public_tests/test_cb017_streamlit_unique_keys.py",
+      "public_symbols": [
+        "test_lint_finds_violation_in_synthetic_module",
+        "test_lint_helper_walker_finds_synthetic_pattern",
+        "test_lint_ignores_chart_with_key",
+        "test_no_chart_call_in_loop_without_key",
+        "test_no_helper_called_from_loop_emits_chart_without_key",
+        "test_render_atomic_molecular_two_atoms_no_collision",
+        "test_render_math_primitives_two_records_no_collision"
+      ],
+      "test_functions": [
+        "test_no_chart_call_in_loop_without_key",
+        "test_no_helper_called_from_loop_emits_chart_without_key",
+        "test_render_math_primitives_two_records_no_collision",
+        "test_render_atomic_molecular_two_atoms_no_collision",
+        "test_lint_finds_violation_in_synthetic_module",
+        "test_lint_ignores_chart_with_key",
+        "test_lint_helper_walker_finds_synthetic_pattern"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb017_streamlit_unique_keys.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb017_streamlit_unique_keys.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb017_streamlit_unique_keys.py::test_no_chart_call_in_loop_without_key,test_no_helper_called_from_loop_emits_chart_without_key,test_render_math_primitives_two_records_no_collision",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb017_streamlit_unique_keys.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 232
+        },
+        {
+          "id": "error_branch",
+          "line": 248
+        },
+        {
+          "id": "error_branch",
+          "line": 267
+        },
+        {
+          "id": "error_branch",
+          "line": 284
+        },
+        {
+          "id": "error_branch",
+          "line": 303
+        },
+        {
+          "id": "error_branch",
+          "line": 345
+        },
+        {
+          "id": "error_branch",
+          "line": 408
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 5,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 5,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 232,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except SyntaxError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 248,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except ValueError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 267,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except SyntaxError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 284,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except ValueError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 303,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except Exception:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 345,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except Exception:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 408,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except Exception:"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 18919,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 521,
+    "path": "public_tests/test_cb017_streamlit_unique_keys.py",
+    "path_hash": "sha256:16108e1e8c0eba401284007254a4e9dcbe43f13b433a9179d2d20d6510365643",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 232: except SyntaxError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb017_streamlit_unique_keys.py#L232",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb017_streamlit_unique_keys.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb017_streamlit_unique_keys.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except SyntaxError:' -- public_tests/test_cb017_streamlit_unique_keys.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 248: except ValueError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb017_streamlit_unique_keys.py#L248",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb017_streamlit_unique_keys.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb017_streamlit_unique_keys.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except ValueError:' -- public_tests/test_cb017_streamlit_unique_keys.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 267: except SyntaxError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb017_streamlit_unique_keys.py#L267",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb017_streamlit_unique_keys.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb017_streamlit_unique_keys.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except SyntaxError:' -- public_tests/test_cb017_streamlit_unique_keys.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 284: except ValueError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb017_streamlit_unique_keys.py#L284",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb017_streamlit_unique_keys.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb017_streamlit_unique_keys.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except ValueError:' -- public_tests/test_cb017_streamlit_unique_keys.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 303: except Exception:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb017_streamlit_unique_keys.py#L303",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb017_streamlit_unique_keys.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb017_streamlit_unique_keys.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except Exception:' -- public_tests/test_cb017_streamlit_unique_keys.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 345: except Exception:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb017_streamlit_unique_keys.py#L345",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb017_streamlit_unique_keys.py::lvs::5"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb017_streamlit_unique_keys.py-lvs-5",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except Exception:' -- public_tests/test_cb017_streamlit_unique_keys.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 408: except Exception:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb017_streamlit_unique_keys.py#L408",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb017_streamlit_unique_keys.py::lvs::6"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb017_streamlit_unique_keys.py-lvs-6",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except Exception:' -- public_tests/test_cb017_streamlit_unique_keys.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [],
+    "cohort": {
+      "cohort_id": "TASK-CB-017",
+      "members": [
+        "public_tests/test_cb017_streamlit_unique_keys.py"
+      ],
+      "spawn_ticket": "TASK-CB-017"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "7b7f2db989b96ab9db88855077015a5373ad3c2e",
+        "edge_id": "spawned_by_ticket::TASK-CB-017->public_tests/test_cb017_streamlit_unique_keys.py::336",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "7b7f2db989b96ab9db88855077015a5373ad3c2e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb017_streamlit_unique_keys.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-017",
+        "target": "public_tests/test_cb017_streamlit_unique_keys.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb017_streamlit_unique_keys.py::4456",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_cb017_streamlit_unique_keys.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_cb017_streamlit_unique_keys.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_cb017_streamlit_unique_keys.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-017->public_tests/test_cb017_streamlit_unique_keys.py::336",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "7b7f2db989b96ab9db88855077015a5373ad3c2e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb017_streamlit_unique_keys.py"
+          }
+        ],
+        "source": "TASK-CB-017"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb017_streamlit_unique_keys.py::4456",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_cb017_streamlit_unique_keys.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_cb017_streamlit_unique_keys.py"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      }
+    ],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb017_streamlit_unique_keys.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

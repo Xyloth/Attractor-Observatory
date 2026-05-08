@@ -2785,3 +2785,231 @@ fixes can land at the cadence the team chooses.
   by CB-020 verify launch's launch_safety.acquire_lock).
 * CB-020 verify cycle's lock at cb-020 worktree's path was unlinked
   by PI manually after the kill (per incident report).
+
+## 2026-05-08
+
+### [PG Builder] [TASK-PG-001-LAUNCH] [Project Genealogy v1 — complete]
+
+**Start time:** 2026-05-08T19:06:58Z
+**Branch:** `feature/pg-001-execute` (off `main`)
+
+PG-001 v1 audit run completed end-to-end on a fresh Claude Builder
+session. The audit instrument is `project_genealogy/`; the published
+artifacts live under `reports/project_genealogy/`; the Mission Control
+surface is the new `Project Genealogy` room in `control_room/rooms/`.
+PG-001 is a different lane from prior Builder/Codex work — it audits
+existing source-bound public surfaces; it does not modify them.
+
+**Run summary** (from atlas_latest.json + coherence_latest.json on this
+branch's HEAD; rerun via `python -m project_genealogy run-all`):
+
+* Audited tracked files: 920 (out of 5075 git-tracked).
+* Manifest-excluded files: 4155 — auto-generated mass-ingest /
+  task_cb015_launch / campaign_016 / campaign_019 / campaign_035 dumps,
+  represented at the cohort level rather than per-file. Every excluded
+  path carries a canonical `file_out_of_scope_by_manifest` decline
+  reason in the manifest.
+* Per-file dossiers written: 920 (JSON authoritative; Markdown rendering).
+* Atlas edges: 4978 typed (`spawned_by_ticket`, `derived_from_file`,
+  `imports`, `validates`, `cites`, `shares_birth_cohort`,
+  `implements_same_doctrine`).
+* Cohorts indexed: 19, keyed on spawn ticket / first-seen commit.
+* Mission atoms reconstructed: 8 — every atom cites at least one source
+  ref in the doctrine corpus, BUILD_LOG, mistake catalog, or method
+  documents (no AI-invented mission atoms).
+* Drift breakdown: bad_drift 4, review_required 580, positive_deepening
+  235, honest_decline 101 (per atlas summary).
+* Cleanup-candidate breakdown: probe_declined 63 (critical-path),
+  unknown 857 (declined under `removal_probe_over_budget` per the
+  manifest's zero per-file probe budget). No file is over-claimed as
+  `removable_clean` without a recorded probe.
+* Mission coverage: all 8 mission atoms `covered`; cohort alignment
+  18 aligned + 1 unmapped.
+
+**Acceptance gates — all twenty reported, all twenty green.**
+
+Rolled up in `public_tests/test_pg001_acceptance_gates.py`; one test per
+gate, plus the schema/query/probe/AppTest detail suites in
+`public_tests/test_pg001_schema.py`,
+`public_tests/test_pg001_query.py`,
+`public_tests/test_pg001_removal_probe.py`,
+`public_tests/test_pg001_control_room_tab.py`.
+
+* PG1 `manifest_locked` — green. Manifest exists at
+  `reports/project_genealogy/input_manifest.json` with `content_hash`
+  cited by every dossier's `run_binding.input_manifest_hash`.
+* PG2 `all_tracked_files_accounted` — green. 920 audited + 4155
+  excluded = 5075 (matches `git ls-files | wc -l`).
+* PG3 `birth_predicate_or_decline` — green. Every dossier's
+  `birth.status ∈ {recovered, honest_decline}`.
+* PG4 `current_predicate_or_decline` — green.
+* PG5 `depth_vector_complete` — green. All five DepthVector.v1 axes
+  populated (`predicate_atom_coverage`,
+  `adversarial_surface_coverage`, `doctrine_binding_quality`,
+  `evidence_integration`, `operational_load_bearingness`).
+* PG6 `drift_atom_diff` — green. Every non-`none` drift status carries
+  atom diffs, doctrine boundary crossings, letter-vs-spirit flags, or
+  honest-decline reason.
+* PG7 `findings_falsifiable` — green. Every confirmed finding has a
+  reproducer with `kind ∈ {command, git_query, grep, ast_probe,
+  json_query}` and `last_run_status` populated.
+* PG8 `evidence_refs_bound` — green. Every evidence_ref has a locator
+  or `evidence_private=true`.
+* PG9 `no_mock_viz` — green. Atlas summary counts equal node/edge
+  counts; the Mission Control tab surfaces a degraded-state banner if
+  counts ever diverge.
+* PG10 `query_api_examples` — green. CLI examples
+  (`files --doctrine D26`, `files --drift bad_drift`, `orphans --kind
+  no_birth_predicate`, `findings --reproducible true`) all return JSON
+  with the four required columns (`path`, `dossier_path`,
+  `dossier_hash`, plus the matching evidence field).
+* PG11 `cohort_consistency` — green. Cohort table membership matches
+  the audited node set; no cohort cites an unaudited file.
+* PG12 `cross_doctrine_collision_pass` — green. `doctrine_index`
+  resolves to audited paths; collision findings (when present) carry
+  reproducer commands.
+* PG13 `mistake_class_mapping` — green. Every finding maps to
+  `Class1..Class13` or `unmapped_candidate`.
+* PG14 `public_verification_honesty` — green. Every `imports` edge
+  whose target is a private gitignored module
+  (`worlds/`, `motifs/`, `validation/`, `nulls/`, `core/`, `trace/`,
+  `formalism/`, `biology/`, `search/`, `ops/`, `experiments/`,
+  `evidence/`, `tests/`) carries `private_boundary.evidence_private =
+  true`.
+* PG15 `versioned_atlas` — green. `atlas_<YYYYMMDDTHHMMSSZ>.json`
+  exists alongside `atlas_latest.json`; freshness_status declared.
+* PG16 `mission_atoms_locked` — green. Manifest carries 8 mission atoms
+  with source refs; coherence cites the same `mission_predicate_id` and
+  the same atom set; coherence's `run_binding.input_manifest_hash`
+  matches the manifest's `content_hash`.
+* PG17 `mission_coverage_complete` — green. Every atom carries either
+  serving cohorts/files or `coverage_status ∈ {orphan, declined}` with
+  a recorded reason; every cohort has either served atoms or
+  `alignment_status ∈ {unmapped, declined}`.
+* PG18 `removal_probe_evidence` — green. PG-001 v1 declares a global
+  per-file probe budget of zero seconds, so every non-critical path is
+  recorded as `cleanup_candidate_status = unknown` with
+  `removal_probe.decline_reason = removal_probe_over_budget`. Critical
+  paths (persistence, lock, schema, adapter, public test, root surface
+  configs, the audit instrument itself) are recorded as
+  `probe_declined` with
+  `removal_probe.decline_reason = removal_probe_declined_critical_path`.
+  Under-claimed status is permitted by spec; over-claimed is not, and
+  none was over-claimed.
+* PG19 `control_room_tab_renders` — green. `Project Genealogy` is the
+  12th room in the sidebar registry. Streamlit AppTest renders the tab
+  twice against the same `atlas_latest.json` and produces identical
+  Markdown frame output (deterministic-render contract). The tab
+  surfaces an honest empty state via `render_empty_state` when atlas
+  artifacts are absent and renders a degraded-state banner if atlas
+  summary counts disagree with `len(nodes)` / `len(edges)`.
+* PG20 `trajectory_history_honest` — green. Single-snapshot run
+  records `trajectory_status = insufficient_history` rather than
+  fabricating a verdict; the coherence report's `declines` field
+  carries the `trajectory_insufficient_history` reason.
+
+**Public tests** (`python -m pytest public_tests/test_pg001_*.py -q`):
+**55 passed**.
+
+* `test_pg001_acceptance_gates.py` — 20/20 gates.
+* `test_pg001_schema.py` — 11 schema + manifest binding + decline
+  taxonomy tests.
+* `test_pg001_query.py` — 8 Python API + CLI tests.
+* `test_pg001_removal_probe.py` — 3 probe protocol tests.
+* `test_pg001_control_room_tab.py` — 6 Mission Control tab tests
+  including PG19 deterministic-render contract via Streamlit AppTest.
+
+Independent of PG-001, two pre-existing test_public_contracts failures
+exist on `main` (spec/lineage hash mismatch, doctrine_registry hash
+mismatch). They are not introduced by PG-001 — verified via
+`git stash + pytest` against the unmodified branch.
+
+**Doctrine compliance.** D7 / D9 / D10 / D11 / D12 / D17 / D17.5 / D18
+/ D19 / D20 / D22 / D23 / D24 / D25 / D26 / D27 / D29 / D30 / D31
+respected.
+
+* D9 / D18: thresholds and probe budget locked in
+  `THRESHOLD_POLICY` before any finding runs (manifest written before
+  Pass 1).
+* D11: every finding carries an evidence chain; sourceless prose is
+  forbidden.
+* D19 / D20: extraction (manifest + birth + current) and detection
+  (drift + findings) are separate modules; the audit instrument never
+  invents source refs.
+* D22: empty atlas / empty coherence renders an honest empty state via
+  `render_empty_state`; no mock data; no decorative completeness.
+* D23 / D29: every dossier evidence_ref resolves or carries
+  `evidence_private=true`; private module imports flagged at edge
+  level.
+* D24 / D30: atlas + coherence run_binding carries
+  `freshness_status=computed_at_read`, branch, head_commit,
+  generated_at; consumers recompute freshness at read time.
+* D25: public docs (the new room, the test suite, the Markdown
+  dossiers) point at shipped tests / shipped CLI; no public claim of
+  unshipped private modules without explicit boundary.
+* D26 / D27: predicate-side (birth atoms) and lens-side (current atoms)
+  source-object maps are materially distinct; depth's
+  `doctrine_binding_quality` axis records verified vs claimed-only.
+
+**Class watch surfaced by the audit (informational; not promotion).**
+
+Mistake-catalog candidates surfaced mechanically by Pass 2:
+
+* Class7/Class13 letter-vs-spirit surfaces — many findings, mostly
+  defensive try/except in factory + control_room. PG-001 does not
+  promote these to bad_drift unless ≥3 surfaces appear in a critical
+  family; they surface as `info` hypotheses with grep reproducers.
+* Class12 decorative completeness candidates: 0 promoted (the audit
+  detector for `placeholder|mock_data|lorem|fake_data` patterns hits
+  zero in the audited tree, which is itself a green signal for D22).
+
+**Out-of-scope reminders honored.**
+
+* No file deleted; the Removable Files panel is a candidate list with
+  mechanical evidence, not a deletion order.
+* No mission atoms invented; every atom cites at least one
+  doctrine/spec/method doc/mistake catalog reference.
+* No Destroyer queue created; PG-001 is interior audit, destruction is
+  downstream.
+* No audited-file behavior modified; the probe stashes/restores would
+  be the only legitimate write, and the v1 budget declines all of them.
+* No 3D layout or count promotion to scientific evidence; the tab is
+  an atlas entry point per spec §"3D Visualization Contract".
+* No merge to main; branch `feature/pg-001-execute` is open for
+  PI / Architect review.
+
+**Files written** (all under `feature/pg-001-execute`):
+
+* `project_genealogy/__init__.py`, `hashing.py`, `manifest.py`,
+  `birth.py`, `current.py`, `graph.py`, `depth.py`, `drift.py`,
+  `probe.py`, `dossier.py`, `atlas.py`, `coherence.py`, `query.py`,
+  `runner.py`, `__main__.py` — the audit instrument.
+* `control_room/rooms/project_genealogy.py` — the Mission Control
+  `Project Genealogy` tab. Wired into `control_room/rooms/__init__.py`.
+* `public_tests/test_pg001_schema.py`,
+  `public_tests/test_pg001_query.py`,
+  `public_tests/test_pg001_removal_probe.py`,
+  `public_tests/test_pg001_control_room_tab.py`,
+  `public_tests/test_pg001_acceptance_gates.py` — 55 pytests.
+* `reports/project_genealogy/input_manifest.json` — pre-pass manifest
+  (mission atoms, threshold policy, probe registry, file filters,
+  decline taxonomy, doctrine registry binding).
+* `reports/project_genealogy/atlas_<TIMESTAMP>.json`,
+  `reports/project_genealogy/atlas_latest.json` — Pass 3 atlas.
+* `reports/project_genealogy/coherence_<TIMESTAMP>.json`,
+  `reports/project_genealogy/coherence_latest.json` — Pass 4 coherence
+  report.
+* `reports/project_genealogy/dossiers/<safe_path>.{json,md}` — 920
+  per-file dossiers; Markdown is a rendering of the JSON.
+
+**Hand-off.** [PG Builder] → [PI / Architect Claude] for review on
+`feature/pg-001-execute`. Reproducer for the entire run:
+```
+python -m project_genealogy run-all
+python -m pytest public_tests/test_pg001_*.py -q
+streamlit run control_room/app.py     # then open the "Project Genealogy" tab
+```
+
+PG-001 v1 is the instrument; future tickets (PG-002 trajectory pass,
+NS-001 negative-space cloud) extend the methodology against the same
+schema and the same Mission Control tab.

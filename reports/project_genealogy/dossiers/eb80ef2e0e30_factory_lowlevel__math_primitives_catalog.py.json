@@ -1,0 +1,757 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-015",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes runnable factory components consumed by the daemon/pipeline.",
+        "CB-015 T3 — 200-entry math primitives catalog.\n\n200 canonical dynamical-system primitives drawn from peer-reviewed\nliterature. Every entry has a DOI to a primary source — Strogatz,\nGuckenheimer & Holmes, Sprott (1994 + 1997), Kuznetsov, Pomeau &\nManneville, Chua, Lorenz, Rössler, Chen, Lu, etc.\n\nThis module is imported by ``factory_lowlevel/adapters.py``'s\n``MATH_PRIMITIVE_SEEDS`` so the catalog c"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "factory_module_exposes_callable",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D14",
+            "D17.5"
+          ],
+          "forbidden_failure_modes": [
+            "module is a stub (Class 5)",
+            "module hardcodes scenario-internal answers (Class 4)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "0f5947c275a05c6cfc48e149ca4e3cd1733039bd",
+            "subject": "TASK-CB-015 Phase A: adapter expansion + 200-entry math catalog",
+            "ticket": "TASK-CB-015"
+          },
+          "statement": "Module exposes runnable factory components consumed by the daemon/pipeline."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/_math_primitives_catalog.py#header",
+            "ticket": "CB-015"
+          },
+          "statement": "CB-015 T3 — 200-entry math primitives catalog.\n\n200 canonical dynamical-system primitives drawn from peer-reviewed\nliterature. Every entry has a DOI to a primary source — Strogatz,\nGuckenheimer & Holmes, Sprott (1994 + 1997), Kuznetsov, Pomeau &\nManneville, Chua, Lorenz, Rössler, Chen, Lu, etc.\n\nThis module is imported by ``factory_lowlevel/adapters.py``'s\n``MATH_PRIMITIVE_SEEDS`` so the catalog c"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "module hardcodes scenario-internal answers (Class 4)",
+        "module is a stub (Class 5)"
+      ],
+      "predicate_id": "birth::factory_lowlevel/_math_primitives_catalog.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "0f5947c275a05c6cfc48e149ca4e3cd1733039bd",
+        "note": "TASK-CB-015 Phase A: adapter expansion + 200-entry math catalog",
+        "ref_id": "birth::factory_lowlevel/_math_primitives_catalog.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-015",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::factory_lowlevel/_math_primitives_catalog.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/_math_primitives_catalog.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::factory_lowlevel/_math_primitives_catalog.py::docstring"
+      }
+    ],
+    "first_seen_commit": "0f5947c275a05c6cfc48e149ca4e3cd1733039bd",
+    "first_seen_date": "2026-05-07T12:23:48-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-015",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:7e0dba044bf6bc4ea2c9e5e8aa9342b7a72922542bef558897436a68bfd3db04",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "factory_lowlevel/_math_primitives_catalog.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, typing.Any"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/_math_primitives_catalog.py"
+          },
+          "statement": "Tracked file with 919 lines / 137809 bytes at HEAD."
+        }
+      ],
+      "byte_count": 137809,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 919,
+      "observed_doctrine_bindings": [
+        "D1",
+        "D2",
+        "D3",
+        "D4"
+      ],
+      "predicate_id": "current::factory_lowlevel/_math_primitives_catalog.py",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/_math_primitives_catalog.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::factory_lowlevel/_math_primitives_catalog.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D1",
+        "D2",
+        "D3",
+        "D4"
+      ],
+      "verified": [
+        "D1",
+        "D2",
+        "D3",
+        "D4"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D14",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D14",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D14::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D17.5",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D17.5",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D17.5::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "factory",
+    "byte_count": 137809,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 919,
+    "path": "factory_lowlevel/_math_primitives_catalog.py",
+    "path_hash": "sha256:0ff9048f4402a2a9f4bfa5715360368d589a0ec93fec7af7668274f425b5fd11",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/_math_primitives_catalog.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/eb80ef2e0e30_factory_lowlevel__math_primitives_catalog.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/_math_primitives_catalog.py->project_telemetry/factory_daemon_sessions.jsonl::1487",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-015",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-015"
+          }
+        ],
+        "target": "project_telemetry/factory_daemon_sessions.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D1::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4327",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D1",
+            "note": "shared mention of doctrine D1",
+            "ref_id": "doctrine::D1::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D2::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4338",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D2",
+            "note": "shared mention of doctrine D2",
+            "ref_id": "doctrine::D2::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D3::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4347",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D3",
+            "note": "shared mention of doctrine D3",
+            "ref_id": "doctrine::D3::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D4::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4359",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D4",
+            "note": "shared mention of doctrine D4",
+            "ref_id": "doctrine::D4::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-015",
+      "members": [
+        "factory_lowlevel/_math_primitives_catalog.py",
+        "project_telemetry/factory_daemon_sessions.jsonl",
+        "project_telemetry/factory_daemon_state.json",
+        "public_tests/test_cb015_adapter_expansion.py"
+      ],
+      "spawn_ticket": "TASK-CB-015"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "0f5947c275a05c6cfc48e149ca4e3cd1733039bd",
+        "edge_id": "spawned_by_ticket::TASK-CB-015->factory_lowlevel/_math_primitives_catalog.py::253",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "0f5947c275a05c6cfc48e149ca4e3cd1733039bd",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-015",
+        "target": "factory_lowlevel/_math_primitives_catalog.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D1",
+        "edge_id": "implements_same_doctrine::D1::docs/screenshots/07-doctrine-console.png->factory_lowlevel/_math_primitives_catalog.py::4326",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D1",
+            "note": "shared mention of doctrine D1",
+            "ref_id": "doctrine::D1::docs/screenshots/07-doctrine-console.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/screenshots/07-doctrine-console.png",
+        "target": "factory_lowlevel/_math_primitives_catalog.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D2",
+        "edge_id": "implements_same_doctrine::D2::docs/screenshots/07-doctrine-console.png->factory_lowlevel/_math_primitives_catalog.py::4337",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D2",
+            "note": "shared mention of doctrine D2",
+            "ref_id": "doctrine::D2::docs/screenshots/07-doctrine-console.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/screenshots/07-doctrine-console.png",
+        "target": "factory_lowlevel/_math_primitives_catalog.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D3",
+        "edge_id": "implements_same_doctrine::D3::docs/screenshots/05-project-graph.png->factory_lowlevel/_math_primitives_catalog.py::4346",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D3",
+            "note": "shared mention of doctrine D3",
+            "ref_id": "doctrine::D3::docs/screenshots/05-project-graph.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/screenshots/05-project-graph.png",
+        "target": "factory_lowlevel/_math_primitives_catalog.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D4",
+        "edge_id": "implements_same_doctrine::D4::docs/screenshots/06-basin-floor-lab.png->factory_lowlevel/_math_primitives_catalog.py::4358",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D4",
+            "note": "shared mention of doctrine D4",
+            "ref_id": "doctrine::D4::docs/screenshots/06-basin-floor-lab.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/screenshots/06-basin-floor-lab.png",
+        "target": "factory_lowlevel/_math_primitives_catalog.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/_math_primitives_catalog.py->project_telemetry/factory_daemon_sessions.jsonl::1487",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-015",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-015"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/_math_primitives_catalog.py",
+        "target": "project_telemetry/factory_daemon_sessions.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D1",
+        "edge_id": "implements_same_doctrine::D1::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4327",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D1",
+            "note": "shared mention of doctrine D1",
+            "ref_id": "doctrine::D1::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/_math_primitives_catalog.py",
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D2",
+        "edge_id": "implements_same_doctrine::D2::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4338",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D2",
+            "note": "shared mention of doctrine D2",
+            "ref_id": "doctrine::D2::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/_math_primitives_catalog.py",
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D3",
+        "edge_id": "implements_same_doctrine::D3::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4347",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D3",
+            "note": "shared mention of doctrine D3",
+            "ref_id": "doctrine::D3::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/_math_primitives_catalog.py",
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D4",
+        "edge_id": "implements_same_doctrine::D4::factory_lowlevel/_math_primitives_catalog.py->reports/campaign_021/factory_intake_dock_task033.png::4359",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D4",
+            "note": "shared mention of doctrine D4",
+            "ref_id": "doctrine::D4::factory_lowlevel/_math_primitives_catalog.py::reports/campaign_021/factory_intake_dock_task033.png"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/_math_primitives_catalog.py",
+        "target": "reports/campaign_021/factory_intake_dock_task033.png"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-015->factory_lowlevel/_math_primitives_catalog.py::253",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "0f5947c275a05c6cfc48e149ca4e3cd1733039bd",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "source": "TASK-CB-015"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D1::docs/screenshots/07-doctrine-console.png->factory_lowlevel/_math_primitives_catalog.py::4326",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D1",
+            "note": "shared mention of doctrine D1",
+            "ref_id": "doctrine::D1::docs/screenshots/07-doctrine-console.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "source": "docs/screenshots/07-doctrine-console.png"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D2::docs/screenshots/07-doctrine-console.png->factory_lowlevel/_math_primitives_catalog.py::4337",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D2",
+            "note": "shared mention of doctrine D2",
+            "ref_id": "doctrine::D2::docs/screenshots/07-doctrine-console.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "source": "docs/screenshots/07-doctrine-console.png"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D3::docs/screenshots/05-project-graph.png->factory_lowlevel/_math_primitives_catalog.py::4346",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D3",
+            "note": "shared mention of doctrine D3",
+            "ref_id": "doctrine::D3::docs/screenshots/05-project-graph.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "source": "docs/screenshots/05-project-graph.png"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D4::docs/screenshots/06-basin-floor-lab.png->factory_lowlevel/_math_primitives_catalog.py::4358",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D4",
+            "note": "shared mention of doctrine D4",
+            "ref_id": "doctrine::D4::docs/screenshots/06-basin-floor-lab.png::factory_lowlevel/_math_primitives_catalog.py"
+          }
+        ],
+        "source": "docs/screenshots/06-basin-floor-lab.png"
+      }
+    ],
+    "siblings": [
+      "project_telemetry/factory_daemon_sessions.jsonl",
+      "project_telemetry/factory_daemon_state.json",
+      "public_tests/test_cb015_adapter_expansion.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::factory_lowlevel/_math_primitives_catalog.py::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

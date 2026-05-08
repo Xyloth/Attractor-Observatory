@@ -1,0 +1,721 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-013",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function.",
+        "Tests for CB-013 launch readiness mechanics.\n\nCovers:\n  * launch_safety.acquire_lock / release_lock\n  * launch_safety.verify_resume (clean / mid-flight / aborted)\n  * launch_safety.check_factory_store_integrity (uniqueness, orphan refs)\n  * launch_safety.write_checkpoint (atomic + checkpoint_at field)\n  * progress.load_target_densities (targets doc parsing + D22 absence)\n  * progress.write_ingesti"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "subject": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+            "ticket": "CB-013"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D22"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb013_launch_readiness.py#header",
+            "ticket": "CB-013"
+          },
+          "statement": "Tests for CB-013 launch readiness mechanics.\n\nCovers:\n  * launch_safety.acquire_lock / release_lock\n  * launch_safety.verify_resume (clean / mid-flight / aborted)\n  * launch_safety.check_factory_store_integrity (uniqueness, orphan refs)\n  * launch_safety.write_checkpoint (atomic + checkpoint_at field)\n  * progress.load_target_densities (targets doc parsing + D22 absence)\n  * progress.write_ingesti"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D22",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb013_launch_readiness.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "note": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+        "ref_id": "birth::public_tests/test_cb013_launch_readiness.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-013",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb013_launch_readiness.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb013_launch_readiness.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::public_tests/test_cb013_launch_readiness.py::docstring"
+      }
+    ],
+    "first_seen_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+    "first_seen_date": "2026-05-07T08:59:39-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-013",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:0bdc67e384a804acb96980140eab1afb28c03773d43471fbd5fa81b5f87aa214",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb013_launch_readiness.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_acquire_lock_clean_first_start, test_acquire_lock_overrides_orphaned_lock, test_acquire_lock_refuses_when_holder_alive, test_check_factory_store_integrity_detects_duplicate_record_ids, test_check_factory_store_integrity_detects_orphan_evidence_edges, test_check_factory_store_integrity_passes_clean_store, test_load_target_densities_live_doc_has_15_worlds, test_load_target_densities_parses_canonical_block..."
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb013_launch_readiness.py#tests"
+          },
+          "statement": "Module exposes 18 pytest functions: test_acquire_lock_clean_first_start, test_acquire_lock_refuses_when_holder_alive, test_acquire_lock_overrides_orphaned_lock, test_release_lock_only_when_owned, test_release_lock_idempotent_on_missing, test_verify_resume_proceeds_on_no_prior_heartbeat..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb013_launch_readiness.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, json, os, pathlib.Path, pytest, sys..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb013_launch_readiness.py"
+          },
+          "statement": "Tracked file with 373 lines / 13417 bytes at HEAD."
+        }
+      ],
+      "byte_count": 13417,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "json",
+        "os",
+        "pathlib.Path",
+        "pytest",
+        "sys",
+        "time"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 245,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "assert payload[\"checkpoint_at\"].endswith(\"Z\")"
+        }
+      ],
+      "line_count": 373,
+      "observed_doctrine_bindings": [
+        "D22",
+        "D9"
+      ],
+      "predicate_id": "current::public_tests/test_cb013_launch_readiness.py",
+      "public_symbols": [
+        "test_acquire_lock_clean_first_start",
+        "test_acquire_lock_overrides_orphaned_lock",
+        "test_acquire_lock_refuses_when_holder_alive",
+        "test_check_factory_store_integrity_detects_duplicate_record_ids",
+        "test_check_factory_store_integrity_detects_orphan_evidence_edges",
+        "test_check_factory_store_integrity_passes_clean_store",
+        "test_load_target_densities_live_doc_has_15_worlds",
+        "test_load_target_densities_parses_canonical_block",
+        "test_load_target_densities_returns_empty_when_doc_missing",
+        "test_release_lock_idempotent_on_missing",
+        "test_release_lock_only_when_owned",
+        "test_verify_resume_aborts_on_unknown_status",
+        "test_verify_resume_proceeds_on_clean_shutdown",
+        "test_verify_resume_proceeds_on_no_prior_heartbeat",
+        "test_verify_resume_runs_integrity_check_on_mid_flight",
+        "test_write_checkpoint_adds_checkpoint_at_field",
+        "test_write_ingestion_progress_per_world",
+        "test_write_ingestion_progress_zero_target_when_doc_missing"
+      ],
+      "test_functions": [
+        "test_acquire_lock_clean_first_start",
+        "test_acquire_lock_refuses_when_holder_alive",
+        "test_acquire_lock_overrides_orphaned_lock",
+        "test_release_lock_only_when_owned",
+        "test_release_lock_idempotent_on_missing",
+        "test_verify_resume_proceeds_on_no_prior_heartbeat",
+        "test_verify_resume_proceeds_on_clean_shutdown",
+        "test_verify_resume_aborts_on_unknown_status",
+        "test_verify_resume_runs_integrity_check_on_mid_flight",
+        "test_check_factory_store_integrity_detects_duplicate_record_ids",
+        "test_check_factory_store_integrity_detects_orphan_evidence_edges",
+        "test_check_factory_store_integrity_passes_clean_store",
+        "test_write_checkpoint_adds_checkpoint_at_field",
+        "test_load_target_densities_parses_canonical_block",
+        "test_load_target_densities_returns_empty_when_doc_missing",
+        "test_load_target_densities_live_doc_has_15_worlds",
+        "test_write_ingestion_progress_per_world",
+        "test_write_ingestion_progress_zero_target_when_doc_missing"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb013_launch_readiness.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb013_launch_readiness.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb013_launch_readiness.py::test_acquire_lock_clean_first_start,test_acquire_lock_refuses_when_holder_alive,test_acquire_lock_overrides_orphaned_lock",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb013_launch_readiness.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D22",
+        "D9"
+      ],
+      "verified": [
+        "D22",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 5,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 5,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 245,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "assert payload[\"checkpoint_at\"].endswith(\"Z\")"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 13417,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 373,
+    "path": "public_tests/test_cb013_launch_readiness.py",
+    "path_hash": "sha256:26ee3300f279f718abc25dc19ee52ba3c2666c34552fedc9b9d956c77a15a910",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 245: assert payload[\"checkpoint_at\"].endswith(\"Z\")",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb013_launch_readiness.py#L245",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb013_launch_readiness.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb013_launch_readiness.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'assert payload[\"checkpoint_at\"].endswith(\"Z\")' -- public_tests/test_cb013_launch_readiness.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_cb013_launch_readiness.py->scripts/SETUP_WORKTREE.md::1274",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "target": "scripts/SETUP_WORKTREE.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::public_tests/test_cb013_launch_readiness.py->public_tests/test_cb016_persistence_load_on_init.py::3695",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::public_tests/test_cb013_launch_readiness.py::public_tests/test_cb016_persistence_load_on_init.py"
+          }
+        ],
+        "target": "public_tests/test_cb016_persistence_load_on_init.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb013_launch_readiness.py->reports/campaign_013/multisubstrate_floor_connectivity_v2.json::3903",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb013_launch_readiness.py::reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+          }
+        ],
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-013",
+      "members": [
+        "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "BUILDER_LAUNCH_PROTOCOL.md",
+        "factory_lowlevel/launch_safety.py",
+        "factory_lowlevel/progress.py",
+        "papers/methods/INGESTION_TARGETS.md",
+        "public_tests/test_cb013_launch_readiness.py",
+        "scripts/SETUP_WORKTREE.md",
+        "scripts/setup_worktree.bat",
+        "scripts/setup_worktree.sh"
+      ],
+      "spawn_ticket": "CB-013"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "edge_id": "spawned_by_ticket::CB-013->public_tests/test_cb013_launch_readiness.py::333",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-013",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1273",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->public_tests/test_cb013_launch_readiness.py::3694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::3902",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb011_polish_audit.py::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb011_polish_audit.py",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb013_launch_readiness.py->scripts/SETUP_WORKTREE.md::1274",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb013_launch_readiness.py",
+        "target": "scripts/SETUP_WORKTREE.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::public_tests/test_cb013_launch_readiness.py->public_tests/test_cb016_persistence_load_on_init.py::3695",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::public_tests/test_cb013_launch_readiness.py::public_tests/test_cb016_persistence_load_on_init.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb013_launch_readiness.py",
+        "target": "public_tests/test_cb016_persistence_load_on_init.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb013_launch_readiness.py->reports/campaign_013/multisubstrate_floor_connectivity_v2.json::3903",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb013_launch_readiness.py::reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb013_launch_readiness.py",
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-013->public_tests/test_cb013_launch_readiness.py::333",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "source": "CB-013"
+      },
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1273",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "source": "papers/methods/INGESTION_TARGETS.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->public_tests/test_cb013_launch_readiness.py::3694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::3902",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb011_polish_audit.py::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "source": "public_tests/test_cb011_polish_audit.py"
+      }
+    ],
+    "siblings": [
+      "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+      "BUILDER_LAUNCH_PROTOCOL.md",
+      "factory_lowlevel/launch_safety.py",
+      "factory_lowlevel/progress.py",
+      "papers/methods/INGESTION_TARGETS.md",
+      "scripts/SETUP_WORKTREE.md",
+      "scripts/setup_worktree.bat",
+      "scripts/setup_worktree.sh"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb013_launch_readiness.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

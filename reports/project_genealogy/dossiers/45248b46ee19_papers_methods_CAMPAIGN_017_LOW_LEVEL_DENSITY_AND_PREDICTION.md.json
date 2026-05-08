@@ -1,0 +1,672 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-033",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document records a method, prereg, or audit with locked instruments.",
+        "# Campaign 017 - Low-Level Density Falsifiers and Upward Prediction\nCampaign 017 tests whether the W-1 and W0 density-ready label survives falsifier pressure before it is used for next-level bridge planning.\n## Inputs\n- Source report: `reports/campaign_016/full_report.json`.\n- Preserved signal: Campaign 016 raw formal-lens result remains 96/96 declined and 0/96 nondeclined.\n- Output mode: all Camp"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "method|prereg|audit|locked"
+            }
+          ],
+          "atom_id": "method_documented",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D18",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "method drifts from named locked instruments without explicit deviation"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+            "subject": "TASK-033 multi-world factory live console",
+            "ticket": "TASK-033"
+          },
+          "statement": "Document records a method, prereg, or audit with locked instruments."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md#header",
+            "ticket": "campaign_016"
+          },
+          "statement": "# Campaign 017 - Low-Level Density Falsifiers and Upward Prediction\nCampaign 017 tests whether the W-1 and W0 density-ready label survives falsifier pressure before it is used for next-level bridge planning.\n## Inputs\n- Source report: `reports/campaign_016/full_report.json`.\n- Preserved signal: Campaign 016 raw formal-lens result remains 96/96 declined and 0/96 nondeclined.\n- Output mode: all Camp"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "method drifts from named locked instruments without explicit deviation"
+      ],
+      "predicate_id": "birth::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+        "note": "TASK-033 multi-world factory live console",
+        "ref_id": "birth::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-033",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::ticket"
+      }
+    ],
+    "first_seen_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+    "first_seen_date": "2026-05-06T14:39:23-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-033",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:3787ead84d878585d86a0b787d30553450a91b9f2ea3336faf3230c0fdfef62f",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+          },
+          "statement": "Tracked file with 44 lines / 2100 bytes at HEAD."
+        },
+        {
+          "atom_id": "method_term_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md#pattern:method|prereg|audit|locked"
+          },
+          "statement": "Pattern /method|prereg|audit|locked/ matches in current file."
+        }
+      ],
+      "byte_count": 2100,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 44,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11",
+        "D18",
+        "D29"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D18",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D18",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D18::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "method_term_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "method",
+    "byte_count": 2100,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 44,
+    "path": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+    "path_hash": "sha256:eb76d72374ad061b67a9e608edbee10adec9753b36fb32cf02ec98fb79e0dce8",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/45248b46ee19_papers_methods_CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md->papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md::1312",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "target": "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md->reports/campaign_016/full_report.json::4652",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md#reports/campaign_016/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::reports/campaign_016/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_016/full_report.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-033",
+      "members": [
+        "Branch Falsification Bath.txt",
+        "control_room/cache/agent_heartbeat.json",
+        "control_room/cache/factory_runs/latest_run.json",
+        "control_room/cache/factory_runs/latest_state.json",
+        "control_room/cache/factory_runs/run_0772c1a89f5c693c.json",
+        "control_room/cache/factory_runs/run_17693e665d5d025e.json",
+        "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+        "control_room/cache/factory_runs/run_f17c14848991da21.json",
+        "control_room/cache/factory_subprocess_state.json",
+        "control_room/cache/factory_subprocess_stderr.log",
+        "control_room/cache/factory_subprocess_stdout.log",
+        "control_room/cache/task033_streamlit_stderr.log",
+        "control_room/cache/task033_streamlit_stdout.log",
+        "control_room/heartbeat.py",
+        "control_room/rooms/_world_drilldown.py",
+        "control_room/snapshots/state_20260506T022504Z.json",
+        "control_room/snapshots/state_20260506T022538Z.json",
+        "control_room/snapshots/state_20260506T101212Z.json",
+        "control_room/snapshots/state_20260506T101232Z.json",
+        "control_room/snapshots/state_20260506T101242Z.json",
+        "control_room/snapshots/state_20260506T101244Z.json",
+        "control_room/snapshots/state_20260506T102509Z.json",
+        "control_room/snapshots/state_20260506T102522Z.json",
+        "control_room/snapshots/state_20260506T102637Z.json",
+        "control_room/snapshots/state_20260506T102641Z.json",
+        "control_room/snapshots/state_20260506T103929Z.json",
+        "control_room/snapshots/state_20260506T104000Z.json",
+        "control_room/snapshots/state_20260506T104018Z.json",
+        "control_room/snapshots/state_20260506T104040Z.json",
+        "control_room/snapshots/state_20260506T104915Z.json",
+        "docs/doctrine_d23.md",
+        "docs/doctrine_d24.md",
+        "docs/doctrine_d25.md",
+        "factory_lowlevel/hardening.py",
+        "factory_lowlevel/live_pipeline.py",
+        "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+        "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md",
+        "papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md",
+        "papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md",
+        "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md",
+        "papers/prereg/campaign_020/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_020/externalized_memory.signed.json",
+        "papers/prereg/campaign_020/repair.signed.json",
+        "papers/prereg/campaign_020/replication_lineage.signed.json",
+        "papers/prereg/campaign_020/self_maintained_boundary.signed.json",
+        "project_telemetry/low_level_factory_sessions.jsonl",
+        "public_tests/test_public_contracts.py",
+        "public_tests/test_task033_multiworld_factory.py",
+        "pytest.ini",
+        "reports/campaign_007/full_report.json",
+        "reports/campaign_008/full_report.json",
+        "reports/campaign_017/density_falsifiers.json",
+        "reports/campaign_017/factory_recovery.json",
+        "reports/campaign_017/full_report.json",
+        "reports/campaign_017/recovery_fixture/.quarantine/partial_artifact.json.91df93d1af3e37f0.corrupt",
+        "reports/campaign_017/recovery_fixture/valid_artifact.json",
+        "reports/campaign_017/upward_predictions.json",
+        "reports/campaign_018/bridge_traces.json",
+        "reports/campaign_018/detector_comparison.json",
+        "reports/campaign_018/full_report.json",
+        "reports/campaign_018/lens_audit.json",
+        "reports/campaign_018/native_w1_traces.json",
+        "reports/campaign_019/full_report.json",
+        "reports/campaign_020/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_020/corpus.json",
+        "reports/campaign_020/externalized_memory_substrate_blocked.json",
+        "reports/campaign_020/full_report.json",
+        "reports/campaign_020/repair_substrate_blocked.json",
+        "reports/campaign_020/replication_lineage_substrate_blocked.json",
+        "reports/campaign_020/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_021/factory_intake_dock_task033.png",
+        "reports/campaign_021/factory_intake_dock_task033_full.png",
+        "reports/campaign_021/factory_intake_dock_task033_results.png",
+        "reports/campaign_021/factory_store/empirical_records.json",
+        "reports/campaign_021/factory_store/evidence_graph.json",
+        "reports/campaign_021/factory_store/normalized_refs.json",
+        "reports/campaign_021/factory_store/snapshot.json",
+        "reports/campaign_021/factory_store/source_cache_index.json",
+        "reports/campaign_021/full_report.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Ascomycota.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Bouteloua_eriopoda.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Canis_latrans.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Dipodomys_spectabilis.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Larrea_tridentata.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Lepus_californicus.json",
+        "reports/campaign_021/source_cache/gbif_jornada_ecosystem/Vulpes_macrotis.json",
+        "reports/campaign_021/source_cache/kegg_ecoli_mg1655/pathway_eco.tsv",
+        "reports/campaign_021/source_cache/ncbi_hiv1_quasispecies/K03455.1.fasta",
+        "reports/campaign_021/source_cache/prebiotic_chemistry/benchmarks.tsv",
+        "reports/campaign_021/source_cache/reaction_diffusion_benchmarks/benchmarks.tsv",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Ascomycota.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Bouteloua_eriopoda.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Canis_latrans.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Dipodomys_spectabilis.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Larrea_tridentata.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Lepus_californicus.json",
+        "reports/campaign_021/source_cache_live_smoke/gbif_jornada_ecosystem/Vulpes_macrotis.json",
+        "reports/campaign_021/source_cache_live_smoke/kegg_ecoli_mg1655/pathway_eco.tsv",
+        "reports/campaign_021/source_cache_live_smoke/ncbi_hiv1_quasispecies/K03455.1.fasta",
+        "reports/task_032_dx001_disposition.json",
+        "reports/task_032_evidence_private_markers.json"
+      ],
+      "spawn_ticket": "TASK-033"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+        "edge_id": "spawned_by_ticket::TASK-033->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::274",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-033",
+        "target": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/live_pipeline.py->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::1311",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/live_pipeline.py",
+        "target": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::4422",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md->papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md::1312",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+        "target": "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md->reports/campaign_016/full_report.json::4652",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md#reports/campaign_016/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::reports/campaign_016/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+        "target": "reports/campaign_016/full_report.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-033->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::274",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+          }
+        ],
+        "source": "TASK-033"
+      },
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/live_pipeline.py->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::1311",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-033",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "source": "factory_lowlevel/live_pipeline.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::4422",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      }
+    ],
+    "siblings": [
+      "Branch Falsification Bath.txt",
+      "control_room/cache/agent_heartbeat.json",
+      "control_room/cache/factory_runs/latest_run.json",
+      "control_room/cache/factory_runs/latest_state.json",
+      "control_room/cache/factory_runs/run_0772c1a89f5c693c.json",
+      "control_room/cache/factory_runs/run_17693e665d5d025e.json",
+      "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+      "control_room/cache/factory_runs/run_f17c14848991da21.json",
+      "control_room/cache/factory_subprocess_state.json",
+      "control_room/cache/factory_subprocess_stderr.log",
+      "control_room/cache/factory_subprocess_stdout.log",
+      "control_room/cache/task033_streamlit_stderr.log",
+      "control_room/cache/task033_streamlit_stdout.log",
+      "control_room/heartbeat.py",
+      "control_room/rooms/_world_drilldown.py",
+      "control_room/snapshots/state_20260506T022504Z.json",
+      "control_room/snapshots/state_20260506T022538Z.json",
+      "control_room/snapshots/state_20260506T101212Z.json",
+      "control_room/snapshots/state_20260506T101232Z.json",
+      "control_room/snapshots/state_20260506T101242Z.json",
+      "control_room/snapshots/state_20260506T101244Z.json",
+      "control_room/snapshots/state_20260506T102509Z.json",
+      "control_room/snapshots/state_20260506T102522Z.json",
+      "control_room/snapshots/state_20260506T102637Z.json",
+      "control_room/snapshots/state_20260506T102641Z.json",
+      "control_room/snapshots/state_20260506T103929Z.json",
+      "control_room/snapshots/state_20260506T104000Z.json",
+      "control_room/snapshots/state_20260506T104018Z.json",
+      "control_room/snapshots/state_20260506T104040Z.json",
+      "control_room/snapshots/state_20260506T104915Z.json",
+      "docs/doctrine_d23.md",
+      "docs/doctrine_d24.md",
+      "docs/doctrine_d25.md",
+      "factory_lowlevel/hardening.py",
+      "factory_lowlevel/live_pipeline.py",
+      "papers/methods/CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md",
+      "papers/methods/CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md",
+      "papers/methods/CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md",
+      "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md",
+      "papers/prereg/campaign_020/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_020/externalized_memory.signed.json",
+      "papers/prereg/campaign_020/repair.signed.json",
+      "papers/prereg/campaign_020/replication_lineage.signed.json",
+      "papers/prereg/campaign_020/self_maintained_boundary.signed.json",
+      "project_telemetry/low_level_factory_sessions.jsonl",
+      "public_tests/test_public_contracts.py",
+      "public_tests/test_task033_multiworld_factory.py",
+      "pytest.ini",
+      "reports/campaign_007/full_report.json",
+      "reports/campaign_008/full_report.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

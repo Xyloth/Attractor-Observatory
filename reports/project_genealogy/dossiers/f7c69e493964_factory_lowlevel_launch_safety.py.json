@@ -1,0 +1,1438 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-013",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes runnable factory components consumed by the daemon/pipeline.",
+        "Launch-safety mechanics for the continuous Factory daemon.\n\nCB-013 T4 hardening: lock file, signal handlers, atomic checkpoint\nhelpers, and resume-from-heartbeat verification. These are the\nmechanics that make unattended ingestion safe to flip on:\n\n  * **Lock file** — exclusive single-instance guarantee. Written at\n    daemon startup, deleted on graceful shutdown. A second daemon\n    seeing a live"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "factory_module_exposes_callable",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D14",
+            "D17.5"
+          ],
+          "forbidden_failure_modes": [
+            "module is a stub (Class 5)",
+            "module hardcodes scenario-internal answers (Class 4)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "subject": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+            "ticket": "CB-013"
+          },
+          "statement": "Module exposes runnable factory components consumed by the daemon/pipeline."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/launch_safety.py#header",
+            "ticket": "CB-013"
+          },
+          "statement": "Launch-safety mechanics for the continuous Factory daemon.\n\nCB-013 T4 hardening: lock file, signal handlers, atomic checkpoint\nhelpers, and resume-from-heartbeat verification. These are the\nmechanics that make unattended ingestion safe to flip on:\n\n  * **Lock file** — exclusive single-instance guarantee. Written at\n    daemon startup, deleted on graceful shutdown. A second daemon\n    seeing a live"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "module hardcodes scenario-internal answers (Class 4)",
+        "module is a stub (Class 5)"
+      ],
+      "predicate_id": "birth::factory_lowlevel/launch_safety.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "note": "CB-013: Ingestion launch readiness â€” daemon hardening + monitoring infra",
+        "ref_id": "birth::factory_lowlevel/launch_safety.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-013",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::factory_lowlevel/launch_safety.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/launch_safety.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::factory_lowlevel/launch_safety.py::docstring"
+      }
+    ],
+    "first_seen_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+    "first_seen_date": "2026-05-07T08:59:39-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-013",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:62a40867076ff510276533f8c45daa7dec09eb61ff4559cd1e5df63d1e864c40",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "factory_lowlevel/launch_safety.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: LockAcquisition, ResumeVerdict, SignalState, acquire_lock, check_factory_store_integrity, install_signal_handlers, release_lock, verify_resume..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "factory_lowlevel/launch_safety.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, dataclasses.dataclass, dataclasses.field, json, os, pathlib.Path..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/launch_safety.py"
+          },
+          "statement": "Tracked file with 547 lines / 18968 bytes at HEAD."
+        }
+      ],
+      "byte_count": 18968,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "json",
+        "os",
+        "pathlib.Path",
+        "signal",
+        "sys",
+        "time",
+        "typing.Any",
+        "typing.Callable",
+        "typing.Optional"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 117,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        },
+        {
+          "line": 169,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        },
+        {
+          "line": 176,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except OSError:"
+        },
+        {
+          "line": 198,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (subprocess.TimeoutExpired, OSError):"
+        },
+        {
+          "line": 203,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except OSError:"
+        },
+        {
+          "line": 259,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except Exception:  # pragma: no cover - best-effort flush"
+        },
+        {
+          "line": 276,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (AttributeError, ValueError):  # Windows pre-3.8 / threadsafe context"
+        },
+        {
+          "line": 281,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (AttributeError, ValueError):"
+        },
+        {
+          "line": 365,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError) as exc:"
+        },
+        {
+          "line": 375,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except OSError:"
+        },
+        {
+          "line": 445,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError) as exc:"
+        },
+        {
+          "line": 489,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        },
+        {
+          "line": 503,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        },
+        {
+          "line": 546,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except Exception:"
+        }
+      ],
+      "line_count": 547,
+      "observed_doctrine_bindings": [
+        "D9"
+      ],
+      "predicate_id": "current::factory_lowlevel/launch_safety.py",
+      "public_symbols": [
+        "LockAcquisition",
+        "ResumeVerdict",
+        "SignalState",
+        "acquire_lock",
+        "check_factory_store_integrity",
+        "install_signal_handlers",
+        "release_lock",
+        "verify_resume",
+        "write_checkpoint"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/launch_safety.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::factory_lowlevel/launch_safety.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 117
+        },
+        {
+          "id": "error_branch",
+          "line": 169
+        },
+        {
+          "id": "error_branch",
+          "line": 176
+        },
+        {
+          "id": "error_branch",
+          "line": 198
+        },
+        {
+          "id": "error_branch",
+          "line": 203
+        },
+        {
+          "id": "error_branch",
+          "line": 259
+        },
+        {
+          "id": "error_branch",
+          "line": 276
+        },
+        {
+          "id": "error_branch",
+          "line": 281
+        },
+        {
+          "id": "error_branch",
+          "line": 365
+        },
+        {
+          "id": "error_branch",
+          "line": 375
+        },
+        {
+          "id": "error_branch",
+          "line": 445
+        },
+        {
+          "id": "error_branch",
+          "line": 489
+        },
+        {
+          "id": "error_branch",
+          "line": 503
+        },
+        {
+          "id": "error_branch",
+          "line": 546
+        }
+      ],
+      "missing_bad_cases": [
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 7.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D9"
+      ],
+      "verified": [
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "BUILDER_LAUNCH_PROTOCOL.md",
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 4.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D14",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D14",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D14::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D17.5",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D17.5",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D17.5::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 117,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 169,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 176,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except OSError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 198,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (subprocess.TimeoutExpired, OSError):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 203,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except OSError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 259,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except Exception:  # pragma: no cover - best-effort flush"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 276,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (AttributeError, ValueError):  # Windows pre-3.8 / threadsafe context"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 281,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (AttributeError, ValueError):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 365,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError) as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 375,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except OSError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 445,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError) as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 489,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 503,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 546,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except Exception:"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "factory",
+    "byte_count": 18968,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 547,
+    "path": "factory_lowlevel/launch_safety.py",
+    "path_hash": "sha256:ebfb41863cc4cc6179d2ef4d62d52ad37f387c4c7bfde1cced66ade25fe939d5",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 117: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L117",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 169: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L169",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 176: except OSError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L176",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except OSError:' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 198: except (subprocess.TimeoutExpired, OSError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L198",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (subprocess.TimeoutExpired, OSError):' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 203: except OSError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L203",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except OSError:' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 259: except Exception:  # pragma: no cover - best-effort flush",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L259",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::5"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-5",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except Exception:  # pragma: no cover - best-effort flush' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 276: except (AttributeError, ValueError):  # Windows pre-3.8 / threadsafe context",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L276",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::6"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-6",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (AttributeError, ValueError):  # Windows pre-3.8 / th' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 281: except (AttributeError, ValueError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L281",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::7"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-7",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (AttributeError, ValueError):' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 365: except (OSError, json.JSONDecodeError) as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L365",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::8"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-8",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError) as exc:' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 375: except OSError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L375",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::9"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-9",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except OSError:' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 445: except (OSError, json.JSONDecodeError) as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L445",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::10"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-10",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError) as exc:' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 489: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L489",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::11"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-11",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 503: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L503",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::12"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-12",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 546: except Exception:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/launch_safety.py#L546",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/launch_safety.py::lvs::13"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-lvs-13",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except Exception:' -- factory_lowlevel/launch_safety.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/launch_safety.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/f7c69e493964_factory_lowlevel_launch_safety.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1271",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "target": "factory_lowlevel/progress.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/persistence.py::3688",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/persistence.py"
+          }
+        ],
+        "target": "factory_lowlevel/persistence.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-013",
+      "members": [
+        "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "BUILDER_LAUNCH_PROTOCOL.md",
+        "factory_lowlevel/launch_safety.py",
+        "factory_lowlevel/progress.py",
+        "papers/methods/INGESTION_TARGETS.md",
+        "public_tests/test_cb013_launch_readiness.py",
+        "scripts/SETUP_WORKTREE.md",
+        "scripts/setup_worktree.bat",
+        "scripts/setup_worktree.sh"
+      ],
+      "spawn_ticket": "CB-013"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/launch_safety.py::258",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-013",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1270",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3687",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::factory_lowlevel/adapters.py::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/adapters.py",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->factory_lowlevel/launch_safety.py::4393",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4395",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILDER_LAUNCH_PROTOCOL.md",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::4684",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "factory_lowlevel/launch_safety.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1271",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/launch_safety.py",
+        "target": "factory_lowlevel/progress.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/persistence.py::3688",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/persistence.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/launch_safety.py",
+        "target": "factory_lowlevel/persistence.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/launch_safety.py::258",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "f1d7305d60c15c1177908245f22443d22cf86bf5",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "source": "CB-013"
+      },
+      {
+        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1270",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-013",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-013"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3687",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::factory_lowlevel/adapters.py::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "source": "factory_lowlevel/adapters.py"
+      },
+      {
+        "edge_id": "cites::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->factory_lowlevel/launch_safety.py::4393",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_INGESTION_MONITORING_PLAYBOOK.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
+      },
+      {
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4395",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILDER_LAUNCH_PROTOCOL.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILDER_LAUNCH_PROTOCOL.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "source": "BUILDER_LAUNCH_PROTOCOL.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::4684",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md#factory_lowlevel/launch_safety.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::factory_lowlevel/launch_safety.py"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      }
+    ],
+    "siblings": [
+      "BUILDER_INGESTION_MONITORING_PLAYBOOK.md",
+      "BUILDER_LAUNCH_PROTOCOL.md",
+      "factory_lowlevel/progress.py",
+      "papers/methods/INGESTION_TARGETS.md",
+      "public_tests/test_cb013_launch_readiness.py",
+      "scripts/SETUP_WORKTREE.md",
+      "scripts/setup_worktree.bat",
+      "scripts/setup_worktree.sh"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 3,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::factory_lowlevel/launch_safety.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

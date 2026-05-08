@@ -1,0 +1,554 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-MOTIF-IMPL",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "subject": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+            "ticket": "TASK-MOTIF-IMPL"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_task035_continuous_daemon.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "note": "Campaigns 023-024 + W-1 mass-ingest + Schema v2 + D26 + Class 13",
+        "ref_id": "birth::public_tests/test_task035_continuous_daemon.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-MOTIF-IMPL",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_task035_continuous_daemon.py::ticket"
+      }
+    ],
+    "first_seen_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+    "first_seen_date": "2026-05-06T19:23:03-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-MOTIF-IMPL",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:f56085b372ba95d885b327c4f608fb8a5f9311d3c7e79230f61f718f36404c43",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_task035_continuous_daemon.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_task035_daemon_cadence_mapping_is_conservative, test_task035_daemon_quarantines_failed_due_source, test_task035_daemon_refuses_over_budget_cache, test_task035_daemon_skips_when_sources_not_due"
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_task035_continuous_daemon.py#tests"
+          },
+          "statement": "Module exposes 4 pytest functions: test_task035_daemon_cadence_mapping_is_conservative, test_task035_daemon_skips_when_sources_not_due, test_task035_daemon_refuses_over_budget_cache, test_task035_daemon_quarantines_failed_due_source"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_task035_continuous_daemon.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, factory_lowlevel.continuous_daemon.cadence_seconds, factory_lowlevel.continuous_daemon.run_continuous_daemon, factory_lowlevel.live_pipeline.available_adapters, factory_lowlevel.persistence.atomic_write_json, factory_lowlevel.schemas.utc_now..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_task035_continuous_daemon.py"
+          },
+          "statement": "Tracked file with 104 lines / 3804 bytes at HEAD."
+        }
+      ],
+      "byte_count": 3804,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "factory_lowlevel.continuous_daemon.cadence_seconds",
+        "factory_lowlevel.continuous_daemon.run_continuous_daemon",
+        "factory_lowlevel.live_pipeline.available_adapters",
+        "factory_lowlevel.persistence.atomic_write_json",
+        "factory_lowlevel.schemas.utc_now",
+        "pathlib.Path",
+        "sys"
+      ],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 104,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::public_tests/test_task035_continuous_daemon.py",
+      "public_symbols": [
+        "test_task035_daemon_cadence_mapping_is_conservative",
+        "test_task035_daemon_quarantines_failed_due_source",
+        "test_task035_daemon_refuses_over_budget_cache",
+        "test_task035_daemon_skips_when_sources_not_due"
+      ],
+      "test_functions": [
+        "test_task035_daemon_cadence_mapping_is_conservative",
+        "test_task035_daemon_skips_when_sources_not_due",
+        "test_task035_daemon_refuses_over_budget_cache",
+        "test_task035_daemon_quarantines_failed_due_source"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_task035_continuous_daemon.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_task035_continuous_daemon.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_task035_continuous_daemon.py::test_task035_daemon_cadence_mapping_is_conservative,test_task035_daemon_skips_when_sources_not_due,test_task035_daemon_refuses_over_budget_cache",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_task035_continuous_daemon.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 3804,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 104,
+    "path": "public_tests/test_task035_continuous_daemon.py",
+    "path_hash": "sha256:d45a8b892eee5c8372ff1abb98fd063675106139ad8372ba70eb5d904dd0058f",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_task035_continuous_daemon.py->public_tests/test_task035_fire_integration.py::1462",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "target": "public_tests/test_task035_fire_integration.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-MOTIF-IMPL",
+      "members": [
+        "control_room/cache/factory_daemon_heartbeat.json",
+        "control_room/snapshots/state_20260506T202841Z.json",
+        "control_room/snapshots/state_20260506T202843Z.json",
+        "control_room/snapshots/state_20260506T204718Z.json",
+        "control_room/snapshots/state_20260506T210130Z.json",
+        "control_room/snapshots/state_20260506T210134Z.json",
+        "control_room/snapshots/state_20260506T210149Z.json",
+        "control_room/snapshots/state_20260506T210210Z.json",
+        "control_room/snapshots/state_20260506T211546Z.json",
+        "control_room/snapshots/state_20260506T211559Z.json",
+        "control_room/snapshots/state_20260506T212300Z.json",
+        "control_room/snapshots/state_20260506T232021Z.json",
+        "docs/doctrine_d26.md",
+        "factory_daemon.bat",
+        "factory_lowlevel/README.md",
+        "factory_lowlevel/continuous_daemon.py",
+        "factory_lowlevel/world_construction.py",
+        "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+        "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+        "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+        "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+        "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+        "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+        "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_023/externalized_memory.signed.json",
+        "papers/prereg/campaign_023/floor_connectivity.signed.json",
+        "papers/prereg/campaign_023/repair.signed.json",
+        "papers/prereg/campaign_023/replication_lineage.signed.json",
+        "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+        "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+        "papers/prereg/campaign_024/externalized_memory.signed.json",
+        "papers/prereg/campaign_024/floor_connectivity.signed.json",
+        "papers/prereg/campaign_024/repair.signed.json",
+        "papers/prereg/campaign_024/replication_lineage.signed.json",
+        "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+        "public_tests/test_task035_continuous_daemon.py",
+        "public_tests/test_task035_fire_integration.py",
+        "public_tests/test_task035_world_adapters.py",
+        "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_023/externalized_memory_substrate_blocked.json",
+        "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_023/full_report.json",
+        "reports/campaign_023/repair_substrate_blocked.json",
+        "reports/campaign_023/replication_lineage_substrate_blocked.json",
+        "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+        "reports/campaign_024/externalized_memory_substrate_blocked.json",
+        "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+        "reports/campaign_024/full_report.json",
+        "reports/campaign_024/lens_coupling_audit.json",
+        "reports/campaign_024/repair_substrate_blocked.json",
+        "reports/campaign_024/replication_lineage_substrate_blocked.json",
+        "reports/campaign_024/self_maintained_boundary_substrate_blocked.json",
+        "reports/campaign_035/full_report.json"
+      ],
+      "spawn_ticket": "TASK-MOTIF-IMPL"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->public_tests/test_task035_continuous_daemon.py::343",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_task035_continuous_daemon.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-MOTIF-IMPL",
+        "target": "public_tests/test_task035_continuous_daemon.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_024/self_maintained_boundary.signed.json->public_tests/test_task035_continuous_daemon.py::1461",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+        "target": "public_tests/test_task035_continuous_daemon.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_task035_continuous_daemon.py->public_tests/test_task035_fire_integration.py::1462",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_task035_continuous_daemon.py",
+        "target": "public_tests/test_task035_fire_integration.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->public_tests/test_task035_continuous_daemon.py::343",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b8473aa3ed840989f6dce967fc460df34c7eed60",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_task035_continuous_daemon.py"
+          }
+        ],
+        "source": "TASK-MOTIF-IMPL"
+      },
+      {
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_024/self_maintained_boundary.signed.json->public_tests/test_task035_continuous_daemon.py::1461",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-MOTIF-IMPL",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-MOTIF-IMPL"
+          }
+        ],
+        "source": "papers/prereg/campaign_024/self_maintained_boundary.signed.json"
+      }
+    ],
+    "siblings": [
+      "control_room/cache/factory_daemon_heartbeat.json",
+      "control_room/snapshots/state_20260506T202841Z.json",
+      "control_room/snapshots/state_20260506T202843Z.json",
+      "control_room/snapshots/state_20260506T204718Z.json",
+      "control_room/snapshots/state_20260506T210130Z.json",
+      "control_room/snapshots/state_20260506T210134Z.json",
+      "control_room/snapshots/state_20260506T210149Z.json",
+      "control_room/snapshots/state_20260506T210210Z.json",
+      "control_room/snapshots/state_20260506T211546Z.json",
+      "control_room/snapshots/state_20260506T211559Z.json",
+      "control_room/snapshots/state_20260506T212300Z.json",
+      "control_room/snapshots/state_20260506T232021Z.json",
+      "docs/doctrine_d26.md",
+      "factory_daemon.bat",
+      "factory_lowlevel/README.md",
+      "factory_lowlevel/continuous_daemon.py",
+      "factory_lowlevel/world_construction.py",
+      "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md",
+      "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
+      "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
+      "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
+      "papers/methods/MOTIF_CONTRACTS_v1_DRAFT.md",
+      "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
+      "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
+      "papers/prereg/campaign_023/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_023/externalized_memory.signed.json",
+      "papers/prereg/campaign_023/floor_connectivity.signed.json",
+      "papers/prereg/campaign_023/repair.signed.json",
+      "papers/prereg/campaign_023/replication_lineage.signed.json",
+      "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+      "papers/prereg/campaign_024/autocatalytic_closure.signed.json",
+      "papers/prereg/campaign_024/externalized_memory.signed.json",
+      "papers/prereg/campaign_024/floor_connectivity.signed.json",
+      "papers/prereg/campaign_024/repair.signed.json",
+      "papers/prereg/campaign_024/replication_lineage.signed.json",
+      "papers/prereg/campaign_024/self_maintained_boundary.signed.json",
+      "public_tests/test_task035_fire_integration.py",
+      "public_tests/test_task035_world_adapters.py",
+      "reports/campaign_023/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_023/externalized_memory_substrate_blocked.json",
+      "reports/campaign_023/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_023/full_report.json",
+      "reports/campaign_023/repair_substrate_blocked.json",
+      "reports/campaign_023/replication_lineage_substrate_blocked.json",
+      "reports/campaign_023/self_maintained_boundary_substrate_blocked.json",
+      "reports/campaign_024/autocatalytic_closure_substrate_blocked.json",
+      "reports/campaign_024/externalized_memory_substrate_blocked.json",
+      "reports/campaign_024/floor_connectivity_substrate_blocked.json",
+      "reports/campaign_024/full_report.json",
+      "reports/campaign_024/lens_coupling_audit.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_task035_continuous_daemon.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -1,0 +1,530 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-SOURCE-OBJ-GEN",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+            "subject": "TASK-SOURCE-OBJ-GEN: 4 source-object adapters + 4 corpora + non-floor MRP unlocks",
+            "ticket": "TASK-SOURCE-OBJ-GEN"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_source_object_generation.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+        "note": "TASK-SOURCE-OBJ-GEN: 4 source-object adapters + 4 corpora + non-floor MRP unlocks",
+        "ref_id": "birth::public_tests/test_source_object_generation.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-SOURCE-OBJ-GEN",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_source_object_generation.py::ticket"
+      }
+    ],
+    "first_seen_commit": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+    "first_seen_date": "2026-05-07T07:51:11-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-SOURCE-OBJ-GEN",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:6d65cf269444baa138e5df7cdccaef3d43c5ffdb29e7c39c0df4cc97396e0bcb",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_source_object_generation.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_measurability_recovery_plan_marks_only_generated_non_floor_sources_ready, test_source_object_adapters_emit_required_records_and_decoys, test_source_object_contracts_do_not_include_floor_connectivity, test_source_object_records_are_d26_d29_and_provenance_safe, test_source_object_report_goes_green"
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_source_object_generation.py#tests"
+          },
+          "statement": "Module exposes 5 pytest functions: test_source_object_adapters_emit_required_records_and_decoys, test_source_object_records_are_d26_d29_and_provenance_safe, test_source_object_report_goes_green, test_source_object_contracts_do_not_include_floor_connectivity, test_measurability_recovery_plan_marks_only_generated_non_floor_sources_ready"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_source_object_generation.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, collections.Counter, factory_lowlevel.adapters.BoundaryRegionSamplesAdapter, factory_lowlevel.adapters.EntityObservationsAdapter, factory_lowlevel.adapters.ExternalChannelSamplesAdapter, factory_lowlevel.adapters.PerturbationResponseEnsembleAdapter..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_source_object_generation.py"
+          },
+          "statement": "Tracked file with 108 lines / 4958 bytes at HEAD."
+        }
+      ],
+      "byte_count": 4958,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "collections.Counter",
+        "factory_lowlevel.adapters.BoundaryRegionSamplesAdapter",
+        "factory_lowlevel.adapters.EntityObservationsAdapter",
+        "factory_lowlevel.adapters.ExternalChannelSamplesAdapter",
+        "factory_lowlevel.adapters.PerturbationResponseEnsembleAdapter",
+        "factory_lowlevel.source_object_generation.build_source_object_generation_report",
+        "pathlib.Path"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 105,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "if line.startswith(\"| motif.\") and \"ready_for_round_2c_implementation\" in line"
+        }
+      ],
+      "line_count": 108,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::public_tests/test_source_object_generation.py",
+      "public_symbols": [
+        "test_measurability_recovery_plan_marks_only_generated_non_floor_sources_ready",
+        "test_source_object_adapters_emit_required_records_and_decoys",
+        "test_source_object_contracts_do_not_include_floor_connectivity",
+        "test_source_object_records_are_d26_d29_and_provenance_safe",
+        "test_source_object_report_goes_green"
+      ],
+      "test_functions": [
+        "test_source_object_adapters_emit_required_records_and_decoys",
+        "test_source_object_records_are_d26_d29_and_provenance_safe",
+        "test_source_object_report_goes_green",
+        "test_source_object_contracts_do_not_include_floor_connectivity",
+        "test_measurability_recovery_plan_marks_only_generated_non_floor_sources_ready"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_source_object_generation.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_source_object_generation.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_source_object_generation.py::test_source_object_adapters_emit_required_records_and_decoys,test_source_object_records_are_d26_d29_and_provenance_safe,test_source_object_report_goes_green",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_source_object_generation.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "decline_branch",
+          "line": null
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 105,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if line.startswith(\"| motif.\") and \"ready_for_round_2c_implementation\" in line"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 4958,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 108,
+    "path": "public_tests/test_source_object_generation.py",
+    "path_hash": "sha256:cb07ef9977fea0863759fa5afb6d622b648e4fc4db645cc1a8df0e1b94c7d2b6",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 105: if line.startswith(\"| motif.\") and \"ready_for_round_2c_implementation\" in line",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_source_object_generation.py#L105",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_source_object_generation.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_source_object_generation.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if line.startswith(\"| motif.\") and \"ready_for_round_2c_imple' -- public_tests/test_source_object_generation.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_source_object_generation.py->reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json::1492",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-SOURCE-OBJ-GEN",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-SOURCE-OBJ-GEN"
+          }
+        ],
+        "target": "reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-SOURCE-OBJ-GEN",
+      "members": [
+        "factory_lowlevel/source_object_generation.py",
+        "make_source_object_generation.py",
+        "public_tests/test_source_object_generation.py",
+        "reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json",
+        "reports/source_object_generation/source_cache/source_object_entity_observations/source_objects.json",
+        "reports/source_object_generation/source_cache/source_object_external_channel_samples/source_objects.json",
+        "reports/source_object_generation/source_cache/source_object_perturbation_response_ensemble/source_objects.json",
+        "reports/source_object_generation/source_object_generation_report.json",
+        "reports/source_object_generation/test_cache/source_object_boundary_region_samples/source_objects.json",
+        "reports/source_object_generation/test_cache/source_object_entity_observations/source_objects.json",
+        "reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json",
+        "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+      ],
+      "spawn_ticket": "TASK-SOURCE-OBJ-GEN"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+        "edge_id": "spawned_by_ticket::TASK-SOURCE-OBJ-GEN->public_tests/test_source_object_generation.py::341",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_source_object_generation.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-SOURCE-OBJ-GEN",
+        "target": "public_tests/test_source_object_generation.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::make_source_object_generation.py->public_tests/test_source_object_generation.py::1491",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-SOURCE-OBJ-GEN",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-SOURCE-OBJ-GEN"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "make_source_object_generation.py",
+        "target": "public_tests/test_source_object_generation.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_source_object_generation.py->reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json::1492",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-SOURCE-OBJ-GEN",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-SOURCE-OBJ-GEN"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_source_object_generation.py",
+        "target": "reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-SOURCE-OBJ-GEN->public_tests/test_source_object_generation.py::341",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_source_object_generation.py"
+          }
+        ],
+        "source": "TASK-SOURCE-OBJ-GEN"
+      },
+      {
+        "edge_id": "shares_birth_cohort::make_source_object_generation.py->public_tests/test_source_object_generation.py::1491",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-SOURCE-OBJ-GEN",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-SOURCE-OBJ-GEN"
+          }
+        ],
+        "source": "make_source_object_generation.py"
+      }
+    ],
+    "siblings": [
+      "factory_lowlevel/source_object_generation.py",
+      "make_source_object_generation.py",
+      "reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json",
+      "reports/source_object_generation/source_cache/source_object_entity_observations/source_objects.json",
+      "reports/source_object_generation/source_cache/source_object_external_channel_samples/source_objects.json",
+      "reports/source_object_generation/source_cache/source_object_perturbation_response_ensemble/source_objects.json",
+      "reports/source_object_generation/source_object_generation_report.json",
+      "reports/source_object_generation/test_cache/source_object_boundary_region_samples/source_objects.json",
+      "reports/source_object_generation/test_cache/source_object_entity_observations/source_objects.json",
+      "reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json",
+      "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_source_object_generation.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

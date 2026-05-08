@@ -1,0 +1,738 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-009",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function.",
+        "Tests for the CB-009 Control Room extensions: Atlas periodic table,\npaper bundle generator, and audit-queue inbox.\n\nAll tests are deterministic and read-only against bundled fixtures\n(or write only into ``tmp_path``). No Streamlit runtime is invoked —\nwe exercise the pure-Python helpers directly so the suite stays fast\nand CI-friendly."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "8cd23263e328b4544d0b30269ef6f75e76293e26",
+            "subject": "CB-009: Atlas Periodic Table + Paper Bundle Generator + Audit Inbox",
+            "ticket": "CB-009"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#header",
+            "ticket": "CB-009"
+          },
+          "statement": "Tests for the CB-009 Control Room extensions: Atlas periodic table,\npaper bundle generator, and audit-queue inbox.\n\nAll tests are deterministic and read-only against bundled fixtures\n(or write only into ``tmp_path``). No Streamlit runtime is invoked —\nwe exercise the pure-Python helpers directly so the suite stays fast\nand CI-friendly."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb009_atlas_bundle_inbox.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "8cd23263e328b4544d0b30269ef6f75e76293e26",
+        "note": "CB-009: Atlas Periodic Table + Paper Bundle Generator + Audit Inbox",
+        "ref_id": "birth::public_tests/test_cb009_atlas_bundle_inbox.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-009",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb009_atlas_bundle_inbox.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::public_tests/test_cb009_atlas_bundle_inbox.py::docstring"
+      }
+    ],
+    "first_seen_commit": "8cd23263e328b4544d0b30269ef6f75e76293e26",
+    "first_seen_date": "2026-05-06T17:55:52-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-009",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:baaaba2b0fadfd0a97623734d8cb24c1a03b966b003c146b7b31f007903a8549",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_audit_drilldown_finds_underlying_empirical_record, test_audit_drilldown_returns_none_for_unknown_record, test_audit_inbox_loads_items_from_all_campaigns, test_audit_inbox_normalizes_heterogeneous_item_shapes, test_audit_inbox_summary_counts_match_unresolved_filter, test_audit_resolution_is_read_only_sidecar, test_paper_bundle_campaign_kind_assembles_real_files, test_paper_bundle_generator_assembles_real_files..."
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#tests"
+          },
+          "statement": "Module exposes 15 pytest functions: test_periodic_table_loads_six_atlas_entries, test_periodic_table_classifies_no_data_cells_as_gray_d22, test_periodic_table_fired_cells_carry_real_campaign_evidence, test_paper_bundle_generator_assembles_real_files, test_paper_bundle_includes_all_provenance_campaigns, test_paper_bundle_manifest_carries_bundle_content_hash..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, hashlib, json, pathlib.Path, pytest, sys"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb009_atlas_bundle_inbox.py"
+          },
+          "statement": "Tracked file with 369 lines / 15443 bytes at HEAD."
+        }
+      ],
+      "byte_count": 15443,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "hashlib",
+        "json",
+        "pathlib.Path",
+        "pytest",
+        "sys"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 151,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "f[\"path\"].split(\"/\")[1].split(\"_\")[1] if f[\"path\"].startswith(\"campaigns/\") else None"
+        },
+        {
+          "line": 168,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "assert result[\"manifest\"][\"bundle_content_hash\"].startswith(\"sha256:\")"
+        },
+        {
+          "line": 243,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "assert payload[\"resolved_at\"].endswith(\"Z\")"
+        },
+        {
+          "line": 324,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "atlas_files = [f for f in manifest[\"files\"] if f[\"path\"].startswith(\"atlas_entries/\")]"
+        },
+        {
+          "line": 345,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        }
+      ],
+      "line_count": 369,
+      "observed_doctrine_bindings": [
+        "D22"
+      ],
+      "predicate_id": "current::public_tests/test_cb009_atlas_bundle_inbox.py",
+      "public_symbols": [
+        "test_audit_drilldown_finds_underlying_empirical_record",
+        "test_audit_drilldown_returns_none_for_unknown_record",
+        "test_audit_inbox_loads_items_from_all_campaigns",
+        "test_audit_inbox_normalizes_heterogeneous_item_shapes",
+        "test_audit_inbox_summary_counts_match_unresolved_filter",
+        "test_audit_resolution_is_read_only_sidecar",
+        "test_paper_bundle_campaign_kind_assembles_real_files",
+        "test_paper_bundle_generator_assembles_real_files",
+        "test_paper_bundle_includes_all_provenance_campaigns",
+        "test_paper_bundle_manifest_carries_bundle_content_hash",
+        "test_periodic_table_classifies_no_data_cells_as_gray_d22",
+        "test_periodic_table_fired_cells_carry_real_campaign_evidence",
+        "test_periodic_table_loads_six_atlas_entries",
+        "test_snapshot_includes_atlas_periodic_table_section",
+        "test_snapshot_includes_audit_inbox_section"
+      ],
+      "test_functions": [
+        "test_periodic_table_loads_six_atlas_entries",
+        "test_periodic_table_classifies_no_data_cells_as_gray_d22",
+        "test_periodic_table_fired_cells_carry_real_campaign_evidence",
+        "test_paper_bundle_generator_assembles_real_files",
+        "test_paper_bundle_includes_all_provenance_campaigns",
+        "test_paper_bundle_manifest_carries_bundle_content_hash",
+        "test_audit_inbox_loads_items_from_all_campaigns",
+        "test_audit_inbox_normalizes_heterogeneous_item_shapes",
+        "test_audit_resolution_is_read_only_sidecar",
+        "test_audit_inbox_summary_counts_match_unresolved_filter",
+        "test_snapshot_includes_atlas_periodic_table_section",
+        "test_snapshot_includes_audit_inbox_section",
+        "test_paper_bundle_campaign_kind_assembles_real_files",
+        "test_audit_drilldown_finds_underlying_empirical_record",
+        "test_audit_drilldown_returns_none_for_unknown_record"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb009_atlas_bundle_inbox.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb009_atlas_bundle_inbox.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb009_atlas_bundle_inbox.py::test_periodic_table_loads_six_atlas_entries,test_periodic_table_classifies_no_data_cells_as_gray_d22,test_periodic_table_fired_cells_carry_real_campaign_evidence",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb009_atlas_bundle_inbox.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 345
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D22"
+      ],
+      "verified": [
+        "D22"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 5,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 5,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 151,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "f[\"path\"].split(\"/\")[1].split(\"_\")[1] if f[\"path\"].startswith(\"campaigns/\") else None"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 168,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "assert result[\"manifest\"][\"bundle_content_hash\"].startswith(\"sha256:\")"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 243,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "assert payload[\"resolved_at\"].endswith(\"Z\")"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 324,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "atlas_files = [f for f in manifest[\"files\"] if f[\"path\"].startswith(\"atlas_entries/\")]"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 345,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 15443,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 369,
+    "path": "public_tests/test_cb009_atlas_bundle_inbox.py",
+    "path_hash": "sha256:2278d13e061e5db47ca5cb235af81764fef0632c72e08b9cb19b30c04a500799",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 151: f[\"path\"].split(\"/\")[1].split(\"_\")[1] if f[\"path\"].startswith(\"campaigns/\") else None",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#L151",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb009_atlas_bundle_inbox.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb009_atlas_bundle_inbox.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'f[\"path\"].split(\"/\")[1].split(\"_\")[1] if f[\"path\"].startswit' -- public_tests/test_cb009_atlas_bundle_inbox.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 168: assert result[\"manifest\"][\"bundle_content_hash\"].startswith(\"sha256:\")",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#L168",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb009_atlas_bundle_inbox.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb009_atlas_bundle_inbox.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'assert result[\"manifest\"][\"bundle_content_hash\"].startswith(' -- public_tests/test_cb009_atlas_bundle_inbox.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 243: assert payload[\"resolved_at\"].endswith(\"Z\")",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#L243",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb009_atlas_bundle_inbox.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb009_atlas_bundle_inbox.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'assert payload[\"resolved_at\"].endswith(\"Z\")' -- public_tests/test_cb009_atlas_bundle_inbox.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 324: atlas_files = [f for f in manifest[\"files\"] if f[\"path\"].startswith(\"atlas_entries/\")]",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#L324",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb009_atlas_bundle_inbox.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb009_atlas_bundle_inbox.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'atlas_files = [f for f in manifest[\"files\"] if f[\"path\"].sta' -- public_tests/test_cb009_atlas_bundle_inbox.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 345: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb009_atlas_bundle_inbox.py#L345",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb009_atlas_bundle_inbox.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb009_atlas_bundle_inbox.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- public_tests/test_cb009_atlas_bundle_inbox.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::3901",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "target": "public_tests/test_cb011_polish_audit.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-009",
+      "members": [
+        "public_tests/test_cb009_atlas_bundle_inbox.py"
+      ],
+      "spawn_ticket": "CB-009"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "8cd23263e328b4544d0b30269ef6f75e76293e26",
+        "edge_id": "spawned_by_ticket::CB-009->public_tests/test_cb009_atlas_bundle_inbox.py::331",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8cd23263e328b4544d0b30269ef6f75e76293e26",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb009_atlas_bundle_inbox.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-009",
+        "target": "public_tests/test_cb009_atlas_bundle_inbox.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::project_telemetry/codex_audit_002_progress_record.json->public_tests/test_cb009_atlas_bundle_inbox.py::3900",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_telemetry/codex_audit_002_progress_record.json::public_tests/test_cb009_atlas_bundle_inbox.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/codex_audit_002_progress_record.json",
+        "target": "public_tests/test_cb009_atlas_bundle_inbox.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::3901",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py::public_tests/test_cb011_polish_audit.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb009_atlas_bundle_inbox.py",
+        "target": "public_tests/test_cb011_polish_audit.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-009->public_tests/test_cb009_atlas_bundle_inbox.py::331",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8cd23263e328b4544d0b30269ef6f75e76293e26",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb009_atlas_bundle_inbox.py"
+          }
+        ],
+        "source": "CB-009"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::project_telemetry/codex_audit_002_progress_record.json->public_tests/test_cb009_atlas_bundle_inbox.py::3900",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_telemetry/codex_audit_002_progress_record.json::public_tests/test_cb009_atlas_bundle_inbox.py"
+          }
+        ],
+        "source": "project_telemetry/codex_audit_002_progress_record.json"
+      }
+    ],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb009_atlas_bundle_inbox.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

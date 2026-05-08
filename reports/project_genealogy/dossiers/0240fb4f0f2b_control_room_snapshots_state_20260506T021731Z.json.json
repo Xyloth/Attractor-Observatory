@@ -1,0 +1,1805 @@
+{
+  "birth": {
+    "birth_cohort_id": "",
+    "birth_predicate": {
+      "acceptance_criteria": [],
+      "atoms": [],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::control_room/snapshots/state_20260506T021731Z.json"
+    },
+    "decline_reason": "private_history_unavailable",
+    "evidence_refs": [],
+    "first_seen_commit": "",
+    "first_seen_date": "",
+    "parent_refs": [],
+    "spawn_ticket": "",
+    "status": "honest_decline"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:606cfc354295fdc2e4ffee6bec537ceaa2b8b9e5d66cf37eccb9786c67a638db",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "control_room/snapshots/state_20260506T021731Z.json"
+          },
+          "statement": "Tracked file with 563 lines / 16533 bytes at HEAD."
+        }
+      ],
+      "byte_count": 16533,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 563,
+      "observed_doctrine_bindings": [
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "predicate_id": "current::control_room/snapshots/state_20260506T021731Z.json",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "control_room/snapshots/state_20260506T021731Z.json",
+        "note": "current contents at HEAD",
+        "ref_id": "current::control_room/snapshots/state_20260506T021731Z.json::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [
+    {
+      "evidence_ref": {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "git_query",
+        "locator": "git log --diff-filter=A --follow -- control_room/snapshots/state_20260506T021731Z.json",
+        "note": "first-add commit not resolvable",
+        "ref_id": "decline::control_room/snapshots/state_20260506T021731Z.json::birth"
+      },
+      "kind": "birth",
+      "reason": "private_history_unavailable"
+    },
+    {
+      "evidence_ref": {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "reports/project_genealogy/dossiers/0240fb4f0f2b_control_room_snapshots_state_20260506T021731Z.json.json#drift_assessment",
+        "note": "drift cannot be assessed without recoverable predicates",
+        "ref_id": "decline::control_room/snapshots/state_20260506T021731Z.json::drift"
+      },
+      "kind": "drift",
+      "reason": "private_history_unavailable"
+    }
+  ],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D7",
+        "D8",
+        "D9"
+      ],
+      "verified": [
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D7",
+        "D8",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 1,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 1,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 0,
+      "covered_atoms": 0,
+      "missing_atoms": [],
+      "value": null
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "decline_reason": "private_history_unavailable",
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [],
+    "reproducer_refs": [],
+    "status": "honest_decline"
+  },
+  "file": {
+    "artifact_family": "control_room",
+    "byte_count": 16533,
+    "generated_status": "generated",
+    "language": "json",
+    "line_count": 563,
+    "path": "control_room/snapshots/state_20260506T021731Z.json",
+    "path_hash": "sha256:073ac0669faccf14a93ee840e6cb0d5753fe11f0e3f12aa7f9ec7702920e06b9",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "implements_same_doctrine::D10::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1553",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D10",
+            "note": "shared mention of doctrine D10",
+            "ref_id": "doctrine::D10::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1640",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D12::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1729",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D13::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1879",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2049",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2165",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D16::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2253",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2424",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2530",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2711",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2888",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3058",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3226",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3416",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D8::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3521",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D8",
+            "note": "shared mention of doctrine D8",
+            "ref_id": "doctrine::D8::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3626",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3835",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3935",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::4126",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::4216",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "",
+      "members": [
+        "control_room/snapshots/state_20260506T021731Z.json"
+      ],
+      "spawn_ticket": ""
+    },
+    "edges": [
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D10",
+        "edge_id": "implements_same_doctrine::D10::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1552",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D10",
+            "note": "shared mention of doctrine D10",
+            "ref_id": "doctrine::D10::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1639",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D12",
+        "edge_id": "implements_same_doctrine::D12::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1728",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D13",
+        "edge_id": "implements_same_doctrine::D13::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1878",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2048",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2164",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D16",
+        "edge_id": "implements_same_doctrine::D16::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2252",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2423",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2529",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2710",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2887",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3057",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3225",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3415",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D8",
+        "edge_id": "implements_same_doctrine::D8::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3520",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D8",
+            "note": "shared mention of doctrine D8",
+            "ref_id": "doctrine::D8::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3625",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3834",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3934",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::4125",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::4215",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021711Z.json",
+        "target": "control_room/snapshots/state_20260506T021731Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D10",
+        "edge_id": "implements_same_doctrine::D10::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1553",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D10",
+            "note": "shared mention of doctrine D10",
+            "ref_id": "doctrine::D10::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1640",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D12",
+        "edge_id": "implements_same_doctrine::D12::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1729",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D13",
+        "edge_id": "implements_same_doctrine::D13::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::1879",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2049",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2165",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D16",
+        "edge_id": "implements_same_doctrine::D16::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2253",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2424",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2530",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2711",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::2888",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3058",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3226",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3416",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D8",
+        "edge_id": "implements_same_doctrine::D8::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3521",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D8",
+            "note": "shared mention of doctrine D8",
+            "ref_id": "doctrine::D8::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3626",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3835",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::3935",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::4126",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::control_room/snapshots/state_20260506T021731Z.json->control_room/snapshots/state_20260506T021816Z.json::4216",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::control_room/snapshots/state_20260506T021731Z.json::control_room/snapshots/state_20260506T021816Z.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/snapshots/state_20260506T021731Z.json",
+        "target": "control_room/snapshots/state_20260506T021816Z.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "implements_same_doctrine::D10::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1552",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D10",
+            "note": "shared mention of doctrine D10",
+            "ref_id": "doctrine::D10::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1639",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D12::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1728",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D13::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::1878",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2048",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2164",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D16::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2252",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2423",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2529",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2710",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::2887",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3057",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3225",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3415",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D8::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3520",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D8",
+            "note": "shared mention of doctrine D8",
+            "ref_id": "doctrine::D8::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3625",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3834",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::3934",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::4125",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::control_room/snapshots/state_20260506T021711Z.json->control_room/snapshots/state_20260506T021731Z.json::4215",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::control_room/snapshots/state_20260506T021711Z.json::control_room/snapshots/state_20260506T021731Z.json"
+          }
+        ],
+        "source": "control_room/snapshots/state_20260506T021711Z.json"
+      }
+    ],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::control_room/snapshots/state_20260506T021731Z.json::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

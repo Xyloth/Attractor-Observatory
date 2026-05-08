@@ -1,0 +1,741 @@
+{
+  "birth": {
+    "birth_cohort_id": "DX-002",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Document declares a binding doctrine rule with a numbered ID and ratification.",
+        "# Doctrine D28 - Release Boundary\nMode: foundational\nSigned-by: Codex 1.5x (TASK-DX-002-FIX), under PI/Architect ratification\nD28 - Plans, doctrines, contracts, and methodology artifacts are not audit-live\nuntil committed at the public target SHA. Untracked working-tree artifacts may\nnot be cited as ratified evidence. Pre-ratification artifacts must declare an\n`audit_live_at` or equivalent public-"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "D\\d{1,2}(?:\\.\\d)?"
+            },
+            {
+              "kind": "grep",
+              "pattern": "ratified|binding|enforced"
+            }
+          ],
+          "atom_id": "binding_rule_named",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "rule named without ratification path",
+            "rule weakened by inconvenience"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "subject": "Fix DX-002 findings and ratify D28-D30",
+            "ticket": "DX-002"
+          },
+          "statement": "Document declares a binding doctrine rule with a numbered ID and ratification."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D28",
+            "D28"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "docs/doctrine_d28.md#header",
+            "ticket": "TASK-DX-002-FIX"
+          },
+          "statement": "# Doctrine D28 - Release Boundary\nMode: foundational\nSigned-by: Codex 1.5x (TASK-DX-002-FIX), under PI/Architect ratification\nD28 - Plans, doctrines, contracts, and methodology artifacts are not audit-live\nuntil committed at the public target SHA. Untracked working-tree artifacts may\nnot be cited as ratified evidence. Pre-ratification artifacts must declare an\n`audit_live_at` or equivalent public-"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D28",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "rule named without ratification path",
+        "rule weakened by inconvenience"
+      ],
+      "predicate_id": "birth::docs/doctrine_d28.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "note": "Fix DX-002 findings and ratify D28-D30",
+        "ref_id": "birth::docs/doctrine_d28.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "DX-002",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::docs/doctrine_d28.md::ticket"
+      }
+    ],
+    "first_seen_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+    "first_seen_date": "2026-05-06T21:25:06-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "DX-002",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:ff82a4b69a1539f4add864c5b00ca79d608693d031d2a648e1aa88afa2fdf8f9",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "docs/doctrine_d28.md"
+          },
+          "statement": "Tracked file with 28 lines / 1139 bytes at HEAD."
+        },
+        {
+          "atom_id": "doctrine_id_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "docs/doctrine_d28.md#pattern:D\\d{1,2}(?:\\.\\d)?"
+          },
+          "statement": "Pattern /D\\d{1,2}(?:\\.\\d)?/ matches in current file."
+        },
+        {
+          "atom_id": "ratified_or_binding",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "docs/doctrine_d28.md#pattern:ratified|binding|enforced"
+          },
+          "statement": "Pattern /ratified|binding|enforced/ matches in current file."
+        }
+      ],
+      "byte_count": 1139,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 28,
+      "observed_doctrine_bindings": [
+        "D27",
+        "D28"
+      ],
+      "predicate_id": "current::docs/doctrine_d28.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "docs/doctrine_d28.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::docs/doctrine_d28.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D27",
+        "D28"
+      ],
+      "verified": [
+        "D27",
+        "D28"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "docs/doctrine_registry.json"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "doctrine_id_present",
+      "file_present_with_size",
+      "ratified_or_binding"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "doctrine",
+    "byte_count": 1139,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 28,
+    "path": "docs/doctrine_d28.md",
+    "path_hash": "sha256:b1966153d616482961aab785d228b821a7de2427cb07effe02a3fd3040eeb630",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-docs/doctrine_d28.md-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/fba06aac4611_docs_doctrine_d28.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::docs/doctrine_d28.md->docs/doctrine_d29.md::1380",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "target": "docs/doctrine_d29.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::docs/doctrine_d28.md->docs/doctrine_d31.md::4284",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::docs/doctrine_d28.md::docs/doctrine_d31.md"
+          }
+        ],
+        "target": "docs/doctrine_d31.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D28::docs/doctrine_d28.md->docs/doctrine_registry.json::4302",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::docs/doctrine_d28.md::docs/doctrine_registry.json"
+          }
+        ],
+        "target": "docs/doctrine_registry.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "DX-002",
+      "members": [
+        "FAIR_DATA_STEWARDSHIP.md",
+        "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+        "docs/doctrine_d27.md",
+        "docs/doctrine_d28.md",
+        "docs/doctrine_d29.md",
+        "docs/doctrine_d30.md",
+        "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+        "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+        "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+        "reports/campaign_002/fair_metadata.json",
+        "reports/campaign_002/prov_o.jsonld",
+        "reports/campaign_003/fair_metadata.json",
+        "reports/campaign_003/prov_o.jsonld",
+        "reports/campaign_004/fair_metadata.json",
+        "reports/campaign_004/prov_o.jsonld",
+        "reports/campaign_005/fair_metadata.json",
+        "reports/campaign_005/prov_o.jsonld",
+        "reports/campaign_006/fair_metadata.json",
+        "reports/campaign_006/prov_o.jsonld",
+        "reports/campaign_007/fair_metadata.json",
+        "reports/campaign_007/prov_o.jsonld",
+        "reports/campaign_008/fair_metadata.json",
+        "reports/campaign_008/prov_o.jsonld",
+        "reports/campaign_009/fair_metadata.json",
+        "reports/campaign_009/prov_o.jsonld",
+        "reports/campaign_010/fair_metadata.json",
+        "reports/campaign_010/prov_o.jsonld",
+        "reports/campaign_011/fair_metadata.json",
+        "reports/campaign_011/prov_o.jsonld",
+        "reports/campaign_012/fair_metadata.json",
+        "reports/campaign_012/prov_o.jsonld",
+        "reports/campaign_013/fair_metadata.json",
+        "reports/campaign_013/prov_o.jsonld",
+        "reports/campaign_014/fair_metadata.json",
+        "reports/campaign_014/prov_o.jsonld",
+        "reports/campaign_017/fair_metadata.json",
+        "reports/campaign_017/prov_o.jsonld",
+        "reports/campaign_018/fair_metadata.json",
+        "reports/campaign_018/prov_o.jsonld",
+        "reports/campaign_020/fair_metadata.json",
+        "reports/campaign_020/prov_o.jsonld",
+        "reports/campaign_021/fair_metadata.json",
+        "reports/campaign_021/prov_o.jsonld",
+        "reports/campaign_022/fair_metadata.json",
+        "reports/campaign_022/prov_o.jsonld",
+        "reports/campaign_fair_metadata_index.json",
+        "reports/task_dx002_findings_disposition.json",
+        "reports/task_dx002_public_boundary_markers.json",
+        "ro-crate-metadata.json"
+      ],
+      "spawn_ticket": "DX-002"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+        "edge_id": "spawned_by_ticket::DX-002->docs/doctrine_d28.md::236",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::docs/doctrine_d28.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "DX-002",
+        "target": "docs/doctrine_d28.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/doctrine_d27.md->docs/doctrine_d28.md::1379",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_d27.md",
+        "target": "docs/doctrine_d28.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::docs/doctrine_d27.md->docs/doctrine_d28.md::4283",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::docs/doctrine_d27.md::docs/doctrine_d28.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_d27.md",
+        "target": "docs/doctrine_d28.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D28",
+        "edge_id": "implements_same_doctrine::D28::docs/DOCTRINE.md->docs/doctrine_d28.md::4301",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::docs/DOCTRINE.md::docs/doctrine_d28.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/DOCTRINE.md",
+        "target": "docs/doctrine_d28.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::docs/doctrine_registry.json->docs/doctrine_d28.md::4647",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "docs/doctrine_registry.json#docs/doctrine_d28.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::docs/doctrine_registry.json::docs/doctrine_d28.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "docs/doctrine_d28.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/doctrine_d28.md->docs/doctrine_d29.md::1380",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_d28.md",
+        "target": "docs/doctrine_d29.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::docs/doctrine_d28.md->docs/doctrine_d31.md::4284",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::docs/doctrine_d28.md::docs/doctrine_d31.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_d28.md",
+        "target": "docs/doctrine_d31.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D28",
+        "edge_id": "implements_same_doctrine::D28::docs/doctrine_d28.md->docs/doctrine_registry.json::4302",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::docs/doctrine_d28.md::docs/doctrine_registry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_d28.md",
+        "target": "docs/doctrine_registry.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::DX-002->docs/doctrine_d28.md::236",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::docs/doctrine_d28.md"
+          }
+        ],
+        "source": "DX-002"
+      },
+      {
+        "edge_id": "shares_birth_cohort::docs/doctrine_d27.md->docs/doctrine_d28.md::1379",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-002",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-002"
+          }
+        ],
+        "source": "docs/doctrine_d27.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::docs/doctrine_d27.md->docs/doctrine_d28.md::4283",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::docs/doctrine_d27.md::docs/doctrine_d28.md"
+          }
+        ],
+        "source": "docs/doctrine_d27.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D28::docs/DOCTRINE.md->docs/doctrine_d28.md::4301",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::docs/DOCTRINE.md::docs/doctrine_d28.md"
+          }
+        ],
+        "source": "docs/DOCTRINE.md"
+      },
+      {
+        "edge_id": "cites::docs/doctrine_registry.json->docs/doctrine_d28.md::4647",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "docs/doctrine_registry.json#docs/doctrine_d28.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::docs/doctrine_registry.json::docs/doctrine_d28.md"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      }
+    ],
+    "siblings": [
+      "FAIR_DATA_STEWARDSHIP.md",
+      "docs/ACM_ARTIFACT_BADGING_POLICY.md",
+      "docs/doctrine_d27.md",
+      "docs/doctrine_d29.md",
+      "docs/doctrine_d30.md",
+      "papers/methods/LENS_RECOVERY_v1_DRAFT.md",
+      "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md",
+      "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json",
+      "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+      "reports/campaign_002/fair_metadata.json",
+      "reports/campaign_002/prov_o.jsonld",
+      "reports/campaign_003/fair_metadata.json",
+      "reports/campaign_003/prov_o.jsonld",
+      "reports/campaign_004/fair_metadata.json",
+      "reports/campaign_004/prov_o.jsonld",
+      "reports/campaign_005/fair_metadata.json",
+      "reports/campaign_005/prov_o.jsonld",
+      "reports/campaign_006/fair_metadata.json",
+      "reports/campaign_006/prov_o.jsonld",
+      "reports/campaign_007/fair_metadata.json",
+      "reports/campaign_007/prov_o.jsonld",
+      "reports/campaign_008/fair_metadata.json",
+      "reports/campaign_008/prov_o.jsonld",
+      "reports/campaign_009/fair_metadata.json",
+      "reports/campaign_009/prov_o.jsonld",
+      "reports/campaign_010/fair_metadata.json",
+      "reports/campaign_010/prov_o.jsonld",
+      "reports/campaign_011/fair_metadata.json",
+      "reports/campaign_011/prov_o.jsonld",
+      "reports/campaign_012/fair_metadata.json",
+      "reports/campaign_012/prov_o.jsonld",
+      "reports/campaign_013/fair_metadata.json",
+      "reports/campaign_013/prov_o.jsonld",
+      "reports/campaign_014/fair_metadata.json",
+      "reports/campaign_014/prov_o.jsonld",
+      "reports/campaign_017/fair_metadata.json",
+      "reports/campaign_017/prov_o.jsonld",
+      "reports/campaign_018/fair_metadata.json",
+      "reports/campaign_018/prov_o.jsonld",
+      "reports/campaign_020/fair_metadata.json",
+      "reports/campaign_020/prov_o.jsonld",
+      "reports/campaign_021/fair_metadata.json",
+      "reports/campaign_021/prov_o.jsonld",
+      "reports/campaign_022/fair_metadata.json",
+      "reports/campaign_022/prov_o.jsonld",
+      "reports/campaign_fair_metadata_index.json",
+      "reports/task_dx002_findings_disposition.json",
+      "reports/task_dx002_public_boundary_markers.json",
+      "ro-crate-metadata.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::docs/doctrine_d28.md::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

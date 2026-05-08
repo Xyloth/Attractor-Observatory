@@ -25,6 +25,7 @@ from control_room.rooms import (
     falsifier_ledger,
     motif_atlas,
     portfolio_demo,
+    project_genealogy,
     project_graph,
     pulse_deck,
     world_observatory,
@@ -42,6 +43,7 @@ ROOMS = (
     doctrine_console,
     factory_intake_dock,
     project_graph,    # 11th room — Phase 2 (Project Graph)
+    project_genealogy, # 12th room — PG-001 (Project Genealogy)
     portfolio_demo,
 )
 

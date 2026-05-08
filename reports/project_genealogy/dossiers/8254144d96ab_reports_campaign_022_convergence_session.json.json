@@ -1,0 +1,663 @@
+{
+  "birth": {
+    "birth_cohort_id": "CB-008",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Report serializes structured data for post-hoc analysis.",
+        "{\n\"branch\": \"feature/cb-008-ingestion-convergence\",\n\"bugs_fixed\": [\n{\n\"evidence\": \"5/5 molecules had canonical_smiles=='' in baseline; bond_topology_proxy was all zeros; this is the 'PubChem topology bug pattern' the brief explicitly named\",\n\"fix_location\": \"factory_lowlevel/adapters.py:_query_url + _record_from_row\",\n\"id\": \"A\",\n\"name\": \"PubChem SMILES schema drift\",\n\"root_cause\": \"PubChem PUG-RES"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "file_span"
+            }
+          ],
+          "atom_id": "report_records_data",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [
+            "report contents are mock or placeholder (Class 12)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "e857373697552dd0ce702266d931384299ea053b",
+            "subject": "CB-008 ingestion convergence",
+            "ticket": "CB-008"
+          },
+          "statement": "Report serializes structured data for post-hoc analysis."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_022/convergence_session.json#header",
+            "ticket": "cb-008"
+          },
+          "statement": "{\n\"branch\": \"feature/cb-008-ingestion-convergence\",\n\"bugs_fixed\": [\n{\n\"evidence\": \"5/5 molecules had canonical_smiles=='' in baseline; bond_topology_proxy was all zeros; this is the 'PubChem topology bug pattern' the brief explicitly named\",\n\"fix_location\": \"factory_lowlevel/adapters.py:_query_url + _record_from_row\",\n\"id\": \"A\",\n\"name\": \"PubChem SMILES schema drift\",\n\"root_cause\": \"PubChem PUG-RES"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11"
+      ],
+      "forbidden_patterns": [
+        "report contents are mock or placeholder (Class 12)"
+      ],
+      "predicate_id": "birth::reports/campaign_022/convergence_session.json"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "e857373697552dd0ce702266d931384299ea053b",
+        "note": "CB-008 ingestion convergence",
+        "ref_id": "birth::reports/campaign_022/convergence_session.json::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "CB-008",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::reports/campaign_022/convergence_session.json::ticket"
+      }
+    ],
+    "first_seen_commit": "e857373697552dd0ce702266d931384299ea053b",
+    "first_seen_date": "2026-05-06T14:39:36-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "CB-008",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:cb6960fdb20acfcc00506de3b9e3a67415ba93aad89096d4f9a68e9caeac8077",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_022/convergence_session.json"
+          },
+          "statement": "Tracked file with 131 lines / 6605 bytes at HEAD."
+        },
+        {
+          "atom_id": "provenance_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_session.json#pattern:content_hash|evidence_private|generated_at|locked_instrument|provenance"
+          },
+          "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
+        }
+      ],
+      "byte_count": 6605,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 131,
+      "observed_doctrine_bindings": [
+        "D9"
+      ],
+      "predicate_id": "current::reports/campaign_022/convergence_session.json",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "reports/campaign_022/convergence_session.json",
+        "note": "current contents at HEAD",
+        "ref_id": "current::reports/campaign_022/convergence_session.json::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D9"
+      ],
+      "verified": [
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "provenance_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "report",
+    "byte_count": 6605,
+    "generated_status": "report",
+    "language": "json",
+    "line_count": 131,
+    "path": "reports/campaign_022/convergence_session.json",
+    "path_hash": "sha256:359a96f51445c4d1b8e9e8c179484c1e205049739c43387a686f1076fc00ef2c",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-reports/campaign_022/convergence_session.json-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/8254144d96ab_reports_campaign_022_convergence_session.json.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1518",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-008",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-008"
+          }
+        ],
+        "target": "reports/campaign_022/convergence_wipe_log.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::reports/campaign_022/convergence_session.json->scripts/SETUP_WORKTREE.md::3700",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::reports/campaign_022/convergence_session.json::scripts/SETUP_WORKTREE.md"
+          }
+        ],
+        "target": "scripts/SETUP_WORKTREE.md"
+      },
+      {
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/adapters.py::4935",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_session.json#factory_lowlevel/adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_022/convergence_session.json::factory_lowlevel/adapters.py"
+          }
+        ],
+        "target": "factory_lowlevel/adapters.py"
+      },
+      {
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/persistence.py::4936",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_session.json#factory_lowlevel/persistence.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_022/convergence_session.json::factory_lowlevel/persistence.py"
+          }
+        ],
+        "target": "factory_lowlevel/persistence.py"
+      },
+      {
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/pipeline.py::4937",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_session.json#factory_lowlevel/pipeline.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_022/convergence_session.json::factory_lowlevel/pipeline.py"
+          }
+        ],
+        "target": "factory_lowlevel/pipeline.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "CB-008",
+      "members": [
+        "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "reports/campaign_022/convergence_session.json",
+        "reports/campaign_022/convergence_wipe_log.jsonl"
+      ],
+      "spawn_ticket": "CB-008"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "e857373697552dd0ce702266d931384299ea053b",
+        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_session.json::533",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "e857373697552dd0ce702266d931384299ea053b",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_022/convergence_session.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "CB-008",
+        "target": "reports/campaign_022/convergence_session.json"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_session.json::1517",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-008",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-008"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "reports/campaign_022/convergence_session.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::reports/campaign_021/factory_intake_dock_task033_results.png->reports/campaign_022/convergence_session.json::3699",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::reports/campaign_021/factory_intake_dock_task033_results.png::reports/campaign_022/convergence_session.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_021/factory_intake_dock_task033_results.png",
+        "target": "reports/campaign_022/convergence_session.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_session.json::4662",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_CONVERGENCE_CB008.md#reports/campaign_022/convergence_session.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_CONVERGENCE_CB008.md::reports/campaign_022/convergence_session.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+        "target": "reports/campaign_022/convergence_session.json"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1518",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-008",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-008"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/convergence_session.json",
+        "target": "reports/campaign_022/convergence_wipe_log.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::reports/campaign_022/convergence_session.json->scripts/SETUP_WORKTREE.md::3700",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::reports/campaign_022/convergence_session.json::scripts/SETUP_WORKTREE.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/convergence_session.json",
+        "target": "scripts/SETUP_WORKTREE.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/adapters.py::4935",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_session.json#factory_lowlevel/adapters.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_022/convergence_session.json::factory_lowlevel/adapters.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/convergence_session.json",
+        "target": "factory_lowlevel/adapters.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/persistence.py::4936",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_session.json#factory_lowlevel/persistence.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_022/convergence_session.json::factory_lowlevel/persistence.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/convergence_session.json",
+        "target": "factory_lowlevel/persistence.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/pipeline.py::4937",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/campaign_022/convergence_session.json#factory_lowlevel/pipeline.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/campaign_022/convergence_session.json::factory_lowlevel/pipeline.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/convergence_session.json",
+        "target": "factory_lowlevel/pipeline.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_session.json::533",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "e857373697552dd0ce702266d931384299ea053b",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_022/convergence_session.json"
+          }
+        ],
+        "source": "CB-008"
+      },
+      {
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_session.json::1517",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=CB-008",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::CB-008"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::reports/campaign_021/factory_intake_dock_task033_results.png->reports/campaign_022/convergence_session.json::3699",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::reports/campaign_021/factory_intake_dock_task033_results.png::reports/campaign_022/convergence_session.json"
+          }
+        ],
+        "source": "reports/campaign_021/factory_intake_dock_task033_results.png"
+      },
+      {
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_session.json::4662",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_CONVERGENCE_CB008.md#reports/campaign_022/convergence_session.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_CONVERGENCE_CB008.md::reports/campaign_022/convergence_session.json"
+          }
+        ],
+        "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
+      }
+    ],
+    "siblings": [
+      "papers/methods/INGESTION_CONVERGENCE_CB008.md",
+      "reports/campaign_022/convergence_wipe_log.jsonl"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::reports/campaign_022/convergence_session.json::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:50Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:50Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

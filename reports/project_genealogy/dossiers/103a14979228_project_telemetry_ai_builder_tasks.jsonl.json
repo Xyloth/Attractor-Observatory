@@ -1,0 +1,2558 @@
+{
+  "birth": {
+    "birth_cohort_id": "6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "File appends a telemetry record under a stable schema."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "model_name|task_id|estimated_minutes|actual_minutes"
+            }
+          ],
+          "atom_id": "telemetry_record_appended",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [
+            "telemetry record without identifying metadata"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+            "subject": "Initial public commit: curated showcase of Attractor Observatory",
+            "ticket": ""
+          },
+          "statement": "File appends a telemetry record under a stable schema."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11"
+      ],
+      "forbidden_patterns": [
+        "telemetry record without identifying metadata"
+      ],
+      "predicate_id": "birth::project_telemetry/ai_builder_tasks.jsonl"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+        "note": "Initial public commit: curated showcase of Attractor Observatory",
+        "ref_id": "birth::project_telemetry/ai_builder_tasks.jsonl::commit"
+      }
+    ],
+    "first_seen_commit": "6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+    "first_seen_date": "2026-05-03T09:50:51-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:e16b29ed24738217f8753e54d48d31a9d0ca27befa115bd8d67dd1224e0bef10",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "project_telemetry/ai_builder_tasks.jsonl"
+          },
+          "statement": "Tracked file with 112 lines / 266669 bytes at HEAD."
+        },
+        {
+          "atom_id": "telemetry_metadata_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "project_telemetry/ai_builder_tasks.jsonl#pattern:model_name|task_id|estimated_minutes|actual_minutes"
+          },
+          "statement": "Pattern /model_name|task_id|estimated_minutes|actual_minutes/ matches in current file."
+        }
+      ],
+      "byte_count": 266669,
+      "class_pattern_matches": [
+        {
+          "class_id": "Class12",
+          "line": 3,
+          "note": "decorative completeness",
+          "snippet": "{\"acceptance_outcome\":\"pass\",\"actual_files\":15,\"actual_minutes\":6.983908,\"actual_tests\":8,\"complexity_score\":6,\"estimated_files\":16,\"estimated_minutes\":70,\"estimated_tests\":5,\"estimation_delta\":0.0997"
+        },
+        {
+          "class_id": "Class12",
+          "line": 11,
+          "note": "decorative completeness",
+          "snippet": "{\"acceptance_outcome\":\"pass\",\"actual_files\":59,\"actual_minutes\":15.616666666666667,\"actual_tests\":56,\"complexity_score\":10,\"estimated_files\":55,\"estimated_minutes\":840,\"estimated_tests\":75,\"estimation"
+        },
+        {
+          "class_id": "Class3",
+          "line": 22,
+          "note": "soft enforcement comments",
+          "snippet": "{\"acceptance_outcome\":\"deferred\",\"actual_files\":17,\"actual_minutes\":null,\"actual_tests\":205,\"complexity_score\":10,\"estimated_files\":90,\"estimated_minutes\":90,\"estimated_tests\":250,\"estimation_delta\":n"
+        },
+        {
+          "class_id": "Class3",
+          "line": 23,
+          "note": "soft enforcement comments",
+          "snippet": "{\"acceptance_outcome\":\"deferred\",\"actual_files\":19,\"actual_minutes\":84.03333333333333,\"actual_tests\":205,\"complexity_score\":10,\"estimated_files\":90,\"estimated_minutes\":90,\"estimated_tests\":250,\"estima"
+        },
+        {
+          "class_id": "Class12",
+          "line": 45,
+          "note": "decorative completeness",
+          "snippet": "{\"actual_files\":0,\"actual_minutes\":16.32,\"actual_tests\":0,\"calibration_method\":\"Reference class: TASK-CB-001 (analytical, predicted 120, actual ~24, delta 0.20), TASK-CB-002 (analytical, predicted 75,"
+        },
+        {
+          "class_id": "Class12",
+          "line": 50,
+          "note": "decorative completeness",
+          "snippet": "{\"actual_files\":0,\"actual_minutes\":13.03,\"actual_tests\":0,\"calibration_method\":\"Reference class: TASK-CB-004 (ui_foundation_plus_adapters, predicted 180, actual 16.32, historical-convention delta 0.09"
+        },
+        {
+          "class_id": "Class12",
+          "line": 100,
+          "note": "decorative completeness",
+          "snippet": "{\"task_id\":\"TASK-CB-013\",\"record_type\":\"actual_update\",\"task_record_id\":\"TASK-CB-013:actual_update:1\",\"model_name\":\"Claude (Builder)\",\"model_version\":\"claude-sonnet-4.7-20260501\",\"actual_minutes\":12.3"
+        }
+      ],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 112,
+      "observed_doctrine_bindings": [
+        "D11",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30",
+        "D31",
+        "D7"
+      ],
+      "predicate_id": "current::project_telemetry/ai_builder_tasks.jsonl",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "project_telemetry/ai_builder_tasks.jsonl",
+        "note": "current contents at HEAD",
+        "ref_id": "current::project_telemetry/ai_builder_tasks.jsonl::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30",
+        "D31",
+        "D7"
+      ],
+      "verified": [
+        "D11",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D21",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D27",
+        "D28",
+        "D29",
+        "D30",
+        "D31",
+        "D7"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 2,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 2,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "telemetry_metadata_present"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "telemetry",
+    "byte_count": 266669,
+    "generated_status": "source",
+    "language": "text",
+    "line_count": 112,
+    "path": "project_telemetry/ai_builder_tasks.jsonl",
+    "path_hash": "sha256:9aff246447db726f160d36e900d44fc959576057cdb4273eea4e703efb5d8f6d",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 3",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_telemetry/ai_builder_tasks.jsonl#L3",
+          "note": "decorative completeness",
+          "ref_id": "finding::project_telemetry/ai_builder_tasks.jsonl::cls::0"
+        }
+      ],
+      "finding_id": "PG-project_telemetry/ai_builder_tasks.jsonl-class-0",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '{\"acceptance_outcome\":\"pass\",\"actual_files\":15,\"actual_minut' -- project_telemetry/ai_builder_tasks.jsonl",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 11",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_telemetry/ai_builder_tasks.jsonl#L11",
+          "note": "decorative completeness",
+          "ref_id": "finding::project_telemetry/ai_builder_tasks.jsonl::cls::1"
+        }
+      ],
+      "finding_id": "PG-project_telemetry/ai_builder_tasks.jsonl-class-1",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '{\"acceptance_outcome\":\"pass\",\"actual_files\":59,\"actual_minut' -- project_telemetry/ai_builder_tasks.jsonl",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class3 (soft enforcement comments) at line 22",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_telemetry/ai_builder_tasks.jsonl#L22",
+          "note": "soft enforcement comments",
+          "ref_id": "finding::project_telemetry/ai_builder_tasks.jsonl::cls::2"
+        }
+      ],
+      "finding_id": "PG-project_telemetry/ai_builder_tasks.jsonl-class-2",
+      "mistake_classes": [
+        "Class3"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '{\"acceptance_outcome\":\"deferred\",\"actual_files\":17,\"actual_m' -- project_telemetry/ai_builder_tasks.jsonl",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class3 (soft enforcement comments) at line 23",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_telemetry/ai_builder_tasks.jsonl#L23",
+          "note": "soft enforcement comments",
+          "ref_id": "finding::project_telemetry/ai_builder_tasks.jsonl::cls::3"
+        }
+      ],
+      "finding_id": "PG-project_telemetry/ai_builder_tasks.jsonl-class-3",
+      "mistake_classes": [
+        "Class3"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '{\"acceptance_outcome\":\"deferred\",\"actual_files\":19,\"actual_m' -- project_telemetry/ai_builder_tasks.jsonl",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 45",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_telemetry/ai_builder_tasks.jsonl#L45",
+          "note": "decorative completeness",
+          "ref_id": "finding::project_telemetry/ai_builder_tasks.jsonl::cls::4"
+        }
+      ],
+      "finding_id": "PG-project_telemetry/ai_builder_tasks.jsonl-class-4",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '{\"actual_files\":0,\"actual_minutes\":16.32,\"actual_tests\":0,\"c' -- project_telemetry/ai_builder_tasks.jsonl",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 50",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_telemetry/ai_builder_tasks.jsonl#L50",
+          "note": "decorative completeness",
+          "ref_id": "finding::project_telemetry/ai_builder_tasks.jsonl::cls::5"
+        }
+      ],
+      "finding_id": "PG-project_telemetry/ai_builder_tasks.jsonl-class-5",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '{\"actual_files\":0,\"actual_minutes\":13.03,\"actual_tests\":0,\"c' -- project_telemetry/ai_builder_tasks.jsonl",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 100",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_telemetry/ai_builder_tasks.jsonl#L100",
+          "note": "decorative completeness",
+          "ref_id": "finding::project_telemetry/ai_builder_tasks.jsonl::cls::6"
+        }
+      ],
+      "finding_id": "PG-project_telemetry/ai_builder_tasks.jsonl-class-6",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '{\"task_id\":\"TASK-CB-013\",\"record_type\":\"actual_update\",\"task' -- project_telemetry/ai_builder_tasks.jsonl",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/spec_completion_estimates.jsonl::1146",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e"
+          }
+        ],
+        "target": "project_telemetry/spec_completion_estimates.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_016_progress_record.json::1695",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_016_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_016_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D13::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_016_progress_record.json::1935",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_016_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_016_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_017_progress_record.json::2117",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_017_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_017_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::project_telemetry/ai_builder_tasks.jsonl->reports/campaign_013/multisubstrate_floor_connectivity.json::2219",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::project_telemetry/ai_builder_tasks.jsonl::reports/campaign_013/multisubstrate_floor_connectivity.json"
+          }
+        ],
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D16::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_020_progress_record.json::2305",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_020_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_020_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_018_progress_record.json::2484",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_018_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_018_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_019_progress_record.json::2592",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_019_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_019_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_020_progress_record.json::2772",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_020_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_020_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_022_progress_record.json::2945",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_022_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_022_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_022_progress_record.json::3112",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_022_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_022_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_022_progress_record.json::3286",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_022_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_022_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_016_progress_record.json::3482",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_016_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/task_016_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/codex_audit_001_progress_record.json::3898",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/codex_audit_001_progress_record.json"
+          }
+        ],
+        "target": "project_telemetry/codex_audit_001_progress_record.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::3989",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4005",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb015_adapter_expansion.py::4055",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_cb015_adapter_expansion.py"
+          }
+        ],
+        "target": "public_tests/test_cb015_adapter_expansion.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4093",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4183",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4270",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4291",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D28::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4304",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D30::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4319",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+      "members": [
+        ".gitignore",
+        "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md",
+        "CITATION.cff",
+        "CODEX_AUDIT_AND_CAMPAIGN_002.md",
+        "CODEX_CAMPAIGN_003.md",
+        "CODEX_CAMPAIGN_004.md",
+        "CODEX_CAMPAIGN_005.md",
+        "CODEX_CAMPAIGN_006.md",
+        "CODEX_CAMPAIGN_007.md",
+        "CODEX_CAMPAIGN_008.md",
+        "CODEX_INITIATION.md",
+        "CODEX_TASK_009_DRIVE.md",
+        "CODEX_TASK_017_DRIVE.md",
+        "CODEX_TASK_019_DRIVE.md",
+        "CODEX_TASK_020_DRIVE.md",
+        "CONTRIBUTING.md",
+        "Dockerfile",
+        "LICENSE",
+        "NO ARTIFICIAL CEILING DOCTRINE.txt",
+        "Proposal #1 v2 - Basin-Floor Geometry.md",
+        "Proposal #1.txt",
+        "README.md",
+        "Seed v1.2.txt",
+        "The Attractor Observatory v1.0.txt",
+        "The Attractor Observatory v1.1.md",
+        "The Attractor Observatory v1.2.md",
+        "ai_os/decision_log.md",
+        "ai_os/memory/concept_glossary.md",
+        "ai_os/memory/decision_log.md",
+        "ai_os/memory/formal_gap_journal.md",
+        "ai_os/memory/hypothesis_ledger.md",
+        "ai_os/memory/model_calibration_report.md",
+        "ai_os/memory/motif_candidate_journal.md",
+        "ai_os/memory/open_questions.md",
+        "ai_os/memory/rejected_ideas.md",
+        "atlas/__init__.py",
+        "atlas/closure_observations.md",
+        "atlas/negative_space/NS-C002-predicted-empty-high-damage-low-production.json",
+        "atlas/negative_space/NS-C002-simulation-only-external-repair-attractor.json",
+        "atlas/negative_space/NS-C002-unexplained-absence-random-rewire-closure.json",
+        "atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json",
+        "atlas/negative_space/NS-C004-02-external_repair_boundary_mimic.json",
+        "atlas/negative_space/NS-C004-03-powered_flight_control_surface.json",
+        "atlas/negative_space/NS-C004-04-high_deficiency_low_persistence_cycle.json",
+        "atlas/negative_space/NS-C004-05-eusocial_role_memory.json",
+        "atlas/negative_space/NS-C004-06-field_front_without_conserved_mass.json",
+        "atlas/negative_space/NS-C004-07-digital_parasite_locked_replication.json",
+        "atlas/negative_space/NS-C004-08-branching_transport_remodeling.json",
+        "atlas/negative_space/NS-C006-01-w4-informative.json",
+        "atlas/negative_space/NS-C006-02-w4-boundary.json",
+        "atlas/negative_space/NS-C006-03-w4-structural.json",
+        "atlas/negative_space/NS-C006-04-w4-informative.json",
+        "atlas/negative_space/NS-C006-05-w4-boundary.json",
+        "atlas/negative_space/NS-C006-06-w4-structural.json",
+        "atlas/negative_space/NS-C006-07-w4-informative.json",
+        "atlas/negative_space/NS-C006-08-w4-boundary.json",
+        "atlas/negative_space/NS-C006-09-w4-structural.json",
+        "atlas/negative_space/NS-C006-10-w4-informative.json",
+        "atlas/negative_space/NS-C006-11-w4-boundary.json",
+        "atlas/negative_space/NS-C006-12-w4-structural.json",
+        "atlas/negative_space/bio_only_campaign_004.md",
+        "atlas/negative_space/biology_only_motifs.md",
+        "atlas/negative_space/campaign_004_index.json",
+        "atlas/negative_space/campaign_006_index.json",
+        "atlas/negative_space/index.json",
+        "atlas/negative_space/math_only_campaign_004.md",
+        "atlas/negative_space/math_only_structures.md",
+        "atlas/negative_space/predicted_empty_basins.md",
+        "atlas/negative_space/predicted_empty_campaign_004.md",
+        "atlas/negative_space/sim_only_campaign_004.md",
+        "atlas/negative_space/simulation_only_attractors.md",
+        "atlas/negative_space/unexplained_absence_campaign_004.md",
+        "atlas/negative_space/unexplained_absences.md",
+        "atlas/seed_observations.jsonl",
+        "atlas/status_viewer/__init__.py",
+        "atlas/status_viewer/generated/campaign_006/candidates.md",
+        "atlas/status_viewer/generated/campaign_006/health.md",
+        "atlas/status_viewer/generated/campaign_006/index.json",
+        "atlas/status_viewer/generated/campaign_006/negative_space.md",
+        "atlas/status_viewer/generated/campaign_006/queries.json",
+        "atlas/status_viewer/generated/campaign_006/transfer.md",
+        "atlas/status_viewer/generated/campaign_006/worlds.md",
+        "atlas/status_viewer/renderer.py",
+        "docs/AI_COLLABORATION.md",
+        "docs/ARCHITECTURE.md",
+        "docs/DOCTRINE.md",
+        "docs/SAMPLE_CODE.md",
+        "docs/TOUR.md",
+        "docs/doctrine_d14.md",
+        "docs/doctrine_d18.md",
+        "docs/doctrine_d7_d13.md",
+        "docs/doctrine_registry.json",
+        "docs/phase_status/phase_0_status.md",
+        "papers/falsifiers/bfg_point_attractor_candidate.md",
+        "papers/methods/CAMPAIGN_008_METHODS.md",
+        "papers/methods/SUBSTANCE_AUDIT_W10.md",
+        "papers/methods/SUBSTANCE_AUDIT_W11.md",
+        "papers/methods/SUBSTANCE_AUDIT_W12.md",
+        "papers/methods/SUBSTANCE_AUDIT_W13.md",
+        "papers/methods/SUBSTANCE_AUDIT_W6.md",
+        "papers/methods/SUBSTANCE_AUDIT_W7.md",
+        "papers/methods/SUBSTANCE_AUDIT_W8.md",
+        "papers/methods/SUBSTANCE_AUDIT_W9.md",
+        "papers/methods/TRUTH_PASS.md",
+        "papers/prereg/bfg_v0.signed.json",
+        "papers/prereg/campaign_002.json",
+        "papers/prereg/campaign_002.signed.json",
+        "papers/prereg/phase1_closure_recurrence.json",
+        "project_telemetry/TIME_CALIBRATION_REPORT.md",
+        "project_telemetry/ai_builder_tasks.jsonl",
+        "project_telemetry/spec_completion_estimates.jsonl",
+        "project_telemetry/task_016_progress_record.json",
+        "project_telemetry/task_017_progress_record.json",
+        "project_telemetry/task_018_progress_record.json",
+        "project_telemetry/task_019_progress_record.json",
+        "reports/campaign_002/basin_width.json",
+        "reports/campaign_002/boundary_detector_calibration.json",
+        "reports/campaign_002/closure_detector_calibration.json",
+        "reports/campaign_002/cross_detector_kappa.json",
+        "reports/campaign_002/cross_family_transfer.json",
+        "reports/campaign_002/dictionary_echo.json",
+        "reports/campaign_002/fdr_p_values.json",
+        "reports/campaign_002/foundation_gates.json",
+        "reports/campaign_002/full_report.json",
+        "reports/campaign_002/instrument_health.json",
+        "reports/campaign_002/raf_benchmarks.json",
+        "reports/campaign_002/reproducibility.json",
+        "reports/campaign_002/round_trip.json",
+        "reports/campaign_003/dictionary_echo_raw.json",
+        "reports/campaign_003/formalism_biology.json",
+        "reports/campaign_003/full_report.json",
+        "reports/campaign_003/hardening.json",
+        "reports/campaign_003/substrate_pluralism.json",
+        "reports/campaign_004/calibration_k5_k10.json",
+        "reports/campaign_004/candidates.json",
+        "reports/campaign_004/formalism_for_guidance.json",
+        "reports/campaign_004/full_report.json",
+        "reports/campaign_004/guidance_negative_biology.json",
+        "reports/campaign_004/motif_candidates.jsonl",
+        "reports/campaign_005/discovery_guidance.json",
+        "reports/campaign_005/full_report.json",
+        "reports/campaign_005/motif_candidates.jsonl",
+        "reports/campaign_005/negative_space_entries.jsonl",
+        "reports/campaign_005/search.json",
+        "reports/campaign_005/world_ensemble.json",
+        "reports/campaign_006/beta_worlds.json",
+        "reports/campaign_006/candidate_audit.json",
+        "reports/campaign_006/candidate_audits.jsonl",
+        "reports/campaign_006/draft_motifs/DRAFT-MC-C006-01-closure_like_production.json",
+        "reports/campaign_006/draft_motifs/DRAFT-MC-C006-02-repair_boundary_memory.json",
+        "reports/campaign_006/draft_motifs/DRAFT-MC-C006-04-field_front_propagation.json",
+        "reports/campaign_006/draft_motifs/DRAFT-MC-C006-07-ecosystem_niche_construction.json",
+        "reports/campaign_006/draft_motifs/DRAFT-MC-C006-08-swarm_marker_coordination.json",
+        "reports/campaign_006/evidence_atlas.json",
+        "reports/campaign_006/evidence_bundles/campaign_002_bundle.json",
+        "reports/campaign_006/evidence_bundles/campaign_003_bundle.json",
+        "reports/campaign_006/evidence_bundles/campaign_004_bundle.json",
+        "reports/campaign_006/evidence_bundles/campaign_005_bundle.json",
+        "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+        "reports/campaign_006/external_review_packet.json",
+        "reports/campaign_006/formal_biology.json",
+        "reports/campaign_006/full_report.json",
+        "reports/campaign_006/health.json",
+        "reports/campaign_006/negative_space.json",
+        "reports/campaign_006/perturbation_maps.json",
+        "reports/campaign_006/reference_harness.json",
+        "reports/campaign_006/transfer_matrix.json",
+        "reports/campaign_007/corpus_reality.json",
+        "reports/campaign_007/d14_audit.json",
+        "reports/campaign_007/hardcode_excision.json",
+        "reports/campaign_007/stale_claims.json",
+        "reports/campaign_007/stub_inventory.json",
+        "reports/campaign_007/stub_inventory_after_w3.json",
+        "reports/campaign_007/substrate_reconstruction_progress.json",
+        "reports/campaign_007/truth_pass.json",
+        "reports/campaign_007/truth_pass_application.json",
+        "reports/campaign_007/w3_reconstruction.json",
+        "reports/campaign_007/w3_traces/absorbing_sink.json",
+        "reports/campaign_007/w3_traces/brusselator.json",
+        "reports/campaign_007/w3_traces/cahn_hilliard.json",
+        "reports/campaign_007/w3_traces/fitzhugh_nagumo.json",
+        "reports/campaign_007/w3_traces/gray_scott.json",
+        "reports/campaign_007/w3_traces/schnakenberg.json",
+        "reports/campaign_007/w3_traces/three_dimensional_front.json",
+        "reports/campaign_007/w3_traces/zero_flux_mass_conservation.json",
+        "reports/campaign_007/w4_reconstruction.json",
+        "reports/campaign_007/w4_traces/branching_tree.json",
+        "reports/campaign_007/w4_traces/layered_organoid.json",
+        "reports/campaign_007/w4_traces/linear_sheet.json",
+        "reports/campaign_007/w4_traces/radial_form.json",
+        "reports/campaign_007/w4_traces/segmented_body.json",
+        "reports/campaign_007/w5_reconstruction.json",
+        "reports/campaign_008/calibration_real_k3_k10.json",
+        "reports/campaign_008/cli_substrate_completion.json",
+        "reports/campaign_008/d14_world_audit.json",
+        "reports/campaign_008/substrate_completion.json",
+        "reports/campaign_008/w10_hypergraph.json",
+        "reports/campaign_008/w11_quasispecies.json",
+        "reports/campaign_008/w12_symbiogenesis.json",
+        "reports/campaign_008/w13_multiscale.json",
+        "reports/campaign_008/w6_ecosystem.json",
+        "reports/campaign_008/w7_swarm.json",
+        "reports/campaign_008/w8_cognitive.json",
+        "reports/campaign_008/w9_origins_chemistry.json",
+        "reports/campaign_009/bfg_preregistration_gate.json",
+        "reports/campaign_009/cross_substrate_signatures.json",
+        "reports/campaign_009/d14_world_audit.json",
+        "reports/campaign_009/distance_metrics.json",
+        "reports/campaign_009/falsifier_audit.json",
+        "reports/campaign_009/floor_calibration_full.json",
+        "reports/campaign_009/floor_seed_calibration.json",
+        "reports/campaign_009/full_report.json",
+        "reports/campaign_009/nfi_vectors.json",
+        "reports/campaign_009/perturbation_budget.json",
+        "reports/campaign_009/perturbation_outcomes.json",
+        "reports/campaign_009/provenance_graph.json",
+        "reports/campaign_009/schema_roundtrip.json",
+        "reports/phase1/README.md",
+        "reports/phase1/calibration_report.json",
+        "reports/phase1/closure_ablation.json",
+        "reports/phase1/closure_recurrence/report.json",
+        "reports/phase1/closure_recurrence_summary.md",
+        "reports/phase1/closure_recurrence_verify/report.json",
+        "reports/phase1/completion/ARCHITECT_HANDOFF.md",
+        "reports/phase1/completion/phase1_completion_report.json",
+        "reports/phase1/determinism_a.json",
+        "reports/phase1/determinism_b.json",
+        "reports/phase1/w10_hypergraph_trace.json",
+        "reports/task_019/regression_verification.json",
+        "reports/task_019/task019_closure.json",
+        "requirements.txt",
+        "spec/CHANGELOG.md",
+        "spec/lineage.json"
+      ],
+      "spawn_ticket": ""
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::1145",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D13",
+        "edge_id": "implements_same_doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1934",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::2116",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->project_telemetry/ai_builder_tasks.jsonl::2218",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D16",
+        "edge_id": "implements_same_doctrine::D16::docs/doctrine_registry.json->project_telemetry/ai_builder_tasks.jsonl::2304",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::docs/doctrine_registry.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2483",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::2591",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::2771",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2944",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3111",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->project_telemetry/ai_builder_tasks.jsonl::3285",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::3481",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3897",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3988",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4004",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_telemetry/ai_builder_tasks.jsonl::4054",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4092",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4182",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4269",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_telemetry/ai_builder_tasks.jsonl::4290",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D28",
+        "edge_id": "implements_same_doctrine::D28::docs/doctrine_registry.json->project_telemetry/ai_builder_tasks.jsonl::4303",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::docs/doctrine_registry.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/doctrine_registry.json",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D30",
+        "edge_id": "implements_same_doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4318",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/spec_completion_estimates.jsonl::1146",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/spec_completion_estimates.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_016_progress_record.json::1695",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_016_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_016_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D13",
+        "edge_id": "implements_same_doctrine::D13::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_016_progress_record.json::1935",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_016_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_016_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D14",
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_017_progress_record.json::2117",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_017_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_017_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::project_telemetry/ai_builder_tasks.jsonl->reports/campaign_013/multisubstrate_floor_connectivity.json::2219",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::project_telemetry/ai_builder_tasks.jsonl::reports/campaign_013/multisubstrate_floor_connectivity.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "reports/campaign_013/multisubstrate_floor_connectivity.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D16",
+        "edge_id": "implements_same_doctrine::D16::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_020_progress_record.json::2305",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_020_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_020_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_018_progress_record.json::2484",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_018_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_018_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_019_progress_record.json::2592",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_019_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_019_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_020_progress_record.json::2772",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_020_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_020_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_022_progress_record.json::2945",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_022_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_022_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_022_progress_record.json::3112",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_022_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_022_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D21",
+        "edge_id": "implements_same_doctrine::D21::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_022_progress_record.json::3286",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_022_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_022_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_016_progress_record.json::3482",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/task_016_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/task_016_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/codex_audit_001_progress_record.json::3898",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_telemetry/ai_builder_tasks.jsonl::project_telemetry/codex_audit_001_progress_record.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "project_telemetry/codex_audit_001_progress_record.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::3989",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4005",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb015_adapter_expansion.py::4055",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_cb015_adapter_expansion.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_cb015_adapter_expansion.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4093",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4183",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4270",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4291",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D28",
+        "edge_id": "implements_same_doctrine::D28::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4304",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D30",
+        "edge_id": "implements_same_doctrine::D30::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_public_contracts.py::4319",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_public_contracts.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "shares_birth_cohort::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::1145",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e"
+          }
+        ],
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1694",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::1934",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D13",
+            "note": "shared mention of doctrine D13",
+            "ref_id": "doctrine::D13::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::2116",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D14",
+            "note": "shared mention of doctrine D14",
+            "ref_id": "doctrine::D14::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->project_telemetry/ai_builder_tasks.jsonl::2218",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D16::docs/doctrine_registry.json->project_telemetry/ai_builder_tasks.jsonl::2304",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D16",
+            "note": "shared mention of doctrine D16",
+            "ref_id": "doctrine::D16::docs/doctrine_registry.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2483",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::2591",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::2771",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::2944",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3111",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D21::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->project_telemetry/ai_builder_tasks.jsonl::3285",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D21",
+            "note": "shared mention of doctrine D21",
+            "ref_id": "doctrine::D21::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::project_telemetry/TIME_CALIBRATION_REPORT.md->project_telemetry/ai_builder_tasks.jsonl::3481",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_telemetry/TIME_CALIBRATION_REPORT.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3897",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::3988",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4004",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_telemetry/ai_builder_tasks.jsonl::4054",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/prereg/campaign_023/self_maintained_boundary.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4092",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4182",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4269",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_telemetry/ai_builder_tasks.jsonl::4290",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D28::docs/doctrine_registry.json->project_telemetry/ai_builder_tasks.jsonl::4303",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D28",
+            "note": "shared mention of doctrine D28",
+            "ref_id": "doctrine::D28::docs/doctrine_registry.json::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "docs/doctrine_registry.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_telemetry/ai_builder_tasks.jsonl::4318",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      }
+    ],
+    "siblings": [
+      ".gitignore",
+      "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md",
+      "CITATION.cff",
+      "CODEX_AUDIT_AND_CAMPAIGN_002.md",
+      "CODEX_CAMPAIGN_003.md",
+      "CODEX_CAMPAIGN_004.md",
+      "CODEX_CAMPAIGN_005.md",
+      "CODEX_CAMPAIGN_006.md",
+      "CODEX_CAMPAIGN_007.md",
+      "CODEX_CAMPAIGN_008.md",
+      "CODEX_INITIATION.md",
+      "CODEX_TASK_009_DRIVE.md",
+      "CODEX_TASK_017_DRIVE.md",
+      "CODEX_TASK_019_DRIVE.md",
+      "CODEX_TASK_020_DRIVE.md",
+      "CONTRIBUTING.md",
+      "Dockerfile",
+      "LICENSE",
+      "NO ARTIFICIAL CEILING DOCTRINE.txt",
+      "Proposal #1 v2 - Basin-Floor Geometry.md",
+      "Proposal #1.txt",
+      "README.md",
+      "Seed v1.2.txt",
+      "The Attractor Observatory v1.0.txt",
+      "The Attractor Observatory v1.1.md",
+      "The Attractor Observatory v1.2.md",
+      "ai_os/decision_log.md",
+      "ai_os/memory/concept_glossary.md",
+      "ai_os/memory/decision_log.md",
+      "ai_os/memory/formal_gap_journal.md",
+      "ai_os/memory/hypothesis_ledger.md",
+      "ai_os/memory/model_calibration_report.md",
+      "ai_os/memory/motif_candidate_journal.md",
+      "ai_os/memory/open_questions.md",
+      "ai_os/memory/rejected_ideas.md",
+      "atlas/__init__.py",
+      "atlas/closure_observations.md",
+      "atlas/negative_space/NS-C002-predicted-empty-high-damage-low-production.json",
+      "atlas/negative_space/NS-C002-simulation-only-external-repair-attractor.json",
+      "atlas/negative_space/NS-C002-unexplained-absence-random-rewire-closure.json",
+      "atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json",
+      "atlas/negative_space/NS-C004-02-external_repair_boundary_mimic.json",
+      "atlas/negative_space/NS-C004-03-powered_flight_control_surface.json",
+      "atlas/negative_space/NS-C004-04-high_deficiency_low_persistence_cycle.json",
+      "atlas/negative_space/NS-C004-05-eusocial_role_memory.json",
+      "atlas/negative_space/NS-C004-06-field_front_without_conserved_mass.json",
+      "atlas/negative_space/NS-C004-07-digital_parasite_locked_replication.json",
+      "atlas/negative_space/NS-C004-08-branching_transport_remodeling.json",
+      "atlas/negative_space/NS-C006-01-w4-informative.json",
+      "atlas/negative_space/NS-C006-02-w4-boundary.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::project_telemetry/ai_builder_tasks.jsonl::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -1,0 +1,515 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-PHASE-B-INFRA",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes runnable factory components consumed by the daemon/pipeline.",
+        "# Factory Adapter Payload Contract\nStatus: Phase-B canonical contract. Mode: exploratory, source-bound.\nThis contract closes the CB-016 W0/W1 routing incident class: adapters and routers must agree on where simulation parameters live before records enter world construction.\n## Canonical Direction\nCodex chooses direction **B** as the forward contract: simulation parameters live under `EmpiricalReco"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "factory_module_exposes_callable",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D14",
+            "D17.5"
+          ],
+          "forbidden_failure_modes": [
+            "module is a stub (Class 5)",
+            "module hardcodes scenario-internal answers (Class 4)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
+            "subject": "TASK-PHASE-B-INFRA: land payload contract and adapters",
+            "ticket": "TASK-PHASE-B-INFRA"
+          },
+          "statement": "Module exposes runnable factory components consumed by the daemon/pipeline."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md#header",
+            "ticket": "CB-016"
+          },
+          "statement": "# Factory Adapter Payload Contract\nStatus: Phase-B canonical contract. Mode: exploratory, source-bound.\nThis contract closes the CB-016 W0/W1 routing incident class: adapters and routers must agree on where simulation parameters live before records enter world construction.\n## Canonical Direction\nCodex chooses direction **B** as the forward contract: simulation parameters live under `EmpiricalReco"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "module hardcodes scenario-internal answers (Class 4)",
+        "module is a stub (Class 5)"
+      ],
+      "predicate_id": "birth::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
+        "note": "TASK-PHASE-B-INFRA: land payload contract and adapters",
+        "ref_id": "birth::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-PHASE-B-INFRA",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::ticket"
+      }
+    ],
+    "first_seen_commit": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
+    "first_seen_date": "2026-05-07T15:04:02-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-PHASE-B-INFRA",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:fdf3b3d9ec400781e7f73298ff1acb77ff54d28b684b70007b3a6f46c2140894",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          },
+          "statement": "Tracked file with 62 lines / 5012 bytes at HEAD."
+        }
+      ],
+      "byte_count": 5012,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 62,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md",
+        "papers/methods/INGESTION_TARGETS.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 3.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 1,
+      "missing_atoms": [
+        "factory_module_exposes_callable"
+      ],
+      "value": 0.5
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D14",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D14",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D14::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D17.5",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D17.5",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D17.5::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [
+      "factory_module_exposes_callable"
+    ],
+    "negative_space_flags": [
+      {
+        "atom_ids": [
+          "factory_module_exposes_callable"
+        ],
+        "kind": "missing_birth_atoms",
+        "note": "atoms promised at birth absent from current predicate"
+      }
+    ],
+    "new_atoms": [
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "bad_drift"
+  },
+  "file": {
+    "artifact_family": "factory",
+    "byte_count": 5012,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 62,
+    "path": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+    "path_hash": "sha256:5d641d2e80ffb72549f6fe88aa91eadd6d0fc663230f6193b3007143a8b6b452",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Bad drift: birth predicate atoms missing from current predicate (1 missing) or doctrine boundary crossings detected.",
+      "doctrine_refs": [
+        "D14",
+        "D17.5",
+        "D7"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md-drift-bad",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Trace the missing atoms to the originating campaign and either add executable evidence for them or downgrade to honest_decline with reason.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/ab5c4defb8c4_factory_lowlevel_ADAPTER_PAYLOAD_CONTRACT.md.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with bad_drift status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "high",
+      "status": "confirmed"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1486",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-PHASE-B-INFRA",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-PHASE-B-INFRA"
+          }
+        ],
+        "target": "public_tests/test_phase_b_adapters.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-PHASE-B-INFRA",
+      "members": [
+        "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+        "public_tests/test_phase_b_adapters.py"
+      ],
+      "spawn_ticket": "TASK-PHASE-B-INFRA"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
+        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::250",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-PHASE-B-INFRA",
+        "target": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4458",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4669",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/INGESTION_TARGETS.md",
+        "target": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1486",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-PHASE-B-INFRA",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-PHASE-B-INFRA"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+        "target": "public_tests/test_phase_b_adapters.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::250",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "source": "TASK-PHASE-B-INFRA"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4458",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      },
+      {
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4669",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "papers/methods/INGESTION_TARGETS.md#factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::papers/methods/INGESTION_TARGETS.md::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
+          }
+        ],
+        "source": "papers/methods/INGESTION_TARGETS.md"
+      }
+    ],
+    "siblings": [
+      "public_tests/test_phase_b_adapters.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 2,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:49Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:49Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -1,0 +1,393 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-SOURCE-OBJ-GEN",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Report serializes structured data for post-hoc analysis."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "file_span"
+            }
+          ],
+          "atom_id": "report_records_data",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [
+            "report contents are mock or placeholder (Class 12)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+            "subject": "TASK-SOURCE-OBJ-GEN: 4 source-object adapters + 4 corpora + non-floor MRP unlocks",
+            "ticket": "TASK-SOURCE-OBJ-GEN"
+          },
+          "statement": "Report serializes structured data for post-hoc analysis."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11"
+      ],
+      "forbidden_patterns": [
+        "report contents are mock or placeholder (Class 12)"
+      ],
+      "predicate_id": "birth::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+        "note": "TASK-SOURCE-OBJ-GEN: 4 source-object adapters + 4 corpora + non-floor MRP unlocks",
+        "ref_id": "birth::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-SOURCE-OBJ-GEN",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::ticket"
+      }
+    ],
+    "first_seen_commit": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+    "first_seen_date": "2026-05-07T07:51:11-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-SOURCE-OBJ-GEN",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:7ba3ce6737a659ed5a4aabc11734a6055bc43f91ffa54ce62dd9c067c644c940",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+          },
+          "statement": "Tracked file with 1 lines / 1922 bytes at HEAD."
+        }
+      ],
+      "byte_count": 1922,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 1,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json",
+        "note": "current contents at HEAD",
+        "ref_id": "current::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D11"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "report",
+    "byte_count": 1922,
+    "generated_status": "report",
+    "language": "json",
+    "line_count": 1,
+    "path": "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json",
+    "path_hash": "sha256:9d85ef74ffcba1b326f5be1eacaf224c71413e0022940819220a6f4edc81ff74",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/e6ede39ca0b4_reports_source_object_generation_test_cache_source_object_perturbation_response_ensemble_source_objects.json.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [],
+    "cohort": {
+      "cohort_id": "TASK-SOURCE-OBJ-GEN",
+      "members": [
+        "factory_lowlevel/source_object_generation.py",
+        "make_source_object_generation.py",
+        "public_tests/test_source_object_generation.py",
+        "reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json",
+        "reports/source_object_generation/source_cache/source_object_entity_observations/source_objects.json",
+        "reports/source_object_generation/source_cache/source_object_external_channel_samples/source_objects.json",
+        "reports/source_object_generation/source_cache/source_object_perturbation_response_ensemble/source_objects.json",
+        "reports/source_object_generation/source_object_generation_report.json",
+        "reports/source_object_generation/test_cache/source_object_boundary_region_samples/source_objects.json",
+        "reports/source_object_generation/test_cache/source_object_entity_observations/source_objects.json",
+        "reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json",
+        "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+      ],
+      "spawn_ticket": "TASK-SOURCE-OBJ-GEN"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+        "edge_id": "spawned_by_ticket::TASK-SOURCE-OBJ-GEN->reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::578",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-SOURCE-OBJ-GEN",
+        "target": "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json->reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::1500",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-SOURCE-OBJ-GEN",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-SOURCE-OBJ-GEN"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json",
+        "target": "reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-SOURCE-OBJ-GEN->reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::578",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8b88da40e8ec798dfd3b49389e91ec980d9add21",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json"
+          }
+        ],
+        "source": "TASK-SOURCE-OBJ-GEN"
+      },
+      {
+        "edge_id": "shares_birth_cohort::reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json->reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::1500",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-SOURCE-OBJ-GEN",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-SOURCE-OBJ-GEN"
+          }
+        ],
+        "source": "reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json"
+      }
+    ],
+    "siblings": [
+      "factory_lowlevel/source_object_generation.py",
+      "make_source_object_generation.py",
+      "public_tests/test_source_object_generation.py",
+      "reports/source_object_generation/source_cache/source_object_boundary_region_samples/source_objects.json",
+      "reports/source_object_generation/source_cache/source_object_entity_observations/source_objects.json",
+      "reports/source_object_generation/source_cache/source_object_external_channel_samples/source_objects.json",
+      "reports/source_object_generation/source_cache/source_object_perturbation_response_ensemble/source_objects.json",
+      "reports/source_object_generation/source_object_generation_report.json",
+      "reports/source_object_generation/test_cache/source_object_boundary_region_samples/source_objects.json",
+      "reports/source_object_generation/test_cache/source_object_entity_observations/source_objects.json",
+      "reports/source_object_generation/test_cache/source_object_external_channel_samples/source_objects.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::reports/source_object_generation/test_cache/source_object_perturbation_response_ensemble/source_objects.json::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-08T19:41:50Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "feature/pg-001-execute",
+    "generated_at": "2026-05-08T19:41:50Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
+    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "pg_version": "PG-001",
+    "workspace_dirty": true
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

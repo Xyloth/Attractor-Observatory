@@ -1,0 +1,51 @@
+# Dossier: `Visuals/preview/doctrine-tablet.html`
+
+> JSON is authoritative. This file is a rendering of the JSON dossier.
+
+- JSON: `reports/project_genealogy/dossiers/d4314bbf1c81_Visuals_preview_doctrine-tablet.html.json`
+- JSON content_hash: `sha256:8b76197f05f98ef256878719954d53dafe25dfa8d98313108fd4b1a2aa5ca65a`
+- Schema: `ProjectGenealogyDossier.v1`
+- Artifact family: `visual`
+- Generated status: `source`
+- Lines: 12 / Bytes: 1127
+
+## Birth
+- Status: `recovered`
+- First-seen commit: `f31fabef27b7618506d78bc49dae735b8c9cb3d4`
+- First-seen date: `2026-05-05T20:37:55-04:00`
+- Spawn ticket: `TASK-CB-001`
+- Cohort: `TASK-CB-001`
+
+### Birth predicate atoms
+- **visual_asset_used** — Visual asset/document is referenced by control_room or public docs.
+- **header_declared_intent** — <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head><body><div class="card">
+<div class="kicker">doctrine tablet · D17 · ratified C014</div>
+<div class="panel" style="padding:20px;border-left:2px solid var(--motif);background:linear-gradient(180deg,var(--bg-panel) 0%,var(--bg-panel-glow) 100%)">
+<div class="row" style="justify-content:space-between;align
+
+## Current
+- Status: `recovered`
+- Observed doctrines: `D17`
+
+## DepthVector.v1
+- **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
+- **adversarial_surface_coverage**: `{'required_bad_cases': [], 'covered_bad_cases': [], 'missing_bad_cases': [], 'value': None}`
+- **doctrine_binding_quality**: `{'required': ['D17'], 'verified': ['D17'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': [], 'weighted_value': 0.0}`
+
+## Drift
+- Status: `positive_deepening`
+
+## Liveness
+- Cleanup candidate status: `unknown`
+- Cleanup reason: PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean
+- Probe outcome: `declined`
+- Probe decline reason: `removal_probe_over_budget`
+
+## Findings
+_No findings detected mechanically._
+
+---
+
+Reproducer: regenerate this dossier with `python -m project_genealogy run-pass2`.
