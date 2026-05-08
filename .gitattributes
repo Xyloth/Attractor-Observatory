@@ -1,3 +1,4 @@
+.gitattributes text eol=lf
 docs/DOCTRINE.md text eol=lf
 docs/doctrine_d*.md text eol=lf
 docs/doctrine_registry.json text eol=lf
@@ -7,6 +8,8 @@ papers/methods/*.md text eol=lf
 papers/prereg/**/*.signed.json text eol=lf
 papers/methods/INGESTION_TARGETS.md text eol=lf
 INGESTION_TARGETS.md text eol=lf
+scripts/*.sh text eol=lf
+scripts/*.bat text eol=crlf
 # CB-018: spec lineage source files. lineage.json's recorded sha256 was
 # computed against LF bytes; without these rules, fresh Windows worktrees
 # pick up CRLF and test_spec_lineage_hashes_match_raw_bytes fails.

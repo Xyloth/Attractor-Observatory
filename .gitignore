@@ -69,6 +69,18 @@ reports/*/closure_recurrence/traces/
 reports/*/closure_recurrence_verify/traces/
 reports/phase1/closure_recurrence/traces/
 reports/phase1/closure_recurrence_verify/traces/
+reports/*/source_cache/
+reports/*/factory_store/.daemon_lock
+reports/*/factory_store/source_cache/
+reports/task_cb014_launch/
+reports/task_phase_b_verify/
+reports/_tmp_adapter_count_check/
+
+# Control Room runtime snapshots/logs. Keep latest_* tracked where already
+# tracked; per-run and timestamped snapshots are regenerable runtime output.
+control_room/cache/daemon_logs/
+control_room/cache/factory_runs/run_*.json
+control_room/snapshots/state_2026*.json
 
 # -----------------------------------------------------------------------------
 # Standard exclusions

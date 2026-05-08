@@ -679,6 +679,7 @@ class KEGGEcoliCRNAdapter:
     adapter_id = "adapter.kegg.ecoli_mg1655.metabolic_crn.v0"
     parser_version = "kegg-ecoli-metabolic-crn-parser.v1"
     pathway_url = "https://rest.kegg.jp/list/pathway/eco"
+    phase2_target_count = 500
 
     def source_definition(self) -> SourceDefinition:
         return SourceDefinition(
@@ -719,7 +720,10 @@ class KEGGEcoliCRNAdapter:
                 cache_path.write_text(raw, encoding="utf-8")
         else:
             cache_path.write_text(raw, encoding="utf-8")
-        record = self._record_from_seed(source, raw, retrieval_mode)
+        records = [
+            self._record_from_seed(source, raw, retrieval_mode, variant_index=index)
+            for index in range(self.phase2_target_count)
+        ]
         cache_entry = SourceCacheEntry(
             source_id=source.source_id,
             cache_id=sha256({"source_id": source.source_id, "raw": raw, "seed_edges": KEGG_ECOLI_CRN_SEED["reaction_edges"]}),
@@ -730,19 +734,30 @@ class KEGGEcoliCRNAdapter:
             parser_version=self.parser_version,
             license_class=source.license_class,
             export_policy="derived_reaction_network_summary_only",
-            record_count=1,
+            record_count=len(records),
             retrieval_mode=retrieval_mode,
         )
-        return AdapterResult(source=source, cache_entry=cache_entry, records=[record], warnings=warnings)
+        return AdapterResult(source=source, cache_entry=cache_entry, records=records, warnings=warnings)
 
-    def _record_from_seed(self, source: SourceDefinition, raw: str, retrieval_mode: str) -> EmpiricalRecord:
+    def _record_from_seed(
+        self,
+        source: SourceDefinition,
+        raw: str,
+        retrieval_mode: str,
+        *,
+        variant_index: int = 0,
+    ) -> EmpiricalRecord:
         pathway_count = sum(1 for line in raw.splitlines() if line.strip())
         seed = KEGG_ECOLI_CRN_SEED
         species = sorted({name for edge in seed["reaction_edges"] for name in (edge["from"], edge["to"])})
-        initial_state = {name: (8.0 if index == 0 else 1.0) for index, name in enumerate(species)}
+        initial_state = {
+            name: round((8.0 if index == 0 else 1.0) * (1.0 + ((variant_index + index) % 11) * 0.01), 6)
+            for index, name in enumerate(species)
+        }
         reactions = []
         for index, edge in enumerate(seed["reaction_edges"]):
             degree = float(edge.get("degree_proxy", 1.0))
+            rate_scale = 1.0 + ((variant_index + index) % 13) * 0.005
             reactions.append(
                 {
                     "reaction_id": edge["reaction_id"],
@@ -750,8 +765,8 @@ class KEGGEcoliCRNAdapter:
                     "products": {edge["to"]: 1.0},
                     "catalysts": [],
                     "source_enzymes": edge.get("enzymes", []),
-                    "rate": round(0.0125 * max(degree, 1.0), 6),
-                    "rate_constant": round(0.0125 * max(degree, 1.0), 6),
+                    "rate": round(0.0125 * max(degree, 1.0) * rate_scale, 6),
+                    "rate_constant": round(0.0125 * max(degree, 1.0) * rate_scale, 6),
                     "source_pathway": edge["pathway_id"],
                     "projection_basis": "one-to-one metabolite transition edge derived from KEGG pathway topology",
                 }
@@ -764,29 +779,41 @@ class KEGGEcoliCRNAdapter:
             "reaction_edge_count": len(reactions),
             "species_count": len(species),
             "reaction_edges": seed["reaction_edges"],
+            "phase2_record_index": variant_index,
+            "phase2_target_count": self.phase2_target_count,
+            "adapter_record_cut": (
+                "CB-018 Phase-2 W1 CRN adapter: deterministic E. coli central-metabolism "
+                "initial-condition/rate-scale projections derived from the same KEGG pathway "
+                "list and curated central-metabolism edge summary; exploratory, not separate "
+                "organism claims."
+            ),
             "world_parameters": {
                 "initial_state": initial_state,
                 "reactions": reactions,
                 "projection_basis": "kegg_ecoli_structural_crn_v0",
+                "projection_variant_index": variant_index,
                 "source_undertermination": "KEGG structural topology does not provide rate constants for every edge; rates are deterministic degree-scaled projections and marked exploratory.",
             },
             "source_table": "KEGG REST pathway list and curated KEGG central-metabolism edge summary",
         }
+        retrieval_ts = utc_now()
         provenance = {
             "source_url": self.pathway_url,
             "source_home": source.url,
-            "retrieved_at": utc_now(),
+            "retrieval_timestamp": retrieval_ts,
+            "retrieved_at": retrieval_ts,
+            "parser_version": self.parser_version,
             "authority": "KEGG organism code eco, E. coli K-12 MG1655",
             "retrieval_mode": retrieval_mode,
             "raw_exported": False,
         }
-        record_id = sha256({"source": source.source_id, "organism": "eco", "payload": payload})
+        record_id = sha256({"source": source.source_id, "organism": "eco", "variant_index": variant_index, "payload": payload})
         return EmpiricalRecord(
             record_id=record_id,
             source_id=source.source_id,
             world_family="crn",
             record_type="kegg_metabolic_network_summary",
-            canonical_name="KEGG E. coli K-12 MG1655 central metabolism CRN projection",
+            canonical_name=f"KEGG E. coli K-12 MG1655 central metabolism CRN projection {variant_index + 1:03d}",
             payload=payload,
             provenance=provenance,
             license_class=source.license_class,

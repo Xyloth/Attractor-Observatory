@@ -4,9 +4,9 @@ REM CB-013 T1 — setup_worktree.bat
 REM
 REM Copies private (git-ignored) modules from the main checkout into a
 REM newly-created git worktree so the daemon and the Control Room
-REM can import them. The .gitignore line `formalism/`, `worlds/`,
-REM `trace/` keeps these directories private to each working copy;
-REM fresh worktrees miss them and FIRE crashes with ModuleNotFoundError.
+REM can import them. The .gitignore implementation-module list keeps
+REM these directories private to each working copy; fresh worktrees
+REM miss them and FIRE crashes with ModuleNotFoundError.
 REM
 REM Usage from a fresh worktree:
 REM   scripts\setup_worktree.bat
@@ -51,7 +51,7 @@ REM Modules to copy. These are listed in .gitignore so each worktree
 REM has its own copy. Adding a new gitignored module the daemon
 REM imports? Append it here AND audit factory_lowlevel/*.py for the
 REM import line (see SETUP_WORKTREE.md).
-for %%D in (formalism worlds trace) do (
+for %%D in (worlds motifs validation nulls core trace formalism biology search ops experiments evidence tests) do (
     if exist "%MAIN_REPO%\%%D" (
         if exist "%WORKTREE_ROOT%\%%D" (
             echo [setup_worktree] %%D already present — skipping

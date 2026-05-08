@@ -244,6 +244,7 @@ def run_live_factory_cycle(
     _write_live_state(live_state_path, stage="motif_evaluate", status="running", trace_count=len(traces), life_form_count=len(life_forms))
 
     store.rebuild_evidence_graph()
+    store.ingest_world_traces(routed, run_id_seed=store.content_hash())
     snapshot = store.write()
     completed_at = utc_now()
     run_payload = {
