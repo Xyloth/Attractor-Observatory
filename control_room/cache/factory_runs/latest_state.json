@@ -15,8 +15,10 @@
   "run_id": "sha256:f17c14848991da217dd4e4ea743a3fc959948ebe79a57a8d40599146165132f4",
   "run_path": "control_room\\cache\\factory_runs\\run_f17c14848991da21.json",
   "source_count": 5,
-  "source_ids": [],
-  "stage": "audit",
+  "source_ids": [
+    "source.nist.asd.energy_levels"
+  ],
+  "stage": "download",
   "stage_history": [
     {
       "at": "2026-05-06T10:31:25Z",
@@ -486,17 +488,21 @@
       "run_path": "control_room\\cache\\factory_runs\\run_f17c14848991da21.json",
       "stage": "audit",
       "status": "done"
+    },
+    {
+      "at": "2026-05-08T12:23:10Z",
+      "source_ids": [
+        "source.nist.asd.energy_levels"
+      ],
+      "stage": "download",
+      "started_at": "2026-05-08T12:23:10Z",
+      "status": "running",
+      "target_worlds": []
     }
   ],
-  "started_at": "2026-05-06T10:47:05Z",
-  "status": "done",
-  "target_worlds": [
-    "crn",
-    "field",
-    "ecosystem",
-    "origins_chemistry",
-    "quasispecies"
-  ],
+  "started_at": "2026-05-08T12:23:10Z",
+  "status": "running",
+  "target_worlds": [],
   "trace_count": 8,
-  "updated_at": "2026-05-06T10:47:11Z"
+  "updated_at": "2026-05-08T12:23:10Z"
 }
