@@ -44,7 +44,7 @@ echo "[setup_worktree] main:     ${main_repo}"
 # Modules to copy. Listed in .gitignore so each worktree has its own.
 # Append new gitignored modules the daemon imports here AND audit
 # factory_lowlevel/*.py for the import line (see SETUP_WORKTREE.md).
-modules=(formalism worlds trace)
+modules=(worlds motifs validation nulls core trace formalism biology search ops experiments evidence tests)
 
 for d in "${modules[@]}"; do
     src="${main_repo}/${d}"

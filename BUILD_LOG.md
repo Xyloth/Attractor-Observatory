@@ -2411,3 +2411,37 @@ Verification:
   W12, W13 before timeout. Focused adapter/router tests remain the
   Codex-side acceptance check for payload compatibility; Builder owns
   the live daemon relaunch and sustained progress monitoring.
+
+## 2026-05-07 16:23:00 EST - TASK-CB-018 Complete
+
+CB-018 Phase-2 mass-density expansion landed on main through commits
+`5343a16` (feature implementation), `61c3f69` (no-ff merge), and
+`eb50e44` (lineage/doctrine hash re-sync on main).
+
+Delivered: Phase-2 target ratification in
+`papers/methods/INGESTION_TARGETS.md`, 16 wired adapters expanded
+toward the 57,650-record Phase-2 envelope, lower-world density push
+for W-1/W0/W1, and orthogonal substantive expansion for W2-W13.
+
+Known loose ends discovered after launch and handed to TASK-CB-019:
+
+* `public_tests/test_phase_b_adapters.py` still asserted Phase-1
+  floors (`protocell=50`, `field=100`, etc.) even though CB-018
+  moved the canonical targets to Phase 2.
+* The W0 math assertion still expected 200 records; the Phase-2
+  bundled catalog emits 626 records against a 600+ target.
+* `factory_lowlevel.live_pipeline.run_live_factory_cycle` did not
+  call `LowLevelFactoryStore.ingest_world_traces(...)`. Production
+  daemon cycles therefore persisted empirical records, normalized
+  refs, and evidence edges, but `world_traces` stayed at 0. P0 fix
+  queued to TASK-CB-019 before the destroyer pass.
+
+## 2026-05-08 08:00:22 EST - TASK-CB-019 Start
+
+Codex start under full authority. Scope: pre-destroyer cleanup, P0
+`live_pipeline` world-trace persistence bug, Phase-2 stale public
+tests, setup-worktree private-module copy expansion, untracked/runtime
+artifact policy cleanup, KEGG CRN adapter offline sanity, one daemon
+cycle relaunch health check, and closeout to main. Explicit lane
+boundary: no live-daemon babysitting after the required short health
+check; sustained monitoring remains Builder's lane.

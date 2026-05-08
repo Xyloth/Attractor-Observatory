@@ -23,26 +23,34 @@ from factory_lowlevel.adapters import (  # noqa: E402
 )
 from factory_lowlevel.router import routing_rejections  # noqa: E402
 from factory_lowlevel.continuous_daemon import _apply_force_refresh  # noqa: E402
+from factory_lowlevel.progress import load_target_densities  # noqa: E402
 
 
 PHASE_B_ADAPTERS = {
-    "protocell": (SzostakLiposomeProtocellAdapter, 50),
-    "field": (ReactionDiffusionBenchmarkAdapter, 100),
-    "morphogenesis": (FlyBaseMorphogenProfileAdapter, 100),
-    "digital": (AvidaDigitalTraceAdapter, 50),
-    "ecosystem": (GBIFJornadaEcosystemAdapter, 100),
-    "swarm": (MovebankSwarmBehaviorAdapter, 50),
-    "cognitive": (AllenBrainCognitiveAdapter, 50),
-    "origins_chemistry": (PrebioticChemistryCatalogAdapter, 100),
-    "hypergraph_reactions": (BioModelsHypergraphAdapter, 50),
-    "quasispecies": (NCBIHIVQuasispeciesAdapter, 100),
-    "symbiogenesis": (NCBIEndosymbiosisGenomeAdapter, 50),
-    "multiscale": (PhysiomeMultiscaleAdapter, 3),
+    # Expected counts come from papers/methods/INGESTION_TARGETS.md,
+    # canonical "Per-world Phase 2 targets (CB-018)" table.
+    "protocell": SzostakLiposomeProtocellAdapter,
+    "field": ReactionDiffusionBenchmarkAdapter,
+    "morphogenesis": FlyBaseMorphogenProfileAdapter,
+    "digital": AvidaDigitalTraceAdapter,
+    "ecosystem": GBIFJornadaEcosystemAdapter,
+    "swarm": MovebankSwarmBehaviorAdapter,
+    "cognitive": AllenBrainCognitiveAdapter,
+    "origins_chemistry": PrebioticChemistryCatalogAdapter,
+    "hypergraph_reactions": BioModelsHypergraphAdapter,
+    "quasispecies": NCBIHIVQuasispeciesAdapter,
+    "symbiogenesis": NCBIEndosymbiosisGenomeAdapter,
+    "multiscale": PhysiomeMultiscaleAdapter,
 }
 
 
-def test_phase_b_adapters_hit_ratified_phase1_targets_offline(tmp_path):
-    for world, (adapter_cls, target) in PHASE_B_ADAPTERS.items():
+def _phase2_target(world_family: str) -> int:
+    return load_target_densities()[world_family]
+
+
+def test_phase_b_adapters_hit_ratified_phase2_targets_offline(tmp_path):
+    for world, adapter_cls in PHASE_B_ADAPTERS.items():
+        target = _phase2_target(world)
         result = adapter_cls().fetch(tmp_path / "cache", allow_network=False)
         assert result.source.target_world == world
         assert len(result.records) == target
@@ -54,7 +62,7 @@ def test_phase_b_adapters_hit_ratified_phase1_targets_offline(tmp_path):
 
 def test_phase_b_records_match_router_contract_and_provenance(tmp_path):
     required_provenance = {"source_url", "retrieval_timestamp", "parser_version", "authority", "raw_exported"}
-    for world, (adapter_cls, _) in PHASE_B_ADAPTERS.items():
+    for world, adapter_cls in PHASE_B_ADAPTERS.items():
         result = adapter_cls().fetch(tmp_path / "cache", allow_network=False)
         assert routing_rejections(result.records, {world}) == []
         for record in result.records[:5]:
@@ -80,12 +88,19 @@ def test_phase_b_overlap_adapters_declare_distinct_simulation_cut(tmp_path):
 
 
 def test_w0_w1_payload_contract_routes_phase_a_records(tmp_path):
-    from factory_lowlevel.adapters import KEGGOrganismCRNAdapter, MathPrimitivesCatalogAdapter
+    from factory_lowlevel.adapters import KEGGEcoliCRNAdapter, KEGGOrganismCRNAdapter, MathPrimitivesCatalogAdapter
 
     math = MathPrimitivesCatalogAdapter().fetch(tmp_path / "cache", allow_network=False)
     crn_adapter = KEGGOrganismCRNAdapter(organism_codes=("eco",))
     crn = crn_adapter.fetch(tmp_path / "cache", allow_network=False)
-    assert len(math.records) == 200
+    # INGESTION_TARGETS Phase-2 row: math_primitives target_density 600.
+    # The complete bundled catalog currently has 626 source-bound records,
+    # so the correct invariant is target coverage, not Phase-1 equality.
+    assert len(math.records) >= _phase2_target("math_primitives")
+    assert len(math.records) == math.cache_entry.record_count
+    # Single-organism fixture: route only eco through the generalized
+    # KEGG adapter. The full adapter target is covered separately by
+    # CB-018 Phase-2 tests and CL-4 sanity.
     assert len(crn.records) == 1
     assert routing_rejections(math.records, {"math_primitives"}) == []
     assert routing_rejections(crn.records, {"crn"}) == []
@@ -103,6 +118,14 @@ def test_w0_w1_payload_contract_routes_phase_a_records(tmp_path):
     )
     assert audit is None
     assert routing_rejections([record], {"crn"}) == []
+
+    # INGESTION_TARGETS Phase-2 row: crn target_density 500. The
+    # E. coli adapter is the standalone Phase-2 sanity source for that
+    # row; it must not silently remain at the Phase-1 single-record cut.
+    ecoli = KEGGEcoliCRNAdapter().fetch(tmp_path / "cache", allow_network=False)
+    assert len(ecoli.records) == _phase2_target("crn")
+    assert ecoli.cache_entry.record_count == _phase2_target("crn")
+    assert routing_rejections(ecoli.records[:3], {"crn"}) == []
 
 
 def test_force_refresh_clears_state_with_audit_payload():
