@@ -3013,3 +3013,40 @@ streamlit run control_room/app.py     # then open the "Project Genealogy" tab
 PG-001 v1 is the instrument; future tickets (PG-002 trajectory pass,
 NS-001 negative-space cloud) extend the methodology against the same
 schema and the same Mission Control tab.
+
+## TASK-DX-003-DESTROYER — Layered Multi-Round Adversarial Pass — complete
+
+**Branch:** `falsification/dx-003-20260508T214003Z-4147aad`  
+**Worktree:** `C:\Attractor Observatory DX Worktrees\dx-003-20260508T214003Z-4147aad`  
+**Base:** `main` at `4147aad` (`Merge PG-001 v1 audit: 920 dossiers, atlas, coherence, Mission Control tab`)  
+**Start:** 2026-05-08T21:40:48.9304878Z / 2026-05-08 17:40:48 Eastern  
+**Stop:** recorded in `papers/falsification/DX-003/index.md` after the ninth round, elapsed > 40 minutes.
+
+Destroyer pass completed on a disposable worktree with the full private surface. `scripts/setup_worktree.bat` copied all 13 private modules (`worlds/`, `motifs/`, `validation/`, `nulls/`, `core/`, `trace/`, `formalism/`, `biology/`, `search/`, `ops/`, `experiments/`, `evidence/`, `tests/`), and all 13 were verified present/readable before attacks.
+
+**Rounds committed:** 9 one-round commits plus this final roll-up.  
+**Finding records:** 40 total; 27 broken, 6 fake-passed, 3 ambiguous/indeterminate, 4 instrument-held.  
+**Severity distribution:** red 12, amber 17, yellow 6, informational 5.  
+**Reproducer artifacts:** 68 files under `papers/falsification/DX-003/round_*_reproducers/`.
+
+**Attack angles:** executable substrate reality; Project Genealogy self-map collision; doctrine contract violators; evidence dereferenceability; Control Room truth surfaces; external identifier reality collision; identity/telemetry accounting; daemon state/progress cache truth; doctrine and mistake-catalog propagation.
+
+**Highest-impact findings surfaced:**
+
+- MotifContract.v2 reality anchor failure: `motif.autocatalytic_closure.draft` W1 `RAF/autocatalytic reaction networks` source-bound citations resolve to spider silk adhesion and essential tremor papers, not autocatalytic reaction-network evidence.
+- D31 AST read-separation bypass via non-contiguous strings and dynamic import.
+- Four-axis adversarial controls miss metadata identity channels (`manifest.world_family`, `parameter_record.family`).
+- PG-001 artifacts are stale relative to consolidated `main`, bound to a dirty pre-PG branch, and omit current PG/CB020/CB021 surfaces from the manifest universe.
+- Structured artifacts still contain unmarked missing evidence paths, especially Campaign 006 `runs/campaign006/...` paths and Campaign 019 fixture locks.
+- `state_latest.json` raw snapshot can claim current while bound to an old branch/commit, even though read-time rebinding catches it.
+- Force-refresh clears daemon state while per-world progress files still say completed/no-pending; due-source logic says all 17 sources are due.
+- Governance surfaces disagree on Class 12/Class 13 and D7-D31 propagation; Control Room surfaces still render older Class 1-12 / D7-D22 or D7-D25 claims.
+
+**Artifacts:**
+
+- `papers/falsification/DX-003/start_time.txt`
+- `papers/falsification/DX-003/round_1.md` through `round_9.md`
+- `papers/falsification/DX-003/round_1_reproducers/` through `round_9_reproducers/`
+- `papers/falsification/DX-003/index.md`
+
+No production source fixes were made on this branch. The branch is preserved as via-negativa artifact for PI / Architect review; repairs belong on follow-up Builder branches.
