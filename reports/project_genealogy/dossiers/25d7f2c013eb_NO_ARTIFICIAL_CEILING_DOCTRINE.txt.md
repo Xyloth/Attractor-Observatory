@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/25d7f2c013eb_NO_ARTIFICIAL_CEILING_DOCTRINE.txt.json`
-- JSON content_hash: `sha256:b04a7070f9ae3325612d90c2eca11ec4a51eb1217263bdcfd59c9e91e3da59c4`
+- JSON content_hash: `sha256:f2da9238b6c7afbab393f4538bb93a072185b3c349a9fb371105186f84764fa9`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

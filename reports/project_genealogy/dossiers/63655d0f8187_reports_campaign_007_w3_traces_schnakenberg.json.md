@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/63655d0f8187_reports_campaign_007_w3_traces_schnakenberg.json.json`
-- JSON content_hash: `sha256:67875972e276ed19a7a8a254e27a264ee4ba08a77a85ed5b999656162eae9e10`
+- JSON content_hash: `sha256:35a3967d33650d3783cc80fde0736ffc4b5812a7e4744d29b66860933434dc8f`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

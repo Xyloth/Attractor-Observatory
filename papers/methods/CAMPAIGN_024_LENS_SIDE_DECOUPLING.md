@@ -14,7 +14,7 @@ Status: exploratory; no claim-bearing promotion.
 
 ## Lens Cell Counts
 
-{"BAD": 33, "CLEAN": 15}
+{"BAD": 38, "CLEAN": 10}
 
 ## Results
 
@@ -22,7 +22,7 @@ Status: exploratory; no claim-bearing promotion.
 |---|---|---:|---:|---:|---|
 | `motif.autocatalytic_closure.draft` | `dynamical_systems` | 10000 | 0.000000 | 0.000000 | `signal_was_substrate_id` |
 | `motif.repair.draft` | `None` | 0 | 0.000000 | 0.000000 | `not_evaluable_no_lens_after_decoupling` |
-| `motif.externalized_memory.draft` | `dynamical_systems` | 10000 | 0.036844 | 0.056985 | `signal_partial_or_inconclusive` |
+| `motif.externalized_memory.draft` | `None` | 0 | 0.000000 | 0.000000 | `not_evaluable_no_lens_after_decoupling` |
 | `motif.replication_lineage.draft` | `None` | 0 | 0.000000 | 0.000000 | `not_evaluable_no_lens_after_decoupling` |
 | `motif.self_maintained_boundary.draft` | `dynamical_systems` | 10000 | 0.051501 | 0.017167 | `signal_survives_shuffle` |
 | `motif.floor_connectivity.draft` | `None` | 0 | 0.000000 | 0.000000 | `not_evaluable_no_lens_after_decoupling` |

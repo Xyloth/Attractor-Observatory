@@ -4,7 +4,7 @@
     "birth_predicate": {
       "acceptance_criteria": [
         "Report serializes structured data for post-hoc analysis.",
-        "{\n\"accessible\": {\n\"private_trace_boundary\": \"reports/*/traces are private_unshipped unless explicitly shipped\",\n\"public_report_present\": false\n},\n\"campaign_id\": \"campaign_022\",\n\"findable\": {\n\"identifiers\": [\n\"campaign_022\"\n],\n\"methods_docs\": \"papers/methods/\",\n\"primary_report\": \"reports/campaign_022/full_report.json\"\n},\n\"generated_at\": \"2026-05-06T21:05:38-04:00\",\n\"interoperable\": {\n\"formats\": [\n\""
+        "{\n\"accessible\": {\n\"private_trace_boundary\": \"reports/*/traces are private_unshipped unless explicitly shipped\",\n\"public_report_present\": false\n},\n\"campaign_id\": \"campaign_022\",\n\"findable\": {\n\"evidence_private\": true,\n\"identifiers\": [\n\"campaign_022\"\n],\n\"methods_docs\": \"papers/methods/\",\n\"primary_report\": \"reports/campaign_022/full_report.json\",\n\"primary_report_private_boundary_reason\": \"D23/D29: re"
       ],
       "atoms": [
         {
@@ -31,19 +31,24 @@
         {
           "acceptance_evidence_expected": [],
           "atom_id": "header_declared_intent",
-          "doctrine_bindings_expected": [],
+          "doctrine_bindings_expected": [
+            "D23",
+            "D29"
+          ],
           "forbidden_failure_modes": [],
           "source_ref": {
             "kind": "file_span",
             "locator": "reports/campaign_022/fair_metadata.json#header",
             "ticket": "campaign_022"
           },
-          "statement": "{\n\"accessible\": {\n\"private_trace_boundary\": \"reports/*/traces are private_unshipped unless explicitly shipped\",\n\"public_report_present\": false\n},\n\"campaign_id\": \"campaign_022\",\n\"findable\": {\n\"identifiers\": [\n\"campaign_022\"\n],\n\"methods_docs\": \"papers/methods/\",\n\"primary_report\": \"reports/campaign_022/full_report.json\"\n},\n\"generated_at\": \"2026-05-06T21:05:38-04:00\",\n\"interoperable\": {\n\"formats\": [\n\""
+          "statement": "{\n\"accessible\": {\n\"private_trace_boundary\": \"reports/*/traces are private_unshipped unless explicitly shipped\",\n\"public_report_present\": false\n},\n\"campaign_id\": \"campaign_022\",\n\"findable\": {\n\"evidence_private\": true,\n\"identifiers\": [\n\"campaign_022\"\n],\n\"methods_docs\": \"papers/methods/\",\n\"primary_report\": \"reports/campaign_022/full_report.json\",\n\"primary_report_private_boundary_reason\": \"D23/D29: re"
         }
       ],
       "content_hash": "",
       "expected_doctrine_bindings": [
-        "D11"
+        "D11",
+        "D23",
+        "D29"
       ],
       "forbidden_patterns": [
         "report contents are mock or placeholder (Class 12)"
@@ -80,7 +85,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:d6b9e56a01c5f518f923664faa4813262ff1f1a4cbb477ebebe7e98705f432c7",
+  "content_hash": "sha256:9cea7800593f0f768f17add2b76b5a0105e1cbc1452d7e877bd03022460bb30e",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -90,7 +95,7 @@
             "kind": "file_span",
             "locator": "reports/campaign_022/fair_metadata.json"
           },
-          "statement": "Tracked file with 31 lines / 850 bytes at HEAD."
+          "statement": "Tracked file with 35 lines / 1179 bytes at HEAD."
         },
         {
           "atom_id": "provenance_present",
@@ -101,15 +106,18 @@
           "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 850,
+      "byte_count": 1179,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 31,
-      "observed_doctrine_bindings": [],
+      "line_count": 35,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::reports/campaign_022/fair_metadata.json",
       "public_symbols": [],
       "test_functions": []
@@ -154,16 +162,18 @@
       "value": 0.0
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D11"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D11"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -173,12 +183,14 @@
       "unresolved_evidence_refs": 0
     },
     "operational_load_bearingness": {
-      "cited_by_reports": [],
+      "cited_by_reports": [
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 0.0
+      "weighted_value": 1.5
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 2,
@@ -224,12 +236,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 850,
+    "byte_count": 1179,
     "generated_status": "report",
     "language": "json",
-    "line_count": 31,
+    "line_count": 35,
     "path": "reports/campaign_022/fair_metadata.json",
-    "path_hash": "sha256:29bdd70a13fc6d1cc1d7dedf2fc829ae2fb92ae845a23072ff8fd66a5e2ee41b",
+    "path_hash": "sha256:a4940716541a03e42e34ebbfff778662ca6bb8a3630dbc3a058710d85507b361",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -268,7 +280,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_022/fair_metadata.json->reports/campaign_022/prov_o.jsonld::1421",
+        "edge_id": "shares_birth_cohort::reports/campaign_022/fair_metadata.json->reports/campaign_022/prov_o.jsonld::1551",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -281,6 +293,36 @@
           }
         ],
         "target": "reports/campaign_022/prov_o.jsonld"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_022/fair_metadata.json->reports/campaign_023/full_report.json::4484",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_022/fair_metadata.json::reports/campaign_023/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_023/full_report.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_022/fair_metadata.json->reports/campaign_023/full_report.json::4626",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_022/fair_metadata.json::reports/campaign_023/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_023/full_report.json"
       }
     ],
     "cohort": {
@@ -343,7 +385,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
-        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_022/fair_metadata.json::535",
+        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_022/fair_metadata.json::643",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -365,7 +407,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_021/prov_o.jsonld->reports/campaign_022/fair_metadata.json::1420",
+        "edge_id": "shares_birth_cohort::reports/campaign_021/prov_o.jsonld->reports/campaign_022/fair_metadata.json::1550",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -385,9 +427,77 @@
         "target": "reports/campaign_022/fair_metadata.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_021/factory_store/source_cache_index.json->reports/campaign_022/fair_metadata.json::4483",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_021/factory_store/source_cache_index.json::reports/campaign_022/fair_metadata.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_021/factory_store/source_cache_index.json",
+        "target": "reports/campaign_022/fair_metadata.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_021/full_report.json->reports/campaign_022/fair_metadata.json::4625",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_021/full_report.json::reports/campaign_022/fair_metadata.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_021/full_report.json",
+        "target": "reports/campaign_022/fair_metadata.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_022/fair_metadata.json::5498",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_022/fair_metadata.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_022/fair_metadata.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_022/fair_metadata.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_022/fair_metadata.json->reports/campaign_022/prov_o.jsonld::1421",
+        "edge_id": "shares_birth_cohort::reports/campaign_022/fair_metadata.json->reports/campaign_022/prov_o.jsonld::1551",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -405,11 +515,57 @@
         },
         "source": "reports/campaign_022/fair_metadata.json",
         "target": "reports/campaign_022/prov_o.jsonld"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_022/fair_metadata.json->reports/campaign_023/full_report.json::4484",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_022/fair_metadata.json::reports/campaign_023/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/fair_metadata.json",
+        "target": "reports/campaign_023/full_report.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_022/fair_metadata.json->reports/campaign_023/full_report.json::4626",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_022/fair_metadata.json::reports/campaign_023/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_022/fair_metadata.json",
+        "target": "reports/campaign_023/full_report.json"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_022/fair_metadata.json::535",
+        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_022/fair_metadata.json::643",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -424,7 +580,7 @@
         "source": "DX-002"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_021/prov_o.jsonld->reports/campaign_022/fair_metadata.json::1420",
+        "edge_id": "shares_birth_cohort::reports/campaign_021/prov_o.jsonld->reports/campaign_022/fair_metadata.json::1550",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -437,6 +593,51 @@
           }
         ],
         "source": "reports/campaign_021/prov_o.jsonld"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_021/factory_store/source_cache_index.json->reports/campaign_022/fair_metadata.json::4483",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_021/factory_store/source_cache_index.json::reports/campaign_022/fair_metadata.json"
+          }
+        ],
+        "source": "reports/campaign_021/factory_store/source_cache_index.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_021/full_report.json->reports/campaign_022/fair_metadata.json::4625",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_021/full_report.json::reports/campaign_022/fair_metadata.json"
+          }
+        ],
+        "source": "reports/campaign_021/full_report.json"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_022/fair_metadata.json::5498",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_022/fair_metadata.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_022/fair_metadata.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -494,7 +695,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 0,
+    "downstream_reference_count": 1,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -512,18 +713,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

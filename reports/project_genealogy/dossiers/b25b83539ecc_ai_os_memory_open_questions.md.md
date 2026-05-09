@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/b25b83539ecc_ai_os_memory_open_questions.md.json`
-- JSON content_hash: `sha256:0eaef44b1141ae1d727444625ed0a71f26e0e2729ee1b76bef5cbccbac27bdc9`
+- JSON content_hash: `sha256:ec142b76aa9c83435b293127548e6faa6f583fb597c6659becdd695eeb0dc578`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `ai_os`
 - Generated status: `source`

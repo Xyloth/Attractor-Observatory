@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/7e035bded111_docs_screenshots_02-world-observatory.png.json`
-- JSON content_hash: `sha256:0cb434149263941bcdbbd185db8de8810654ae03e7fcc3e150a45132863b8f8b`
+- JSON content_hash: `sha256:5bd51ebd8ea2f4faee5d6f0aaf2689e0a2ef8d7c74831a75f6c65394691d9ac9`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `docs`
 - Generated status: `source`

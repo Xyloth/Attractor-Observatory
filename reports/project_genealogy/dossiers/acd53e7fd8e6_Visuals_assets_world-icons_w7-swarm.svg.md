@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/acd53e7fd8e6_Visuals_assets_world-icons_w7-swarm.svg.json`
-- JSON content_hash: `sha256:141705a7cd64eae2f5214d49140245bf06de0465fdddf96345810b9d9d395e70`
+- JSON content_hash: `sha256:3b6c4c441af8617685b74b62dddbb7437bba1cbb8e97a8ffe8195b3a99d9802a`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

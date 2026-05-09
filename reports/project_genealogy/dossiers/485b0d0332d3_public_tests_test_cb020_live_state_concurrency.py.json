@@ -1,0 +1,619 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-020",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function.",
+        "TASK-CB-020 — concurrency stress for live-state file writes.\n\nReproduces the race that quarantined 6 of 17 sources during the CB-019\ndaemon relaunch (08:23 EST 2026-05-08, PID 27516):\n\n  ``OSError [Errno 22] Invalid argument: 'control_room/cache/factory_runs/latest_state.json'``\n  ``PermissionError [WinError 5] Access is denied: '.evidence_graph.json.tmp' -> 'evidence_graph.json'``\n\nRoot cause: St"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "115afac08968801fe78a00023a84ef87c1b96a12",
+            "subject": "TASK-CB-020: F1-F5 fix + CL-1 BUILD_LOG (Windows file-write race)",
+            "ticket": "TASK-CB-020"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb020_live_state_concurrency.py#header",
+            "ticket": "TASK-CB-020"
+          },
+          "statement": "TASK-CB-020 — concurrency stress for live-state file writes.\n\nReproduces the race that quarantined 6 of 17 sources during the CB-019\ndaemon relaunch (08:23 EST 2026-05-08, PID 27516):\n\n  ``OSError [Errno 22] Invalid argument: 'control_room/cache/factory_runs/latest_state.json'``\n  ``PermissionError [WinError 5] Access is denied: '.evidence_graph.json.tmp' -> 'evidence_graph.json'``\n\nRoot cause: St"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb020_live_state_concurrency.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "115afac08968801fe78a00023a84ef87c1b96a12",
+        "note": "TASK-CB-020: F1-F5 fix + CL-1 BUILD_LOG (Windows file-write race)",
+        "ref_id": "birth::public_tests/test_cb020_live_state_concurrency.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-020",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb020_live_state_concurrency.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb020_live_state_concurrency.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::public_tests/test_cb020_live_state_concurrency.py::docstring"
+      }
+    ],
+    "first_seen_commit": "115afac08968801fe78a00023a84ef87c1b96a12",
+    "first_seen_date": "2026-05-08T14:35:00-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-020",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:bd89600747abcba30e91828a5f9eacc2b78881e11d887c6afe95dbebcc0fce04",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb020_live_state_concurrency.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_atomic_write_json_concurrent_writer_reader, test_atomic_write_json_exhausts_retry_budget_then_raises, test_atomic_write_json_propagates_real_oserror, test_atomic_write_json_retries_on_permission_error, test_atomic_write_json_retries_on_transient_oserror, test_atomic_write_json_three_writers_two_readers_worst_case, test_safe_write_json_canonical_path_succeeds_on_first_atomic, test_safe_write_json_catches_oserror_not_just_permission_error..."
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb020_live_state_concurrency.py#tests"
+          },
+          "statement": "Module exposes 9 pytest functions: test_atomic_write_json_concurrent_writer_reader, test_atomic_write_json_three_writers_two_readers_worst_case, test_atomic_write_json_retries_on_transient_oserror, test_atomic_write_json_retries_on_permission_error, test_atomic_write_json_propagates_real_oserror, test_atomic_write_json_exhausts_retry_budget_then_raises..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb020_live_state_concurrency.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, errno, json, pathlib.Path, pytest, sys..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb020_live_state_concurrency.py"
+          },
+          "statement": "Tracked file with 406 lines / 16371 bytes at HEAD."
+        }
+      ],
+      "byte_count": 16371,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "errno",
+        "json",
+        "pathlib.Path",
+        "pytest",
+        "sys",
+        "threading",
+        "time",
+        "typing.Any",
+        "unittest.mock.patch"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 95,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except BaseException as exc:  # noqa: BLE001"
+        },
+        {
+          "line": 109,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except BaseException as exc:  # noqa: BLE001"
+        },
+        {
+          "line": 169,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except BaseException as exc:  # noqa: BLE001"
+        },
+        {
+          "line": 186,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except BaseException as exc:  # noqa: BLE001"
+        }
+      ],
+      "line_count": 406,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::public_tests/test_cb020_live_state_concurrency.py",
+      "public_symbols": [
+        "test_atomic_write_json_concurrent_writer_reader",
+        "test_atomic_write_json_exhausts_retry_budget_then_raises",
+        "test_atomic_write_json_propagates_real_oserror",
+        "test_atomic_write_json_retries_on_permission_error",
+        "test_atomic_write_json_retries_on_transient_oserror",
+        "test_atomic_write_json_three_writers_two_readers_worst_case",
+        "test_safe_write_json_canonical_path_succeeds_on_first_atomic",
+        "test_safe_write_json_catches_oserror_not_just_permission_error",
+        "test_safe_write_json_orphan_fallback_writes_to_canonical_path"
+      ],
+      "test_functions": [
+        "test_atomic_write_json_concurrent_writer_reader",
+        "test_atomic_write_json_three_writers_two_readers_worst_case",
+        "test_atomic_write_json_retries_on_transient_oserror",
+        "test_atomic_write_json_retries_on_permission_error",
+        "test_atomic_write_json_propagates_real_oserror",
+        "test_atomic_write_json_exhausts_retry_budget_then_raises",
+        "test_safe_write_json_orphan_fallback_writes_to_canonical_path",
+        "test_safe_write_json_canonical_path_succeeds_on_first_atomic",
+        "test_safe_write_json_catches_oserror_not_just_permission_error"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb020_live_state_concurrency.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb020_live_state_concurrency.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb020_live_state_concurrency.py::test_atomic_write_json_concurrent_writer_reader,test_atomic_write_json_three_writers_two_readers_worst_case,test_atomic_write_json_retries_on_transient_oserror",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb020_live_state_concurrency.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 95
+        },
+        {
+          "id": "error_branch",
+          "line": 109
+        },
+        {
+          "id": "error_branch",
+          "line": 169
+        },
+        {
+          "id": "error_branch",
+          "line": 186
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 5,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 5,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 95,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except BaseException as exc:  # noqa: BLE001"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 109,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except BaseException as exc:  # noqa: BLE001"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 169,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except BaseException as exc:  # noqa: BLE001"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 186,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except BaseException as exc:  # noqa: BLE001"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 16371,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 406,
+    "path": "public_tests/test_cb020_live_state_concurrency.py",
+    "path_hash": "sha256:ede06c01b0fb8acfb7f9ac5295ad65789a22707570b72c2aa4454a7bc960d57e",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 95: except BaseException as exc:  # noqa: BLE001",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb020_live_state_concurrency.py#L95",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb020_live_state_concurrency.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb020_live_state_concurrency.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except BaseException as exc:  # noqa: BLE001' -- public_tests/test_cb020_live_state_concurrency.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 109: except BaseException as exc:  # noqa: BLE001",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb020_live_state_concurrency.py#L109",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb020_live_state_concurrency.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb020_live_state_concurrency.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except BaseException as exc:  # noqa: BLE001' -- public_tests/test_cb020_live_state_concurrency.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 169: except BaseException as exc:  # noqa: BLE001",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb020_live_state_concurrency.py#L169",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb020_live_state_concurrency.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb020_live_state_concurrency.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except BaseException as exc:  # noqa: BLE001' -- public_tests/test_cb020_live_state_concurrency.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 186: except BaseException as exc:  # noqa: BLE001",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb020_live_state_concurrency.py#L186",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb020_live_state_concurrency.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb020_live_state_concurrency.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except BaseException as exc:  # noqa: BLE001' -- public_tests/test_cb020_live_state_concurrency.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [],
+    "cohort": {
+      "cohort_id": "TASK-CB-020",
+      "members": [
+        "public_tests/test_cb020_live_state_concurrency.py"
+      ],
+      "spawn_ticket": "TASK-CB-020"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "115afac08968801fe78a00023a84ef87c1b96a12",
+        "edge_id": "spawned_by_ticket::TASK-CB-020->public_tests/test_cb020_live_state_concurrency.py::436",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "115afac08968801fe78a00023a84ef87c1b96a12",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb020_live_state_concurrency.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-020",
+        "target": "public_tests/test_cb020_live_state_concurrency.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-020->public_tests/test_cb020_live_state_concurrency.py::436",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "115afac08968801fe78a00023a84ef87c1b96a12",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb020_live_state_concurrency.py"
+          }
+        ],
+        "source": "TASK-CB-020"
+      }
+    ],
+    "siblings": []
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb020_live_state_concurrency.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

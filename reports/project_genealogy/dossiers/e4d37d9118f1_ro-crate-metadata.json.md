@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/e4d37d9118f1_ro-crate-metadata.json.json`
-- JSON content_hash: `sha256:2cb456c520bd1dc01b0ae3663b04bd3d78b9d64c97fa1eb4f8b871e64bc93141`
+- JSON content_hash: `sha256:edc27f6dbd8f40bda91841765f84bd4f612831ce9b88fc7c54c5f2f7b1412d28`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `root_artifact`
 - Generated status: `source`

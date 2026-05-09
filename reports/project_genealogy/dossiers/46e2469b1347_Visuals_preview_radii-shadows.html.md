@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/46e2469b1347_Visuals_preview_radii-shadows.html.json`
-- JSON content_hash: `sha256:22096db2ccdbe74ab4d8816aa2a0f6c38d220dfc8322536682ecb78166d2a478`
+- JSON content_hash: `sha256:b90f46c65c85359d32b0cbd5b9f8c0d04145f42e8ef51a7ec2f462c715e47ba1`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/592f074e7135_reports_campaign_009_provenance_graph.json.json`
-- JSON content_hash: `sha256:ccd1f4c9db6c4b0c192efff3bafc29982a0991a8d681e5d51f945100f3b80f1f`
+- JSON content_hash: `sha256:0838d6867f5e3918c302cc0456af8183d0f37380d47881be178ffe2b11b22f6e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 21 / Bytes: 651
+- Lines: 25 / Bytes: 968
 
 ## Birth
 - Status: `recovered`
@@ -21,13 +21,14 @@
 
 ## Current
 - Status: `recovered`
+- Observed doctrines: `D23, D29`
 
 ## DepthVector.v1
 - **predicate_atom_coverage**: `{'claimable_atoms': 1, 'covered_atoms': 1, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
-- **doctrine_binding_quality**: `{'required': ['D11'], 'verified': [], 'claimed_only': ['D11'], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D23', 'D29'], 'verified': ['D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 2, 'dereferenceable_evidence_refs': 2, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': [], 'weighted_value': 0.0}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 1.5}`
 
 ## Drift
 - Status: `review_required`

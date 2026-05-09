@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ab911a4623db_Visuals_assets_world-icons_w12-symbiogenesis.svg.json`
-- JSON content_hash: `sha256:5a445a41fa10eb90e594c3ac16cbae92c33ea7019a1c035981659721da6f2e89`
+- JSON content_hash: `sha256:7721b9eb66ced4cb54ce794043038bcf331024bb606c488a8f9462602da874e2`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

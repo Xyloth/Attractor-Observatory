@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/6666a8d4ac45_reports_campaign_002_basin_width.json.json`
-- JSON content_hash: `sha256:ea4e7bc756844950beba5ba49210ae7e44860e89846604b88a9dd335d3323171`
+- JSON content_hash: `sha256:83dd3b23a7bc5ea0aaa6fe4a8c4a941330dcae997a8d38b81a48d13c3d2bcd6e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/bc78d3b845f3_Visuals_preview_spacing.html.json`
-- JSON content_hash: `sha256:492b18f9821a1bd71b517d7feb0cd9b6094b4b3964fd7231ce86b5d0fd365209`
+- JSON content_hash: `sha256:e95f1458a68b02b9bcfd16d1555d445bbf1beebfeb598ace3105ca95e5f6ba43`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

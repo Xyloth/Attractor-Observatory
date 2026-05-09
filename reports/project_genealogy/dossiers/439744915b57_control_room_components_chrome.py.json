@@ -82,7 +82,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:2957ae47182d97072cbc50790e507ff2399dc690cd5aad62d446995390fc3cc7",
+  "content_hash": "sha256:0d8b1a2f9e25cb89b83104f1f1dce6d11db8d4ab44525fe7c53524efb3cb7fa4",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -462,7 +462,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::control_room/components/chrome.py->control_room/components/empty_state.py::834",
+        "edge_id": "shares_birth_cohort::control_room/components/chrome.py->control_room/components/empty_state.py::964",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -477,7 +477,7 @@
         "target": "control_room/components/empty_state.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::control_room/components/chrome.py->control_room/components/empty_state.py::3728",
+        "edge_id": "implements_same_doctrine::D22::control_room/components/chrome.py->control_room/components/empty_state.py::4020",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -843,7 +843,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/components/__init__.py->control_room/components/chrome.py::833",
+        "edge_id": "shares_birth_cohort::control_room/components/__init__.py->control_room/components/chrome.py::963",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -866,7 +866,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::control_room/components/__init__.py->control_room/components/chrome.py::3727",
+        "edge_id": "implements_same_doctrine::D22::control_room/components/__init__.py->control_room/components/chrome.py::4019",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -888,7 +888,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/components/chrome.py->control_room/components/empty_state.py::834",
+        "edge_id": "shares_birth_cohort::control_room/components/chrome.py->control_room/components/empty_state.py::964",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -911,7 +911,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::control_room/components/chrome.py->control_room/components/empty_state.py::3728",
+        "edge_id": "implements_same_doctrine::D22::control_room/components/chrome.py->control_room/components/empty_state.py::4020",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -948,7 +948,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::control_room/components/__init__.py->control_room/components/chrome.py::833",
+        "edge_id": "shares_birth_cohort::control_room/components/__init__.py->control_room/components/chrome.py::963",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -963,7 +963,7 @@
         "source": "control_room/components/__init__.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::control_room/components/__init__.py->control_room/components/chrome.py::3727",
+        "edge_id": "implements_same_doctrine::D22::control_room/components/__init__.py->control_room/components/chrome.py::4019",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1052,18 +1052,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

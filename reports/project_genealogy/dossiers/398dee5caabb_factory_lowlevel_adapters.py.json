@@ -82,7 +82,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:7e841c204c4cf78a8efcdd11b77154221e38604359446bb3d16a5e9d9f86ea7b",
+  "content_hash": "sha256:6403267064ad56b802dbd42d8cc64ade5d4d17d0e2fbe59668a7d2256537440f",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -1938,7 +1938,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/adapters.py->factory_lowlevel/daemon.py::909",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/adapters.py->factory_lowlevel/daemon.py::1039",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1953,7 +1953,7 @@
         "target": "factory_lowlevel/daemon.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2478",
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2726",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1968,7 +1968,7 @@
         "target": "factory_lowlevel/persistence.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3687",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3968",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1983,7 +1983,7 @@
         "target": "factory_lowlevel/launch_safety.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::3889",
+        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::4182",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1998,7 +1998,7 @@
         "target": "factory_lowlevel/progress.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::factory_lowlevel/adapters.py->papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md::4038",
+        "edge_id": "implements_same_doctrine::D26::factory_lowlevel/adapters.py->formalism/motif_contracts/contracts.py::4358",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2007,10 +2007,10 @@
             "kind": "grep",
             "locator": "both files mention D26",
             "note": "shared mention of doctrine D26",
-            "ref_id": "doctrine::D26::factory_lowlevel/adapters.py::papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md"
+            "ref_id": "doctrine::D26::factory_lowlevel/adapters.py::formalism/motif_contracts/contracts.py"
           }
         ],
-        "target": "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md"
+        "target": "formalism/motif_contracts/contracts.py"
       }
     ],
     "cohort": {
@@ -2342,7 +2342,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/adapters.py::254",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/adapters.py::256",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -2364,7 +2364,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/__init__.py->factory_lowlevel/adapters.py::908",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/__init__.py->factory_lowlevel/adapters.py::1038",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -2387,7 +2387,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D17",
-        "edge_id": "implements_same_doctrine::D17::docs/doctrine_registry.json->factory_lowlevel/adapters.py::2477",
+        "edge_id": "implements_same_doctrine::D17::docs/doctrine_registry.json->factory_lowlevel/adapters.py::2725",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2410,7 +2410,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::docs/screenshots/07-doctrine-console.png->factory_lowlevel/adapters.py::3686",
+        "edge_id": "implements_same_doctrine::D9::docs/screenshots/07-doctrine-console.png->factory_lowlevel/adapters.py::3967",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2433,7 +2433,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::docs/screenshots/01-pulse-deck.png->factory_lowlevel/adapters.py::3888",
+        "edge_id": "implements_same_doctrine::D22::docs/screenshots/01-pulse-deck.png->factory_lowlevel/adapters.py::4181",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2456,7 +2456,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::docs/doctrine_registry.json->factory_lowlevel/adapters.py::4037",
+        "edge_id": "implements_same_doctrine::D26::docs/doctrine_registry.json->factory_lowlevel/adapters.py::4357",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2478,7 +2478,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/adapters.py::4434",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/adapters.py::4900",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2500,7 +2500,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/adapters.py::4663",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/adapters.py::5141",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2522,7 +2522,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/adapters.py::4683",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/adapters.py::5161",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2544,7 +2544,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/adapters.py::4935",
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/adapters.py::5413",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2566,7 +2566,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/adapters.py->factory_lowlevel/daemon.py::909",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/adapters.py->factory_lowlevel/daemon.py::1039",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -2589,7 +2589,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D17",
-        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2478",
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2726",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2612,7 +2612,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3687",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3968",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2635,7 +2635,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::3889",
+        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::4182",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2658,7 +2658,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::factory_lowlevel/adapters.py->papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md::4038",
+        "edge_id": "implements_same_doctrine::D26::factory_lowlevel/adapters.py->formalism/motif_contracts/contracts.py::4358",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2667,7 +2667,7 @@
             "kind": "grep",
             "locator": "both files mention D26",
             "note": "shared mention of doctrine D26",
-            "ref_id": "doctrine::D26::factory_lowlevel/adapters.py::papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md"
+            "ref_id": "doctrine::D26::factory_lowlevel/adapters.py::formalism/motif_contracts/contracts.py"
           }
         ],
         "private_boundary": {
@@ -2675,12 +2675,12 @@
           "reason": ""
         },
         "source": "factory_lowlevel/adapters.py",
-        "target": "papers/methods/CAMPAIGN_023_MOTIF_CONTRACT_IMPL.md"
+        "target": "formalism/motif_contracts/contracts.py"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/adapters.py::254",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/adapters.py::256",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -2695,7 +2695,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/__init__.py->factory_lowlevel/adapters.py::908",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/__init__.py->factory_lowlevel/adapters.py::1038",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -2710,7 +2710,7 @@
         "source": "factory_lowlevel/__init__.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D17::docs/doctrine_registry.json->factory_lowlevel/adapters.py::2477",
+        "edge_id": "implements_same_doctrine::D17::docs/doctrine_registry.json->factory_lowlevel/adapters.py::2725",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2725,7 +2725,7 @@
         "source": "docs/doctrine_registry.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::docs/screenshots/07-doctrine-console.png->factory_lowlevel/adapters.py::3686",
+        "edge_id": "implements_same_doctrine::D9::docs/screenshots/07-doctrine-console.png->factory_lowlevel/adapters.py::3967",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2740,7 +2740,7 @@
         "source": "docs/screenshots/07-doctrine-console.png"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::docs/screenshots/01-pulse-deck.png->factory_lowlevel/adapters.py::3888",
+        "edge_id": "implements_same_doctrine::D22::docs/screenshots/01-pulse-deck.png->factory_lowlevel/adapters.py::4181",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2755,7 +2755,7 @@
         "source": "docs/screenshots/01-pulse-deck.png"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::docs/doctrine_registry.json->factory_lowlevel/adapters.py::4037",
+        "edge_id": "implements_same_doctrine::D26::docs/doctrine_registry.json->factory_lowlevel/adapters.py::4357",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -2770,7 +2770,7 @@
         "source": "docs/doctrine_registry.json"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/adapters.py::4434",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/adapters.py::4900",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2785,7 +2785,7 @@
         "source": "BUILD_LOG.md"
       },
       {
-        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/adapters.py::4663",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/adapters.py::5141",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2800,7 +2800,7 @@
         "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
       },
       {
-        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/adapters.py::4683",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/adapters.py::5161",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2815,7 +2815,7 @@
         "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
       },
       {
-        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/adapters.py::4935",
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/adapters.py::5413",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -2904,18 +2904,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

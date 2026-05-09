@@ -70,7 +70,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:45b781ee8263d472a425b2ce1e1762a5fbd5c745cd0ee4f4a44f8c8d3a8f79b0",
+  "content_hash": "sha256:f905d5bcff9a46e273533b486e869c31eeea6227f7d04d6900b0b81ea5369629",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -243,7 +243,7 @@
     "language": "python",
     "line_count": 53,
     "path": "atlas/status_viewer/renderer.py",
-    "path_hash": "sha256:36d310bde045a62a2be8f254d63dd2c2687b75b21c00ffbe2fb31a9962062c84",
+    "path_hash": "sha256:3b4454f9dc81049628715d763b26d71f4c6fa1d109218822f0f7f1a9597b465a",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -282,7 +282,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::atlas/status_viewer/renderer.py->docs/AI_COLLABORATION.md::1119",
+        "edge_id": "shares_birth_cohort::atlas/status_viewer/renderer.py->docs/AI_COLLABORATION.md::1249",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -540,7 +540,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/status_viewer/generated/campaign_006/worlds.md->atlas/status_viewer/renderer.py::1118",
+        "edge_id": "shares_birth_cohort::atlas/status_viewer/generated/campaign_006/worlds.md->atlas/status_viewer/renderer.py::1248",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -562,7 +562,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/status_viewer/renderer.py->docs/AI_COLLABORATION.md::1119",
+        "edge_id": "shares_birth_cohort::atlas/status_viewer/renderer.py->docs/AI_COLLABORATION.md::1249",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -584,7 +584,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::atlas/status_viewer/generated/campaign_006/worlds.md->atlas/status_viewer/renderer.py::1118",
+        "edge_id": "shares_birth_cohort::atlas/status_viewer/generated/campaign_006/worlds.md->atlas/status_viewer/renderer.py::1248",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -673,18 +673,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

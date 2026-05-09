@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/03e4f5c910da_scripts_SETUP_WORKTREE.md.json`
-- JSON content_hash: `sha256:dca89c88b7f4bf1f1cb0fb7349a737d2d90a38b7a15c4355dac5fc2d6c8ad8d4`
+- JSON content_hash: `sha256:6f56d6e9ec2add02fd7da4b93461c91b2b065bc77a18dbd08daa6ec330e5b2fc`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `script`
 - Generated status: `source`

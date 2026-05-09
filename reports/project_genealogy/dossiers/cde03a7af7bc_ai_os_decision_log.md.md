@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/cde03a7af7bc_ai_os_decision_log.md.json`
-- JSON content_hash: `sha256:f116a4162498f186e6a66962b1e87de714d53d06d801d8ff80d7ed89190196f0`
+- JSON content_hash: `sha256:605aca7f981eacbb46405db183bed054bf1488a4834d307ee28cd0bd2f3929c6`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `ai_os`
 - Generated status: `source`

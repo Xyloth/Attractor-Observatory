@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ea8f09a06760_reports_campaign_012_kp_aggregate_hardening.json.json`
-- JSON content_hash: `sha256:99eb4e0cb70ecad08581f9e05ee5dab166d45304b6e204ce4bc3654d2c462e2c`
+- JSON content_hash: `sha256:8188a2eb8a04ab1f093a8977a2eb922515e763f09a5d144d71c557b61c94fcfd`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

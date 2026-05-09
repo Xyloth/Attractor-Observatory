@@ -74,7 +74,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:b1bca5fa361087f52528f0f272dca2d1513215f009c1c36047df7feebce2a4b4",
+  "content_hash": "sha256:659a8a78bdb9722611d9fec8bb244ee1ed33068a282362065dbd6901f91829be",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -84,18 +84,21 @@
             "kind": "file_span",
             "locator": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
           },
-          "statement": "Tracked file with 13637 lines / 417502 bytes at HEAD."
+          "statement": "Tracked file with 13693 lines / 422108 bytes at HEAD."
         }
       ],
-      "byte_count": 417502,
+      "byte_count": 422108,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 13637,
-      "observed_doctrine_bindings": [],
+      "line_count": 13693,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
       "public_symbols": [],
       "test_functions": []
@@ -140,20 +143,18 @@
       "value": 0.0
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D22",
-        "D24",
-        "D30"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D22",
-        "D24",
-        "D30"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -163,12 +164,14 @@
       "unresolved_evidence_refs": 0
     },
     "operational_load_bearingness": {
-      "cited_by_reports": [],
+      "cited_by_reports": [
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 0.0
+      "weighted_value": 1.5
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 1,
@@ -249,12 +252,12 @@
   },
   "file": {
     "artifact_family": "control_room",
-    "byte_count": 417502,
+    "byte_count": 422108,
     "generated_status": "source",
     "language": "json",
-    "line_count": 13637,
+    "line_count": 13693,
     "path": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
-    "path_hash": "sha256:1bdd006c0206fb035591b7ad16d967eae8f5af9be3c8d7bd1d166f122aa68434",
+    "path_hash": "sha256:0c7004bfb794a09a30578fe95016b0958f6db74235b59b1b28057ddc094b071d",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -293,7 +296,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::1283",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::1413",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -303,6 +306,36 @@
             "locator": "birth_cohort_id=TASK-033",
             "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
             "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "target": "control_room/cache/factory_runs/run_f17c14848991da21.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::4409",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::control_room/cache/factory_runs/run_a746ca32d510ca1e.json::control_room/cache/factory_runs/run_f17c14848991da21.json"
+          }
+        ],
+        "target": "control_room/cache/factory_runs/run_f17c14848991da21.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::4494",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/cache/factory_runs/run_a746ca32d510ca1e.json::control_room/cache/factory_runs/run_f17c14848991da21.json"
           }
         ],
         "target": "control_room/cache/factory_runs/run_f17c14848991da21.json"
@@ -441,7 +474,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::1282",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::1412",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -461,9 +494,77 @@
         "target": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::4408",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::control_room/cache/factory_runs/run_17693e665d5d025e.json::control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cache/factory_runs/run_17693e665d5d025e.json",
+        "target": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::4493",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/cache/factory_runs/run_17693e665d5d025e.json::control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cache/factory_runs/run_17693e665d5d025e.json",
+        "target": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::5457",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::1283",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::1413",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -473,6 +574,52 @@
             "locator": "birth_cohort_id=TASK-033",
             "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
             "ref_id": "cohort::TASK-033"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+        "target": "control_room/cache/factory_runs/run_f17c14848991da21.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::4409",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::control_room/cache/factory_runs/run_a746ca32d510ca1e.json::control_room/cache/factory_runs/run_f17c14848991da21.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+        "target": "control_room/cache/factory_runs/run_f17c14848991da21.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::control_room/cache/factory_runs/run_a746ca32d510ca1e.json->control_room/cache/factory_runs/run_f17c14848991da21.json::4494",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/cache/factory_runs/run_a746ca32d510ca1e.json::control_room/cache/factory_runs/run_f17c14848991da21.json"
           }
         ],
         "private_boundary": {
@@ -500,7 +647,7 @@
         "source": "TASK-033"
       },
       {
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::1282",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::1412",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -513,6 +660,51 @@
           }
         ],
         "source": "control_room/cache/factory_runs/run_17693e665d5d025e.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::4408",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::control_room/cache/factory_runs/run_17693e665d5d025e.json::control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+          }
+        ],
+        "source": "control_room/cache/factory_runs/run_17693e665d5d025e.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::control_room/cache/factory_runs/run_17693e665d5d025e.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::4493",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::control_room/cache/factory_runs/run_17693e665d5d025e.json::control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+          }
+        ],
+        "source": "control_room/cache/factory_runs/run_17693e665d5d025e.json"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->control_room/cache/factory_runs/run_a746ca32d510ca1e.json::5457",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::control_room/cache/factory_runs/run_a746ca32d510ca1e.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -571,7 +763,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 0,
+    "downstream_reference_count": 1,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -589,18 +781,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

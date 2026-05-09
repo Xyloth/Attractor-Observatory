@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/b591947fee2d_public_tests_test_source_object_generation.py.json`
-- JSON content_hash: `sha256:6d65cf269444baa138e5df7cdccaef3d43c5ffdb29e7c39c0df4cc97396e0bcb`
+- JSON content_hash: `sha256:1b97ad863f23c310754ef6a73c0aa0a817a849a63ff98378560eab4edc9570e9`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `test`
 - Generated status: `source`

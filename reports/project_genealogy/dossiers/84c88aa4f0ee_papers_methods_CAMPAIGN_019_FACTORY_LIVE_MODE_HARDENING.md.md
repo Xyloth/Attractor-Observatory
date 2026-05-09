@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/84c88aa4f0ee_papers_methods_CAMPAIGN_019_FACTORY_LIVE_MODE_HARDENING.md.json`
-- JSON content_hash: `sha256:c1605986375a57212a1fbebfa2248878e65564d125716536e3cae73679970fbc`
+- JSON content_hash: `sha256:d2df7594c5ebf26f0e1b33012d9ae7fe2b0f1bc9d595a128c974244b253df1f6`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/cef0883ffa0d_CODEX_AUDIT_001_CLAUDE_BUILDER_TASK_CB_001.md.json`
-- JSON content_hash: `sha256:f02dbfc9e46e5f3fcd54f6fcae7f7fa24e250b53929feab7320d91c067d40bdc`
+- JSON content_hash: `sha256:e8a7227546ed3123aba5df377a5db12165d16f0ace7f675acbd867dc32e15b90`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

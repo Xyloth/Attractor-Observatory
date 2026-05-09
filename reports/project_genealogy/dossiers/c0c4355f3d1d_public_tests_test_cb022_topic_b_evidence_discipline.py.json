@@ -1,0 +1,725 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-022",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "subject": "TASK-CB-022 Topic B: enforce evidence discipline",
+            "ticket": "TASK-CB-022"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb022_topic_b_evidence_discipline.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "note": "TASK-CB-022 Topic B: enforce evidence discipline",
+        "ref_id": "birth::public_tests/test_cb022_topic_b_evidence_discipline.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-022",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb022_topic_b_evidence_discipline.py::ticket"
+      }
+    ],
+    "first_seen_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+    "first_seen_date": "2026-05-09T07:17:33-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-022",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:0f3f0b2ebb2af266614aad87796f4bd87c31dca36a077af27e32ccd2ba7b3b2f",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_campaign006_missing_run_paths_are_routed_to_audit_queue, test_every_source_bound_motif_contract_claim_clears_tier3_or_is_diagnostic, test_substance_gate_separates_identifier_shape_resolution_and_support, test_tracked_json_path_references_resolve_or_have_private_boundary_marker"
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#tests"
+          },
+          "statement": "Module exposes 4 pytest functions: test_substance_gate_separates_identifier_shape_resolution_and_support, test_every_source_bound_motif_contract_claim_clears_tier3_or_is_diagnostic, test_campaign006_missing_run_paths_are_routed_to_audit_queue, test_tracked_json_path_references_resolve_or_have_private_boundary_marker"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, formalism.evidence.substance_gate.EvidenceTier, formalism.evidence.substance_gate.evaluate_source_bound, formalism.evidence.substance_gate.identifier_parsed, formalism.motif_contracts.contracts.all_contracts, json..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py"
+          },
+          "statement": "Tracked file with 119 lines / 4899 bytes at HEAD."
+        }
+      ],
+      "byte_count": 4899,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "formalism.evidence.substance_gate.EvidenceTier",
+        "formalism.evidence.substance_gate.evaluate_source_bound",
+        "formalism.evidence.substance_gate.identifier_parsed",
+        "formalism.motif_contracts.contracts.all_contracts",
+        "json",
+        "pathlib.Path",
+        "subprocess",
+        "sys"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 73,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "or lower_value.startswith(\"python \")"
+        },
+        {
+          "line": 78,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "if text.startswith(\"python \"):"
+        },
+        {
+          "line": 84,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except ValueError:"
+        },
+        {
+          "line": 111,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "if not rel.endswith(\".json\") or rel.startswith((\"papers/falsification/DX-003/\", \".claude/\")):"
+        },
+        {
+          "line": 115,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        }
+      ],
+      "line_count": 119,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::public_tests/test_cb022_topic_b_evidence_discipline.py",
+      "public_symbols": [
+        "test_campaign006_missing_run_paths_are_routed_to_audit_queue",
+        "test_every_source_bound_motif_contract_claim_clears_tier3_or_is_diagnostic",
+        "test_substance_gate_separates_identifier_shape_resolution_and_support",
+        "test_tracked_json_path_references_resolve_or_have_private_boundary_marker"
+      ],
+      "test_functions": [
+        "test_substance_gate_separates_identifier_shape_resolution_and_support",
+        "test_every_source_bound_motif_contract_claim_clears_tier3_or_is_diagnostic",
+        "test_campaign006_missing_run_paths_are_routed_to_audit_queue",
+        "test_tracked_json_path_references_resolve_or_have_private_boundary_marker"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb022_topic_b_evidence_discipline.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py::test_substance_gate_separates_identifier_shape_resolution_and_support,test_every_source_bound_motif_contract_claim_clears_tier3_or_is_diagnostic,test_campaign006_missing_run_paths_are_routed_to_audit_queue",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb022_topic_b_evidence_discipline.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 84
+        },
+        {
+          "id": "error_branch",
+          "line": 115
+        },
+        {
+          "id": "decline_branch",
+          "line": null
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 73,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "or lower_value.startswith(\"python \")"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 78,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if text.startswith(\"python \"):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 84,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except ValueError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 111,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if not rel.endswith(\".json\") or rel.startswith((\"papers/falsification/DX-003/\", \".claude/\")):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 115,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 4899,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 119,
+    "path": "public_tests/test_cb022_topic_b_evidence_discipline.py",
+    "path_hash": "sha256:9f054549013805b305f275a1dc2eaee9806b405ab7a0c6e0dbbd7f244e35dca5",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 73: or lower_value.startswith(\"python \")",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#L73",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb022_topic_b_evidence_discipline.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb022_topic_b_evidence_discipline.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'or lower_value.startswith(\"python \")' -- public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 78: if text.startswith(\"python \"):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#L78",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb022_topic_b_evidence_discipline.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb022_topic_b_evidence_discipline.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if text.startswith(\"python \"):' -- public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 84: except ValueError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#L84",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb022_topic_b_evidence_discipline.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb022_topic_b_evidence_discipline.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except ValueError:' -- public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 111: if not rel.endswith(\".json\") or rel.startswith((\"papers/falsification/DX-003/\", \".claude/\")):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#L111",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb022_topic_b_evidence_discipline.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb022_topic_b_evidence_discipline.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if not rel.endswith(\".json\") or rel.startswith((\"papers/fals' -- public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 115: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_cb022_topic_b_evidence_discipline.py#L115",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_cb022_topic_b_evidence_discipline.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_cb022_topic_b_evidence_discipline.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_b_evidence_discipline.py->reports/campaign_006/audit_queue.json::1641",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "target": "reports/campaign_006/audit_queue.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-022",
+      "members": [
+        "docs/AI_LANE_ROSTER.md",
+        "formalism/evidence/substance_gate.py",
+        "formalism/floor_bfg/read_separation.py",
+        "formalism/motif_contracts/adversarial.py",
+        "formalism/motif_contracts/contracts.py",
+        "formalism/motif_contracts/schema.py",
+        "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "reports/campaign_006/audit_queue.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "spawn_ticket": "TASK-CB-022"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "edge_id": "spawned_by_ticket::TASK-CB-022->public_tests/test_cb022_topic_b_evidence_discipline.py::439",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb022_topic_b_evidence_discipline.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-022",
+        "target": "public_tests/test_cb022_topic_b_evidence_discipline.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_a_doctrine_hardening.py->public_tests/test_cb022_topic_b_evidence_discipline.py::1640",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "target": "public_tests/test_cb022_topic_b_evidence_discipline.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_b_evidence_discipline.py->reports/campaign_006/audit_queue.json::1641",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "target": "reports/campaign_006/audit_queue.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-022->public_tests/test_cb022_topic_b_evidence_discipline.py::439",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb022_topic_b_evidence_discipline.py"
+          }
+        ],
+        "source": "TASK-CB-022"
+      },
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_a_doctrine_hardening.py->public_tests/test_cb022_topic_b_evidence_discipline.py::1640",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "source": "public_tests/test_cb022_topic_a_doctrine_hardening.py"
+      }
+    ],
+    "siblings": [
+      "docs/AI_LANE_ROSTER.md",
+      "formalism/evidence/substance_gate.py",
+      "formalism/floor_bfg/read_separation.py",
+      "formalism/motif_contracts/adversarial.py",
+      "formalism/motif_contracts/contracts.py",
+      "formalism/motif_contracts/schema.py",
+      "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+      "reports/campaign_006/audit_queue.json",
+      "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb022_topic_b_evidence_discipline.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

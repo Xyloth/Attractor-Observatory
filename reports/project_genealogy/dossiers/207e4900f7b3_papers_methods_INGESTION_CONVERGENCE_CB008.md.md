@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/207e4900f7b3_papers_methods_INGESTION_CONVERGENCE_CB008.md.json`
-- JSON content_hash: `sha256:c3378e23682190ee582db215478202871a1cb82bd8a133a7345a7db2754a559e`
+- JSON content_hash: `sha256:ec93ee8e0a392d049416eb110be57ac241631ab8a78e3febe7df7882781ed411`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

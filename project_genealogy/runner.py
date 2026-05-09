@@ -144,6 +144,11 @@ def run_pass2(
     currents: dict[str, dict[str, Any]],
 ) -> dict[str, tuple[Path, str]]:
     _now_msg("pass2", "writing per-file dossiers …")
+    dossier_root = repo_root / DOSSIER_DIR
+    if dossier_root.is_dir():
+        for old_path in dossier_root.glob("*"):
+            if old_path.suffix in {".json", ".md"}:
+                old_path.unlink()
     n = len(manifest["audited_files"])
     out: dict[str, tuple[Path, str]] = {}
     t0 = time.time()
@@ -196,6 +201,7 @@ def run_pass4(
     atlas["summary"]["mission_atom_count"] = coh["summary"]["mission_atom_count"]
     atlas["summary"]["mission_coverage_status_counts"] = coh["summary"]["mission_coverage_status_counts"]
     atlas["summary"]["cohort_alignment_status_counts"] = coh["summary"]["cohort_alignment_status_counts"]
+    atlas["summary"].setdefault("finding_partition", {})["coherence_mission_finding_count"] = len(coh.get("findings", []))
     # Re-write atlas_latest with coherence binding.
     pointer = repo_root / REPORT_DIR / "atlas_latest.json"
     atlas_payload = {**atlas}

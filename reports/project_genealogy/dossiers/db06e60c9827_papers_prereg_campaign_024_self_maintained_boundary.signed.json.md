@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/db06e60c9827_papers_prereg_campaign_024_self_maintained_boundary.signed.json.json`
-- JSON content_hash: `sha256:920fa74651104afcaf04dc1598fb0feaf9cee66b2fe663587ea8cca2cac4fc6c`
+- JSON content_hash: `sha256:dab20451df810bc5bccf87429b2404f4b6ef2bd0926e387518f9d08c1b1a13c7`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`
@@ -21,7 +21,7 @@
 - **header_declared_intent** — {
 "campaign_id": "campaign_024",
 "claim_promotion_allowed": false,
-"content_hash": "sha256:aec1c5a77717cfe8b73b7694d4ce1d778716d4e0fb9835851434c906befee926",
+"content_hash": "sha256:1c73f6e639fdb1191b9a51f7e7b615268a963ba69585cf6b3fb4a46600d154f0",
 "forbidden_adjustments": [
 "no event-token predicates",
 "no event-token lenses",

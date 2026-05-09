@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/b53263aed5bb_papers_prereg_campaign_023_externalized_memory.signed.json.json`
-- JSON content_hash: `sha256:55e259f9be382327493a776f0016d56c29dd1b9a41311c1c16b7edf8f1eb7fdc`
+- JSON content_hash: `sha256:326e18b8c22049c57b115f99cf256b907e8a7f502def653c26bee6f2392eda98`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`
@@ -21,7 +21,7 @@
 - **header_declared_intent** — {
 "campaign_id": "campaign_023",
 "claim_promotion_allowed": false,
-"content_hash": "sha256:7dbfc6bb1272be2aecf46ad2bc672cb59d6f4e90e04e819eed4f8631a129bb80",
+"content_hash": "sha256:1a18c0588fe0f66125e3055a1fc878cbc86356a771539421dbc5c176c071027f",
 "forbidden_adjustments": [
 "no event-token predicate labels",
 "no per-motif threshold tuning",

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/0bde5a00cefb_control_room_cache_factory_daemon_heartbeat.json.json`
-- JSON content_hash: `sha256:cf716517015bffa28251a340085c7810354bfeda4e436b48b117fa4b396ba195`
+- JSON content_hash: `sha256:a86c9c70ae6f0473b48733d8b56603b6adc7b84592255dd01a48311ab021272c`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `control_room`
 - Generated status: `source`

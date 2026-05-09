@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/6056334b3c18_papers_prereg_bfg_v0.signed.json.json`
-- JSON content_hash: `sha256:c3e6981d0c013dd9e5b50ad0d820d0b2f5f70a7788f136ef616b3a4859d24cb0`
+- JSON content_hash: `sha256:959a04e0fee48bd7f433e0d61aa7d460ddc1c11857a02eeaa13b8aabba3dd3c8`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`
-- Lines: 211 / Bytes: 6887
+- Lines: 215 / Bytes: 7226
 
 ## Birth
 - Status: `recovered`
@@ -34,13 +34,14 @@
 
 ## Current
 - Status: `recovered`
+- Observed doctrines: `D23, D29`
 
 ## DepthVector.v1
 - **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [], 'covered_bad_cases': [], 'missing_bad_cases': [], 'value': None}`
-- **doctrine_binding_quality**: `{'required': ['D18'], 'verified': [], 'claimed_only': ['D18'], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D23', 'D29'], 'verified': ['D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 2, 'dereferenceable_evidence_refs': 2, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['BUILD_LOG.md', 'CODEX_TASK_020_DRIVE.md', 'reports/campaign_009/bfg_preregistration_gate.json', 'reports/campaign_009/cli_full_report.json', 'reports/campaign_009/full_report.json', 'reports/campaign_009/provenance_graph.json', 'reports/campaign_009/regression_verification.json'], 'weighted_value': 10.5}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['BUILD_LOG.md', 'CODEX_TASK_020_DRIVE.md', 'reports/campaign_009/bfg_preregistration_gate.json', 'reports/campaign_009/cli_full_report.json', 'reports/campaign_009/full_report.json', 'reports/campaign_009/provenance_graph.json', 'reports/campaign_009/regression_verification.json', 'reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 12.0}`
 
 ## Drift
 - Status: `review_required`

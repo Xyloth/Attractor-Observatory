@@ -82,7 +82,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:714df9e6e5a87fb51e7fc8c95951c0f7668dc9043f53b93b796629b9d375a53f",
+  "content_hash": "sha256:b82a57980c41869a67ba317bc283fc5bdd43fdb2a1300305f6571d72de4b5775",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -92,7 +92,7 @@
             "kind": "ast_probe",
             "locator": "factory_lowlevel/persistence.py#public_symbols"
           },
-          "statement": "Module exposes public symbols: LowLevelFactoryStore, atomic_write_json, recover_json_artifact, recover_json_tree, verify_world_traces, write_json"
+          "statement": "Module exposes public symbols: LowLevelFactoryStore, atomic_write_json, recover_json_artifact, recover_json_tree, safe_read_json, verify_world_traces, write_json"
         },
         {
           "atom_id": "imports_reference_internal",
@@ -100,7 +100,7 @@
             "kind": "ast_probe",
             "locator": "factory_lowlevel/persistence.py#imports"
           },
-          "statement": "Module imports: __future__.annotations, json, os, pathlib.Path, schemas.ALLOWED_EXPORT_LICENSE_CLASSES, schemas.AuditQueueItem..."
+          "statement": "Module imports: __future__.annotations, errno, json, os, pathlib.Path, schemas.ALLOWED_EXPORT_LICENSE_CLASSES..."
         },
         {
           "atom_id": "file_present_with_size",
@@ -108,16 +108,17 @@
             "kind": "file_span",
             "locator": "factory_lowlevel/persistence.py"
           },
-          "statement": "Tracked file with 485 lines / 21741 bytes at HEAD."
+          "statement": "Tracked file with 601 lines / 26672 bytes at HEAD."
         }
       ],
-      "byte_count": 21741,
+      "byte_count": 26672,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [
         "__future__.annotations",
+        "errno",
         "json",
         "os",
         "pathlib.Path",
@@ -130,31 +131,42 @@
         "schemas.canonical_json",
         "schemas.sha256",
         "tempfile",
+        "time",
         "typing.Any"
       ],
       "letter_vs_spirit_surfaces": [
         {
-          "line": 75,
+          "line": 90,
           "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
           "snippet": "except (OSError, json.JSONDecodeError) as exc:"
         },
         {
-          "line": 105,
+          "line": 120,
           "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
           "snippet": "except (KeyError, TypeError, ValueError):"
         },
         {
-          "line": 303,
+          "line": 318,
           "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
           "snippet": "relation=f\"has_{axis[:-1] if axis.endswith('s') else axis}\","
         },
         {
-          "line": 441,
+          "line": 445,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except OSError as exc:"
+        },
+        {
+          "line": 523,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except OSError as exc:"
+        },
+        {
+          "line": 557,
           "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
           "snippet": "except (UnicodeDecodeError, json.JSONDecodeError) as exc:"
         }
       ],
-      "line_count": 485,
+      "line_count": 601,
       "observed_doctrine_bindings": [
         "D14",
         "D17",
@@ -166,6 +178,7 @@
         "atomic_write_json",
         "recover_json_artifact",
         "recover_json_tree",
+        "safe_read_json",
         "verify_world_traces",
         "write_json"
       ],
@@ -190,15 +203,23 @@
       "covered_bad_cases": [
         {
           "id": "error_branch",
-          "line": 75
+          "line": 90
         },
         {
           "id": "error_branch",
-          "line": 105
+          "line": 120
         },
         {
           "id": "error_branch",
-          "line": 441
+          "line": 445
+        },
+        {
+          "id": "error_branch",
+          "line": 523
+        },
+        {
+          "id": "error_branch",
+          "line": 557
         }
       ],
       "missing_bad_cases": [
@@ -217,7 +238,7 @@
           "kind": "letter_pattern"
         }
       ],
-      "value": 1.5
+      "value": 2.5
     },
     "doctrine_binding_quality": {
       "claimed_only": [],
@@ -292,7 +313,7 @@
     "letter_vs_spirit_flags": [
       {
         "kind": "letter_coupled_surface",
-        "line": 75,
+        "line": 90,
         "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
@@ -304,7 +325,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 105,
+        "line": 120,
         "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
@@ -316,7 +337,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 303,
+        "line": 318,
         "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
         "reproducer": {
           "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
@@ -328,7 +349,31 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 441,
+        "line": 445,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except OSError as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 523,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except OSError as exc:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 557,
         "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
@@ -360,12 +405,12 @@
   },
   "file": {
     "artifact_family": "factory",
-    "byte_count": 21741,
+    "byte_count": 26672,
     "generated_status": "source",
     "language": "python",
-    "line_count": 485,
+    "line_count": 601,
     "path": "factory_lowlevel/persistence.py",
-    "path_hash": "sha256:42e7d023287644e3bf1a341d3226d962a305845a82cedac67c17e609e3af36eb",
+    "path_hash": "sha256:95dff6bdff4cfe4d7467621d0f8843cc91f8279382f336207f5779a4b04ab755",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -374,7 +419,7 @@
   },
   "findings": [
     {
-      "claim": "Detected letter-coupled fix surface at line 75: except (OSError, json.JSONDecodeError) as exc:",
+      "claim": "Detected letter-coupled fix surface at line 90: except (OSError, json.JSONDecodeError) as exc:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -384,7 +429,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/persistence.py#L75",
+          "locator": "factory_lowlevel/persistence.py#L90",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/persistence.py::lvs::0"
         }
@@ -405,7 +450,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 105: except (KeyError, TypeError, ValueError):",
+      "claim": "Detected letter-coupled fix surface at line 120: except (KeyError, TypeError, ValueError):",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -415,7 +460,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/persistence.py#L105",
+          "locator": "factory_lowlevel/persistence.py#L120",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/persistence.py::lvs::1"
         }
@@ -436,7 +481,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 303: relation=f\"has_{axis[:-1] if axis.endswith('s') else axis}\",",
+      "claim": "Detected letter-coupled fix surface at line 318: relation=f\"has_{axis[:-1] if axis.endswith('s') else axis}\",",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -446,7 +491,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/persistence.py#L303",
+          "locator": "factory_lowlevel/persistence.py#L318",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/persistence.py::lvs::2"
         }
@@ -467,7 +512,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 441: except (UnicodeDecodeError, json.JSONDecodeError) as exc:",
+      "claim": "Detected letter-coupled fix surface at line 445: except OSError as exc:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -477,12 +522,74 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/persistence.py#L441",
+          "locator": "factory_lowlevel/persistence.py#L445",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/persistence.py::lvs::3"
         }
       ],
       "finding_id": "PG-factory_lowlevel/persistence.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except OSError as exc:' -- factory_lowlevel/persistence.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 523: except OSError as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/persistence.py#L523",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/persistence.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/persistence.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except OSError as exc:' -- factory_lowlevel/persistence.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 557: except (UnicodeDecodeError, json.JSONDecodeError) as exc:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "factory_lowlevel/persistence.py#L557",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::factory_lowlevel/persistence.py::lvs::5"
+        }
+      ],
+      "finding_id": "PG-factory_lowlevel/persistence.py-lvs-5",
       "mistake_classes": [
         "Class7",
         "Class13"
@@ -528,7 +635,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/persistence.py->factory_lowlevel/pipeline.py::913",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/persistence.py->factory_lowlevel/pipeline.py::1043",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -543,7 +650,7 @@
         "target": "factory_lowlevel/pipeline.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D14::factory_lowlevel/persistence.py->papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::2104",
+        "edge_id": "implements_same_doctrine::D14::factory_lowlevel/persistence.py->papers/falsification/DX-003/round_3.md::2349",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -552,13 +659,13 @@
             "kind": "grep",
             "locator": "both files mention D14",
             "note": "shared mention of doctrine D14",
-            "ref_id": "doctrine::D14::factory_lowlevel/persistence.py::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
+            "ref_id": "doctrine::D14::factory_lowlevel/persistence.py::papers/falsification/DX-003/round_3.md"
           }
         ],
-        "target": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
+        "target": "papers/falsification/DX-003/round_3.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2479",
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/persistence.py->papers/falsification/DX-003/round_1.md::2727",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -567,13 +674,13 @@
             "kind": "grep",
             "locator": "both files mention D17",
             "note": "shared mention of doctrine D17",
-            "ref_id": "doctrine::D17::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+            "ref_id": "doctrine::D17::factory_lowlevel/persistence.py::papers/falsification/DX-003/round_1.md"
           }
         ],
-        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+        "target": "papers/falsification/DX-003/round_1.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::3689",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/persistence.py->papers/falsification/DX-003/round_1.md::3971",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -582,10 +689,10 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+            "ref_id": "doctrine::D9::factory_lowlevel/persistence.py::papers/falsification/DX-003/round_1.md"
           }
         ],
-        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+        "target": "papers/falsification/DX-003/round_1.md"
       }
     ],
     "cohort": {
@@ -917,7 +1024,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/persistence.py::262",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/persistence.py::265",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -939,7 +1046,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::912",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::1042",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -962,7 +1069,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D14",
-        "edge_id": "implements_same_doctrine::D14::docs/doctrine_registry.json->factory_lowlevel/persistence.py::2103",
+        "edge_id": "implements_same_doctrine::D14::docs/doctrine_registry.json->factory_lowlevel/persistence.py::2348",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -985,7 +1092,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D17",
-        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2478",
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2726",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1008,7 +1115,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/persistence.py::3688",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/memory_guard.py->factory_lowlevel/persistence.py::3970",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1017,20 +1124,20 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/persistence.py"
+            "ref_id": "doctrine::D9::factory_lowlevel/memory_guard.py::factory_lowlevel/persistence.py"
           }
         ],
         "private_boundary": {
           "evidence_private": false,
           "reason": ""
         },
-        "source": "factory_lowlevel/launch_safety.py",
+        "source": "factory_lowlevel/memory_guard.py",
         "target": "factory_lowlevel/persistence.py"
       },
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/persistence.py::4454",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/persistence.py::4920",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1052,7 +1159,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/persistence.py::4664",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/persistence.py::5142",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1074,7 +1181,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/persistence.py::4936",
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/persistence.py::5414",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1096,7 +1203,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/persistence.py->factory_lowlevel/pipeline.py::913",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/persistence.py->factory_lowlevel/pipeline.py::1043",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1119,7 +1226,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D14",
-        "edge_id": "implements_same_doctrine::D14::factory_lowlevel/persistence.py->papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::2104",
+        "edge_id": "implements_same_doctrine::D14::factory_lowlevel/persistence.py->papers/falsification/DX-003/round_3.md::2349",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1128,7 +1235,7 @@
             "kind": "grep",
             "locator": "both files mention D14",
             "note": "shared mention of doctrine D14",
-            "ref_id": "doctrine::D14::factory_lowlevel/persistence.py::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
+            "ref_id": "doctrine::D14::factory_lowlevel/persistence.py::papers/falsification/DX-003/round_3.md"
           }
         ],
         "private_boundary": {
@@ -1136,13 +1243,13 @@
           "reason": ""
         },
         "source": "factory_lowlevel/persistence.py",
-        "target": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
+        "target": "papers/falsification/DX-003/round_3.md"
       },
       {
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D17",
-        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::2479",
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/persistence.py->papers/falsification/DX-003/round_1.md::2727",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1151,7 +1258,7 @@
             "kind": "grep",
             "locator": "both files mention D17",
             "note": "shared mention of doctrine D17",
-            "ref_id": "doctrine::D17::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+            "ref_id": "doctrine::D17::factory_lowlevel/persistence.py::papers/falsification/DX-003/round_1.md"
           }
         ],
         "private_boundary": {
@@ -1159,13 +1266,13 @@
           "reason": ""
         },
         "source": "factory_lowlevel/persistence.py",
-        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+        "target": "papers/falsification/DX-003/round_1.md"
       },
       {
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/persistence.py->papers/methods/INCIDENT_CB016_W0W1_ROUTING.md::3689",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/persistence.py->papers/falsification/DX-003/round_1.md::3971",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1174,7 +1281,7 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::factory_lowlevel/persistence.py::papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+            "ref_id": "doctrine::D9::factory_lowlevel/persistence.py::papers/falsification/DX-003/round_1.md"
           }
         ],
         "private_boundary": {
@@ -1182,12 +1289,12 @@
           "reason": ""
         },
         "source": "factory_lowlevel/persistence.py",
-        "target": "papers/methods/INCIDENT_CB016_W0W1_ROUTING.md"
+        "target": "papers/falsification/DX-003/round_1.md"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/persistence.py::262",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/persistence.py::265",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -1202,7 +1309,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::912",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::1042",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1217,7 +1324,7 @@
         "source": "factory_lowlevel/normalization.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D14::docs/doctrine_registry.json->factory_lowlevel/persistence.py::2103",
+        "edge_id": "implements_same_doctrine::D14::docs/doctrine_registry.json->factory_lowlevel/persistence.py::2348",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1232,7 +1339,7 @@
         "source": "docs/doctrine_registry.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2478",
+        "edge_id": "implements_same_doctrine::D17::factory_lowlevel/adapters.py->factory_lowlevel/persistence.py::2726",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1247,7 +1354,7 @@
         "source": "factory_lowlevel/adapters.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/persistence.py::3688",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/memory_guard.py->factory_lowlevel/persistence.py::3970",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1256,13 +1363,13 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/persistence.py"
+            "ref_id": "doctrine::D9::factory_lowlevel/memory_guard.py::factory_lowlevel/persistence.py"
           }
         ],
-        "source": "factory_lowlevel/launch_safety.py"
+        "source": "factory_lowlevel/memory_guard.py"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/persistence.py::4454",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/persistence.py::4920",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1277,7 +1384,7 @@
         "source": "BUILD_LOG.md"
       },
       {
-        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/persistence.py::4664",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->factory_lowlevel/persistence.py::5142",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1292,7 +1399,7 @@
         "source": "papers/methods/INGESTION_CONVERGENCE_CB008.md"
       },
       {
-        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/persistence.py::4936",
+        "edge_id": "cites::reports/campaign_022/convergence_session.json->factory_lowlevel/persistence.py::5414",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1381,18 +1488,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

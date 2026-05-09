@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ae3a1d224daa_papers_methods_SUBSTANCE_AUDIT_W9.md.json`
-- JSON content_hash: `sha256:c83fc0dbc520ee6256544e7b7a49123cd4ebc341e65f0ff42f6d4eff9dc9e2b4`
+- JSON content_hash: `sha256:f450980133afc398c1dbc8ea7f3eca12a2210a628342b8dc642e151e90479c56`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

@@ -62,7 +62,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:bd278554dfead185d93323467993bd90b00366e83896c05c438602aafc2ecb52",
+  "content_hash": "sha256:1c866bed0e4ea57e0fc2853f8d3e2b072b8601637f69c8c0c8165fd33f2bdd5e",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -249,7 +249,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json->atlas/negative_space/NS-C004-02-external_repair_boundary_mimic.json::1077",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json->atlas/negative_space/NS-C004-02-external_repair_boundary_mimic.json::1207",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -507,7 +507,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C002-unexplained-absence-random-rewire-closure.json->atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json::1076",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C002-unexplained-absence-random-rewire-closure.json->atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json::1206",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -529,7 +529,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json->atlas/negative_space/NS-C004-02-external_repair_boundary_mimic.json::1077",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json->atlas/negative_space/NS-C004-02-external_repair_boundary_mimic.json::1207",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -551,7 +551,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C002-unexplained-absence-random-rewire-closure.json->atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json::1076",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C002-unexplained-absence-random-rewire-closure.json->atlas/negative_space/NS-C004-01-closure_high_recurrence_no_boundary.json::1206",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -640,18 +640,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

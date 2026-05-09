@@ -1,0 +1,951 @@
+{
+  "birth": {
+    "birth_cohort_id": "PG-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module renders a Control Room surface with honest empty state.",
+        "Project Genealogy — Mission Control room (PG-001 v1).\n\nThe room renders the published ``ProjectGenealogyAtlas.v1`` and\n``ProjectCoherenceReport.v1`` artifacts from\n``reports/project_genealogy/`` per the spec's\n§\"Mission Control Integration\". It does not run the audit; reruns are\nCLI-only in v1 (``python -m project_genealogy run-all``).\n\nD22 binding: when atlas or coherence artifacts are missing, t"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "render_empty_state|EMPTY_STATE_HTML_MARKER|render\\("
+            }
+          ],
+          "atom_id": "control_room_surface_renders",
+          "doctrine_bindings_expected": [
+            "D22",
+            "D24",
+            "D30"
+          ],
+          "forbidden_failure_modes": [
+            "decorative completeness (Class 12)",
+            "mock data in absence"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+            "subject": "PG-001 Mission Control tab + public tests",
+            "ticket": "PG-001"
+          },
+          "statement": "Module renders a Control Room surface with honest empty state."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D22"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "control_room/rooms/project_genealogy.py#header",
+            "ticket": "PG-001"
+          },
+          "statement": "Project Genealogy — Mission Control room (PG-001 v1).\n\nThe room renders the published ``ProjectGenealogyAtlas.v1`` and\n``ProjectCoherenceReport.v1`` artifacts from\n``reports/project_genealogy/`` per the spec's\n§\"Mission Control Integration\". It does not run the audit; reruns are\nCLI-only in v1 (``python -m project_genealogy run-all``).\n\nD22 binding: when atlas or coherence artifacts are missing, t"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D22",
+        "D24",
+        "D30"
+      ],
+      "forbidden_patterns": [
+        "decorative completeness (Class 12)",
+        "mock data in absence"
+      ],
+      "predicate_id": "birth::control_room/rooms/project_genealogy.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+        "note": "PG-001 Mission Control tab + public tests",
+        "ref_id": "birth::control_room/rooms/project_genealogy.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "PG-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::control_room/rooms/project_genealogy.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "control_room/rooms/project_genealogy.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::control_room/rooms/project_genealogy.py::docstring"
+      }
+    ],
+    "first_seen_commit": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+    "first_seen_date": "2026-05-08T15:49:33-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "PG-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:361285f186b91ed9e9ca006f51fc68c1e5a013d84954eee0fd3d990d9ae7ff54",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: render"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, collections.defaultdict, control_room.components.empty_state.EMPTY_STATE_HTML_MARKER, control_room.components.metric_card, control_room.components.panel, control_room.components.render_empty_state..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "control_room/rooms/project_genealogy.py"
+          },
+          "statement": "Tracked file with 580 lines / 21706 bytes at HEAD."
+        },
+        {
+          "atom_id": "empty_state_or_render_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "control_room/rooms/project_genealogy.py#pattern:render_empty_state|EMPTY_STATE_HTML_MARKER|def render"
+          },
+          "statement": "Pattern /render_empty_state|EMPTY_STATE_HTML_MARKER|def render/ matches in current file."
+        }
+      ],
+      "byte_count": 21706,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "collections.defaultdict",
+        "control_room.components.empty_state.EMPTY_STATE_HTML_MARKER",
+        "control_room.components.metric_card",
+        "control_room.components.panel",
+        "control_room.components.render_empty_state",
+        "control_room.components.render_html",
+        "control_room.components.room_emblem",
+        "control_room.components.status_pill",
+        "hashlib",
+        "json",
+        "pathlib.Path",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 113,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        },
+        {
+          "line": 552,
+          "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+          "snippet": "except (OSError, json.JSONDecodeError):"
+        }
+      ],
+      "line_count": 580,
+      "observed_doctrine_bindings": [
+        "D22"
+      ],
+      "predicate_id": "current::control_room/rooms/project_genealogy.py",
+      "public_symbols": [
+        "render"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "control_room/rooms/project_genealogy.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::control_room/rooms/project_genealogy.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 113
+        },
+        {
+          "id": "error_branch",
+          "line": 552
+        }
+      ],
+      "missing_bad_cases": [
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 1.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D22"
+      ],
+      "verified": [
+        "D22"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 1,
+      "imports_out": 6,
+      "validated_by": [],
+      "weighted_value": 6.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D24",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D24",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D24::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D30",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D30",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D30::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 113,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 552,
+        "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except (OSError, json.JSONDecodeError):"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "empty_state_or_render_present",
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "control_room",
+    "byte_count": 21706,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 580,
+    "path": "control_room/rooms/project_genealogy.py",
+    "path_hash": "sha256:a36b901de9070a4493aff3ff623ea4a07690a6092b209d016ada71bd0d60b37a",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 113: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "control_room/rooms/project_genealogy.py#L113",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::control_room/rooms/project_genealogy.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-control_room/rooms/project_genealogy.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- control_room/rooms/project_genealogy.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 552: except (OSError, json.JSONDecodeError):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "control_room/rooms/project_genealogy.py#L552",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::control_room/rooms/project_genealogy.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-control_room/rooms/project_genealogy.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except (OSError, json.JSONDecodeError):' -- control_room/rooms/project_genealogy.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::783",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.metric_card",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::784",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.panel",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::785",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.render_empty_state",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::786",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.render_html",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::787",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.room_emblem",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::788",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.status_pill",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "edge_id": "shares_birth_cohort::control_room/rooms/project_genealogy.py->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1613",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/project_genealogy.py->control_room/rooms/project_graph.py::4035",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/rooms/project_genealogy.py::control_room/rooms/project_graph.py"
+          }
+        ],
+        "target": "control_room/rooms/project_graph.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "PG-001",
+      "members": [
+        "control_room/rooms/project_genealogy.py",
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "project_genealogy/__init__.py",
+        "project_genealogy/__main__.py",
+        "project_genealogy/atlas.py",
+        "project_genealogy/birth.py",
+        "project_genealogy/coherence.py",
+        "project_genealogy/current.py",
+        "project_genealogy/depth.py",
+        "project_genealogy/dossier.py",
+        "project_genealogy/drift.py",
+        "project_genealogy/graph.py",
+        "project_genealogy/hashing.py",
+        "project_genealogy/manifest.py",
+        "project_genealogy/probe.py",
+        "project_genealogy/query.py",
+        "project_genealogy/runner.py",
+        "public_tests/test_pg001_acceptance_gates.py",
+        "public_tests/test_pg001_control_room_tab.py",
+        "public_tests/test_pg001_query.py",
+        "public_tests/test_pg001_removal_probe.py",
+        "public_tests/test_pg001_schema.py"
+      ],
+      "spawn_ticket": "PG-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+        "edge_id": "spawned_by_ticket::PG-001->control_room/rooms/project_genealogy.py::153",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "PG-001",
+        "target": "control_room/rooms/project_genealogy.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_genealogy.py::707",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/__init__.py#import:control_room.rooms.project_genealogy",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/__init__.py::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/__init__.py",
+        "target": "control_room/rooms/project_genealogy.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/portfolio_demo.py->control_room/rooms/project_genealogy.py::4034",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/rooms/portfolio_demo.py::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/portfolio_demo.py",
+        "target": "control_room/rooms/project_genealogy.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/project_genealogy.py::4936",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/project_genealogy.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/rooms/project_genealogy.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::783",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.metric_card",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::784",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.panel",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::785",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.render_empty_state",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::786",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.render_html",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::787",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.room_emblem",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/project_genealogy.py->control_room/components/__init__.py::788",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/project_genealogy.py#import:control_room.components.status_pill",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/project_genealogy.py::control_room/components/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "control_room/components/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::control_room/rooms/project_genealogy.py->papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::1613",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/project_genealogy.py->control_room/rooms/project_graph.py::4035",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/rooms/project_genealogy.py::control_room/rooms/project_graph.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/project_genealogy.py",
+        "target": "control_room/rooms/project_graph.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::PG-001->control_room/rooms/project_genealogy.py::153",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "source": "PG-001"
+      },
+      {
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_genealogy.py::707",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/__init__.py#import:control_room.rooms.project_genealogy",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/__init__.py::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "source": "control_room/rooms/__init__.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/portfolio_demo.py->control_room/rooms/project_genealogy.py::4034",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::control_room/rooms/portfolio_demo.py::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "source": "control_room/rooms/portfolio_demo.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/project_genealogy.py::4936",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/project_genealogy.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      }
+    ],
+    "siblings": [
+      "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+      "project_genealogy/__init__.py",
+      "project_genealogy/__main__.py",
+      "project_genealogy/atlas.py",
+      "project_genealogy/birth.py",
+      "project_genealogy/coherence.py",
+      "project_genealogy/current.py",
+      "project_genealogy/depth.py",
+      "project_genealogy/dossier.py",
+      "project_genealogy/drift.py",
+      "project_genealogy/graph.py",
+      "project_genealogy/hashing.py",
+      "project_genealogy/manifest.py",
+      "project_genealogy/probe.py",
+      "project_genealogy/query.py",
+      "project_genealogy/runner.py",
+      "public_tests/test_pg001_acceptance_gates.py",
+      "public_tests/test_pg001_control_room_tab.py",
+      "public_tests/test_pg001_query.py",
+      "public_tests/test_pg001_removal_probe.py",
+      "public_tests/test_pg001_schema.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 2,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::control_room/rooms/project_genealogy.py::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:16Z"
+    },
+    "runtime_reference_count": 1
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

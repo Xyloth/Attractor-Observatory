@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/5a04514e2a69_ai_os_memory_formal_gap_journal.md.json`
-- JSON content_hash: `sha256:cc1532af3ad1e9b0434510057648ef90edc892766da3c83d3d3ce7eb441269e2`
+- JSON content_hash: `sha256:431ae23d6f90580b0d7eddc8b53846028f8ccad27c6c47ceb8933ac058fe11c7`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `ai_os`
 - Generated status: `source`

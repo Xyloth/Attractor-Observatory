@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/e76232fd3306_reports_campaign_011_ontology_trait_decomposition.json.json`
-- JSON content_hash: `sha256:9daaebbb4414b11283116c194208c5964159900b05540fd9c2b2f2cac7f24490`
+- JSON content_hash: `sha256:e8b023fd3d6f4783de7cea418befc315c2c9cd524d96ee518d8328f9a39fe88c`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

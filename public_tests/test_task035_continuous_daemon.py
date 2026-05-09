@@ -38,6 +38,7 @@ def test_task035_daemon_skips_when_sources_not_due(tmp_path):
         session_ledger=tmp_path / "sessions.jsonl",
         state_path=state_path,
         heartbeat_path=tmp_path / "heartbeat.json",
+        progress_root=tmp_path / "progress",
         disk_budget_mb=512,
         retry_ceiling=1,
         retry_base_seconds=0.0,
@@ -61,6 +62,7 @@ def test_task035_daemon_refuses_over_budget_cache(tmp_path):
         session_ledger=tmp_path / "sessions.jsonl",
         state_path=tmp_path / "state.json",
         heartbeat_path=tmp_path / "heartbeat.json",
+        progress_root=tmp_path / "progress",
         disk_budget_mb=0,
         retry_ceiling=1,
         retry_base_seconds=0.0,
@@ -80,10 +82,10 @@ def test_task035_daemon_quarantines_failed_due_source(tmp_path, monkeypatch):
     atomic_write_json(state_path, state)
 
     def _fail_source(**kwargs):
-        assert kwargs["source_ids"] == [due]
-        raise RuntimeError("synthetic adapter failure")
+        assert kwargs["source_id"] == due
+        return {"status": "error", "error_type": "RuntimeError", "error": "synthetic adapter failure"}
 
-    monkeypatch.setattr("factory_lowlevel.continuous_daemon.run_live_factory_cycle", _fail_source)
+    monkeypatch.setattr("factory_lowlevel.continuous_daemon.run_source_child_process", _fail_source)
     records = run_continuous_daemon(
         cycles=1,
         sleep_seconds=0,
@@ -94,6 +96,7 @@ def test_task035_daemon_quarantines_failed_due_source(tmp_path, monkeypatch):
         session_ledger=tmp_path / "sessions.jsonl",
         state_path=state_path,
         heartbeat_path=tmp_path / "heartbeat.json",
+        progress_root=tmp_path / "progress",
         disk_budget_mb=512,
         retry_ceiling=1,
         retry_base_seconds=0.0,

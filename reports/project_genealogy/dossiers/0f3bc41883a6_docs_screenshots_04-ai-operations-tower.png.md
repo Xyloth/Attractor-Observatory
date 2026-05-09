@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/0f3bc41883a6_docs_screenshots_04-ai-operations-tower.png.json`
-- JSON content_hash: `sha256:94d8a12275521684649512199edd575a34b2e5e83470ed60e30e2581150b7524`
+- JSON content_hash: `sha256:45ff7a6f45142784ae815e1d58f5f0b4c8fb687a7a7cf868a9ae120c1e2f33fe`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `docs`
 - Generated status: `source`

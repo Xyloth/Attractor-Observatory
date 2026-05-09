@@ -225,6 +225,19 @@ def build_coherence(
             "mission_atom_count": len(mission_atoms),
             "mission_coverage_status_counts": dict(coverage_status_counts),
             "cohort_alignment_status_counts": dict(cohort_status_counts),
+            "finding_partition": {
+                "coherence_mission_finding_count": len(findings),
+                "atlas_dossier_confirmed_finding_count": atlas.get("summary", {}).get("confirmed_finding_count", 0),
+                "scope_note": "Coherence findings are mission-coverage findings; atlas confirmed_finding_count is the per-file dossier partition.",
+            },
+        },
+        "acceptance_gates": {
+            "PG21_current_head_binding": {
+                "passed": manifest.get("run_binding", {}).get("head_commit", "") == atlas.get("run_binding", {}).get("head_commit", ""),
+                "head_commit": manifest.get("run_binding", {}).get("head_commit", ""),
+                "atlas_hash": atlas.get("content_hash", ""),
+            },
+            "PG22_implementation_self_audit": manifest.get("acceptance_gates", {}).get("PG22_implementation_self_audit", {}),
         },
     }
     return payload

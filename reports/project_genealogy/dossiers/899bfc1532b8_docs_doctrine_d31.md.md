@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/899bfc1532b8_docs_doctrine_d31.md.json`
-- JSON content_hash: `sha256:d141a9fe8415cbba879cb59f7ceebe5476dbae44bc79a241526ac3aff7464bf0`
+- JSON content_hash: `sha256:82e8450ee740c0db4c4fe39f6e23f21b52e037399123de7a54b9e99fcdaf17be`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `doctrine`
 - Generated status: `source`

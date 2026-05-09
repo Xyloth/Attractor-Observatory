@@ -59,7 +59,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:2eb86945956c02b0b8740aea092bb6cb4d0d028a808670cd34e2589a1545f89c",
+  "content_hash": "sha256:20acac85bad311a967c9258a3249759d42cef71412dd4cadb718bff62e4ee723",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -69,7 +69,7 @@
             "kind": "file_span",
             "locator": "reports/campaign_008/w9_origins_chemistry.json"
           },
-          "statement": "Tracked file with 287 lines / 10441 bytes at HEAD."
+          "statement": "Tracked file with 291 lines / 10766 bytes at HEAD."
         },
         {
           "atom_id": "provenance_present",
@@ -80,15 +80,18 @@
           "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 10441,
+      "byte_count": 10766,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 287,
-      "observed_doctrine_bindings": [],
+      "line_count": 291,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::reports/campaign_008/w9_origins_chemistry.json",
       "public_symbols": [],
       "test_functions": []
@@ -133,16 +136,18 @@
       "value": 0.0
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D11"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D11"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -153,13 +158,14 @@
     },
     "operational_load_bearingness": {
       "cited_by_reports": [
-        "CODEX_CAMPAIGN_008.md"
+        "CODEX_CAMPAIGN_008.md",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 1.5
+      "weighted_value": 3.0
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 1,
@@ -205,12 +211,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 10441,
+    "byte_count": 10766,
     "generated_status": "report",
     "language": "json",
-    "line_count": 287,
+    "line_count": 291,
     "path": "reports/campaign_008/w9_origins_chemistry.json",
-    "path_hash": "sha256:a3320c5ff20344efeea2f029a1a7f1d82d3f37f6b20f8d6283cdf645e9460f6a",
+    "path_hash": "sha256:2f548860c398df1d227da0e91d732b3a0f6375c09ce39a690b9b9d916b1d936a",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -249,7 +255,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/bfg_preregistration_gate.json::1240",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/bfg_preregistration_gate.json::1370",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -262,6 +268,36 @@
           }
         ],
         "target": "reports/campaign_009/bfg_preregistration_gate.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/provenance_graph.json::4466",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_008/w9_origins_chemistry.json::reports/campaign_009/provenance_graph.json"
+          }
+        ],
+        "target": "reports/campaign_009/provenance_graph.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/provenance_graph.json::4606",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_008/w9_origins_chemistry.json::reports/campaign_009/provenance_graph.json"
+          }
+        ],
+        "target": "reports/campaign_009/provenance_graph.json"
       }
     ],
     "cohort": {
@@ -507,7 +543,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::1239",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::1369",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -527,9 +563,55 @@
         "target": "reports/campaign_008/w9_origins_chemistry.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::4465",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_008/w8_cognitive.json::reports/campaign_008/w9_origins_chemistry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_008/w8_cognitive.json",
+        "target": "reports/campaign_008/w9_origins_chemistry.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::4605",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_008/w8_cognitive.json::reports/campaign_008/w9_origins_chemistry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_008/w8_cognitive.json",
+        "target": "reports/campaign_008/w9_origins_chemistry.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_CAMPAIGN_008.md->reports/campaign_008/w9_origins_chemistry.json::4489",
+        "edge_id": "cites::CODEX_CAMPAIGN_008.md->reports/campaign_008/w9_origins_chemistry.json::4967",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -549,9 +631,31 @@
         "target": "reports/campaign_008/w9_origins_chemistry.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_008/w9_origins_chemistry.json::5480",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_008/w9_origins_chemistry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_008/w9_origins_chemistry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_008/w9_origins_chemistry.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/bfg_preregistration_gate.json::1240",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/bfg_preregistration_gate.json::1370",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -569,11 +673,57 @@
         },
         "source": "reports/campaign_008/w9_origins_chemistry.json",
         "target": "reports/campaign_009/bfg_preregistration_gate.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/provenance_graph.json::4466",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_008/w9_origins_chemistry.json::reports/campaign_009/provenance_graph.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_008/w9_origins_chemistry.json",
+        "target": "reports/campaign_009/provenance_graph.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_008/w9_origins_chemistry.json->reports/campaign_009/provenance_graph.json::4606",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_008/w9_origins_chemistry.json::reports/campaign_009/provenance_graph.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_008/w9_origins_chemistry.json",
+        "target": "reports/campaign_009/provenance_graph.json"
       }
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::1239",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::1369",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -588,7 +738,37 @@
         "source": "reports/campaign_008/w8_cognitive.json"
       },
       {
-        "edge_id": "cites::CODEX_CAMPAIGN_008.md->reports/campaign_008/w9_origins_chemistry.json::4489",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::4465",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_008/w8_cognitive.json::reports/campaign_008/w9_origins_chemistry.json"
+          }
+        ],
+        "source": "reports/campaign_008/w8_cognitive.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_008/w8_cognitive.json->reports/campaign_008/w9_origins_chemistry.json::4605",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_008/w8_cognitive.json::reports/campaign_008/w9_origins_chemistry.json"
+          }
+        ],
+        "source": "reports/campaign_008/w8_cognitive.json"
+      },
+      {
+        "edge_id": "cites::CODEX_CAMPAIGN_008.md->reports/campaign_008/w9_origins_chemistry.json::4967",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -601,6 +781,21 @@
           }
         ],
         "source": "CODEX_CAMPAIGN_008.md"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_008/w9_origins_chemistry.json::5480",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_008/w9_origins_chemistry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_008/w9_origins_chemistry.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -659,7 +854,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 1,
+    "downstream_reference_count": 2,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -677,18 +872,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ce1ab2889a07_reports_task_dx002_public_boundary_markers.json.json`
-- JSON content_hash: `sha256:036845dbffa833b1682e17161913a8702fca77e6d32b40b456194c5df3e288e3`
+- JSON content_hash: `sha256:550e860bf87845f0475f949b4683d354691d2bd782390b684845dd70e916cb71`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

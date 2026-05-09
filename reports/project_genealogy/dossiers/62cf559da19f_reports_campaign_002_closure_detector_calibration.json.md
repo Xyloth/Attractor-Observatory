@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/62cf559da19f_reports_campaign_002_closure_detector_calibration.json.json`
-- JSON content_hash: `sha256:b1bd3ecae01d25f9971caeea40fa2ef31114fd5bab03be01c00b946da8538fbe`
+- JSON content_hash: `sha256:6d002a427a91a7dd4e835b760b0bc1d83866c10c1aef66b73ce65df6bdad883e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

@@ -3050,3 +3050,41 @@ Destroyer pass completed on a disposable worktree with the full private surface.
 - `papers/falsification/DX-003/index.md`
 
 No production source fixes were made on this branch. The branch is preserved as via-negativa artifact for PI / Architect review; repairs belong on follow-up Builder branches.
+
+## TASK-CB-022-FIXALL — DX-003 Fix-All + CB-021 Architecture Closure — complete
+
+**Branch:** `codex/task-cb-022-fixall`  
+**Base:** `main` after DX-003 merge (`8bbfbd5`)  
+**Mode:** one pass, no production daemon relaunch, no push/merge to main.  
+**Doctrine applied:** D7-D31 binding; D28-D30 public-boundary/freshness discipline; D31 read-separation discipline.
+
+**Topic commits landed:**
+
+- `20c8c93` — Topic A, doctrine hardening. Covered DX-003 R3 reproducers for D31 AST bypass, metadata identity leakage, source-object aliasing, numeric value-label channels, and adversarial-control coverage gaps.
+- `215dbc1` — Topic B, evidence discipline. Implemented tiered source-bound substance gates, corrected autocatalytic/RAF sources, marked unresolved public/private evidence references, and routed Campaign 006 broken evidence paths to audit.
+- `30bc78c` — Topic C, PG-001 acceptance hardening. Regenerated PG-001 against the clean current branch, added PG21/PG22, fixed inert `--help`, and made atlas/coherence finding counts consistent.
+- `8ebaebc` — Topic D, governance propagation. Added `docs/mistake_catalog_registry.json`; Class 12 is ratified; README, mistake catalog, Control Room, snapshot, and doctrine surfaces read the canonical registry.
+- `64140ad` — Topic E, daemon truth. Progress files are current-operator truth with `last_updated_at` and `bound_to_state_hash`; stale progress reads return honest empty; raw snapshot files declare the `load_latest()` read policy.
+- `c47a245` — Topic F, CB-021 architecture closure. Added per-source child worker supervision, append-only sharded store, streaming run-payload sections, store/trace disk-budget guards, trace trimming with audit routing, and between-record stop-flag checks.
+
+**Topic F smoke note.** The required disposable Szostak protocell smoke under `FACTORY_DAEMON_MAX_RSS_GB=8` exposed a real Phase-2 world bug: `division_threshold=0` meant "no division" in the adapter payload, but the W2 world interpreted it as "always divide", causing exponential protocell growth and a wedged worker. The fix is in `worlds/protocell/model.py`: non-positive division thresholds now disable division. Post-fix disposable daemon smoke completed cleanly: 1 source due, 1 completed, 0 quarantined, run `sha256:ebf5b8feb1eb608b4082eef6fdfacedda86e2e812acd3fbe4ca73f7e09b08ed5`.
+
+**Verification before roll-up:**
+
+- Topic A targeted tests: passed.
+- Topic B targeted tests: passed.
+- PG-001 tests (`test_pg001_acceptance_gates.py`, `test_pg001_schema.py`, `test_pg001_query.py`): 44 passed.
+- Mistake-catalog + public contract tests: passed.
+- Topic E daemon-truth tests: passed.
+- Topic F + daemon architecture slice (`test_cb022_topic_f_architecture.py`, `test_task035_continuous_daemon.py`, `test_cb022_topic_e_daemon_truth.py`, `test_cb021_memory_guard.py`): 31 passed.
+
+**Reproducer coverage.** The repair commits cover the named DX-003 reproducer classes from rounds 2, 3, 4, 5, 6, 8, and 9 without editing the falsification artifacts. Remaining DX-003 hypothesis files stay preserved as via-negativa evidence; no claim-bearing promotions were made.
+
+**Final acceptance status.** Full public verification passed after a PG-001 artifact-boundary correction that marked manifest-excluded/generated paths as D23/D29 private boundaries in the PG manifest and atlas surfaces:
+
+```
+python -m pytest public_tests/ -q
+232 passed, 2 warnings in 422.82s
+```
+
+Branch remains local for PI / Architect review; Codex did not push or merge.

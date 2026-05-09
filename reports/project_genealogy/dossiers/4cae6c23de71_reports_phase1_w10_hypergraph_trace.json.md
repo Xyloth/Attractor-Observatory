@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/4cae6c23de71_reports_phase1_w10_hypergraph_trace.json.json`
-- JSON content_hash: `sha256:cb84fe216571b94dab4f4c5f61135c6af7454fdad739ca0ef184c695b4906d73`
+- JSON content_hash: `sha256:cc3dc6b1f1d83366a20d52f04cc93c2b9bb99c8aca19e5056c7910793d54a309`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

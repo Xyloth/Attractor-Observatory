@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/854848d4afc8_reports_campaign_018_bridge_traces.json.json`
-- JSON content_hash: `sha256:738faa242433066d10c33a360e8fe00a554ec4c7fd07d9d725fdcd76d4a799c4`
+- JSON content_hash: `sha256:9535bffe3fa6b4bafbe87a539d6f8884ad0b43c933604e6abcdf129075f756c3`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

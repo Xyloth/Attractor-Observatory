@@ -1,0 +1,97 @@
+{
+  "schema": "MistakeCatalogRegistry.v1",
+  "source_of_truth": true,
+  "classes": [
+    {
+      "id": "Class 1",
+      "title": "Static-input contamination",
+      "status": "ratified",
+      "ratification_source": "Campaign 002 Architect audit",
+      "display_label": "Class 1 - Static-input contamination"
+    },
+    {
+      "id": "Class 2",
+      "title": "Direction inversion",
+      "status": "ratified",
+      "ratification_source": "TASK-008 Architect audit",
+      "display_label": "Class 2 - Direction inversion"
+    },
+    {
+      "id": "Class 3",
+      "title": "Soft enforcement, strict display",
+      "status": "ratified",
+      "ratification_source": "BLOCKER-SH3 audit",
+      "display_label": "Class 3 - Soft enforcement, strict display"
+    },
+    {
+      "id": "Class 4",
+      "title": "Scenario-internal hardcoding",
+      "status": "ratified",
+      "ratification_source": "TASK-016 Architect audit and Doctrine D14",
+      "display_label": "Class 4 - Scenario-internal hardcoding"
+    },
+    {
+      "id": "Class 5",
+      "title": "Surface-coverage-without-substance",
+      "status": "ratified",
+      "ratification_source": "Campaign 006 Architect audit and Doctrine D7",
+      "display_label": "Class 5 - Surface-coverage-without-substance"
+    },
+    {
+      "id": "Class 6",
+      "title": "Engineered passing",
+      "status": "ratified",
+      "ratification_source": "Campaign 010 Architect audit and Doctrine D9",
+      "display_label": "Class 6 - Engineered passing"
+    },
+    {
+      "id": "Class 7",
+      "title": "Surface-labels-as-primitives",
+      "status": "ratified",
+      "ratification_source": "TASK-022 Architect audit and Doctrines D10/D19",
+      "display_label": "Class 7 - Surface-labels-as-primitives"
+    },
+    {
+      "id": "Class 8",
+      "title": "Abstract-scalar-standing-in",
+      "status": "ratified",
+      "ratification_source": "W13 multiscale BFG audit",
+      "display_label": "Class 8 - Abstract-scalar-standing-in"
+    },
+    {
+      "id": "Class 9",
+      "title": "Spec-detail mismatch",
+      "status": "ratified",
+      "ratification_source": "Campaign 011 driver audit",
+      "display_label": "Class 9 - Spec-detail mismatch"
+    },
+    {
+      "id": "Class 10",
+      "title": "Test-architecture / substrate-presence mismatch",
+      "status": "ratified",
+      "ratification_source": "TASK-CB-001 / Session 001",
+      "display_label": "Class 10 - Test-architecture / substrate-presence mismatch"
+    },
+    {
+      "id": "Class 11",
+      "title": "Categorical confound through pooling",
+      "status": "ratified",
+      "ratification_source": "TASK-CB-002 / CODEX_AUDIT_002",
+      "display_label": "Class 11 - Categorical confound through pooling"
+    },
+    {
+      "id": "Class 12",
+      "title": "Decorative Completeness",
+      "status": "ratified",
+      "ratification_source": "D22, PG-001 spec, and DX-003 Decision 1 canonicalization",
+      "display_label": "Class 12 - Decorative Completeness"
+    },
+    {
+      "id": "Class 13",
+      "title": "Predicate-detector surface coupling",
+      "status": "ratified",
+      "ratification_source": "TASK-MOTIF-IMPL / MotifContract.v2 repair",
+      "display_label": "Class 13 - Predicate-detector surface coupling"
+    }
+  ]
+}

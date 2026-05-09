@@ -3,7 +3,8 @@
     "birth_cohort_id": "TASK-MOTIF-IMPL",
     "birth_predicate": {
       "acceptance_criteria": [
-        "Report serializes structured data for post-hoc analysis."
+        "Report serializes structured data for post-hoc analysis.",
+        "{\n\"N_run\": 0,\n\"balance\": {\n\"passed\": true,\n\"per_substrate\": {\n\"cognitive\": {\n\"meets_floor\": true,\n\"negative\": 15,\n\"positive\": 15,\n\"total\": 30\n}\n},\n\"ready_substrates\": [\n\"cognitive\"\n]\n},\n\"interpretation\": {\n\"rationale\": \"no lens cell remained admissible after lens-side D26/adversarial audit\",\n\"verdict\": \"not_evaluable_no_lens_after_decoupling\"\n},\n\"mode_tag\": \"exploratory\",\n\"motif_id\": \"motif.extern"
       ],
       "atoms": [
         {
@@ -26,11 +27,26 @@
             "ticket": "TASK-MOTIF-IMPL"
           },
           "statement": "Report serializes structured data for post-hoc analysis."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D26"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_024/externalized_memory_substrate_blocked.json#header",
+            "ticket": "TASK-MOTIF-IMPL"
+          },
+          "statement": "{\n\"N_run\": 0,\n\"balance\": {\n\"passed\": true,\n\"per_substrate\": {\n\"cognitive\": {\n\"meets_floor\": true,\n\"negative\": 15,\n\"positive\": 15,\n\"total\": 30\n}\n},\n\"ready_substrates\": [\n\"cognitive\"\n]\n},\n\"interpretation\": {\n\"rationale\": \"no lens cell remained admissible after lens-side D26/adversarial audit\",\n\"verdict\": \"not_evaluable_no_lens_after_decoupling\"\n},\n\"mode_tag\": \"exploratory\",\n\"motif_id\": \"motif.extern"
         }
       ],
       "content_hash": "",
       "expected_doctrine_bindings": [
-        "D11"
+        "D11",
+        "D26"
       ],
       "forbidden_patterns": [
         "report contents are mock or placeholder (Class 12)"
@@ -67,7 +83,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:d1ec9b24034e1360f02d792ba5882e7977f0304f20261f2639ee6de4e4bc16e5",
+  "content_hash": "sha256:c7b73ca7752b1f146e8e1577adc25ce9c7e923d5f19386bc7b889cfebbbe268a",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -77,17 +93,17 @@
             "kind": "file_span",
             "locator": "reports/campaign_024/externalized_memory_substrate_blocked.json"
           },
-          "statement": "Tracked file with 35 lines / 1039 bytes at HEAD."
+          "statement": "Tracked file with 27 lines / 795 bytes at HEAD."
         }
       ],
-      "byte_count": 1039,
+      "byte_count": 795,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 35,
+      "line_count": 27,
       "observed_doctrine_bindings": [
         "D26"
       ],
@@ -162,8 +178,8 @@
       "weighted_value": 0.0
     },
     "predicate_atom_coverage": {
-      "claimable_atoms": 1,
-      "covered_atoms": 1,
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
       "missing_atoms": [],
       "value": 1.0
     }
@@ -204,12 +220,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 1039,
+    "byte_count": 795,
     "generated_status": "report",
     "language": "json",
-    "line_count": 35,
+    "line_count": 27,
     "path": "reports/campaign_024/externalized_memory_substrate_blocked.json",
-    "path_hash": "sha256:8ad4e89005d535e99f6bd30629c5746e6f2c8dbcbcabefa852ea414dacccc2b7",
+    "path_hash": "sha256:8467e6b5cf0c8d8e5b44cb44e672a2657d58593f0e0e91a2b84d5d3869a6447d",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -248,7 +264,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::1473",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::1603",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -263,7 +279,7 @@
         "target": "reports/campaign_024/floor_connectivity_substrate_blocked.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::4065",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::4398",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -343,7 +359,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/externalized_memory_substrate_blocked.json::545",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/externalized_memory_substrate_blocked.json::653",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -365,7 +381,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::1472",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::1602",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -388,7 +404,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::4064",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::4397",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -410,7 +426,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::1473",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::1603",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -433,7 +449,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::4065",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/externalized_memory_substrate_blocked.json->reports/campaign_024/floor_connectivity_substrate_blocked.json::4398",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -455,7 +471,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/externalized_memory_substrate_blocked.json::545",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/externalized_memory_substrate_blocked.json::653",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -470,7 +486,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::1472",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::1602",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -485,7 +501,7 @@
         "source": "reports/campaign_024/autocatalytic_closure_substrate_blocked.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::4064",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/autocatalytic_closure_substrate_blocked.json->reports/campaign_024/externalized_memory_substrate_blocked.json::4397",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -574,18 +590,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

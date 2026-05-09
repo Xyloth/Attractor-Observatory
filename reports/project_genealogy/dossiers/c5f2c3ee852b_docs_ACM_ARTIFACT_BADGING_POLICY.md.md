@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/c5f2c3ee852b_docs_ACM_ARTIFACT_BADGING_POLICY.md.json`
-- JSON content_hash: `sha256:135b26020262eacf52a43c67522e9ed4c993198bccd3ec9d6538656f8a0f2543`
+- JSON content_hash: `sha256:95ca3b6c19a19bac46ab98c6146237e33191cb4dac634c416af98867a65b25e3`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `docs`
 - Generated status: `source`

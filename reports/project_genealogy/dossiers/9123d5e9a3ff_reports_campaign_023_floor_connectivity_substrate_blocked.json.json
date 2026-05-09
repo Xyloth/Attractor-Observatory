@@ -67,7 +67,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:ea0220a50c5fc08af5f21ea155a8dd81184393f298e5cff87ce313d50f36e99a",
+  "content_hash": "sha256:195d0d83af0f00d29b7e64359c35d055bf0c5a7aeecda773068c8cc22c6cfe15",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -207,7 +207,7 @@
     "language": "json",
     "line_count": 53,
     "path": "reports/campaign_023/floor_connectivity_substrate_blocked.json",
-    "path_hash": "sha256:7325f86b63ee06f9a8d043c1f8e3f7d97f43b1ad4b15e748c7ef50e5d6301cfa",
+    "path_hash": "sha256:34660829e5be75e98d75fba03c0fc61dd76341f437b9acb040993878cbf13060",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -246,7 +246,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_023/floor_connectivity_substrate_blocked.json->reports/campaign_023/full_report.json::1467",
+        "edge_id": "shares_birth_cohort::reports/campaign_023/floor_connectivity_substrate_blocked.json->reports/campaign_023/full_report.json::1597",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -326,7 +326,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_023/floor_connectivity_substrate_blocked.json::539",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_023/floor_connectivity_substrate_blocked.json::647",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -348,7 +348,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_023/externalized_memory_substrate_blocked.json->reports/campaign_023/floor_connectivity_substrate_blocked.json::1466",
+        "edge_id": "shares_birth_cohort::reports/campaign_023/externalized_memory_substrate_blocked.json->reports/campaign_023/floor_connectivity_substrate_blocked.json::1596",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -370,7 +370,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_023/floor_connectivity_substrate_blocked.json->reports/campaign_023/full_report.json::1467",
+        "edge_id": "shares_birth_cohort::reports/campaign_023/floor_connectivity_substrate_blocked.json->reports/campaign_023/full_report.json::1597",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -392,7 +392,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_023/floor_connectivity_substrate_blocked.json::539",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_023/floor_connectivity_substrate_blocked.json::647",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -407,7 +407,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_023/externalized_memory_substrate_blocked.json->reports/campaign_023/floor_connectivity_substrate_blocked.json::1466",
+        "edge_id": "shares_birth_cohort::reports/campaign_023/externalized_memory_substrate_blocked.json->reports/campaign_023/floor_connectivity_substrate_blocked.json::1596",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -496,18 +496,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/af709cd20020_reports_campaign_011_full_report.json.json`
-- JSON content_hash: `sha256:b7e1491938ea059bb58e5eae5fea5d8608a55dfe1360da7fb3d9945febe5d462`
+- JSON content_hash: `sha256:6939bafbe091726fd82954fc55199f898131d6e5c0ecfa31eec661c92af96095`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 349 / Bytes: 9904
+- Lines: 353 / Bytes: 10257
 
 ## Birth
 - Status: `recovered`
@@ -35,14 +35,14 @@
 
 ## Current
 - Status: `recovered`
-- Observed doctrines: `D19, D20, D21`
+- Observed doctrines: `D19, D20, D21, D23, D29`
 
 ## DepthVector.v1
 - **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
-- **doctrine_binding_quality**: `{'required': ['D19', 'D20', 'D21'], 'verified': ['D19', 'D20', 'D21'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D19', 'D20', 'D21', 'D23', 'D29'], 'verified': ['D19', 'D20', 'D21', 'D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['CLAUDE_FACTORY_INITIATION.md', 'CODEX_TASK_022_DRIVE.md', 'reports/campaign_011/fair_metadata.json', 'reports/campaign_011/prov_o.jsonld', 'reports/campaign_012/factory_initiation_pointer_audit.json', 'reports/campaign_012/factory_scaffolding.json'], 'weighted_value': 9.0}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['CLAUDE_FACTORY_INITIATION.md', 'CODEX_TASK_022_DRIVE.md', 'reports/campaign_011/fair_metadata.json', 'reports/campaign_011/prov_o.jsonld', 'reports/campaign_012/factory_initiation_pointer_audit.json', 'reports/campaign_012/factory_scaffolding.json', 'reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 10.5}`
 
 ## Drift
 - Status: `review_required`

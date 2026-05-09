@@ -1,0 +1,74 @@
+# Dossier: `papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe.json`
+
+> JSON is authoritative. This file is a rendering of the JSON dossier.
+
+- JSON: `reports/project_genealogy/dossiers/cd7a7064f8db_papers_falsification_DX-003_round_7_reproducers_telemetry_identity_probe.json.json`
+- JSON content_hash: `sha256:5849b718cf5c9d8754df88764968aff025c84594a00ffa913525504a8e848011`
+- Schema: `ProjectGenealogyDossier.v1`
+- Artifact family: `paper`
+- Generated status: `source`
+- Lines: 326 / Bytes: 8928
+
+## Birth
+- Status: `recovered`
+- First-seen commit: `a434ca4f20e84c1af1a60954ab5d4ace4a5772d3`
+- First-seen date: `2026-05-08T18:19:27-04:00`
+- Spawn ticket: `DX-003`
+- Cohort: `DX-003`
+
+### Birth predicate atoms
+- **paper_artifact_in_falsifier_or_prereg** — Paper-side artifact (falsifier, prereg, method) carries provenance and signature where required.
+- **header_declared_intent** — {
+"claude_builder_tasks_first_20": [
+"TASK-CB-001",
+"TASK-CB-002",
+"TASK-CB-003",
+"TASK-CB-004",
+"TASK-CB-005",
+"TASK-CB-006",
+"TASK-CB-007",
+"TASK-CB-008",
+"TASK-CB-009",
+"TASK-CB-011",
+"TASK-CB-012",
+"TASK-CB-013",
+"TASK-CB-014",
+"TASK-CB-015",
+"TASK-CB-016"
+],
+"claude_builder_unique_task_count": 15,
+"codex_15x_tasks_first_20": [
+"TASK-029",
+"TASK-030",
+"TASK-031",
+"TASK-032",
+"TASK-033",
+"TASK-
+
+## Current
+- Status: `recovered`
+- Observed doctrines: `D18, D26, D7`
+
+## DepthVector.v1
+- **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
+- **adversarial_surface_coverage**: `{'required_bad_cases': [], 'covered_bad_cases': [], 'missing_bad_cases': [], 'value': None}`
+- **doctrine_binding_quality**: `{'required': ['D18', 'D26', 'D7'], 'verified': ['D18', 'D26', 'D7'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': [], 'weighted_value': 0.0}`
+
+## Drift
+- Status: `positive_deepening`
+- Doctrine boundary crossings: 1
+
+## Liveness
+- Cleanup candidate status: `unknown`
+- Cleanup reason: PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean
+- Probe outcome: `declined`
+- Probe decline reason: `removal_probe_over_budget`
+
+## Findings
+_No findings detected mechanically._
+
+---
+
+Reproducer: regenerate this dossier with `python -m project_genealogy run-pass2`.

@@ -9,6 +9,9 @@ Schema (``IngestionProgress.v1``)::
 
     {
         "schema": "IngestionProgress.v1",
+        "file_semantics": "current_operator_truth",
+        "last_updated_at": "<ISO-8601 UTC>",
+        "bound_to_state_hash": "sha256:<factory_daemon_state.json bytes>",
         "world_family": "crn",
         "session_id": "<sha256>",
         "started_at": "<ISO-8601 UTC>",
@@ -36,6 +39,7 @@ daemon's per-cycle finalize block.
 from __future__ import annotations
 
 import json
+import hashlib
 import re
 from collections import Counter
 from pathlib import Path
@@ -99,6 +103,7 @@ def write_ingestion_progress(
     source_rows: list[dict[str, Any]],
     targets_doc: Path | str = INGESTION_TARGETS_DOC,
     progress_root: Path | str = PROGRESS_ROOT,
+    state_path: Path | str | None = None,
 ) -> dict[str, Path]:
     """Write one progress file per world this session touched.
 
@@ -127,6 +132,8 @@ def write_ingestion_progress(
     completed_sources_set = set(session.get("completed_source_ids") or [])
     quarantined_set = set(session.get("quarantined_source_ids") or [])
     last_success_by_source = (state or {}).get("last_success_by_source", {})
+    state_hash = _state_binding_hash(state=state or {}, state_path=state_path)
+    force_refresh_invalidations = list((state or {}).get("force_refresh_invalidations") or [])
 
     written: dict[str, Path] = {}
     session_id = session.get("session_id") or sha256({k: v for k, v in session.items() if k != "session_id"})
@@ -140,8 +147,17 @@ def write_ingestion_progress(
         target = int(targets.get(wf, 0))
         current = int(record_counts.get(wf, 0))
         percent = round(current / target, 4) if target > 0 else 0.0
+        last_updated_at = utc_now()
+        world_invalidations = [
+            item for item in force_refresh_invalidations
+            if item.get("source_id") in all_source_ids or item.get("clear_all")
+        ]
         payload = {
             "schema": "IngestionProgress.v1",
+            "file_semantics": "current_operator_truth",
+            "history_policy": "pointer_file_only; historical progress belongs in versioned snapshot paths",
+            "last_updated_at": last_updated_at,
+            "bound_to_state_hash": state_hash,
             "world_family": wf,
             "session_id": session_id,
             "started_at": session_started,
@@ -157,8 +173,9 @@ def write_ingestion_progress(
                 else ""
             ),
             "audit_queue_at_last_check": audit_count,
+            "invalidated_by_force_refresh": world_invalidations,
             "writer": "factory_lowlevel.progress.write_ingestion_progress",
-            "written_at": utc_now(),
+            "written_at": last_updated_at,
         }
         out = progress_root_p / f"{wf}.json"
         atomic_write_json(out, payload)
@@ -168,6 +185,8 @@ def write_ingestion_progress(
 
 def read_ingestion_progress(
     progress_root: Path | str = PROGRESS_ROOT,
+    *,
+    state_path: Path | str | None = None,
 ) -> dict[str, dict[str, Any]]:
     """Return ``{world_family: progress_payload}`` for the playbook.
 
@@ -183,9 +202,30 @@ def read_ingestion_progress(
             payload = json.loads(f.read_text(encoding="utf-8-sig"))
         except (OSError, json.JSONDecodeError):
             continue
+        if state_path is not None and not _progress_fresh_for_state(payload, state_path):
+            continue
         wf = payload.get("world_family") or f.stem
         out[wf] = payload
     return out
+
+
+def _state_binding_hash(*, state: dict[str, Any], state_path: Path | str | None) -> str:
+    if state_path is not None:
+        p = Path(state_path)
+        if p.exists() and p.is_file():
+            return "sha256:" + hashlib.sha256(p.read_bytes()).hexdigest()
+    return sha256(state)
+
+
+def _progress_fresh_for_state(payload: dict[str, Any], state_path: Path | str) -> bool:
+    expected = payload.get("bound_to_state_hash")
+    if not expected:
+        return False
+    p = Path(state_path)
+    if not p.exists() or not p.is_file():
+        return False
+    actual = "sha256:" + hashlib.sha256(p.read_bytes()).hexdigest()
+    return expected == actual
 
 
 def _record_counts_per_world(store_root: str | Path) -> dict[str, int]:

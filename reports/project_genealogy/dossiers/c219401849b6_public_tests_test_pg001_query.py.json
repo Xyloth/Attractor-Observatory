@@ -1,0 +1,659 @@
+{
+  "birth": {
+    "birth_cohort_id": "PG-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function.",
+        "PG-001 query API public tests.\n\nExercises the documented Python API and the CLI examples from the spec's\n§\"Query API Surface\". Tests assume the published atlas exists; if not,\nthey skip with a reason (PG-001 may not have run on this branch)."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+            "subject": "PG-001 Mission Control tab + public tests",
+            "ticket": "PG-001"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_pg001_query.py#header",
+            "ticket": "PG-001"
+          },
+          "statement": "PG-001 query API public tests.\n\nExercises the documented Python API and the CLI examples from the spec's\n§\"Query API Surface\". Tests assume the published atlas exists; if not,\nthey skip with a reason (PG-001 may not have run on this branch)."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_pg001_query.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+        "note": "PG-001 Mission Control tab + public tests",
+        "ref_id": "birth::public_tests/test_pg001_query.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "PG-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_pg001_query.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_pg001_query.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::public_tests/test_pg001_query.py::docstring"
+      }
+    ],
+    "first_seen_commit": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+    "first_seen_date": "2026-05-08T15:49:33-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "PG-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:89339cbcaf4b0904fb7ae3b4f758e8158db8ae10f9fd16688cd40bfe663d1995",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_pg001_query.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_cli_files_runs_against_atlas, test_cli_orphans_runs, test_query_depth_outliers_shape, test_query_doctrine_collisions_returns_canonical_shape, test_query_files_filter_returns_required_columns, test_query_files_path_glob, test_query_findings_reproducer_filter, test_query_index_loads..."
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_pg001_query.py#tests"
+          },
+          "statement": "Module exposes 9 pytest functions: test_query_index_loads, test_query_files_filter_returns_required_columns, test_query_files_path_glob, test_query_orphans_kinds_distinct, test_query_findings_reproducer_filter, test_query_doctrine_collisions_returns_canonical_shape..."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_pg001_query.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, json, pathlib.Path, pytest, subprocess, sys"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_pg001_query.py"
+          },
+          "statement": "Tracked file with 136 lines / 4026 bytes at HEAD."
+        }
+      ],
+      "byte_count": 4026,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "json",
+        "pathlib.Path",
+        "pytest",
+        "subprocess",
+        "sys"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 50,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "assert r[\"path\"].startswith(\"docs/\")"
+        },
+        {
+          "line": 51,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "assert r[\"path\"].endswith(\".md\")"
+        }
+      ],
+      "line_count": 136,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::public_tests/test_pg001_query.py",
+      "public_symbols": [
+        "test_cli_files_runs_against_atlas",
+        "test_cli_orphans_runs",
+        "test_query_depth_outliers_shape",
+        "test_query_doctrine_collisions_returns_canonical_shape",
+        "test_query_files_filter_returns_required_columns",
+        "test_query_files_path_glob",
+        "test_query_findings_reproducer_filter",
+        "test_query_index_loads",
+        "test_query_orphans_kinds_distinct"
+      ],
+      "test_functions": [
+        "test_query_index_loads",
+        "test_query_files_filter_returns_required_columns",
+        "test_query_files_path_glob",
+        "test_query_orphans_kinds_distinct",
+        "test_query_findings_reproducer_filter",
+        "test_query_doctrine_collisions_returns_canonical_shape",
+        "test_query_depth_outliers_shape",
+        "test_cli_files_runs_against_atlas",
+        "test_cli_orphans_runs"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_pg001_query.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_pg001_query.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_pg001_query.py::test_query_index_loads,test_query_files_filter_returns_required_columns,test_query_files_path_glob",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_pg001_query.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 5,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 5,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "BUILD_LOG.md"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 50,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "assert r[\"path\"].startswith(\"docs/\")"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 51,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "assert r[\"path\"].endswith(\".md\")"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 4026,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 136,
+    "path": "public_tests/test_pg001_query.py",
+    "path_hash": "sha256:c43c88ef8921a5a829c629a8a9e89335f37ce463f0bd2dde74714238d5a135e0",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 50: assert r[\"path\"].startswith(\"docs/\")",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_pg001_query.py#L50",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_pg001_query.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_pg001_query.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'assert r[\"path\"].startswith(\"docs/\")' -- public_tests/test_pg001_query.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 51: assert r[\"path\"].endswith(\".md\")",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "public_tests/test_pg001_query.py#L51",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::public_tests/test_pg001_query.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-public_tests/test_pg001_query.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'assert r[\"path\"].endswith(\".md\")' -- public_tests/test_pg001_query.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_pg001_query.py->public_tests/test_pg001_removal_probe.py::1632",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "target": "public_tests/test_pg001_removal_probe.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "PG-001",
+      "members": [
+        "control_room/rooms/project_genealogy.py",
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "project_genealogy/__init__.py",
+        "project_genealogy/__main__.py",
+        "project_genealogy/atlas.py",
+        "project_genealogy/birth.py",
+        "project_genealogy/coherence.py",
+        "project_genealogy/current.py",
+        "project_genealogy/depth.py",
+        "project_genealogy/dossier.py",
+        "project_genealogy/drift.py",
+        "project_genealogy/graph.py",
+        "project_genealogy/hashing.py",
+        "project_genealogy/manifest.py",
+        "project_genealogy/probe.py",
+        "project_genealogy/query.py",
+        "project_genealogy/runner.py",
+        "public_tests/test_pg001_acceptance_gates.py",
+        "public_tests/test_pg001_control_room_tab.py",
+        "public_tests/test_pg001_query.py",
+        "public_tests/test_pg001_removal_probe.py",
+        "public_tests/test_pg001_schema.py"
+      ],
+      "spawn_ticket": "PG-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+        "edge_id": "spawned_by_ticket::PG-001->public_tests/test_pg001_query.py::443",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_pg001_query.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "PG-001",
+        "target": "public_tests/test_pg001_query.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_pg001_control_room_tab.py->public_tests/test_pg001_query.py::1631",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_pg001_control_room_tab.py",
+        "target": "public_tests/test_pg001_query.py"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_pg001_query.py::4933",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_pg001_query.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_pg001_query.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "public_tests/test_pg001_query.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_pg001_query.py->public_tests/test_pg001_removal_probe.py::1632",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_pg001_query.py",
+        "target": "public_tests/test_pg001_removal_probe.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::PG-001->public_tests/test_pg001_query.py::443",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "01c6c38479151939d0f7c2be30f4d79df6f1bb7e",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_pg001_query.py"
+          }
+        ],
+        "source": "PG-001"
+      },
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_pg001_control_room_tab.py->public_tests/test_pg001_query.py::1631",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "source": "public_tests/test_pg001_control_room_tab.py"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_pg001_query.py::4933",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#public_tests/test_pg001_query.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::public_tests/test_pg001_query.py"
+          }
+        ],
+        "source": "BUILD_LOG.md"
+      }
+    ],
+    "siblings": [
+      "control_room/rooms/project_genealogy.py",
+      "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+      "project_genealogy/__init__.py",
+      "project_genealogy/__main__.py",
+      "project_genealogy/atlas.py",
+      "project_genealogy/birth.py",
+      "project_genealogy/coherence.py",
+      "project_genealogy/current.py",
+      "project_genealogy/depth.py",
+      "project_genealogy/dossier.py",
+      "project_genealogy/drift.py",
+      "project_genealogy/graph.py",
+      "project_genealogy/hashing.py",
+      "project_genealogy/manifest.py",
+      "project_genealogy/probe.py",
+      "project_genealogy/query.py",
+      "project_genealogy/runner.py",
+      "public_tests/test_pg001_acceptance_gates.py",
+      "public_tests/test_pg001_control_room_tab.py",
+      "public_tests/test_pg001_removal_probe.py",
+      "public_tests/test_pg001_schema.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_pg001_query.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

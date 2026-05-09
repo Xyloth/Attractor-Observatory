@@ -90,6 +90,7 @@ FAMILY_RULES: list[tuple[str, str]] = [
 # the cohort level in the atlas without per-file dossiers.
 
 COHORT_ONLY_PREFIXES: tuple[str, ...] = (
+    "reports/project_genealogy/",
     "reports/task_w1_mass_ingest/",
     "reports/task_cb015_launch/",
     "reports/campaign_016/",
@@ -608,6 +609,31 @@ CRITICAL_PATH_PATTERNS: list[str] = [
     r"^project_genealogy/.*\.py$",
 ]
 
+PG22_IMPLEMENTATION_SELF_AUDIT_PATHS: tuple[str, ...] = (
+    "project_genealogy/atlas.py",
+    "project_genealogy/birth.py",
+    "project_genealogy/coherence.py",
+    "project_genealogy/current.py",
+    "project_genealogy/depth.py",
+    "project_genealogy/dossier.py",
+    "project_genealogy/drift.py",
+    "project_genealogy/graph.py",
+    "project_genealogy/hashing.py",
+    "project_genealogy/manifest.py",
+    "project_genealogy/probe.py",
+    "project_genealogy/query.py",
+    "project_genealogy/runner.py",
+    "project_genealogy/__init__.py",
+    "project_genealogy/__main__.py",
+    "control_room/rooms/project_genealogy.py",
+    "factory_lowlevel/memory_guard.py",
+    "public_tests/test_pg001_acceptance_gates.py",
+    "public_tests/test_pg001_control_room_tab.py",
+    "public_tests/test_pg001_query.py",
+    "public_tests/test_pg001_removal_probe.py",
+    "public_tests/test_pg001_schema.py",
+)
+
 
 def is_critical_path(rel_path: str) -> bool:
     """Return True iff the path matches a probe-declined critical pattern."""
@@ -663,11 +689,17 @@ def _file_hashes(repo_root: Path, files: list[str]) -> dict[str, str]:
     return out
 
 
-def build_manifest(repo_root: Path) -> dict[str, Any]:
+def build_manifest(repo_root: Path, *, require_clean: bool = False) -> dict[str, Any]:
     """Construct the input manifest payload (without writing it)."""
     branch = _git_branch()
     head = _git_head()
     dirty = _git_dirty_files()
+    if require_clean and dirty:
+        raise RuntimeError(
+            "PG-001 prepass requires a clean workspace; dirty files: "
+            + ", ".join(dirty[:12])
+            + (" ..." if len(dirty) > 12 else "")
+        )
     all_tracked = _git_ls_files(repo_root)
     audited: list[dict[str, Any]] = []
     excluded: list[dict[str, Any]] = []
@@ -678,6 +710,9 @@ def build_manifest(repo_root: Path) -> dict[str, Any]:
         if cohort_only:
             excluded.append({
                 "path": rel,
+                "path_status": "private_unshipped",
+                "evidence_private": True,
+                "private_boundary_reason": "PG-001 cohort-only generated artifact excluded from public per-file audit surface.",
                 "artifact_family": family,
                 "decline_reason": "file_out_of_scope_by_manifest",
                 "note": (
@@ -693,6 +728,9 @@ def build_manifest(repo_root: Path) -> dict[str, Any]:
         })
 
     file_hashes = _file_hashes(repo_root, [a["path"] for a in audited])
+    audited_paths = {a["path"] for a in audited}
+    excluded_paths = {e["path"] for e in excluded}
+    pg22_missing = sorted(path for path in PG22_IMPLEMENTATION_SELF_AUDIT_PATHS if path not in audited_paths)
 
     payload: dict[str, Any] = {
         "schema": MANIFEST_SCHEMA,
@@ -744,6 +782,23 @@ def build_manifest(repo_root: Path) -> dict[str, Any]:
             "excluded_count": len(excluded),
             "mission_atom_count": len(MISSION_ATOM_SEEDS),
         },
+        "acceptance_gates": {
+            "PG21_current_head_binding": {
+                "passed": True,
+                "head_commit": head,
+                "scope": "manifest/atlas/coherence run_binding must cite this generation head",
+            },
+            "PG22_implementation_self_audit": {
+                "passed": not pg22_missing,
+                "required_paths": list(PG22_IMPLEMENTATION_SELF_AUDIT_PATHS),
+                "missing_paths": pg22_missing,
+            },
+            "PG2_full_git_ls_files_universe": {
+                "passed": len(audited_paths | excluded_paths) == len(all_tracked),
+                "tracked_total": len(all_tracked),
+                "audited_plus_excluded": len(audited_paths | excluded_paths),
+            },
+        },
     }
     # Doctrine registry hash (snapshot ref).
     doctrine_path = repo_root / "docs/doctrine_registry.json"
@@ -753,7 +808,7 @@ def build_manifest(repo_root: Path) -> dict[str, Any]:
 
 
 def write_manifest(repo_root: Path) -> tuple[Path, str]:
-    payload = build_manifest(repo_root)
+    payload = build_manifest(repo_root, require_clean=True)
     out_path = repo_root / REPORT_DIR / "input_manifest.json"
     h = write_with_hash(out_path, payload)
     return out_path, h

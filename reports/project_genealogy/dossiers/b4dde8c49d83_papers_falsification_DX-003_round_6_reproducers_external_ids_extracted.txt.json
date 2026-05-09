@@ -1,0 +1,495 @@
+{
+  "birth": {
+    "birth_cohort_id": "DX-003",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Paper-side artifact (falsifier, prereg, method) carries provenance and signature where required."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "paper_artifact_in_falsifier_or_prereg",
+          "doctrine_bindings_expected": [
+            "D17",
+            "D18"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "1a6d92a153cad0458e97738cdae31e23566f6fc2",
+            "subject": "DX-003 round 6: external identifier reality collision",
+            "ticket": "DX-003"
+          },
+          "statement": "Paper-side artifact (falsifier, prereg, method) carries provenance and signature where required."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D17",
+        "D18"
+      ],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "1a6d92a153cad0458e97738cdae31e23566f6fc2",
+        "note": "DX-003 round 6: external identifier reality collision",
+        "ref_id": "birth::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "DX-003",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::ticket"
+      }
+    ],
+    "first_seen_commit": "1a6d92a153cad0458e97738cdae31e23566f6fc2",
+    "first_seen_date": "2026-05-08T18:14:42-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "DX-003",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:56d0456af453121910d5c0cb47d90841369d1b78e7ed4eb35ba71c474b493654",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt"
+          },
+          "statement": "Tracked file with 319 lines / 27154 bytes at HEAD."
+        }
+      ],
+      "byte_count": 27154,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 319,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt",
+        "note": "current contents at HEAD",
+        "ref_id": "current::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D17",
+        "D18"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D17",
+        "D18"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D17",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D17",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D17::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D18",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D18",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D18::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "paper",
+    "byte_count": 27154,
+    "generated_status": "source",
+    "language": "text",
+    "line_count": 319,
+    "path": "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt",
+    "path_hash": "sha256:4b756f6baf2e69527217e783b2f63a092acfd8c81796b47dab56c4a54e0872fa",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt->papers/falsification/DX-003/round_7.md::1718",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-003",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-003"
+          }
+        ],
+        "target": "papers/falsification/DX-003/round_7.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "DX-003",
+      "members": [
+        "papers/falsification/DX-003/index.md",
+        "papers/falsification/DX-003/round_1.md",
+        "papers/falsification/DX-003/round_1_reproducers/hash_mismatches.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_all.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_campaign013.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_control_room_rooms.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_estimation_loop.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_motif_contracts_v2.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_private_tests.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_public_tests.txt",
+        "papers/falsification/DX-003/round_2.md",
+        "papers/falsification/DX-003/round_2_reproducers/git_recent_for_pg_binding.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_artifact_shapes.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_binding_vs_head.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_content_hash_self_check.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_count_contradiction.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_manifest_missing_non_dx.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_manifest_tracked_total_mismatch.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_depth_outliers.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_doctrine_collisions.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_findings.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_findings_counts.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_orphans.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_run_bindings.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_run_prepass_help_side_effect.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pytest_pg001_public.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pytest_pg001_public_explicit.txt",
+        "papers/falsification/DX-003/round_3.md",
+        "papers/falsification/DX-003/round_3_reproducers/adversarial_controls_metadata_cheat.txt",
+        "papers/falsification/DX-003/round_3_reproducers/clean_lens_value_label_channel.txt",
+        "papers/falsification/DX-003/round_3_reproducers/contract_subset_mutation_status.txt",
+        "papers/falsification/DX-003/round_3_reproducers/d31_ast_bypass.txt",
+        "papers/falsification/DX-003/round_3_reproducers/d31_ast_bypass_reproducer.py",
+        "papers/falsification/DX-003/round_3_reproducers/pytest_contract_green_subset.txt",
+        "papers/falsification/DX-003/round_3_reproducers/source_object_alias_probe.txt",
+        "papers/falsification/DX-003/round_4.md",
+        "papers/falsification/DX-003/round_4_reproducers/campaign_019_missing_paths.txt",
+        "papers/falsification/DX-003/round_4_reproducers/campaign_023_024_trace_private_check.txt",
+        "papers/falsification/DX-003/round_4_reproducers/path_reference_audit_strict.txt",
+        "papers/falsification/DX-003/round_4_reproducers/path_reference_audit_strict_summary.json",
+        "papers/falsification/DX-003/round_4_reproducers/ro_crate_missing_ids.txt",
+        "papers/falsification/DX-003/round_5.md",
+        "papers/falsification/DX-003/round_5_reproducers/mission_atoms_covered_despite_repro_gaps.txt",
+        "papers/falsification/DX-003/round_5_reproducers/mission_atoms_covered_summary.txt",
+        "papers/falsification/DX-003/round_5_reproducers/pg_ui_data_binding_summary.txt",
+        "papers/falsification/DX-003/round_5_reproducers/project_genealogy_apptest_elements.txt",
+        "papers/falsification/DX-003/round_5_reproducers/project_genealogy_apptest_probe.txt",
+        "papers/falsification/DX-003/round_5_reproducers/room_count_doc_drift.txt",
+        "papers/falsification/DX-003/round_5_reproducers/snapshot_freshness_probe.txt",
+        "papers/falsification/DX-003/round_6.md",
+        "papers/falsification/DX-003/round_6_reproducers/contract_citation_semantic_probe.json",
+        "papers/falsification/DX-003/round_6_reproducers/contract_citation_semantic_probe.txt",
+        "papers/falsification/DX-003/round_6_reproducers/contract_external_id_resolution.json",
+        "papers/falsification/DX-003/round_6_reproducers/contract_external_id_resolution_preview.txt",
+        "papers/falsification/DX-003/round_6_reproducers/doi_shape_examples.txt",
+        "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt",
+        "papers/falsification/DX-003/round_7.md",
+        "papers/falsification/DX-003/round_7_reproducers/ai_operations_room_probe.txt",
+        "papers/falsification/DX-003/round_7_reproducers/ai_ops_agent_card_probe.txt",
+        "papers/falsification/DX-003/round_7_reproducers/control_room_builder_telemetry_parse.txt",
+        "papers/falsification/DX-003/round_7_reproducers/public_telemetry_contract_test.txt",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe.json",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe.py",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe.txt",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe_stdout.txt",
+        "papers/falsification/DX-003/round_8.md",
+        "papers/falsification/DX-003/round_8_reproducers/daemon_state_progress_probe.json",
+        "papers/falsification/DX-003/round_8_reproducers/daemon_state_progress_probe.py",
+        "papers/falsification/DX-003/round_8_reproducers/daemon_state_progress_probe.txt",
+        "papers/falsification/DX-003/round_8_reproducers/due_sources_after_force_clear.txt",
+        "papers/falsification/DX-003/round_9.md",
+        "papers/falsification/DX-003/round_9_reproducers/doctrine_catalog_drift_probe.json",
+        "papers/falsification/DX-003/round_9_reproducers/doctrine_catalog_drift_probe.py",
+        "papers/falsification/DX-003/round_9_reproducers/doctrine_catalog_drift_probe.txt",
+        "papers/falsification/DX-003/start_time.txt"
+      ],
+      "spawn_ticket": "DX-003"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "1a6d92a153cad0458e97738cdae31e23566f6fc2",
+        "edge_id": "spawned_by_ticket::DX-003->papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::335",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "1a6d92a153cad0458e97738cdae31e23566f6fc2",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "DX-003",
+        "target": "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/falsification/DX-003/round_6_reproducers/doi_shape_examples.txt->papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::1717",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-003",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-003"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/falsification/DX-003/round_6_reproducers/doi_shape_examples.txt",
+        "target": "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt->papers/falsification/DX-003/round_7.md::1718",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-003",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-003"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt",
+        "target": "papers/falsification/DX-003/round_7.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::DX-003->papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::335",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "1a6d92a153cad0458e97738cdae31e23566f6fc2",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt"
+          }
+        ],
+        "source": "DX-003"
+      },
+      {
+        "edge_id": "shares_birth_cohort::papers/falsification/DX-003/round_6_reproducers/doi_shape_examples.txt->papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::1717",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=DX-003",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::DX-003"
+          }
+        ],
+        "source": "papers/falsification/DX-003/round_6_reproducers/doi_shape_examples.txt"
+      }
+    ],
+    "siblings": [
+      "papers/falsification/DX-003/index.md",
+      "papers/falsification/DX-003/round_1.md",
+      "papers/falsification/DX-003/round_1_reproducers/hash_mismatches.txt",
+      "papers/falsification/DX-003/round_1_reproducers/pytest_all.txt",
+      "papers/falsification/DX-003/round_1_reproducers/pytest_campaign013.txt",
+      "papers/falsification/DX-003/round_1_reproducers/pytest_control_room_rooms.txt",
+      "papers/falsification/DX-003/round_1_reproducers/pytest_estimation_loop.txt",
+      "papers/falsification/DX-003/round_1_reproducers/pytest_motif_contracts_v2.txt",
+      "papers/falsification/DX-003/round_1_reproducers/pytest_private_tests.txt",
+      "papers/falsification/DX-003/round_1_reproducers/pytest_public_tests.txt",
+      "papers/falsification/DX-003/round_2.md",
+      "papers/falsification/DX-003/round_2_reproducers/git_recent_for_pg_binding.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_artifact_shapes.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_binding_vs_head.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_content_hash_self_check.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_count_contradiction.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_manifest_missing_non_dx.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_manifest_tracked_total_mismatch.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_query_depth_outliers.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_query_doctrine_collisions.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_query_findings.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_query_findings_counts.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_query_orphans.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_run_bindings.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pg_run_prepass_help_side_effect.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pytest_pg001_public.txt",
+      "papers/falsification/DX-003/round_2_reproducers/pytest_pg001_public_explicit.txt",
+      "papers/falsification/DX-003/round_3.md",
+      "papers/falsification/DX-003/round_3_reproducers/adversarial_controls_metadata_cheat.txt",
+      "papers/falsification/DX-003/round_3_reproducers/clean_lens_value_label_channel.txt",
+      "papers/falsification/DX-003/round_3_reproducers/contract_subset_mutation_status.txt",
+      "papers/falsification/DX-003/round_3_reproducers/d31_ast_bypass.txt",
+      "papers/falsification/DX-003/round_3_reproducers/d31_ast_bypass_reproducer.py",
+      "papers/falsification/DX-003/round_3_reproducers/pytest_contract_green_subset.txt",
+      "papers/falsification/DX-003/round_3_reproducers/source_object_alias_probe.txt",
+      "papers/falsification/DX-003/round_4.md",
+      "papers/falsification/DX-003/round_4_reproducers/campaign_019_missing_paths.txt",
+      "papers/falsification/DX-003/round_4_reproducers/campaign_023_024_trace_private_check.txt",
+      "papers/falsification/DX-003/round_4_reproducers/path_reference_audit_strict.txt",
+      "papers/falsification/DX-003/round_4_reproducers/path_reference_audit_strict_summary.json",
+      "papers/falsification/DX-003/round_4_reproducers/ro_crate_missing_ids.txt",
+      "papers/falsification/DX-003/round_5.md",
+      "papers/falsification/DX-003/round_5_reproducers/mission_atoms_covered_despite_repro_gaps.txt",
+      "papers/falsification/DX-003/round_5_reproducers/mission_atoms_covered_summary.txt",
+      "papers/falsification/DX-003/round_5_reproducers/pg_ui_data_binding_summary.txt",
+      "papers/falsification/DX-003/round_5_reproducers/project_genealogy_apptest_elements.txt",
+      "papers/falsification/DX-003/round_5_reproducers/project_genealogy_apptest_probe.txt",
+      "papers/falsification/DX-003/round_5_reproducers/room_count_doc_drift.txt",
+      "papers/falsification/DX-003/round_5_reproducers/snapshot_freshness_probe.txt",
+      "papers/falsification/DX-003/round_6.md"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:16Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

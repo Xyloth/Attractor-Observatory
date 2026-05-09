@@ -64,7 +64,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:fe00f2fec365eb16153c83d028425437f95d2bb9d77aef2af3f80b49fa000b21",
+  "content_hash": "sha256:8e01a406f99c90e153189ca5fb1b9fb08c0131b35a1679c469cef83ef3da21a0",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -225,7 +225,7 @@
     "language": "markdown",
     "line_count": 23,
     "path": "papers/methods/SUBSTANCE_AUDIT_W11.md",
-    "path_hash": "sha256:78cc4eb9ba099bcf3e543b15e671217adbf7365dc39771d469e9f6d90b3d7c46",
+    "path_hash": "sha256:839201a2909e11d4fece1fc51f0a98833d44fb28828ad8d0737cf362a56d5f8a",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -264,7 +264,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W11.md->papers/methods/SUBSTANCE_AUDIT_W12.md::1133",
+        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W11.md->papers/methods/SUBSTANCE_AUDIT_W12.md::1263",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -522,7 +522,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W10.md->papers/methods/SUBSTANCE_AUDIT_W11.md::1132",
+        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W10.md->papers/methods/SUBSTANCE_AUDIT_W11.md::1262",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -544,7 +544,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->papers/methods/SUBSTANCE_AUDIT_W11.md::4389",
+        "edge_id": "cites::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->papers/methods/SUBSTANCE_AUDIT_W11.md::4855",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -566,7 +566,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W11.md->papers/methods/SUBSTANCE_AUDIT_W12.md::1133",
+        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W11.md->papers/methods/SUBSTANCE_AUDIT_W12.md::1263",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -588,7 +588,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W10.md->papers/methods/SUBSTANCE_AUDIT_W11.md::1132",
+        "edge_id": "shares_birth_cohort::papers/methods/SUBSTANCE_AUDIT_W10.md->papers/methods/SUBSTANCE_AUDIT_W11.md::1262",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -603,7 +603,7 @@
         "source": "papers/methods/SUBSTANCE_AUDIT_W10.md"
       },
       {
-        "edge_id": "cites::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->papers/methods/SUBSTANCE_AUDIT_W11.md::4389",
+        "edge_id": "cites::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->papers/methods/SUBSTANCE_AUDIT_W11.md::4855",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -692,18 +692,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

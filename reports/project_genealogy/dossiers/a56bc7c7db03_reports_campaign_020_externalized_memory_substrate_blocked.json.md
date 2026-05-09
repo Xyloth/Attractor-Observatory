@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/a56bc7c7db03_reports_campaign_020_externalized_memory_substrate_blocked.json.json`
-- JSON content_hash: `sha256:90ebf072edbfa9773e34104cb0bdbb3c0580eccbf71e04c23b83c0069970c36e`
+- JSON content_hash: `sha256:675be0c03e122150372d6b0c57bedfba78477ee7f505c6c12fce38afb87dc934`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

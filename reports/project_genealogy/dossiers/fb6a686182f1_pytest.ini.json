@@ -55,7 +55,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:7f0a26fbd0b6448528e12f982ebbf2e11e0e998900281363b960164fef78ccbf",
+  "content_hash": "sha256:1f7f18c050919553636126c98a7ab5baaf41acf7c968efaf36668279106387b5",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -162,7 +162,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::pytest.ini->reports/campaign_007/full_report.json::1325",
+        "edge_id": "shares_birth_cohort::pytest.ini->reports/campaign_007/full_report.json::1455",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -288,7 +288,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
-        "edge_id": "spawned_by_ticket::TASK-033->pytest.ini::346",
+        "edge_id": "spawned_by_ticket::TASK-033->pytest.ini::453",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -310,7 +310,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::public_tests/test_task033_multiworld_factory.py->pytest.ini::1324",
+        "edge_id": "shares_birth_cohort::public_tests/test_task033_multiworld_factory.py->pytest.ini::1454",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -332,7 +332,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::pytest.ini->reports/campaign_007/full_report.json::1325",
+        "edge_id": "shares_birth_cohort::pytest.ini->reports/campaign_007/full_report.json::1455",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -354,7 +354,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-033->pytest.ini::346",
+        "edge_id": "spawned_by_ticket::TASK-033->pytest.ini::453",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -369,7 +369,7 @@
         "source": "TASK-033"
       },
       {
-        "edge_id": "shares_birth_cohort::public_tests/test_task033_multiworld_factory.py->pytest.ini::1324",
+        "edge_id": "shares_birth_cohort::public_tests/test_task033_multiworld_factory.py->pytest.ini::1454",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -458,18 +458,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

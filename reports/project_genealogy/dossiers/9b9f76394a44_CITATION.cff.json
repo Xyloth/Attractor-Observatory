@@ -56,7 +56,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:ee750ec74764db52fe02e2e2688b4d4e4f12277b8cbe97e37887fc1e8fe676d2",
+  "content_hash": "sha256:6dcf29a6d0c6e5025d399ebfb3bb354578ea10321ba91b44a989ce635d991cce",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -167,7 +167,7 @@
     "language": "text",
     "line_count": 85,
     "path": "CITATION.cff",
-    "path_hash": "sha256:14594e92395824e76fd7e86124aa19f74df7637037ef9a52766bff0435778ccc",
+    "path_hash": "sha256:0579ffce7ab513f64862520d37b9653fdfac9ea67948050df98cb37cb99a18f3",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -178,7 +178,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::CITATION.cff->CODEX_AUDIT_AND_CAMPAIGN_002.md::1039",
+        "edge_id": "shares_birth_cohort::CITATION.cff->CODEX_AUDIT_AND_CAMPAIGN_002.md::1169",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -193,7 +193,7 @@
         "target": "CODEX_AUDIT_AND_CAMPAIGN_002.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D18::CITATION.cff->CLAUDE_BUILDER_INITIATION.md::2601",
+        "edge_id": "implements_same_doctrine::D18::CITATION.cff->CLAUDE_BUILDER_INITIATION.md::2864",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -451,7 +451,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->CITATION.cff::1038",
+        "edge_id": "shares_birth_cohort::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->CITATION.cff::1168",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -474,7 +474,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D18",
-        "edge_id": "implements_same_doctrine::D18::BUILD_LOG.md->CITATION.cff::2600",
+        "edge_id": "implements_same_doctrine::D18::BUILD_LOG.md->CITATION.cff::2863",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -496,7 +496,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::CITATION.cff->CODEX_AUDIT_AND_CAMPAIGN_002.md::1039",
+        "edge_id": "shares_birth_cohort::CITATION.cff->CODEX_AUDIT_AND_CAMPAIGN_002.md::1169",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -519,7 +519,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D18",
-        "edge_id": "implements_same_doctrine::D18::CITATION.cff->CLAUDE_BUILDER_INITIATION.md::2601",
+        "edge_id": "implements_same_doctrine::D18::CITATION.cff->CLAUDE_BUILDER_INITIATION.md::2864",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -541,7 +541,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->CITATION.cff::1038",
+        "edge_id": "shares_birth_cohort::BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md->CITATION.cff::1168",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -556,7 +556,7 @@
         "source": "BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D18::BUILD_LOG.md->CITATION.cff::2600",
+        "edge_id": "implements_same_doctrine::D18::BUILD_LOG.md->CITATION.cff::2863",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -645,18 +645,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

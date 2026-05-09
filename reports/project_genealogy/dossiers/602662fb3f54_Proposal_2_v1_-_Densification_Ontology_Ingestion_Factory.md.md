@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/602662fb3f54_Proposal_2_v1_-_Densification_Ontology_Ingestion_Factory.md.json`
-- JSON content_hash: `sha256:3c239074868454218b128c8b27ae6ff0f0d125485db2ee609892dab112422c38`
+- JSON content_hash: `sha256:21c9ad28ce181dea246b57c513399944214d183b6f937d9764c7287afbd4a2b0`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

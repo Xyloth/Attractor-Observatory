@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/adc177282691_ai_os_memory_rejected_ideas.md.json`
-- JSON content_hash: `sha256:ef7f1e9e9e266adeebaa47bf5037d8a9fd93fea8c2e8911e292164ce85770c21`
+- JSON content_hash: `sha256:bc197ca45472bca5fab8c35a3a3f93ac66349462b9b99311551809d6e5363ddc`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `ai_os`
 - Generated status: `source`

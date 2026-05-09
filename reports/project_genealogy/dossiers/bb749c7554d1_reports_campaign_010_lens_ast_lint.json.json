@@ -3,7 +3,8 @@
     "birth_cohort_id": "TASK-CB-001",
     "birth_predicate": {
       "acceptance_criteria": [
-        "Report serializes structured data for post-hoc analysis."
+        "Report serializes structured data for post-hoc analysis.",
+        "{\n\"evidence_private\": true,\n\"passed\": true,\n\"path\": \"formalism\\\\lens_registry.py\",\n\"path_private_boundary_reason\": \"D23/D29: referenced runtime artifact is private or unshipped on the public surface\",\n\"path_status\": \"private_unshipped\",\n\"private_boundary_reason\": \"D23/D29: referenced runtime artifact is private or unshipped on the public surface\",\n\"schema\": \"Campaign010LensASTLint.v1\",\n\"violations"
       ],
       "atoms": [
         {
@@ -26,11 +27,30 @@
             "ticket": "TASK-CB-001"
           },
           "statement": "Report serializes structured data for post-hoc analysis."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D23",
+            "D29",
+            "D23",
+            "D29"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_010/lens_ast_lint.json#header",
+            "ticket": "TASK-CB-001"
+          },
+          "statement": "{\n\"evidence_private\": true,\n\"passed\": true,\n\"path\": \"formalism\\\\lens_registry.py\",\n\"path_private_boundary_reason\": \"D23/D29: referenced runtime artifact is private or unshipped on the public surface\",\n\"path_status\": \"private_unshipped\",\n\"private_boundary_reason\": \"D23/D29: referenced runtime artifact is private or unshipped on the public surface\",\n\"schema\": \"Campaign010LensASTLint.v1\",\n\"violations"
         }
       ],
       "content_hash": "",
       "expected_doctrine_bindings": [
-        "D11"
+        "D11",
+        "D23",
+        "D29"
       ],
       "forbidden_patterns": [
         "report contents are mock or placeholder (Class 12)"
@@ -67,7 +87,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:b9727c109eb723bef36a8df53c7336385168604f7f1a4773b23559a6f980a7c1",
+  "content_hash": "sha256:6b2053d3aa56c7ba1bfc9b3f136e66ca9c4b24fd6dfd7a43cef230dcb0a88b83",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -77,18 +97,29 @@
             "kind": "file_span",
             "locator": "reports/campaign_010/lens_ast_lint.json"
           },
-          "statement": "Tracked file with 6 lines / 123 bytes at HEAD."
+          "statement": "Tracked file with 10 lines / 424 bytes at HEAD."
+        },
+        {
+          "atom_id": "provenance_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "reports/campaign_010/lens_ast_lint.json#pattern:content_hash|evidence_private|generated_at|locked_instrument|provenance"
+          },
+          "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 123,
+      "byte_count": 424,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 6,
-      "observed_doctrine_bindings": [],
+      "line_count": 10,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::reports/campaign_010/lens_ast_lint.json",
       "public_symbols": [],
       "test_functions": []
@@ -133,16 +164,18 @@
       "value": 0.0
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D11"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D11"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -154,17 +187,18 @@
     "operational_load_bearingness": {
       "cited_by_reports": [
         "reports/campaign_010/cli_full_report.json",
-        "reports/campaign_010/full_report.json"
+        "reports/campaign_010/full_report.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 3.0
+      "weighted_value": 4.5
     },
     "predicate_atom_coverage": {
-      "claimable_atoms": 1,
-      "covered_atoms": 1,
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
       "missing_atoms": [],
       "value": 1.0
     }
@@ -189,7 +223,8 @@
     "missing_birth_atoms": [],
     "negative_space_flags": [],
     "new_atoms": [
-      "file_present_with_size"
+      "file_present_with_size",
+      "provenance_present"
     ],
     "reproducer_refs": [
       {
@@ -205,12 +240,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 123,
+    "byte_count": 424,
     "generated_status": "report",
     "language": "json",
-    "line_count": 6,
+    "line_count": 10,
     "path": "reports/campaign_010/lens_ast_lint.json",
-    "path_hash": "sha256:554780e167a7cc041728d360faf296e341a8d06e556fdfc6c7d3fa597228bc57",
+    "path_hash": "sha256:4922f08265420e0b2f419fc9f3e3f4587571d85cdfc39c38bf7fc54e6de31e26",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -249,7 +284,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_010/lens_ast_lint.json->reports/campaign_010/lens_compositionality.json::946",
+        "edge_id": "shares_birth_cohort::reports/campaign_010/lens_ast_lint.json->reports/campaign_010/lens_compositionality.json::1076",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -262,6 +297,36 @@
           }
         ],
         "target": "reports/campaign_010/lens_compositionality.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_010/lens_ast_lint.json->reports/campaign_011/cli_full_report.json::4469",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_010/lens_ast_lint.json::reports/campaign_011/cli_full_report.json"
+          }
+        ],
+        "target": "reports/campaign_011/cli_full_report.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_010/lens_ast_lint.json->reports/campaign_011/cli_full_report.json::4609",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_010/lens_ast_lint.json::reports/campaign_011/cli_full_report.json"
+          }
+        ],
+        "target": "reports/campaign_011/cli_full_report.json"
       }
     ],
     "cohort": {
@@ -593,7 +658,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_010/lens_ast_lint.json::376",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_010/lens_ast_lint.json::484",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -615,7 +680,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::945",
+        "edge_id": "shares_birth_cohort::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::1075",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -635,9 +700,55 @@
         "target": "reports/campaign_010/lens_ast_lint.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_010/deepening_actions.json->reports/campaign_010/lens_ast_lint.json::4468",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_010/deepening_actions.json::reports/campaign_010/lens_ast_lint.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_010/deepening_actions.json",
+        "target": "reports/campaign_010/lens_ast_lint.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_010/deepening_actions.json->reports/campaign_010/lens_ast_lint.json::4608",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_010/deepening_actions.json::reports/campaign_010/lens_ast_lint.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_010/deepening_actions.json",
+        "target": "reports/campaign_010/lens_ast_lint.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_010/cli_full_report.json->reports/campaign_010/lens_ast_lint.json::4812",
+        "edge_id": "cites::reports/campaign_010/cli_full_report.json->reports/campaign_010/lens_ast_lint.json::5290",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -659,7 +770,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::4839",
+        "edge_id": "cites::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::5317",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -679,9 +790,31 @@
         "target": "reports/campaign_010/lens_ast_lint.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_010/lens_ast_lint.json::5483",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_010/lens_ast_lint.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_010/lens_ast_lint.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_010/lens_ast_lint.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_010/lens_ast_lint.json->reports/campaign_010/lens_compositionality.json::946",
+        "edge_id": "shares_birth_cohort::reports/campaign_010/lens_ast_lint.json->reports/campaign_010/lens_compositionality.json::1076",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -699,11 +832,57 @@
         },
         "source": "reports/campaign_010/lens_ast_lint.json",
         "target": "reports/campaign_010/lens_compositionality.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_010/lens_ast_lint.json->reports/campaign_011/cli_full_report.json::4469",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_010/lens_ast_lint.json::reports/campaign_011/cli_full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_010/lens_ast_lint.json",
+        "target": "reports/campaign_011/cli_full_report.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_010/lens_ast_lint.json->reports/campaign_011/cli_full_report.json::4609",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_010/lens_ast_lint.json::reports/campaign_011/cli_full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_010/lens_ast_lint.json",
+        "target": "reports/campaign_011/cli_full_report.json"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_010/lens_ast_lint.json::376",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_010/lens_ast_lint.json::484",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -718,7 +897,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::945",
+        "edge_id": "shares_birth_cohort::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::1075",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -733,7 +912,37 @@
         "source": "reports/campaign_010/full_report.json"
       },
       {
-        "edge_id": "cites::reports/campaign_010/cli_full_report.json->reports/campaign_010/lens_ast_lint.json::4812",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_010/deepening_actions.json->reports/campaign_010/lens_ast_lint.json::4468",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_010/deepening_actions.json::reports/campaign_010/lens_ast_lint.json"
+          }
+        ],
+        "source": "reports/campaign_010/deepening_actions.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_010/deepening_actions.json->reports/campaign_010/lens_ast_lint.json::4608",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_010/deepening_actions.json::reports/campaign_010/lens_ast_lint.json"
+          }
+        ],
+        "source": "reports/campaign_010/deepening_actions.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_010/cli_full_report.json->reports/campaign_010/lens_ast_lint.json::5290",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -748,7 +957,7 @@
         "source": "reports/campaign_010/cli_full_report.json"
       },
       {
-        "edge_id": "cites::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::4839",
+        "edge_id": "cites::reports/campaign_010/full_report.json->reports/campaign_010/lens_ast_lint.json::5317",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -761,6 +970,21 @@
           }
         ],
         "source": "reports/campaign_010/full_report.json"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_010/lens_ast_lint.json::5483",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_010/lens_ast_lint.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_010/lens_ast_lint.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -819,7 +1043,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 2,
+    "downstream_reference_count": 3,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -837,18 +1061,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

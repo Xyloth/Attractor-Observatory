@@ -59,6 +59,18 @@ class MemorySnapshot:
         return self.rss_gb is not None and self.free_gb is not None
 
 
+@dataclass(frozen=True)
+class DiskBudgetSnapshot:
+    """Measured bytes under one guarded path."""
+    path: str
+    used_bytes: int
+    budget_bytes: int
+
+    @property
+    def ok(self) -> bool:
+        return self.used_bytes <= self.budget_bytes
+
+
 def measure_memory() -> MemorySnapshot:
     """Best-effort cross-platform memory snapshot.
 
@@ -204,6 +216,53 @@ def check_memory_budget(
             f"(process RSS {rss_str} GB)"
         )
     return True, snap, "memory_within_budget"
+
+
+def check_disk_budget(
+    paths: list[str | Path],
+    *,
+    budget_bytes: int | None = None,
+    budget_mb: int | None = None,
+) -> tuple[bool, list[DiskBudgetSnapshot], str]:
+    """Return disk-budget status for source cache, store, traces, or any path list.
+
+    CB-022 extends the old cache/audit-only daemon budget to the full
+    store_root + trace_root surfaces. Missing paths count as zero bytes.
+    """
+
+    if budget_bytes is None:
+        if budget_mb is not None:
+            budget_bytes = int(budget_mb) * 1024 * 1024
+        else:
+            budget_bytes = int(float(os.environ.get("FACTORY_DAEMON_MAX_DISK_GB", "8")) * (1024 ** 3))
+    snapshots = [
+        DiskBudgetSnapshot(path=str(Path(path)), used_bytes=tree_size_bytes(Path(path)), budget_bytes=budget_bytes)
+        for path in paths
+    ]
+    offenders = [snap for snap in snapshots if not snap.ok]
+    if offenders:
+        return False, snapshots, "disk_budget_exceeded"
+    return True, snapshots, "disk_within_budget"
+
+
+def tree_size_bytes(path: Path) -> int:
+    """Best-effort byte count for a file or directory tree."""
+
+    if not path.exists():
+        return 0
+    if path.is_file():
+        try:
+            return path.stat().st_size
+        except OSError:
+            return 0
+    total = 0
+    for child in path.rglob("*"):
+        if child.is_file():
+            try:
+                total += child.stat().st_size
+            except OSError:
+                continue
+    return total
 
 
 def read_stop_flag(stop_flag_path: Path = DEFAULT_STOP_FLAG_PATH) -> Optional[str]:

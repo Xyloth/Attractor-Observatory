@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:7f7e75b3ad4863c6fc34ee8ca1175e4eda851f1e46aed5d3e114ccd7add60fd4",
+  "content_hash": "sha256:d8f3a6205b771a9aae0b8a292275e6bd9df516c9fcd3ff4fe706f5de9a8c71e4",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -283,7 +283,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::717",
+        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::847",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -298,7 +298,7 @@
         "target": "factory_lowlevel/live_pipeline.py"
       },
       {
-        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::718",
+        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::848",
         "edge_type": "validates",
         "evidence_refs": [
           {
@@ -324,7 +324,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "85bb893baf5825dd00c4b143fb77d63c3055c1ee",
-        "edge_id": "spawned_by_ticket::TASK-CB-019->public_tests/test_live_pipeline_world_traces.py::338",
+        "edge_id": "spawned_by_ticket::TASK-CB-019->public_tests/test_live_pipeline_world_traces.py::440",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -346,7 +346,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->public_tests/test_live_pipeline_world_traces.py::4461",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_live_pipeline_world_traces.py::4927",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -368,7 +368,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::717",
+        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::847",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -390,7 +390,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::718",
+        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::848",
         "edge_type": "validates",
         "evidence_refs": [
           {
@@ -412,7 +412,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-019->public_tests/test_live_pipeline_world_traces.py::338",
+        "edge_id": "spawned_by_ticket::TASK-CB-019->public_tests/test_live_pipeline_world_traces.py::440",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -427,7 +427,7 @@
         "source": "TASK-CB-019"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->public_tests/test_live_pipeline_world_traces.py::4461",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_live_pipeline_world_traces.py::4927",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -465,18 +465,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

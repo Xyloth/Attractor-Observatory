@@ -26,7 +26,7 @@ from __future__ import annotations
 from control_room.adapters.build_log import parse_build_log
 from control_room.adapters.builder_telemetry import parse_builder_telemetry
 from control_room.adapters.campaign_reports import parse_campaign_reports
-from control_room.adapters.doctrine import parse_doctrine
+from control_room.adapters.doctrine import parse_doctrine, parse_mistake_catalog
 from control_room.adapters.factory_store import parse_factory_store
 from control_room.adapters.git_metadata import parse_git_metadata
 from control_room.adapters.methods_falsifiers import parse_methods_falsifiers
@@ -53,6 +53,7 @@ __all__ = [
     "parse_builder_telemetry",
     "parse_campaign_reports",
     "parse_doctrine",
+    "parse_mistake_catalog",
     "parse_factory_store",
     "parse_git_metadata",
     "parse_methods_falsifiers",

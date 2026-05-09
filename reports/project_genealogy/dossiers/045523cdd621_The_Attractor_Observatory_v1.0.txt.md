@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/045523cdd621_The_Attractor_Observatory_v1.0.txt.json`
-- JSON content_hash: `sha256:4d6b51d68237acd9c3cf37244687a073a2c13d0863888a5b8a758f7fcb5b70f0`
+- JSON content_hash: `sha256:c9d82896a488c8db6e0060a0d3b7fc9fc1c2a9a68acfa99e6d889b3e6e6df152`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

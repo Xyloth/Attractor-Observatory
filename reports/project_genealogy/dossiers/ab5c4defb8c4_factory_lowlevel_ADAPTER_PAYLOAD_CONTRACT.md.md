@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ab5c4defb8c4_factory_lowlevel_ADAPTER_PAYLOAD_CONTRACT.md.json`
-- JSON content_hash: `sha256:fdf3b3d9ec400781e7f73298ff1acb77ff54d28b684b70007b3a6f46c2140894`
+- JSON content_hash: `sha256:6985147acf4990a4681d147605f8b6c325452c905fb446f4d0534820a508193e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `factory`
 - Generated status: `source`

@@ -1,0 +1,696 @@
+{
+  "birth": {
+    "birth_cohort_id": "PG-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module is part of the PG-001 audit instrument and exposes a callable surface."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "audit_instrument_executes",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D19",
+            "D20"
+          ],
+          "forbidden_failure_modes": [
+            "instrument that interpolates findings without source refs (D19)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+            "subject": "PG-001 Pass 2: per-file dossier modules",
+            "ticket": "PG-001"
+          },
+          "statement": "Module is part of the PG-001 audit instrument and exposes a callable surface."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D19",
+        "D20"
+      ],
+      "forbidden_patterns": [
+        "instrument that interpolates findings without source refs (D19)"
+      ],
+      "predicate_id": "birth::project_genealogy/depth.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+        "note": "PG-001 Pass 2: per-file dossier modules",
+        "ref_id": "birth::project_genealogy/depth.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "PG-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::project_genealogy/depth.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "project_genealogy/depth.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::project_genealogy/depth.py::docstring"
+      }
+    ],
+    "first_seen_commit": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+    "first_seen_date": "2026-05-08T15:48:58-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "PG-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:f61d9e1fabca761efc031313f8885e19d81ccb29d230708736b1168cf744426b",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "project_genealogy/depth.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: compute_depth"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "project_genealogy/depth.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, typing.Any"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "project_genealogy/depth.py"
+          },
+          "statement": "Tracked file with 178 lines / 7171 bytes at HEAD."
+        }
+      ],
+      "byte_count": 7171,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 82,
+          "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
+          "snippet": "if artifact_family in {\"factory\", \"control_room\", \"report\"}:"
+        },
+        {
+          "line": 90,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "if surf.get(\"pattern\", \"\").startswith(\"except\"):"
+        },
+        {
+          "line": 92,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "if any(s.get(\"snippet\", \"\").startswith(\"if\") for s in letter_surfaces):"
+        },
+        {
+          "line": 119,
+          "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
+          "snippet": "\"present\" if artifact_family in {\"audit_report\", \"audit_instrument\", \"doctrine\", \"method\"} else \"absent\""
+        }
+      ],
+      "line_count": 178,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::project_genealogy/depth.py",
+      "public_symbols": [
+        "compute_depth"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "project_genealogy/depth.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::project_genealogy/depth.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "decline_branch",
+          "line": null
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D11",
+        "D19",
+        "D20"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11",
+        "D19",
+        "D20"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D19",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D19",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D19::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D20",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D20",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D20::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 82,
+        "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
+        "reproducer": {
+          "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if artifact_family in {\"factory\", \"control_room\", \"report\"}:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 90,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if surf.get(\"pattern\", \"\").startswith(\"except\"):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 92,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if any(s.get(\"snippet\", \"\").startswith(\"if\") for s in letter_surfaces):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 119,
+        "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
+        "reproducer": {
+          "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "\"present\" if artifact_family in {\"audit_report\", \"audit_instrument\", \"doctrine\", \"method\"} else \"absent\""
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "audit_instrument",
+    "byte_count": 7171,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 178,
+    "path": "project_genealogy/depth.py",
+    "path_hash": "sha256:81d99119975cf738a0f1543164036e549dd8dd265ada14964c11822c29f2222c",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 82: if artifact_family in {\"factory\", \"control_room\", \"report\"}:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/depth.py#L82",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/depth.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/depth.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if artifact_family in {\"factory\", \"control_room\", \"report\"}:' -- project_genealogy/depth.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 90: if surf.get(\"pattern\", \"\").startswith(\"except\"):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/depth.py#L90",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/depth.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/depth.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if surf.get(\"pattern\", \"\").startswith(\"except\"):' -- project_genealogy/depth.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 92: if any(s.get(\"snippet\", \"\").startswith(\"if\") for s in letter_surfaces):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/depth.py#L92",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/depth.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/depth.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if any(s.get(\"snippet\", \"\").startswith(\"if\") for s in letter' -- project_genealogy/depth.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 119: \"present\" if artifact_family in {\"audit_report\", \"audit_instrument\", \"doctrine\", \"method\"} else \"absent\"",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/depth.py#L119",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/depth.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/depth.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F '\"present\" if artifact_family in {\"audit_report\", \"audit_inst' -- project_genealogy/depth.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/depth.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/dd2260320462_project_genealogy_depth.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::project_genealogy/depth.py->project_genealogy/dossier.py::1621",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "target": "project_genealogy/dossier.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "PG-001",
+      "members": [
+        "control_room/rooms/project_genealogy.py",
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "project_genealogy/__init__.py",
+        "project_genealogy/__main__.py",
+        "project_genealogy/atlas.py",
+        "project_genealogy/birth.py",
+        "project_genealogy/coherence.py",
+        "project_genealogy/current.py",
+        "project_genealogy/depth.py",
+        "project_genealogy/dossier.py",
+        "project_genealogy/drift.py",
+        "project_genealogy/graph.py",
+        "project_genealogy/hashing.py",
+        "project_genealogy/manifest.py",
+        "project_genealogy/probe.py",
+        "project_genealogy/query.py",
+        "project_genealogy/runner.py",
+        "public_tests/test_pg001_acceptance_gates.py",
+        "public_tests/test_pg001_control_room_tab.py",
+        "public_tests/test_pg001_query.py",
+        "public_tests/test_pg001_removal_probe.py",
+        "public_tests/test_pg001_schema.py"
+      ],
+      "spawn_ticket": "PG-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+        "edge_id": "spawned_by_ticket::PG-001->project_genealogy/depth.py::409",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::project_genealogy/depth.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "PG-001",
+        "target": "project_genealogy/depth.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_genealogy/current.py->project_genealogy/depth.py::1620",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/current.py",
+        "target": "project_genealogy/depth.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_genealogy/depth.py->project_genealogy/dossier.py::1621",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/depth.py",
+        "target": "project_genealogy/dossier.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::PG-001->project_genealogy/depth.py::409",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::project_genealogy/depth.py"
+          }
+        ],
+        "source": "PG-001"
+      },
+      {
+        "edge_id": "shares_birth_cohort::project_genealogy/current.py->project_genealogy/depth.py::1620",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "source": "project_genealogy/current.py"
+      }
+    ],
+    "siblings": [
+      "control_room/rooms/project_genealogy.py",
+      "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+      "project_genealogy/__init__.py",
+      "project_genealogy/__main__.py",
+      "project_genealogy/atlas.py",
+      "project_genealogy/birth.py",
+      "project_genealogy/coherence.py",
+      "project_genealogy/current.py",
+      "project_genealogy/dossier.py",
+      "project_genealogy/drift.py",
+      "project_genealogy/graph.py",
+      "project_genealogy/hashing.py",
+      "project_genealogy/manifest.py",
+      "project_genealogy/probe.py",
+      "project_genealogy/query.py",
+      "project_genealogy/runner.py",
+      "public_tests/test_pg001_acceptance_gates.py",
+      "public_tests/test_pg001_control_room_tab.py",
+      "public_tests/test_pg001_query.py",
+      "public_tests/test_pg001_removal_probe.py",
+      "public_tests/test_pg001_schema.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::project_genealogy/depth.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

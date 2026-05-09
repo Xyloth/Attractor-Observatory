@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/87af28e9a885_control_room_cache_task033_streamlit_stdout.log.json`
-- JSON content_hash: `sha256:45efa234841a86f5f900c58b194012f14fadcc7599a947e65ba4148369e1dc13`
+- JSON content_hash: `sha256:db7c26fb4764be7688580416ebd784846b1dc8e4d14ecd73e468ec7e45f30564`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `control_room`
 - Generated status: `source`

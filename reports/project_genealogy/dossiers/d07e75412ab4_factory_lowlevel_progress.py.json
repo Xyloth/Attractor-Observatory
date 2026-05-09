@@ -95,7 +95,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:745141d5671c441f1f63a446d4f488783693f8b652eaf8ceac5338fb5fde1ed7",
+  "content_hash": "sha256:743215b0c7d5c08bb7edb9354def61cd095a2005552c28ff733dd8547f350245",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -590,7 +590,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/progress.py->papers/methods/INGESTION_TARGETS.md::1272",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/progress.py->papers/methods/INGESTION_TARGETS.md::1402",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -605,7 +605,7 @@
         "target": "papers/methods/INGESTION_TARGETS.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/progress.py->papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md::3890",
+        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/progress.py->papers/falsification/DX-003/round_1.md::4183",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -614,10 +614,10 @@
             "kind": "grep",
             "locator": "both files mention D22",
             "note": "shared mention of doctrine D22",
-            "ref_id": "doctrine::D22::factory_lowlevel/progress.py::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md"
+            "ref_id": "doctrine::D22::factory_lowlevel/progress.py::papers/falsification/DX-003/round_1.md"
           }
         ],
-        "target": "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md"
+        "target": "papers/falsification/DX-003/round_1.md"
       }
     ],
     "cohort": {
@@ -639,7 +639,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
-        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/progress.py::264",
+        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/progress.py::267",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -661,7 +661,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1271",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1401",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -684,7 +684,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::3889",
+        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::4182",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -706,7 +706,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/progress.py::4667",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/progress.py::5145",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -728,7 +728,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/progress.py->papers/methods/INGESTION_TARGETS.md::1272",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/progress.py->papers/methods/INGESTION_TARGETS.md::1402",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -751,7 +751,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/progress.py->papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md::3890",
+        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/progress.py->papers/falsification/DX-003/round_1.md::4183",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -760,7 +760,7 @@
             "kind": "grep",
             "locator": "both files mention D22",
             "note": "shared mention of doctrine D22",
-            "ref_id": "doctrine::D22::factory_lowlevel/progress.py::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md"
+            "ref_id": "doctrine::D22::factory_lowlevel/progress.py::papers/falsification/DX-003/round_1.md"
           }
         ],
         "private_boundary": {
@@ -768,12 +768,12 @@
           "reason": ""
         },
         "source": "factory_lowlevel/progress.py",
-        "target": "papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md"
+        "target": "papers/falsification/DX-003/round_1.md"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/progress.py::264",
+        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/progress.py::267",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -788,7 +788,7 @@
         "source": "CB-013"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1271",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1401",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -803,7 +803,7 @@
         "source": "factory_lowlevel/launch_safety.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::3889",
+        "edge_id": "implements_same_doctrine::D22::factory_lowlevel/adapters.py->factory_lowlevel/progress.py::4182",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -818,7 +818,7 @@
         "source": "factory_lowlevel/adapters.py"
       },
       {
-        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/progress.py::4667",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/progress.py::5145",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -865,18 +865,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

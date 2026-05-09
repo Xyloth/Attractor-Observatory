@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/e589c497774e_papers_prereg_campaign_023_floor_connectivity.signed.json.json`
-- JSON content_hash: `sha256:c84c3571ed58d5f96cdf1c8ae1987680aa259e97c1554a8125653bdae520d8fe`
+- JSON content_hash: `sha256:b40c7e9773ee803a145688ebe1f2694347d489193419341fba8b0f3efab605b2`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`
@@ -21,7 +21,7 @@
 - **header_declared_intent** — {
 "campaign_id": "campaign_023",
 "claim_promotion_allowed": false,
-"content_hash": "sha256:c24504db86d14da33ed1b3c7cfec42978ee1130fac5877881fbdd3c45d5ac3bd",
+"content_hash": "sha256:cbbb5ac08ea0fe6a7afa980c9a2301db01b4517900041510b776bc1baa2730ad",
 "forbidden_adjustments": [
 "no event-token predicate labels",
 "no per-motif threshold tuning",

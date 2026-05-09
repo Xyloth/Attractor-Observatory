@@ -95,7 +95,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:4df1814bbd2dfc2c484d3862b54f14fd245c7c16a80b12c59150a2bacedc87e0",
+  "content_hash": "sha256:8e82c4be1d2293179c5c1904fecb9acf4fb2eeeac1be7655fd4ebc3f0ee23a07",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -129,10 +129,10 @@
             "kind": "file_span",
             "locator": "factory_lowlevel/continuous_daemon.py"
           },
-          "statement": "Tracked file with 492 lines / 19137 bytes at HEAD."
+          "statement": "Tracked file with 544 lines / 21614 bytes at HEAD."
         }
       ],
-      "byte_count": 19137,
+      "byte_count": 21614,
       "class_pattern_matches": [],
       "commands": [
         "__main__"
@@ -151,6 +151,12 @@
         "launch_safety.write_checkpoint",
         "live_pipeline.available_adapters",
         "live_pipeline.run_live_factory_cycle",
+        "memory_guard.DEFAULT_MAX_RSS_GB",
+        "memory_guard.DEFAULT_MIN_FREE_GB",
+        "memory_guard.check_memory_budget",
+        "memory_guard.consume_stop_flag",
+        "memory_guard.measure_memory",
+        "memory_guard.read_stop_flag",
         "os",
         "pathlib.Path",
         "persistence.atomic_write_json",
@@ -164,57 +170,57 @@
       ],
       "letter_vs_spirit_surfaces": [
         {
-          "line": 44,
+          "line": 52,
           "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
           "snippet": "if normalized in {\"hourly\", \"per_hour\", \"1h\"}:"
         },
         {
-          "line": 46,
+          "line": 54,
           "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
           "snippet": "if normalized in {\"daily\", \"per_day\", \"1d\"}:"
         },
         {
-          "line": 48,
+          "line": 56,
           "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
           "snippet": "if normalized in {\"weekly\", \"per_week\", \"1w\"}:"
         },
         {
-          "line": 50,
+          "line": 58,
           "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
           "snippet": "if normalized in {\"monthly\", \"per_month\", \"1mo\"}:"
         },
         {
-          "line": 52,
+          "line": 60,
           "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
           "snippet": "if normalized in {\"manual\", \"manual_spec_review\", \"dry_run\"}:"
         },
         {
-          "line": 216,
+          "line": 257,
           "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
           "snippet": "except (OSError, json.JSONDecodeError):"
         },
         {
-          "line": 230,
+          "line": 271,
           "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
           "snippet": "except Exception:  # pragma: no cover — progress write must never break the daemon"
         },
         {
-          "line": 276,
+          "line": 317,
           "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
           "snippet": "except ValueError:"
         },
         {
-          "line": 359,
+          "line": 400,
           "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
           "snippet": "except Exception as exc:  # pragma: no cover - deterministic tests cover success; failures are runtime environment."
         },
         {
-          "line": 491,
+          "line": 543,
           "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
           "snippet": "if __name__ == \"__main__\":"
         }
       ],
-      "line_count": 492,
+      "line_count": 544,
       "observed_doctrine_bindings": [],
       "predicate_id": "current::factory_lowlevel/continuous_daemon.py",
       "public_symbols": [
@@ -243,19 +249,19 @@
       "covered_bad_cases": [
         {
           "id": "error_branch",
-          "line": 216
+          "line": 257
         },
         {
           "id": "error_branch",
-          "line": 230
+          "line": 271
         },
         {
           "id": "error_branch",
-          "line": 276
+          "line": 317
         },
         {
           "id": "error_branch",
-          "line": 359
+          "line": 400
         },
         {
           "id": "decline_branch",
@@ -358,7 +364,7 @@
     "letter_vs_spirit_flags": [
       {
         "kind": "letter_coupled_surface",
-        "line": 44,
+        "line": 52,
         "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
         "reproducer": {
           "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
@@ -370,7 +376,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 46,
+        "line": 54,
         "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
         "reproducer": {
           "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
@@ -382,7 +388,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 48,
+        "line": 56,
         "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
         "reproducer": {
           "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
@@ -394,7 +400,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 50,
+        "line": 58,
         "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
         "reproducer": {
           "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
@@ -406,7 +412,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 52,
+        "line": 60,
         "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
         "reproducer": {
           "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
@@ -418,7 +424,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 216,
+        "line": 257,
         "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
@@ -430,7 +436,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 230,
+        "line": 271,
         "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
@@ -442,7 +448,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 276,
+        "line": 317,
         "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
@@ -454,7 +460,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 359,
+        "line": 400,
         "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
@@ -466,7 +472,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 491,
+        "line": 543,
         "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
         "reproducer": {
           "command": "rg \"if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]\" -n",
@@ -499,12 +505,12 @@
   },
   "file": {
     "artifact_family": "factory",
-    "byte_count": 19137,
+    "byte_count": 21614,
     "generated_status": "source",
     "language": "python",
-    "line_count": 492,
+    "line_count": 544,
     "path": "factory_lowlevel/continuous_daemon.py",
-    "path_hash": "sha256:2f74d4c59654bc11a3b0381dc4f14f3bbc4a1d1b61debb3b4572c8d6d8e71e83",
+    "path_hash": "sha256:73fd86f70da48f4b700f92263ab674d3c9daf7b9dedb525808905d60238af87a",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -513,7 +519,7 @@
   },
   "findings": [
     {
-      "claim": "Detected letter-coupled fix surface at line 44: if normalized in {\"hourly\", \"per_hour\", \"1h\"}:",
+      "claim": "Detected letter-coupled fix surface at line 52: if normalized in {\"hourly\", \"per_hour\", \"1h\"}:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -523,7 +529,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L44",
+          "locator": "factory_lowlevel/continuous_daemon.py#L52",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::0"
         }
@@ -544,7 +550,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 46: if normalized in {\"daily\", \"per_day\", \"1d\"}:",
+      "claim": "Detected letter-coupled fix surface at line 54: if normalized in {\"daily\", \"per_day\", \"1d\"}:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -554,7 +560,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L46",
+          "locator": "factory_lowlevel/continuous_daemon.py#L54",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::1"
         }
@@ -575,7 +581,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 48: if normalized in {\"weekly\", \"per_week\", \"1w\"}:",
+      "claim": "Detected letter-coupled fix surface at line 56: if normalized in {\"weekly\", \"per_week\", \"1w\"}:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -585,7 +591,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L48",
+          "locator": "factory_lowlevel/continuous_daemon.py#L56",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::2"
         }
@@ -606,7 +612,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 50: if normalized in {\"monthly\", \"per_month\", \"1mo\"}:",
+      "claim": "Detected letter-coupled fix surface at line 58: if normalized in {\"monthly\", \"per_month\", \"1mo\"}:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -616,7 +622,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L50",
+          "locator": "factory_lowlevel/continuous_daemon.py#L58",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::3"
         }
@@ -637,7 +643,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 52: if normalized in {\"manual\", \"manual_spec_review\", \"dry_run\"}:",
+      "claim": "Detected letter-coupled fix surface at line 60: if normalized in {\"manual\", \"manual_spec_review\", \"dry_run\"}:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -647,7 +653,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L52",
+          "locator": "factory_lowlevel/continuous_daemon.py#L60",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::4"
         }
@@ -668,7 +674,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 216: except (OSError, json.JSONDecodeError):",
+      "claim": "Detected letter-coupled fix surface at line 257: except (OSError, json.JSONDecodeError):",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -678,7 +684,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L216",
+          "locator": "factory_lowlevel/continuous_daemon.py#L257",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::5"
         }
@@ -699,7 +705,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 230: except Exception:  # pragma: no cover — progress write must never break the daemon",
+      "claim": "Detected letter-coupled fix surface at line 271: except Exception:  # pragma: no cover — progress write must never break the daemon",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -709,7 +715,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L230",
+          "locator": "factory_lowlevel/continuous_daemon.py#L271",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::6"
         }
@@ -730,7 +736,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 276: except ValueError:",
+      "claim": "Detected letter-coupled fix surface at line 317: except ValueError:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -740,7 +746,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L276",
+          "locator": "factory_lowlevel/continuous_daemon.py#L317",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::7"
         }
@@ -761,7 +767,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 359: except Exception as exc:  # pragma: no cover - deterministic tests cover success; failures are runtime environment.",
+      "claim": "Detected letter-coupled fix surface at line 400: except Exception as exc:  # pragma: no cover - deterministic tests cover success; failures are runtime environment.",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -771,7 +777,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L359",
+          "locator": "factory_lowlevel/continuous_daemon.py#L400",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::8"
         }
@@ -792,7 +798,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 491: if __name__ == \"__main__\":",
+      "claim": "Detected letter-coupled fix surface at line 543: if __name__ == \"__main__\":",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -802,7 +808,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/continuous_daemon.py#L491",
+          "locator": "factory_lowlevel/continuous_daemon.py#L543",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/continuous_daemon.py::lvs::9"
         }
@@ -853,7 +859,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/continuous_daemon.py->factory_lowlevel/world_construction.py::1441",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/continuous_daemon.py->factory_lowlevel/world_construction.py::1571",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -933,7 +939,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/continuous_daemon.py::255",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/continuous_daemon.py::257",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -955,7 +961,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1440",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1570",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -977,7 +983,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/continuous_daemon.py::4460",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/continuous_daemon.py::4926",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -999,7 +1005,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/continuous_daemon.py->factory_lowlevel/world_construction.py::1441",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/continuous_daemon.py->factory_lowlevel/world_construction.py::1571",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1021,7 +1027,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/continuous_daemon.py::255",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/continuous_daemon.py::257",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -1036,7 +1042,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1440",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1570",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1051,7 +1057,7 @@
         "source": "factory_lowlevel/README.md"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/continuous_daemon.py::4460",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/continuous_daemon.py::4926",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1140,18 +1146,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

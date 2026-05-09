@@ -4,7 +4,7 @@
     "birth_predicate": {
       "acceptance_criteria": [
         "Report serializes structured data for post-hoc analysis.",
-        "{\n\"applications\": [\n{\n\"artifact\": \"validation\\\\claim_ledger\\\\claims.jsonl\",\n\"modification\": \"status=exploratory; public_allowed=false; D11 weakness note\",\n\"rows_modified\": 10\n},\n{\n\"artifact\": \"reports\\\\campaign_002\\\\full_report.json\",\n\"modification\": \"stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass\",\n\"rows_modified\": 2\n},\n{\n\"artifact\": \"reports\\\\campaign_003\\\\"
+        "{\n\"applications\": [\n{\n\"artifact\": \"validation\\\\claim_ledger\\\\claims.jsonl\",\n\"artifact_private_boundary_reason\": \"D23/D29: referenced runtime artifact is private or unshipped on the public surface\",\n\"artifact_status\": \"private_unshipped\",\n\"evidence_private\": true,\n\"modification\": \"status=exploratory; public_allowed=false; D11 weakness note\",\n\"private_boundary_reason\": \"D23/D29: referenced runtime a"
       ],
       "atoms": [
         {
@@ -32,20 +32,26 @@
           "acceptance_evidence_expected": [],
           "atom_id": "header_declared_intent",
           "doctrine_bindings_expected": [
-            "D11"
+            "D23",
+            "D29",
+            "D11",
+            "D23",
+            "D29"
           ],
           "forbidden_failure_modes": [],
           "source_ref": {
             "kind": "file_span",
             "locator": "reports/campaign_007/truth_pass_application.json#header",
-            "ticket": "campaign_002"
+            "ticket": ""
           },
-          "statement": "{\n\"applications\": [\n{\n\"artifact\": \"validation\\\\claim_ledger\\\\claims.jsonl\",\n\"modification\": \"status=exploratory; public_allowed=false; D11 weakness note\",\n\"rows_modified\": 10\n},\n{\n\"artifact\": \"reports\\\\campaign_002\\\\full_report.json\",\n\"modification\": \"stale gates marked claim_status=exploratory and superseded_by Campaign 007 Truth Pass\",\n\"rows_modified\": 2\n},\n{\n\"artifact\": \"reports\\\\campaign_003\\\\"
+          "statement": "{\n\"applications\": [\n{\n\"artifact\": \"validation\\\\claim_ledger\\\\claims.jsonl\",\n\"artifact_private_boundary_reason\": \"D23/D29: referenced runtime artifact is private or unshipped on the public surface\",\n\"artifact_status\": \"private_unshipped\",\n\"evidence_private\": true,\n\"modification\": \"status=exploratory; public_allowed=false; D11 weakness note\",\n\"private_boundary_reason\": \"D23/D29: referenced runtime a"
         }
       ],
       "content_hash": "",
       "expected_doctrine_bindings": [
-        "D11"
+        "D11",
+        "D23",
+        "D29"
       ],
       "forbidden_patterns": [
         "report contents are mock or placeholder (Class 12)"
@@ -74,7 +80,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:f69ab71dce573a9353d863c85ccbda852004fecbad24b08381077001c37fe2b0",
+  "content_hash": "sha256:cc305e4aec4185cae7b371ffa476c35bbd6d5881e164fe80427d36768d601ace",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -84,19 +90,29 @@
             "kind": "file_span",
             "locator": "reports/campaign_007/truth_pass_application.json"
           },
-          "statement": "Tracked file with 42 lines / 1574 bytes at HEAD."
+          "statement": "Tracked file with 46 lines / 1899 bytes at HEAD."
+        },
+        {
+          "atom_id": "provenance_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "reports/campaign_007/truth_pass_application.json#pattern:content_hash|evidence_private|generated_at|locked_instrument|provenance"
+          },
+          "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 1574,
+      "byte_count": 1899,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 42,
+      "line_count": 46,
       "observed_doctrine_bindings": [
-        "D11"
+        "D11",
+        "D23",
+        "D29"
       ],
       "predicate_id": "current::reports/campaign_007/truth_pass_application.json",
       "public_symbols": [],
@@ -147,10 +163,14 @@
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D11"
+        "D11",
+        "D23",
+        "D29"
       ],
       "verified": [
-        "D11"
+        "D11",
+        "D23",
+        "D29"
       ]
     },
     "evidence_integration": {
@@ -165,13 +185,14 @@
         "CODEX_CAMPAIGN_007.md",
         "reports/campaign_002/full_report.json",
         "reports/campaign_006/full_report.json",
-        "reports/campaign_007/truth_pass.json"
+        "reports/campaign_007/truth_pass.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 6.0
+      "weighted_value": 7.5
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 2,
@@ -187,19 +208,20 @@
     "missing_birth_atoms": [],
     "negative_space_flags": [],
     "new_atoms": [
-      "file_present_with_size"
+      "file_present_with_size",
+      "provenance_present"
     ],
     "reproducer_refs": [],
     "status": "positive_deepening"
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 1574,
+    "byte_count": 1899,
     "generated_status": "report",
     "language": "json",
-    "line_count": 42,
+    "line_count": 46,
     "path": "reports/campaign_007/truth_pass_application.json",
-    "path_hash": "sha256:1b000f65cd61bc5a0f56918615635a2d8df52eaa5005e788f26bc3bcb7a60963",
+    "path_hash": "sha256:c5ba095ad925f09700bff4123ead4b34e572d6a0e3e9c5b9f4539b815793435c",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -210,7 +232,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass_application.json->reports/campaign_007/w3_reconstruction.json::1212",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass_application.json->reports/campaign_007/w3_reconstruction.json::1342",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -223,6 +245,36 @@
           }
         ],
         "target": "reports/campaign_007/w3_reconstruction.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_007/truth_pass_application.json->reports/campaign_008/cli_substrate_completion.json::4456",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_007/truth_pass_application.json::reports/campaign_008/cli_substrate_completion.json"
+          }
+        ],
+        "target": "reports/campaign_008/cli_substrate_completion.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_007/truth_pass_application.json->reports/campaign_008/cli_substrate_completion.json::4596",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_007/truth_pass_application.json::reports/campaign_008/cli_substrate_completion.json"
+          }
+        ],
+        "target": "reports/campaign_008/cli_substrate_completion.json"
       }
     ],
     "cohort": {
@@ -468,7 +520,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::1211",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::1341",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -491,7 +543,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D11",
-        "edge_id": "implements_same_doctrine::D11::project_telemetry/task_016_progress_record.json->reports/campaign_007/truth_pass_application.json::1696",
+        "edge_id": "implements_same_doctrine::D11::project_telemetry/task_016_progress_record.json->reports/campaign_007/truth_pass_application.json::1938",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -511,9 +563,55 @@
         "target": "reports/campaign_007/truth_pass_application.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4455",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_007/stale_claims.json",
+        "target": "reports/campaign_007/truth_pass_application.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4595",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_007/stale_claims.json",
+        "target": "reports/campaign_007/truth_pass_application.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/truth_pass_application.json::4481",
+        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/truth_pass_application.json::4959",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -535,7 +633,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_002/full_report.json->reports/campaign_007/truth_pass_application.json::4686",
+        "edge_id": "cites::reports/campaign_002/full_report.json->reports/campaign_007/truth_pass_application.json::5164",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -557,7 +655,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::4738",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::5216",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -579,7 +677,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::4761",
+        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::5239",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -599,9 +697,31 @@
         "target": "reports/campaign_007/truth_pass_application.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_007/truth_pass_application.json::5470",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_007/truth_pass_application.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_007/truth_pass_application.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass_application.json->reports/campaign_007/w3_reconstruction.json::1212",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass_application.json->reports/campaign_007/w3_reconstruction.json::1342",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -619,11 +739,57 @@
         },
         "source": "reports/campaign_007/truth_pass_application.json",
         "target": "reports/campaign_007/w3_reconstruction.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_007/truth_pass_application.json->reports/campaign_008/cli_substrate_completion.json::4456",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_007/truth_pass_application.json::reports/campaign_008/cli_substrate_completion.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_007/truth_pass_application.json",
+        "target": "reports/campaign_008/cli_substrate_completion.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_007/truth_pass_application.json->reports/campaign_008/cli_substrate_completion.json::4596",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_007/truth_pass_application.json::reports/campaign_008/cli_substrate_completion.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_007/truth_pass_application.json",
+        "target": "reports/campaign_008/cli_substrate_completion.json"
       }
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::1211",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::1341",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -638,7 +804,7 @@
         "source": "reports/campaign_007/truth_pass.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D11::project_telemetry/task_016_progress_record.json->reports/campaign_007/truth_pass_application.json::1696",
+        "edge_id": "implements_same_doctrine::D11::project_telemetry/task_016_progress_record.json->reports/campaign_007/truth_pass_application.json::1938",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -653,7 +819,37 @@
         "source": "project_telemetry/task_016_progress_record.json"
       },
       {
-        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/truth_pass_application.json::4481",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4455",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "source": "reports/campaign_007/stale_claims.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4595",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "source": "reports/campaign_007/stale_claims.json"
+      },
+      {
+        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/truth_pass_application.json::4959",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -668,7 +864,7 @@
         "source": "CODEX_CAMPAIGN_007.md"
       },
       {
-        "edge_id": "cites::reports/campaign_002/full_report.json->reports/campaign_007/truth_pass_application.json::4686",
+        "edge_id": "cites::reports/campaign_002/full_report.json->reports/campaign_007/truth_pass_application.json::5164",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -683,7 +879,7 @@
         "source": "reports/campaign_002/full_report.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::4738",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::5216",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -698,7 +894,7 @@
         "source": "reports/campaign_006/full_report.json"
       },
       {
-        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::4761",
+        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/truth_pass_application.json::5239",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -711,6 +907,21 @@
           }
         ],
         "source": "reports/campaign_007/truth_pass.json"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_007/truth_pass_application.json::5470",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_007/truth_pass_application.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -769,7 +980,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 4,
+    "downstream_reference_count": 5,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -787,18 +998,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

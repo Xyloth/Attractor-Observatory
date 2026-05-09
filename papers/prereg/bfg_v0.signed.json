@@ -37,7 +37,11 @@
       {
         "basis_role": "function_class",
         "description": "Replication/lineage function is preserved when trace-derived replication, division, or lineage signals remain within declared tolerance.",
-        "invariant_id": "function.self_replication_or_lineage"
+        "description_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+        "description_status": "private_unshipped",
+        "evidence_private": true,
+        "invariant_id": "function.self_replication_or_lineage",
+        "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface"
       },
       {
         "basis_role": "function_class",

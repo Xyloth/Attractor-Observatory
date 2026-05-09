@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ed9ddce26e2d_Visuals_ui_kits_control_room_rooms_BasinFloorLab.jsx.json`
-- JSON content_hash: `sha256:9eb902ae671c8f081c323c2d1ec0e14553024962a5db42eee173013a905e0378`
+- JSON content_hash: `sha256:761095b68ba5809023a0375c12678faaff29633253f70804d3c3ad11d5293a20`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

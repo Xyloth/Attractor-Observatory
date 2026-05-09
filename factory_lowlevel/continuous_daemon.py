@@ -29,6 +29,7 @@ from .live_pipeline import available_adapters, run_live_factory_cycle
 from .memory_guard import (
     DEFAULT_MAX_RSS_GB,
     DEFAULT_MIN_FREE_GB,
+    check_disk_budget,
     check_memory_budget,
     consume_stop_flag,
     measure_memory,
@@ -37,6 +38,7 @@ from .memory_guard import (
 from .persistence import atomic_write_json
 from .progress import write_ingestion_progress
 from .schemas import sha256, utc_now
+from .supervision import run_source_child_process
 
 
 DEFAULT_LEDGER = Path("project_telemetry/factory_daemon_sessions.jsonl")
@@ -163,7 +165,7 @@ def run_continuous_daemon(
         }
         _write_heartbeat(heartbeat_path, session=session, status="running")
 
-        disk_audit = _disk_budget_audit(cache_dir=cache_dir, store_root=store_root, budget_mb=disk_budget_mb)
+        disk_audit = _disk_budget_audit(cache_dir=cache_dir, store_root=store_root, trace_root=trace_root, budget_mb=disk_budget_mb)
         if disk_audit:
             session["status"] = "held_disk_budget"
             session["audit_items"].append(disk_audit)
@@ -267,6 +269,7 @@ def run_continuous_daemon(
                 store_root=store_root,
                 source_rows=source_rows,
                 progress_root=progress_root,
+                state_path=state_path,
             )
         except Exception:  # pragma: no cover — progress write must never break the daemon
             pass
@@ -330,6 +333,7 @@ def _apply_force_refresh(
 ) -> dict[str, Any]:
     last_success = state.setdefault("last_success_by_source", {})
     before = set(last_success)
+    invalidated_at = utc_now()
     if clear_all:
         requested = sorted(before)
     else:
@@ -342,10 +346,19 @@ def _apply_force_refresh(
             cleared.append(source_id)
         else:
             missing.append(source_id)
+    invalidations = state.setdefault("force_refresh_invalidations", [])
+    for source_id in cleared:
+        invalidations.append({
+            "schema": "FactoryDaemonProgressInvalidation.v1",
+            "invalidated_at": invalidated_at,
+            "source_id": source_id,
+            "clear_all": bool(clear_all),
+            "reason": "force_refresh_cleared_last_success",
+        })
     return {
         "schema": "FactoryDaemonForceRefreshClearance.v1",
         "record_type": "force_refresh_clearance",
-        "cleared_at": utc_now(),
+        "cleared_at": invalidated_at,
         "clear_all": bool(clear_all),
         "requested_source_ids": requested,
         "cleared_source_ids": cleared,
@@ -387,8 +400,19 @@ def _run_source_with_retries(
     errors = []
     for attempt in range(1, max(retry_ceiling, 1) + 1):
         try:
-            run = run_live_factory_cycle(
-                source_ids=[source_id],
+            if os.environ.get("FACTORY_DAEMON_INLINE_SOURCE") == "1":
+                run = run_live_factory_cycle(
+                    source_ids=[source_id],
+                    allow_network=allow_network,
+                    store_root=store_root,
+                    cache_dir=cache_dir,
+                    run_root=run_root,
+                    trace_root=trace_root,
+                    trigger=trigger,
+                )
+                return {"status": "ok", "run_id": run["run_id"], "attempts": attempt, "supervision": "inline_test_override"}
+            run = run_source_child_process(
+                source_id=source_id,
                 allow_network=allow_network,
                 store_root=store_root,
                 cache_dir=cache_dir,
@@ -396,7 +420,15 @@ def _run_source_with_retries(
                 trace_root=trace_root,
                 trigger=trigger,
             )
-            return {"status": "ok", "run_id": run["run_id"], "attempts": attempt}
+            if run.get("status") != "ok":
+                raise RuntimeError(run.get("error") or run.get("error_type") or "source_worker_failed")
+            return {
+                "status": "ok",
+                "run_id": run["run_id"],
+                "attempts": attempt,
+                "supervision": "child_process",
+                "worker_exit_code": run.get("worker_exit_code"),
+            }
         except Exception as exc:  # pragma: no cover - deterministic tests cover success; failures are runtime environment.
             errors.append(f"{type(exc).__name__}:{exc}")
             if attempt < retry_ceiling:
@@ -414,18 +446,20 @@ def _run_source_with_retries(
     }
 
 
-def _disk_budget_audit(*, cache_dir: str | Path, store_root: str | Path, budget_mb: int) -> dict[str, Any] | None:
-    budget_bytes = int(budget_mb) * 1024 * 1024
-    checked = {
-        "source_cache_bytes": _tree_bytes(Path(cache_dir)),
-        "audit_queue_bytes": _tree_bytes(Path(store_root) / "audit_queue") + _file_bytes(Path(store_root) / "audit_queue.json"),
-    }
-    if any(value > budget_bytes for value in checked.values()):
+def _disk_budget_audit(*, cache_dir: str | Path, store_root: str | Path, trace_root: str | Path, budget_mb: int) -> dict[str, Any] | None:
+    ok, snapshots, reason = check_disk_budget(
+        [cache_dir, store_root, trace_root, Path(store_root) / "audit_queue", Path(store_root) / "audit_queue.json"],
+        budget_mb=budget_mb,
+    )
+    checked = {Path(snap.path).name or snap.path: snap.used_bytes for snap in snapshots}
+    if not ok:
         return {
             "severity": "high",
             "reason": "daemon_disk_budget_exceeded",
+            "diagnostic": reason,
             "budget_mb": budget_mb,
             "checked": checked,
+            "guarded_paths": [snap.path for snap in snapshots],
             "recommended_action": "free_space_or_raise_budget_before_next_cycle",
         }
     return None

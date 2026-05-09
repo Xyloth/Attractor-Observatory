@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/da9cedf482c7_reports_campaign_007_w3_traces_fitzhugh_nagumo.json.json`
-- JSON content_hash: `sha256:4edffcbb4fda73d06eb81a87ce92305d735ca9412374500696e0aeb74e49c6ed`
+- JSON content_hash: `sha256:e84b1deb0cfb73e49ab8c7b7cec67102141c8788d57658eeb0db887ac857ad70`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

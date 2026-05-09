@@ -59,7 +59,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:438ea69d419603c9cd3e30a70cdc6ab4520791f3d5012aea441a50fb7e28f3b7",
+  "content_hash": "sha256:c49fc3827086acd53c715dddc768441d35fa9dc5cadd2a0d345c443b2823382e",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -238,7 +238,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/zero_flux_mass_conservation.json->reports/campaign_007/w4_reconstruction.json::1221",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/zero_flux_mass_conservation.json->reports/campaign_007/w4_reconstruction.json::1351",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -496,7 +496,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/three_dimensional_front.json->reports/campaign_007/w3_traces/zero_flux_mass_conservation.json::1220",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/three_dimensional_front.json->reports/campaign_007/w3_traces/zero_flux_mass_conservation.json::1350",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -518,7 +518,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/zero_flux_mass_conservation.json->reports/campaign_007/w4_reconstruction.json::1221",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/zero_flux_mass_conservation.json->reports/campaign_007/w4_reconstruction.json::1351",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -540,7 +540,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/three_dimensional_front.json->reports/campaign_007/w3_traces/zero_flux_mass_conservation.json::1220",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/w3_traces/three_dimensional_front.json->reports/campaign_007/w3_traces/zero_flux_mass_conservation.json::1350",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -629,18 +629,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

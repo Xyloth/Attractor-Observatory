@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/9ed667fc8e01_spec_lineage.json.json`
-- JSON content_hash: `sha256:86d026dc831f218d5e44669d272a6dd9a4a4228376e5d23b7526501f484c59cd`
+- JSON content_hash: `sha256:fff4d5395453ce250ad1f8e4c1761c3af660b2bbd883f138fdc441f4aab4f5d4`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `spec`
 - Generated status: `source`

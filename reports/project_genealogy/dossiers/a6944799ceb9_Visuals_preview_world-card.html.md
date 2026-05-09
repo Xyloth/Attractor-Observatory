@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/a6944799ceb9_Visuals_preview_world-card.html.json`
-- JSON content_hash: `sha256:7e5d627aae798e64c758a342d0ecf8e47c7e81702760cfe14821d5625026a2c3`
+- JSON content_hash: `sha256:4c6fabda0349994fe809bca238faad218d08036a2d9321b6f9b8452bb35179ec`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

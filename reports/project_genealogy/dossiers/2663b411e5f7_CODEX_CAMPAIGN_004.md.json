@@ -69,7 +69,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:6fb088b35b779e5e4a7bd5f2e580dd2f3462c53aaf0dcb014ad6466dd2e4b7ab",
+  "content_hash": "sha256:b5ed8d2a0bc9654bea00d26ac9d8f3a41fc3d78b80510e6a1e8918d200413063",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -187,7 +187,7 @@
     "language": "markdown",
     "line_count": 110,
     "path": "CODEX_CAMPAIGN_004.md",
-    "path_hash": "sha256:012a9d3c387958de624adb7b4487f9e677ed914fb49d93ee15b040b852fb8bb5",
+    "path_hash": "sha256:81d512331f264186ea9c56e886f27a579f973d73476c19cf038a39ffbeda1819",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -253,7 +253,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_004.md->CODEX_CAMPAIGN_005.md::1042",
+        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_004.md->CODEX_CAMPAIGN_005.md::1172",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -268,7 +268,7 @@
         "target": "CODEX_CAMPAIGN_005.md"
       },
       {
-        "edge_id": "cites::CODEX_CAMPAIGN_004.md->reports/campaign_004/full_report.json::4475",
+        "edge_id": "cites::CODEX_CAMPAIGN_004.md->reports/campaign_004/full_report.json::4953",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -526,7 +526,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1041",
+        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1171",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -548,7 +548,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_004.md->CODEX_CAMPAIGN_005.md::1042",
+        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_004.md->CODEX_CAMPAIGN_005.md::1172",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -570,7 +570,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_CAMPAIGN_004.md->reports/campaign_004/full_report.json::4475",
+        "edge_id": "cites::CODEX_CAMPAIGN_004.md->reports/campaign_004/full_report.json::4953",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -592,7 +592,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1041",
+        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1171",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -681,18 +681,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/eb4e2393494e_reports_campaign_024_lens_coupling_audit.json.json`
-- JSON content_hash: `sha256:db39001cc02efa4c1526863e1c96c94e5ddad57c47e3d8b55603671603114d79`
+- JSON content_hash: `sha256:54497461559b63ed035db5c05fecf4aa977c7e1d7069a5f1b94cb219564febeb`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 3966 / Bytes: 121129
+- Lines: 3966 / Bytes: 121743
 
 ## Birth
 - Status: `recovered`

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/2744b7c76792_atlas_negative_space_NS-C004-02-external_repair_boundary_mimic.json.json`
-- JSON content_hash: `sha256:4071cc1788aadb7724c7f17f0d31525dd63a78eb655954d050c57e83fb7b8a43`
+- JSON content_hash: `sha256:7ebac8f28247660b60214322c6a592d168759870d13635d34fd3d30e4415613c`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

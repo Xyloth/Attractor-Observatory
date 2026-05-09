@@ -34,6 +34,7 @@ from control_room.adapters import (
     parse_factory_store,
     parse_git_metadata,
     parse_methods_falsifiers,
+    parse_mistake_catalog,
     parse_negative_space,
     parse_pytest_cache,
 )
@@ -44,23 +45,6 @@ SNAPSHOT_LATEST = SNAPSHOTS_DIR / "state_latest.json"
 SNAPSHOT_PRIOR = SNAPSHOTS_DIR / "state_prior.json"
 SNAPSHOT_SCHEMA = "ControlRoomSnapshot.v1"
 SNAPSHOT_GENERATION_COMMAND = "control_room.snapshot.write_snapshot()"
-
-
-# Frozen mistake-catalog metadata mirroring docs/DOCTRINE.md & CB-005 rooms.
-MISTAKE_CATALOG = [
-    ("1", "Static-input contamination", "ratified"),
-    ("2", "Direction inversion", "ratified"),
-    ("3", "Soft enforcement / strict display", "ratified"),
-    ("4", "Scenario-internal hardcoding", "ratified"),
-    ("5", "Surface-coverage-without-substance", "ratified"),
-    ("6", "Engineered passing", "ratified"),
-    ("7", "Surface-labels-as-primitives", "ratified"),
-    ("8", "Abstract-scalar-standing-in", "ratified"),
-    ("9", "Spec-detail mismatch", "ratified"),
-    ("10", "Test-architecture / substrate-presence mismatch", "ratified"),
-    ("11", "Categorical confound through pooling", "ratified"),
-    ("12", "Decorative completeness", "candidate"),
-]
 
 
 def build_snapshot() -> dict[str, Any]:
@@ -80,6 +64,12 @@ def build_snapshot() -> dict[str, Any]:
 
     snapshot: dict[str, Any] = {
         "schema": SNAPSHOT_SCHEMA,
+        "raw_file_policy": "do_not_read_directly",
+        "read_api": "control_room.snapshot.load_latest",
+        "direct_read_warning": (
+            "D30: state_latest.json is a pointer file. Consumers that depend on "
+            "freshness must call load_latest(), which recomputes freshness against current HEAD."
+        ),
         "generated_at": now,
         "generation_binding": generation_binding,
         "freshness_status": generation_binding["freshness_status"],
@@ -103,7 +93,7 @@ def build_snapshot() -> dict[str, Any]:
             "for_fresh_codex": [
                 "Read 'pytest_status' and 'campaigns' first.",
                 "Then 'detector_decline' (Campaign 016 honest-signal finding).",
-                "Then 'mistake_catalog' for the 12 ratified failure classes.",
+                "Then 'mistake_catalog' for the registry-bound ratified failure classes.",
             ],
             "for_human_pi": [
                 "All sections are dashboard-grade summaries; click into Control Room rooms for visual detail.",
@@ -422,12 +412,28 @@ def _doctrine_summary(doctrine) -> dict[str, Any]:
 
 
 def _mistake_catalog_summary() -> dict[str, Any]:
+    mistakes = parse_mistake_catalog()
+    if mistakes["status"] != "ok":
+        return {
+            "status": mistakes["status"],
+            "summary": mistakes["rationale"],
+            "classes": [],
+        }
+    data = mistakes["data"]
     return {
         "status": "ok",
-        "summary": f"12 classes; 11 ratified, 1 candidate (Class 12 — Decorative Completeness)",
+        "summary": (
+            f"{data['class_count']} classes; {data['ratified_count']} ratified; "
+            f"{data['candidate_count']} candidate; registry-bound"
+        ),
         "classes": [
-            {"id": cls_id, "name": name, "status": status}
-            for cls_id, name, status in MISTAKE_CATALOG
+            {
+                "id": entry.get("id"),
+                "name": entry.get("title"),
+                "status": entry.get("status"),
+                "ratification_source": entry.get("ratification_source"),
+            }
+            for entry in data["classes"]
         ],
     }
 
@@ -463,6 +469,13 @@ def _evidence_private_summary() -> dict[str, Any]:
             continue
         for path in sorted(base.rglob("*.json")):
             if path.as_posix() == "reports/task_032_evidence_private_markers.json":
+                continue
+            if path.as_posix().startswith("reports/project_genealogy/"):
+                continue
+            try:
+                if path.stat().st_size > 25_000_000:
+                    continue
+            except OSError:
                 continue
             try:
                 payload = json.loads(path.read_text(encoding="utf-8-sig"))

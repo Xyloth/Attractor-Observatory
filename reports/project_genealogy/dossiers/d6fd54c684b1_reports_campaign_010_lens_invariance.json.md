@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/d6fd54c684b1_reports_campaign_010_lens_invariance.json.json`
-- JSON content_hash: `sha256:4ae389b75c6258cfa61999690a2e0eab81e50d0984f9e69d52a92a74e4ca62e9`
+- JSON content_hash: `sha256:44346f2744136b4328b3264f0f83123cfa7339a71c361b4c05acc2f7f2e382d1`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

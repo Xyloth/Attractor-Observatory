@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/68f5bb0b03a8_atlas_status_viewer_generated_campaign_006_candidates.md.json`
-- JSON content_hash: `sha256:936c206a47e46d97ff2f3612427d493926e54152496a90c24eff79875054fbd8`
+- JSON content_hash: `sha256:fb8c7fe78df9d5804e8d6f6b38132a7d56f62bccfe583169433acc2e6de62dd8`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `generated`

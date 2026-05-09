@@ -82,7 +82,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:886c9669f34c504787385fbac81cbb155224e6a3488d6ed6d7fe9c0889e9bedc",
+  "content_hash": "sha256:b10ef29d0ac2191554efdc3dff80090fcee29c221f2d1d1c4e5d0e45db70ded1",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -217,12 +217,14 @@
       "unresolved_evidence_refs": 0
     },
     "operational_load_bearingness": {
-      "cited_by_reports": [],
+      "cited_by_reports": [
+        "BUILD_LOG.md"
+      ],
       "generates_artifacts": [],
       "imports_in": 2,
-      "imports_out": 11,
+      "imports_out": 12,
       "validated_by": [],
-      "weighted_value": 9.5
+      "weighted_value": 11.5
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 1,
@@ -326,7 +328,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/ai_operations_tower.py::589",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/ai_operations_tower.py::699",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -341,7 +343,7 @@
         "target": "control_room/rooms/ai_operations_tower.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/basin_floor_lab.py::590",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/basin_floor_lab.py::700",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -356,7 +358,7 @@
         "target": "control_room/rooms/basin_floor_lab.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/campaign_command.py::591",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/campaign_command.py::701",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -371,7 +373,7 @@
         "target": "control_room/rooms/campaign_command.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/doctrine_console.py::592",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/doctrine_console.py::702",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -386,7 +388,7 @@
         "target": "control_room/rooms/doctrine_console.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/factory_intake_dock.py::593",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/factory_intake_dock.py::703",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -401,7 +403,7 @@
         "target": "control_room/rooms/factory_intake_dock.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/falsifier_ledger.py::594",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/falsifier_ledger.py::704",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -416,7 +418,7 @@
         "target": "control_room/rooms/falsifier_ledger.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/motif_atlas.py::595",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/motif_atlas.py::705",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -431,7 +433,7 @@
         "target": "control_room/rooms/motif_atlas.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/portfolio_demo.py::596",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/portfolio_demo.py::706",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -446,7 +448,22 @@
         "target": "control_room/rooms/portfolio_demo.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_graph.py::597",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_genealogy.py::707",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/__init__.py#import:control_room.rooms.project_genealogy",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/__init__.py::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "target": "control_room/rooms/project_genealogy.py"
+      },
+      {
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_graph.py::708",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -461,7 +478,7 @@
         "target": "control_room/rooms/project_graph.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/pulse_deck.py::598",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/pulse_deck.py::709",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -476,7 +493,7 @@
         "target": "control_room/rooms/pulse_deck.py"
       },
       {
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/world_observatory.py::599",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/world_observatory.py::710",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -491,7 +508,7 @@
         "target": "control_room/rooms/world_observatory.py"
       },
       {
-        "edge_id": "shares_birth_cohort::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::839",
+        "edge_id": "shares_birth_cohort::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::969",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -506,7 +523,7 @@
         "target": "control_room/rooms/_placeholder.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::3734",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::4026",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -872,7 +889,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::587",
+        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::697",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -894,7 +911,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::588",
+        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::698",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -916,7 +933,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::838",
+        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::968",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -939,7 +956,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::3733",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::4025",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -959,9 +976,31 @@
         "target": "control_room/rooms/__init__.py"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/__init__.py::4937",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/__init__.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "BUILD_LOG.md",
+        "target": "control_room/rooms/__init__.py"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/ai_operations_tower.py::589",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/ai_operations_tower.py::699",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -983,7 +1022,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/basin_floor_lab.py::590",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/basin_floor_lab.py::700",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1005,7 +1044,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/campaign_command.py::591",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/campaign_command.py::701",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1027,7 +1066,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/doctrine_console.py::592",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/doctrine_console.py::702",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1049,7 +1088,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/factory_intake_dock.py::593",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/factory_intake_dock.py::703",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1071,7 +1110,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/falsifier_ledger.py::594",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/falsifier_ledger.py::704",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1093,7 +1132,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/motif_atlas.py::595",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/motif_atlas.py::705",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1115,7 +1154,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/portfolio_demo.py::596",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/portfolio_demo.py::706",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1137,7 +1176,29 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_graph.py::597",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_genealogy.py::707",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "control_room/rooms/__init__.py#import:control_room.rooms.project_genealogy",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::control_room/rooms/__init__.py::control_room/rooms/project_genealogy.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "control_room/rooms/__init__.py",
+        "target": "control_room/rooms/project_genealogy.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/project_graph.py::708",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1159,7 +1220,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/pulse_deck.py::598",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/pulse_deck.py::709",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1181,7 +1242,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/world_observatory.py::599",
+        "edge_id": "imports::control_room/rooms/__init__.py->control_room/rooms/world_observatory.py::710",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1203,7 +1264,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::839",
+        "edge_id": "shares_birth_cohort::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::969",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1226,7 +1287,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::3734",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/__init__.py->control_room/rooms/_placeholder.py::4026",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1263,7 +1324,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::587",
+        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::697",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1278,7 +1339,7 @@
         "source": "control_room/app.py"
       },
       {
-        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::588",
+        "edge_id": "imports::control_room/app.py->control_room/rooms/__init__.py::698",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1293,7 +1354,7 @@
         "source": "control_room/app.py"
       },
       {
-        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::838",
+        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::968",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1308,7 +1369,7 @@
         "source": "control_room/rooms/README.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::3733",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::4025",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1321,6 +1382,21 @@
           }
         ],
         "source": "control_room/rooms/README.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/__init__.py::4937",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "BUILD_LOG.md#control_room/rooms/__init__.py",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::BUILD_LOG.md::control_room/rooms/__init__.py"
+          }
+        ],
+        "source": "BUILD_LOG.md"
       }
     ],
     "siblings": [
@@ -1379,7 +1455,7 @@
   "liveness": {
     "cleanup_candidate_status": "probe_declined",
     "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
-    "downstream_reference_count": 2,
+    "downstream_reference_count": 3,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -1397,18 +1473,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 2
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

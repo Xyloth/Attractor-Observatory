@@ -303,3 +303,50 @@ def test_PG20_trajectory_history_honest() -> None:
         assert traj["trajectory_status"] == "insufficient_history", (
             "fewer than 2 atlases exist but trajectory_status != insufficient_history"
         )
+
+
+def test_PG21_current_head_binding() -> None:
+    manifest = _load(REPORT_DIR / "input_manifest.json")
+    atlas = _load(REPORT_DIR / "atlas_latest.json")
+    coh = _load(REPORT_DIR / "coherence_latest.json")
+    head = manifest["run_binding"]["head_commit"]
+    assert manifest["run_binding"]["workspace_dirty"] is False
+    assert atlas["run_binding"]["head_commit"] == head
+    assert coh["run_binding"]["head_commit"] == head
+    assert atlas["acceptance_gates"]["PG21_current_head_binding"]["passed"] is True
+    assert coh["acceptance_gates"]["PG21_current_head_binding"]["passed"] is True
+
+
+def test_PG22_implementation_self_audit() -> None:
+    manifest = _load(REPORT_DIR / "input_manifest.json")
+    audited = {row["path"] for row in manifest["audited_files"]}
+    required = set(manifest["acceptance_gates"]["PG22_implementation_self_audit"]["required_paths"])
+    assert manifest["acceptance_gates"]["PG22_implementation_self_audit"]["passed"] is True
+    assert required <= audited
+    assert {"project_genealogy/manifest.py", "project_genealogy/runner.py", "public_tests/test_pg001_acceptance_gates.py"} <= audited
+
+
+def test_PG001_help_is_inert() -> None:
+    manifest_path = REPORT_DIR / "input_manifest.json"
+    before = manifest_path.read_bytes() if manifest_path.exists() else b""
+    proc = subprocess.run(
+        [sys.executable, "-m", "project_genealogy", "run-prepass", "--help"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        timeout=60,
+    )
+    after = manifest_path.read_bytes() if manifest_path.exists() else b""
+    assert proc.returncode == 0
+    assert "run-prepass" in proc.stdout
+    assert before == after
+
+
+def test_PG001_coherence_and_atlas_findings_are_partitioned() -> None:
+    atlas = _load(REPORT_DIR / "atlas_latest.json")
+    coh = _load(REPORT_DIR / "coherence_latest.json")
+    atlas_partition = atlas["summary"]["finding_partition"]
+    coh_partition = coh["summary"]["finding_partition"]
+    assert atlas_partition["dossier_confirmed_finding_count"] == atlas["summary"]["confirmed_finding_count"]
+    assert coh_partition["atlas_dossier_confirmed_finding_count"] == atlas["summary"]["confirmed_finding_count"]
+    assert "mission-coverage" in coh_partition["scope_note"]

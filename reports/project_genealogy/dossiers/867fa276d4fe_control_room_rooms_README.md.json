@@ -89,7 +89,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:c4905cba5f5ad213588247f700ee46bbfd057af45edd8a1bdfe69960c4822ff5",
+  "content_hash": "sha256:952405834982209ee012f56a15810ecb36e5f501585524f26c87ee656d7a3c9c",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -280,7 +280,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::838",
+        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::968",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -295,7 +295,7 @@
         "target": "control_room/rooms/__init__.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D17::control_room/rooms/README.md->control_room/rooms/doctrine_console.py::2327",
+        "edge_id": "implements_same_doctrine::D17::control_room/rooms/README.md->control_room/rooms/doctrine_console.py::2575",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -310,7 +310,7 @@
         "target": "control_room/rooms/doctrine_console.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D7::control_room/rooms/README.md->control_room/rooms/ai_operations_tower.py::3323",
+        "edge_id": "implements_same_doctrine::D7::control_room/rooms/README.md->control_room/rooms/ai_operations_tower.py::3595",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -325,7 +325,7 @@
         "target": "control_room/rooms/ai_operations_tower.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::3733",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::4025",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -340,7 +340,7 @@
         "target": "control_room/rooms/__init__.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D23::control_room/rooms/README.md->control_room/snapshot.py::4099",
+        "edge_id": "implements_same_doctrine::D23::control_room/rooms/README.md->control_room/snapshot.py::4496",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -355,7 +355,7 @@
         "target": "control_room/snapshot.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D25::control_room/rooms/README.md->control_room/snapshots/state_20260506T020826Z.json::4190",
+        "edge_id": "implements_same_doctrine::D25::control_room/rooms/README.md->control_room/snapshots/state_20260506T020826Z.json::4632",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -721,7 +721,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/launcher.py->control_room/rooms/README.md::837",
+        "edge_id": "shares_birth_cohort::control_room/launcher.py->control_room/rooms/README.md::967",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -744,7 +744,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D17",
-        "edge_id": "implements_same_doctrine::D17::control_room/cached_adapters.py->control_room/rooms/README.md::2326",
+        "edge_id": "implements_same_doctrine::D17::control_room/cached_adapters.py->control_room/rooms/README.md::2574",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -767,7 +767,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D7",
-        "edge_id": "implements_same_doctrine::D7::control_room/README.md->control_room/rooms/README.md::3322",
+        "edge_id": "implements_same_doctrine::D7::control_room/README.md->control_room/rooms/README.md::3594",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -790,7 +790,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::control_room/launcher.py->control_room/rooms/README.md::3732",
+        "edge_id": "implements_same_doctrine::D22::control_room/launcher.py->control_room/rooms/README.md::4024",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -813,7 +813,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D23",
-        "edge_id": "implements_same_doctrine::D23::Visuals/ui_kits/control_room/mockData.js->control_room/rooms/README.md::4098",
+        "edge_id": "implements_same_doctrine::D23::control_room/cache/factory_runs/run_f17c14848991da21.json->control_room/rooms/README.md::4495",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -822,21 +822,21 @@
             "kind": "grep",
             "locator": "both files mention D23",
             "note": "shared mention of doctrine D23",
-            "ref_id": "doctrine::D23::Visuals/ui_kits/control_room/mockData.js::control_room/rooms/README.md"
+            "ref_id": "doctrine::D23::control_room/cache/factory_runs/run_f17c14848991da21.json::control_room/rooms/README.md"
           }
         ],
         "private_boundary": {
           "evidence_private": false,
           "reason": ""
         },
-        "source": "Visuals/ui_kits/control_room/mockData.js",
+        "source": "control_room/cache/factory_runs/run_f17c14848991da21.json",
         "target": "control_room/rooms/README.md"
       },
       {
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D25",
-        "edge_id": "implements_same_doctrine::D25::README.md->control_room/rooms/README.md::4189",
+        "edge_id": "implements_same_doctrine::D25::README.md->control_room/rooms/README.md::4631",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -858,7 +858,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/README.md::4413",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/README.md::4879",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -880,7 +880,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::Control_Room_README.md->control_room/rooms/README.md::4590",
+        "edge_id": "cites::Control_Room_README.md->control_room/rooms/README.md::5068",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -902,7 +902,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::README.md->control_room/rooms/README.md::4614",
+        "edge_id": "cites::README.md->control_room/rooms/README.md::5092",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -924,7 +924,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/task_032_dx001_disposition.json->control_room/rooms/README.md::4964",
+        "edge_id": "cites::reports/task_032_dx001_disposition.json->control_room/rooms/README.md::5442",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -946,7 +946,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::838",
+        "edge_id": "shares_birth_cohort::control_room/rooms/README.md->control_room/rooms/__init__.py::968",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -969,7 +969,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D17",
-        "edge_id": "implements_same_doctrine::D17::control_room/rooms/README.md->control_room/rooms/doctrine_console.py::2327",
+        "edge_id": "implements_same_doctrine::D17::control_room/rooms/README.md->control_room/rooms/doctrine_console.py::2575",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -992,7 +992,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D7",
-        "edge_id": "implements_same_doctrine::D7::control_room/rooms/README.md->control_room/rooms/ai_operations_tower.py::3323",
+        "edge_id": "implements_same_doctrine::D7::control_room/rooms/README.md->control_room/rooms/ai_operations_tower.py::3595",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1015,7 +1015,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::3733",
+        "edge_id": "implements_same_doctrine::D22::control_room/rooms/README.md->control_room/rooms/__init__.py::4025",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1038,7 +1038,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D23",
-        "edge_id": "implements_same_doctrine::D23::control_room/rooms/README.md->control_room/snapshot.py::4099",
+        "edge_id": "implements_same_doctrine::D23::control_room/rooms/README.md->control_room/snapshot.py::4496",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1061,7 +1061,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D25",
-        "edge_id": "implements_same_doctrine::D25::control_room/rooms/README.md->control_room/snapshots/state_20260506T020826Z.json::4190",
+        "edge_id": "implements_same_doctrine::D25::control_room/rooms/README.md->control_room/snapshots/state_20260506T020826Z.json::4632",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1098,7 +1098,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::control_room/launcher.py->control_room/rooms/README.md::837",
+        "edge_id": "shares_birth_cohort::control_room/launcher.py->control_room/rooms/README.md::967",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1113,7 +1113,7 @@
         "source": "control_room/launcher.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D17::control_room/cached_adapters.py->control_room/rooms/README.md::2326",
+        "edge_id": "implements_same_doctrine::D17::control_room/cached_adapters.py->control_room/rooms/README.md::2574",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1128,7 +1128,7 @@
         "source": "control_room/cached_adapters.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D7::control_room/README.md->control_room/rooms/README.md::3322",
+        "edge_id": "implements_same_doctrine::D7::control_room/README.md->control_room/rooms/README.md::3594",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1143,7 +1143,7 @@
         "source": "control_room/README.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::control_room/launcher.py->control_room/rooms/README.md::3732",
+        "edge_id": "implements_same_doctrine::D22::control_room/launcher.py->control_room/rooms/README.md::4024",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1158,7 +1158,7 @@
         "source": "control_room/launcher.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D23::Visuals/ui_kits/control_room/mockData.js->control_room/rooms/README.md::4098",
+        "edge_id": "implements_same_doctrine::D23::control_room/cache/factory_runs/run_f17c14848991da21.json->control_room/rooms/README.md::4495",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1167,13 +1167,13 @@
             "kind": "grep",
             "locator": "both files mention D23",
             "note": "shared mention of doctrine D23",
-            "ref_id": "doctrine::D23::Visuals/ui_kits/control_room/mockData.js::control_room/rooms/README.md"
+            "ref_id": "doctrine::D23::control_room/cache/factory_runs/run_f17c14848991da21.json::control_room/rooms/README.md"
           }
         ],
-        "source": "Visuals/ui_kits/control_room/mockData.js"
+        "source": "control_room/cache/factory_runs/run_f17c14848991da21.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D25::README.md->control_room/rooms/README.md::4189",
+        "edge_id": "implements_same_doctrine::D25::README.md->control_room/rooms/README.md::4631",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1188,7 +1188,7 @@
         "source": "README.md"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/README.md::4413",
+        "edge_id": "cites::BUILD_LOG.md->control_room/rooms/README.md::4879",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1203,7 +1203,7 @@
         "source": "BUILD_LOG.md"
       },
       {
-        "edge_id": "cites::Control_Room_README.md->control_room/rooms/README.md::4590",
+        "edge_id": "cites::Control_Room_README.md->control_room/rooms/README.md::5068",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1218,7 +1218,7 @@
         "source": "Control_Room_README.md"
       },
       {
-        "edge_id": "cites::README.md->control_room/rooms/README.md::4614",
+        "edge_id": "cites::README.md->control_room/rooms/README.md::5092",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1233,7 +1233,7 @@
         "source": "README.md"
       },
       {
-        "edge_id": "cites::reports/task_032_dx001_disposition.json->control_room/rooms/README.md::4964",
+        "edge_id": "cites::reports/task_032_dx001_disposition.json->control_room/rooms/README.md::5442",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1322,18 +1322,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

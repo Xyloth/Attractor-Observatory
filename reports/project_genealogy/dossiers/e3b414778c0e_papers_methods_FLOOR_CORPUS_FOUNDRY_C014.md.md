@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/e3b414778c0e_papers_methods_FLOOR_CORPUS_FOUNDRY_C014.md.json`
-- JSON content_hash: `sha256:380cc54d29b9c7f9d6e61fca271727b7df3f5ba7f9a3d11d0e03c07eb6f9132e`
+- JSON content_hash: `sha256:34e9b8aa72c11aae1f5d774ccc407b3368b00bbae70e64b074cc63c905d9398e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

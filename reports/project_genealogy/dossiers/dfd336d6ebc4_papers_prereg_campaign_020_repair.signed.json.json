@@ -81,7 +81,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:235f6f8e919422d7a6f42b3b6918c2baf5eb654daf966cfc8aed98dadafc9849",
+  "content_hash": "sha256:a35700e6e6a76cfc2e83e4bbabdb7afba6de2b2ab0796f7f68065249c699e272",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -214,7 +214,7 @@
     "language": "json",
     "line_count": 38,
     "path": "papers/prereg/campaign_020/repair.signed.json",
-    "path_hash": "sha256:f5f178f958cdfe8da83acbc52c04fa580f0d6dc6c0d368052e3c3ee83cc01d76",
+    "path_hash": "sha256:5f9e8df37ba3d908dd19818693565bbaefe0ed20ef58ebdd31bc9ef228adceb6",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -253,7 +253,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/repair.signed.json->papers/prereg/campaign_020/replication_lineage.signed.json::1319",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/repair.signed.json->papers/prereg/campaign_020/replication_lineage.signed.json::1449",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -379,7 +379,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
-        "edge_id": "spawned_by_ticket::TASK-033->papers/prereg/campaign_020/repair.signed.json::302",
+        "edge_id": "spawned_by_ticket::TASK-033->papers/prereg/campaign_020/repair.signed.json::385",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -401,7 +401,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/externalized_memory.signed.json->papers/prereg/campaign_020/repair.signed.json::1318",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/externalized_memory.signed.json->papers/prereg/campaign_020/repair.signed.json::1448",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -423,7 +423,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_020/full_report.json->papers/prereg/campaign_020/repair.signed.json::4927",
+        "edge_id": "cites::reports/campaign_020/full_report.json->papers/prereg/campaign_020/repair.signed.json::5405",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -445,7 +445,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/repair.signed.json->papers/prereg/campaign_020/replication_lineage.signed.json::1319",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/repair.signed.json->papers/prereg/campaign_020/replication_lineage.signed.json::1449",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -467,7 +467,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-033->papers/prereg/campaign_020/repair.signed.json::302",
+        "edge_id": "spawned_by_ticket::TASK-033->papers/prereg/campaign_020/repair.signed.json::385",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -482,7 +482,7 @@
         "source": "TASK-033"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/externalized_memory.signed.json->papers/prereg/campaign_020/repair.signed.json::1318",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_020/externalized_memory.signed.json->papers/prereg/campaign_020/repair.signed.json::1448",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -497,7 +497,7 @@
         "source": "papers/prereg/campaign_020/externalized_memory.signed.json"
       },
       {
-        "edge_id": "cites::reports/campaign_020/full_report.json->papers/prereg/campaign_020/repair.signed.json::4927",
+        "edge_id": "cites::reports/campaign_020/full_report.json->papers/prereg/campaign_020/repair.signed.json::5405",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -586,18 +586,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

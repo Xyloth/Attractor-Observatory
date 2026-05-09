@@ -1,0 +1,572 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-021",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Script automates a declared developer workflow.",
+        "CB-020 reader-loop: Streamlit autorefresh load proxy.\n\nPolls the live-state files at Streamlit-class frequency (every 0.3s,\n~10x faster than Streamlit's default 3s autorefresh) so the daemon's\nwrite path is contended throughout the verify cycle. If the CB-020\nfix is real, the daemon completes cleanly under this load.\n\nReads via the F3-compliant pattern: ``path.read_text(encoding=\"utf-8-sig\")``,\nsi"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "grep",
+              "pattern": "Usage|usage|setup|launch|fire|run"
+            }
+          ],
+          "atom_id": "script_executes_purposefully",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [
+            "script that wraps unrelated commands without contract"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "eada8c9bab091a8e21b021537c65a845709c2a6a",
+            "subject": "TASK-CB-021: memory-safety guardrails after 2026-05-08 OOM incident",
+            "ticket": "TASK-CB-021"
+          },
+          "statement": "Script automates a declared developer workflow."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "scripts/cb020_reader_loop.py#header",
+            "ticket": "CB-020"
+          },
+          "statement": "CB-020 reader-loop: Streamlit autorefresh load proxy.\n\nPolls the live-state files at Streamlit-class frequency (every 0.3s,\n~10x faster than Streamlit's default 3s autorefresh) so the daemon's\nwrite path is contended throughout the verify cycle. If the CB-020\nfix is real, the daemon completes cleanly under this load.\n\nReads via the F3-compliant pattern: ``path.read_text(encoding=\"utf-8-sig\")``,\nsi"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [
+        "script that wraps unrelated commands without contract"
+      ],
+      "predicate_id": "birth::scripts/cb020_reader_loop.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "eada8c9bab091a8e21b021537c65a845709c2a6a",
+        "note": "TASK-CB-021: memory-safety guardrails after 2026-05-08 OOM incident",
+        "ref_id": "birth::scripts/cb020_reader_loop.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-021",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::scripts/cb020_reader_loop.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "scripts/cb020_reader_loop.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::scripts/cb020_reader_loop.py::docstring"
+      }
+    ],
+    "first_seen_commit": "eada8c9bab091a8e21b021537c65a845709c2a6a",
+    "first_seen_date": "2026-05-08T16:57:19-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-021",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:459c7630aabad3c37609a00a27b7792229a40ce45b5a0a52bef8e48060599316",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "scripts/cb020_reader_loop.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: main"
+        },
+        {
+          "atom_id": "cli_entry_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "scripts/cb020_reader_loop.py#main"
+          },
+          "statement": "Module has __main__ entry block."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "scripts/cb020_reader_loop.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, factory_lowlevel.persistence.safe_read_json, json, pathlib.Path, sys, time"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "scripts/cb020_reader_loop.py"
+          },
+          "statement": "Tracked file with 87 lines / 3199 bytes at HEAD."
+        },
+        {
+          "atom_id": "script_usage_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "scripts/cb020_reader_loop.py#pattern:Usage|usage|setup|launch|fire|run"
+          },
+          "statement": "Pattern /Usage|usage|setup|launch|fire|run/ matches in current file."
+        }
+      ],
+      "byte_count": 3199,
+      "class_pattern_matches": [],
+      "commands": [
+        "__main__"
+      ],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "factory_lowlevel.persistence.safe_read_json",
+        "json",
+        "pathlib.Path",
+        "sys",
+        "time"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 59,
+          "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+          "snippet": "if counter_name == \"n_state\":"
+        },
+        {
+          "line": 61,
+          "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+          "snippet": "elif counter_name == \"n_run\":"
+        },
+        {
+          "line": 66,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except BaseException as exc:  # noqa: BLE001"
+        },
+        {
+          "line": 86,
+          "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+          "snippet": "if __name__ == \"__main__\":"
+        }
+      ],
+      "line_count": 87,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::scripts/cb020_reader_loop.py",
+      "public_symbols": [
+        "main"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "scripts/cb020_reader_loop.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::scripts/cb020_reader_loop.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 66
+        },
+        {
+          "id": "decline_branch",
+          "line": null
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 59,
+        "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+        "reproducer": {
+          "command": "rg \"if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if counter_name == \"n_state\":"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 61,
+        "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+        "reproducer": {
+          "command": "rg \"if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "elif counter_name == \"n_run\":"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 66,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except BaseException as exc:  # noqa: BLE001"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 86,
+        "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+        "reproducer": {
+          "command": "rg \"if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if __name__ == \"__main__\":"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "cli_entry_present",
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "script_usage_present"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "script",
+    "byte_count": 3199,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 87,
+    "path": "scripts/cb020_reader_loop.py",
+    "path_hash": "sha256:7cb3064192aa0de2aa2d949797ff6587d1e582b13691f0a398f727044f70965d",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 59: if counter_name == \"n_state\":",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "scripts/cb020_reader_loop.py#L59",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::scripts/cb020_reader_loop.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-scripts/cb020_reader_loop.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if counter_name == \"n_state\":' -- scripts/cb020_reader_loop.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 61: elif counter_name == \"n_run\":",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "scripts/cb020_reader_loop.py#L61",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::scripts/cb020_reader_loop.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-scripts/cb020_reader_loop.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'elif counter_name == \"n_run\":' -- scripts/cb020_reader_loop.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 66: except BaseException as exc:  # noqa: BLE001",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "scripts/cb020_reader_loop.py#L66",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::scripts/cb020_reader_loop.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-scripts/cb020_reader_loop.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except BaseException as exc:  # noqa: BLE001' -- scripts/cb020_reader_loop.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 86: if __name__ == \"__main__\":",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "scripts/cb020_reader_loop.py#L86",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::scripts/cb020_reader_loop.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-scripts/cb020_reader_loop.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if __name__ == \"__main__\":' -- scripts/cb020_reader_loop.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [],
+    "cohort": {
+      "cohort_id": "TASK-CB-021",
+      "members": [
+        "factory_lowlevel/memory_guard.py",
+        "public_tests/test_cb021_memory_guard.py",
+        "scripts/cb020_reader_loop.py"
+      ],
+      "spawn_ticket": "TASK-CB-021"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "eada8c9bab091a8e21b021537c65a845709c2a6a",
+        "edge_id": "spawned_by_ticket::TASK-CB-021->scripts/cb020_reader_loop.py::694",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eada8c9bab091a8e21b021537c65a845709c2a6a",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::scripts/cb020_reader_loop.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-021",
+        "target": "scripts/cb020_reader_loop.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb021_memory_guard.py->scripts/cb020_reader_loop.py::1651",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-021",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-021"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb021_memory_guard.py",
+        "target": "scripts/cb020_reader_loop.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-021->scripts/cb020_reader_loop.py::694",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "eada8c9bab091a8e21b021537c65a845709c2a6a",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::scripts/cb020_reader_loop.py"
+          }
+        ],
+        "source": "TASK-CB-021"
+      },
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_cb021_memory_guard.py->scripts/cb020_reader_loop.py::1651",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-021",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-021"
+          }
+        ],
+        "source": "public_tests/test_cb021_memory_guard.py"
+      }
+    ],
+    "siblings": [
+      "factory_lowlevel/memory_guard.py",
+      "public_tests/test_cb021_memory_guard.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::scripts/cb020_reader_loop.py::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/da5abf895685_papers_methods_FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md.json`
-- JSON content_hash: `sha256:f952df3ac5f65c3799f9f59c13dc5ddeedb0aa93544689101fff1feb0924a9de`
+- JSON content_hash: `sha256:02f036d6143e9a6ec05f75a86f74172135120345b68c3eb3ffdbdfbdf1886f54`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

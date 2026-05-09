@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/c48f12be9328_reports_campaign_012_factory_scaffolding.json.json`
-- JSON content_hash: `sha256:1eb9c4befe9c3eace87cb8cb1d13837e57c4b3009af4895a094b4bce04ac129d`
+- JSON content_hash: `sha256:df998a5810c4faf4f0c49b3c2d7a9de66fc4f203513550e735e6c73afa5e7180`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 344 / Bytes: 15067
+- Lines: 364 / Bytes: 16692
 
 ## Birth
 - Status: `recovered`
@@ -21,13 +21,14 @@
 
 ## Current
 - Status: `recovered`
+- Observed doctrines: `D23, D29`
 
 ## DepthVector.v1
 - **predicate_atom_coverage**: `{'claimable_atoms': 1, 'covered_atoms': 1, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
-- **doctrine_binding_quality**: `{'required': ['D11'], 'verified': [], 'claimed_only': ['D11'], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D23', 'D29'], 'verified': ['D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['reports/campaign_012/cli_full_report.json', 'reports/campaign_012/full_report.json'], 'weighted_value': 3.0}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['reports/campaign_012/cli_full_report.json', 'reports/campaign_012/full_report.json', 'reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 4.5}`
 
 ## Drift
 - Status: `review_required`

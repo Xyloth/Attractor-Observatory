@@ -75,7 +75,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:91db80794ebda0ded21287e0e79542c06414166bd684107dacf9732f46518d59",
+  "content_hash": "sha256:f96a8c33024ee7d93c91dde82e3522f1f702fa75f7df643682b461719ccd752f",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -220,7 +220,7 @@
     "language": "markdown",
     "line_count": 4,
     "path": "atlas/negative_space/predicted_empty_basins.md",
-    "path_hash": "sha256:6660de0211a659b304c60788ba66fadc38b7dc1029f5b3cf17dc2a6c06ac6b79",
+    "path_hash": "sha256:ec46c8e62a4025bed0455c80379edccda57e1c32e7713321c83bff8dc5127673",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -231,7 +231,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::atlas/negative_space/predicted_empty_basins.md->atlas/negative_space/predicted_empty_campaign_004.md::1104",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/predicted_empty_basins.md->atlas/negative_space/predicted_empty_campaign_004.md::1234",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -489,7 +489,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/negative_space/math_only_structures.md->atlas/negative_space/predicted_empty_basins.md::1103",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/math_only_structures.md->atlas/negative_space/predicted_empty_basins.md::1233",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -511,7 +511,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/negative_space/predicted_empty_basins.md->atlas/negative_space/predicted_empty_campaign_004.md::1104",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/predicted_empty_basins.md->atlas/negative_space/predicted_empty_campaign_004.md::1234",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -533,7 +533,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::atlas/negative_space/math_only_structures.md->atlas/negative_space/predicted_empty_basins.md::1103",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/math_only_structures.md->atlas/negative_space/predicted_empty_basins.md::1233",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -622,18 +622,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

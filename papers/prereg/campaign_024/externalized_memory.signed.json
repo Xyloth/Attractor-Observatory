@@ -1,7 +1,7 @@
 {
   "campaign_id": "campaign_024",
   "claim_promotion_allowed": false,
-  "content_hash": "sha256:d816ed02b7e0dd6b24ff0f2dfb66867710b67757f33bba491550ea5eaeddad94",
+  "content_hash": "sha256:62ac1a82631354e97d192a562b576f32493d408226a51e0792addce6cd254ab0",
   "forbidden_adjustments": [
     "no event-token predicates",
     "no event-token lenses",
@@ -10,7 +10,7 @@
     "no claim-bearing promotion"
   ],
   "input_corpus_hash": "sha256:8466261cf9f7b500dbac1cf0ed27b67fb28dad98de414ba61e3de350308610bc",
-  "lens_coupling_audit_hash": "sha256:7427180fc8c29ee5fa8b36f86813a63a380ddb60e46ac0e6b9fd1d09d3ae4cef",
+  "lens_coupling_audit_hash": "sha256:627e62c6d9c1ae9d44e6c083ab64a36bfc74ea486896f27216bfdd81169fff9a",
   "min_negative_per_substrate": 15,
   "min_positive_per_substrate": 15,
   "mode_tag": "exploratory",
@@ -18,12 +18,12 @@
   "permutation_N": 10000,
   "permutation_seed": 24024,
   "predicate_contract_hash": "sha256:b9437939983325d322dec3210e50b4098ac06c0c10412e5c114f34e9597b39c6",
-  "primary_lens": "dynamical_systems",
+  "primary_lens": null,
   "schema": "Campaign024LensSidePreregistration.v1",
   "signature": {
     "scheme": "sha256-preregistration-content",
     "signed_by": "Codex 1.5x",
-    "signed_hash": "sha256:d816ed02b7e0dd6b24ff0f2dfb66867710b67757f33bba491550ea5eaeddad94",
+    "signed_hash": "sha256:62ac1a82631354e97d192a562b576f32493d408226a51e0792addce6cd254ab0",
     "status": "signed_before_permutation"
   },
   "statistic": "mean clean lens score on MotifContract.v2 positives minus mean score on MotifContract.v2 negatives",

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/9b9f76394a44_CITATION.cff.json`
-- JSON content_hash: `sha256:ee750ec74764db52fe02e2e2688b4d4e4f12277b8cbe97e37887fc1e8fe676d2`
+- JSON content_hash: `sha256:6dcf29a6d0c6e5025d399ebfb3bb354578ea10321ba91b44a989ce635d991cce`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/f6c204bde444_reports_campaign_010_lens_roundtrip.json.json`
-- JSON content_hash: `sha256:62ae27dbaddf4f3932bbab822be4864f336c8d3165dd7b8e7cbec42b81a74a9e`
+- JSON content_hash: `sha256:d8f9858e905de7b803f430a55ff0b04cbc3eb1161b695286f29a21b2332ad9e8`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

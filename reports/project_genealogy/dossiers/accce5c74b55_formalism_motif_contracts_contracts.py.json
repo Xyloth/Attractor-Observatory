@@ -1,0 +1,555 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-022",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "File is tracked under git but does not match a higher-priority family.",
+        "Locked MotifContract.v2 registry used by TASK-MOTIF-IMPL."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "tracked_artifact_present",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "subject": "TASK-CB-022 Topic B: enforce evidence discipline",
+            "ticket": "TASK-CB-022"
+          },
+          "statement": "File is tracked under git but does not match a higher-priority family."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "formalism/motif_contracts/contracts.py#header",
+            "ticket": "TASK-MOTIF-IMPL"
+          },
+          "statement": "Locked MotifContract.v2 registry used by TASK-MOTIF-IMPL."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::formalism/motif_contracts/contracts.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "note": "TASK-CB-022 Topic B: enforce evidence discipline",
+        "ref_id": "birth::formalism/motif_contracts/contracts.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-022",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::formalism/motif_contracts/contracts.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "formalism/motif_contracts/contracts.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::formalism/motif_contracts/contracts.py::docstring"
+      }
+    ],
+    "first_seen_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+    "first_seen_date": "2026-05-09T07:17:33-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-022",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:c767cc51307ea993be63688b6b61ee83a4c32f9d071f16ae92ab875c4d16f17b",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "formalism/motif_contracts/contracts.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: all_contracts, contract_payloads, epi, lens, som"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "formalism/motif_contracts/contracts.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, schema.LensContract, schema.MotifContractV2, schema.SourceObjectEntry, typing.Any"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "formalism/motif_contracts/contracts.py"
+          },
+          "statement": "Tracked file with 267 lines / 23269 bytes at HEAD."
+        }
+      ],
+      "byte_count": 23269,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "schema.LensContract",
+        "schema.MotifContractV2",
+        "schema.SourceObjectEntry",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 267,
+      "observed_doctrine_bindings": [
+        "D26",
+        "D31"
+      ],
+      "predicate_id": "current::formalism/motif_contracts/contracts.py",
+      "public_symbols": [
+        "all_contracts",
+        "contract_payloads",
+        "epi",
+        "lens",
+        "som"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "formalism/motif_contracts/contracts.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::formalism/motif_contracts/contracts.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D26",
+        "D31"
+      ],
+      "verified": [
+        "D26",
+        "D31"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "other",
+    "byte_count": 23269,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 267,
+    "path": "formalism/motif_contracts/contracts.py",
+    "path_hash": "sha256:3ce8d57e7e11488181f4f66dc3a6003a5d0f6fbb04729bafe5137ea744bcb540",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::formalism/motif_contracts/contracts.py->formalism/motif_contracts/schema.py::1638",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "target": "formalism/motif_contracts/schema.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::formalism/motif_contracts/contracts.py->papers/falsification/DX-003/index.md::4310",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::formalism/motif_contracts/contracts.py::papers/falsification/DX-003/index.md"
+          }
+        ],
+        "target": "papers/falsification/DX-003/index.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::formalism/motif_contracts/contracts.py->papers/falsification/DX-003/index.md::4359",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::formalism/motif_contracts/contracts.py::papers/falsification/DX-003/index.md"
+          }
+        ],
+        "target": "papers/falsification/DX-003/index.md"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-022",
+      "members": [
+        "docs/AI_LANE_ROSTER.md",
+        "formalism/evidence/substance_gate.py",
+        "formalism/floor_bfg/read_separation.py",
+        "formalism/motif_contracts/adversarial.py",
+        "formalism/motif_contracts/contracts.py",
+        "formalism/motif_contracts/schema.py",
+        "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "reports/campaign_006/audit_queue.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "spawn_ticket": "TASK-CB-022"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "edge_id": "spawned_by_ticket::TASK-CB-022->formalism/motif_contracts/contracts.py::277",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::formalism/motif_contracts/contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-022",
+        "target": "formalism/motif_contracts/contracts.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::formalism/motif_contracts/adversarial.py->formalism/motif_contracts/contracts.py::1637",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "formalism/motif_contracts/adversarial.py",
+        "target": "formalism/motif_contracts/contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::formalism/floor_bfg/read_separation.py->formalism/motif_contracts/contracts.py::4309",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::formalism/floor_bfg/read_separation.py::formalism/motif_contracts/contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "formalism/floor_bfg/read_separation.py",
+        "target": "formalism/motif_contracts/contracts.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::factory_lowlevel/adapters.py->formalism/motif_contracts/contracts.py::4358",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::factory_lowlevel/adapters.py::formalism/motif_contracts/contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "factory_lowlevel/adapters.py",
+        "target": "formalism/motif_contracts/contracts.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::formalism/motif_contracts/contracts.py->formalism/motif_contracts/schema.py::1638",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "formalism/motif_contracts/contracts.py",
+        "target": "formalism/motif_contracts/schema.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::formalism/motif_contracts/contracts.py->papers/falsification/DX-003/index.md::4310",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::formalism/motif_contracts/contracts.py::papers/falsification/DX-003/index.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "formalism/motif_contracts/contracts.py",
+        "target": "papers/falsification/DX-003/index.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::formalism/motif_contracts/contracts.py->papers/falsification/DX-003/index.md::4359",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::formalism/motif_contracts/contracts.py::papers/falsification/DX-003/index.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "formalism/motif_contracts/contracts.py",
+        "target": "papers/falsification/DX-003/index.md"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-022->formalism/motif_contracts/contracts.py::277",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::formalism/motif_contracts/contracts.py"
+          }
+        ],
+        "source": "TASK-CB-022"
+      },
+      {
+        "edge_id": "shares_birth_cohort::formalism/motif_contracts/adversarial.py->formalism/motif_contracts/contracts.py::1637",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "source": "formalism/motif_contracts/adversarial.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::formalism/floor_bfg/read_separation.py->formalism/motif_contracts/contracts.py::4309",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::formalism/floor_bfg/read_separation.py::formalism/motif_contracts/contracts.py"
+          }
+        ],
+        "source": "formalism/floor_bfg/read_separation.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::factory_lowlevel/adapters.py->formalism/motif_contracts/contracts.py::4358",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::factory_lowlevel/adapters.py::formalism/motif_contracts/contracts.py"
+          }
+        ],
+        "source": "factory_lowlevel/adapters.py"
+      }
+    ],
+    "siblings": [
+      "docs/AI_LANE_ROSTER.md",
+      "formalism/evidence/substance_gate.py",
+      "formalism/floor_bfg/read_separation.py",
+      "formalism/motif_contracts/adversarial.py",
+      "formalism/motif_contracts/schema.py",
+      "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+      "public_tests/test_cb022_topic_b_evidence_discipline.py",
+      "reports/campaign_006/audit_queue.json",
+      "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::formalism/motif_contracts/contracts.py::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:16Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

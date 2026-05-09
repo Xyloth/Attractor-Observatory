@@ -80,7 +80,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:05b18f0f6f7aa96719de15b1b63618989f1cd0215149f78ef9b41a6c61f2fe48",
+  "content_hash": "sha256:933f5ab828373e592248ab106e5eac79b874ae3f77b4df3c47b729ed7efdc3df",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -282,7 +282,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "e857373697552dd0ce702266d931384299ea053b",
-        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_wipe_log.jsonl::534",
+        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_wipe_log.jsonl::642",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -304,7 +304,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1518",
+        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1754",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -326,7 +326,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_wipe_log.jsonl::4666",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_wipe_log.jsonl::5144",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -348,7 +348,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_wipe_log.jsonl::534",
+        "edge_id": "spawned_by_ticket::CB-008->reports/campaign_022/convergence_wipe_log.jsonl::642",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -363,7 +363,7 @@
         "source": "CB-008"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1518",
+        "edge_id": "shares_birth_cohort::reports/campaign_022/convergence_session.json->reports/campaign_022/convergence_wipe_log.jsonl::1754",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -378,7 +378,7 @@
         "source": "reports/campaign_022/convergence_session.json"
       },
       {
-        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_wipe_log.jsonl::4666",
+        "edge_id": "cites::papers/methods/INGESTION_CONVERGENCE_CB008.md->reports/campaign_022/convergence_wipe_log.jsonl::5144",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -419,18 +419,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

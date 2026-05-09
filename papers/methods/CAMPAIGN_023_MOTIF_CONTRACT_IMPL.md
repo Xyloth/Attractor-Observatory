@@ -15,12 +15,12 @@ Status: exploratory; no claim-bearing promotion.
 
 | Motif | Contract hash | Primary detector | N | Observed gap | CI high | Verdict |
 |---|---|---|---:|---:|---:|---|
-| `motif.autocatalytic_closure.draft` | `sha256:c54b3c4d36ac4191b235db4d6958c2888aa78ac6fbe513a7f9e091d51923cb9e` | `graph` | 10000 | 0.600000 | 0.200000 | `signal_survives_shuffle` |
-| `motif.repair.draft` | `sha256:d294462ebd7eb3a3e0badeba60669154eb0f612144ce039404e6d9be984ed727` | `graph` | 10000 | 0.500000 | 0.133333 | `signal_survives_shuffle` |
-| `motif.externalized_memory.draft` | `sha256:b9437939983325d322dec3210e50b4098ac06c0c10412e5c114f34e9597b39c6` | `graph` | 10000 | 0.500000 | 0.166667 | `signal_survives_shuffle` |
-| `motif.replication_lineage.draft` | `sha256:5ce35bc9b64c16a61977b14a4801f6db0b85cdd8e1a0a900c746294d4dd93a45` | `graph` | 10000 | 0.600000 | 0.200000 | `signal_survives_shuffle` |
-| `motif.self_maintained_boundary.draft` | `sha256:9d30531db762cfef54982ef0d0456716bfe4500590399c0a46fd8628435af628` | `graph` | 10000 | 0.500000 | 0.166667 | `signal_survives_shuffle` |
-| `motif.floor_connectivity.draft` | `sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e` | `campaign009_bfg_calibrated_detector` | 10000 | 0.198880 | 0.072361 | `signal_survives_shuffle` |
+| `motif.autocatalytic_closure.draft` | `sha256:c07b6715e97247247c9348830170958bc8f157821e7426a23eeb568392d0641e` | `graph` | 10000 | 0.600000 | 0.200000 | `signal_survives_shuffle` |
+| `motif.repair.draft` | `sha256:e436836f95cfb5ec09d9b0bc3492a63c6e4c68ed567e99d2b60802bd8306cd8b` | `graph` | 10000 | 0.500000 | 0.133333 | `signal_survives_shuffle` |
+| `motif.externalized_memory.draft` | `sha256:de8c058fca42cdfd06c8ebd4162a163de51ca84e3565d01b6da3c1e57359edb4` | `graph` | 10000 | 0.500000 | 0.166667 | `signal_survives_shuffle` |
+| `motif.replication_lineage.draft` | `sha256:155cf6a4aac0254687b5fb5d2492ba469e7833416508068e16b84041e904e495` | `graph` | 10000 | 0.600000 | 0.200000 | `signal_survives_shuffle` |
+| `motif.self_maintained_boundary.draft` | `sha256:c36f0b5d3fb431801ad9b1cf66891117b3680d739a79f6bad2e64911722d62fc` | `graph` | 10000 | 0.500000 | 0.166667 | `signal_survives_shuffle` |
+| `motif.floor_connectivity.draft` | `sha256:09f36d87830ce82b6b193f5f87cc08cb9ddc7dc28fa59607f28d09cf0ed50109` | `campaign009_bfg_calibrated_detector` | 10000 | 0.198880 | 0.072361 | `signal_survives_shuffle` |
 
 ## Aggregate
 

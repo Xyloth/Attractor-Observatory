@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/e80645b811ff_reports_campaign_021_source_cache_live_smoke_gbif_jornada_ecosystem_Ascomycota.json.json`
-- JSON content_hash: `sha256:781210221d6338cfeb0009830194842ea3af388649dbd37a96175e41516d308f`
+- JSON content_hash: `sha256:7a03e8d6a0db2f176a6849f9878df9a6ac006b5154cc2b8ca5716a992795f893`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

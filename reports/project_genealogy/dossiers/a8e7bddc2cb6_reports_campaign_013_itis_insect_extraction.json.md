@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/a8e7bddc2cb6_reports_campaign_013_itis_insect_extraction.json.json`
-- JSON content_hash: `sha256:127e42c6df1260a5a25151804ffb3af0ffc8fcfe698de26e40c1d906fb1a834c`
+- JSON content_hash: `sha256:ab21fce7a0d835811c8bc35249081049c06ed0c3f50323465f81c54999c5ba0b`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

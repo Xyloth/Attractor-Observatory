@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/3b87c0e7b157_reports_campaign_021_factory_store_source_cache_index.json.json`
-- JSON content_hash: `sha256:41ece7e282600c36937fa8fca02adb0c0f5f2da5e5693babdf8c2deff7a8d77b`
+- JSON content_hash: `sha256:3a3796a1a590a1d51c4753c3efefb2fe333d0829d8813c89a8348d7e3bb6f7eb`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 70 / Bytes: 3622
+- Lines: 90 / Bytes: 5307
 
 ## Birth
 - Status: `recovered`
@@ -22,22 +22,23 @@
 "entries": [
 {
 "cache_id": "sha256:07cc3573b22a3660c0f782561623c8ba4564788a5b6eec0471c05906cb7456d2",
+"evidence_private": true,
 "export_policy": "bibliographic_metadata_and_derived_parameters_only",
 "fetched_at": "2026-05-06T10:47:05Z",
 "license_class": "metadata_only",
 "parser_version": "reaction-diffusion-benchmark-catalog.v1",
-"raw_cache_path": "reports\\campaign_021\\source_cache\\reaction_diffusion_benchmarks",
-"raw
+"private_boundary_reason": "D23/D29: referenced runtime artifact i
 
 ## Current
 - Status: `recovered`
+- Observed doctrines: `D23, D29`
 
 ## DepthVector.v1
 - **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
-- **doctrine_binding_quality**: `{'required': ['D11'], 'verified': [], 'claimed_only': ['D11'], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D23', 'D29'], 'verified': ['D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': [], 'weighted_value': 0.0}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 1.5}`
 
 ## Drift
 - Status: `review_required`

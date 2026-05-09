@@ -59,9 +59,13 @@
       "passed": true,
       "substance": {
         "d17_5_audit_met": true,
+        "evidence_private": true,
         "line_floor": 400,
         "line_floor_met": true,
         "path": "worlds\\hypergraph_reactions\\model.py",
+        "path_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+        "path_status": "private_unshipped",
+        "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
         "scaffolding_lines": 39,
         "simulation_logic_lines": 443,
         "substance_audit": {

@@ -95,7 +95,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:f14dffd5c39c3e51d09a725e6de281132b7324890ac09679bd666a061b7b14d3",
+  "content_hash": "sha256:9ca0e3c266b4c73edeb697b6ac6405b3d759d461dc28a920808ce4d4dd0c7ced",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -121,10 +121,10 @@
             "kind": "file_span",
             "locator": "factory_lowlevel/live_pipeline.py"
           },
-          "statement": "Tracked file with 581 lines / 24564 bytes at HEAD."
+          "statement": "Tracked file with 674 lines / 29852 bytes at HEAD."
         }
       ],
-      "byte_count": 24564,
+      "byte_count": 29852,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
@@ -150,6 +150,7 @@
         "adapters.SzostakLiposomeProtocellAdapter",
         "collections.Counter",
         "collections.defaultdict",
+        "gc",
         "hashlib",
         "json",
         "normalization.normalize_record",
@@ -164,41 +165,42 @@
         "schemas.NormalizedReference",
         "schemas.sha256",
         "schemas.utc_now",
+        "time",
         "typing.Any"
       ],
       "letter_vs_spirit_surfaces": [
         {
-          "line": 19,
+          "line": 21,
           "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
           "snippet": "except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs."
         },
         {
-          "line": 59,
+          "line": 61,
           "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
           "snippet": "except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs."
         },
         {
-          "line": 508,
+          "line": 547,
           "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
           "snippet": "if \"/traces/\" in normalized or normalized.endswith(\"/traces\") or \"/daemon_traces/\" in normalized:"
         },
         {
-          "line": 533,
+          "line": 572,
           "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
           "snippet": "except (OSError, json.JSONDecodeError):"
         },
         {
-          "line": 550,
+          "line": 619,
           "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
-          "snippet": "except PermissionError:"
+          "snippet": "except OSError:"
         },
         {
-          "line": 556,
+          "line": 642,
           "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
-          "snippet": "except PermissionError:"
+          "snippet": "except OSError as exc:"
         }
       ],
-      "line_count": 581,
+      "line_count": 674,
       "observed_doctrine_bindings": [
         "D29"
       ],
@@ -229,23 +231,23 @@
       "covered_bad_cases": [
         {
           "id": "error_branch",
-          "line": 19
+          "line": 21
         },
         {
           "id": "error_branch",
-          "line": 59
+          "line": 61
         },
         {
           "id": "error_branch",
-          "line": 533
+          "line": 572
         },
         {
           "id": "error_branch",
-          "line": 550
+          "line": 619
         },
         {
           "id": "error_branch",
-          "line": 556
+          "line": 642
         },
         {
           "id": "decline_branch",
@@ -346,7 +348,7 @@
     "letter_vs_spirit_flags": [
       {
         "kind": "letter_coupled_surface",
-        "line": 19,
+        "line": 21,
         "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
@@ -358,7 +360,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 59,
+        "line": 61,
         "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
@@ -370,7 +372,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 508,
+        "line": 547,
         "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
         "reproducer": {
           "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
@@ -382,7 +384,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 533,
+        "line": 572,
         "pattern": "except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s*\\([^)]+\\)\\s*(?:as\\s+\\w+)?:\" -n",
@@ -394,7 +396,7 @@
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 550,
+        "line": 619,
         "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
@@ -402,11 +404,11 @@
           "kind": "grep",
           "last_run_status": "not_run"
         },
-        "snippet": "except PermissionError:"
+        "snippet": "except OSError:"
       },
       {
         "kind": "letter_coupled_surface",
-        "line": 556,
+        "line": 642,
         "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
         "reproducer": {
           "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
@@ -414,7 +416,7 @@
           "kind": "grep",
           "last_run_status": "not_run"
         },
-        "snippet": "except PermissionError:"
+        "snippet": "except OSError as exc:"
       }
     ],
     "missing_birth_atoms": [],
@@ -438,12 +440,12 @@
   },
   "file": {
     "artifact_family": "factory",
-    "byte_count": 24564,
+    "byte_count": 29852,
     "generated_status": "source",
     "language": "python",
-    "line_count": 581,
+    "line_count": 674,
     "path": "factory_lowlevel/live_pipeline.py",
-    "path_hash": "sha256:e94cbc606316fa6e23213248d09ff01e7e179d3d95148979c93e10703a597c37",
+    "path_hash": "sha256:e37380a1f3e4dc227ec7185f4668068e776bb1b5d432497bbc956508468d5de8",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -452,7 +454,7 @@
   },
   "findings": [
     {
-      "claim": "Detected letter-coupled fix surface at line 19: except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs.",
+      "claim": "Detected letter-coupled fix surface at line 21: except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs.",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -462,7 +464,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/live_pipeline.py#L19",
+          "locator": "factory_lowlevel/live_pipeline.py#L21",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/live_pipeline.py::lvs::0"
         }
@@ -483,7 +485,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 59: except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs.",
+      "claim": "Detected letter-coupled fix surface at line 61: except ModuleNotFoundError as exc:  # pragma: no cover - exercised by public-surface installs.",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -493,7 +495,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/live_pipeline.py#L59",
+          "locator": "factory_lowlevel/live_pipeline.py#L61",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/live_pipeline.py::lvs::1"
         }
@@ -514,7 +516,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 508: if \"/traces/\" in normalized or normalized.endswith(\"/traces\") or \"/daemon_traces/\" in normalized:",
+      "claim": "Detected letter-coupled fix surface at line 547: if \"/traces/\" in normalized or normalized.endswith(\"/traces\") or \"/daemon_traces/\" in normalized:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -524,7 +526,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/live_pipeline.py#L508",
+          "locator": "factory_lowlevel/live_pipeline.py#L547",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/live_pipeline.py::lvs::2"
         }
@@ -545,7 +547,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 533: except (OSError, json.JSONDecodeError):",
+      "claim": "Detected letter-coupled fix surface at line 572: except (OSError, json.JSONDecodeError):",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -555,7 +557,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/live_pipeline.py#L533",
+          "locator": "factory_lowlevel/live_pipeline.py#L572",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/live_pipeline.py::lvs::3"
         }
@@ -576,7 +578,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 550: except PermissionError:",
+      "claim": "Detected letter-coupled fix surface at line 619: except OSError:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -586,7 +588,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/live_pipeline.py#L550",
+          "locator": "factory_lowlevel/live_pipeline.py#L619",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/live_pipeline.py::lvs::4"
         }
@@ -598,7 +600,7 @@
       ],
       "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
       "reproducer": {
-        "command": "rg -n -F 'except PermissionError:' -- factory_lowlevel/live_pipeline.py",
+        "command": "rg -n -F 'except OSError:' -- factory_lowlevel/live_pipeline.py",
         "expected_result": "non-zero match at the cited line",
         "kind": "grep",
         "last_run_status": "not_run"
@@ -607,7 +609,7 @@
       "status": "hypothesis"
     },
     {
-      "claim": "Detected letter-coupled fix surface at line 556: except PermissionError:",
+      "claim": "Detected letter-coupled fix surface at line 642: except OSError as exc:",
       "doctrine_refs": [
         "D26",
         "D27"
@@ -617,7 +619,7 @@
           "content_hash": "",
           "evidence_private": false,
           "kind": "grep",
-          "locator": "factory_lowlevel/live_pipeline.py#L556",
+          "locator": "factory_lowlevel/live_pipeline.py#L642",
           "note": "letter-coupled surface detected mechanically",
           "ref_id": "finding::factory_lowlevel/live_pipeline.py::lvs::5"
         }
@@ -629,7 +631,7 @@
       ],
       "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
       "reproducer": {
-        "command": "rg -n -F 'except PermissionError:' -- factory_lowlevel/live_pipeline.py",
+        "command": "rg -n -F 'except OSError as exc:' -- factory_lowlevel/live_pipeline.py",
         "expected_result": "non-zero match at the cited line",
         "kind": "grep",
         "last_run_status": "not_run"
@@ -668,7 +670,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/live_pipeline.py->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::1311",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/live_pipeline.py->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::1441",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -683,7 +685,7 @@
         "target": "papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D29::factory_lowlevel/live_pipeline.py->papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md::4083",
+        "edge_id": "implements_same_doctrine::D29::factory_lowlevel/live_pipeline.py->formalism/floor_bfg/read_separation.py::4421",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -692,10 +694,10 @@
             "kind": "grep",
             "locator": "both files mention D29",
             "note": "shared mention of doctrine D29",
-            "ref_id": "doctrine::D29::factory_lowlevel/live_pipeline.py::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+            "ref_id": "doctrine::D29::factory_lowlevel/live_pipeline.py::formalism/floor_bfg/read_separation.py"
           }
         ],
-        "target": "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+        "target": "formalism/floor_bfg/read_separation.py"
       }
     ],
     "cohort": {
@@ -809,7 +811,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
-        "edge_id": "spawned_by_ticket::TASK-033->factory_lowlevel/live_pipeline.py::259",
+        "edge_id": "spawned_by_ticket::TASK-033->factory_lowlevel/live_pipeline.py::261",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -831,7 +833,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::717",
+        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::847",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -853,7 +855,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::718",
+        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::848",
         "edge_type": "validates",
         "evidence_refs": [
           {
@@ -875,7 +877,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/hardening.py->factory_lowlevel/live_pipeline.py::1310",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/hardening.py->factory_lowlevel/live_pipeline.py::1440",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -898,7 +900,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D29",
-        "edge_id": "implements_same_doctrine::D29::docs/doctrine_registry.json->factory_lowlevel/live_pipeline.py::4082",
+        "edge_id": "implements_same_doctrine::D29::docs/doctrine_registry.json->factory_lowlevel/live_pipeline.py::4420",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -920,7 +922,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/live_pipeline.py::4462",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/live_pipeline.py::4928",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -942,7 +944,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/live_pipeline.py->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::1311",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/live_pipeline.py->papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md::1441",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -965,7 +967,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D29",
-        "edge_id": "implements_same_doctrine::D29::factory_lowlevel/live_pipeline.py->papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md::4083",
+        "edge_id": "implements_same_doctrine::D29::factory_lowlevel/live_pipeline.py->formalism/floor_bfg/read_separation.py::4421",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -974,7 +976,7 @@
             "kind": "grep",
             "locator": "both files mention D29",
             "note": "shared mention of doctrine D29",
-            "ref_id": "doctrine::D29::factory_lowlevel/live_pipeline.py::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+            "ref_id": "doctrine::D29::factory_lowlevel/live_pipeline.py::formalism/floor_bfg/read_separation.py"
           }
         ],
         "private_boundary": {
@@ -982,12 +984,12 @@
           "reason": ""
         },
         "source": "factory_lowlevel/live_pipeline.py",
-        "target": "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+        "target": "formalism/floor_bfg/read_separation.py"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-033->factory_lowlevel/live_pipeline.py::259",
+        "edge_id": "spawned_by_ticket::TASK-033->factory_lowlevel/live_pipeline.py::261",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -1002,7 +1004,7 @@
         "source": "TASK-033"
       },
       {
-        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::717",
+        "edge_id": "imports::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::847",
         "edge_type": "imports",
         "evidence_refs": [
           {
@@ -1017,7 +1019,7 @@
         "source": "public_tests/test_live_pipeline_world_traces.py"
       },
       {
-        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::718",
+        "edge_id": "validates::public_tests/test_live_pipeline_world_traces.py->factory_lowlevel/live_pipeline.py::848",
         "edge_type": "validates",
         "evidence_refs": [
           {
@@ -1032,7 +1034,7 @@
         "source": "public_tests/test_live_pipeline_world_traces.py"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/hardening.py->factory_lowlevel/live_pipeline.py::1310",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/hardening.py->factory_lowlevel/live_pipeline.py::1440",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1047,7 +1049,7 @@
         "source": "factory_lowlevel/hardening.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D29::docs/doctrine_registry.json->factory_lowlevel/live_pipeline.py::4082",
+        "edge_id": "implements_same_doctrine::D29::docs/doctrine_registry.json->factory_lowlevel/live_pipeline.py::4420",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1062,7 +1064,7 @@
         "source": "docs/doctrine_registry.json"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/live_pipeline.py::4462",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/live_pipeline.py::4928",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1151,18 +1153,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 2
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

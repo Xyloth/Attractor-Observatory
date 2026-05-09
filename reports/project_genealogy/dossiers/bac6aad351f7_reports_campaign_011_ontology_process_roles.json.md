@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/bac6aad351f7_reports_campaign_011_ontology_process_roles.json.json`
-- JSON content_hash: `sha256:1294be19afe709d63e2ac3284b34b787c3c8837530d293848eb7fada727d7320`
+- JSON content_hash: `sha256:e7c739336b5ddc049e105e1999c2940ece2f20eb3dd68b77a6012b814db25a0b`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

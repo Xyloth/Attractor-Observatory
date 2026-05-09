@@ -81,7 +81,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:83e28d27671e40d79c8f5f7200bf235219150de58b3fc3890a22ff9e605fd376",
+  "content_hash": "sha256:7d1dea2a9692aa0eb1908e395bf343b00a65b601b3cde56bed649bce50c33dbc",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -217,7 +217,7 @@
     "language": "json",
     "line_count": 52,
     "path": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
-    "path_hash": "sha256:3239dfd06d4ebc7fa22c21e97773c15cfa96ee789591ad5ddc06c6e887ef860c",
+    "path_hash": "sha256:3339bc1e991563ca8fcb73c3310793a344e1f63dcf7ec849f5ba287840a109c8",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -256,7 +256,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->reports/campaign_002/fair_metadata.json::1386",
+        "edge_id": "shares_birth_cohort::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->reports/campaign_002/fair_metadata.json::1516",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -271,7 +271,7 @@
         "target": "reports/campaign_002/fair_metadata.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_telemetry/ai_builder_tasks.jsonl::4290",
+        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_genealogy/dossier.py::4742",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -280,10 +280,10 @@
             "kind": "grep",
             "locator": "both files mention D27",
             "note": "shared mention of doctrine D27",
-            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_genealogy/dossier.py"
           }
         ],
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "project_genealogy/dossier.py"
       }
     ],
     "cohort": {
@@ -346,7 +346,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
-        "edge_id": "spawned_by_ticket::DX-002->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::319",
+        "edge_id": "spawned_by_ticket::DX-002->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::402",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -368,7 +368,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::1385",
+        "edge_id": "shares_birth_cohort::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::1515",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -391,7 +391,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D27",
-        "edge_id": "implements_same_doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4289",
+        "edge_id": "implements_same_doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4741",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -413,7 +413,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4449",
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4915",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -435,7 +435,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4671",
+        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::5149",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -457,7 +457,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->reports/campaign_002/fair_metadata.json::1386",
+        "edge_id": "shares_birth_cohort::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->reports/campaign_002/fair_metadata.json::1516",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -480,7 +480,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D27",
-        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_telemetry/ai_builder_tasks.jsonl::4290",
+        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_genealogy/dossier.py::4742",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -489,7 +489,7 @@
             "kind": "grep",
             "locator": "both files mention D27",
             "note": "shared mention of doctrine D27",
-            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_genealogy/dossier.py"
           }
         ],
         "private_boundary": {
@@ -497,12 +497,12 @@
           "reason": ""
         },
         "source": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "project_genealogy/dossier.py"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::DX-002->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::319",
+        "edge_id": "spawned_by_ticket::DX-002->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::402",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -517,7 +517,7 @@
         "source": "DX-002"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::1385",
+        "edge_id": "shares_birth_cohort::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::1515",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -532,7 +532,7 @@
         "source": "papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.signed.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4289",
+        "edge_id": "implements_same_doctrine::D27::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4741",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -547,7 +547,7 @@
         "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4449",
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4915",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -562,7 +562,7 @@
         "source": "BUILD_LOG.md"
       },
       {
-        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::4671",
+        "edge_id": "cites::papers/methods/MEASURABILITY_RECOVERY_PLAN_v1.md->papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::5149",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -650,18 +650,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

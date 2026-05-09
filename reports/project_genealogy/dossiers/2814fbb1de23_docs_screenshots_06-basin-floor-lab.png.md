@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/2814fbb1de23_docs_screenshots_06-basin-floor-lab.png.json`
-- JSON content_hash: `sha256:84c77225b39f2da83cce0c96575f6207382c1dcefc9555ccde8adbdee2688fd0`
+- JSON content_hash: `sha256:144dca080c9df4a2d815920f8957a88e9e865e45b8837112a61e59ecf1854dad`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `docs`
 - Generated status: `source`

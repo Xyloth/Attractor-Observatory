@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/434454a890c8_papers_methods_INGESTION_TARGETS.md.json`
-- JSON content_hash: `sha256:d0dce511644e5a02c4a2908decab575bda108cf6669e78d79e7700692d70202c`
+- JSON content_hash: `sha256:8e47c806fea7898cf22ab8d4efe2eabff51468102635a6cf5d23c26bb4bf3b68`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

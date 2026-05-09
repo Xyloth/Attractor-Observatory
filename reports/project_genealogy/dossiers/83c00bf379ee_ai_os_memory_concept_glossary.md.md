@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/83c00bf379ee_ai_os_memory_concept_glossary.md.json`
-- JSON content_hash: `sha256:4e570ae4459267bb23d2b156f44885e0971fd713843d4eecc0ae9969bcf2dbfb`
+- JSON content_hash: `sha256:d0553ee1f980aa4d9b9db0c035d9add107f2638dcfa8771441e42fa8fc6552b5`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `ai_os`
 - Generated status: `source`

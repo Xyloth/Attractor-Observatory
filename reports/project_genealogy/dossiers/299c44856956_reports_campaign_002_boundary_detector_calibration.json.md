@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/299c44856956_reports_campaign_002_boundary_detector_calibration.json.json`
-- JSON content_hash: `sha256:e341cde0f280766a4f44efded997b44625c08d81a1c850a8e0f8eeee94f4fd4b`
+- JSON content_hash: `sha256:fd28fb5616380463ecaf6a2dd739d2f70eb7550d5ff54e9eb3dc59e3569354b9`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

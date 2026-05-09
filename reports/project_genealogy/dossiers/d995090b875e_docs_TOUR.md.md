@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/d995090b875e_docs_TOUR.md.json`
-- JSON content_hash: `sha256:6131b23850bf85963467cb8d21f761fdfedaf942b0a5bf7eed408740b943a8ec`
+- JSON content_hash: `sha256:5423fee43c8e691ca6dd5ed734f5805d224b21a8d557231ae6cbc821c4fd2ec8`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `docs`
 - Generated status: `source`

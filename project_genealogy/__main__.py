@@ -32,6 +32,29 @@ from project_genealogy.runner import (
 from project_genealogy.query import cli_main as query_cli
 
 
+COMMANDS = {
+    "run-prepass": "Build reports/project_genealogy/input_manifest.json.",
+    "run-pass1": "Build the structural graph in memory.",
+    "run-pass2": "Write per-file dossiers.",
+    "run-pass3": "Assemble atlas_latest.json.",
+    "run-pass4": "Build coherence_latest.json.",
+    "run-all": "Run PG-001 prepass through pass 4.",
+    "query": "Run project_genealogy.query subcommands.",
+}
+
+
+def _print_help(command: str | None = None) -> None:
+    if command is None:
+        print(__doc__)
+        print("\nCommands:")
+        for name, description in COMMANDS.items():
+            print(f"  {name:<12} {description}")
+        return
+    print(f"python -m project_genealogy {command}")
+    print(COMMANDS.get(command, "Unknown command."))
+    print("Use --help before running a mutating PG-001 pass.")
+
+
 def _read_manifest(repo_root: Path) -> dict:
     p = repo_root / REPORT_DIR / "input_manifest.json"
     if not p.is_file():
@@ -50,12 +73,15 @@ def _read_atlas(repo_root: Path) -> dict:
 
 def main(argv: list[str] | None = None) -> int:
     argv = list(argv) if argv is not None else sys.argv[1:]
-    if not argv:
-        print(__doc__)
+    if not argv or argv[0] in {"-h", "--help"}:
+        _print_help()
         return 0
     cmd = argv[0]
     rest = argv[1:]
     repo_root = Path.cwd()
+    if rest and any(arg in {"-h", "--help"} for arg in rest):
+        _print_help(cmd)
+        return 0
 
     if cmd == "run-prepass":
         run_prepass(repo_root)

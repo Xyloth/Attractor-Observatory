@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/688ee34369e6_Visuals_ui_kits_control_room_HealthBadge.jsx.json`
-- JSON content_hash: `sha256:127e88ca5b526d73a0b6006eb75534e028da217dc762b4c989670b13cbe3825b`
+- JSON content_hash: `sha256:2d6ac91007c2f6eda50cd284f4d4f83fd1158050ab491d965dbd0b2491342b37`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

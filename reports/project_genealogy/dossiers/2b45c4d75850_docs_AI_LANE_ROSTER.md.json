@@ -1,0 +1,345 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-022",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Doc serves the project handbook (doctrine support, methodology, audit notes)."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "doc_serves_handbook",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "8c4b0146dbc311192df42ce23267374c458fbd92",
+            "subject": "TASK-CB-022 Topic C: harden PG-001 acceptance",
+            "ticket": "TASK-CB-022"
+          },
+          "statement": "Doc serves the project handbook (doctrine support, methodology, audit notes)."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11"
+      ],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::docs/AI_LANE_ROSTER.md"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "8c4b0146dbc311192df42ce23267374c458fbd92",
+        "note": "TASK-CB-022 Topic C: harden PG-001 acceptance",
+        "ref_id": "birth::docs/AI_LANE_ROSTER.md::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-022",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::docs/AI_LANE_ROSTER.md::ticket"
+      }
+    ],
+    "first_seen_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "first_seen_date": "2026-05-09T07:20:17-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-022",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:25dd2259c0923f0993d4a773c7effa7d448dea3296b4f6461de55f1740beed38",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "docs/AI_LANE_ROSTER.md"
+          },
+          "statement": "Tracked file with 33 lines / 2669 bytes at HEAD."
+        },
+        {
+          "atom_id": "doc_terms_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "docs/AI_LANE_ROSTER.md#pattern:doctrine|handbook|method|audit"
+          },
+          "statement": "Pattern /doctrine|handbook|method|audit/ matches in current file."
+        }
+      ],
+      "byte_count": 2669,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 33,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::docs/AI_LANE_ROSTER.md",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "docs/AI_LANE_ROSTER.md",
+        "note": "current contents at HEAD",
+        "ref_id": "current::docs/AI_LANE_ROSTER.md::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [
+        "D11"
+      ],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11"
+      ],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "doc_terms_present",
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "docs",
+    "byte_count": 2669,
+    "generated_status": "source",
+    "language": "markdown",
+    "line_count": 33,
+    "path": "docs/AI_LANE_ROSTER.md",
+    "path_hash": "sha256:b5948f59e3f618e309c3345ce8c5f4229991784f0a64bdb34903365c7a410bd0",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::docs/AI_LANE_ROSTER.md->formalism/evidence/substance_gate.py::1634",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "target": "formalism/evidence/substance_gate.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-022",
+      "members": [
+        "docs/AI_LANE_ROSTER.md",
+        "formalism/evidence/substance_gate.py",
+        "formalism/floor_bfg/read_separation.py",
+        "formalism/motif_contracts/adversarial.py",
+        "formalism/motif_contracts/contracts.py",
+        "formalism/motif_contracts/schema.py",
+        "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "reports/campaign_006/audit_queue.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "spawn_ticket": "TASK-CB-022"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+        "edge_id": "spawned_by_ticket::TASK-CB-022->docs/AI_LANE_ROSTER.md::230",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8c4b0146dbc311192df42ce23267374c458fbd92",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::docs/AI_LANE_ROSTER.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-022",
+        "target": "docs/AI_LANE_ROSTER.md"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/AI_LANE_ROSTER.md->formalism/evidence/substance_gate.py::1634",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/AI_LANE_ROSTER.md",
+        "target": "formalism/evidence/substance_gate.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-022->docs/AI_LANE_ROSTER.md::230",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "8c4b0146dbc311192df42ce23267374c458fbd92",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::docs/AI_LANE_ROSTER.md"
+          }
+        ],
+        "source": "TASK-CB-022"
+      }
+    ],
+    "siblings": [
+      "formalism/evidence/substance_gate.py",
+      "formalism/floor_bfg/read_separation.py",
+      "formalism/motif_contracts/adversarial.py",
+      "formalism/motif_contracts/contracts.py",
+      "formalism/motif_contracts/schema.py",
+      "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+      "public_tests/test_cb022_topic_b_evidence_discipline.py",
+      "reports/campaign_006/audit_queue.json",
+      "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::docs/AI_LANE_ROSTER.md::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:16Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -84,7 +84,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:c8deaff21e6770df0b56faa79c8913262ee68321e9e54c4eb2c33e4c66ff2e78",
+  "content_hash": "sha256:82dd6219c68b1fbcd1764bd79c70b07a59044612355673615cb19dc470213a33",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -240,7 +240,7 @@
     "language": "markdown",
     "line_count": 13,
     "path": "docs/doctrine_d14.md",
-    "path_hash": "sha256:72d8568e641a0479cf186b59f47a40c42933ae546f9d66909cde3b01f3976d9b",
+    "path_hash": "sha256:1b92be82434fc9a3cfcaadff7d64f757ada567a574f04317b279353eee436b5c",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -279,7 +279,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::docs/doctrine_d14.md->docs/doctrine_d18.md::1125",
+        "edge_id": "shares_birth_cohort::docs/doctrine_d14.md->docs/doctrine_d18.md::1255",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -294,7 +294,7 @@
         "target": "docs/doctrine_d18.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D14::docs/doctrine_d14.md->docs/doctrine_registry.json::2102",
+        "edge_id": "implements_same_doctrine::D14::docs/doctrine_d14.md->docs/doctrine_registry.json::2347",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -309,7 +309,7 @@
         "target": "docs/doctrine_registry.json"
       },
       {
-        "edge_id": "cites::docs/doctrine_d14.md->reports/campaign_007/d14_audit.json::4632",
+        "edge_id": "cites::docs/doctrine_d14.md->reports/campaign_007/d14_audit.json::5110",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -567,7 +567,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::docs/TOUR.md->docs/doctrine_d14.md::1124",
+        "edge_id": "shares_birth_cohort::docs/TOUR.md->docs/doctrine_d14.md::1254",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -590,7 +590,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D14",
-        "edge_id": "implements_same_doctrine::D14::docs/SAMPLE_CODE.md->docs/doctrine_d14.md::2101",
+        "edge_id": "implements_same_doctrine::D14::docs/SAMPLE_CODE.md->docs/doctrine_d14.md::2346",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -612,7 +612,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::docs/doctrine_registry.json->docs/doctrine_d14.md::4637",
+        "edge_id": "cites::docs/doctrine_registry.json->docs/doctrine_d14.md::5115",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -634,7 +634,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::docs/doctrine_d14.md->docs/doctrine_d18.md::1125",
+        "edge_id": "shares_birth_cohort::docs/doctrine_d14.md->docs/doctrine_d18.md::1255",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -657,7 +657,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D14",
-        "edge_id": "implements_same_doctrine::D14::docs/doctrine_d14.md->docs/doctrine_registry.json::2102",
+        "edge_id": "implements_same_doctrine::D14::docs/doctrine_d14.md->docs/doctrine_registry.json::2347",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -679,7 +679,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::docs/doctrine_d14.md->reports/campaign_007/d14_audit.json::4632",
+        "edge_id": "cites::docs/doctrine_d14.md->reports/campaign_007/d14_audit.json::5110",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -701,7 +701,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::docs/TOUR.md->docs/doctrine_d14.md::1124",
+        "edge_id": "shares_birth_cohort::docs/TOUR.md->docs/doctrine_d14.md::1254",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -716,7 +716,7 @@
         "source": "docs/TOUR.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D14::docs/SAMPLE_CODE.md->docs/doctrine_d14.md::2101",
+        "edge_id": "implements_same_doctrine::D14::docs/SAMPLE_CODE.md->docs/doctrine_d14.md::2346",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -731,7 +731,7 @@
         "source": "docs/SAMPLE_CODE.md"
       },
       {
-        "edge_id": "cites::docs/doctrine_registry.json->docs/doctrine_d14.md::4637",
+        "edge_id": "cites::docs/doctrine_registry.json->docs/doctrine_d14.md::5115",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -820,18 +820,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

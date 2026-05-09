@@ -56,7 +56,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:c7d416404561eacb853befff234605907687c874a5373bc5d909f4ee19ef2232",
+  "content_hash": "sha256:d8a905ed2ca21e38a8adf4d66f24ea37deff2bb9db616b013c5a1446045ca1b3",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -173,7 +173,7 @@
     "language": "text",
     "line_count": 5,
     "path": "Dockerfile",
-    "path_hash": "sha256:059ae3bd79e88e7cd9b5058118c90c64827dc1de29e94a1763d6bf5056184795",
+    "path_hash": "sha256:1ec983c5ff1b358eb7d156c412e40bde29d2d126b5d8fc96c131d4703897d7d9",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -212,7 +212,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::Dockerfile->LICENSE::1053",
+        "edge_id": "shares_birth_cohort::Dockerfile->LICENSE::1183",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -470,7 +470,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::CONTRIBUTING.md->Dockerfile::1052",
+        "edge_id": "shares_birth_cohort::CONTRIBUTING.md->Dockerfile::1182",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -492,7 +492,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Dockerfile->LICENSE::1053",
+        "edge_id": "shares_birth_cohort::Dockerfile->LICENSE::1183",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -514,7 +514,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::CONTRIBUTING.md->Dockerfile::1052",
+        "edge_id": "shares_birth_cohort::CONTRIBUTING.md->Dockerfile::1182",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -603,18 +603,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/3d1e754bfe72_project_telemetry_task_021_progress_record.json.json`
-- JSON content_hash: `sha256:1961a29bd9d44d0cdd32c04ff0d9516718dc6882150e0a645a6e0f7400b59d4f`
+- JSON content_hash: `sha256:98950df728e1ded8057472e804956c86857aeed16fb26f2ab4a1d62872c38dcc`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `telemetry`
 - Generated status: `source`

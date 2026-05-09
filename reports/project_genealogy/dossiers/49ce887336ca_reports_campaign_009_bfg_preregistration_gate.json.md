@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/49ce887336ca_reports_campaign_009_bfg_preregistration_gate.json.json`
-- JSON content_hash: `sha256:e6e11555da9dc050a627577e9e7f22c358c4cfb31a32390e0993301d2232d038`
+- JSON content_hash: `sha256:d70a2fc9eec4bd73967c995840495383dba9dc3712a2b54cae8ecd94739615b0`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

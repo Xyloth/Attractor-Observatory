@@ -2,7 +2,11 @@
   "applications": [
     {
       "artifact": "validation\\claim_ledger\\claims.jsonl",
+      "artifact_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "artifact_status": "private_unshipped",
+      "evidence_private": true,
       "modification": "status=exploratory; public_allowed=false; D11 weakness note",
+      "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
       "rows_modified": 10
     },
     {

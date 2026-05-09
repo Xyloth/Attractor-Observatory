@@ -67,7 +67,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:72e8a6948721075c3ada8fd840f55875809d68e33a623c0237e0e16840059a7d",
+  "content_hash": "sha256:60a926d4dce6ebf276f53a29d17258e701e4cbba9eda3eb7f0e4278fdc6a6b42",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -255,7 +255,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_017/density_falsifiers.json->reports/campaign_017/factory_recovery.json::1328",
+        "edge_id": "shares_birth_cohort::reports/campaign_017/density_falsifiers.json->reports/campaign_017/factory_recovery.json::1458",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -381,7 +381,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "ff7a2adff3a2bcf5dbddec8e613b3a17dc69edfd",
-        "edge_id": "spawned_by_ticket::TASK-033->reports/campaign_017/density_falsifiers.json::477",
+        "edge_id": "spawned_by_ticket::TASK-033->reports/campaign_017/density_falsifiers.json::585",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -403,7 +403,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_008/full_report.json->reports/campaign_017/density_falsifiers.json::1327",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/full_report.json->reports/campaign_017/density_falsifiers.json::1457",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -425,7 +425,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_017/density_falsifiers.json->reports/campaign_017/factory_recovery.json::1328",
+        "edge_id": "shares_birth_cohort::reports/campaign_017/density_falsifiers.json->reports/campaign_017/factory_recovery.json::1458",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -447,7 +447,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-033->reports/campaign_017/density_falsifiers.json::477",
+        "edge_id": "spawned_by_ticket::TASK-033->reports/campaign_017/density_falsifiers.json::585",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -462,7 +462,7 @@
         "source": "TASK-033"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_008/full_report.json->reports/campaign_017/density_falsifiers.json::1327",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/full_report.json->reports/campaign_017/density_falsifiers.json::1457",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -551,18 +551,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -73,7 +73,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:c3e6981d0c013dd9e5b50ad0d820d0b2f5f70a7788f136ef616b3a4859d24cb0",
+  "content_hash": "sha256:959a04e0fee48bd7f433e0d61aa7d460ddc1c11857a02eeaa13b8aabba3dd3c8",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -83,7 +83,7 @@
             "kind": "file_span",
             "locator": "papers/prereg/bfg_v0.signed.json"
           },
-          "statement": "Tracked file with 211 lines / 6887 bytes at HEAD."
+          "statement": "Tracked file with 215 lines / 7226 bytes at HEAD."
         },
         {
           "atom_id": "prereg_lock_present",
@@ -94,15 +94,18 @@
           "statement": "Pattern /content_hash|signed|prereg/ matches in current file."
         }
       ],
-      "byte_count": 6887,
+      "byte_count": 7226,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 211,
-      "observed_doctrine_bindings": [],
+      "line_count": 215,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::papers/prereg/bfg_v0.signed.json",
       "public_symbols": [],
       "test_functions": []
@@ -129,16 +132,18 @@
       "value": null
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D18"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D18"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -155,13 +160,14 @@
         "reports/campaign_009/cli_full_report.json",
         "reports/campaign_009/full_report.json",
         "reports/campaign_009/provenance_graph.json",
-        "reports/campaign_009/regression_verification.json"
+        "reports/campaign_009/regression_verification.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 10.5
+      "weighted_value": 12.0
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 2,
@@ -207,12 +213,12 @@
   },
   "file": {
     "artifact_family": "prereg",
-    "byte_count": 6887,
+    "byte_count": 7226,
     "generated_status": "source",
     "language": "json",
-    "line_count": 211,
+    "line_count": 215,
     "path": "papers/prereg/bfg_v0.signed.json",
-    "path_hash": "sha256:e577cfb260f27ceda910a570a9b0dc579bc9671694e6aae6952c6777df073e78",
+    "path_hash": "sha256:23f5680e9dcdb9b41ef74d7a48f62c3ac4bf27e2a497c170db62c8519eada7aa",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -251,7 +257,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::1141",
+        "edge_id": "shares_birth_cohort::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::1271",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -261,6 +267,36 @@
             "locator": "birth_cohort_id=6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e",
             "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
             "ref_id": "cohort::6f9bc89ea7eee60546eb6eb83d69eb3a01ecd01e"
+          }
+        ],
+        "target": "papers/prereg/campaign_002.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::4440",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/prereg/bfg_v0.signed.json::papers/prereg/campaign_002.json"
+          }
+        ],
+        "target": "papers/prereg/campaign_002.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::4581",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/prereg/bfg_v0.signed.json::papers/prereg/campaign_002.json"
           }
         ],
         "target": "papers/prereg/campaign_002.json"
@@ -509,7 +545,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/methods/TRUTH_PASS.md->papers/prereg/bfg_v0.signed.json::1140",
+        "edge_id": "shares_birth_cohort::papers/methods/TRUTH_PASS.md->papers/prereg/bfg_v0.signed.json::1270",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -529,9 +565,55 @@
         "target": "papers/prereg/bfg_v0.signed.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/bfg_v0.signed.json::4439",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "papers/prereg/bfg_v0.signed.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/bfg_v0.signed.json::4580",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "papers/prereg/bfg_v0.signed.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->papers/prereg/bfg_v0.signed.json::4400",
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/bfg_v0.signed.json::4866",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -553,7 +635,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_TASK_020_DRIVE.md->papers/prereg/bfg_v0.signed.json::4514",
+        "edge_id": "cites::CODEX_TASK_020_DRIVE.md->papers/prereg/bfg_v0.signed.json::4992",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -575,7 +657,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_009/bfg_preregistration_gate.json->papers/prereg/bfg_v0.signed.json::4768",
+        "edge_id": "cites::reports/campaign_009/bfg_preregistration_gate.json->papers/prereg/bfg_v0.signed.json::5246",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -597,7 +679,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/prereg/bfg_v0.signed.json::4773",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/prereg/bfg_v0.signed.json::5251",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -619,7 +701,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_009/full_report.json->papers/prereg/bfg_v0.signed.json::4786",
+        "edge_id": "cites::reports/campaign_009/full_report.json->papers/prereg/bfg_v0.signed.json::5264",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -641,7 +723,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_009/provenance_graph.json->papers/prereg/bfg_v0.signed.json::4797",
+        "edge_id": "cites::reports/campaign_009/provenance_graph.json->papers/prereg/bfg_v0.signed.json::5275",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -663,7 +745,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_009/regression_verification.json->papers/prereg/bfg_v0.signed.json::4799",
+        "edge_id": "cites::reports/campaign_009/regression_verification.json->papers/prereg/bfg_v0.signed.json::5277",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -683,9 +765,31 @@
         "target": "papers/prereg/bfg_v0.signed.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->papers/prereg/bfg_v0.signed.json::5459",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#papers/prereg/bfg_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "papers/prereg/bfg_v0.signed.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::1141",
+        "edge_id": "shares_birth_cohort::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::1271",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -703,11 +807,57 @@
         },
         "source": "papers/prereg/bfg_v0.signed.json",
         "target": "papers/prereg/campaign_002.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::4440",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/prereg/bfg_v0.signed.json::papers/prereg/campaign_002.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/bfg_v0.signed.json",
+        "target": "papers/prereg/campaign_002.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::papers/prereg/bfg_v0.signed.json->papers/prereg/campaign_002.json::4581",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/prereg/bfg_v0.signed.json::papers/prereg/campaign_002.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/bfg_v0.signed.json",
+        "target": "papers/prereg/campaign_002.json"
       }
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::papers/methods/TRUTH_PASS.md->papers/prereg/bfg_v0.signed.json::1140",
+        "edge_id": "shares_birth_cohort::papers/methods/TRUTH_PASS.md->papers/prereg/bfg_v0.signed.json::1270",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -722,7 +872,37 @@
         "source": "papers/methods/TRUTH_PASS.md"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->papers/prereg/bfg_v0.signed.json::4400",
+        "edge_id": "implements_same_doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/bfg_v0.signed.json::4439",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/bfg_v0.signed.json::4580",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->papers/prereg/bfg_v0.signed.json::4866",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -737,7 +917,7 @@
         "source": "BUILD_LOG.md"
       },
       {
-        "edge_id": "cites::CODEX_TASK_020_DRIVE.md->papers/prereg/bfg_v0.signed.json::4514",
+        "edge_id": "cites::CODEX_TASK_020_DRIVE.md->papers/prereg/bfg_v0.signed.json::4992",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -752,7 +932,7 @@
         "source": "CODEX_TASK_020_DRIVE.md"
       },
       {
-        "edge_id": "cites::reports/campaign_009/bfg_preregistration_gate.json->papers/prereg/bfg_v0.signed.json::4768",
+        "edge_id": "cites::reports/campaign_009/bfg_preregistration_gate.json->papers/prereg/bfg_v0.signed.json::5246",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -767,7 +947,7 @@
         "source": "reports/campaign_009/bfg_preregistration_gate.json"
       },
       {
-        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/prereg/bfg_v0.signed.json::4773",
+        "edge_id": "cites::reports/campaign_009/cli_full_report.json->papers/prereg/bfg_v0.signed.json::5251",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -782,7 +962,7 @@
         "source": "reports/campaign_009/cli_full_report.json"
       },
       {
-        "edge_id": "cites::reports/campaign_009/full_report.json->papers/prereg/bfg_v0.signed.json::4786",
+        "edge_id": "cites::reports/campaign_009/full_report.json->papers/prereg/bfg_v0.signed.json::5264",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -797,7 +977,7 @@
         "source": "reports/campaign_009/full_report.json"
       },
       {
-        "edge_id": "cites::reports/campaign_009/provenance_graph.json->papers/prereg/bfg_v0.signed.json::4797",
+        "edge_id": "cites::reports/campaign_009/provenance_graph.json->papers/prereg/bfg_v0.signed.json::5275",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -812,7 +992,7 @@
         "source": "reports/campaign_009/provenance_graph.json"
       },
       {
-        "edge_id": "cites::reports/campaign_009/regression_verification.json->papers/prereg/bfg_v0.signed.json::4799",
+        "edge_id": "cites::reports/campaign_009/regression_verification.json->papers/prereg/bfg_v0.signed.json::5277",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -825,6 +1005,21 @@
           }
         ],
         "source": "reports/campaign_009/regression_verification.json"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->papers/prereg/bfg_v0.signed.json::5459",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#papers/prereg/bfg_v0.signed.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::papers/prereg/bfg_v0.signed.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -883,7 +1078,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 7,
+    "downstream_reference_count": 8,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -901,18 +1096,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

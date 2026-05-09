@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/dd2c0eb6ea5c_Dockerfile.json`
-- JSON content_hash: `sha256:c7d416404561eacb853befff234605907687c874a5373bc5d909f4ee19ef2232`
+- JSON content_hash: `sha256:d8a905ed2ca21e38a8adf4d66f24ea37deff2bb9db616b013c5a1446045ca1b3`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

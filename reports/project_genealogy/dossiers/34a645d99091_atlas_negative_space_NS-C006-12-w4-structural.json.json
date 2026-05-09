@@ -62,7 +62,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:d16d493a3897c48cf7e03c1b03bc66e45c6d6af138be9ff4ce7519f49d5d6459",
+  "content_hash": "sha256:7e7a84616241ed80d67f4bce81df398b48150216fae3ad7ddc33cd9a0f381dd0",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -249,7 +249,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-12-w4-structural.json->atlas/negative_space/bio_only_campaign_004.md::1096",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-12-w4-structural.json->atlas/negative_space/bio_only_campaign_004.md::1226",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -507,7 +507,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-11-w4-boundary.json->atlas/negative_space/NS-C006-12-w4-structural.json::1095",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-11-w4-boundary.json->atlas/negative_space/NS-C006-12-w4-structural.json::1225",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -529,7 +529,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-12-w4-structural.json->atlas/negative_space/bio_only_campaign_004.md::1096",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-12-w4-structural.json->atlas/negative_space/bio_only_campaign_004.md::1226",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -551,7 +551,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-11-w4-boundary.json->atlas/negative_space/NS-C006-12-w4-structural.json::1095",
+        "edge_id": "shares_birth_cohort::atlas/negative_space/NS-C006-11-w4-boundary.json->atlas/negative_space/NS-C006-12-w4-structural.json::1225",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -640,18 +640,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

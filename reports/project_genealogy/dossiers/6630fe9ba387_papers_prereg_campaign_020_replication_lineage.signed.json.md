@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/6630fe9ba387_papers_prereg_campaign_020_replication_lineage.signed.json.json`
-- JSON content_hash: `sha256:71853b57797e8440103f83f33d523ea799b2eb5094887cd8123f2e5a35555a0f`
+- JSON content_hash: `sha256:d66d5e44634003affc402bdf0e2749f1489bcd429092cd7983525504bd646c08`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`

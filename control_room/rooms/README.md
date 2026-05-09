@@ -61,9 +61,9 @@ adapter returns non-ok or if no falsifier records exist.
 - Agent cards (Claude Builder / Codex / Architect Claude) with task counts and mean-delta.
 - Calibration delta chart (log-y, 1.0 reference line); the Estimation
   Loop convergence story rendered as a single chart.
-- Frozen Class 1-12 mistake catalog with status (10/11 ratified, 12 candidate).
+- Registry-bound Class 1-13 mistake catalog with status from `docs/mistake_catalog_registry.json`.
 - Recent audit catches from BUILD_LOG.
-- Doctrine arc (D7-D25) cards.
+- Doctrine arc (D7-D31) cards.
 
 ## Campaign Command (`campaign_command.py`)
 
@@ -116,8 +116,8 @@ papers/methods/ index (Truth Pass + Substance Audits + methods docs).
 
 **Purpose:** Rules + integrity surface.
 
-**Surfaces:** doctrine registry + DOCTRINE.md headings + Class 1-12
-mistake catalog with origins + Campaign 016 detector decline rendered
+**Surfaces:** doctrine registry + DOCTRINE.md headings + Class 1-13
+mistake catalog from `docs/mistake_catalog_registry.json` + Campaign 016 detector decline rendered
 as load-bearing signal per D17.
 
 ## Factory Intake Dock (`factory_intake_dock.py`)

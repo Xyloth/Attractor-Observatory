@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/b66f94a8e3dd_papers_falsifiers_floor_connectivity_campaign013_replication.md.json`
-- JSON content_hash: `sha256:6b7b14d6c2f05038887c0b66eabf6e456b922f9cef2654e46899d385f1c06666`
+- JSON content_hash: `sha256:8ef3d779121ef1c38c027545b96baad973da93cd6dedca5e6450a76264ba8ea5`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `falsifier`
 - Generated status: `source`

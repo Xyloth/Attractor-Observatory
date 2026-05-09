@@ -282,7 +282,7 @@ Twenty-five binding rules, each derived from a specific failure mode caught duri
 
 Plus the canonical operating principle: **`NO ARTIFICIAL CEILING DOCTRINE.txt`** — every task is a seed and a minimum standard, not a ceiling. The full doctrine commentary, with the failure mode each rule catches and the audit that exposed it, is in [`docs/DOCTRINE.md`](docs/DOCTRINE.md).
 
-The **Mistake Catalog** parallels the doctrine: thirteen ratified classes of error the project has observed. Each class is documented with a worked example in `CLAUDE_BUILDER_INITIATION.md` §4.
+The **Mistake Catalog** parallels the doctrine: thirteen ratified classes of error the project has observed. Machine-readable status lives in `docs/mistake_catalog_registry.json`; narrative worked examples live in `CLAUDE_BUILDER_INITIATION.md` §4.
 
 ---
 

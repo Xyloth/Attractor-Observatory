@@ -1,0 +1,1134 @@
+{
+  "birth": {
+    "birth_cohort_id": "PG-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module is part of the PG-001 audit instrument and exposes a callable surface."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "audit_instrument_executes",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D19",
+            "D20"
+          ],
+          "forbidden_failure_modes": [
+            "instrument that interpolates findings without source refs (D19)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+            "subject": "PG-001 Pass 2: per-file dossier modules",
+            "ticket": "PG-001"
+          },
+          "statement": "Module is part of the PG-001 audit instrument and exposes a callable surface."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D19",
+        "D20"
+      ],
+      "forbidden_patterns": [
+        "instrument that interpolates findings without source refs (D19)"
+      ],
+      "predicate_id": "birth::project_genealogy/dossier.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+        "note": "PG-001 Pass 2: per-file dossier modules",
+        "ref_id": "birth::project_genealogy/dossier.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "PG-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::project_genealogy/dossier.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "project_genealogy/dossier.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::project_genealogy/dossier.py::docstring"
+      }
+    ],
+    "first_seen_commit": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+    "first_seen_date": "2026-05-08T15:48:58-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "PG-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:a6bc878673f0666c119df9687c1f8d2fb34dfae6b54f5c30fda1ec7b82355e01",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "project_genealogy/dossier.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: build_dossier, build_findings, render_markdown, safe_path, write_dossier"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "project_genealogy/dossier.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, datetime.datetime, datetime.timezone, pathlib.Path, project_genealogy.DOSSIER_DIR, project_genealogy.DOSSIER_SCHEMA..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "project_genealogy/dossier.py"
+          },
+          "statement": "Tracked file with 463 lines / 18810 bytes at HEAD."
+        }
+      ],
+      "byte_count": 18810,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "datetime.datetime",
+        "datetime.timezone",
+        "pathlib.Path",
+        "project_genealogy.DOSSIER_DIR",
+        "project_genealogy.DOSSIER_SCHEMA",
+        "project_genealogy.birth.reconstruct_birth",
+        "project_genealogy.current.extract_current",
+        "project_genealogy.depth.compute_depth",
+        "project_genealogy.drift.assess_drift",
+        "project_genealogy.graph.StructuralGraph",
+        "project_genealogy.hashing.content_hash",
+        "project_genealogy.hashing.hash_file",
+        "project_genealogy.hashing.write_with_hash",
+        "project_genealogy.probe.run_probe",
+        "re",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 194,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "line_count = text.count(\"\\n\") + (0 if text.endswith(\"\\n\") else 1)"
+        },
+        {
+          "line": 196,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except OSError:"
+        },
+        {
+          "line": 277,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "is_python = rel_path.endswith(\".py\")"
+        },
+        {
+          "line": 279,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "\"markdown\" if rel_path.endswith(\".md\") else ("
+        },
+        {
+          "line": 280,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "\"json\" if rel_path.endswith(\".json\") or rel_path.endswith(\".jsonld\") else ("
+        },
+        {
+          "line": 281,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "\"shell\" if rel_path.endswith(\".sh\") else ("
+        },
+        {
+          "line": 282,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "\"batch\" if rel_path.endswith(\".bat\") else \"text\""
+        },
+        {
+          "line": 287,
+          "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "generated_status = \"report\" if rel_path.startswith(\"reports/\") else ("
+        }
+      ],
+      "line_count": 463,
+      "observed_doctrine_bindings": [
+        "D26",
+        "D27"
+      ],
+      "predicate_id": "current::project_genealogy/dossier.py",
+      "public_symbols": [
+        "build_dossier",
+        "build_findings",
+        "render_markdown",
+        "safe_path",
+        "write_dossier"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "project_genealogy/dossier.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::project_genealogy/dossier.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 196
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D26",
+        "D27"
+      ],
+      "verified": [
+        "D26",
+        "D27"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 2,
+      "validated_by": [],
+      "weighted_value": 1.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D19",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D19",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D19::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D20",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D20",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D20::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 194,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "line_count = text.count(\"\\n\") + (0 if text.endswith(\"\\n\") else 1)"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 196,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except OSError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 277,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "is_python = rel_path.endswith(\".py\")"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 279,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "\"markdown\" if rel_path.endswith(\".md\") else ("
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 280,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "\"json\" if rel_path.endswith(\".json\") or rel_path.endswith(\".jsonld\") else ("
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 281,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "\"shell\" if rel_path.endswith(\".sh\") else ("
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 282,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "\"batch\" if rel_path.endswith(\".bat\") else \"text\""
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 287,
+        "pattern": "startswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"startswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "generated_status = \"report\" if rel_path.startswith(\"reports/\") else ("
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "audit_instrument",
+    "byte_count": 18810,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 463,
+    "path": "project_genealogy/dossier.py",
+    "path_hash": "sha256:c95e4589866601f3a0ffadc249f9b38647fdf6411b7d18e46f50c9023a32f3fd",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 194: line_count = text.count(\"\\n\") + (0 if text.endswith(\"\\n\") else 1)",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L194",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'line_count = text.count(\"\\\\n\") + (0 if text.endswith(\"\\\\n\") el' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 196: except OSError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L196",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except OSError:' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 277: is_python = rel_path.endswith(\".py\")",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L277",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'is_python = rel_path.endswith(\".py\")' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 279: \"markdown\" if rel_path.endswith(\".md\") else (",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L279",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F '\"markdown\" if rel_path.endswith(\".md\") else (' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 280: \"json\" if rel_path.endswith(\".json\") or rel_path.endswith(\".jsonld\") else (",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L280",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F '\"json\" if rel_path.endswith(\".json\") or rel_path.endswith(\".' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 281: \"shell\" if rel_path.endswith(\".sh\") else (",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L281",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::5"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-5",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F '\"shell\" if rel_path.endswith(\".sh\") else (' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 282: \"batch\" if rel_path.endswith(\".bat\") else \"text\"",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L282",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::6"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-6",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F '\"batch\" if rel_path.endswith(\".bat\") else \"text\"' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 287: generated_status = \"report\" if rel_path.startswith(\"reports/\") else (",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/dossier.py#L287",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/dossier.py::lvs::7"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-lvs-7",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'generated_status = \"report\" if rel_path.startswith(\"reports/' -- project_genealogy/dossier.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/dossier.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/9eb76ac379ea_project_genealogy_dossier.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "imports::project_genealogy/dossier.py->project_genealogy/__init__.py::840",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/dossier.py#import:project_genealogy.DOSSIER_DIR",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/dossier.py::project_genealogy/__init__.py"
+          }
+        ],
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "edge_id": "imports::project_genealogy/dossier.py->project_genealogy/__init__.py::841",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/dossier.py#import:project_genealogy.DOSSIER_SCHEMA",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/dossier.py::project_genealogy/__init__.py"
+          }
+        ],
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "edge_id": "shares_birth_cohort::project_genealogy/dossier.py->project_genealogy/drift.py::1622",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "target": "project_genealogy/drift.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::project_genealogy/dossier.py->project_genealogy/manifest.py::4384",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_genealogy/dossier.py::project_genealogy/manifest.py"
+          }
+        ],
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::project_genealogy/dossier.py->project_telemetry/ai_builder_tasks.jsonl::4743",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::project_genealogy/dossier.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "PG-001",
+      "members": [
+        "control_room/rooms/project_genealogy.py",
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "project_genealogy/__init__.py",
+        "project_genealogy/__main__.py",
+        "project_genealogy/atlas.py",
+        "project_genealogy/birth.py",
+        "project_genealogy/coherence.py",
+        "project_genealogy/current.py",
+        "project_genealogy/depth.py",
+        "project_genealogy/dossier.py",
+        "project_genealogy/drift.py",
+        "project_genealogy/graph.py",
+        "project_genealogy/hashing.py",
+        "project_genealogy/manifest.py",
+        "project_genealogy/probe.py",
+        "project_genealogy/query.py",
+        "project_genealogy/runner.py",
+        "public_tests/test_pg001_acceptance_gates.py",
+        "public_tests/test_pg001_control_room_tab.py",
+        "public_tests/test_pg001_query.py",
+        "public_tests/test_pg001_removal_probe.py",
+        "public_tests/test_pg001_schema.py"
+      ],
+      "spawn_ticket": "PG-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+        "edge_id": "spawned_by_ticket::PG-001->project_genealogy/dossier.py::410",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::project_genealogy/dossier.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "PG-001",
+        "target": "project_genealogy/dossier.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_genealogy/depth.py->project_genealogy/dossier.py::1621",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/depth.py",
+        "target": "project_genealogy/dossier.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_genealogy/dossier.py::4383",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_genealogy/dossier.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
+        "target": "project_genealogy/dossier.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_genealogy/dossier.py::4742",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_genealogy/dossier.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json",
+        "target": "project_genealogy/dossier.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::project_genealogy/dossier.py->project_genealogy/__init__.py::840",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/dossier.py#import:project_genealogy.DOSSIER_DIR",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/dossier.py::project_genealogy/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/dossier.py",
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::project_genealogy/dossier.py->project_genealogy/__init__.py::841",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/dossier.py#import:project_genealogy.DOSSIER_SCHEMA",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/dossier.py::project_genealogy/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/dossier.py",
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_genealogy/dossier.py->project_genealogy/drift.py::1622",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/dossier.py",
+        "target": "project_genealogy/drift.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::project_genealogy/dossier.py->project_genealogy/manifest.py::4384",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_genealogy/dossier.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/dossier.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D27",
+        "edge_id": "implements_same_doctrine::D27::project_genealogy/dossier.py->project_telemetry/ai_builder_tasks.jsonl::4743",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::project_genealogy/dossier.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/dossier.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::PG-001->project_genealogy/dossier.py::410",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "76085687c8c8f33c41cb35b5af5dfadeaf23ca3d",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::project_genealogy/dossier.py"
+          }
+        ],
+        "source": "PG-001"
+      },
+      {
+        "edge_id": "shares_birth_cohort::project_genealogy/depth.py->project_genealogy/dossier.py::1621",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "source": "project_genealogy/depth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_genealogy/dossier.py::4383",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_genealogy/dossier.py"
+          }
+        ],
+        "source": "papers/prereg/campaign_023/self_maintained_boundary.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json->project_genealogy/dossier.py::4742",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D27",
+            "note": "shared mention of doctrine D27",
+            "ref_id": "doctrine::D27::papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json::project_genealogy/dossier.py"
+          }
+        ],
+        "source": "papers/prereg/task_meas_plan/MEASURABILITY_RECOVERY_PLAN_v1.structure.signed.json"
+      }
+    ],
+    "siblings": [
+      "control_room/rooms/project_genealogy.py",
+      "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+      "project_genealogy/__init__.py",
+      "project_genealogy/__main__.py",
+      "project_genealogy/atlas.py",
+      "project_genealogy/birth.py",
+      "project_genealogy/coherence.py",
+      "project_genealogy/current.py",
+      "project_genealogy/depth.py",
+      "project_genealogy/drift.py",
+      "project_genealogy/graph.py",
+      "project_genealogy/hashing.py",
+      "project_genealogy/manifest.py",
+      "project_genealogy/probe.py",
+      "project_genealogy/query.py",
+      "project_genealogy/runner.py",
+      "public_tests/test_pg001_acceptance_gates.py",
+      "public_tests/test_pg001_control_room_tab.py",
+      "public_tests/test_pg001_query.py",
+      "public_tests/test_pg001_removal_probe.py",
+      "public_tests/test_pg001_schema.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::project_genealogy/dossier.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

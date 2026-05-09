@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/5e1ad736a53f_papers_prereg_campaign_023_autocatalytic_closure.signed.json.json`
-- JSON content_hash: `sha256:23f7cde185b59095fe756688b4d4a3d8cd68c2c65bfc531d2f7bd8846326d307`
+- JSON content_hash: `sha256:3c3c492035efb0f938aacfda0ab2ed6a291304b051ead12bc53d68c7531d909c`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`
@@ -21,7 +21,7 @@
 - **header_declared_intent** — {
 "campaign_id": "campaign_023",
 "claim_promotion_allowed": false,
-"content_hash": "sha256:771e09f2a5be2099b2383d102643cda2ae00070dfd9ee1270535c3b74b57e1d1",
+"content_hash": "sha256:acc7aa1762874d00ab55a6327268b51b2b7c100eff49f566bd7958b9971b612d",
 "forbidden_adjustments": [
 "no event-token predicate labels",
 "no per-motif threshold tuning",

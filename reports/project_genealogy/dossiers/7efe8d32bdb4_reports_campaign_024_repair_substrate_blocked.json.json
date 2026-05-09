@@ -83,7 +83,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:0333fb0ec3a199e056d1e2ce9717c825bc1132eb4f5cc7e490b3bbe460b160c6",
+  "content_hash": "sha256:ed5e60790504d0f430a4618ed77a5d621204c1f79a3869f081db1988f0f7080d",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -225,7 +225,7 @@
     "language": "json",
     "line_count": 34,
     "path": "reports/campaign_024/repair_substrate_blocked.json",
-    "path_hash": "sha256:b6043a2dbdd12960df81f74c6a02824908591665e793025623a3848dba44f892",
+    "path_hash": "sha256:2382fb7e7e4b469067481a185cd950ae21c877bad99fe01c5ff95d460771d198",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -264,7 +264,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::1477",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::1607",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -279,7 +279,7 @@
         "target": "reports/campaign_024/replication_lineage_substrate_blocked.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::4068",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::4401",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -359,7 +359,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/repair_substrate_blocked.json::549",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/repair_substrate_blocked.json::657",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -381,7 +381,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_024/lens_coupling_audit.json->reports/campaign_024/repair_substrate_blocked.json::1476",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/lens_coupling_audit.json->reports/campaign_024/repair_substrate_blocked.json::1606",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -404,7 +404,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/full_report.json->reports/campaign_024/repair_substrate_blocked.json::4067",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/full_report.json->reports/campaign_024/repair_substrate_blocked.json::4400",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -426,7 +426,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::1477",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::1607",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -449,7 +449,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::4068",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/repair_substrate_blocked.json->reports/campaign_024/replication_lineage_substrate_blocked.json::4401",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -471,7 +471,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/repair_substrate_blocked.json::549",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->reports/campaign_024/repair_substrate_blocked.json::657",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -486,7 +486,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_024/lens_coupling_audit.json->reports/campaign_024/repair_substrate_blocked.json::1476",
+        "edge_id": "shares_birth_cohort::reports/campaign_024/lens_coupling_audit.json->reports/campaign_024/repair_substrate_blocked.json::1606",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -501,7 +501,7 @@
         "source": "reports/campaign_024/lens_coupling_audit.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/full_report.json->reports/campaign_024/repair_substrate_blocked.json::4067",
+        "edge_id": "implements_same_doctrine::D26::reports/campaign_024/full_report.json->reports/campaign_024/repair_substrate_blocked.json::4400",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -590,18 +590,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

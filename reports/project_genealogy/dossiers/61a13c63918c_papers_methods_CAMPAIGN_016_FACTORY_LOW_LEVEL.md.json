@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:5fa3475cb52aa37558fc7b75dab828e2d4f8328644868f9bc6eb5e57946caf36",
+  "content_hash": "sha256:6beb14cc4d1daf19f4ea70899c3e2c0afbe03cf25257b3303d60af317ca1ea05",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -231,7 +231,7 @@
     "language": "markdown",
     "line_count": 28,
     "path": "papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md",
-    "path_hash": "sha256:dad20adfba7e4b6c9d11404bbaf11c293f5f2cca2963668c12944f519eeec54f",
+    "path_hash": "sha256:6a58e3b066d671a4d0831a83145ab36996b0d779142fd77c6855eee0e54d11f8",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -270,7 +270,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::920",
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::1050",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -285,7 +285,7 @@
         "target": "papers/methods/FACTORY_HARDENING_SPEC.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D21::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::3281",
+        "edge_id": "implements_same_doctrine::D21::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::3553",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -300,7 +300,7 @@
         "target": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
       },
       {
-        "edge_id": "cites::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::4651",
+        "edge_id": "cites::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::5129",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -644,7 +644,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::273",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::356",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -666,7 +666,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/falsifiers/floor_connectivity_campaign013_replication.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::919",
+        "edge_id": "shares_birth_cohort::papers/falsifiers/floor_connectivity_campaign013_replication.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::1049",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -689,7 +689,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D21",
-        "edge_id": "implements_same_doctrine::D21::docs/doctrine_registry.json->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::3280",
+        "edge_id": "implements_same_doctrine::D21::papers/falsification/DX-003/round_1.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::3552",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -698,20 +698,20 @@
             "kind": "grep",
             "locator": "both files mention D21",
             "note": "shared mention of doctrine D21",
-            "ref_id": "doctrine::D21::docs/doctrine_registry.json::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md"
+            "ref_id": "doctrine::D21::papers/falsification/DX-003/round_1.md::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md"
           }
         ],
         "private_boundary": {
           "evidence_private": false,
           "reason": ""
         },
-        "source": "docs/doctrine_registry.json",
+        "source": "papers/falsification/DX-003/round_1.md",
         "target": "papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md"
       },
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::README.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::4619",
+        "edge_id": "cites::README.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::5097",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -733,7 +733,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::920",
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::1050",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -756,7 +756,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D21",
-        "edge_id": "implements_same_doctrine::D21::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::3281",
+        "edge_id": "implements_same_doctrine::D21::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md::3553",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -778,7 +778,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::4651",
+        "edge_id": "cites::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md->papers/methods/FACTORY_HARDENING_SPEC.md::5129",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -800,7 +800,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::273",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::356",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -815,7 +815,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/falsifiers/floor_connectivity_campaign013_replication.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::919",
+        "edge_id": "shares_birth_cohort::papers/falsifiers/floor_connectivity_campaign013_replication.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::1049",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -830,7 +830,7 @@
         "source": "papers/falsifiers/floor_connectivity_campaign013_replication.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D21::docs/doctrine_registry.json->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::3280",
+        "edge_id": "implements_same_doctrine::D21::papers/falsification/DX-003/round_1.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::3552",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -839,13 +839,13 @@
             "kind": "grep",
             "locator": "both files mention D21",
             "note": "shared mention of doctrine D21",
-            "ref_id": "doctrine::D21::docs/doctrine_registry.json::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md"
+            "ref_id": "doctrine::D21::papers/falsification/DX-003/round_1.md::papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md"
           }
         ],
-        "source": "docs/doctrine_registry.json"
+        "source": "papers/falsification/DX-003/round_1.md"
       },
       {
-        "edge_id": "cites::README.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::4619",
+        "edge_id": "cites::README.md->papers/methods/CAMPAIGN_016_FACTORY_LOW_LEVEL.md::5097",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -934,18 +934,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }
