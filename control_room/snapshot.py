@@ -64,6 +64,12 @@ def build_snapshot() -> dict[str, Any]:
 
     snapshot: dict[str, Any] = {
         "schema": SNAPSHOT_SCHEMA,
+        "raw_file_policy": "do_not_read_directly",
+        "read_api": "control_room.snapshot.load_latest",
+        "direct_read_warning": (
+            "D30: state_latest.json is a pointer file. Consumers that depend on "
+            "freshness must call load_latest(), which recomputes freshness against current HEAD."
+        ),
         "generated_at": now,
         "generation_binding": generation_binding,
         "freshness_status": generation_binding["freshness_status"],

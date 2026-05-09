@@ -267,6 +267,7 @@ def run_continuous_daemon(
                 store_root=store_root,
                 source_rows=source_rows,
                 progress_root=progress_root,
+                state_path=state_path,
             )
         except Exception:  # pragma: no cover — progress write must never break the daemon
             pass
@@ -330,6 +331,7 @@ def _apply_force_refresh(
 ) -> dict[str, Any]:
     last_success = state.setdefault("last_success_by_source", {})
     before = set(last_success)
+    invalidated_at = utc_now()
     if clear_all:
         requested = sorted(before)
     else:
@@ -342,10 +344,19 @@ def _apply_force_refresh(
             cleared.append(source_id)
         else:
             missing.append(source_id)
+    invalidations = state.setdefault("force_refresh_invalidations", [])
+    for source_id in cleared:
+        invalidations.append({
+            "schema": "FactoryDaemonProgressInvalidation.v1",
+            "invalidated_at": invalidated_at,
+            "source_id": source_id,
+            "clear_all": bool(clear_all),
+            "reason": "force_refresh_cleared_last_success",
+        })
     return {
         "schema": "FactoryDaemonForceRefreshClearance.v1",
         "record_type": "force_refresh_clearance",
-        "cleared_at": utc_now(),
+        "cleared_at": invalidated_at,
         "clear_all": bool(clear_all),
         "requested_source_ids": requested,
         "cleared_source_ids": cleared,
