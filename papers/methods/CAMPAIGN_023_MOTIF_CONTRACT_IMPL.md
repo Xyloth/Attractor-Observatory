@@ -20,7 +20,7 @@ Status: exploratory; no claim-bearing promotion.
 | `motif.externalized_memory.draft` | `sha256:b9437939983325d322dec3210e50b4098ac06c0c10412e5c114f34e9597b39c6` | `graph` | 10000 | 0.500000 | 0.166667 | `signal_survives_shuffle` |
 | `motif.replication_lineage.draft` | `sha256:5ce35bc9b64c16a61977b14a4801f6db0b85cdd8e1a0a900c746294d4dd93a45` | `graph` | 10000 | 0.600000 | 0.200000 | `signal_survives_shuffle` |
 | `motif.self_maintained_boundary.draft` | `sha256:9d30531db762cfef54982ef0d0456716bfe4500590399c0a46fd8628435af628` | `graph` | 10000 | 0.500000 | 0.166667 | `signal_survives_shuffle` |
-| `motif.floor_connectivity.draft` | `sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e` | `campaign009_bfg_calibrated_detector` | 10000 | 0.198880 | 0.072361 | `signal_survives_shuffle` |
+| `motif.floor_connectivity.draft` | `sha256:e3b21758bca1b1a53560c6c0b889e0908c3953d6eba6ed08896ab748dfea9cc5` | `campaign009_bfg_calibrated_detector` | 10000 | 0.198880 | 0.072361 | `signal_survives_shuffle` |
 
 ## Aggregate
 

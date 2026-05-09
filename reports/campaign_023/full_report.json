@@ -308,8 +308,8 @@
           "rationale": "lens source objects do not overlap predicate source objects"
         },
         {
-          "ablation_status": "CLEAN",
-          "d26_independence": "CLEAN",
+          "ablation_status": "PARTIAL_PASS",
+          "d26_independence": "UNKNOWN",
           "features_after_ablation": [
             "domain_decline"
           ],
@@ -318,7 +318,7 @@
           ],
           "lens_id": "crnt",
           "passed": true,
-          "rationale": "lens source objects do not overlap predicate source objects"
+          "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
         },
         {
           "ablation_status": "CLEAN",
@@ -861,70 +861,16 @@
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
@@ -963,70 +909,16 @@
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
@@ -1065,70 +957,16 @@
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "maxRAF spans declared reaction set",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
@@ -1167,6 +1005,20 @@
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -1201,6 +1053,20 @@
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -1231,6 +1097,308 @@
             },
             {
               "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "maxRAF spans declared reaction set",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "maxRAF spans declared reaction set",
@@ -1276,70 +1444,16 @@
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
@@ -1378,70 +1492,16 @@
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
@@ -1480,70 +1540,16 @@
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "external medium plus readback/prediction channel observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
@@ -1582,6 +1588,20 @@
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -1616,6 +1636,20 @@
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -1646,6 +1680,308 @@
             },
             {
               "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "external medium plus readback/prediction channel observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "external medium plus readback/prediction channel observed",
@@ -1691,70 +2027,16 @@
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
-            }
-          ],
-          "base_verdict": "insufficient_evidence",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "insufficient_evidence",
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            }
-          ],
-          "base_verdict": "insufficient_evidence",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "insufficient_evidence",
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
@@ -1793,70 +2075,16 @@
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
-            }
-          ],
-          "base_verdict": "insufficient_evidence",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "insufficient_evidence",
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            }
-          ],
-          "base_verdict": "insufficient_evidence",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "insufficient_evidence",
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
@@ -1895,70 +2123,16 @@
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
-            }
-          ],
-          "base_verdict": "insufficient_evidence",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "insufficient_evidence",
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            }
-          ],
-          "base_verdict": "insufficient_evidence",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "insufficient_evidence",
-              "passed": true,
-              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
-              "transformed_verdict": "insufficient_evidence"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "insufficient_evidence",
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
@@ -1997,6 +2171,20 @@
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
             }
           ],
           "base_verdict": "insufficient_evidence",
@@ -2031,6 +2219,20 @@
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
               "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
             }
           ],
           "base_verdict": "insufficient_evidence",
@@ -2061,6 +2263,308 @@
             },
             {
               "axis": "generator_id_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            }
+          ],
+          "base_verdict": "insufficient_evidence",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            }
+          ],
+          "base_verdict": "insufficient_evidence",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            }
+          ],
+          "base_verdict": "insufficient_evidence",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            }
+          ],
+          "base_verdict": "insufficient_evidence",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            }
+          ],
+          "base_verdict": "insufficient_evidence",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            }
+          ],
+          "base_verdict": "insufficient_evidence",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "insufficient_evidence",
+              "passed": true,
+              "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
+              "transformed_verdict": "insufficient_evidence"
+            },
+            {
+              "axis": "value_label_erasure",
               "base_verdict": "insufficient_evidence",
               "passed": true,
               "transformed_rationale": "missing BFG neutral_floor_index or perturbation outcome profile",
@@ -2106,70 +2610,16 @@
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
@@ -2208,70 +2658,16 @@
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
@@ -2310,70 +2706,16 @@
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "perturbation/recovery structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
@@ -2412,6 +2754,20 @@
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -2446,6 +2802,20 @@
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -2476,6 +2846,308 @@
             },
             {
               "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "perturbation/recovery structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "perturbation/recovery structure observed",
@@ -2521,70 +3193,16 @@
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
@@ -2623,70 +3241,16 @@
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
@@ -2725,70 +3289,16 @@
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
@@ -2827,6 +3337,20 @@
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -2861,6 +3385,20 @@
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -2891,6 +3429,308 @@
             },
             {
               "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "parent-child descent graph with preserved heritable structure observed",
@@ -2936,70 +3776,16 @@
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
@@ -3038,70 +3824,16 @@
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
@@ -3140,70 +3872,16 @@
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
+            },
             {
-              "axis": "event_token_rename",
+              "axis": "metadata_identity_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
             },
             {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            }
-          ],
-          "base_verdict": "positive",
-          "passed": true
-        },
-        {
-          "axes": [
-            {
-              "axis": "event_token_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "state_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "payload_key_rename",
-              "base_verdict": "positive",
-              "passed": true,
-              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
-              "transformed_verdict": "positive"
-            },
-            {
-              "axis": "generator_id_erasure",
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
@@ -3242,6 +3920,20 @@
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -3276,6 +3968,20 @@
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
               "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
             }
           ],
           "base_verdict": "positive",
@@ -3306,6 +4012,308 @@
             },
             {
               "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            }
+          ],
+          "base_verdict": "positive",
+          "passed": true
+        },
+        {
+          "axes": [
+            {
+              "axis": "event_token_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "state_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "payload_key_rename",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "generator_id_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "metadata_identity_erasure",
+              "base_verdict": "positive",
+              "passed": true,
+              "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
+              "transformed_verdict": "positive"
+            },
+            {
+              "axis": "value_label_erasure",
               "base_verdict": "positive",
               "passed": true,
               "transformed_rationale": "persistent closed exchange boundary with endogenous material maintenance observed",
@@ -3968,7 +4976,7 @@
         "classifier_hash signed at preprocessing",
         "unit-level predicate verdicts aggregated from predicate_row or validation_predicate_row partitions"
       ],
-      "content_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
+      "content_hash": "sha256:e3b21758bca1b1a53560c6c0b889e0908c3953d6eba6ed08896ab748dfea9cc5",
       "contract_version": "2",
       "decoy_controls": [
         "C020 surface keys without BFG source return insufficient_evidence",
@@ -4059,7 +5067,7 @@
             "domain_decline"
           ],
           "justification": "DOMAIN-DECLINE: no reaction-network source object exists at the generic BFG basin-geometry layer.",
-          "shares_input_with_predicate": "CLEAN",
+          "shares_input_with_predicate": "UNKNOWN",
           "source_object_map": []
         },
         "dynamical_systems": {
@@ -5521,8 +6529,8 @@
               "rationale": "lens source objects do not overlap predicate source objects"
             },
             {
-              "ablation_status": "CLEAN",
-              "d26_independence": "CLEAN",
+              "ablation_status": "PARTIAL_PASS",
+              "d26_independence": "UNKNOWN",
               "features_after_ablation": [
                 "domain_decline"
               ],
@@ -5531,7 +6539,7 @@
               ],
               "lens_id": "crnt",
               "passed": true,
-              "rationale": "lens source objects do not overlap predicate source objects"
+              "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
             },
             {
               "ablation_status": "CLEAN",
@@ -5631,7 +6639,7 @@
             }
           ],
           "adversarial_controls_passed": true,
-          "contract_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
+          "contract_hash": "sha256:e3b21758bca1b1a53560c6c0b889e0908c3953d6eba6ed08896ab748dfea9cc5",
           "corpus_size_per_substrate": {
             "crn": {
               "negative": 27,
@@ -6290,7 +7298,7 @@
         "mean": -0.0008883892585354346
       },
       "observed_gap": 0.19887983666210657,
-      "preregistration_hash": "sha256:c24504db86d14da33ed1b3c7cfec42978ee1130fac5877881fbdd3c45d5ac3bd",
+      "preregistration_hash": "sha256:16f04ec05def6fbfb3f0f7801bdbffd19bbf6d1510026e1f5fc32b7b77252e94",
       "primary_lens": "campaign009_bfg_calibrated_detector",
       "primary_lens_rationale": "Floor connectivity uses the BFG calibration score because old formal lenses correctly decline or are only indirect for this motif.",
       "schema": "Campaign023SubstrateBlockedControl.v1"

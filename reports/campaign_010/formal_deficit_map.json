@@ -358,8 +358,8 @@
             "rationale": "lens source objects do not overlap predicate source objects"
           },
           {
-            "ablation_status": "CLEAN",
-            "d26_independence": "CLEAN",
+            "ablation_status": "PARTIAL_PASS",
+            "d26_independence": "UNKNOWN",
             "features_after_ablation": [
               "domain_decline"
             ],
@@ -368,7 +368,7 @@
             ],
             "lens_id": "crnt",
             "passed": true,
-            "rationale": "lens source objects do not overlap predicate source objects"
+            "rationale": "partial source-object overlap retains non-token/nonpredicate features after ablation"
           },
           {
             "ablation_status": "CLEAN",
@@ -468,7 +468,7 @@
           }
         ],
         "adversarial_controls_passed": true,
-        "contract_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
+        "contract_hash": "sha256:e3b21758bca1b1a53560c6c0b889e0908c3953d6eba6ed08896ab748dfea9cc5",
         "corpus_size_per_substrate": {
           "crn": {
             "negative": 27,
@@ -925,7 +925,7 @@
     "artifact": "reports/campaign_024/full_report.json",
     "campaign_id": "campaign_024",
     "claim_promotion_allowed": false,
-    "lens_coupling_audit_hash": "sha256:7427180fc8c29ee5fa8b36f86813a63a380ddb60e46ac0e6b9fd1d09d3ae4cef",
+    "lens_coupling_audit_hash": "sha256:627e62c6d9c1ae9d44e6c083ab64a36bfc74ea486896f27216bfdd81169fff9a",
     "mode": "predicate_and_lens_side_decoupled_rerun_no_promotion",
     "motif_verdicts": {
       "motif.autocatalytic_closure.draft": {
@@ -969,21 +969,21 @@
           "included": 30
         },
         "lens_cell_verdicts": {
-          "control_theory": "CLEAN",
+          "control_theory": "BAD",
           "crnt": "BAD",
-          "dynamical_systems": "CLEAN",
+          "dynamical_systems": "BAD",
           "graph": "BAD",
-          "information": "CLEAN",
+          "information": "BAD",
           "petri": "BAD",
-          "statistical_mechanics": "CLEAN",
-          "topology": "CLEAN"
+          "statistical_mechanics": "BAD",
+          "topology": "BAD"
         },
         "predicate_v2_signed_at": "2026-05-06T00:00:00-04:00",
-        "primary_lens": "dynamical_systems",
-        "substrate_blocked_verdict": "signal_partial_or_inconclusive"
+        "primary_lens": null,
+        "substrate_blocked_verdict": "not_evaluable_no_lens_after_decoupling"
       },
       "motif.floor_connectivity.draft": {
-        "contract_hash": "sha256:ab9bfc44126df9267758f4f45f1098b32a319cf22a2854126d40aff792d63b2e",
+        "contract_hash": "sha256:e3b21758bca1b1a53560c6c0b889e0908c3953d6eba6ed08896ab748dfea9cc5",
         "corpus_size_per_substrate": {
           "crn": {
             "negative": 27,

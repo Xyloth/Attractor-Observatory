@@ -134,7 +134,7 @@
           "process_flags"
         ],
         "lens_id": "graph",
-        "mechanical_d26_verdict": "CLEAN",
+        "mechanical_d26_verdict": "UNKNOWN",
         "motif_id": "motif.autocatalytic_closure.draft",
         "nondeclined_count": 0,
         "old_contract_source_object_map": [
@@ -340,8 +340,8 @@
     },
     "motif.externalized_memory.draft": {
       "control_theory": {
-        "adversarial_controls_passed": true,
-        "adversarial_failure_count": 0,
+        "adversarial_controls_passed": false,
+        "adversarial_failure_count": 12,
         "campaign024_clean_source_object_map": [
           {
             "fields_read": [
@@ -353,7 +353,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "cell_verdict": "CLEAN",
+        "cell_verdict": "BAD",
         "declined_count": 0,
         "historical_suspect_surfaces": [
           "control_or_memory_token",
@@ -384,7 +384,7 @@
             "type": "numeric_state_snapshot"
           }
         ],
-        "reason": "historical lens surface contains control_or_memory_token, event, memory_channel_count, process_flags, token"
+        "reason": "historical lens surface contains control_or_memory_token, event, memory_channel_count, process_flags, token; lens output diverged under four-axis adversarial controls"
       },
       "crnt": {
         "adversarial_controls_passed": true,
@@ -428,8 +428,8 @@
         "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       "dynamical_systems": {
-        "adversarial_controls_passed": true,
-        "adversarial_failure_count": 0,
+        "adversarial_controls_passed": false,
+        "adversarial_failure_count": 12,
         "campaign024_clean_source_object_map": [
           {
             "fields_read": [
@@ -441,7 +441,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "cell_verdict": "CLEAN",
+        "cell_verdict": "BAD",
         "declined_count": 0,
         "historical_suspect_surfaces": [
           "process_flags"
@@ -461,7 +461,7 @@
             "type": "numeric_state_snapshot"
           }
         ],
-        "reason": "historical lens surface contains process_flags"
+        "reason": "historical lens surface contains process_flags; lens output diverged under four-axis adversarial controls"
       },
       "graph": {
         "adversarial_controls_passed": true,
@@ -475,7 +475,7 @@
           "token"
         ],
         "lens_id": "graph",
-        "mechanical_d26_verdict": "CLEAN",
+        "mechanical_d26_verdict": "UNKNOWN",
         "motif_id": "motif.externalized_memory.draft",
         "nondeclined_count": 0,
         "old_contract_source_object_map": [
@@ -500,8 +500,8 @@
         "reason": "historical lens surface contains event, process_flags, token; no clean generic graph refactor exists without event/payload/process-flag surfaces in this corpus"
       },
       "information": {
-        "adversarial_controls_passed": true,
-        "adversarial_failure_count": 0,
+        "adversarial_controls_passed": false,
+        "adversarial_failure_count": 12,
         "campaign024_clean_source_object_map": [
           {
             "fields_read": [
@@ -513,7 +513,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "cell_verdict": "CLEAN",
+        "cell_verdict": "BAD",
         "declined_count": 0,
         "historical_suspect_surfaces": [
           "event",
@@ -543,7 +543,7 @@
             "type": "numeric_state_snapshot"
           }
         ],
-        "reason": "historical lens surface contains event, event_entropy, event_information, process_flags"
+        "reason": "historical lens surface contains event, event_entropy, event_information, process_flags; lens output diverged under four-axis adversarial controls"
       },
       "petri": {
         "adversarial_controls_passed": true,
@@ -597,8 +597,8 @@
         "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
       },
       "statistical_mechanics": {
-        "adversarial_controls_passed": true,
-        "adversarial_failure_count": 0,
+        "adversarial_controls_passed": false,
+        "adversarial_failure_count": 12,
         "campaign024_clean_source_object_map": [
           {
             "fields_read": [
@@ -610,7 +610,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "cell_verdict": "CLEAN",
+        "cell_verdict": "BAD",
         "declined_count": 0,
         "historical_suspect_surfaces": [
           "event",
@@ -638,11 +638,11 @@
             "type": "numeric_state_snapshot"
           }
         ],
-        "reason": "historical lens surface contains event, event_statistics"
+        "reason": "historical lens surface contains event, event_statistics; lens output diverged under four-axis adversarial controls"
       },
       "topology": {
-        "adversarial_controls_passed": true,
-        "adversarial_failure_count": 0,
+        "adversarial_controls_passed": false,
+        "adversarial_failure_count": 12,
         "campaign024_clean_source_object_map": [
           {
             "fields_read": [
@@ -654,7 +654,7 @@
             "type": "numeric_state_values"
           }
         ],
-        "cell_verdict": "CLEAN",
+        "cell_verdict": "BAD",
         "declined_count": 0,
         "historical_suspect_surfaces": [
           "process_flags"
@@ -673,7 +673,7 @@
             "type": "point_cloud"
           }
         ],
-        "reason": "historical lens surface contains process_flags"
+        "reason": "historical lens surface contains process_flags; lens output diverged under four-axis adversarial controls"
       }
     },
     "motif.floor_connectivity.draft": {
@@ -782,7 +782,7 @@
           "event"
         ],
         "lens_id": "graph",
-        "mechanical_d26_verdict": "CLEAN",
+        "mechanical_d26_verdict": "UNKNOWN",
         "motif_id": "motif.floor_connectivity.draft",
         "nondeclined_count": 0,
         "old_contract_source_object_map": [
@@ -1081,7 +1081,7 @@
           "process_flags"
         ],
         "lens_id": "graph",
-        "mechanical_d26_verdict": "CLEAN",
+        "mechanical_d26_verdict": "UNKNOWN",
         "motif_id": "motif.repair.draft",
         "nondeclined_count": 0,
         "old_contract_source_object_map": [
@@ -1416,7 +1416,7 @@
           "token"
         ],
         "lens_id": "graph",
-        "mechanical_d26_verdict": "CLEAN",
+        "mechanical_d26_verdict": "UNKNOWN",
         "motif_id": "motif.replication_lineage.draft",
         "nondeclined_count": 0,
         "old_contract_source_object_map": [
@@ -1754,7 +1754,7 @@
           "token"
         ],
         "lens_id": "graph",
-        "mechanical_d26_verdict": "CLEAN",
+        "mechanical_d26_verdict": "UNKNOWN",
         "motif_id": "motif.self_maintained_boundary.draft",
         "nondeclined_count": 0,
         "old_contract_source_object_map": [
@@ -1972,7 +1972,7 @@
         "process_flags"
       ],
       "lens_id": "graph",
-      "mechanical_d26_verdict": "CLEAN",
+      "mechanical_d26_verdict": "UNKNOWN",
       "motif_id": "motif.autocatalytic_closure.draft",
       "nondeclined_count": 0,
       "old_contract_source_object_map": [
@@ -2308,7 +2308,7 @@
         "process_flags"
       ],
       "lens_id": "graph",
-      "mechanical_d26_verdict": "CLEAN",
+      "mechanical_d26_verdict": "UNKNOWN",
       "motif_id": "motif.repair.draft",
       "nondeclined_count": 0,
       "old_contract_source_object_map": [
@@ -2642,7 +2642,7 @@
         "token"
       ],
       "lens_id": "graph",
-      "mechanical_d26_verdict": "CLEAN",
+      "mechanical_d26_verdict": "UNKNOWN",
       "motif_id": "motif.externalized_memory.draft",
       "nondeclined_count": 0,
       "old_contract_source_object_map": [
@@ -2708,8 +2708,8 @@
       "reason": "clean refactor produced no nondeclined evaluations on this motif corpus"
     },
     {
-      "adversarial_controls_passed": true,
-      "adversarial_failure_count": 0,
+      "adversarial_controls_passed": false,
+      "adversarial_failure_count": 12,
       "campaign024_clean_source_object_map": [
         {
           "fields_read": [
@@ -2721,7 +2721,7 @@
           "type": "numeric_state_values"
         }
       ],
-      "cell_verdict": "CLEAN",
+      "cell_verdict": "BAD",
       "declined_count": 0,
       "historical_suspect_surfaces": [
         "process_flags"
@@ -2741,11 +2741,11 @@
           "type": "numeric_state_snapshot"
         }
       ],
-      "reason": "historical lens surface contains process_flags"
+      "reason": "historical lens surface contains process_flags; lens output diverged under four-axis adversarial controls"
     },
     {
-      "adversarial_controls_passed": true,
-      "adversarial_failure_count": 0,
+      "adversarial_controls_passed": false,
+      "adversarial_failure_count": 12,
       "campaign024_clean_source_object_map": [
         {
           "fields_read": [
@@ -2757,7 +2757,7 @@
           "type": "numeric_state_values"
         }
       ],
-      "cell_verdict": "CLEAN",
+      "cell_verdict": "BAD",
       "declined_count": 0,
       "historical_suspect_surfaces": [
         "process_flags"
@@ -2776,7 +2776,7 @@
           "type": "point_cloud"
         }
       ],
-      "reason": "historical lens surface contains process_flags"
+      "reason": "historical lens surface contains process_flags; lens output diverged under four-axis adversarial controls"
     },
     {
       "adversarial_controls_passed": true,
@@ -2830,8 +2830,8 @@
       "reason": "historical lens surface contains event, event_transition_proxy; clean refactor produced no nondeclined evaluations on this motif corpus"
     },
     {
-      "adversarial_controls_passed": true,
-      "adversarial_failure_count": 0,
+      "adversarial_controls_passed": false,
+      "adversarial_failure_count": 12,
       "campaign024_clean_source_object_map": [
         {
           "fields_read": [
@@ -2843,7 +2843,7 @@
           "type": "numeric_state_values"
         }
       ],
-      "cell_verdict": "CLEAN",
+      "cell_verdict": "BAD",
       "declined_count": 0,
       "historical_suspect_surfaces": [
         "event",
@@ -2871,11 +2871,11 @@
           "type": "numeric_state_snapshot"
         }
       ],
-      "reason": "historical lens surface contains event, event_statistics"
+      "reason": "historical lens surface contains event, event_statistics; lens output diverged under four-axis adversarial controls"
     },
     {
-      "adversarial_controls_passed": true,
-      "adversarial_failure_count": 0,
+      "adversarial_controls_passed": false,
+      "adversarial_failure_count": 12,
       "campaign024_clean_source_object_map": [
         {
           "fields_read": [
@@ -2887,7 +2887,7 @@
           "type": "numeric_state_values"
         }
       ],
-      "cell_verdict": "CLEAN",
+      "cell_verdict": "BAD",
       "declined_count": 0,
       "historical_suspect_surfaces": [
         "control_or_memory_token",
@@ -2918,11 +2918,11 @@
           "type": "numeric_state_snapshot"
         }
       ],
-      "reason": "historical lens surface contains control_or_memory_token, event, memory_channel_count, process_flags, token"
+      "reason": "historical lens surface contains control_or_memory_token, event, memory_channel_count, process_flags, token; lens output diverged under four-axis adversarial controls"
     },
     {
-      "adversarial_controls_passed": true,
-      "adversarial_failure_count": 0,
+      "adversarial_controls_passed": false,
+      "adversarial_failure_count": 12,
       "campaign024_clean_source_object_map": [
         {
           "fields_read": [
@@ -2934,7 +2934,7 @@
           "type": "numeric_state_values"
         }
       ],
-      "cell_verdict": "CLEAN",
+      "cell_verdict": "BAD",
       "declined_count": 0,
       "historical_suspect_surfaces": [
         "event",
@@ -2964,7 +2964,7 @@
           "type": "numeric_state_snapshot"
         }
       ],
-      "reason": "historical lens surface contains event, event_entropy, event_information, process_flags"
+      "reason": "historical lens surface contains event, event_entropy, event_information, process_flags; lens output diverged under four-axis adversarial controls"
     },
     {
       "adversarial_controls_passed": true,
@@ -2978,7 +2978,7 @@
         "token"
       ],
       "lens_id": "graph",
-      "mechanical_d26_verdict": "CLEAN",
+      "mechanical_d26_verdict": "UNKNOWN",
       "motif_id": "motif.replication_lineage.draft",
       "nondeclined_count": 0,
       "old_contract_source_object_map": [
@@ -3311,7 +3311,7 @@
         "token"
       ],
       "lens_id": "graph",
-      "mechanical_d26_verdict": "CLEAN",
+      "mechanical_d26_verdict": "UNKNOWN",
       "motif_id": "motif.self_maintained_boundary.draft",
       "nondeclined_count": 0,
       "old_contract_source_object_map": [
@@ -3648,7 +3648,7 @@
         "event"
       ],
       "lens_id": "graph",
-      "mechanical_d26_verdict": "CLEAN",
+      "mechanical_d26_verdict": "UNKNOWN",
       "motif_id": "motif.floor_connectivity.draft",
       "nondeclined_count": 0,
       "old_contract_source_object_map": [
@@ -3907,7 +3907,7 @@
       "reason": "historical lens surface contains event; clean refactor produced no nondeclined evaluations on this motif corpus"
     }
   ],
-  "content_hash": "sha256:7427180fc8c29ee5fa8b36f86813a63a380ddb60e46ac0e6b9fd1d09d3ae4cef",
+  "content_hash": "sha256:627e62c6d9c1ae9d44e6c083ab64a36bfc74ea486896f27216bfdd81169fff9a",
   "lens_ids": [
     "graph",
     "crnt",
@@ -3959,8 +3959,8 @@
   ],
   "schema": "Campaign024LensCouplingAudit.v1",
   "status_counts": {
-    "BAD": 33,
-    "CLEAN": 15
+    "BAD": 38,
+    "CLEAN": 10
   },
   "task_id": "TASK-LENS-METHOD"
 }

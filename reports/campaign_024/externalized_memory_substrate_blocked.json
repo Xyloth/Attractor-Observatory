@@ -1,5 +1,5 @@
 {
-  "N_run": 10000,
+  "N_run": 0,
   "balance": {
     "passed": true,
     "per_substrate": {
@@ -14,22 +14,14 @@
       "cognitive"
     ]
   },
-  "empirical_p": 0.10848915108489152,
-  "evaluation_row_count": 30,
   "interpretation": {
-    "rationale": "observed gap 0.036844 lies between shuffled mean 0.000628 and CI high 0.056985",
-    "verdict": "signal_partial_or_inconclusive"
+    "rationale": "no lens cell remained admissible after lens-side D26/adversarial audit",
+    "verdict": "not_evaluable_no_lens_after_decoupling"
   },
   "mode_tag": "exploratory",
   "motif_id": "motif.externalized_memory.draft",
-  "null_distribution": {
-    "ci_high": 0.056984646095933233,
-    "ci_low": -0.05756129937179999,
-    "mean": 0.0006276222147596407
-  },
-  "observed_gap": 0.03684447775766664,
-  "preregistration_hash": "sha256:d816ed02b7e0dd6b24ff0f2dfb66867710b67757f33bba491550ea5eaeddad94",
-  "primary_lens": "dynamical_systems",
-  "primary_lens_rationale": "first D26 lens-decoupled cell with nondeclined rows",
+  "preregistration_hash": "sha256:62ac1a82631354e97d192a562b576f32493d408226a51e0792addce6cd254ab0",
+  "primary_lens": null,
+  "primary_lens_rationale": "no lens cell remained admissible after lens-side D26/adversarial audit",
   "schema": "Campaign024SubstrateBlockedControl.v1"
 }
