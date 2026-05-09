@@ -82,7 +82,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:383f08a66773cf63fd06049f947dd02e9de6ab4cd9585418899b59917cc39d38",
+  "content_hash": "sha256:1d8a247f6bf6d3c1cd484aafe73091c6dd9349148ef2cd0755a76bf49247f050",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -276,7 +276,7 @@
     "language": "python",
     "line_count": 405,
     "path": "factory_lowlevel/normalization.py",
-    "path_hash": "sha256:4e796e7488e39e999a6b1aadb5263349c6c8d3a6e3b6547e1fe506a586bfd11e",
+    "path_hash": "sha256:b20ad9fd41d8e325fa94b4864eee277b6a9bcf6ae623b40553d94fe4541105b4",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -315,7 +315,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::912",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::1042",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -659,7 +659,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/normalization.py::261",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/normalization.py::264",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -681,7 +681,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/monitor.py->factory_lowlevel/normalization.py::911",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/monitor.py->factory_lowlevel/normalization.py::1041",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -703,7 +703,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::912",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/normalization.py->factory_lowlevel/persistence.py::1042",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -725,7 +725,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/normalization.py::261",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/normalization.py::264",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -740,7 +740,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/monitor.py->factory_lowlevel/normalization.py::911",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/monitor.py->factory_lowlevel/normalization.py::1041",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -829,18 +829,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

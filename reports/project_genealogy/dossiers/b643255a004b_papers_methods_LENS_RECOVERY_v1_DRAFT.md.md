@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/b643255a004b_papers_methods_LENS_RECOVERY_v1_DRAFT.md.json`
-- JSON content_hash: `sha256:46c0eacddfc35d4e074b8b13ef12f2b64f285a8b5146dc3b6de0b9dac3187f78`
+- JSON content_hash: `sha256:e60b2c087b49f73275c19fb4a5aa66a60f267a64e9fc5d4e9cb37e9807725efb`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

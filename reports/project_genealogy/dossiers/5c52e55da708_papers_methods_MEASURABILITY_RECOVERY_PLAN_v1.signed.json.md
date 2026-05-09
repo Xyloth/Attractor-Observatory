@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/5c52e55da708_papers_methods_MEASURABILITY_RECOVERY_PLAN_v1.signed.json.json`
-- JSON content_hash: `sha256:dc6d741b91e25263e71f1b5fc2b60abfbd5457e10822ed7f29ce79d00f8265d1`
+- JSON content_hash: `sha256:0288241318f3d88eaf1dc3044c3dcb1e0b6e0a42a1ba0493290b73cb196a8867`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

@@ -1,0 +1,684 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-022",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Report serializes structured data for post-hoc analysis.",
+        "[\n{\n\"audit_id\": \"CB022-B4-campaign006-private-run-paths\",\n\"doctrine\": [\n\"D17\",\n\"D23\",\n\"D29\"\n],\n\"reason\": \"Campaign 006 reports cite runs/campaign006 private trace artifacts absent from the shipped surface; references are explicitly marked private_unshipped instead of restored from private runtime storage.\",\n\"severity\": \"medium\",\n\"status\": \"routed_for_historical_artifact_review\"\n}\n]"
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "file_span"
+            }
+          ],
+          "atom_id": "report_records_data",
+          "doctrine_bindings_expected": [
+            "D11"
+          ],
+          "forbidden_failure_modes": [
+            "report contents are mock or placeholder (Class 12)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "subject": "TASK-CB-022 Topic B: enforce evidence discipline",
+            "ticket": "TASK-CB-022"
+          },
+          "statement": "Report serializes structured data for post-hoc analysis."
+        },
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "header_declared_intent",
+          "doctrine_bindings_expected": [
+            "D17",
+            "D23",
+            "D29"
+          ],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_006/audit_queue.json#header",
+            "ticket": "TASK-CB-022"
+          },
+          "statement": "[\n{\n\"audit_id\": \"CB022-B4-campaign006-private-run-paths\",\n\"doctrine\": [\n\"D17\",\n\"D23\",\n\"D29\"\n],\n\"reason\": \"Campaign 006 reports cite runs/campaign006 private trace artifacts absent from the shipped surface; references are explicitly marked private_unshipped instead of restored from private runtime storage.\",\n\"severity\": \"medium\",\n\"status\": \"routed_for_historical_artifact_review\"\n}\n]"
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D17",
+        "D23",
+        "D29"
+      ],
+      "forbidden_patterns": [
+        "report contents are mock or placeholder (Class 12)"
+      ],
+      "predicate_id": "birth::reports/campaign_006/audit_queue.json"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "note": "TASK-CB-022 Topic B: enforce evidence discipline",
+        "ref_id": "birth::reports/campaign_006/audit_queue.json::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-022",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::reports/campaign_006/audit_queue.json::ticket"
+      }
+    ],
+    "first_seen_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+    "first_seen_date": "2026-05-09T07:17:33-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-022",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:1a8a1fcb172af2d6b09cbce1d7b8a40921e683a3e730325c00a0c5fea3405ff8",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "reports/campaign_006/audit_queue.json"
+          },
+          "statement": "Tracked file with 13 lines / 431 bytes at HEAD."
+        }
+      ],
+      "byte_count": 431,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 13,
+      "observed_doctrine_bindings": [
+        "D17",
+        "D23",
+        "D29"
+      ],
+      "predicate_id": "current::reports/campaign_006/audit_queue.json",
+      "public_symbols": [],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "reports/campaign_006/audit_queue.json",
+        "note": "current contents at HEAD",
+        "ref_id": "current::reports/campaign_006/audit_queue.json::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "required_bad_cases": [
+        {
+          "id": "error_branch",
+          "kind": "letter_pattern"
+        },
+        {
+          "id": "decline_branch",
+          "kind": "letter_pattern"
+        }
+      ],
+      "value": 0.0
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D17",
+        "D23",
+        "D29"
+      ],
+      "verified": [
+        "D17",
+        "D23",
+        "D29"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 3,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 3,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 1.5
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 2,
+      "covered_atoms": 2,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D11",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D11",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D11::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "report",
+    "byte_count": 431,
+    "generated_status": "report",
+    "language": "json",
+    "line_count": 13,
+    "path": "reports/campaign_006/audit_queue.json",
+    "path_hash": "sha256:3816854ad9fe316aef7b8aa4bf5564d14ce05d8019b163599bf4a2ec46d3d26c",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.drift_assessment.missing_birth_atoms",
+          "note": "atom diff stored in this dossier",
+          "ref_id": "drift::atom_diff"
+        }
+      ],
+      "finding_id": "PG-reports/campaign_006/audit_queue.json-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/31a6d5151a36_reports_campaign_006_audit_queue.json.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::reports/campaign_006/audit_queue.json->reports/task_cb022_evidence_discipline/path_reference_markers.json::1642",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "target": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/audit_queue.json->reports/campaign_006/beta_worlds.json::4449",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/audit_queue.json::reports/campaign_006/beta_worlds.json"
+          }
+        ],
+        "target": "reports/campaign_006/beta_worlds.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/audit_queue.json->reports/campaign_006/beta_worlds.json::4589",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/audit_queue.json::reports/campaign_006/beta_worlds.json"
+          }
+        ],
+        "target": "reports/campaign_006/beta_worlds.json"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-022",
+      "members": [
+        "docs/AI_LANE_ROSTER.md",
+        "formalism/evidence/substance_gate.py",
+        "formalism/floor_bfg/read_separation.py",
+        "formalism/motif_contracts/adversarial.py",
+        "formalism/motif_contracts/contracts.py",
+        "formalism/motif_contracts/schema.py",
+        "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "reports/campaign_006/audit_queue.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "spawn_ticket": "TASK-CB-022"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "edge_id": "spawned_by_ticket::TASK-CB-022->reports/campaign_006/audit_queue.json::462",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-022",
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_b_evidence_discipline.py->reports/campaign_006/audit_queue.json::1641",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb015_adapter_expansion.py->reports/campaign_006/audit_queue.json::2745",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::public_tests/test_cb015_adapter_expansion.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb015_adapter_expansion.py",
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::public_tests/test_public_contracts.py->reports/campaign_006/audit_queue.json::4448",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::public_tests/test_public_contracts.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_public_contracts.py",
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::public_tests/test_public_contracts.py->reports/campaign_006/audit_queue.json::4588",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::public_tests/test_public_contracts.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_public_contracts.py",
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_006/audit_queue.json::5463",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_006/audit_queue.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::reports/campaign_006/audit_queue.json->reports/task_cb022_evidence_discipline/path_reference_markers.json::1642",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/audit_queue.json",
+        "target": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/audit_queue.json->reports/campaign_006/beta_worlds.json::4449",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/audit_queue.json::reports/campaign_006/beta_worlds.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/audit_queue.json",
+        "target": "reports/campaign_006/beta_worlds.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/audit_queue.json->reports/campaign_006/beta_worlds.json::4589",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/audit_queue.json::reports/campaign_006/beta_worlds.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/audit_queue.json",
+        "target": "reports/campaign_006/beta_worlds.json"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-022->reports/campaign_006/audit_queue.json::462",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "source": "TASK-CB-022"
+      },
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_b_evidence_discipline.py->reports/campaign_006/audit_queue.json::1641",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "source": "public_tests/test_cb022_topic_b_evidence_discipline.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb015_adapter_expansion.py->reports/campaign_006/audit_queue.json::2745",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::public_tests/test_cb015_adapter_expansion.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "source": "public_tests/test_cb015_adapter_expansion.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::public_tests/test_public_contracts.py->reports/campaign_006/audit_queue.json::4448",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::public_tests/test_public_contracts.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "source": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::public_tests/test_public_contracts.py->reports/campaign_006/audit_queue.json::4588",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::public_tests/test_public_contracts.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "source": "public_tests/test_public_contracts.py"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_006/audit_queue.json::5463",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_006/audit_queue.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      }
+    ],
+    "siblings": [
+      "docs/AI_LANE_ROSTER.md",
+      "formalism/evidence/substance_gate.py",
+      "formalism/floor_bfg/read_separation.py",
+      "formalism/motif_contracts/adversarial.py",
+      "formalism/motif_contracts/contracts.py",
+      "formalism/motif_contracts/schema.py",
+      "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+      "public_tests/test_cb022_topic_b_evidence_discipline.py",
+      "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 1,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::reports/campaign_006/audit_queue.json::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/cec6c69b1399_BUILDER_LAUNCH_PROTOCOL.md.json`
-- JSON content_hash: `sha256:f2eecd1434daadb7c2e586c616204c7a0f15b34a3ca8fcb1a543896c78a4898a`
+- JSON content_hash: `sha256:6b5d916ca1465ccb8baf072cb5eb5a1c068bbc1fd5186a33d9e2f47b95b97606`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

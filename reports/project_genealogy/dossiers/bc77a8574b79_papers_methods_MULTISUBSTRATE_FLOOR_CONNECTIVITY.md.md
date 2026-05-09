@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/bc77a8574b79_papers_methods_MULTISUBSTRATE_FLOOR_CONNECTIVITY.md.json`
-- JSON content_hash: `sha256:23301612fcb27ea0b26442db1bb17e17b972b2fefedc9f9e0420858c1eed4743`
+- JSON content_hash: `sha256:ed6ea2ef9d35c41846f246d6e4c77641130a5d648e56b3996fe736b501f62c2b`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

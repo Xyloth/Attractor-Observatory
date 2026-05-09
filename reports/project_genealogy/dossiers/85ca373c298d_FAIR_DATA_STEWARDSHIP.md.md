@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/85ca373c298d_FAIR_DATA_STEWARDSHIP.md.json`
-- JSON content_hash: `sha256:e810c40c50099f0d4d0724053da541cf907b1f401cb6427d6e4c5d531fb31898`
+- JSON content_hash: `sha256:f24cef2d5a59bdf83a6ce73fb2ea3bf15ef585eabfae23d540a163c1f8e25584`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

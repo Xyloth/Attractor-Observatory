@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/63c5b9906e8c_atlas_entries_atlas.self_boundary.001.json.json`
-- JSON content_hash: `sha256:19a7d453c150f19e57d5d454b2494601d6ddb28f482232a9087f0eb228a0b9e2`
+- JSON content_hash: `sha256:b77180dfa131b1c49720b9146ca1a3eb6ab81344cff2f23f5c2eef89c2d440c1`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/7ec51806c584_atlas_negative_space_NS-C004-01-closure_high_recurrence_no_boundary.json.json`
-- JSON content_hash: `sha256:bd278554dfead185d93323467993bd90b00366e83896c05c438602aafc2ecb52`
+- JSON content_hash: `sha256:1c866bed0e4ea57e0fc2853f8d3e2b072b8601637f69c8c0c8165fd33f2bdd5e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

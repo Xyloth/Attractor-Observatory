@@ -4,7 +4,7 @@
     "birth_predicate": {
       "acceptance_criteria": [
         "Prereg artifact locks basis/lens instruments with a content_hash.",
-        "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:8aee595eac5932d71d5dd9a436abdb8a9166c3598ab9592584a7f842fcbf965a\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:36821eaedae36fed52053755457d3ba9540240b954b8249390f0f1f96d5e5947\",\n\"min_negative_per_s"
+        "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:cbca89acc7365004c5571ccc44ee1cfc33211b78d18017a344e5319893febef9\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:36821eaedae36fed52053755457d3ba9540240b954b8249390f0f1f96d5e5947\",\n\"min_negative_per_s"
       ],
       "atoms": [
         {
@@ -39,7 +39,7 @@
             "locator": "papers/prereg/campaign_023/repair.signed.json#header",
             "ticket": "campaign_023"
           },
-          "statement": "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:8aee595eac5932d71d5dd9a436abdb8a9166c3598ab9592584a7f842fcbf965a\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:36821eaedae36fed52053755457d3ba9540240b954b8249390f0f1f96d5e5947\",\n\"min_negative_per_s"
+          "statement": "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:cbca89acc7365004c5571ccc44ee1cfc33211b78d18017a344e5319893febef9\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:36821eaedae36fed52053755457d3ba9540240b954b8249390f0f1f96d5e5947\",\n\"min_negative_per_s"
         }
       ],
       "content_hash": "",
@@ -81,7 +81,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:9809704443a3a360e899fbb61a2580d30b1a5948101a261169a2c87a6d4c708f",
+  "content_hash": "sha256:1c073c554a53a9dbd4dd8217f65e35052b08c1da6d3966edc1bdc6c10cb54423",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -214,7 +214,7 @@
     "language": "json",
     "line_count": 35,
     "path": "papers/prereg/campaign_023/repair.signed.json",
-    "path_hash": "sha256:a3942523a855897405c5da9a7c822aaf6f5de4eb93d7bcde6458dfb93701144c",
+    "path_hash": "sha256:d399d4f5aa4313c3df88f10437838dad1a95780661d16ac87f93c00a082689c6",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -253,7 +253,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::1453",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::1583",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -268,7 +268,7 @@
         "target": "papers/prereg/campaign_023/replication_lineage.signed.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::4052",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::4381",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -348,7 +348,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/repair.signed.json::308",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/repair.signed.json::391",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -370,7 +370,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::1452",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::1582",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -393,7 +393,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::4051",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::4380",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -415,7 +415,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::1453",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::1583",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -438,7 +438,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::4052",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/repair.signed.json->papers/prereg/campaign_023/replication_lineage.signed.json::4381",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -460,7 +460,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/repair.signed.json::308",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/repair.signed.json::391",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -475,7 +475,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::1452",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::1582",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -490,7 +490,7 @@
         "source": "papers/prereg/campaign_023/floor_connectivity.signed.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::4051",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/floor_connectivity.signed.json->papers/prereg/campaign_023/repair.signed.json::4380",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -579,18 +579,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

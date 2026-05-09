@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/075eb43c6ad0_Visuals_preview_color-worlds.html.json`
-- JSON content_hash: `sha256:40feb7489d6d2f3e991b7f4af46e8c157d42a889e6e32faa99e4d12f05cf0a78`
+- JSON content_hash: `sha256:2d1fbcb7db1a3188cc58a261aecce2f83f518ea2742e6a0337484e957c22a6f6`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

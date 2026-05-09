@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/e389cb7a54d4_papers_methods_CAMPAIGN_018_W1_CRN_BRIDGE_TRACES.md.json`
-- JSON content_hash: `sha256:dbe6ef74306402a02795aad75a5f2803730eae46980fc20e58e38932828ff33c`
+- JSON content_hash: `sha256:8e09d0d139f5f76cdb49b7c75b028e612b4adf138c8f2964f7d9017c34d05f15`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/70e93348a8ec_reports_campaign_010_lens_compositionality.json.json`
-- JSON content_hash: `sha256:dd0c7cd2ea9768306357d4c2e339145ab9dfbf487933bd5ffda928675d890e20`
+- JSON content_hash: `sha256:87d744135d780734a2da9265c7faf825546e177c3e3d325612522318388a389c`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

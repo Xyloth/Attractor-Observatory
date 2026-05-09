@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/c299f68bfa8e_atlas_negative_space_NS-C002-unexplained-absence-random-rewire-closure.json.json`
-- JSON content_hash: `sha256:0ce6a5c7ceb49065e86652b7270fa5796b58f8904010a70b7de044d23a69d4c9`
+- JSON content_hash: `sha256:cb930fec7d19297b13fa50bd8fceb1978123eb00d48f31e6fcce1d2a5408183c`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

@@ -69,7 +69,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:99590f91506810307297957c06f76ba118be36ef45d3fddd86068d630d4dd39f",
+  "content_hash": "sha256:9a515eadc82d1ae054a42d74dbb2362bf7c323ed16eb8411297e59de24b222fc",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -200,7 +200,7 @@
     "language": "markdown",
     "line_count": 115,
     "path": "ai_os/memory/model_calibration_report.md",
-    "path_hash": "sha256:cb689e12ba7f3f3bc084e9a608f33ee478afacf6760a02560d3f86a6e5a4127c",
+    "path_hash": "sha256:5d0b8cf0cb9f740bf2e8885bdbcecc6d2220a1b505d80e4dc023ee3b7becffa6",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -211,7 +211,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::ai_os/memory/model_calibration_report.md->ai_os/memory/motif_candidate_journal.md::1068",
+        "edge_id": "shares_birth_cohort::ai_os/memory/model_calibration_report.md->ai_os/memory/motif_candidate_journal.md::1198",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -469,7 +469,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::ai_os/memory/hypothesis_ledger.md->ai_os/memory/model_calibration_report.md::1067",
+        "edge_id": "shares_birth_cohort::ai_os/memory/hypothesis_ledger.md->ai_os/memory/model_calibration_report.md::1197",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -491,7 +491,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::ai_os/memory/model_calibration_report.md->ai_os/memory/motif_candidate_journal.md::1068",
+        "edge_id": "shares_birth_cohort::ai_os/memory/model_calibration_report.md->ai_os/memory/motif_candidate_journal.md::1198",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -513,7 +513,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::ai_os/memory/hypothesis_ledger.md->ai_os/memory/model_calibration_report.md::1067",
+        "edge_id": "shares_birth_cohort::ai_os/memory/hypothesis_ledger.md->ai_os/memory/model_calibration_report.md::1197",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -602,18 +602,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

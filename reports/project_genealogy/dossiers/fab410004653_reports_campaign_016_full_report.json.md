@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/fab410004653_reports_campaign_016_full_report.json.json`
-- JSON content_hash: `sha256:baf4da0af39f06cbd6e0d6701ad2b91ef08f743a47bf380014eeec3d24f0fe64`
+- JSON content_hash: `sha256:e99946201175b23100c536d553adff845d08a6f672cf550e092e5deb9219d9e2`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 8379 / Bytes: 304196
+- Lines: 8403 / Bytes: 306218
 
 ## Birth
 - Status: `recovered`
@@ -34,14 +34,14 @@
 
 ## Current
 - Status: `recovered`
-- Observed doctrines: `D21`
+- Observed doctrines: `D21, D23, D29`
 
 ## DepthVector.v1
 - **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
-- **doctrine_binding_quality**: `{'required': ['D21'], 'verified': ['D21'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D21', 'D23', 'D29'], 'verified': ['D21', 'D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['BUILD_LOG.md', 'papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md'], 'weighted_value': 3.0}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['BUILD_LOG.md', 'papers/methods/CAMPAIGN_017_LOW_LEVEL_DENSITY_AND_PREDICTION.md', 'reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 4.5}`
 
 ## Drift
 - Status: `review_required`

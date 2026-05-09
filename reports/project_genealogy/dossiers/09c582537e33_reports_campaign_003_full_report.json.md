@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/09c582537e33_reports_campaign_003_full_report.json.json`
-- JSON content_hash: `sha256:e2387bbb87b85d2b09f56db1f095be1c21b429cf9fd305d09d09dad9bc540197`
+- JSON content_hash: `sha256:301b0a42182826d77c9736ef91c4e464fa6d09d23db839ceb195f51f38c8ec8f`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

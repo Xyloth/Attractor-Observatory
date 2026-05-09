@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/328c1692e990_atlas_negative_space_NS-C006-03-w4-structural.json.json`
-- JSON content_hash: `sha256:3a8d28dad5a1e5286ace52c4cc711177c3644141160eda75ad9c5bfb211a03b3`
+- JSON content_hash: `sha256:d8c9f0b7b5a9d00e8ba05dd62cac4f23d1e20bf22958ca1f9371af3eb47b223d`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

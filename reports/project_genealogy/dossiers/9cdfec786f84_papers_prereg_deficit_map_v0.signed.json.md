@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/9cdfec786f84_papers_prereg_deficit_map_v0.signed.json.json`
-- JSON content_hash: `sha256:97356e76a80e450d8f1b73c84ca8ca72a59c0cec33ddab76bcf7bdda7705ef8c`
+- JSON content_hash: `sha256:a4ece357e719cb3df0fec346b6dc703598989267dd238d20e267a86a97f26194`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`

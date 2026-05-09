@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ecbdc36fd7f7_CLAUDE_FACTORY_INITIATION.md.json`
-- JSON content_hash: `sha256:36b132986e96a1621d3ce633494cdfbe365f084d910eacdc97c0cca090dfce0a`
+- JSON content_hash: `sha256:0d8468a21cab14333997409e20da779ba9ab698105c74539e73bba0ccc458e2e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:c341db15982ac3fe2b7d27486614621a1705b8636eb7145c63eac5a0aa781fd6",
+  "content_hash": "sha256:5ca7d5220863a28d6e19fa7547222e62a68a79dd0bea9cbc06864429038b80e4",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -212,7 +212,7 @@
     "language": "json",
     "line_count": 43,
     "path": "reports/task_019/regression_verification.json",
-    "path_hash": "sha256:734d641b36aadde0a7889f427a96f91fa32b8c833eb287652c48f51014c1a89e",
+    "path_hash": "sha256:3e35482a7f50f376ac4797b85868c230cce51a641e9dc6329c7acd866b16ce47",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -251,7 +251,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/task_019/regression_verification.json->reports/task_019/task019_closure.json::1265",
+        "edge_id": "shares_birth_cohort::reports/task_019/regression_verification.json->reports/task_019/task019_closure.json::1395",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -266,7 +266,7 @@
         "target": "reports/task_019/task019_closure.json"
       },
       {
-        "edge_id": "cites::reports/task_019/regression_verification.json->reports/campaign_008/d14_world_audit.json::4958",
+        "edge_id": "cites::reports/task_019/regression_verification.json->reports/campaign_008/d14_world_audit.json::5436",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -524,7 +524,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/phase1/w10_hypergraph_trace.json->reports/task_019/regression_verification.json::1264",
+        "edge_id": "shares_birth_cohort::reports/phase1/w10_hypergraph_trace.json->reports/task_019/regression_verification.json::1394",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -546,7 +546,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/task_019/regression_verification.json->reports/task_019/task019_closure.json::1265",
+        "edge_id": "shares_birth_cohort::reports/task_019/regression_verification.json->reports/task_019/task019_closure.json::1395",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -568,7 +568,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/task_019/regression_verification.json->reports/campaign_008/d14_world_audit.json::4958",
+        "edge_id": "cites::reports/task_019/regression_verification.json->reports/campaign_008/d14_world_audit.json::5436",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -590,7 +590,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::reports/phase1/w10_hypergraph_trace.json->reports/task_019/regression_verification.json::1264",
+        "edge_id": "shares_birth_cohort::reports/phase1/w10_hypergraph_trace.json->reports/task_019/regression_verification.json::1394",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -679,18 +679,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

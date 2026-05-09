@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/a14f5dd4772a_control_room_adapters_negative_space.py.json`
-- JSON content_hash: `sha256:163a9ee14270692d60626d96a6a9f0c86ce5a453a27ada69094d644bb4b80834`
+- JSON content_hash: `sha256:33f35158bcafad95c77e5892ee0ab3d40f8252473df2c76e79ee940d96dc2f70`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `control_room`
 - Generated status: `source`

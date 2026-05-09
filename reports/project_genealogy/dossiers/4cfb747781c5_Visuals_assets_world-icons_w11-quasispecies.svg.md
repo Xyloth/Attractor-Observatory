@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/4cfb747781c5_Visuals_assets_world-icons_w11-quasispecies.svg.json`
-- JSON content_hash: `sha256:9d2aa7690b22672015c8aa96247bdac74109a2705cd3121db72de5dc95b65f98`
+- JSON content_hash: `sha256:e3ed53f331c4778888c8946c4892dfb11e2189fe41961b538c4bbb7e19ac67ba`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

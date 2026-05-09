@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/55dd1927c98a_control_room_rooms___init__.py.json`
-- JSON content_hash: `sha256:886c9669f34c504787385fbac81cbb155224e6a3488d6ed6d7fe9c0889e9bedc`
+- JSON content_hash: `sha256:b10ef29d0ac2191554efdc3dff80090fcee29c221f2d1d1c4e5d0e45db70ded1`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `control_room`
 - Generated status: `source`
@@ -29,7 +29,7 @@
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
 - **doctrine_binding_quality**: `{'required': ['D22'], 'verified': ['D22'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 4, 'dereferenceable_evidence_refs': 4, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 2, 'imports_out': 11, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': [], 'weighted_value': 9.5}`
+- **operational_load_bearingness**: `{'imports_in': 2, 'imports_out': 12, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['BUILD_LOG.md'], 'weighted_value': 11.5}`
 
 ## Drift
 - Status: `positive_deepening`

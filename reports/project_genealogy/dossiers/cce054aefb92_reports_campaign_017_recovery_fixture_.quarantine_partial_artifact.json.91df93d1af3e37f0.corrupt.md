@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/cce054aefb92_reports_campaign_017_recovery_fixture_.quarantine_partial_artifact.json.91df93d1af3e37f0.corrupt.json`
-- JSON content_hash: `sha256:0df43118b462ae493e31b4127cd74bd5f2044b2adcba88600e2acc5c74ce9e7d`
+- JSON content_hash: `sha256:7b2e850647632c15ab8ca02716fd63c8daac6369e2439854d85ec12eca74e90d`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

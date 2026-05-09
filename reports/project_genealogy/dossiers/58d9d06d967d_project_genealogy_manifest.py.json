@@ -1,0 +1,2131 @@
+{
+  "birth": {
+    "birth_cohort_id": "PG-001",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module is part of the PG-001 audit instrument and exposes a callable surface."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "public_function_or_class"
+            }
+          ],
+          "atom_id": "audit_instrument_executes",
+          "doctrine_bindings_expected": [
+            "D11",
+            "D19",
+            "D20"
+          ],
+          "forbidden_failure_modes": [
+            "instrument that interpolates findings without source refs (D19)"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "b37c7b68e73883b45ef91df2e9d2bb5d799bdff6",
+            "subject": "PG-001 Pre-pass: evidence-lock manifest module",
+            "ticket": "PG-001"
+          },
+          "statement": "Module is part of the PG-001 audit instrument and exposes a callable surface."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D11",
+        "D19",
+        "D20"
+      ],
+      "forbidden_patterns": [
+        "instrument that interpolates findings without source refs (D19)"
+      ],
+      "predicate_id": "birth::project_genealogy/manifest.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "b37c7b68e73883b45ef91df2e9d2bb5d799bdff6",
+        "note": "PG-001 Pre-pass: evidence-lock manifest module",
+        "ref_id": "birth::project_genealogy/manifest.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "PG-001",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::project_genealogy/manifest.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "project_genealogy/manifest.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::project_genealogy/manifest.py::docstring"
+      }
+    ],
+    "first_seen_commit": "b37c7b68e73883b45ef91df2e9d2bb5d799bdff6",
+    "first_seen_date": "2026-05-08T15:48:24-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "PG-001",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:69c8955357793421a74dd8373328da285479575bd100644fcb9d15646ee210f0",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "project_genealogy/manifest.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: build_manifest, cli_main, determine_artifact_family, is_cohort_only, is_critical_path, write_manifest"
+        },
+        {
+          "atom_id": "cli_entry_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "project_genealogy/manifest.py#main"
+          },
+          "statement": "Module has __main__ entry block."
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "project_genealogy/manifest.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, dataclasses.dataclass, dataclasses.field, datetime.datetime, datetime.timezone, json..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "project_genealogy/manifest.py"
+          },
+          "statement": "Tracked file with 822 lines / 29690 bytes at HEAD."
+        }
+      ],
+      "byte_count": 29690,
+      "class_pattern_matches": [
+        {
+          "class_id": "Class12",
+          "line": 355,
+          "note": "decorative completeness",
+          "snippet": "\"Synthetic placeholder content, mock charts, or decorative \""
+        }
+      ],
+      "commands": [
+        "__main__"
+      ],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "dataclasses.dataclass",
+        "dataclasses.field",
+        "datetime.datetime",
+        "datetime.timezone",
+        "json",
+        "pathlib.Path",
+        "project_genealogy.MANIFEST_SCHEMA",
+        "project_genealogy.REPORT_DIR",
+        "project_genealogy.hashing.canonical_json",
+        "project_genealogy.hashing.hash_file",
+        "project_genealogy.hashing.sha256_hex",
+        "project_genealogy.hashing.write_with_hash",
+        "re",
+        "subprocess",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 127,
+          "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+          "snippet": "if re.search(pattern, rel_path):"
+        },
+        {
+          "line": 141,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "if name.endswith(\"_signed.json\") or name.endswith(\".signed.json\"):"
+        },
+        {
+          "line": 640,
+          "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+          "snippet": "return any(re.search(p, rel_path) for p in CRITICAL_PATH_PATTERNS)"
+        },
+        {
+          "line": 687,
+          "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+          "snippet": "except OSError:"
+        },
+        {
+          "line": 821,
+          "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+          "snippet": "if __name__ == \"__main__\":"
+        }
+      ],
+      "line_count": 822,
+      "observed_doctrine_bindings": [
+        "D11",
+        "D12",
+        "D15",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "predicate_id": "current::project_genealogy/manifest.py",
+      "public_symbols": [
+        "build_manifest",
+        "cli_main",
+        "determine_artifact_family",
+        "is_cohort_only",
+        "is_critical_path",
+        "write_manifest"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "project_genealogy/manifest.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::project_genealogy/manifest.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "error_branch",
+          "line": 687
+        },
+        {
+          "id": "decline_branch",
+          "line": null
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D11",
+        "D12",
+        "D15",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ],
+      "verified": [
+        "D11",
+        "D12",
+        "D15",
+        "D17.5",
+        "D18",
+        "D19",
+        "D20",
+        "D22",
+        "D23",
+        "D24",
+        "D25",
+        "D26",
+        "D29",
+        "D30",
+        "D31",
+        "D7",
+        "D9"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "present",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 2,
+      "validated_by": [],
+      "weighted_value": 1.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 127,
+        "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+        "reproducer": {
+          "command": "rg \"re\\.match|re\\.search|re\\.fullmatch\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if re.search(pattern, rel_path):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 141,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if name.endswith(\"_signed.json\") or name.endswith(\".signed.json\"):"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 640,
+        "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+        "reproducer": {
+          "command": "rg \"re\\.match|re\\.search|re\\.fullmatch\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "return any(re.search(p, rel_path) for p in CRITICAL_PATH_PATTERNS)"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 687,
+        "pattern": "except\\s+\\w+(?:\\s+as\\s+\\w+)?:",
+        "reproducer": {
+          "command": "rg \"except\\s+\\w+(?:\\s+as\\s+\\w+)?:\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "except OSError:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 821,
+        "pattern": "if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]",
+        "reproducer": {
+          "command": "rg \"if\\s+\\w+\\s*==\\s*['\\\"]\\w+['\\\"]\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if __name__ == \"__main__\":"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "cli_entry_present",
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [],
+    "status": "review_required"
+  },
+  "file": {
+    "artifact_family": "audit_instrument",
+    "byte_count": 29690,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 822,
+    "path": "project_genealogy/manifest.py",
+    "path_hash": "sha256:e3bf7f1893786ed95f3a1566305171d1af24d02af42801775aa96d8f7f53c9b4",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 127: if re.search(pattern, rel_path):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/manifest.py#L127",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/manifest.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/manifest.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if re.search(pattern, rel_path):' -- project_genealogy/manifest.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 141: if name.endswith(\"_signed.json\") or name.endswith(\".signed.json\"):",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/manifest.py#L141",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/manifest.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/manifest.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if name.endswith(\"_signed.json\") or name.endswith(\".signed.j' -- project_genealogy/manifest.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 640: return any(re.search(p, rel_path) for p in CRITICAL_PATH_PATTERNS)",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/manifest.py#L640",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/manifest.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/manifest.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'return any(re.search(p, rel_path) for p in CRITICAL_PATH_PAT' -- project_genealogy/manifest.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 687: except OSError:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/manifest.py#L687",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/manifest.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/manifest.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'except OSError:' -- project_genealogy/manifest.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 821: if __name__ == \"__main__\":",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/manifest.py#L821",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::project_genealogy/manifest.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/manifest.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if __name__ == \"__main__\":' -- project_genealogy/manifest.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected pattern matching Class12 (decorative completeness) at line 355",
+      "doctrine_refs": [],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "project_genealogy/manifest.py#L355",
+          "note": "decorative completeness",
+          "ref_id": "finding::project_genealogy/manifest.py::cls::0"
+        }
+      ],
+      "finding_id": "PG-project_genealogy/manifest.py-class-0",
+      "mistake_classes": [
+        "Class12"
+      ],
+      "recommendation": "Cross-reference with the originating campaign brief; if the pattern is intentional and source-bound, document; if not, open a follow-up ticket.",
+      "reproducer": {
+        "command": "rg -n -F '\"Synthetic placeholder content, mock charts, or decorative \"' -- project_genealogy/manifest.py",
+        "expected_result": "match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "low",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Drift requires review: missing or new atoms or letter-vs-spirit surfaces present without yet crossing a doctrine boundary.",
+      "doctrine_refs": [],
+      "evidence_refs": [],
+      "finding_id": "PG-project_genealogy/manifest.py-drift-review",
+      "mistake_classes": [
+        "Class5"
+      ],
+      "recommendation": "Cross-audit with campaign driver and add explicit acceptance evidence.",
+      "reproducer": {
+        "command": "python -c \"import json,sys; d=json.load(open('reports/project_genealogy/dossiers/58d9d06d967d_project_genealogy_manifest.py.json')); print(d['drift_assessment'])\"",
+        "expected_result": "drift_assessment payload with review_required status",
+        "kind": "json_query",
+        "last_run_status": "pass"
+      },
+      "severity": "medium",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "imports::project_genealogy/manifest.py->project_genealogy/__init__.py::842",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/manifest.py#import:project_genealogy.MANIFEST_SCHEMA",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/manifest.py::project_genealogy/__init__.py"
+          }
+        ],
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "edge_id": "imports::project_genealogy/manifest.py->project_genealogy/__init__.py::843",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/manifest.py#import:project_genealogy.REPORT_DIR",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/manifest.py::project_genealogy/__init__.py"
+          }
+        ],
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "edge_id": "shares_birth_cohort::project_genealogy/manifest.py->project_genealogy/probe.py::1626",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "target": "project_genealogy/probe.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::1936",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::2466",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::project_genealogy/manifest.py->project_telemetry/TIME_CALIBRATION_REPORT.md::2853",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_genealogy/manifest.py::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::project_genealogy/manifest.py->project_telemetry/TIME_CALIBRATION_REPORT.md::3037",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_genealogy/manifest.py::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::3213",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::3382",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::project_genealogy/manifest.py->project_telemetry/TIME_CALIBRATION_REPORT.md::3761",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_genealogy/manifest.py::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::project_genealogy/manifest.py->public_tests/test_cb013_launch_readiness.py::3986",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::project_genealogy/manifest.py::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4198",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4297",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4323",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::project_genealogy/manifest.py->project_genealogy/query.py::4385",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_genealogy/manifest.py::project_genealogy/query.py"
+          }
+        ],
+        "target": "project_genealogy/query.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4446",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4586",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4717",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D30::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4784",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "PG-001",
+      "members": [
+        "control_room/rooms/project_genealogy.py",
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "project_genealogy/__init__.py",
+        "project_genealogy/__main__.py",
+        "project_genealogy/atlas.py",
+        "project_genealogy/birth.py",
+        "project_genealogy/coherence.py",
+        "project_genealogy/current.py",
+        "project_genealogy/depth.py",
+        "project_genealogy/dossier.py",
+        "project_genealogy/drift.py",
+        "project_genealogy/graph.py",
+        "project_genealogy/hashing.py",
+        "project_genealogy/manifest.py",
+        "project_genealogy/probe.py",
+        "project_genealogy/query.py",
+        "project_genealogy/runner.py",
+        "public_tests/test_pg001_acceptance_gates.py",
+        "public_tests/test_pg001_control_room_tab.py",
+        "public_tests/test_pg001_query.py",
+        "public_tests/test_pg001_removal_probe.py",
+        "public_tests/test_pg001_schema.py"
+      ],
+      "spawn_ticket": "PG-001"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "b37c7b68e73883b45ef91df2e9d2bb5d799bdff6",
+        "edge_id": "spawned_by_ticket::PG-001->project_genealogy/manifest.py::414",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b37c7b68e73883b45ef91df2e9d2bb5d799bdff6",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "PG-001",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_genealogy/hashing.py->project_genealogy/manifest.py::1625",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/hashing.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::project_genealogy/birth.py->project_genealogy/manifest.py::1935",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D12",
+        "edge_id": "implements_same_doctrine::D12::project_genealogy/birth.py->project_genealogy/manifest.py::2026",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->project_genealogy/manifest.py::2465",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::project_genealogy/birth.py->project_genealogy/manifest.py::2852",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::project_genealogy/birth.py->project_genealogy/manifest.py::3036",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::project_genealogy/birth.py->project_genealogy/manifest.py::3212",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::project_genealogy/birth.py->project_genealogy/manifest.py::3381",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::project_genealogy/birth.py->project_genealogy/manifest.py::3760",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::project_genealogy/birth.py->project_genealogy/manifest.py::3985",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::project_genealogy/birth.py->project_genealogy/manifest.py::4197",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::project_genealogy/birth.py->project_genealogy/manifest.py::4296",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_genealogy/manifest.py::4322",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::project_genealogy/dossier.py->project_genealogy/manifest.py::4384",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_genealogy/dossier.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/dossier.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::project_genealogy/birth.py->project_genealogy/manifest.py::4445",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::project_genealogy/birth.py->project_genealogy/manifest.py::4585",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_genealogy/manifest.py::4716",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D30",
+        "edge_id": "implements_same_doctrine::D30::project_genealogy/birth.py->project_genealogy/manifest.py::4783",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/birth.py",
+        "target": "project_genealogy/manifest.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::project_genealogy/manifest.py->project_genealogy/__init__.py::842",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/manifest.py#import:project_genealogy.MANIFEST_SCHEMA",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/manifest.py::project_genealogy/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "imports::project_genealogy/manifest.py->project_genealogy/__init__.py::843",
+        "edge_type": "imports",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "ast_probe",
+            "locator": "project_genealogy/manifest.py#import:project_genealogy.REPORT_DIR",
+            "note": "import resolved to tracked file",
+            "ref_id": "import::project_genealogy/manifest.py::project_genealogy/__init__.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_genealogy/__init__.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::project_genealogy/manifest.py->project_genealogy/probe.py::1626",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_genealogy/probe.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D11",
+        "edge_id": "implements_same_doctrine::D11::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::1936",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D15",
+        "edge_id": "implements_same_doctrine::D15::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::2466",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D17.5",
+        "edge_id": "implements_same_doctrine::D17.5::project_genealogy/manifest.py->project_telemetry/TIME_CALIBRATION_REPORT.md::2853",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_genealogy/manifest.py::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D18",
+        "edge_id": "implements_same_doctrine::D18::project_genealogy/manifest.py->project_telemetry/TIME_CALIBRATION_REPORT.md::3037",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_genealogy/manifest.py::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D19",
+        "edge_id": "implements_same_doctrine::D19::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::3213",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D20",
+        "edge_id": "implements_same_doctrine::D20::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::3382",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D7",
+        "edge_id": "implements_same_doctrine::D7::project_genealogy/manifest.py->project_telemetry/TIME_CALIBRATION_REPORT.md::3761",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_genealogy/manifest.py::project_telemetry/TIME_CALIBRATION_REPORT.md"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/TIME_CALIBRATION_REPORT.md"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D9",
+        "edge_id": "implements_same_doctrine::D9::project_genealogy/manifest.py->public_tests/test_cb013_launch_readiness.py::3986",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::project_genealogy/manifest.py::public_tests/test_cb013_launch_readiness.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "public_tests/test_cb013_launch_readiness.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D22",
+        "edge_id": "implements_same_doctrine::D22::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4198",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D24",
+        "edge_id": "implements_same_doctrine::D24::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4297",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4323",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D26",
+        "edge_id": "implements_same_doctrine::D26::project_genealogy/manifest.py->project_genealogy/query.py::4385",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_genealogy/manifest.py::project_genealogy/query.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_genealogy/query.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4446",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4586",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D25",
+        "edge_id": "implements_same_doctrine::D25::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4717",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D30",
+        "edge_id": "implements_same_doctrine::D30::project_genealogy/manifest.py->project_telemetry/ai_builder_tasks.jsonl::4784",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::project_genealogy/manifest.py::project_telemetry/ai_builder_tasks.jsonl"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_genealogy/manifest.py",
+        "target": "project_telemetry/ai_builder_tasks.jsonl"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::PG-001->project_genealogy/manifest.py::414",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "b37c7b68e73883b45ef91df2e9d2bb5d799bdff6",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "PG-001"
+      },
+      {
+        "edge_id": "shares_birth_cohort::project_genealogy/hashing.py->project_genealogy/manifest.py::1625",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=PG-001",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::PG-001"
+          }
+        ],
+        "source": "project_genealogy/hashing.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D11::project_genealogy/birth.py->project_genealogy/manifest.py::1935",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D11",
+            "note": "shared mention of doctrine D11",
+            "ref_id": "doctrine::D11::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D12::project_genealogy/birth.py->project_genealogy/manifest.py::2026",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D12",
+            "note": "shared mention of doctrine D12",
+            "ref_id": "doctrine::D12::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md->project_genealogy/manifest.py::2465",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D15",
+            "note": "shared mention of doctrine D15",
+            "ref_id": "doctrine::D15::papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D17.5::project_genealogy/birth.py->project_genealogy/manifest.py::2852",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17.5",
+            "note": "shared mention of doctrine D17.5",
+            "ref_id": "doctrine::D17.5::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D18::project_genealogy/birth.py->project_genealogy/manifest.py::3036",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D18",
+            "note": "shared mention of doctrine D18",
+            "ref_id": "doctrine::D18::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::project_genealogy/birth.py->project_genealogy/manifest.py::3212",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D19",
+            "note": "shared mention of doctrine D19",
+            "ref_id": "doctrine::D19::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D20::project_genealogy/birth.py->project_genealogy/manifest.py::3381",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D20",
+            "note": "shared mention of doctrine D20",
+            "ref_id": "doctrine::D20::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D7::project_genealogy/birth.py->project_genealogy/manifest.py::3760",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D7",
+            "note": "shared mention of doctrine D7",
+            "ref_id": "doctrine::D7::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D9::project_genealogy/birth.py->project_genealogy/manifest.py::3985",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D9",
+            "note": "shared mention of doctrine D9",
+            "ref_id": "doctrine::D9::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D22::project_genealogy/birth.py->project_genealogy/manifest.py::4197",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D22",
+            "note": "shared mention of doctrine D22",
+            "ref_id": "doctrine::D22::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D24::project_genealogy/birth.py->project_genealogy/manifest.py::4296",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D24",
+            "note": "shared mention of doctrine D24",
+            "ref_id": "doctrine::D24::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_genealogy/manifest.py::4322",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D26::project_genealogy/dossier.py->project_genealogy/manifest.py::4384",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D26",
+            "note": "shared mention of doctrine D26",
+            "ref_id": "doctrine::D26::project_genealogy/dossier.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/dossier.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::project_genealogy/birth.py->project_genealogy/manifest.py::4445",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::project_genealogy/birth.py->project_genealogy/manifest.py::4585",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->project_genealogy/manifest.py::4716",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D25",
+            "note": "shared mention of doctrine D25",
+            "ref_id": "doctrine::D25::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D30::project_genealogy/birth.py->project_genealogy/manifest.py::4783",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D30",
+            "note": "shared mention of doctrine D30",
+            "ref_id": "doctrine::D30::project_genealogy/birth.py::project_genealogy/manifest.py"
+          }
+        ],
+        "source": "project_genealogy/birth.py"
+      }
+    ],
+    "siblings": [
+      "control_room/rooms/project_genealogy.py",
+      "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+      "project_genealogy/__init__.py",
+      "project_genealogy/__main__.py",
+      "project_genealogy/atlas.py",
+      "project_genealogy/birth.py",
+      "project_genealogy/coherence.py",
+      "project_genealogy/current.py",
+      "project_genealogy/depth.py",
+      "project_genealogy/dossier.py",
+      "project_genealogy/drift.py",
+      "project_genealogy/graph.py",
+      "project_genealogy/hashing.py",
+      "project_genealogy/probe.py",
+      "project_genealogy/query.py",
+      "project_genealogy/runner.py",
+      "public_tests/test_pg001_acceptance_gates.py",
+      "public_tests/test_pg001_control_room_tab.py",
+      "public_tests/test_pg001_query.py",
+      "public_tests/test_pg001_removal_probe.py",
+      "public_tests/test_pg001_schema.py"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::project_genealogy/manifest.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/f46c792b28e0_BLOCKER-SH3-CAMPAIGN-008-STRICT-SUBSTANCE-FLOORS.md.json`
-- JSON content_hash: `sha256:6983ff0b6e6759a2c2ec49d509427850770bee5d347f21bc2da6e0653178c872`
+- JSON content_hash: `sha256:60221c6d6993833e95c5318281759e547ead809f001e3eaac576833c842dfc99`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

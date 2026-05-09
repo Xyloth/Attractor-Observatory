@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/61a13c63918c_papers_methods_CAMPAIGN_016_FACTORY_LOW_LEVEL.md.json`
-- JSON content_hash: `sha256:5fa3475cb52aa37558fc7b75dab828e2d4f8328644868f9bc6eb5e57946caf36`
+- JSON content_hash: `sha256:6beb14cc4d1daf19f4ea70899c3e2c0afbe03cf25257b3303d60af317ca1ea05`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

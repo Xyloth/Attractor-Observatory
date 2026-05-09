@@ -96,7 +96,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:0bdc67e384a804acb96980140eab1afb28c03773d43471fbd5fa81b5f87aa214",
+  "content_hash": "sha256:6664b8d507efb43fb898791a5ee93ac2de0c92ed411838f41bc9819a79fd597e",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -390,7 +390,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::public_tests/test_cb013_launch_readiness.py->scripts/SETUP_WORKTREE.md::1274",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb013_launch_readiness.py->scripts/SETUP_WORKTREE.md::1404",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -405,7 +405,7 @@
         "target": "scripts/SETUP_WORKTREE.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::public_tests/test_cb013_launch_readiness.py->public_tests/test_cb016_persistence_load_on_init.py::3695",
+        "edge_id": "implements_same_doctrine::D9::public_tests/test_cb013_launch_readiness.py->public_tests/test_cb016_persistence_load_on_init.py::3987",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -420,7 +420,7 @@
         "target": "public_tests/test_cb016_persistence_load_on_init.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb013_launch_readiness.py->reports/campaign_013/multisubstrate_floor_connectivity_v2.json::3903",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb013_launch_readiness.py->public_tests/test_pg001_control_room_tab.py::4204",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -429,10 +429,10 @@
             "kind": "grep",
             "locator": "both files mention D22",
             "note": "shared mention of doctrine D22",
-            "ref_id": "doctrine::D22::public_tests/test_cb013_launch_readiness.py::reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+            "ref_id": "doctrine::D22::public_tests/test_cb013_launch_readiness.py::public_tests/test_pg001_control_room_tab.py"
           }
         ],
-        "target": "reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+        "target": "public_tests/test_pg001_control_room_tab.py"
       }
     ],
     "cohort": {
@@ -454,7 +454,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
-        "edge_id": "spawned_by_ticket::CB-013->public_tests/test_cb013_launch_readiness.py::333",
+        "edge_id": "spawned_by_ticket::CB-013->public_tests/test_cb013_launch_readiness.py::431",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -476,7 +476,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1273",
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1403",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -499,7 +499,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->public_tests/test_cb013_launch_readiness.py::3694",
+        "edge_id": "implements_same_doctrine::D9::project_genealogy/manifest.py->public_tests/test_cb013_launch_readiness.py::3986",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -508,21 +508,21 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::public_tests/test_cb013_launch_readiness.py"
+            "ref_id": "doctrine::D9::project_genealogy/manifest.py::public_tests/test_cb013_launch_readiness.py"
           }
         ],
         "private_boundary": {
           "evidence_private": false,
           "reason": ""
         },
-        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "source": "project_genealogy/manifest.py",
         "target": "public_tests/test_cb013_launch_readiness.py"
       },
       {
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::3902",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::4203",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -544,7 +544,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::public_tests/test_cb013_launch_readiness.py->scripts/SETUP_WORKTREE.md::1274",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb013_launch_readiness.py->scripts/SETUP_WORKTREE.md::1404",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -567,7 +567,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::public_tests/test_cb013_launch_readiness.py->public_tests/test_cb016_persistence_load_on_init.py::3695",
+        "edge_id": "implements_same_doctrine::D9::public_tests/test_cb013_launch_readiness.py->public_tests/test_cb016_persistence_load_on_init.py::3987",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -590,7 +590,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb013_launch_readiness.py->reports/campaign_013/multisubstrate_floor_connectivity_v2.json::3903",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb013_launch_readiness.py->public_tests/test_pg001_control_room_tab.py::4204",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -599,7 +599,7 @@
             "kind": "grep",
             "locator": "both files mention D22",
             "note": "shared mention of doctrine D22",
-            "ref_id": "doctrine::D22::public_tests/test_cb013_launch_readiness.py::reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+            "ref_id": "doctrine::D22::public_tests/test_cb013_launch_readiness.py::public_tests/test_pg001_control_room_tab.py"
           }
         ],
         "private_boundary": {
@@ -607,12 +607,12 @@
           "reason": ""
         },
         "source": "public_tests/test_cb013_launch_readiness.py",
-        "target": "reports/campaign_013/multisubstrate_floor_connectivity_v2.json"
+        "target": "public_tests/test_pg001_control_room_tab.py"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::CB-013->public_tests/test_cb013_launch_readiness.py::333",
+        "edge_id": "spawned_by_ticket::CB-013->public_tests/test_cb013_launch_readiness.py::431",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -627,7 +627,7 @@
         "source": "CB-013"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1273",
+        "edge_id": "shares_birth_cohort::papers/methods/INGESTION_TARGETS.md->public_tests/test_cb013_launch_readiness.py::1403",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -642,7 +642,7 @@
         "source": "papers/methods/INGESTION_TARGETS.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->public_tests/test_cb013_launch_readiness.py::3694",
+        "edge_id": "implements_same_doctrine::D9::project_genealogy/manifest.py->public_tests/test_cb013_launch_readiness.py::3986",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -651,13 +651,13 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::public_tests/test_cb013_launch_readiness.py"
+            "ref_id": "doctrine::D9::project_genealogy/manifest.py::public_tests/test_cb013_launch_readiness.py"
           }
         ],
-        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+        "source": "project_genealogy/manifest.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::3902",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb011_polish_audit.py->public_tests/test_cb013_launch_readiness.py::4203",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -704,18 +704,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

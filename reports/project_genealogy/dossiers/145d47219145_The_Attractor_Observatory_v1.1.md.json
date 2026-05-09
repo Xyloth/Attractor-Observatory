@@ -56,7 +56,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:534d843346b4f032ab032f605eb941c17718327cb57d14fe19feaf3df829873b",
+  "content_hash": "sha256:5d0a81c39a70fff3a279cbf788bd29865e3b4db69503aa0652166d476949a227",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -161,7 +161,7 @@
     "language": "markdown",
     "line_count": 1572,
     "path": "The Attractor Observatory v1.1.md",
-    "path_hash": "sha256:63f662ab898dc4ced50aafff245100c488411dbb107e1fd88c82e3113f29b0cc",
+    "path_hash": "sha256:24e4ac46c0fb0859ca41ff4994bd1f2ba5b9cbe04a1388fa4bfe69afc7d99d3e",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -172,7 +172,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.1.md->The Attractor Observatory v1.2.md::1061",
+        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.1.md->The Attractor Observatory v1.2.md::1191",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -430,7 +430,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.0.txt->The Attractor Observatory v1.1.md::1060",
+        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.0.txt->The Attractor Observatory v1.1.md::1190",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -452,7 +452,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.1.md->The Attractor Observatory v1.2.md::1061",
+        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.1.md->The Attractor Observatory v1.2.md::1191",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -474,7 +474,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.0.txt->The Attractor Observatory v1.1.md::1060",
+        "edge_id": "shares_birth_cohort::The Attractor Observatory v1.0.txt->The Attractor Observatory v1.1.md::1190",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -563,18 +563,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

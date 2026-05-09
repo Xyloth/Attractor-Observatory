@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/cc6a4df0f524_docs_screenshots_01-pulse-deck.png.json`
-- JSON content_hash: `sha256:a065d5244afdb3b07cfa11ea8b9c75915a18b5c26311e96c43406e1587a6f279`
+- JSON content_hash: `sha256:0019bcb61b49d45ac8c6cadda03920447b79cf28899b5b6c943f03b7a43d32cc`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `docs`
 - Generated status: `source`

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/03c551314c1f_ai_os_memory_hypothesis_ledger.md.json`
-- JSON content_hash: `sha256:001437928d21ac92bd9e9777fe5c15353b4464e7fac6179b472e3fb0ba67d90a`
+- JSON content_hash: `sha256:c97def42d2cdfae45c5188dfd18e771f115f4332c80bcb84f83c103a86239f96`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `ai_os`
 - Generated status: `source`

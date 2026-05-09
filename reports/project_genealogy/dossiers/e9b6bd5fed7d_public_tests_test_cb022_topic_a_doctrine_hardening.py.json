@@ -1,0 +1,546 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-022",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "Module exposes at least one assert-bearing pytest function."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [
+            {
+              "kind": "ast_probe",
+              "selector": "function_with_assert"
+            }
+          ],
+          "atom_id": "behavior_assertion_present",
+          "doctrine_bindings_expected": [
+            "D7",
+            "D12",
+            "D29"
+          ],
+          "forbidden_failure_modes": [
+            "test asserts only existence of a module without behavior"
+          ],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "20c8c938e8f7e7abf1af4a8348c0983ddae455de",
+            "subject": "TASK-CB-022 Topic A: harden doctrine controls",
+            "ticket": "TASK-CB-022"
+          },
+          "statement": "Module exposes at least one assert-bearing pytest function."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [
+        "D12",
+        "D29",
+        "D7"
+      ],
+      "forbidden_patterns": [
+        "test asserts only existence of a module without behavior"
+      ],
+      "predicate_id": "birth::public_tests/test_cb022_topic_a_doctrine_hardening.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "20c8c938e8f7e7abf1af4a8348c0983ddae455de",
+        "note": "TASK-CB-022 Topic A: harden doctrine controls",
+        "ref_id": "birth::public_tests/test_cb022_topic_a_doctrine_hardening.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-022",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::public_tests/test_cb022_topic_a_doctrine_hardening.py::ticket"
+      }
+    ],
+    "first_seen_commit": "20c8c938e8f7e7abf1af4a8348c0983ddae455de",
+    "first_seen_date": "2026-05-09T07:11:04-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-022",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:d5575d7b285f2afb1f15ee692a8c8d383d90e2023db64c745fb25d3f49be5754",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb022_topic_a_doctrine_hardening.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: test_d31_audit_catches_dynamic_import_and_split_outcome_summary, test_d31_runtime_import_hook_blocks_dynamic_classifier_import, test_metadata_identity_erasure_catches_world_family_cheat, test_source_object_canonicalization_catches_aliases_ancestors_and_wildcards, test_value_label_erasure_catches_numeric_label_channel_cheat"
+        },
+        {
+          "atom_id": "pytest_assertions_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb022_topic_a_doctrine_hardening.py#tests"
+          },
+          "statement": "Module exposes 5 pytest functions: test_d31_audit_catches_dynamic_import_and_split_outcome_summary, test_d31_runtime_import_hook_blocks_dynamic_classifier_import, test_metadata_identity_erasure_catches_world_family_cheat, test_source_object_canonicalization_catches_aliases_ancestors_and_wildcards, test_value_label_erasure_catches_numeric_label_channel_cheat"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "public_tests/test_cb022_topic_a_doctrine_hardening.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, formalism.floor_bfg.read_separation.assert_d31_read_separation, formalism.floor_bfg.read_separation.d31_import_denylist, formalism.motif_contracts.adversarial.run_lens_adversarial_controls, formalism.motif_contracts.schema.IndependenceVerdict, formalism.motif_contracts.schema.derive_independence_verdict..."
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "public_tests/test_cb022_topic_a_doctrine_hardening.py"
+          },
+          "statement": "Tracked file with 110 lines / 5270 bytes at HEAD."
+        }
+      ],
+      "byte_count": 5270,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "formalism.floor_bfg.read_separation.assert_d31_read_separation",
+        "formalism.floor_bfg.read_separation.d31_import_denylist",
+        "formalism.motif_contracts.adversarial.run_lens_adversarial_controls",
+        "formalism.motif_contracts.schema.IndependenceVerdict",
+        "formalism.motif_contracts.schema.derive_independence_verdict",
+        "pathlib.Path",
+        "pytest",
+        "sys",
+        "types.SimpleNamespace"
+      ],
+      "letter_vs_spirit_surfaces": [],
+      "line_count": 110,
+      "observed_doctrine_bindings": [
+        "D31"
+      ],
+      "predicate_id": "current::public_tests/test_cb022_topic_a_doctrine_hardening.py",
+      "public_symbols": [
+        "test_d31_audit_catches_dynamic_import_and_split_outcome_summary",
+        "test_d31_runtime_import_hook_blocks_dynamic_classifier_import",
+        "test_metadata_identity_erasure_catches_world_family_cheat",
+        "test_source_object_canonicalization_catches_aliases_ancestors_and_wildcards",
+        "test_value_label_erasure_catches_numeric_label_channel_cheat"
+      ],
+      "test_functions": [
+        "test_d31_audit_catches_dynamic_import_and_split_outcome_summary",
+        "test_d31_runtime_import_hook_blocks_dynamic_classifier_import",
+        "test_metadata_identity_erasure_catches_world_family_cheat",
+        "test_source_object_canonicalization_catches_aliases_ancestors_and_wildcards",
+        "test_value_label_erasure_catches_numeric_label_channel_cheat"
+      ]
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::public_tests/test_cb022_topic_a_doctrine_hardening.py::head"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "test",
+        "locator": "public_tests/test_cb022_topic_a_doctrine_hardening.py::test_d31_audit_catches_dynamic_import_and_split_outcome_summary,test_d31_runtime_import_hook_blocks_dynamic_classifier_import,test_metadata_identity_erasure_catches_world_family_cheat",
+        "note": "pytest functions discoverable via collection",
+        "ref_id": "current::public_tests/test_cb022_topic_a_doctrine_hardening.py::pytest"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [
+        "D31"
+      ],
+      "verified": [
+        "D31"
+      ]
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [
+      {
+        "doctrine_id": "D12",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D12",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D12::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D29",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D29",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D29::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      },
+      {
+        "doctrine_id": "D7",
+        "evidence_ref": {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "absent doctrine binding D7",
+          "note": "expected at birth, absent in current observation",
+          "ref_id": "doctrine::D7::missing"
+        },
+        "kind": "missing_required_doctrine_binding"
+      }
+    ],
+    "letter_vs_spirit_flags": [],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present",
+      "pytest_assertions_present"
+    ],
+    "reproducer_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "json_query",
+        "locator": "$.drift_assessment.missing_birth_atoms",
+        "note": "atom diff stored in this dossier",
+        "ref_id": "drift::atom_diff"
+      }
+    ],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "test",
+    "byte_count": 5270,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 110,
+    "path": "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+    "path_hash": "sha256:7cd4bb09fe98831352b51b469141e73d10f39515648907e8594d264008e045c7",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_a_doctrine_hardening.py->public_tests/test_cb022_topic_b_evidence_discipline.py::1640",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "target": "public_tests/test_cb022_topic_b_evidence_discipline.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::public_tests/test_cb022_topic_a_doctrine_hardening.py->public_tests/test_public_contracts.py::4325",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::public_tests/test_cb022_topic_a_doctrine_hardening.py::public_tests/test_public_contracts.py"
+          }
+        ],
+        "target": "public_tests/test_public_contracts.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-022",
+      "members": [
+        "docs/AI_LANE_ROSTER.md",
+        "formalism/evidence/substance_gate.py",
+        "formalism/floor_bfg/read_separation.py",
+        "formalism/motif_contracts/adversarial.py",
+        "formalism/motif_contracts/contracts.py",
+        "formalism/motif_contracts/schema.py",
+        "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "reports/campaign_006/audit_queue.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "spawn_ticket": "TASK-CB-022"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "20c8c938e8f7e7abf1af4a8348c0983ddae455de",
+        "edge_id": "spawned_by_ticket::TASK-CB-022->public_tests/test_cb022_topic_a_doctrine_hardening.py::438",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "20c8c938e8f7e7abf1af4a8348c0983ddae455de",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb022_topic_a_doctrine_hardening.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-022",
+        "target": "public_tests/test_cb022_topic_a_doctrine_hardening.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::formalism/motif_contracts/schema.py->public_tests/test_cb022_topic_a_doctrine_hardening.py::1639",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "formalism/motif_contracts/schema.py",
+        "target": "public_tests/test_cb022_topic_a_doctrine_hardening.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb022_topic_a_doctrine_hardening.py::4324",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_cb022_topic_a_doctrine_hardening.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "project_telemetry/ai_builder_tasks.jsonl",
+        "target": "public_tests/test_cb022_topic_a_doctrine_hardening.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::public_tests/test_cb022_topic_a_doctrine_hardening.py->public_tests/test_cb022_topic_b_evidence_discipline.py::1640",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "target": "public_tests/test_cb022_topic_b_evidence_discipline.py"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D31",
+        "edge_id": "implements_same_doctrine::D31::public_tests/test_cb022_topic_a_doctrine_hardening.py->public_tests/test_public_contracts.py::4325",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::public_tests/test_cb022_topic_a_doctrine_hardening.py::public_tests/test_public_contracts.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "target": "public_tests/test_public_contracts.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-022->public_tests/test_cb022_topic_a_doctrine_hardening.py::438",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "20c8c938e8f7e7abf1af4a8348c0983ddae455de",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::public_tests/test_cb022_topic_a_doctrine_hardening.py"
+          }
+        ],
+        "source": "TASK-CB-022"
+      },
+      {
+        "edge_id": "shares_birth_cohort::formalism/motif_contracts/schema.py->public_tests/test_cb022_topic_a_doctrine_hardening.py::1639",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "source": "formalism/motif_contracts/schema.py"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D31::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb022_topic_a_doctrine_hardening.py::4324",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D31",
+            "note": "shared mention of doctrine D31",
+            "ref_id": "doctrine::D31::project_telemetry/ai_builder_tasks.jsonl::public_tests/test_cb022_topic_a_doctrine_hardening.py"
+          }
+        ],
+        "source": "project_telemetry/ai_builder_tasks.jsonl"
+      }
+    ],
+    "siblings": [
+      "docs/AI_LANE_ROSTER.md",
+      "formalism/evidence/substance_gate.py",
+      "formalism/floor_bfg/read_separation.py",
+      "formalism/motif_contracts/adversarial.py",
+      "formalism/motif_contracts/contracts.py",
+      "formalism/motif_contracts/schema.py",
+      "public_tests/test_cb022_topic_b_evidence_discipline.py",
+      "reports/campaign_006/audit_queue.json",
+      "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "probe_declined",
+    "cleanup_reason": "critical-path file (persistence/lock/schema/adapter or shipped public surface); per-file stash/restore would risk irreversible state",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_declined_critical_path",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "project_genealogy/manifest.py:CRITICAL_PATH_PATTERNS",
+          "note": "matched manifest critical-path pattern",
+          "ref_id": "probe::public_tests/test_cb022_topic_a_doctrine_hardening.py::critical"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:17Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

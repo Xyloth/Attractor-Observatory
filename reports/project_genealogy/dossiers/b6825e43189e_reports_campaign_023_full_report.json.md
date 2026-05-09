@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/b6825e43189e_reports_campaign_023_full_report.json.json`
-- JSON content_hash: `sha256:83376861711f39018b9b6536779cc3cfc0805e57b62233b695ec0d792d32fca9`
+- JSON content_hash: `sha256:db9bc893958637d53e36ec1bd41c060e54da9fcaed56cb96053d8500f5311b1e`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 8622 / Bytes: 326322
+- Lines: 10362 / Bytes: 431329
 
 ## Birth
 - Status: `recovered`
@@ -21,14 +21,14 @@
 
 ## Current
 - Status: `recovered`
-- Observed doctrines: `D26, D31`
+- Observed doctrines: `D23, D26, D29, D31`
 
 ## DepthVector.v1
 - **predicate_atom_coverage**: `{'claimable_atoms': 1, 'covered_atoms': 1, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
-- **doctrine_binding_quality**: `{'required': ['D26', 'D31'], 'verified': ['D26', 'D31'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D23', 'D26', 'D29', 'D31'], 'verified': ['D23', 'D26', 'D29', 'D31'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['BUILD_LOG.md', 'reports/campaign_010/formal_deficit_map.json', 'reports/task_dx002_public_boundary_markers.json'], 'weighted_value': 4.5}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['BUILD_LOG.md', 'reports/campaign_010/formal_deficit_map.json', 'reports/task_cb022_evidence_discipline/path_reference_markers.json', 'reports/task_dx002_public_boundary_markers.json'], 'weighted_value': 6.0}`
 
 ## Drift
 - Status: `review_required`

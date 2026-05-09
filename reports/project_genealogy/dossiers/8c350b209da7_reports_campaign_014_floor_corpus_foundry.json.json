@@ -67,7 +67,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:a61cacd1864a353b31d6116bad7759176a6b49fa050e82a2664e0bcc1ca3d0a2",
+  "content_hash": "sha256:409acd7f43007f54525f81b0d618f14ebe06d98ddf876582faf3827e45a229f4",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -77,7 +77,7 @@
             "kind": "file_span",
             "locator": "reports/campaign_014/floor_corpus_foundry.json"
           },
-          "statement": "Tracked file with 3907 lines / 170029 bytes at HEAD."
+          "statement": "Tracked file with 3911 lines / 170360 bytes at HEAD."
         },
         {
           "atom_id": "provenance_present",
@@ -88,17 +88,19 @@
           "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 170029,
+      "byte_count": 170360,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 3907,
+      "line_count": 3911,
       "observed_doctrine_bindings": [
         "D18",
-        "D21"
+        "D21",
+        "D23",
+        "D29"
       ],
       "predicate_id": "current::reports/campaign_014/floor_corpus_foundry.json",
       "public_symbols": [],
@@ -150,11 +152,15 @@
       "not_applicable": [],
       "required": [
         "D18",
-        "D21"
+        "D21",
+        "D23",
+        "D29"
       ],
       "verified": [
         "D18",
-        "D21"
+        "D21",
+        "D23",
+        "D29"
       ]
     },
     "evidence_integration": {
@@ -169,13 +175,14 @@
         "BUILD_LOG.md",
         "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md",
         "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md",
-        "reports/campaign_014/full_report.json"
+        "reports/campaign_014/full_report.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 6.0
+      "weighted_value": 7.5
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 1,
@@ -221,12 +228,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 170029,
+    "byte_count": 170360,
     "generated_status": "report",
     "language": "json",
-    "line_count": 3907,
+    "line_count": 3911,
     "path": "reports/campaign_014/floor_corpus_foundry.json",
-    "path_hash": "sha256:f5226fa9e6505a5c66d9e523b8c344f5945e2e1ad111e656ec55bdac687f1a4c",
+    "path_hash": "sha256:8bf4068d21efb6d61958a6301d012868a1a4e7464950aa557d879118fdbe1f36",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -265,7 +272,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::1035",
+        "edge_id": "shares_birth_cohort::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::1165",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -280,7 +287,7 @@
         "target": "reports/campaign_014/full_report.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D18::reports/campaign_014/floor_corpus_foundry.json->reports/task_032_dx001_disposition.json::2779",
+        "edge_id": "implements_same_doctrine::D18::reports/campaign_014/floor_corpus_foundry.json->reports/task_032_dx001_disposition.json::3046",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -295,7 +302,7 @@
         "target": "reports/task_032_dx001_disposition.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D21::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_016/full_report.json::3295",
+        "edge_id": "implements_same_doctrine::D21::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_016/full_report.json::3567",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -310,7 +317,37 @@
         "target": "reports/campaign_016/full_report.json"
       },
       {
-        "edge_id": "cites::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_010/coverage_matrix.json::4914",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::4477",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_014/floor_corpus_foundry.json::reports/campaign_014/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_014/full_report.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::4617",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_014/floor_corpus_foundry.json::reports/campaign_014/full_report.json"
+          }
+        ],
+        "target": "reports/campaign_014/full_report.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_010/coverage_matrix.json::5392",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -654,7 +691,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_014/floor_corpus_foundry.json::473",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_014/floor_corpus_foundry.json::581",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -676,7 +713,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_013/w7_motif_detection.json->reports/campaign_014/floor_corpus_foundry.json::1034",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/w7_motif_detection.json->reports/campaign_014/floor_corpus_foundry.json::1164",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -699,7 +736,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D18",
-        "edge_id": "implements_same_doctrine::D18::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::2778",
+        "edge_id": "implements_same_doctrine::D18::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::3045",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -722,7 +759,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D21",
-        "edge_id": "implements_same_doctrine::D21::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::3294",
+        "edge_id": "implements_same_doctrine::D21::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::3566",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -742,9 +779,55 @@
         "target": "reports/campaign_014/floor_corpus_foundry.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_013/full_report.json->reports/campaign_014/floor_corpus_foundry.json::4476",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_013/full_report.json::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_013/full_report.json",
+        "target": "reports/campaign_014/floor_corpus_foundry.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_013/full_report.json->reports/campaign_014/floor_corpus_foundry.json::4616",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_013/full_report.json::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_013/full_report.json",
+        "target": "reports/campaign_014/floor_corpus_foundry.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/floor_corpus_foundry.json::4418",
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/floor_corpus_foundry.json::4884",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -766,7 +849,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md->reports/campaign_014/floor_corpus_foundry.json::4656",
+        "edge_id": "cites::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md->reports/campaign_014/floor_corpus_foundry.json::5134",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -788,7 +871,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->reports/campaign_014/floor_corpus_foundry.json::4661",
+        "edge_id": "cites::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->reports/campaign_014/floor_corpus_foundry.json::5139",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -810,7 +893,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_014/full_report.json->reports/campaign_014/floor_corpus_foundry.json::4915",
+        "edge_id": "cites::reports/campaign_014/full_report.json->reports/campaign_014/floor_corpus_foundry.json::5393",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -830,9 +913,31 @@
         "target": "reports/campaign_014/floor_corpus_foundry.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_014/floor_corpus_foundry.json::5491",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_014/floor_corpus_foundry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_014/floor_corpus_foundry.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::1035",
+        "edge_id": "shares_birth_cohort::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::1165",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -855,7 +960,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D18",
-        "edge_id": "implements_same_doctrine::D18::reports/campaign_014/floor_corpus_foundry.json->reports/task_032_dx001_disposition.json::2779",
+        "edge_id": "implements_same_doctrine::D18::reports/campaign_014/floor_corpus_foundry.json->reports/task_032_dx001_disposition.json::3046",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -878,7 +983,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D21",
-        "edge_id": "implements_same_doctrine::D21::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_016/full_report.json::3295",
+        "edge_id": "implements_same_doctrine::D21::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_016/full_report.json::3567",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -898,9 +1003,55 @@
         "target": "reports/campaign_016/full_report.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::4477",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_014/floor_corpus_foundry.json::reports/campaign_014/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_014/floor_corpus_foundry.json",
+        "target": "reports/campaign_014/full_report.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_014/full_report.json::4617",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_014/floor_corpus_foundry.json::reports/campaign_014/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_014/floor_corpus_foundry.json",
+        "target": "reports/campaign_014/full_report.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_010/coverage_matrix.json::4914",
+        "edge_id": "cites::reports/campaign_014/floor_corpus_foundry.json->reports/campaign_010/coverage_matrix.json::5392",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -922,7 +1073,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_014/floor_corpus_foundry.json::473",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_014/floor_corpus_foundry.json::581",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -937,7 +1088,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_013/w7_motif_detection.json->reports/campaign_014/floor_corpus_foundry.json::1034",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/w7_motif_detection.json->reports/campaign_014/floor_corpus_foundry.json::1164",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -952,7 +1103,7 @@
         "source": "reports/campaign_013/w7_motif_detection.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D18::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::2778",
+        "edge_id": "implements_same_doctrine::D18::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::3045",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -967,7 +1118,7 @@
         "source": "reports/campaign_013/regression.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D21::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::3294",
+        "edge_id": "implements_same_doctrine::D21::reports/campaign_013/regression.json->reports/campaign_014/floor_corpus_foundry.json::3566",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -982,7 +1133,37 @@
         "source": "reports/campaign_013/regression.json"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/floor_corpus_foundry.json::4418",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_013/full_report.json->reports/campaign_014/floor_corpus_foundry.json::4476",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_013/full_report.json::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "source": "reports/campaign_013/full_report.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_013/full_report.json->reports/campaign_014/floor_corpus_foundry.json::4616",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_013/full_report.json::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "source": "reports/campaign_013/full_report.json"
+      },
+      {
+        "edge_id": "cites::BUILD_LOG.md->reports/campaign_014/floor_corpus_foundry.json::4884",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -997,7 +1178,7 @@
         "source": "BUILD_LOG.md"
       },
       {
-        "edge_id": "cites::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md->reports/campaign_014/floor_corpus_foundry.json::4656",
+        "edge_id": "cites::papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md->reports/campaign_014/floor_corpus_foundry.json::5134",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1012,7 +1193,7 @@
         "source": "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
       },
       {
-        "edge_id": "cites::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->reports/campaign_014/floor_corpus_foundry.json::4661",
+        "edge_id": "cites::papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md->reports/campaign_014/floor_corpus_foundry.json::5139",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1027,7 +1208,7 @@
         "source": "papers/methods/FLOOR_CORPUS_FOUNDRY_C014.md"
       },
       {
-        "edge_id": "cites::reports/campaign_014/full_report.json->reports/campaign_014/floor_corpus_foundry.json::4915",
+        "edge_id": "cites::reports/campaign_014/full_report.json->reports/campaign_014/floor_corpus_foundry.json::5393",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1040,6 +1221,21 @@
           }
         ],
         "source": "reports/campaign_014/full_report.json"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_014/floor_corpus_foundry.json::5491",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_014/floor_corpus_foundry.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_014/floor_corpus_foundry.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -1098,7 +1294,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 4,
+    "downstream_reference_count": 5,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -1116,18 +1312,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

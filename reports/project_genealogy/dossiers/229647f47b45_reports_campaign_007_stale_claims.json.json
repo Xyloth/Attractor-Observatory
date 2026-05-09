@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:e3099f6507186775abdbebfbdb6931e3efd75d49ddcbb4b8b3575ea10695098b",
+  "content_hash": "sha256:769de63c1151ec984623777dec2ea9dddf04269b5745bdf3dcfd4e4b16079e92",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -82,18 +82,29 @@
             "kind": "file_span",
             "locator": "reports/campaign_007/stale_claims.json"
           },
-          "statement": "Tracked file with 783 lines / 31896 bytes at HEAD."
+          "statement": "Tracked file with 823 lines / 35146 bytes at HEAD."
+        },
+        {
+          "atom_id": "provenance_present",
+          "source_ref": {
+            "kind": "grep",
+            "locator": "reports/campaign_007/stale_claims.json#pattern:content_hash|evidence_private|generated_at|locked_instrument|provenance"
+          },
+          "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 31896,
+      "byte_count": 35146,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 783,
-      "observed_doctrine_bindings": [],
+      "line_count": 823,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::reports/campaign_007/stale_claims.json",
       "public_symbols": [],
       "test_functions": []
@@ -138,16 +149,18 @@
       "value": 0.0
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D11"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D11"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -159,13 +172,14 @@
     "operational_load_bearingness": {
       "cited_by_reports": [
         "CODEX_CAMPAIGN_007.md",
-        "reports/campaign_007/truth_pass.json"
+        "reports/campaign_007/truth_pass.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 3.0
+      "weighted_value": 4.5
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 2,
@@ -194,7 +208,8 @@
     "missing_birth_atoms": [],
     "negative_space_flags": [],
     "new_atoms": [
-      "file_present_with_size"
+      "file_present_with_size",
+      "provenance_present"
     ],
     "reproducer_refs": [
       {
@@ -210,12 +225,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 31896,
+    "byte_count": 35146,
     "generated_status": "report",
     "language": "json",
-    "line_count": 783,
+    "line_count": 823,
     "path": "reports/campaign_007/stale_claims.json",
-    "path_hash": "sha256:7cf949ff13acb188a17ac2a744e3176c2384abe1b6fe1a9f71e18512260bd2b9",
+    "path_hash": "sha256:53291f60679645a6bff00c43b558f11fa4153c70e085f46e1152c48961d5c161",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -254,7 +269,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_007/stale_claims.json->reports/campaign_007/stub_inventory.json::1207",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/stale_claims.json->reports/campaign_007/stub_inventory.json::1337",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -267,6 +282,36 @@
           }
         ],
         "target": "reports/campaign_007/stub_inventory.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4455",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "target": "reports/campaign_007/truth_pass_application.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4595",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "target": "reports/campaign_007/truth_pass_application.json"
       }
     ],
     "cohort": {
@@ -512,7 +557,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_007/hardcode_excision.json->reports/campaign_007/stale_claims.json::1206",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/hardcode_excision.json->reports/campaign_007/stale_claims.json::1336",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -532,9 +577,55 @@
         "target": "reports/campaign_007/stale_claims.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/perturbation_maps.json->reports/campaign_007/stale_claims.json::4454",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/perturbation_maps.json::reports/campaign_007/stale_claims.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/perturbation_maps.json",
+        "target": "reports/campaign_007/stale_claims.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/perturbation_maps.json->reports/campaign_007/stale_claims.json::4594",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/perturbation_maps.json::reports/campaign_007/stale_claims.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/perturbation_maps.json",
+        "target": "reports/campaign_007/stale_claims.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/stale_claims.json::4480",
+        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/stale_claims.json::4958",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -556,7 +647,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/stale_claims.json::4759",
+        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/stale_claims.json::5237",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -576,9 +667,31 @@
         "target": "reports/campaign_007/stale_claims.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_007/stale_claims.json::5469",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_007/stale_claims.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_007/stale_claims.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_007/stale_claims.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_007/stale_claims.json->reports/campaign_007/stub_inventory.json::1207",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/stale_claims.json->reports/campaign_007/stub_inventory.json::1337",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -596,11 +709,57 @@
         },
         "source": "reports/campaign_007/stale_claims.json",
         "target": "reports/campaign_007/stub_inventory.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4455",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_007/stale_claims.json",
+        "target": "reports/campaign_007/truth_pass_application.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_007/stale_claims.json->reports/campaign_007/truth_pass_application.json::4595",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_007/stale_claims.json::reports/campaign_007/truth_pass_application.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_007/stale_claims.json",
+        "target": "reports/campaign_007/truth_pass_application.json"
       }
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_007/hardcode_excision.json->reports/campaign_007/stale_claims.json::1206",
+        "edge_id": "shares_birth_cohort::reports/campaign_007/hardcode_excision.json->reports/campaign_007/stale_claims.json::1336",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -615,7 +774,37 @@
         "source": "reports/campaign_007/hardcode_excision.json"
       },
       {
-        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/stale_claims.json::4480",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/perturbation_maps.json->reports/campaign_007/stale_claims.json::4454",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/perturbation_maps.json::reports/campaign_007/stale_claims.json"
+          }
+        ],
+        "source": "reports/campaign_006/perturbation_maps.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/perturbation_maps.json->reports/campaign_007/stale_claims.json::4594",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/perturbation_maps.json::reports/campaign_007/stale_claims.json"
+          }
+        ],
+        "source": "reports/campaign_006/perturbation_maps.json"
+      },
+      {
+        "edge_id": "cites::CODEX_CAMPAIGN_007.md->reports/campaign_007/stale_claims.json::4958",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -630,7 +819,7 @@
         "source": "CODEX_CAMPAIGN_007.md"
       },
       {
-        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/stale_claims.json::4759",
+        "edge_id": "cites::reports/campaign_007/truth_pass.json->reports/campaign_007/stale_claims.json::5237",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -643,6 +832,21 @@
           }
         ],
         "source": "reports/campaign_007/truth_pass.json"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_007/stale_claims.json::5469",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_007/stale_claims.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_007/stale_claims.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -701,7 +905,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 2,
+    "downstream_reference_count": 3,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -719,18 +923,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

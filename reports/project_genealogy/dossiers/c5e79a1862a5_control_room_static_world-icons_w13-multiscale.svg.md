@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/c5e79a1862a5_control_room_static_world-icons_w13-multiscale.svg.json`
-- JSON content_hash: `sha256:b3ca8e740adeb5137abcf52f73a04cf449bcbd21398fe37795fc354048af61b5`
+- JSON content_hash: `sha256:c4fcf8469d0372ca23abbd8e97d7693d4a4b8e3f9ecc4db3fb93c8db7323f715`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `control_room`
 - Generated status: `source`

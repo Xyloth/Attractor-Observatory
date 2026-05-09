@@ -95,7 +95,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:62a40867076ff510276533f8c45daa7dec09eb61ff4559cd1e5df63d1e864c40",
+  "content_hash": "sha256:e8eaae918686fd113b412a21a76192fa47846af800fa3de0922043c77def8213",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -1072,7 +1072,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1271",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1401",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1087,7 +1087,7 @@
         "target": "factory_lowlevel/progress.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/persistence.py::3688",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/memory_guard.py::3969",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1096,10 +1096,10 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/persistence.py"
+            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/memory_guard.py"
           }
         ],
-        "target": "factory_lowlevel/persistence.py"
+        "target": "factory_lowlevel/memory_guard.py"
       }
     ],
     "cohort": {
@@ -1121,7 +1121,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f1d7305d60c15c1177908245f22443d22cf86bf5",
-        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/launch_safety.py::258",
+        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/launch_safety.py::260",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -1143,7 +1143,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1270",
+        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1400",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1166,7 +1166,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3687",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3968",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1188,7 +1188,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->factory_lowlevel/launch_safety.py::4393",
+        "edge_id": "cites::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->factory_lowlevel/launch_safety.py::4859",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1210,7 +1210,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4395",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4861",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1232,7 +1232,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::4684",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::5162",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1254,7 +1254,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1271",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/launch_safety.py->factory_lowlevel/progress.py::1401",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1277,7 +1277,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D9",
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/persistence.py::3688",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/launch_safety.py->factory_lowlevel/memory_guard.py::3969",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1286,7 +1286,7 @@
             "kind": "grep",
             "locator": "both files mention D9",
             "note": "shared mention of doctrine D9",
-            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/persistence.py"
+            "ref_id": "doctrine::D9::factory_lowlevel/launch_safety.py::factory_lowlevel/memory_guard.py"
           }
         ],
         "private_boundary": {
@@ -1294,12 +1294,12 @@
           "reason": ""
         },
         "source": "factory_lowlevel/launch_safety.py",
-        "target": "factory_lowlevel/persistence.py"
+        "target": "factory_lowlevel/memory_guard.py"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/launch_safety.py::258",
+        "edge_id": "spawned_by_ticket::CB-013->factory_lowlevel/launch_safety.py::260",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -1314,7 +1314,7 @@
         "source": "CB-013"
       },
       {
-        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1270",
+        "edge_id": "shares_birth_cohort::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::1400",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1329,7 +1329,7 @@
         "source": "BUILDER_LAUNCH_PROTOCOL.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3687",
+        "edge_id": "implements_same_doctrine::D9::factory_lowlevel/adapters.py->factory_lowlevel/launch_safety.py::3968",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -1344,7 +1344,7 @@
         "source": "factory_lowlevel/adapters.py"
       },
       {
-        "edge_id": "cites::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->factory_lowlevel/launch_safety.py::4393",
+        "edge_id": "cites::BUILDER_INGESTION_MONITORING_PLAYBOOK.md->factory_lowlevel/launch_safety.py::4859",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1359,7 +1359,7 @@
         "source": "BUILDER_INGESTION_MONITORING_PLAYBOOK.md"
       },
       {
-        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4395",
+        "edge_id": "cites::BUILDER_LAUNCH_PROTOCOL.md->factory_lowlevel/launch_safety.py::4861",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1374,7 +1374,7 @@
         "source": "BUILDER_LAUNCH_PROTOCOL.md"
       },
       {
-        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::4684",
+        "edge_id": "cites::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->factory_lowlevel/launch_safety.py::5162",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1421,18 +1421,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

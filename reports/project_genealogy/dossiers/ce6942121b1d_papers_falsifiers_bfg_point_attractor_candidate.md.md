@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ce6942121b1d_papers_falsifiers_bfg_point_attractor_candidate.md.json`
-- JSON content_hash: `sha256:681992ad3740d708eba104fe98d727f5cc23c667412b391b82b3236272511742`
+- JSON content_hash: `sha256:d62ac28e856f599906fa7a15a0f5f93f46d130e53b020dabfee1fef831cc87d6`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `falsifier`
 - Generated status: `source`

@@ -80,7 +80,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:ae11b187df3e004021c81d54a000bf25b94de190e7940479de865e881f0b0870",
+  "content_hash": "sha256:b0850383e0d2413698cabd35658046e237c689565422d3bc3a6c6b15f6044309",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -268,7 +268,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_009/fair_metadata.json->reports/campaign_009/prov_o.jsonld::1401",
+        "edge_id": "shares_birth_cohort::reports/campaign_009/fair_metadata.json->reports/campaign_009/prov_o.jsonld::1531",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -283,7 +283,7 @@
         "target": "reports/campaign_009/prov_o.jsonld"
       },
       {
-        "edge_id": "cites::reports/campaign_009/fair_metadata.json->reports/campaign_009/full_report.json::4779",
+        "edge_id": "cites::reports/campaign_009/fair_metadata.json->reports/campaign_009/full_report.json::5257",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -358,7 +358,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "2f804f0a8b912a3afbec90dbb1cdaf92162a612f",
-        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_009/fair_metadata.json::363",
+        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_009/fair_metadata.json::471",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -380,7 +380,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_008/prov_o.jsonld->reports/campaign_009/fair_metadata.json::1400",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/prov_o.jsonld->reports/campaign_009/fair_metadata.json::1530",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -402,7 +402,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_009/fair_metadata.json->reports/campaign_009/prov_o.jsonld::1401",
+        "edge_id": "shares_birth_cohort::reports/campaign_009/fair_metadata.json->reports/campaign_009/prov_o.jsonld::1531",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -424,7 +424,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_009/fair_metadata.json->reports/campaign_009/full_report.json::4779",
+        "edge_id": "cites::reports/campaign_009/fair_metadata.json->reports/campaign_009/full_report.json::5257",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -446,7 +446,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_009/fair_metadata.json::363",
+        "edge_id": "spawned_by_ticket::DX-002->reports/campaign_009/fair_metadata.json::471",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -461,7 +461,7 @@
         "source": "DX-002"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_008/prov_o.jsonld->reports/campaign_009/fair_metadata.json::1400",
+        "edge_id": "shares_birth_cohort::reports/campaign_008/prov_o.jsonld->reports/campaign_009/fair_metadata.json::1530",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -549,18 +549,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

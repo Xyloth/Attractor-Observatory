@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/0ec18c00f98f_reports_phase1_closure_recurrence_report.json.json`
-- JSON content_hash: `sha256:2b3cad472fd57262affb47ee16d671112302886e4a18065c2e8dd952d8b9f822`
+- JSON content_hash: `sha256:e9ca7e5358aff7d1d72d8cf5b88e22f6478632db59304e4cbb6d9222784ab6e0`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

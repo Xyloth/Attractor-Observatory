@@ -4,7 +4,7 @@
     "birth_predicate": {
       "acceptance_criteria": [
         "Prereg artifact locks basis/lens instruments with a content_hash.",
-        "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:6fa5dd0ace6c3cd51b5fcb6c7ef09ebcf4ae5c74218f864e72fa11e0dcb29496\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:ab26b45bfebfb4105b2d7363b59a7cd409b8f2b01461bd3b9fb4e8770cd78209\",\n\"min_negative_per_s"
+        "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:a682d574d18fbbe5c5272854c3e887591c020e4eb29b9b62c8de0eab6234185c\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:ab26b45bfebfb4105b2d7363b59a7cd409b8f2b01461bd3b9fb4e8770cd78209\",\n\"min_negative_per_s"
       ],
       "atoms": [
         {
@@ -39,7 +39,7 @@
             "locator": "papers/prereg/campaign_023/self_maintained_boundary.signed.json#header",
             "ticket": "campaign_023"
           },
-          "statement": "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:6fa5dd0ace6c3cd51b5fcb6c7ef09ebcf4ae5c74218f864e72fa11e0dcb29496\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:ab26b45bfebfb4105b2d7363b59a7cd409b8f2b01461bd3b9fb4e8770cd78209\",\n\"min_negative_per_s"
+          "statement": "{\n\"campaign_id\": \"campaign_023\",\n\"claim_promotion_allowed\": false,\n\"content_hash\": \"sha256:a682d574d18fbbe5c5272854c3e887591c020e4eb29b9b62c8de0eab6234185c\",\n\"forbidden_adjustments\": [\n\"no event-token predicate labels\",\n\"no per-motif threshold tuning\",\n\"no claim-bearing promotion\"\n],\n\"input_corpus_hash\": \"sha256:ab26b45bfebfb4105b2d7363b59a7cd409b8f2b01461bd3b9fb4e8770cd78209\",\n\"min_negative_per_s"
         }
       ],
       "content_hash": "",
@@ -81,7 +81,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:812d82abf9678f6c17fae8d73fad76c5c28523c64d65adcc95d57606d47f7843",
+  "content_hash": "sha256:624df8d66e168034c4ef8aeca31bf10c98d1d8890d3fcc13321ecc50a02b4ad4",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -214,7 +214,7 @@
     "language": "json",
     "line_count": 35,
     "path": "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
-    "path_hash": "sha256:46c1f15bf4e79debfe84c76f2ea993edbaa8bc03f2e7036e50fa9748b49dd6d4",
+    "path_hash": "sha256:6c54786d25e9829f7e6306f30d0498319ae5076c7c840642302ef18c0fdfd851",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -253,7 +253,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/self_maintained_boundary.signed.json->papers/prereg/campaign_024/autocatalytic_closure.signed.json::1455",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/self_maintained_boundary.signed.json->papers/prereg/campaign_024/autocatalytic_closure.signed.json::1585",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -268,7 +268,7 @@
         "target": "papers/prereg/campaign_024/autocatalytic_closure.signed.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_telemetry/ai_builder_tasks.jsonl::4054",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_genealogy/dossier.py::4383",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -277,10 +277,10 @@
             "kind": "grep",
             "locator": "both files mention D26",
             "note": "shared mention of doctrine D26",
-            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_genealogy/dossier.py"
           }
         ],
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "project_genealogy/dossier.py"
       }
     ],
     "cohort": {
@@ -348,7 +348,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/self_maintained_boundary.signed.json::310",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/self_maintained_boundary.signed.json::393",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -370,7 +370,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::1454",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::1584",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -393,7 +393,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::4053",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::4382",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -415,7 +415,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/self_maintained_boundary.signed.json->papers/prereg/campaign_024/autocatalytic_closure.signed.json::1455",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/self_maintained_boundary.signed.json->papers/prereg/campaign_024/autocatalytic_closure.signed.json::1585",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -438,7 +438,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_telemetry/ai_builder_tasks.jsonl::4054",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json->project_genealogy/dossier.py::4383",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -447,7 +447,7 @@
             "kind": "grep",
             "locator": "both files mention D26",
             "note": "shared mention of doctrine D26",
-            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D26::papers/prereg/campaign_023/self_maintained_boundary.signed.json::project_genealogy/dossier.py"
           }
         ],
         "private_boundary": {
@@ -455,12 +455,12 @@
           "reason": ""
         },
         "source": "papers/prereg/campaign_023/self_maintained_boundary.signed.json",
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "project_genealogy/dossier.py"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/self_maintained_boundary.signed.json::310",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->papers/prereg/campaign_023/self_maintained_boundary.signed.json::393",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -475,7 +475,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::1454",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::1584",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -490,7 +490,7 @@
         "source": "papers/prereg/campaign_023/replication_lineage.signed.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::4053",
+        "edge_id": "implements_same_doctrine::D26::papers/prereg/campaign_023/replication_lineage.signed.json->papers/prereg/campaign_023/self_maintained_boundary.signed.json::4382",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -579,18 +579,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

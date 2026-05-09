@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/4a6b510a0f46_factory_lowlevel_router.py.json`
-- JSON content_hash: `sha256:a09ef10405366215c0f141ce2a2e2048588122836053c554400b874be78d14da`
+- JSON content_hash: `sha256:b2ca813fb870ab3c501a30dd8d2a135bc688036fdd6472ef08a9b4dd007d5a35`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `factory`
 - Generated status: `source`

@@ -67,7 +67,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:3003aa3341df453e6581159d80657da3bc87c2a986abf48a07633eac873c5774",
+  "content_hash": "sha256:627b7e185173e309ae75d0a83742df4b41c60edb76da0c82962b683b4c52d446",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -77,7 +77,7 @@
             "kind": "file_span",
             "locator": "reports/campaign_012/factory_initiation_pointer_audit.json"
           },
-          "statement": "Tracked file with 125 lines / 8897 bytes at HEAD."
+          "statement": "Tracked file with 145 lines / 10482 bytes at HEAD."
         },
         {
           "atom_id": "provenance_present",
@@ -88,15 +88,18 @@
           "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 8897,
+      "byte_count": 10482,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 125,
-      "observed_doctrine_bindings": [],
+      "line_count": 145,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::reports/campaign_012/factory_initiation_pointer_audit.json",
       "public_symbols": [],
       "test_functions": []
@@ -141,16 +144,18 @@
       "value": 0.0
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D11"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D11"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -161,13 +166,14 @@
     },
     "operational_load_bearingness": {
       "cited_by_reports": [
-        "CODEX_TASK_023_DRIVE.md"
+        "CODEX_TASK_023_DRIVE.md",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 1.5
+      "weighted_value": 3.0
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 1,
@@ -213,12 +219,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 8897,
+    "byte_count": 10482,
     "generated_status": "report",
     "language": "json",
-    "line_count": 125,
+    "line_count": 145,
     "path": "reports/campaign_012/factory_initiation_pointer_audit.json",
-    "path_hash": "sha256:c02b62b553a0c4380ebfbbb5720238c26609219f5d95f25b995028789fddcc27",
+    "path_hash": "sha256:a653e59734710995e0a3e3fd7da8df1d75228b01161e5ccbf8c0f967318426e3",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -257,7 +263,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::994",
+        "edge_id": "shares_birth_cohort::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::1124",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -272,7 +278,37 @@
         "target": "reports/campaign_012/factory_scaffolding.json"
       },
       {
-        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/DOCTRINE.md::4880",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::4473",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_012/factory_initiation_pointer_audit.json::reports/campaign_012/factory_scaffolding.json"
+          }
+        ],
+        "target": "reports/campaign_012/factory_scaffolding.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::4613",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_012/factory_initiation_pointer_audit.json::reports/campaign_012/factory_scaffolding.json"
+          }
+        ],
+        "target": "reports/campaign_012/factory_scaffolding.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/DOCTRINE.md::5358",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -287,7 +323,7 @@
         "target": "docs/DOCTRINE.md"
       },
       {
-        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/doctrine_d19_d21.md::4881",
+        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/doctrine_d19_d21.md::5359",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -302,7 +338,7 @@
         "target": "docs/doctrine_d19_d21.md"
       },
       {
-        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_011/full_report.json::4882",
+        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_011/full_report.json::5360",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -646,7 +682,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_012/factory_initiation_pointer_audit.json::427",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_012/factory_initiation_pointer_audit.json::535",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -668,7 +704,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::993",
+        "edge_id": "shares_birth_cohort::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::1123",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -688,9 +724,55 @@
         "target": "reports/campaign_012/factory_initiation_pointer_audit.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::4472",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_012/cli_full_report.json::reports/campaign_012/factory_initiation_pointer_audit.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_012/cli_full_report.json",
+        "target": "reports/campaign_012/factory_initiation_pointer_audit.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::4612",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_012/cli_full_report.json::reports/campaign_012/factory_initiation_pointer_audit.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_012/cli_full_report.json",
+        "target": "reports/campaign_012/factory_initiation_pointer_audit.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_TASK_023_DRIVE.md->reports/campaign_012/factory_initiation_pointer_audit.json::4553",
+        "edge_id": "cites::CODEX_TASK_023_DRIVE.md->reports/campaign_012/factory_initiation_pointer_audit.json::5031",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -710,9 +792,31 @@
         "target": "reports/campaign_012/factory_initiation_pointer_audit.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_012/factory_initiation_pointer_audit.json::5487",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_012/factory_initiation_pointer_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_012/factory_initiation_pointer_audit.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_012/factory_initiation_pointer_audit.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::994",
+        "edge_id": "shares_birth_cohort::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::1124",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -732,9 +836,55 @@
         "target": "reports/campaign_012/factory_scaffolding.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::4473",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_012/factory_initiation_pointer_audit.json::reports/campaign_012/factory_scaffolding.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_012/factory_initiation_pointer_audit.json",
+        "target": "reports/campaign_012/factory_scaffolding.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_012/factory_scaffolding.json::4613",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_012/factory_initiation_pointer_audit.json::reports/campaign_012/factory_scaffolding.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_012/factory_initiation_pointer_audit.json",
+        "target": "reports/campaign_012/factory_scaffolding.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/DOCTRINE.md::4880",
+        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/DOCTRINE.md::5358",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -756,7 +906,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/doctrine_d19_d21.md::4881",
+        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->docs/doctrine_d19_d21.md::5359",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -778,7 +928,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_011/full_report.json::4882",
+        "edge_id": "cites::reports/campaign_012/factory_initiation_pointer_audit.json->reports/campaign_011/full_report.json::5360",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -800,7 +950,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_012/factory_initiation_pointer_audit.json::427",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_012/factory_initiation_pointer_audit.json::535",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -815,7 +965,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::993",
+        "edge_id": "shares_birth_cohort::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::1123",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -830,7 +980,37 @@
         "source": "reports/campaign_012/cli_full_report.json"
       },
       {
-        "edge_id": "cites::CODEX_TASK_023_DRIVE.md->reports/campaign_012/factory_initiation_pointer_audit.json::4553",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::4472",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_012/cli_full_report.json::reports/campaign_012/factory_initiation_pointer_audit.json"
+          }
+        ],
+        "source": "reports/campaign_012/cli_full_report.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_012/cli_full_report.json->reports/campaign_012/factory_initiation_pointer_audit.json::4612",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_012/cli_full_report.json::reports/campaign_012/factory_initiation_pointer_audit.json"
+          }
+        ],
+        "source": "reports/campaign_012/cli_full_report.json"
+      },
+      {
+        "edge_id": "cites::CODEX_TASK_023_DRIVE.md->reports/campaign_012/factory_initiation_pointer_audit.json::5031",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -843,6 +1023,21 @@
           }
         ],
         "source": "CODEX_TASK_023_DRIVE.md"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_012/factory_initiation_pointer_audit.json::5487",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_012/factory_initiation_pointer_audit.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_012/factory_initiation_pointer_audit.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -901,7 +1096,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 1,
+    "downstream_reference_count": 2,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -919,18 +1114,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

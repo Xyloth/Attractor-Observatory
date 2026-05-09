@@ -77,7 +77,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:16fe20b0cb8576f97f2c3c762b5dbec4d7912cada8e754e9afafe3b5799785d8",
+  "content_hash": "sha256:a8e894a6f688cf08e9e9dd0622f43508b51c0e956ffc0df4c0da54b45e24dd91",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -199,7 +199,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/FalsifierEvent.jsx::786",
+        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/FalsifierEvent.jsx::916",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -214,7 +214,7 @@
         "target": "Visuals/ui_kits/control_room/FalsifierEvent.jsx"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/ProjectGraph.jsx::3717",
+        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/ProjectGraph.jsx::4009",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -580,7 +580,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::785",
+        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::915",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -603,7 +603,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::3716",
+        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::4008",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -625,7 +625,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/FalsifierEvent.jsx::786",
+        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/FalsifierEvent.jsx::916",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -648,7 +648,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/ProjectGraph.jsx::3717",
+        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/EmptyState.jsx->Visuals/ui_kits/control_room/ProjectGraph.jsx::4009",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -685,7 +685,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::785",
+        "edge_id": "shares_birth_cohort::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::915",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -700,7 +700,7 @@
         "source": "Visuals/ui_kits/control_room/DoctrineTablet.jsx"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::3716",
+        "edge_id": "implements_same_doctrine::D22::Visuals/ui_kits/control_room/DoctrineTablet.jsx->Visuals/ui_kits/control_room/EmptyState.jsx::4008",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -789,18 +789,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

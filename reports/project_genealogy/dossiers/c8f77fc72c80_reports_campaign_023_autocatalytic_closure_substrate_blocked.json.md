@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/c8f77fc72c80_reports_campaign_023_autocatalytic_closure_substrate_blocked.json.json`
-- JSON content_hash: `sha256:f160cb512727927b1301d43b948070b47dcea3d23d0dcddd359b064f36b234d3`
+- JSON content_hash: `sha256:298ab27201733561648c8473c6cb1353fb72c5db24387b6e6c6c9f35425cf829`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

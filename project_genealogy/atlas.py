@@ -142,6 +142,11 @@ def build_atlas(
             "dossier_count": len(dossier_index),
             "decline_count": decline_count,
             "confirmed_finding_count": confirmed_finding_count,
+            "finding_partition": {
+                "dossier_confirmed_finding_count": confirmed_finding_count,
+                "coherence_mission_finding_count": None,
+                "scope_note": "Atlas confirmed_finding_count counts per-file dossier findings; coherence findings are mission-coverage findings.",
+            },
             "bad_drift_count": bad_drift_count,
             "cleanup_candidate_count_by_status": dict(cleanup_status_counts),
             "cohort_count": len(cohorts),
@@ -162,6 +167,14 @@ def build_atlas(
         "mistake_class_index": dict(mistake_class_index),
         "liveness_index": dict(liveness_index),
         "query_materializations": {},
+        "acceptance_gates": {
+            "PG21_current_head_binding": {
+                "passed": payload["run_binding"]["head_commit"] == manifest.get("run_binding", {}).get("head_commit", ""),
+                "head_commit": payload["run_binding"]["head_commit"],
+                "input_manifest_hash": manifest.get("content_hash", ""),
+            },
+            "PG22_implementation_self_audit": manifest.get("acceptance_gates", {}).get("PG22_implementation_self_audit", {}),
+        },
         "declines": [
             {
                 "kind": "manifest_excluded",

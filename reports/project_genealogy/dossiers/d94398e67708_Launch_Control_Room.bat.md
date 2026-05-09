@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/d94398e67708_Launch_Control_Room.bat.json`
-- JSON content_hash: `sha256:0ccec5b694c833d5c9f519ea430c2fc7391aa9934c5f8fa6dcb35379b5280488`
+- JSON content_hash: `sha256:060dbd5666328e07138dd1035ad17ff212ba74b84c9b52219c16f10be01fd3cf`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

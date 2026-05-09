@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/4376967d083a_reports_campaign_021_source_cache_kegg_ecoli_mg1655_pathway_eco.tsv.json`
-- JSON content_hash: `sha256:ceb0439357332bcd313cb0c0a34558ae36d6a995b9faa43c6c6af1006d240749`
+- JSON content_hash: `sha256:dd990970efa916362f767441498e605554db47198fa3b63f245ca05657524f66`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/702970710560_reports_campaign_010_deepening_actions.json.json`
-- JSON content_hash: `sha256:90345202a887d905f375771b5fc92961bcc3119d72d267f04c262f53a6c9eb55`
+- JSON content_hash: `sha256:bb16dc43e8af5e831935f92e9d5e3a7ac13fca774c858ded0867d4a6db047378`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 28 / Bytes: 723
+- Lines: 40 / Bytes: 1674
 
 ## Birth
 - Status: `recovered`
@@ -18,16 +18,32 @@
 
 ### Birth predicate atoms
 - **report_records_data** — Report serializes structured data for post-hoc analysis.
+- **header_declared_intent** — {
+"gate": {
+"downgraded_worlds": [],
+"passed": true
+},
+"passed": true,
+"rows": [
+{
+"action": "kernel_memory_forecast_and_attention_shadow_prices",
+"code_evidence_present": true,
+"evidence_private": true,
+"path": "worlds/cognitive/model.py",
+"path_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+"path_status": "private_unshipped",
+"priv
 
 ## Current
 - Status: `recovered`
+- Observed doctrines: `D23, D29`
 
 ## DepthVector.v1
-- **predicate_atom_coverage**: `{'claimable_atoms': 1, 'covered_atoms': 1, 'missing_atoms': [], 'value': 1.0}`
+- **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'covered_bad_cases': [], 'missing_bad_cases': [{'id': 'error_branch', 'kind': 'letter_pattern'}, {'id': 'decline_branch', 'kind': 'letter_pattern'}], 'value': 0.0}`
-- **doctrine_binding_quality**: `{'required': ['D11'], 'verified': [], 'claimed_only': ['D11'], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D23', 'D29'], 'verified': ['D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 3, 'dereferenceable_evidence_refs': 3, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': [], 'weighted_value': 0.0}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 1.5}`
 
 ## Drift
 - Status: `review_required`

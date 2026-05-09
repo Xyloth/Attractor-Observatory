@@ -84,7 +84,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:b7a406cc17be3c8beb4b80dc80306e2850ac06ec104ddd88667f16719f14fe70",
+  "content_hash": "sha256:36df60b559e538f9e3c1e0159a69784ff7a872dcd92135486f6a220d15b1d8fa",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -220,7 +220,7 @@
     "language": "json",
     "line_count": 48,
     "path": "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
-    "path_hash": "sha256:628be6165fa167eeead0855f3b65c561f44f66bb1a371b78d80fc6620bac007f",
+    "path_hash": "sha256:dd7b63f02a1add827d69f076cbf3904b520b3f1506bb9d286d0eb781f58bbb96",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -259,7 +259,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_026/floor_bfg_d31.signed.json->reports/campaign_026/full_report.json::1485",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_026/floor_bfg_d31.signed.json->reports/campaign_026/full_report.json::1645",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -274,7 +274,7 @@
         "target": "reports/campaign_026/full_report.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4004",
+        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_genealogy/manifest.py::4322",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -283,13 +283,13 @@
             "kind": "grep",
             "locator": "both files mention D31",
             "note": "shared mention of doctrine D31",
-            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_genealogy/manifest.py"
           }
         ],
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "project_genealogy/manifest.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4092",
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json->papers/prereg/phase1_closure_recurrence.json::4443",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -298,10 +298,10 @@
             "kind": "grep",
             "locator": "both files mention D29",
             "note": "shared mention of doctrine D29",
-            "ref_id": "doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json::papers/prereg/phase1_closure_recurrence.json"
           }
         ],
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "papers/prereg/phase1_closure_recurrence.json"
       }
     ],
     "cohort": {
@@ -318,7 +318,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "60d3171a987fb3de940669461c63d084a8e3dd32",
-        "edge_id": "spawned_by_ticket::TASK-FLOOR-BFG->papers/prereg/campaign_026/floor_bfg_d31.signed.json::317",
+        "edge_id": "spawned_by_ticket::TASK-FLOOR-BFG->papers/prereg/campaign_026/floor_bfg_d31.signed.json::400",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -340,7 +340,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::1484",
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::1644",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -363,7 +363,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D31",
-        "edge_id": "implements_same_doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4003",
+        "edge_id": "implements_same_doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4321",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -386,7 +386,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D29",
-        "edge_id": "implements_same_doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4091",
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_002.signed.json->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4442",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -395,20 +395,20 @@
             "kind": "grep",
             "locator": "both files mention D29",
             "note": "shared mention of doctrine D29",
-            "ref_id": "doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+            "ref_id": "doctrine::D29::papers/prereg/campaign_002.signed.json::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
           }
         ],
         "private_boundary": {
           "evidence_private": false,
           "reason": ""
         },
-        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "source": "papers/prereg/campaign_002.signed.json",
         "target": "papers/prereg/campaign_026/floor_bfg_d31.signed.json"
       },
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_026/floor_bfg_d31.signed.json->reports/campaign_026/full_report.json::1485",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_026/floor_bfg_d31.signed.json->reports/campaign_026/full_report.json::1645",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -431,7 +431,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D31",
-        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4004",
+        "edge_id": "implements_same_doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_genealogy/manifest.py::4322",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -440,7 +440,7 @@
             "kind": "grep",
             "locator": "both files mention D31",
             "note": "shared mention of doctrine D31",
-            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D31::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_genealogy/manifest.py"
           }
         ],
         "private_boundary": {
@@ -448,13 +448,13 @@
           "reason": ""
         },
         "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "project_genealogy/manifest.py"
       },
       {
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D29",
-        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json->project_telemetry/ai_builder_tasks.jsonl::4092",
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json->papers/prereg/phase1_closure_recurrence.json::4443",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -463,7 +463,7 @@
             "kind": "grep",
             "locator": "both files mention D29",
             "note": "shared mention of doctrine D29",
-            "ref_id": "doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json::project_telemetry/ai_builder_tasks.jsonl"
+            "ref_id": "doctrine::D29::papers/prereg/campaign_026/floor_bfg_d31.signed.json::papers/prereg/phase1_closure_recurrence.json"
           }
         ],
         "private_boundary": {
@@ -471,12 +471,12 @@
           "reason": ""
         },
         "source": "papers/prereg/campaign_026/floor_bfg_d31.signed.json",
-        "target": "project_telemetry/ai_builder_tasks.jsonl"
+        "target": "papers/prereg/phase1_closure_recurrence.json"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-FLOOR-BFG->papers/prereg/campaign_026/floor_bfg_d31.signed.json::317",
+        "edge_id": "spawned_by_ticket::TASK-FLOOR-BFG->papers/prereg/campaign_026/floor_bfg_d31.signed.json::400",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -491,7 +491,7 @@
         "source": "TASK-FLOOR-BFG"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::1484",
+        "edge_id": "shares_birth_cohort::papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::1644",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -506,7 +506,7 @@
         "source": "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4003",
+        "edge_id": "implements_same_doctrine::D31::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4321",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -521,7 +521,7 @@
         "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
       },
       {
-        "edge_id": "implements_same_doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4091",
+        "edge_id": "implements_same_doctrine::D29::papers/prereg/campaign_002.signed.json->papers/prereg/campaign_026/floor_bfg_d31.signed.json::4442",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -530,10 +530,10 @@
             "kind": "grep",
             "locator": "both files mention D29",
             "note": "shared mention of doctrine D29",
-            "ref_id": "doctrine::D29::papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
+            "ref_id": "doctrine::D29::papers/prereg/campaign_002.signed.json::papers/prereg/campaign_026/floor_bfg_d31.signed.json"
           }
         ],
-        "source": "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
+        "source": "papers/prereg/campaign_002.signed.json"
       }
     ],
     "siblings": [
@@ -563,18 +563,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

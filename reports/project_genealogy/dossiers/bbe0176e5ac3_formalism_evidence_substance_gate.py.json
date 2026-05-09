@@ -1,0 +1,632 @@
+{
+  "birth": {
+    "birth_cohort_id": "TASK-CB-022",
+    "birth_predicate": {
+      "acceptance_criteria": [
+        "File is tracked under git but does not match a higher-priority family."
+      ],
+      "atoms": [
+        {
+          "acceptance_evidence_expected": [],
+          "atom_id": "tracked_artifact_present",
+          "doctrine_bindings_expected": [],
+          "forbidden_failure_modes": [],
+          "source_ref": {
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "subject": "TASK-CB-022 Topic B: enforce evidence discipline",
+            "ticket": "TASK-CB-022"
+          },
+          "statement": "File is tracked under git but does not match a higher-priority family."
+        }
+      ],
+      "content_hash": "",
+      "expected_doctrine_bindings": [],
+      "forbidden_patterns": [],
+      "predicate_id": "birth::formalism/evidence/substance_gate.py"
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "commit",
+        "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "note": "TASK-CB-022 Topic B: enforce evidence discipline",
+        "ref_id": "birth::formalism/evidence/substance_gate.py::commit"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "ticket",
+        "locator": "TASK-CB-022",
+        "note": "ticket id parsed from creating commit subject",
+        "ref_id": "birth::formalism/evidence/substance_gate.py::ticket"
+      },
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "formalism/evidence/substance_gate.py#docstring",
+        "note": "module docstring at file head",
+        "ref_id": "birth::formalism/evidence/substance_gate.py::docstring"
+      }
+    ],
+    "first_seen_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+    "first_seen_date": "2026-05-09T07:17:33-04:00",
+    "parent_refs": [],
+    "spawn_ticket": "TASK-CB-022",
+    "status": "recovered"
+  },
+  "consistency": {
+    "cohort_findings": [],
+    "cross_doctrine_collisions": [],
+    "sibling_divergence": []
+  },
+  "content_hash": "sha256:e42f9104e22a9aed3d9fe640c3da1b83da5aae2eaeb1e9cc83e77edcd7882163",
+  "current": {
+    "current_predicate": {
+      "atoms": [
+        {
+          "atom_id": "public_surface_present",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "formalism/evidence/substance_gate.py#public_symbols"
+          },
+          "statement": "Module exposes public symbols: EvidenceTier, SubstanceGateResult, evaluate_source_bound, identifier_parsed, identifier_resolves, resolved_title, substance_audit_signed, title_matches_claim"
+        },
+        {
+          "atom_id": "imports_reference_internal",
+          "source_ref": {
+            "kind": "ast_probe",
+            "locator": "formalism/evidence/substance_gate.py#imports"
+          },
+          "statement": "Module imports: __future__.annotations, dataclasses.dataclass, enum.IntEnum, re, typing.Any"
+        },
+        {
+          "atom_id": "file_present_with_size",
+          "source_ref": {
+            "kind": "file_span",
+            "locator": "formalism/evidence/substance_gate.py"
+          },
+          "statement": "Tracked file with 194 lines / 7415 bytes at HEAD."
+        }
+      ],
+      "byte_count": 7415,
+      "class_pattern_matches": [],
+      "commands": [],
+      "content_hash": "",
+      "generated_artifacts": [],
+      "imports_out": [
+        "__future__.annotations",
+        "dataclasses.dataclass",
+        "enum.IntEnum",
+        "re",
+        "typing.Any"
+      ],
+      "letter_vs_spirit_surfaces": [
+        {
+          "line": 98,
+          "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+          "snippet": "re.fullmatch(r\"doi:10\\.\\S+/\\S+\", text, flags=re.IGNORECASE)"
+        },
+        {
+          "line": 99,
+          "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+          "snippet": "or re.fullmatch(r\"pmid:\\d+\", text, flags=re.IGNORECASE)"
+        },
+        {
+          "line": 100,
+          "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+          "snippet": "or re.fullmatch(r\"https?://\\S+\", text, flags=re.IGNORECASE)"
+        },
+        {
+          "line": 115,
+          "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
+          "snippet": "if status in {200, \"200\", \"ok\", \"resolved\"}:"
+        },
+        {
+          "line": 126,
+          "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+          "snippet": "tokens.update(token[:-1] for token in list(tokens) if token.endswith(\"s\") and len(token) > 5)"
+        }
+      ],
+      "line_count": 194,
+      "observed_doctrine_bindings": [],
+      "predicate_id": "current::formalism/evidence/substance_gate.py",
+      "public_symbols": [
+        "EvidenceTier",
+        "SubstanceGateResult",
+        "evaluate_source_bound",
+        "identifier_parsed",
+        "identifier_resolves",
+        "resolved_title",
+        "substance_audit_signed",
+        "title_matches_claim"
+      ],
+      "test_functions": []
+    },
+    "decline_reason": "",
+    "evidence_refs": [
+      {
+        "content_hash": "",
+        "evidence_private": false,
+        "kind": "file_span",
+        "locator": "formalism/evidence/substance_gate.py",
+        "note": "current contents at HEAD",
+        "ref_id": "current::formalism/evidence/substance_gate.py::head"
+      }
+    ],
+    "status": "recovered"
+  },
+  "declines": [],
+  "depth": {
+    "adversarial_surface_coverage": {
+      "covered_bad_cases": [
+        {
+          "id": "decline_branch",
+          "line": null
+        }
+      ],
+      "missing_bad_cases": [],
+      "required_bad_cases": [],
+      "value": null
+    },
+    "doctrine_binding_quality": {
+      "claimed_only": [],
+      "contradicted": [],
+      "missing": [],
+      "not_applicable": [],
+      "required": [],
+      "verified": []
+    },
+    "evidence_integration": {
+      "audit_queue_or_falsifier_route": "absent",
+      "dereferenceable_evidence_refs": 4,
+      "private_evidence_refs": 0,
+      "source_bound_claims": 4,
+      "unresolved_evidence_refs": 0
+    },
+    "operational_load_bearingness": {
+      "cited_by_reports": [],
+      "generates_artifacts": [],
+      "imports_in": 0,
+      "imports_out": 0,
+      "validated_by": [],
+      "weighted_value": 0.0
+    },
+    "predicate_atom_coverage": {
+      "claimable_atoms": 1,
+      "covered_atoms": 1,
+      "missing_atoms": [],
+      "value": 1.0
+    }
+  },
+  "drift_assessment": {
+    "changed_atoms": [],
+    "doctrine_boundary_crossings": [],
+    "letter_vs_spirit_flags": [
+      {
+        "kind": "letter_coupled_surface",
+        "line": 98,
+        "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+        "reproducer": {
+          "command": "rg \"re\\.match|re\\.search|re\\.fullmatch\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "re.fullmatch(r\"doi:10\\.\\S+/\\S+\", text, flags=re.IGNORECASE)"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 99,
+        "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+        "reproducer": {
+          "command": "rg \"re\\.match|re\\.search|re\\.fullmatch\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "or re.fullmatch(r\"pmid:\\d+\", text, flags=re.IGNORECASE)"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 100,
+        "pattern": "re\\.match|re\\.search|re\\.fullmatch",
+        "reproducer": {
+          "command": "rg \"re\\.match|re\\.search|re\\.fullmatch\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "or re.fullmatch(r\"https?://\\S+\", text, flags=re.IGNORECASE)"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 115,
+        "pattern": "if\\s+\\w+\\s+in\\s+\\{[^}]+\\}",
+        "reproducer": {
+          "command": "rg \"if\\s+\\w+\\s+in\\s+\\{[^}]+\\}\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "if status in {200, \"200\", \"ok\", \"resolved\"}:"
+      },
+      {
+        "kind": "letter_coupled_surface",
+        "line": 126,
+        "pattern": "endswith\\(['\\\"][^'\\\"]+['\\\"]\\)",
+        "reproducer": {
+          "command": "rg \"endswith\\(['\\\"][^'\\\"]+['\\\"]\\)\" -n",
+          "expected_result": "matches at line(s) listed",
+          "kind": "grep",
+          "last_run_status": "not_run"
+        },
+        "snippet": "tokens.update(token[:-1] for token in list(tokens) if token.endswith(\"s\") and len(token) > 5)"
+      }
+    ],
+    "missing_birth_atoms": [],
+    "negative_space_flags": [],
+    "new_atoms": [
+      "file_present_with_size",
+      "imports_reference_internal",
+      "public_surface_present"
+    ],
+    "reproducer_refs": [],
+    "status": "positive_deepening"
+  },
+  "file": {
+    "artifact_family": "other",
+    "byte_count": 7415,
+    "generated_status": "source",
+    "language": "python",
+    "line_count": 194,
+    "path": "formalism/evidence/substance_gate.py",
+    "path_hash": "sha256:3118c8fbcaa5098eb3861438d3777418dc4c7cb5f7febb9246927d1135021b57",
+    "private_boundary": {
+      "evidence_private": false,
+      "reason": ""
+    },
+    "tracked": true
+  },
+  "findings": [
+    {
+      "claim": "Detected letter-coupled fix surface at line 98: re.fullmatch(r\"doi:10\\.\\S+/\\S+\", text, flags=re.IGNORECASE)",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "formalism/evidence/substance_gate.py#L98",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::formalism/evidence/substance_gate.py::lvs::0"
+        }
+      ],
+      "finding_id": "PG-formalism/evidence/substance_gate.py-lvs-0",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 're.fullmatch(r\"doi:10\\\\.\\\\S+/\\\\S+\", text, flags=re.IGNORECASE)' -- formalism/evidence/substance_gate.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 99: or re.fullmatch(r\"pmid:\\d+\", text, flags=re.IGNORECASE)",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "formalism/evidence/substance_gate.py#L99",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::formalism/evidence/substance_gate.py::lvs::1"
+        }
+      ],
+      "finding_id": "PG-formalism/evidence/substance_gate.py-lvs-1",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'or re.fullmatch(r\"pmid:\\\\d+\", text, flags=re.IGNORECASE)' -- formalism/evidence/substance_gate.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 100: or re.fullmatch(r\"https?://\\S+\", text, flags=re.IGNORECASE)",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "formalism/evidence/substance_gate.py#L100",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::formalism/evidence/substance_gate.py::lvs::2"
+        }
+      ],
+      "finding_id": "PG-formalism/evidence/substance_gate.py-lvs-2",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'or re.fullmatch(r\"https?://\\\\S+\", text, flags=re.IGNORECASE)' -- formalism/evidence/substance_gate.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 115: if status in {200, \"200\", \"ok\", \"resolved\"}:",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "formalism/evidence/substance_gate.py#L115",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::formalism/evidence/substance_gate.py::lvs::3"
+        }
+      ],
+      "finding_id": "PG-formalism/evidence/substance_gate.py-lvs-3",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'if status in {200, \"200\", \"ok\", \"resolved\"}:' -- formalism/evidence/substance_gate.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    },
+    {
+      "claim": "Detected letter-coupled fix surface at line 126: tokens.update(token[:-1] for token in list(tokens) if token.endswith(\"s\") and len(token) > 5)",
+      "doctrine_refs": [
+        "D26",
+        "D27"
+      ],
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "grep",
+          "locator": "formalism/evidence/substance_gate.py#L126",
+          "note": "letter-coupled surface detected mechanically",
+          "ref_id": "finding::formalism/evidence/substance_gate.py::lvs::4"
+        }
+      ],
+      "finding_id": "PG-formalism/evidence/substance_gate.py-lvs-4",
+      "mistake_classes": [
+        "Class7",
+        "Class13"
+      ],
+      "recommendation": "Determine whether the surface gates a class of failure or only a literal symptom; if literal, add a class-level guard or downgrade to honest_decline.",
+      "reproducer": {
+        "command": "rg -n -F 'tokens.update(token[:-1] for token in list(tokens) if token.' -- formalism/evidence/substance_gate.py",
+        "expected_result": "non-zero match at the cited line",
+        "kind": "grep",
+        "last_run_status": "not_run"
+      },
+      "severity": "info",
+      "status": "hypothesis"
+    }
+  ],
+  "genealogy": {
+    "children": [
+      {
+        "edge_id": "shares_birth_cohort::formalism/evidence/substance_gate.py->formalism/floor_bfg/read_separation.py::1635",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "target": "formalism/floor_bfg/read_separation.py"
+      }
+    ],
+    "cohort": {
+      "cohort_id": "TASK-CB-022",
+      "members": [
+        "docs/AI_LANE_ROSTER.md",
+        "formalism/evidence/substance_gate.py",
+        "formalism/floor_bfg/read_separation.py",
+        "formalism/motif_contracts/adversarial.py",
+        "formalism/motif_contracts/contracts.py",
+        "formalism/motif_contracts/schema.py",
+        "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "reports/campaign_006/audit_queue.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "spawn_ticket": "TASK-CB-022"
+    },
+    "edges": [
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+        "edge_id": "spawned_by_ticket::TASK-CB-022->formalism/evidence/substance_gate.py::274",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::formalism/evidence/substance_gate.py"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "TASK-CB-022",
+        "target": "formalism/evidence/substance_gate.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::docs/AI_LANE_ROSTER.md->formalism/evidence/substance_gate.py::1634",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "docs/AI_LANE_ROSTER.md",
+        "target": "formalism/evidence/substance_gate.py"
+      },
+      {
+        "confidence": "mechanical",
+        "created_at_commit": "",
+        "edge_id": "shares_birth_cohort::formalism/evidence/substance_gate.py->formalism/floor_bfg/read_separation.py::1635",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "formalism/evidence/substance_gate.py",
+        "target": "formalism/floor_bfg/read_separation.py"
+      }
+    ],
+    "parents": [
+      {
+        "edge_id": "spawned_by_ticket::TASK-CB-022->formalism/evidence/substance_gate.py::274",
+        "edge_type": "spawned_by_ticket",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "commit",
+            "locator": "215dbc12c2f8c0699a0993fe85164d27f61d6e0f",
+            "note": "first-seen commit subject contained ticket id",
+            "ref_id": "spawn::formalism/evidence/substance_gate.py"
+          }
+        ],
+        "source": "TASK-CB-022"
+      },
+      {
+        "edge_id": "shares_birth_cohort::docs/AI_LANE_ROSTER.md->formalism/evidence/substance_gate.py::1634",
+        "edge_type": "shares_birth_cohort",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "git_query",
+            "locator": "birth_cohort_id=TASK-CB-022",
+            "note": "members share spawn_ticket / first-seen commit; edge is a chain link between sorted members",
+            "ref_id": "cohort::TASK-CB-022"
+          }
+        ],
+        "source": "docs/AI_LANE_ROSTER.md"
+      }
+    ],
+    "siblings": [
+      "docs/AI_LANE_ROSTER.md",
+      "formalism/floor_bfg/read_separation.py",
+      "formalism/motif_contracts/adversarial.py",
+      "formalism/motif_contracts/contracts.py",
+      "formalism/motif_contracts/schema.py",
+      "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+      "public_tests/test_cb022_topic_b_evidence_discipline.py",
+      "reports/campaign_006/audit_queue.json",
+      "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+    ]
+  },
+  "liveness": {
+    "cleanup_candidate_status": "unknown",
+    "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
+    "downstream_reference_count": 0,
+    "last_touched_commit": "",
+    "last_touched_date": "",
+    "removal_probe": {
+      "command": "",
+      "decline_reason": "removal_probe_over_budget",
+      "diff_summary": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "schema",
+          "locator": "input_manifest.json#threshold_policy.probe",
+          "note": "probe budget zero per-file seconds in v1",
+          "ref_id": "probe::formalism/evidence/substance_gate.py::budget"
+        }
+      ],
+      "outcome": "declined",
+      "ran_at": "2026-05-09T11:41:16Z"
+    },
+    "runtime_reference_count": 0
+  },
+  "run_binding": {
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
+    "generation_command": "python -m project_genealogy run-pass2",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
+    "pg_version": "PG-001",
+    "workspace_dirty": false
+  },
+  "schema": "ProjectGenealogyDossier.v1"
+}

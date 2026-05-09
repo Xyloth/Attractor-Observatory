@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/458b1cc9e9a6_reports_campaign_010_formal_deficit_map.json.json`
-- JSON content_hash: `sha256:0f751526305e1fd567d5c7043b871ee06535206398e834195728d2f5175605d4`
+- JSON content_hash: `sha256:01c03856c9f0237eab46a2a73b5e2c249cf1df7b4ac070b09db8a91e46aae19f`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`
-- Lines: 1220 / Bytes: 41992
+- Lines: 1220 / Bytes: 42009
 
 ## Birth
 - Status: `recovered`

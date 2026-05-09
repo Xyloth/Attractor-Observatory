@@ -73,7 +73,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:e0e5520d7db314da808e8bda2394fb89d4c080d6ca89bb88c725a6cac62ffbea",
+  "content_hash": "sha256:7fe4234d705995f5379dd1224367df4bc47640b94ed5f850bef24af931cc5d3d",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -206,7 +206,7 @@
     "language": "json",
     "line_count": 74,
     "path": "project_telemetry/task_017_progress_record.json",
-    "path_hash": "sha256:7d0e82cceca0046cc294bad86c3388357109a938fed80700ec0f049a5882a4c8",
+    "path_hash": "sha256:2b5c90d0a462c8b38d053a66140b9c3b890e0229fe15cbeed2f2ecc209af011d",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -217,7 +217,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::1149",
+        "edge_id": "shares_birth_cohort::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::1279",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -232,7 +232,7 @@
         "target": "project_telemetry/task_018_progress_record.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D14::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::2118",
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::2365",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -490,7 +490,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::project_telemetry/task_016_progress_record.json->project_telemetry/task_017_progress_record.json::1148",
+        "edge_id": "shares_birth_cohort::project_telemetry/task_016_progress_record.json->project_telemetry/task_017_progress_record.json::1278",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -513,7 +513,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D14",
-        "edge_id": "implements_same_doctrine::D14::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_017_progress_record.json::2117",
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_017_progress_record.json::2364",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -535,7 +535,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::1149",
+        "edge_id": "shares_birth_cohort::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::1279",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -558,7 +558,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D14",
-        "edge_id": "implements_same_doctrine::D14::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::2118",
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/task_017_progress_record.json->project_telemetry/task_018_progress_record.json::2365",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -580,7 +580,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::project_telemetry/task_016_progress_record.json->project_telemetry/task_017_progress_record.json::1148",
+        "edge_id": "shares_birth_cohort::project_telemetry/task_016_progress_record.json->project_telemetry/task_017_progress_record.json::1278",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -595,7 +595,7 @@
         "source": "project_telemetry/task_016_progress_record.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D14::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_017_progress_record.json::2117",
+        "edge_id": "implements_same_doctrine::D14::project_telemetry/ai_builder_tasks.jsonl->project_telemetry/task_017_progress_record.json::2364",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -684,18 +684,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

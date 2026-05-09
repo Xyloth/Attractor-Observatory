@@ -95,7 +95,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:f00a108e620f6bcb4040b1409998eb4bf2ee47465cdfa29c638b22cfe3e38d5c",
+  "content_hash": "sha256:1185dcf6f43937f314add282ed0b276ed0a49a727733881df3c06420a16105f1",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -390,7 +390,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::control_room/adapters/build_log.py->control_room/adapters/builder_telemetry.py::822",
+        "edge_id": "shares_birth_cohort::control_room/adapters/build_log.py->control_room/adapters/builder_telemetry.py::952",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -756,7 +756,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/adapters/__init__.py->control_room/adapters/build_log.py::821",
+        "edge_id": "shares_birth_cohort::control_room/adapters/__init__.py->control_room/adapters/build_log.py::951",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -778,7 +778,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/adapters/build_log.py->control_room/adapters/builder_telemetry.py::822",
+        "edge_id": "shares_birth_cohort::control_room/adapters/build_log.py->control_room/adapters/builder_telemetry.py::952",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -815,7 +815,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::control_room/adapters/__init__.py->control_room/adapters/build_log.py::821",
+        "edge_id": "shares_birth_cohort::control_room/adapters/__init__.py->control_room/adapters/build_log.py::951",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -904,18 +904,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -87,7 +87,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:34a0fe88c272bb0fb287a20a94c9f14f49c8828e72a4eea632d20722aaf81c26",
+  "content_hash": "sha256:2fc821109028003f595b4a41e50ddba18cdb8afca3d481a124117646b83f08a9",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -267,7 +267,7 @@
     "language": "markdown",
     "line_count": 107,
     "path": "factory_lowlevel/README.md",
-    "path_hash": "sha256:24464fd5a62f2d03f9a4d4843b2c1a7d3e93f90a118d958786119c1f99f2a792",
+    "path_hash": "sha256:eb1a592665f3edfd7d8a51d2081613e4c4647766ffae480bd16e122a7c5841b5",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -310,7 +310,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1440",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1570",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -325,7 +325,7 @@
         "target": "factory_lowlevel/continuous_daemon.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D23::factory_lowlevel/README.md->papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md::4180",
+        "edge_id": "implements_same_doctrine::D23::factory_lowlevel/README.md->papers/falsification/DX-003/round_6.md::4577",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -334,10 +334,10 @@
             "kind": "grep",
             "locator": "both files mention D23",
             "note": "shared mention of doctrine D23",
-            "ref_id": "doctrine::D23::factory_lowlevel/README.md::papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md"
+            "ref_id": "doctrine::D23::factory_lowlevel/README.md::papers/falsification/DX-003/round_6.md"
           }
         ],
-        "target": "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md"
+        "target": "papers/falsification/DX-003/round_6.md"
       }
     ],
     "cohort": {
@@ -405,7 +405,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/README.md::251",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/README.md::253",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -427,7 +427,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_daemon.bat->factory_lowlevel/README.md::1439",
+        "edge_id": "shares_birth_cohort::factory_daemon.bat->factory_lowlevel/README.md::1569",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -450,7 +450,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D23",
-        "edge_id": "implements_same_doctrine::D23::docs/doctrine_registry.json->factory_lowlevel/README.md::4179",
+        "edge_id": "implements_same_doctrine::D23::docs/doctrine_registry.json->factory_lowlevel/README.md::4576",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -472,7 +472,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/README.md::4435",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/README.md::4901",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -494,7 +494,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1440",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/README.md->factory_lowlevel/continuous_daemon.py::1570",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -517,7 +517,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D23",
-        "edge_id": "implements_same_doctrine::D23::factory_lowlevel/README.md->papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md::4180",
+        "edge_id": "implements_same_doctrine::D23::factory_lowlevel/README.md->papers/falsification/DX-003/round_6.md::4577",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -526,7 +526,7 @@
             "kind": "grep",
             "locator": "both files mention D23",
             "note": "shared mention of doctrine D23",
-            "ref_id": "doctrine::D23::factory_lowlevel/README.md::papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md"
+            "ref_id": "doctrine::D23::factory_lowlevel/README.md::papers/falsification/DX-003/round_6.md"
           }
         ],
         "private_boundary": {
@@ -534,12 +534,12 @@
           "reason": ""
         },
         "source": "factory_lowlevel/README.md",
-        "target": "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md"
+        "target": "papers/falsification/DX-003/round_6.md"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/README.md::251",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->factory_lowlevel/README.md::253",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -554,7 +554,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_daemon.bat->factory_lowlevel/README.md::1439",
+        "edge_id": "shares_birth_cohort::factory_daemon.bat->factory_lowlevel/README.md::1569",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -569,7 +569,7 @@
         "source": "factory_daemon.bat"
       },
       {
-        "edge_id": "implements_same_doctrine::D23::docs/doctrine_registry.json->factory_lowlevel/README.md::4179",
+        "edge_id": "implements_same_doctrine::D23::docs/doctrine_registry.json->factory_lowlevel/README.md::4576",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -584,7 +584,7 @@
         "source": "docs/doctrine_registry.json"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/README.md::4435",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/README.md::4901",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -673,18 +673,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

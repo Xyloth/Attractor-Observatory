@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/6ecc7766a512_Visuals_preview_health-badge.html.json`
-- JSON content_hash: `sha256:271578a3d2b9ab25e3e0117b564045b1c7197ea4cbcf75d267c98124fb94ce23`
+- JSON content_hash: `sha256:3c37fb3305fc892e65b85cb0b1f0db9a5d3d063ec59fc08ac3094250bb7aefd4`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

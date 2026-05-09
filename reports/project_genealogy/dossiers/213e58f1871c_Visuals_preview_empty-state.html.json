@@ -77,7 +77,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:151083ae4855f586e933ae9f16124ca2e6d814851841e54aee30a7ab10c1bce7",
+  "content_hash": "sha256:f14a449290d10f06d9daa6642aad2a592ae642d0febd7eeb44f77f989227e8c5",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -234,7 +234,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::Visuals/preview/empty-state.html->Visuals/preview/gate-grid.html::770",
+        "edge_id": "shares_birth_cohort::Visuals/preview/empty-state.html->Visuals/preview/gate-grid.html::900",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -249,7 +249,7 @@
         "target": "Visuals/preview/gate-grid.html"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::Visuals/preview/empty-state.html->Visuals/ui_kits/control_room/DoctrineTablet.jsx::3715",
+        "edge_id": "implements_same_doctrine::D22::Visuals/preview/empty-state.html->Visuals/ui_kits/control_room/DoctrineTablet.jsx::4007",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -615,7 +615,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/preview/doctrine-tablet.html->Visuals/preview/empty-state.html::769",
+        "edge_id": "shares_birth_cohort::Visuals/preview/doctrine-tablet.html->Visuals/preview/empty-state.html::899",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -638,7 +638,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::Visuals/preview/color-status.html->Visuals/preview/empty-state.html::3714",
+        "edge_id": "implements_same_doctrine::D22::Visuals/preview/color-status.html->Visuals/preview/empty-state.html::4006",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -660,7 +660,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/preview/empty-state.html->Visuals/preview/gate-grid.html::770",
+        "edge_id": "shares_birth_cohort::Visuals/preview/empty-state.html->Visuals/preview/gate-grid.html::900",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -683,7 +683,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::Visuals/preview/empty-state.html->Visuals/ui_kits/control_room/DoctrineTablet.jsx::3715",
+        "edge_id": "implements_same_doctrine::D22::Visuals/preview/empty-state.html->Visuals/ui_kits/control_room/DoctrineTablet.jsx::4007",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -720,7 +720,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::Visuals/preview/doctrine-tablet.html->Visuals/preview/empty-state.html::769",
+        "edge_id": "shares_birth_cohort::Visuals/preview/doctrine-tablet.html->Visuals/preview/empty-state.html::899",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -735,7 +735,7 @@
         "source": "Visuals/preview/doctrine-tablet.html"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::Visuals/preview/color-status.html->Visuals/preview/empty-state.html::3714",
+        "edge_id": "implements_same_doctrine::D22::Visuals/preview/color-status.html->Visuals/preview/empty-state.html::4006",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -824,18 +824,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

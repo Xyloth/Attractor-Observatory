@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/caf273e06038_atlas_negative_space_NS-C004-07-digital_parasite_locked_replication.json.json`
-- JSON content_hash: `sha256:6046181c52557a461b565c28f3843099283dd8e470b6ea876610ff7cc5cfea1f`
+- JSON content_hash: `sha256:5296a4d089fd9694f63f16744aa09b372addd3bbd243bac4f67aa6542f42097b`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

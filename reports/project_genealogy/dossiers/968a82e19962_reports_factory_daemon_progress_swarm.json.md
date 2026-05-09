@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/968a82e19962_reports_factory_daemon_progress_swarm.json.json`
-- JSON content_hash: `sha256:8f8050ae90ca38bc75630c92614ba5172e121655dbe8de7ad8ce8594c27c902e`
+- JSON content_hash: `sha256:df3c8c460b0722733b94b5aca4ea4842293c4f038b257edd39211e8e9226efef`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

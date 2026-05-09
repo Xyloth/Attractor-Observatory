@@ -74,7 +74,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:12c1eb43a86e88b887f6ed1a53a36a82b2519a962935bc1cd19fcaa12382cef2",
+  "content_hash": "sha256:a85f4704cdbc6fe7ad6d1a140c5dd979d59164e135725c64bc680bfcb65274d6",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -295,7 +295,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_subprocess_state.json->control_room/cache/factory_subprocess_stderr.log::1285",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_subprocess_state.json->control_room/cache/factory_subprocess_stderr.log::1415",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -443,7 +443,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_f17c14848991da21.json->control_room/cache/factory_subprocess_state.json::1284",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_f17c14848991da21.json->control_room/cache/factory_subprocess_state.json::1414",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -465,7 +465,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->control_room/cache/factory_subprocess_state.json::4407",
+        "edge_id": "cites::BUILD_LOG.md->control_room/cache/factory_subprocess_state.json::4873",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -487,7 +487,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_subprocess_state.json->control_room/cache/factory_subprocess_stderr.log::1285",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_subprocess_state.json->control_room/cache/factory_subprocess_stderr.log::1415",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -524,7 +524,7 @@
         "source": "TASK-033"
       },
       {
-        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_f17c14848991da21.json->control_room/cache/factory_subprocess_state.json::1284",
+        "edge_id": "shares_birth_cohort::control_room/cache/factory_runs/run_f17c14848991da21.json->control_room/cache/factory_subprocess_state.json::1414",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -539,7 +539,7 @@
         "source": "control_room/cache/factory_runs/run_f17c14848991da21.json"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->control_room/cache/factory_subprocess_state.json::4407",
+        "edge_id": "cites::BUILD_LOG.md->control_room/cache/factory_subprocess_state.json::4873",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -628,18 +628,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

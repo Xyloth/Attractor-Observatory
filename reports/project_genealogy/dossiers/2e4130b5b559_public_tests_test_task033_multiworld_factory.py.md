@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/2e4130b5b559_public_tests_test_task033_multiworld_factory.py.json`
-- JSON content_hash: `sha256:e424a13e5bf4b9ab492994b08e41d809adfb185d0dc5a58a55b60b7dcf078ad9`
+- JSON content_hash: `sha256:cc1c25aeede3d342eaccd45b69e045828687a988344f399b15ca651766cfefb2`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `test`
 - Generated status: `source`

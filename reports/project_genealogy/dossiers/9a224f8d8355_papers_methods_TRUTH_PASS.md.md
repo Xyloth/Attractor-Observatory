@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/9a224f8d8355_papers_methods_TRUTH_PASS.md.json`
-- JSON content_hash: `sha256:8f3a2d6d5f7250015e8b750cc3402ff2cff6853d29538eff764062a796c9baa4`
+- JSON content_hash: `sha256:2212ff82d5ece5d510ef6a999d260bb84dcb66c981d85e8f22395a53a3485d13`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

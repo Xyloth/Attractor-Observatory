@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:a43eec7801935612adc6dfe9db71294d5dc3971670a1c41058494f7f9994d1ad",
+  "content_hash": "sha256:53b4730302723dbe50ea5a27880a76bd85763bde2915dafeda64878aa79bd078",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -312,7 +312,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
-        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->public_tests/test_phase_b_adapters.py::339",
+        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->public_tests/test_phase_b_adapters.py::446",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -334,7 +334,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1486",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1646",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -356,7 +356,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->public_tests/test_phase_b_adapters.py::4451",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_phase_b_adapters.py::4917",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -378,7 +378,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->public_tests/test_phase_b_adapters.py::339",
+        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->public_tests/test_phase_b_adapters.py::446",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -393,7 +393,7 @@
         "source": "TASK-PHASE-B-INFRA"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1486",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1646",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -408,7 +408,7 @@
         "source": "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->public_tests/test_phase_b_adapters.py::4451",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_phase_b_adapters.py::4917",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -448,18 +448,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

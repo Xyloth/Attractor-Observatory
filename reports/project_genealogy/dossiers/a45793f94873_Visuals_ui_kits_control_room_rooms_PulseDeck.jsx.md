@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/a45793f94873_Visuals_ui_kits_control_room_rooms_PulseDeck.jsx.json`
-- JSON content_hash: `sha256:6ed8fbb3c3ac9a0f4b8140528990100c390a22d4ade1f2c3ab1e5fceb340dc7b`
+- JSON content_hash: `sha256:f01e5cb4745087b83dd888e04b756439492a8f6b911abb7c91fb20108d11e537`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

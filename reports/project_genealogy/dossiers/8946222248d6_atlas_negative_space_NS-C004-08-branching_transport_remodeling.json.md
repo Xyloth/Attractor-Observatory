@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/8946222248d6_atlas_negative_space_NS-C004-08-branching_transport_remodeling.json.json`
-- JSON content_hash: `sha256:491b33c4db23510ec3987bd4c4d09dc13e669fad8e87239b01a44b8e53937c1c`
+- JSON content_hash: `sha256:238d13909e890746e368787ca60e098793b986926dbae10b26070d0560f8af24`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

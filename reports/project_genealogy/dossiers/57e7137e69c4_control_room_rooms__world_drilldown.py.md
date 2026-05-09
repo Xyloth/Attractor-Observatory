@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/57e7137e69c4_control_room_rooms__world_drilldown.py.json`
-- JSON content_hash: `sha256:103b9d8a6d5c5eebc7db11cb0b3245b3380126555440e48782e2ab39ddd10800`
+- JSON content_hash: `sha256:2b94d80e1f82786343eb237f3388a5cf8e7456d6328328471bc0f3748f396dd8`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `control_room`
 - Generated status: `source`

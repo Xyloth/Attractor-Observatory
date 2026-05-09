@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:f56085b372ba95d885b327c4f608fb8a5f9311d3c7e79230f61f718f36404c43",
+  "content_hash": "sha256:79cb96c179a550fef644c29fb44c226f23ea5bcf0234f5c74bd05f8dbe953049",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -276,7 +276,7 @@
     "language": "python",
     "line_count": 104,
     "path": "public_tests/test_task035_continuous_daemon.py",
-    "path_hash": "sha256:d45a8b892eee5c8372ff1abb98fd063675106139ad8372ba70eb5d904dd0058f",
+    "path_hash": "sha256:43cc6a278164770641535bb0ac618def6844bc9fc45fb299f1a7dbd09c4be149",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -287,7 +287,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::public_tests/test_task035_continuous_daemon.py->public_tests/test_task035_fire_integration.py::1462",
+        "edge_id": "shares_birth_cohort::public_tests/test_task035_continuous_daemon.py->public_tests/test_task035_fire_integration.py::1592",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -367,7 +367,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "b8473aa3ed840989f6dce967fc460df34c7eed60",
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->public_tests/test_task035_continuous_daemon.py::343",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->public_tests/test_task035_continuous_daemon.py::450",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -389,7 +389,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_024/self_maintained_boundary.signed.json->public_tests/test_task035_continuous_daemon.py::1461",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_024/self_maintained_boundary.signed.json->public_tests/test_task035_continuous_daemon.py::1591",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -411,7 +411,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::public_tests/test_task035_continuous_daemon.py->public_tests/test_task035_fire_integration.py::1462",
+        "edge_id": "shares_birth_cohort::public_tests/test_task035_continuous_daemon.py->public_tests/test_task035_fire_integration.py::1592",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -433,7 +433,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->public_tests/test_task035_continuous_daemon.py::343",
+        "edge_id": "spawned_by_ticket::TASK-MOTIF-IMPL->public_tests/test_task035_continuous_daemon.py::450",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -448,7 +448,7 @@
         "source": "TASK-MOTIF-IMPL"
       },
       {
-        "edge_id": "shares_birth_cohort::papers/prereg/campaign_024/self_maintained_boundary.signed.json->public_tests/test_task035_continuous_daemon.py::1461",
+        "edge_id": "shares_birth_cohort::papers/prereg/campaign_024/self_maintained_boundary.signed.json->public_tests/test_task035_continuous_daemon.py::1591",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -537,18 +537,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

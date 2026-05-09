@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/07dd930d5b82_papers_methods_CAMPAIGN_024_LENS_SIDE_DECOUPLING.md.json`
-- JSON content_hash: `sha256:8782b29cfbb65790d567f5816393c0383eedca4080252942241a0530cc0eafaf`
+- JSON content_hash: `sha256:bd44b1ff2ff25ca4346b7d04bdf84e4003f1634ce1e545f0cf5901297949d2d0`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`
-- Lines: 32 / Bytes: 1775
+- Lines: 32 / Bytes: 1766
 
 ## Birth
 - Status: `recovered`

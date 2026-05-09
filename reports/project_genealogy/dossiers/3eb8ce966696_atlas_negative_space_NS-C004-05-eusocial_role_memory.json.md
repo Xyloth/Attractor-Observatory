@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/3eb8ce966696_atlas_negative_space_NS-C004-05-eusocial_role_memory.json.json`
-- JSON content_hash: `sha256:68fb50a7e781ac00f35e68810ec7ebbe9128355f1d264b8c0380ed814f22f50b`
+- JSON content_hash: `sha256:70d7503c8f6ec1ef26695ce73812fe7eeddd6bfa2851909b4c4965bd36ac19af`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

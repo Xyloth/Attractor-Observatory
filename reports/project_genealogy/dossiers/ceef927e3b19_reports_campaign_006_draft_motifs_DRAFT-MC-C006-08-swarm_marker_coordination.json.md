@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/ceef927e3b19_reports_campaign_006_draft_motifs_DRAFT-MC-C006-08-swarm_marker_coordination.json.json`
-- JSON content_hash: `sha256:c3dcc0cc655e61d5c0d3b0b6bb8eeb1b2fb37fb66894a33ae7c5daadfbfa60bb`
+- JSON content_hash: `sha256:a3db4360a8ca59d90df82976bdf4fe47b957b7a22cd1978dee7bc70025b053d8`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

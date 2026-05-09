@@ -64,7 +64,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:51adb55fc57ef3726d7155b7d503a8f93da8b486b88788107e75ae7bd36b6b9a",
+  "content_hash": "sha256:c77bd7917d06187dcb7501b1acf0ec3c8885445871895b39a6a219891ba736ff",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -195,7 +195,7 @@
     "language": "markdown",
     "line_count": 58,
     "path": "docs/phase_status/phase_0_status.md",
-    "path_hash": "sha256:53432b2a9a4a80c756b0faae9fc2f4e397231f571a385d5a157a9d0e7a51789c",
+    "path_hash": "sha256:8a5f887f0609cd186eb36aaeeed406f5e95070ed8ca06a1b6915abbd427539f8",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -206,7 +206,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::docs/phase_status/phase_0_status.md->papers/falsifiers/bfg_point_attractor_candidate.md::1129",
+        "edge_id": "shares_birth_cohort::docs/phase_status/phase_0_status.md->papers/falsifiers/bfg_point_attractor_candidate.md::1259",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -464,7 +464,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::docs/doctrine_registry.json->docs/phase_status/phase_0_status.md::1128",
+        "edge_id": "shares_birth_cohort::docs/doctrine_registry.json->docs/phase_status/phase_0_status.md::1258",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -486,7 +486,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::docs/phase_status/phase_0_status.md->papers/falsifiers/bfg_point_attractor_candidate.md::1129",
+        "edge_id": "shares_birth_cohort::docs/phase_status/phase_0_status.md->papers/falsifiers/bfg_point_attractor_candidate.md::1259",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -508,7 +508,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::docs/doctrine_registry.json->docs/phase_status/phase_0_status.md::1128",
+        "edge_id": "shares_birth_cohort::docs/doctrine_registry.json->docs/phase_status/phase_0_status.md::1258",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -597,18 +597,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

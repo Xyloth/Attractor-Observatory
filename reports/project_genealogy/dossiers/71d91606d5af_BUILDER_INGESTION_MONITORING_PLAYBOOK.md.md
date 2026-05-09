@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/71d91606d5af_BUILDER_INGESTION_MONITORING_PLAYBOOK.md.json`
-- JSON content_hash: `sha256:42ca945d088ff67f26cc24412f1925baf3f1324069a6e2e93a521006369c12e9`
+- JSON content_hash: `sha256:ef7e2e03209d47e462dfcf859f8666a770f41e2db614bfbac03a19fb01496dd6`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `driver_or_root_doc`
 - Generated status: `source`

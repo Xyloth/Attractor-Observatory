@@ -69,7 +69,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:15e4dd5a3f57bbb6cbc0aa6a7f2cd4223ce5445e81270d552160c1267aceadb0",
+  "content_hash": "sha256:5d9594d0fcb699335e6331bcede518f319814913c52dfb627bae05df11351d6e",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -174,7 +174,7 @@
     "language": "markdown",
     "line_count": 66,
     "path": "CODEX_CAMPAIGN_003.md",
-    "path_hash": "sha256:52d302c652b21881969bdfbc9fc95de63591b5db82ffe5375258e817d6c677fa",
+    "path_hash": "sha256:32ac9c4613f78814e409e1d21ff63acd9f9d48fc8b1131c5be0ce10f765706f1",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -185,7 +185,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1041",
+        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1171",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -443,7 +443,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::CODEX_AUDIT_AND_CAMPAIGN_002.md->CODEX_CAMPAIGN_003.md::1040",
+        "edge_id": "shares_birth_cohort::CODEX_AUDIT_AND_CAMPAIGN_002.md->CODEX_CAMPAIGN_003.md::1170",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -465,7 +465,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1041",
+        "edge_id": "shares_birth_cohort::CODEX_CAMPAIGN_003.md->CODEX_CAMPAIGN_004.md::1171",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -487,7 +487,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::CODEX_AUDIT_AND_CAMPAIGN_002.md->CODEX_CAMPAIGN_003.md::1040",
+        "edge_id": "shares_birth_cohort::CODEX_AUDIT_AND_CAMPAIGN_002.md->CODEX_CAMPAIGN_003.md::1170",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -576,18 +576,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

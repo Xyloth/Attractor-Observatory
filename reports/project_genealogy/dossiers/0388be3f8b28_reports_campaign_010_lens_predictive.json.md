@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/0388be3f8b28_reports_campaign_010_lens_predictive.json.json`
-- JSON content_hash: `sha256:d3d0cd329fa4d63d0c6d37241c65c1d391bebef63a9352c0a5a8bad2b98c8e03`
+- JSON content_hash: `sha256:0da926796e4a81cc6f38e740d4549a5914b6f52c3678a8af7ce6f6e60ea053d5`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

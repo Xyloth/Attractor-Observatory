@@ -93,7 +93,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:baaaba2b0fadfd0a97623734d8cb24c1a03b966b003c146b7b31f007903a8549",
+  "content_hash": "sha256:3ccc9968ec0a0a8a0a6507121274972ef426800bff39808aa1ca66175ec3d096",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -574,7 +574,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::3901",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::4202",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -600,7 +600,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "8cd23263e328b4544d0b30269ef6f75e76293e26",
-        "edge_id": "spawned_by_ticket::CB-009->public_tests/test_cb009_atlas_bundle_inbox.py::331",
+        "edge_id": "spawned_by_ticket::CB-009->public_tests/test_cb009_atlas_bundle_inbox.py::429",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -623,7 +623,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::project_telemetry/codex_audit_002_progress_record.json->public_tests/test_cb009_atlas_bundle_inbox.py::3900",
+        "edge_id": "implements_same_doctrine::D22::project_telemetry/codex_audit_002_progress_record.json->public_tests/test_cb009_atlas_bundle_inbox.py::4201",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -646,7 +646,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D22",
-        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::3901",
+        "edge_id": "implements_same_doctrine::D22::public_tests/test_cb009_atlas_bundle_inbox.py->public_tests/test_cb011_polish_audit.py::4202",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -668,7 +668,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::CB-009->public_tests/test_cb009_atlas_bundle_inbox.py::331",
+        "edge_id": "spawned_by_ticket::CB-009->public_tests/test_cb009_atlas_bundle_inbox.py::429",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -683,7 +683,7 @@
         "source": "CB-009"
       },
       {
-        "edge_id": "implements_same_doctrine::D22::project_telemetry/codex_audit_002_progress_record.json->public_tests/test_cb009_atlas_bundle_inbox.py::3900",
+        "edge_id": "implements_same_doctrine::D22::project_telemetry/codex_audit_002_progress_record.json->public_tests/test_cb009_atlas_bundle_inbox.py::4201",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -721,18 +721,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -3,11 +3,11 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/c34f7a038a7c_papers_prereg_phase1_closure_recurrence.json.json`
-- JSON content_hash: `sha256:9214a19e471b30a2c4904a424d517748426778714d5ea75a09db582dc3c70f46`
+- JSON content_hash: `sha256:ef2c4d67e79eafb6228d66cd88003e5e5bc9bc7ccd3f140c6ed1cee00379aae6`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `prereg`
 - Generated status: `source`
-- Lines: 15 / Bytes: 808
+- Lines: 19 / Bytes: 1127
 
 ## Birth
 - Status: `recovered`
@@ -18,16 +18,23 @@
 
 ### Birth predicate atoms
 - **prereg_locks_instruments** — Prereg artifact locks basis/lens instruments with a content_hash.
+- **header_declared_intent** — {
+"analysis_path": "python observatory_cli.py run-closure-recurrence --out-dir reports/phase1/closure_recurrence",
+"analysis_path_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+"analysis_path_status": "private_unshipped",
+"evidence_private": true,
+"hypothesis": "The K2 positive autocatalytic cycle is detected recurrently across deter
 
 ## Current
 - Status: `recovered`
+- Observed doctrines: `D23, D29`
 
 ## DepthVector.v1
-- **predicate_atom_coverage**: `{'claimable_atoms': 1, 'covered_atoms': 1, 'missing_atoms': [], 'value': 1.0}`
+- **predicate_atom_coverage**: `{'claimable_atoms': 2, 'covered_atoms': 2, 'missing_atoms': [], 'value': 1.0}`
 - **adversarial_surface_coverage**: `{'required_bad_cases': [], 'covered_bad_cases': [], 'missing_bad_cases': [], 'value': None}`
-- **doctrine_binding_quality**: `{'required': ['D18'], 'verified': [], 'claimed_only': ['D18'], 'missing': [], 'contradicted': [], 'not_applicable': []}`
+- **doctrine_binding_quality**: `{'required': ['D23', 'D29'], 'verified': ['D23', 'D29'], 'claimed_only': [], 'missing': [], 'contradicted': [], 'not_applicable': []}`
 - **evidence_integration**: `{'source_bound_claims': 2, 'dereferenceable_evidence_refs': 2, 'private_evidence_refs': 0, 'unresolved_evidence_refs': 0, 'audit_queue_or_falsifier_route': 'absent'}`
-- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['reports/phase1/closure_recurrence_summary.md', 'reports/phase1/completion/ARCHITECT_HANDOFF.md'], 'weighted_value': 3.0}`
+- **operational_load_bearingness**: `{'imports_in': 0, 'imports_out': 0, 'generates_artifacts': [], 'validated_by': [], 'cited_by_reports': ['reports/phase1/closure_recurrence_summary.md', 'reports/phase1/completion/ARCHITECT_HANDOFF.md', 'reports/task_cb022_evidence_discipline/path_reference_markers.json'], 'weighted_value': 4.5}`
 
 ## Drift
 - Status: `review_required`

@@ -1,5 +1,40 @@
 {
-  "_pointer_to": "coherence_20260508T194154Z.json",
+  "_pointer_to": "coherence_20260509T114122Z.json",
+  "acceptance_gates": {
+    "PG21_current_head_binding": {
+      "atlas_hash": "sha256:a65f92f92280ad1996870dad44db3dc464dd201e1220a0871e6b9b6fe1880bbc",
+      "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+      "passed": true
+    },
+    "PG22_implementation_self_audit": {
+      "missing_paths": [],
+      "passed": true,
+      "required_paths": [
+        "project_genealogy/atlas.py",
+        "project_genealogy/birth.py",
+        "project_genealogy/coherence.py",
+        "project_genealogy/current.py",
+        "project_genealogy/depth.py",
+        "project_genealogy/dossier.py",
+        "project_genealogy/drift.py",
+        "project_genealogy/graph.py",
+        "project_genealogy/hashing.py",
+        "project_genealogy/manifest.py",
+        "project_genealogy/probe.py",
+        "project_genealogy/query.py",
+        "project_genealogy/runner.py",
+        "project_genealogy/__init__.py",
+        "project_genealogy/__main__.py",
+        "control_room/rooms/project_genealogy.py",
+        "factory_lowlevel/memory_guard.py",
+        "public_tests/test_pg001_acceptance_gates.py",
+        "public_tests/test_pg001_control_room_tab.py",
+        "public_tests/test_pg001_query.py",
+        "public_tests/test_pg001_removal_probe.py",
+        "public_tests/test_pg001_schema.py"
+      ]
+    }
+  },
   "cohort_alignment": [
     {
       "alignment_status": "aligned",
@@ -988,6 +1023,93 @@
     },
     {
       "alignment_status": "aligned",
+      "cohort_id": "PG-001",
+      "decline_reason": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.cohorts[?(@.cohort_id == 'PG-001')]",
+          "note": "cohort entry in atlas",
+          "ref_id": "cohort::PG-001"
+        }
+      ],
+      "members": [
+        "control_room/rooms/project_genealogy.py",
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
+        "project_genealogy/__init__.py",
+        "project_genealogy/__main__.py",
+        "project_genealogy/atlas.py",
+        "project_genealogy/birth.py",
+        "project_genealogy/coherence.py",
+        "project_genealogy/current.py",
+        "project_genealogy/depth.py",
+        "project_genealogy/dossier.py",
+        "project_genealogy/drift.py",
+        "project_genealogy/graph.py",
+        "project_genealogy/hashing.py",
+        "project_genealogy/manifest.py",
+        "project_genealogy/probe.py",
+        "project_genealogy/query.py",
+        "project_genealogy/runner.py",
+        "public_tests/test_pg001_acceptance_gates.py",
+        "public_tests/test_pg001_control_room_tab.py",
+        "public_tests/test_pg001_query.py",
+        "public_tests/test_pg001_removal_probe.py",
+        "public_tests/test_pg001_schema.py"
+      ],
+      "served_mission_atoms": [
+        "MA-substrate-neutral-detection",
+        "MA-evidence-discipline",
+        "MA-no-engineered-passing",
+        "MA-substance-over-surface",
+        "MA-honest-empty-state",
+        "MA-cross-audit-discipline",
+        "MA-reproducible-research-instrument",
+        "MA-stratified-corpus-discipline"
+      ],
+      "spawn_ticket": "PG-001"
+    },
+    {
+      "alignment_status": "aligned",
+      "cohort_id": "TASK-CB-022",
+      "decline_reason": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.cohorts[?(@.cohort_id == 'TASK-CB-022')]",
+          "note": "cohort entry in atlas",
+          "ref_id": "cohort::TASK-CB-022"
+        }
+      ],
+      "members": [
+        "docs/AI_LANE_ROSTER.md",
+        "formalism/evidence/substance_gate.py",
+        "formalism/floor_bfg/read_separation.py",
+        "formalism/motif_contracts/adversarial.py",
+        "formalism/motif_contracts/contracts.py",
+        "formalism/motif_contracts/schema.py",
+        "public_tests/test_cb022_topic_a_doctrine_hardening.py",
+        "public_tests/test_cb022_topic_b_evidence_discipline.py",
+        "reports/campaign_006/audit_queue.json",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
+      ],
+      "served_mission_atoms": [
+        "MA-substrate-neutral-detection",
+        "MA-evidence-discipline",
+        "MA-no-engineered-passing",
+        "MA-substance-over-surface",
+        "MA-honest-empty-state",
+        "MA-reproducible-research-instrument",
+        "MA-stratified-corpus-discipline"
+      ],
+      "spawn_ticket": "TASK-CB-022"
+    },
+    {
+      "alignment_status": "aligned",
       "cohort_id": "TASK-FLOOR-BFG",
       "decline_reason": "",
       "evidence_refs": [
@@ -1080,6 +1202,36 @@
     },
     {
       "alignment_status": "aligned",
+      "cohort_id": "TASK-CB-021",
+      "decline_reason": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.cohorts[?(@.cohort_id == 'TASK-CB-021')]",
+          "note": "cohort entry in atlas",
+          "ref_id": "cohort::TASK-CB-021"
+        }
+      ],
+      "members": [
+        "factory_lowlevel/memory_guard.py",
+        "public_tests/test_cb021_memory_guard.py",
+        "scripts/cb020_reader_loop.py"
+      ],
+      "served_mission_atoms": [
+        "MA-substrate-neutral-detection",
+        "MA-evidence-discipline",
+        "MA-no-engineered-passing",
+        "MA-substance-over-surface",
+        "MA-honest-empty-state",
+        "MA-reproducible-research-instrument",
+        "MA-stratified-corpus-discipline"
+      ],
+      "spawn_ticket": "TASK-CB-021"
+    },
+    {
+      "alignment_status": "aligned",
       "cohort_id": "TASK-SOURCE-OBJ-GEN",
       "decline_reason": "",
       "evidence_refs": [
@@ -1116,6 +1268,100 @@
         "MA-stratified-corpus-discipline"
       ],
       "spawn_ticket": "TASK-SOURCE-OBJ-GEN"
+    },
+    {
+      "alignment_status": "unmapped",
+      "cohort_id": "DX-003",
+      "decline_reason": "cohort members do not match any expected_artifact_family",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.cohorts[?(@.cohort_id == 'DX-003')]",
+          "note": "cohort entry in atlas",
+          "ref_id": "cohort::DX-003"
+        }
+      ],
+      "members": [
+        "papers/falsification/DX-003/index.md",
+        "papers/falsification/DX-003/round_1.md",
+        "papers/falsification/DX-003/round_1_reproducers/hash_mismatches.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_all.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_campaign013.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_control_room_rooms.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_estimation_loop.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_motif_contracts_v2.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_private_tests.txt",
+        "papers/falsification/DX-003/round_1_reproducers/pytest_public_tests.txt",
+        "papers/falsification/DX-003/round_2.md",
+        "papers/falsification/DX-003/round_2_reproducers/git_recent_for_pg_binding.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_artifact_shapes.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_binding_vs_head.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_content_hash_self_check.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_count_contradiction.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_manifest_missing_non_dx.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_manifest_tracked_total_mismatch.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_depth_outliers.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_doctrine_collisions.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_findings.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_findings_counts.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_query_orphans.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_run_bindings.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pg_run_prepass_help_side_effect.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pytest_pg001_public.txt",
+        "papers/falsification/DX-003/round_2_reproducers/pytest_pg001_public_explicit.txt",
+        "papers/falsification/DX-003/round_3.md",
+        "papers/falsification/DX-003/round_3_reproducers/adversarial_controls_metadata_cheat.txt",
+        "papers/falsification/DX-003/round_3_reproducers/clean_lens_value_label_channel.txt",
+        "papers/falsification/DX-003/round_3_reproducers/contract_subset_mutation_status.txt",
+        "papers/falsification/DX-003/round_3_reproducers/d31_ast_bypass.txt",
+        "papers/falsification/DX-003/round_3_reproducers/d31_ast_bypass_reproducer.py",
+        "papers/falsification/DX-003/round_3_reproducers/pytest_contract_green_subset.txt",
+        "papers/falsification/DX-003/round_3_reproducers/source_object_alias_probe.txt",
+        "papers/falsification/DX-003/round_4.md",
+        "papers/falsification/DX-003/round_4_reproducers/campaign_019_missing_paths.txt",
+        "papers/falsification/DX-003/round_4_reproducers/campaign_023_024_trace_private_check.txt",
+        "papers/falsification/DX-003/round_4_reproducers/path_reference_audit_strict.txt",
+        "papers/falsification/DX-003/round_4_reproducers/path_reference_audit_strict_summary.json",
+        "papers/falsification/DX-003/round_4_reproducers/ro_crate_missing_ids.txt",
+        "papers/falsification/DX-003/round_5.md",
+        "papers/falsification/DX-003/round_5_reproducers/mission_atoms_covered_despite_repro_gaps.txt",
+        "papers/falsification/DX-003/round_5_reproducers/mission_atoms_covered_summary.txt",
+        "papers/falsification/DX-003/round_5_reproducers/pg_ui_data_binding_summary.txt",
+        "papers/falsification/DX-003/round_5_reproducers/project_genealogy_apptest_elements.txt",
+        "papers/falsification/DX-003/round_5_reproducers/project_genealogy_apptest_probe.txt",
+        "papers/falsification/DX-003/round_5_reproducers/room_count_doc_drift.txt",
+        "papers/falsification/DX-003/round_5_reproducers/snapshot_freshness_probe.txt",
+        "papers/falsification/DX-003/round_6.md",
+        "papers/falsification/DX-003/round_6_reproducers/contract_citation_semantic_probe.json",
+        "papers/falsification/DX-003/round_6_reproducers/contract_citation_semantic_probe.txt",
+        "papers/falsification/DX-003/round_6_reproducers/contract_external_id_resolution.json",
+        "papers/falsification/DX-003/round_6_reproducers/contract_external_id_resolution_preview.txt",
+        "papers/falsification/DX-003/round_6_reproducers/doi_shape_examples.txt",
+        "papers/falsification/DX-003/round_6_reproducers/external_ids_extracted.txt",
+        "papers/falsification/DX-003/round_7.md",
+        "papers/falsification/DX-003/round_7_reproducers/ai_operations_room_probe.txt",
+        "papers/falsification/DX-003/round_7_reproducers/ai_ops_agent_card_probe.txt",
+        "papers/falsification/DX-003/round_7_reproducers/control_room_builder_telemetry_parse.txt",
+        "papers/falsification/DX-003/round_7_reproducers/public_telemetry_contract_test.txt",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe.json",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe.py",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe.txt",
+        "papers/falsification/DX-003/round_7_reproducers/telemetry_identity_probe_stdout.txt",
+        "papers/falsification/DX-003/round_8.md",
+        "papers/falsification/DX-003/round_8_reproducers/daemon_state_progress_probe.json",
+        "papers/falsification/DX-003/round_8_reproducers/daemon_state_progress_probe.py",
+        "papers/falsification/DX-003/round_8_reproducers/daemon_state_progress_probe.txt",
+        "papers/falsification/DX-003/round_8_reproducers/due_sources_after_force_clear.txt",
+        "papers/falsification/DX-003/round_9.md",
+        "papers/falsification/DX-003/round_9_reproducers/doctrine_catalog_drift_probe.json",
+        "papers/falsification/DX-003/round_9_reproducers/doctrine_catalog_drift_probe.py",
+        "papers/falsification/DX-003/round_9_reproducers/doctrine_catalog_drift_probe.txt",
+        "papers/falsification/DX-003/start_time.txt"
+      ],
+      "served_mission_atoms": [],
+      "spawn_ticket": "DX-003"
     },
     {
       "alignment_status": "aligned",
@@ -1192,33 +1438,6 @@
         "MA-stratified-corpus-discipline"
       ],
       "spawn_ticket": "CB-008"
-    },
-    {
-      "alignment_status": "aligned",
-      "cohort_id": "PG-001",
-      "decline_reason": "",
-      "evidence_refs": [
-        {
-          "content_hash": "",
-          "evidence_private": false,
-          "kind": "json_query",
-          "locator": "$.cohorts[?(@.cohort_id == 'PG-001')]",
-          "note": "cohort entry in atlas",
-          "ref_id": "cohort::PG-001"
-        }
-      ],
-      "members": [
-        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
-      ],
-      "served_mission_atoms": [
-        "MA-substrate-neutral-detection",
-        "MA-evidence-discipline",
-        "MA-no-engineered-passing",
-        "MA-substance-over-surface",
-        "MA-cross-audit-discipline",
-        "MA-stratified-corpus-discipline"
-      ],
-      "spawn_ticket": "PG-001"
     },
     {
       "alignment_status": "aligned",
@@ -1303,6 +1522,33 @@
     },
     {
       "alignment_status": "aligned",
+      "cohort_id": "TASK-CB-020",
+      "decline_reason": "",
+      "evidence_refs": [
+        {
+          "content_hash": "",
+          "evidence_private": false,
+          "kind": "json_query",
+          "locator": "$.cohorts[?(@.cohort_id == 'TASK-CB-020')]",
+          "note": "cohort entry in atlas",
+          "ref_id": "cohort::TASK-CB-020"
+        }
+      ],
+      "members": [
+        "public_tests/test_cb020_live_state_concurrency.py"
+      ],
+      "served_mission_atoms": [
+        "MA-evidence-discipline",
+        "MA-no-engineered-passing",
+        "MA-substance-over-surface",
+        "MA-honest-empty-state",
+        "MA-reproducible-research-instrument",
+        "MA-stratified-corpus-discipline"
+      ],
+      "spawn_ticket": "TASK-CB-020"
+    },
+    {
+      "alignment_status": "aligned",
       "cohort_id": "TASK-CB-019",
       "decline_reason": "",
       "evidence_refs": [
@@ -1329,7 +1575,7 @@
       "spawn_ticket": "TASK-CB-019"
     }
   ],
-  "content_hash": "sha256:1a14e8b245ba9449964977caf2890a542e16900fa18135f7d61dfd2ff77e2d19",
+  "content_hash": "sha256:82aaea7f77e62e4a28669094e76a5c2d9e3ee290a27bb60be17147ef00911449",
   "coverage_by_atom": [
     {
       "coverage_status": "covered",
@@ -1391,13 +1637,14 @@
         "TASK-033",
         "DX-002",
         "TASK-MOTIF-IMPL",
+        "PG-001",
         "TASK-FLOOR-BFG",
         "TASK-PHASE-B-INFRA",
         "TASK-CB-015",
+        "TASK-CB-021",
         "TASK-SOURCE-OBJ-GEN",
         "TASK-CB-016",
-        "CB-008",
-        "PG-001"
+        "CB-008"
       ],
       "serving_files": [
         "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
@@ -1410,6 +1657,7 @@
         "factory_lowlevel/hardening.py",
         "factory_lowlevel/launch_safety.py",
         "factory_lowlevel/live_pipeline.py",
+        "factory_lowlevel/memory_guard.py",
         "factory_lowlevel/monitor.py",
         "factory_lowlevel/normalization.py",
         "factory_lowlevel/persistence.py",
@@ -1448,8 +1696,7 @@
         "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
         "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
         "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
-        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
-        "papers/methods/SUBSTANCE_AUDIT_W10.md"
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
       ],
       "statement": "Detect named motifs across stratified substrates under predicate-lens-independent methodology."
     },
@@ -1512,7 +1759,8 @@
         "TASK-CB-001",
         "TASK-033",
         "TASK-MOTIF-IMPL",
-        "CB-011"
+        "CB-011",
+        "PG-001"
       ],
       "serving_files": [
         "control_room/README.md",
@@ -1562,9 +1810,9 @@
         "control_room/rooms/falsifier_ledger.py",
         "control_room/rooms/motif_atlas.py",
         "control_room/rooms/portfolio_demo.py",
+        "control_room/rooms/project_genealogy.py",
         "control_room/rooms/project_graph.py",
-        "control_room/rooms/pulse_deck.py",
-        "control_room/rooms/world_observatory.py"
+        "control_room/rooms/pulse_deck.py"
       ],
       "statement": "Every claim-bearing artifact carries source-bound evidence with dereferenceable paths or explicit private boundaries."
     },
@@ -1631,6 +1879,7 @@
         "TASK-FLOOR-BFG",
         "TASK-PHASE-B-INFRA",
         "TASK-CB-015",
+        "TASK-CB-021",
         "TASK-SOURCE-OBJ-GEN"
       ],
       "serving_files": [
@@ -1660,6 +1909,7 @@
         "factory_lowlevel/hardening.py",
         "factory_lowlevel/launch_safety.py",
         "factory_lowlevel/live_pipeline.py",
+        "factory_lowlevel/memory_guard.py",
         "factory_lowlevel/monitor.py",
         "factory_lowlevel/normalization.py",
         "factory_lowlevel/persistence.py",
@@ -1682,8 +1932,7 @@
         "papers/methods/CAMPAIGN_024_LENS_SIDE_DECOUPLING.md",
         "papers/methods/CAMPAIGN_026_FLOOR_BFG_D31.md",
         "papers/methods/CAMPAIGN_035_MASS_INGESTION_PREREQ.md",
-        "papers/methods/FACTORY_HARDENING_SPEC.md",
-        "papers/methods/FLOOR_CONNECTIVITY_PREDICATE_SPLIT.md"
+        "papers/methods/FACTORY_HARDENING_SPEC.md"
       ],
       "statement": "Pass criteria, gates, and thresholds must come from spec or calibrated null distributions, not engineered around typical outputs."
     },
@@ -1747,13 +1996,14 @@
         "TASK-033",
         "DX-002",
         "TASK-MOTIF-IMPL",
+        "PG-001",
         "TASK-FLOOR-BFG",
         "TASK-PHASE-B-INFRA",
         "TASK-CB-015",
+        "TASK-CB-021",
         "TASK-SOURCE-OBJ-GEN",
         "TASK-CB-016",
-        "CB-008",
-        "PG-001"
+        "CB-008"
       ],
       "serving_files": [
         "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
@@ -1766,6 +2016,7 @@
         "factory_lowlevel/hardening.py",
         "factory_lowlevel/launch_safety.py",
         "factory_lowlevel/live_pipeline.py",
+        "factory_lowlevel/memory_guard.py",
         "factory_lowlevel/monitor.py",
         "factory_lowlevel/normalization.py",
         "factory_lowlevel/persistence.py",
@@ -1804,8 +2055,7 @@
         "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
         "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
         "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
-        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
-        "papers/methods/SUBSTANCE_AUDIT_W10.md"
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
       ],
       "statement": "Worlds, lenses, detectors, and reports must carry substantive logic and substance-bound evidence, not surface contracts alone."
     },
@@ -1865,7 +2115,8 @@
         "TASK-CB-001",
         "TASK-033",
         "TASK-MOTIF-IMPL",
-        "CB-011"
+        "CB-011",
+        "PG-001"
       ],
       "serving_files": [
         "control_room/README.md",
@@ -1915,9 +2166,9 @@
         "control_room/rooms/falsifier_ledger.py",
         "control_room/rooms/motif_atlas.py",
         "control_room/rooms/portfolio_demo.py",
+        "control_room/rooms/project_genealogy.py",
         "control_room/rooms/project_graph.py",
-        "control_room/rooms/pulse_deck.py",
-        "control_room/rooms/world_observatory.py"
+        "control_room/rooms/pulse_deck.py"
       ],
       "statement": "Read-only project surfaces and dashboards declare absence honestly rather than mocking missing data."
     },
@@ -2092,7 +2343,8 @@
         "TASK-CB-001",
         "TASK-033",
         "TASK-MOTIF-IMPL",
-        "CB-011"
+        "CB-011",
+        "PG-001"
       ],
       "serving_files": [
         "control_room/README.md",
@@ -2142,9 +2394,9 @@
         "control_room/rooms/falsifier_ledger.py",
         "control_room/rooms/motif_atlas.py",
         "control_room/rooms/portfolio_demo.py",
+        "control_room/rooms/project_genealogy.py",
         "control_room/rooms/project_graph.py",
-        "control_room/rooms/pulse_deck.py",
-        "control_room/rooms/world_observatory.py"
+        "control_room/rooms/pulse_deck.py"
       ],
       "statement": "The Attractor Observatory ships as a reproducible research instrument: shipped tests, shipped scripts, shipped reports, and a Mission Control surface against the shipped artifacts."
     },
@@ -2207,13 +2459,14 @@
         "TASK-033",
         "DX-002",
         "TASK-MOTIF-IMPL",
+        "PG-001",
         "TASK-FLOOR-BFG",
         "TASK-PHASE-B-INFRA",
         "TASK-CB-015",
+        "TASK-CB-021",
         "TASK-SOURCE-OBJ-GEN",
         "TASK-CB-016",
-        "CB-008",
-        "PG-001"
+        "CB-008"
       ],
       "serving_files": [
         "factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md",
@@ -2226,6 +2479,7 @@
         "factory_lowlevel/hardening.py",
         "factory_lowlevel/launch_safety.py",
         "factory_lowlevel/live_pipeline.py",
+        "factory_lowlevel/memory_guard.py",
         "factory_lowlevel/monitor.py",
         "factory_lowlevel/normalization.py",
         "factory_lowlevel/persistence.py",
@@ -2264,8 +2518,7 @@
         "papers/methods/MOTIF_CONTRACT_SCHEMA_DRAFT.md",
         "papers/methods/MOTIF_CONTRACT_SCHEMA_v2.md",
         "papers/methods/MULTISUBSTRATE_FLOOR_CONNECTIVITY.md",
-        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md",
-        "papers/methods/SUBSTANCE_AUDIT_W10.md"
+        "papers/methods/PROJECT_GENEALOGY_PG001_SPEC.md"
       ],
       "statement": "Analysis on pooled corpora must verify within-stratum balance and run substrate-blocked controls (Step 0a/0b)."
     }
@@ -2689,17 +2942,22 @@
     ]
   },
   "run_binding": {
-    "atlas_hash": "sha256:6973e9a9211a5285b99dbd3853e2eaef6b0e7e8cbfc9389233798517855a19f6",
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:54Z",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178"
+    "atlas_hash": "sha256:a65f92f92280ad1996870dad44db3dc464dd201e1220a0871e6b9b6fe1880bbc",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:22Z",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b"
   },
   "schema": "ProjectCoherenceReport.v1",
   "summary": {
     "cohort_alignment_status_counts": {
-      "aligned": 18,
-      "unmapped": 1
+      "aligned": 21,
+      "unmapped": 2
+    },
+    "finding_partition": {
+      "atlas_dossier_confirmed_finding_count": 4,
+      "coherence_mission_finding_count": 0,
+      "scope_note": "Coherence findings are mission-coverage findings; atlas confirmed_finding_count is the per-file dossier partition."
     },
     "mission_atom_count": 8,
     "mission_coverage_status_counts": {
@@ -2710,7 +2968,9 @@
     "atoms_with_strengthening_drift": [],
     "atoms_with_weakening_drift": [],
     "compared_atlas_versions": [
-      "atlas_20260508T194154Z.json"
+      "atlas_20260508T194154Z.json",
+      "atlas_20260509T113126Z.json",
+      "atlas_20260509T114121Z.json"
     ],
     "trajectory_status": "insufficient_history"
   }

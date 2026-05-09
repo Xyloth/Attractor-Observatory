@@ -93,7 +93,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:05118136eb251955e65640817b2d983343006e00eea55c4f9059707eefa03794",
+  "content_hash": "sha256:06d44c310a12bbcbf279b8210fcae95998c15ee5b6a250f1a6bd18a43f382b85",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -390,7 +390,22 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb015_adapter_expansion.py->public_tests/test_cb018_phase_2_density.py::2948",
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb015_adapter_expansion.py->reports/campaign_006/audit_queue.json::2745",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::public_tests/test_cb015_adapter_expansion.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb015_adapter_expansion.py->public_tests/test_cb018_phase_2_density.py::3217",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -405,7 +420,7 @@
         "target": "public_tests/test_cb018_phase_2_density.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::public_tests/test_cb015_adapter_expansion.py->public_tests/test_public_contracts.py::4056",
+        "edge_id": "implements_same_doctrine::D26::public_tests/test_cb015_adapter_expansion.py->public_tests/test_pg001_acceptance_gates.py::4388",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -414,10 +429,10 @@
             "kind": "grep",
             "locator": "both files mention D26",
             "note": "shared mention of doctrine D26",
-            "ref_id": "doctrine::D26::public_tests/test_cb015_adapter_expansion.py::public_tests/test_public_contracts.py"
+            "ref_id": "doctrine::D26::public_tests/test_cb015_adapter_expansion.py::public_tests/test_pg001_acceptance_gates.py"
           }
         ],
-        "target": "public_tests/test_public_contracts.py"
+        "target": "public_tests/test_pg001_acceptance_gates.py"
       }
     ],
     "cohort": {
@@ -434,7 +449,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "0f5947c275a05c6cfc48e149ca4e3cd1733039bd",
-        "edge_id": "spawned_by_ticket::TASK-CB-015->public_tests/test_cb015_adapter_expansion.py::334",
+        "edge_id": "spawned_by_ticket::TASK-CB-015->public_tests/test_cb015_adapter_expansion.py::432",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -456,7 +471,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::project_telemetry/factory_daemon_state.json->public_tests/test_cb015_adapter_expansion.py::1489",
+        "edge_id": "shares_birth_cohort::project_telemetry/factory_daemon_state.json->public_tests/test_cb015_adapter_expansion.py::1649",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -479,7 +494,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D17",
-        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb011_polish_audit.py->public_tests/test_cb015_adapter_expansion.py::2486",
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb011_polish_audit.py->public_tests/test_cb015_adapter_expansion.py::2744",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -502,7 +517,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D19",
-        "edge_id": "implements_same_doctrine::D19::project_telemetry/task_024_progress_record.json->public_tests/test_cb015_adapter_expansion.py::2947",
+        "edge_id": "implements_same_doctrine::D19::project_telemetry/task_024_progress_record.json->public_tests/test_cb015_adapter_expansion.py::3216",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -525,7 +540,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb015_adapter_expansion.py::4055",
+        "edge_id": "implements_same_doctrine::D26::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb015_adapter_expansion.py::4387",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -547,7 +562,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb015_adapter_expansion.py::4453",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb015_adapter_expansion.py::4919",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -569,8 +584,31 @@
       {
         "confidence": "weak",
         "created_at_commit": "",
+        "doctrine_id": "D17",
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb015_adapter_expansion.py->reports/campaign_006/audit_queue.json::2745",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D17",
+            "note": "shared mention of doctrine D17",
+            "ref_id": "doctrine::D17::public_tests/test_cb015_adapter_expansion.py::reports/campaign_006/audit_queue.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "public_tests/test_cb015_adapter_expansion.py",
+        "target": "reports/campaign_006/audit_queue.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
         "doctrine_id": "D19",
-        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb015_adapter_expansion.py->public_tests/test_cb018_phase_2_density.py::2948",
+        "edge_id": "implements_same_doctrine::D19::public_tests/test_cb015_adapter_expansion.py->public_tests/test_cb018_phase_2_density.py::3217",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -593,7 +631,7 @@
         "confidence": "weak",
         "created_at_commit": "",
         "doctrine_id": "D26",
-        "edge_id": "implements_same_doctrine::D26::public_tests/test_cb015_adapter_expansion.py->public_tests/test_public_contracts.py::4056",
+        "edge_id": "implements_same_doctrine::D26::public_tests/test_cb015_adapter_expansion.py->public_tests/test_pg001_acceptance_gates.py::4388",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -602,7 +640,7 @@
             "kind": "grep",
             "locator": "both files mention D26",
             "note": "shared mention of doctrine D26",
-            "ref_id": "doctrine::D26::public_tests/test_cb015_adapter_expansion.py::public_tests/test_public_contracts.py"
+            "ref_id": "doctrine::D26::public_tests/test_cb015_adapter_expansion.py::public_tests/test_pg001_acceptance_gates.py"
           }
         ],
         "private_boundary": {
@@ -610,12 +648,12 @@
           "reason": ""
         },
         "source": "public_tests/test_cb015_adapter_expansion.py",
-        "target": "public_tests/test_public_contracts.py"
+        "target": "public_tests/test_pg001_acceptance_gates.py"
       }
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-015->public_tests/test_cb015_adapter_expansion.py::334",
+        "edge_id": "spawned_by_ticket::TASK-CB-015->public_tests/test_cb015_adapter_expansion.py::432",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -630,7 +668,7 @@
         "source": "TASK-CB-015"
       },
       {
-        "edge_id": "shares_birth_cohort::project_telemetry/factory_daemon_state.json->public_tests/test_cb015_adapter_expansion.py::1489",
+        "edge_id": "shares_birth_cohort::project_telemetry/factory_daemon_state.json->public_tests/test_cb015_adapter_expansion.py::1649",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -645,7 +683,7 @@
         "source": "project_telemetry/factory_daemon_state.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb011_polish_audit.py->public_tests/test_cb015_adapter_expansion.py::2486",
+        "edge_id": "implements_same_doctrine::D17::public_tests/test_cb011_polish_audit.py->public_tests/test_cb015_adapter_expansion.py::2744",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -660,7 +698,7 @@
         "source": "public_tests/test_cb011_polish_audit.py"
       },
       {
-        "edge_id": "implements_same_doctrine::D19::project_telemetry/task_024_progress_record.json->public_tests/test_cb015_adapter_expansion.py::2947",
+        "edge_id": "implements_same_doctrine::D19::project_telemetry/task_024_progress_record.json->public_tests/test_cb015_adapter_expansion.py::3216",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -675,7 +713,7 @@
         "source": "project_telemetry/task_024_progress_record.json"
       },
       {
-        "edge_id": "implements_same_doctrine::D26::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb015_adapter_expansion.py::4055",
+        "edge_id": "implements_same_doctrine::D26::project_telemetry/ai_builder_tasks.jsonl->public_tests/test_cb015_adapter_expansion.py::4387",
         "edge_type": "implements_same_doctrine",
         "evidence_refs": [
           {
@@ -690,7 +728,7 @@
         "source": "project_telemetry/ai_builder_tasks.jsonl"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb015_adapter_expansion.py::4453",
+        "edge_id": "cites::BUILD_LOG.md->public_tests/test_cb015_adapter_expansion.py::4919",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -732,18 +770,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

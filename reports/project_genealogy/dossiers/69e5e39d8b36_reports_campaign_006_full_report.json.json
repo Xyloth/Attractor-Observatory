@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:870d2ce3464a161ac49d2f991edcd9dd39e8de5431673fa5fcf168e524ee76ff",
+  "content_hash": "sha256:514cd3b378eae4602d0eb0b394953a5b31814e0fd1f4fa75cf02c1d20cf07c11",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -82,7 +82,7 @@
             "kind": "file_span",
             "locator": "reports/campaign_006/full_report.json"
           },
-          "statement": "Tracked file with 2004 lines / 62782 bytes at HEAD."
+          "statement": "Tracked file with 2008 lines / 63109 bytes at HEAD."
         },
         {
           "atom_id": "provenance_present",
@@ -93,15 +93,18 @@
           "statement": "Pattern /content_hash|evidence_private|generated_at|locked_instrument|provenance/ matches in current file."
         }
       ],
-      "byte_count": 62782,
+      "byte_count": 63109,
       "class_pattern_matches": [],
       "commands": [],
       "content_hash": "",
       "generated_artifacts": [],
       "imports_out": [],
       "letter_vs_spirit_surfaces": [],
-      "line_count": 2004,
-      "observed_doctrine_bindings": [],
+      "line_count": 2008,
+      "observed_doctrine_bindings": [
+        "D23",
+        "D29"
+      ],
       "predicate_id": "current::reports/campaign_006/full_report.json",
       "public_symbols": [],
       "test_functions": []
@@ -146,16 +149,18 @@
       "value": 0.0
     },
     "doctrine_binding_quality": {
-      "claimed_only": [
-        "D11"
-      ],
+      "claimed_only": [],
       "contradicted": [],
       "missing": [],
       "not_applicable": [],
       "required": [
-        "D11"
+        "D23",
+        "D29"
       ],
-      "verified": []
+      "verified": [
+        "D23",
+        "D29"
+      ]
     },
     "evidence_integration": {
       "audit_queue_or_falsifier_route": "absent",
@@ -168,13 +173,14 @@
       "cited_by_reports": [
         "CODEX_CAMPAIGN_006.md",
         "reports/campaign_006/fair_metadata.json",
-        "reports/campaign_006/prov_o.jsonld"
+        "reports/campaign_006/prov_o.jsonld",
+        "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       ],
       "generates_artifacts": [],
       "imports_in": 0,
       "imports_out": 0,
       "validated_by": [],
-      "weighted_value": 4.5
+      "weighted_value": 6.0
     },
     "predicate_atom_coverage": {
       "claimable_atoms": 2,
@@ -220,12 +226,12 @@
   },
   "file": {
     "artifact_family": "report",
-    "byte_count": 62782,
+    "byte_count": 63109,
     "generated_status": "report",
     "language": "json",
-    "line_count": 2004,
+    "line_count": 2008,
     "path": "reports/campaign_006/full_report.json",
-    "path_hash": "sha256:da2b62a04ab4d997fd50766ce70d8e11606331f2953565ece55761b65c1dafac",
+    "path_hash": "sha256:4a552785abfb76091496cadfe8b18e83c46c3bcd6282dbd73a8d82675c6ab065",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -264,7 +270,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_006/full_report.json->reports/campaign_006/health.json::1198",
+        "edge_id": "shares_birth_cohort::reports/campaign_006/full_report.json->reports/campaign_006/health.json::1328",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -279,7 +285,37 @@
         "target": "reports/campaign_006/health.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::4738",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::4453",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/full_report.json::reports/campaign_006/perturbation_maps.json"
+          }
+        ],
+        "target": "reports/campaign_006/perturbation_maps.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::4593",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/full_report.json::reports/campaign_006/perturbation_maps.json"
+          }
+        ],
+        "target": "reports/campaign_006/perturbation_maps.json"
+      },
+      {
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::5216",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -294,7 +330,7 @@
         "target": "reports/campaign_007/truth_pass_application.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/external_review_packet.json::4739",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/external_review_packet.json::5217",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -309,7 +345,7 @@
         "target": "reports/campaign_006/external_review_packet.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_bundles/campaign_006_bundle.json::4740",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_bundles/campaign_006_bundle.json::5218",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -324,7 +360,7 @@
         "target": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/beta_worlds.json::4741",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/beta_worlds.json::5219",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -339,7 +375,7 @@
         "target": "reports/campaign_006/beta_worlds.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/candidate_audit.json::4742",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/candidate_audit.json::5220",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -354,7 +390,7 @@
         "target": "reports/campaign_006/candidate_audit.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_atlas.json::4743",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_atlas.json::5221",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -369,7 +405,7 @@
         "target": "reports/campaign_006/evidence_atlas.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/formal_biology.json::4744",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/formal_biology.json::5222",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -384,7 +420,7 @@
         "target": "reports/campaign_006/formal_biology.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/health.json::4745",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/health.json::5223",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -399,7 +435,7 @@
         "target": "reports/campaign_006/health.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/negative_space.json::4746",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/negative_space.json::5224",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -414,7 +450,7 @@
         "target": "reports/campaign_006/negative_space.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::4747",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::5225",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -429,7 +465,7 @@
         "target": "reports/campaign_006/perturbation_maps.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/reference_harness.json::4748",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/reference_harness.json::5226",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -444,7 +480,7 @@
         "target": "reports/campaign_006/reference_harness.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/transfer_matrix.json::4749",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/transfer_matrix.json::5227",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -702,7 +738,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_006/formal_biology.json->reports/campaign_006/full_report.json::1197",
+        "edge_id": "shares_birth_cohort::reports/campaign_006/formal_biology.json->reports/campaign_006/full_report.json::1327",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -722,9 +758,55 @@
         "target": "reports/campaign_006/full_report.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/evidence_bundles/campaign_006_bundle.json->reports/campaign_006/full_report.json::4452",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/evidence_bundles/campaign_006_bundle.json::reports/campaign_006/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+        "target": "reports/campaign_006/full_report.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/evidence_bundles/campaign_006_bundle.json->reports/campaign_006/full_report.json::4592",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/evidence_bundles/campaign_006_bundle.json::reports/campaign_006/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+        "target": "reports/campaign_006/full_report.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_CAMPAIGN_006.md->reports/campaign_006/full_report.json::4477",
+        "edge_id": "cites::CODEX_CAMPAIGN_006.md->reports/campaign_006/full_report.json::4955",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -746,7 +828,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/fair_metadata.json->reports/campaign_006/full_report.json::4736",
+        "edge_id": "cites::reports/campaign_006/fair_metadata.json->reports/campaign_006/full_report.json::5214",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -768,7 +850,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/prov_o.jsonld->reports/campaign_006/full_report.json::4751",
+        "edge_id": "cites::reports/campaign_006/prov_o.jsonld->reports/campaign_006/full_report.json::5229",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -788,9 +870,31 @@
         "target": "reports/campaign_006/full_report.json"
       },
       {
+        "confidence": "strong",
+        "created_at_commit": "",
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_006/full_report.json::5467",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_006/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_006/full_report.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json",
+        "target": "reports/campaign_006/full_report.json"
+      },
+      {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_006/full_report.json->reports/campaign_006/health.json::1198",
+        "edge_id": "shares_birth_cohort::reports/campaign_006/full_report.json->reports/campaign_006/health.json::1328",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -810,9 +914,55 @@
         "target": "reports/campaign_006/health.json"
       },
       {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D29",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::4453",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/full_report.json::reports/campaign_006/perturbation_maps.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/full_report.json",
+        "target": "reports/campaign_006/perturbation_maps.json"
+      },
+      {
+        "confidence": "weak",
+        "created_at_commit": "",
+        "doctrine_id": "D23",
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::4593",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/full_report.json::reports/campaign_006/perturbation_maps.json"
+          }
+        ],
+        "private_boundary": {
+          "evidence_private": false,
+          "reason": ""
+        },
+        "source": "reports/campaign_006/full_report.json",
+        "target": "reports/campaign_006/perturbation_maps.json"
+      },
+      {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::4738",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_007/truth_pass_application.json::5216",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -834,7 +984,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/external_review_packet.json::4739",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/external_review_packet.json::5217",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -856,7 +1006,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_bundles/campaign_006_bundle.json::4740",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_bundles/campaign_006_bundle.json::5218",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -878,7 +1028,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/beta_worlds.json::4741",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/beta_worlds.json::5219",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -900,7 +1050,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/candidate_audit.json::4742",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/candidate_audit.json::5220",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -922,7 +1072,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_atlas.json::4743",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/evidence_atlas.json::5221",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -944,7 +1094,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/formal_biology.json::4744",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/formal_biology.json::5222",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -966,7 +1116,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/health.json::4745",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/health.json::5223",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -988,7 +1138,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/negative_space.json::4746",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/negative_space.json::5224",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1010,7 +1160,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::4747",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/perturbation_maps.json::5225",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1032,7 +1182,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/reference_harness.json::4748",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/reference_harness.json::5226",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1054,7 +1204,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/transfer_matrix.json::4749",
+        "edge_id": "cites::reports/campaign_006/full_report.json->reports/campaign_006/transfer_matrix.json::5227",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1076,7 +1226,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_006/formal_biology.json->reports/campaign_006/full_report.json::1197",
+        "edge_id": "shares_birth_cohort::reports/campaign_006/formal_biology.json->reports/campaign_006/full_report.json::1327",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1091,7 +1241,37 @@
         "source": "reports/campaign_006/formal_biology.json"
       },
       {
-        "edge_id": "cites::CODEX_CAMPAIGN_006.md->reports/campaign_006/full_report.json::4477",
+        "edge_id": "implements_same_doctrine::D29::reports/campaign_006/evidence_bundles/campaign_006_bundle.json->reports/campaign_006/full_report.json::4452",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D29",
+            "note": "shared mention of doctrine D29",
+            "ref_id": "doctrine::D29::reports/campaign_006/evidence_bundles/campaign_006_bundle.json::reports/campaign_006/full_report.json"
+          }
+        ],
+        "source": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+      },
+      {
+        "edge_id": "implements_same_doctrine::D23::reports/campaign_006/evidence_bundles/campaign_006_bundle.json->reports/campaign_006/full_report.json::4592",
+        "edge_type": "implements_same_doctrine",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "both files mention D23",
+            "note": "shared mention of doctrine D23",
+            "ref_id": "doctrine::D23::reports/campaign_006/evidence_bundles/campaign_006_bundle.json::reports/campaign_006/full_report.json"
+          }
+        ],
+        "source": "reports/campaign_006/evidence_bundles/campaign_006_bundle.json"
+      },
+      {
+        "edge_id": "cites::CODEX_CAMPAIGN_006.md->reports/campaign_006/full_report.json::4955",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1106,7 +1286,7 @@
         "source": "CODEX_CAMPAIGN_006.md"
       },
       {
-        "edge_id": "cites::reports/campaign_006/fair_metadata.json->reports/campaign_006/full_report.json::4736",
+        "edge_id": "cites::reports/campaign_006/fair_metadata.json->reports/campaign_006/full_report.json::5214",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1121,7 +1301,7 @@
         "source": "reports/campaign_006/fair_metadata.json"
       },
       {
-        "edge_id": "cites::reports/campaign_006/prov_o.jsonld->reports/campaign_006/full_report.json::4751",
+        "edge_id": "cites::reports/campaign_006/prov_o.jsonld->reports/campaign_006/full_report.json::5229",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1134,6 +1314,21 @@
           }
         ],
         "source": "reports/campaign_006/prov_o.jsonld"
+      },
+      {
+        "edge_id": "cites::reports/task_cb022_evidence_discipline/path_reference_markers.json->reports/campaign_006/full_report.json::5467",
+        "edge_type": "cites",
+        "evidence_refs": [
+          {
+            "content_hash": "",
+            "evidence_private": false,
+            "kind": "grep",
+            "locator": "reports/task_cb022_evidence_discipline/path_reference_markers.json#reports/campaign_006/full_report.json",
+            "note": "literal path reference in report/method/doc",
+            "ref_id": "cite::reports/task_cb022_evidence_discipline/path_reference_markers.json::reports/campaign_006/full_report.json"
+          }
+        ],
+        "source": "reports/task_cb022_evidence_discipline/path_reference_markers.json"
       }
     ],
     "siblings": [
@@ -1192,7 +1387,7 @@
   "liveness": {
     "cleanup_candidate_status": "unknown",
     "cleanup_reason": "PG-001 v1 declines per-file removal probes globally under removal_probe_over_budget; status defaults to unknown rather than over-claiming removable_clean",
-    "downstream_reference_count": 3,
+    "downstream_reference_count": 4,
     "last_touched_commit": "",
     "last_touched_date": "",
     "removal_probe": {
@@ -1210,18 +1405,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

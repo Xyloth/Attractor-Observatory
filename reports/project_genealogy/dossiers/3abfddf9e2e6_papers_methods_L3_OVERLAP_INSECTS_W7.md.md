@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/3abfddf9e2e6_papers_methods_L3_OVERLAP_INSECTS_W7.md.json`
-- JSON content_hash: `sha256:4e311f04a8271f9fc1def3162c41963afb3960f94b52fc1231207cd92308b9a4`
+- JSON content_hash: `sha256:74802626e499027a43cbb979ce860675c9688c2532ea801d642ae42044358cfe`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

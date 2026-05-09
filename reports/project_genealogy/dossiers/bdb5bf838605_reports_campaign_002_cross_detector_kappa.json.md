@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/bdb5bf838605_reports_campaign_002_cross_detector_kappa.json.json`
-- JSON content_hash: `sha256:30cf63492308e3797454d6f1a085bcdd263d20a084c233dd9514684e7d87824f`
+- JSON content_hash: `sha256:ca2459aa830b1202d621c67285b8ea4b5345ddcf7d2bf9287bbfcd29fe2e5ff9`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

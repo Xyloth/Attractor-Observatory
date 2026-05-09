@@ -82,7 +82,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:a09ef10405366215c0f141ce2a2e2048588122836053c554400b874be78d14da",
+  "content_hash": "sha256:b2ca813fb870ab3c501a30dd8d2a135bc688036fdd6472ef08a9b4dd007d5a35",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -370,7 +370,7 @@
     "language": "python",
     "line_count": 186,
     "path": "factory_lowlevel/router.py",
-    "path_hash": "sha256:65b83f4d4c19d3dd9c0b815b23f9585b61ea475fa60f4d1b561efac226d8129b",
+    "path_hash": "sha256:6dbd6658e7f78c516168130f61666c12f3e7d688f327c6c887b562e5998e6ef1",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -564,7 +564,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/router.py->factory_lowlevel/scheduler.py::916",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/router.py->factory_lowlevel/scheduler.py::1046",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -908,7 +908,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/router.py::266",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/router.py::269",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -930,7 +930,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/registry.py->factory_lowlevel/router.py::915",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/registry.py->factory_lowlevel/router.py::1045",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -952,7 +952,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md->factory_lowlevel/router.py::4653",
+        "edge_id": "cites::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md->factory_lowlevel/router.py::5131",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -974,7 +974,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/router.py->factory_lowlevel/scheduler.py::916",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/router.py->factory_lowlevel/scheduler.py::1046",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -996,7 +996,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/router.py::266",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->factory_lowlevel/router.py::269",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -1011,7 +1011,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/registry.py->factory_lowlevel/router.py::915",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/registry.py->factory_lowlevel/router.py::1045",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -1026,7 +1026,7 @@
         "source": "factory_lowlevel/registry.py"
       },
       {
-        "edge_id": "cites::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md->factory_lowlevel/router.py::4653",
+        "edge_id": "cites::papers/methods/CAMPAIGN_021_MULTI_WORLD_FACTORY.md->factory_lowlevel/router.py::5131",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -1115,18 +1115,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

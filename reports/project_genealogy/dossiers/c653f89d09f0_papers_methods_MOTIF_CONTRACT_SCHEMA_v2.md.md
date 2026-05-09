@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/c653f89d09f0_papers_methods_MOTIF_CONTRACT_SCHEMA_v2.md.json`
-- JSON content_hash: `sha256:a55867a3b0d5aa725a8d784a598fb8dbe04ba5e54f91494aee84d99e7350aeab`
+- JSON content_hash: `sha256:068ba21765c7ace29c5d7b63e6b5992ce9fd4fe0c9fc15dc319e9b94fbe2d829`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

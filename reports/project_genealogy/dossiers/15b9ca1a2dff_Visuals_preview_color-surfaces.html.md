@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/15b9ca1a2dff_Visuals_preview_color-surfaces.html.json`
-- JSON content_hash: `sha256:c015ada4f8bb62170c65a0c49dec84db92004870eceb14af4eb3969dd5d4c677`
+- JSON content_hash: `sha256:c9f544c78a1a10dad164a5012ac3c47216a312d3652a362313f29526d3864968`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

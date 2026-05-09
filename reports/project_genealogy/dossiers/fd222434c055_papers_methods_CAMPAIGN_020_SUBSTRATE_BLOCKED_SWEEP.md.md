@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/fd222434c055_papers_methods_CAMPAIGN_020_SUBSTRATE_BLOCKED_SWEEP.md.json`
-- JSON content_hash: `sha256:27b46819f8a534826e189dfd8a7ef732b21c402a6dbec6a4e93ae6e277cf9c02`
+- JSON content_hash: `sha256:1849033b39262834e4b7a29f4d1e02d5cd49ff66d002123b2f0ceee2dc5a66ba`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `method`
 - Generated status: `source`

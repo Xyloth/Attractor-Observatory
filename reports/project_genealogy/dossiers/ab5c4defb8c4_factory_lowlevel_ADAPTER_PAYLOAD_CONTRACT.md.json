@@ -87,7 +87,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:fdf3b3d9ec400781e7f73298ff1acb77ff54d28b684b70007b3a6f46c2140894",
+  "content_hash": "sha256:6985147acf4990a4681d147605f8b6c325452c905fb446f4d0534820a508193e",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -313,7 +313,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1486",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1646",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -340,7 +340,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "40abab3b87f50c32c3f42496752308ecd6eb11e6",
-        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::250",
+        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::252",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -362,7 +362,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4458",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4924",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -384,7 +384,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4669",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::5147",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -406,7 +406,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1486",
+        "edge_id": "shares_birth_cohort::factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md->public_tests/test_phase_b_adapters.py::1646",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -428,7 +428,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::250",
+        "edge_id": "spawned_by_ticket::TASK-PHASE-B-INFRA->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::252",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -443,7 +443,7 @@
         "source": "TASK-PHASE-B-INFRA"
       },
       {
-        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4458",
+        "edge_id": "cites::BUILD_LOG.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4924",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -458,7 +458,7 @@
         "source": "BUILD_LOG.md"
       },
       {
-        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::4669",
+        "edge_id": "cites::papers/methods/INGESTION_TARGETS.md->factory_lowlevel/ADAPTER_PAYLOAD_CONTRACT.md::5147",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -498,18 +498,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:49Z"
+      "ran_at": "2026-05-09T11:41:16Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:49Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:16Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

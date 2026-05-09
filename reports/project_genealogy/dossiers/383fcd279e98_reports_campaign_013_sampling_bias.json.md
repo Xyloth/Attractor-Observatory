@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/383fcd279e98_reports_campaign_013_sampling_bias.json.json`
-- JSON content_hash: `sha256:741abaa04b51bc869637f9965169048ebb181c17078eef5b0f4a47606303dc5b`
+- JSON content_hash: `sha256:929c8025f967e6976ddbe5a64df8bb3e19b17b6bccb697d9c5532f5f94529211`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

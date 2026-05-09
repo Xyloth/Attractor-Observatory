@@ -60,7 +60,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:358401daf3b473e948a873b1556fa2150b107a877f0041e8a79a0d45efd1899b",
+  "content_hash": "sha256:7fef2e8286220c6b1d5799cdbe6630b26886d8f4476bb24bbd3fa0290e3918a5",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -216,7 +216,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::Visuals/preview/color-accents.html->Visuals/preview/color-status.html::765",
+        "edge_id": "shares_birth_cohort::Visuals/preview/color-accents.html->Visuals/preview/color-status.html::895",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -582,7 +582,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/preview/_card.css->Visuals/preview/color-accents.html::764",
+        "edge_id": "shares_birth_cohort::Visuals/preview/_card.css->Visuals/preview/color-accents.html::894",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -604,7 +604,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/preview/color-accents.html->Visuals/preview/color-status.html::765",
+        "edge_id": "shares_birth_cohort::Visuals/preview/color-accents.html->Visuals/preview/color-status.html::895",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -641,7 +641,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::Visuals/preview/_card.css->Visuals/preview/color-accents.html::764",
+        "edge_id": "shares_birth_cohort::Visuals/preview/_card.css->Visuals/preview/color-accents.html::894",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -730,18 +730,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

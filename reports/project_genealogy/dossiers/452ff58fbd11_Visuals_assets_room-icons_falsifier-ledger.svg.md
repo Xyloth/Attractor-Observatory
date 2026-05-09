@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/452ff58fbd11_Visuals_assets_room-icons_falsifier-ledger.svg.json`
-- JSON content_hash: `sha256:75890a28c2734c3936394a1558d9fa7b190380d47741c5dcba6175f2f9d8883a`
+- JSON content_hash: `sha256:04b40f04dd4ecd483b1c95fc80e472a0353c2ffbe58ec9356ac010923fffe7cf`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

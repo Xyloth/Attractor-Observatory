@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/66acf52c3dac_reports_campaign_009_distance_metrics.json.json`
-- JSON content_hash: `sha256:ee218cca5c3ee3abd1f13a20c9e33373f58a31086cab54300e00d7f6eec8dc86`
+- JSON content_hash: `sha256:41842b11e94d924172866d236b8788509705ecb6c3cd645f4c708052d52ccd7d`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `report`
 - Generated status: `report`

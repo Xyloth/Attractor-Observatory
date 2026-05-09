@@ -72,7 +72,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:d031485d545290cf23e07be1005b75ea1895749bb00a26e587f0b9a015a37bc4",
+  "content_hash": "sha256:f9af62a285604edd9dcc5ced5274443b6ea8bf2c717955bdb6e777840fbd50e8",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -212,7 +212,7 @@
     "language": "markdown",
     "line_count": 43,
     "path": "reports/phase1/closure_recurrence_summary.md",
-    "path_hash": "sha256:b6308b2cc3475e889851a7b3f73ec2b2b6ddc0717dcfe7df6f22004f73c71bed",
+    "path_hash": "sha256:e6a9d5ae3834def657674946863e2480ef120e39fda929724a269ef5ad381a08",
     "private_boundary": {
       "evidence_private": false,
       "reason": ""
@@ -251,7 +251,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence_verify/report.json::1258",
+        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence_verify/report.json::1388",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -266,7 +266,7 @@
         "target": "reports/phase1/closure_recurrence_verify/report.json"
       },
       {
-        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->papers/prereg/phase1_closure_recurrence.json::4950",
+        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->papers/prereg/phase1_closure_recurrence.json::5428",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -281,7 +281,7 @@
         "target": "papers/prereg/phase1_closure_recurrence.json"
       },
       {
-        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence/report.json::4951",
+        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence/report.json::5429",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -296,7 +296,7 @@
         "target": "reports/phase1/closure_recurrence/report.json"
       },
       {
-        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/completion/phase1_completion_report.json::4952",
+        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/completion/phase1_completion_report.json::5430",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -554,7 +554,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence/report.json->reports/phase1/closure_recurrence_summary.md::1257",
+        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence/report.json->reports/phase1/closure_recurrence_summary.md::1387",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -576,7 +576,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence_verify/report.json::1258",
+        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence_verify/report.json::1388",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -598,7 +598,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->papers/prereg/phase1_closure_recurrence.json::4950",
+        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->papers/prereg/phase1_closure_recurrence.json::5428",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -620,7 +620,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence/report.json::4951",
+        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/closure_recurrence/report.json::5429",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -642,7 +642,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/completion/phase1_completion_report.json::4952",
+        "edge_id": "cites::reports/phase1/closure_recurrence_summary.md->reports/phase1/completion/phase1_completion_report.json::5430",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -664,7 +664,7 @@
     ],
     "parents": [
       {
-        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence/report.json->reports/phase1/closure_recurrence_summary.md::1257",
+        "edge_id": "shares_birth_cohort::reports/phase1/closure_recurrence/report.json->reports/phase1/closure_recurrence_summary.md::1387",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -753,18 +753,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/48dcdbb41205_public_tests_test_cb016_persistence_load_on_init.py.json`
-- JSON content_hash: `sha256:0d24905a700a39cf57822cec698b267050ef3c0c6ed33b9ec802a10f640c8218`
+- JSON content_hash: `sha256:6fc76f1a2c40a1bbe4bc305c14e557bfdf98869d39842755262d1fe84fbeb623`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `test`
 - Generated status: `source`

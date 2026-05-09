@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/9754a6586517_Visuals_ui_kits_control_room_FalsifierEvent.jsx.json`
-- JSON content_hash: `sha256:cf396b93d692ce1e9bba4deacbbdcba5901378608db2c16df197d7201d1efb2b`
+- JSON content_hash: `sha256:474f54b47cce8e96c49dc045f1ce3250f3e3c97b0ec6de1d90bd9a7f117f3948`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `visual`
 - Generated status: `source`

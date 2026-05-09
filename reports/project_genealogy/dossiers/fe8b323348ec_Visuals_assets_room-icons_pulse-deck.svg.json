@@ -60,7 +60,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:3030d0bc4a4145c75f00ba8eac0e4368fccdc69d0ce22e31b94f2352984dcff4",
+  "content_hash": "sha256:93764f62a8b1205a5265d221d6ebcd93293cb1d6dcd35acc39774bd382885eac",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -176,7 +176,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/pulse-deck.svg->Visuals/assets/room-icons/world-observatory.svg::747",
+        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/pulse-deck.svg->Visuals/assets/room-icons/world-observatory.svg::877",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -542,7 +542,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/portfolio-demo.svg->Visuals/assets/room-icons/pulse-deck.svg::746",
+        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/portfolio-demo.svg->Visuals/assets/room-icons/pulse-deck.svg::876",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -564,7 +564,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/pulse-deck.svg->Visuals/assets/room-icons/world-observatory.svg::747",
+        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/pulse-deck.svg->Visuals/assets/room-icons/world-observatory.svg::877",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -601,7 +601,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/portfolio-demo.svg->Visuals/assets/room-icons/pulse-deck.svg::746",
+        "edge_id": "shares_birth_cohort::Visuals/assets/room-icons/portfolio-demo.svg->Visuals/assets/room-icons/pulse-deck.svg::876",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -690,18 +690,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:48Z"
+      "ran_at": "2026-05-09T11:41:15Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:48Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:15Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }

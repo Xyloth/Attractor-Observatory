@@ -3,7 +3,7 @@
 > JSON is authoritative. This file is a rendering of the JSON dossier.
 
 - JSON: `reports/project_genealogy/dossiers/7c08f25e93fa_atlas_negative_space_predicted_empty_basins.md.json`
-- JSON content_hash: `sha256:91db80794ebda0ded21287e0e79542c06414166bd684107dacf9732f46518d59`
+- JSON content_hash: `sha256:f96a8c33024ee7d93c91dde82e3522f1f702fa75f7df643682b461719ccd752f`
 - Schema: `ProjectGenealogyDossier.v1`
 - Artifact family: `atlas`
 - Generated status: `source`

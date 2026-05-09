@@ -67,7 +67,7 @@
     "cross_doctrine_collisions": [],
     "sibling_divergence": []
   },
-  "content_hash": "sha256:a4de7f0820e221a72b99bf827d22bfa4c3015332c7a3108dd82e451705d4e991",
+  "content_hash": "sha256:6e36bf54f50ed002f5f86ef37ebf5ba6e91460c6a57104908559b5c1f03bab09",
   "current": {
     "current_predicate": {
       "atoms": [
@@ -248,7 +248,7 @@
   "genealogy": {
     "children": [
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_013/replication_basis_lock.json->reports/campaign_013/replication_corpus.json::1025",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/replication_basis_lock.json->reports/campaign_013/replication_corpus.json::1155",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -263,7 +263,7 @@
         "target": "reports/campaign_013/replication_corpus.json"
       },
       {
-        "edge_id": "cites::reports/campaign_013/replication_basis_lock.json->papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md::4910",
+        "edge_id": "cites::reports/campaign_013/replication_basis_lock.json->papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md::5388",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -607,7 +607,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "f31fabef27b7618506d78bc49dae735b8c9cb3d4",
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_013/replication_basis_lock.json::462",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_013/replication_basis_lock.json::570",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -629,7 +629,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_013/regression.json->reports/campaign_013/replication_basis_lock.json::1024",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/regression.json->reports/campaign_013/replication_basis_lock.json::1154",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -651,7 +651,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::CODEX_TASK_024_DRIVE.md->reports/campaign_013/replication_basis_lock.json::4565",
+        "edge_id": "cites::CODEX_TASK_024_DRIVE.md->reports/campaign_013/replication_basis_lock.json::5043",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -673,7 +673,7 @@
       {
         "confidence": "mechanical",
         "created_at_commit": "",
-        "edge_id": "shares_birth_cohort::reports/campaign_013/replication_basis_lock.json->reports/campaign_013/replication_corpus.json::1025",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/replication_basis_lock.json->reports/campaign_013/replication_corpus.json::1155",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -695,7 +695,7 @@
       {
         "confidence": "strong",
         "created_at_commit": "",
-        "edge_id": "cites::reports/campaign_013/replication_basis_lock.json->papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md::4910",
+        "edge_id": "cites::reports/campaign_013/replication_basis_lock.json->papers/methods/FLOOR_CONNECTIVITY_REPLICATION_PROTOCOL.md::5388",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -717,7 +717,7 @@
     ],
     "parents": [
       {
-        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_013/replication_basis_lock.json::462",
+        "edge_id": "spawned_by_ticket::TASK-CB-001->reports/campaign_013/replication_basis_lock.json::570",
         "edge_type": "spawned_by_ticket",
         "evidence_refs": [
           {
@@ -732,7 +732,7 @@
         "source": "TASK-CB-001"
       },
       {
-        "edge_id": "shares_birth_cohort::reports/campaign_013/regression.json->reports/campaign_013/replication_basis_lock.json::1024",
+        "edge_id": "shares_birth_cohort::reports/campaign_013/regression.json->reports/campaign_013/replication_basis_lock.json::1154",
         "edge_type": "shares_birth_cohort",
         "evidence_refs": [
           {
@@ -747,7 +747,7 @@
         "source": "reports/campaign_013/regression.json"
       },
       {
-        "edge_id": "cites::CODEX_TASK_024_DRIVE.md->reports/campaign_013/replication_basis_lock.json::4565",
+        "edge_id": "cites::CODEX_TASK_024_DRIVE.md->reports/campaign_013/replication_basis_lock.json::5043",
         "edge_type": "cites",
         "evidence_refs": [
           {
@@ -836,18 +836,18 @@
         }
       ],
       "outcome": "declined",
-      "ran_at": "2026-05-08T19:41:50Z"
+      "ran_at": "2026-05-09T11:41:17Z"
     },
     "runtime_reference_count": 0
   },
   "run_binding": {
-    "branch": "feature/pg-001-execute",
-    "generated_at": "2026-05-08T19:41:50Z",
+    "branch": "codex/task-cb-022-fixall",
+    "generated_at": "2026-05-09T11:41:17Z",
     "generation_command": "python -m project_genealogy run-pass2",
-    "head_commit": "d13d93debbc7fe56d597b8e8ccdec48e3a1bd27f",
-    "input_manifest_hash": "sha256:db4f6d9043c286fe790d2cfd78bcecda5664aa9a56d70af78a1459a503de5178",
+    "head_commit": "8c4b0146dbc311192df42ce23267374c458fbd92",
+    "input_manifest_hash": "sha256:5d1609ff5cc882873eb95d4053592a0baac5a6cb4ecc753716bbc1d6fc0e4d9b",
     "pg_version": "PG-001",
-    "workspace_dirty": true
+    "workspace_dirty": false
   },
   "schema": "ProjectGenealogyDossier.v1"
 }
