@@ -3087,4 +3087,50 @@ python -m pytest public_tests/ -q
 232 passed, 2 warnings in 422.82s
 ```
 
+## TASK-CB-022 — public/private boundary correction (Architect Claude)
+
+CB-022 landed six topic commits that added six new files inside gitignored
+private directories (`formalism/`, `worlds/`). Codex executed faithfully
+against the spec; the spec itself directed paths into private locations
+(my error in writing the ticket). Pre-push curation by PI directive (Option B):
+"don't give EVERYTHING away but we can share some so that any claim we make
+or anything we reference is more easily understood."
+
+**Curated public-methodology surface (now exempted from `formalism/` ignore):**
+
+- `formalism/evidence/substance_gate.py` — 4-tier substance gate
+  (`identifier_parsed` → `identifier_resolves` → `title_matches_claim` →
+  `substance_audit_signed`).
+- `formalism/motif_contracts/schema.py` — MotifContract.v2 schema definition.
+- `formalism/motif_contracts/contracts.py` — predicate / source-object map
+  logic, including independence verdict derivation.
+- `formalism/motif_contracts/adversarial.py` — D26 four-axis adversarial
+  controls including the new metadata-channel transform.
+- `formalism/floor_bfg/read_separation.py` — D31 read-separation enforcement
+  for the BFG measurement split.
+
+These ship publicly because they are the methodological contributions external
+readers need to read to understand the project's claims. The publishing plan
+(methodology paper, retroactive substance-gate applications) requires this
+surface to be readable from a public-only checkout.
+
+**Reverted to private (now untracked, kept on disk):**
+
+- `worlds/protocell/model.py` — W2 protocell substrate engine. The
+  `division_threshold=0` fix described in the CB-022 BUILD_LOG entry remains
+  in the local private module; the implementation does not ship publicly.
+  Substrate engines stay private per the original public/private policy.
+
+Everything else under `formalism/` (`bfg_v2_classifier.py`, `floor_join.py`,
+`lenses.py`, `perturbation_generator.py`, `clean_lenses.py`, `ablation.py`,
+`predicates/`, etc.), and all of `worlds/`, `motifs/`, `validation/`,
+`nulls/`, `core/`, `trace/`, `biology/`, `search/`, `ops/`, `experiments/`,
+`evidence/`, `tests/` remain private as before.
+
+Implementation: explicit allowlist exceptions in `.gitignore` re-allowing the
+five named files inside the otherwise-private parent directories;
+`git rm --cached worlds/protocell/model.py` to untrack the substrate engine.
+No source code modified; no behavior changed; only the public/private surface
+was adjusted.
+
 Branch remains local for PI / Architect review; Codex did not push or merge.

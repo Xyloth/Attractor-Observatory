@@ -39,6 +39,31 @@ experiments/
 evidence/
 tests/
 
+# -----------------------------------------------------------------------------
+# Curated public-methodology surface inside otherwise-private formalism layer.
+# These specific files ship publicly because they are the methodological
+# contributions other researchers need to read to understand the project's
+# claims (4-tier substance gate, motif-contract schema and predicates, four-axis
+# adversarial controls, D31 read-separation enforcement). Everything else under
+# formalism/ stays private.
+#
+# Rule order is load-bearing: re-allow the parent directory, re-ignore its
+# contents, then explicitly un-ignore the curated files.
+# -----------------------------------------------------------------------------
+!formalism/evidence/
+formalism/evidence/*
+!formalism/evidence/substance_gate.py
+
+!formalism/motif_contracts/
+formalism/motif_contracts/*
+!formalism/motif_contracts/adversarial.py
+!formalism/motif_contracts/contracts.py
+!formalism/motif_contracts/schema.py
+
+!formalism/floor_bfg/
+formalism/floor_bfg/*
+!formalism/floor_bfg/read_separation.py
+
 # Top-level Python entry points
 observatory_cli.py
 verify_bundle.py
