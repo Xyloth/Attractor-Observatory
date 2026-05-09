@@ -710,6 +710,9 @@ def build_manifest(repo_root: Path, *, require_clean: bool = False) -> dict[str,
         if cohort_only:
             excluded.append({
                 "path": rel,
+                "path_status": "private_unshipped",
+                "evidence_private": True,
+                "private_boundary_reason": "PG-001 cohort-only generated artifact excluded from public per-file audit surface.",
                 "artifact_family": family,
                 "decline_reason": "file_out_of_scope_by_manifest",
                 "note": (

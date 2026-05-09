@@ -179,6 +179,12 @@ def build_atlas(
             {
                 "kind": "manifest_excluded",
                 "path": e["path"],
+                "path_status": e.get("path_status", "private_unshipped"),
+                "evidence_private": e.get("evidence_private", True),
+                "private_boundary_reason": e.get(
+                    "private_boundary_reason",
+                    "PG-001 manifest-excluded artifact is not presented as dereferenceable public evidence.",
+                ),
                 "reason": e["decline_reason"],
                 "note": e.get("note", ""),
             }
