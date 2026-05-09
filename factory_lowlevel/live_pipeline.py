@@ -11,6 +11,7 @@ from __future__ import annotations
 import gc  # CB-021: explicit GC between bundles to release trace bodies
 import json
 import hashlib
+import os
 import time  # CB-020: backoff sleep in _safe_write_json fallback loop
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -92,6 +93,11 @@ from .persistence import LowLevelFactoryStore, atomic_write_json
 from .registry import SourceRegistry
 from .router import route_records, routing_rejections
 from .schemas import AuditQueueItem, EmpiricalRecord, NormalizedReference, sha256, utc_now
+from .memory_guard import consume_stop_flag, read_stop_flag
+from .streaming_run_writer import StreamingRunWriter
+
+
+DEFAULT_MAX_TRACE_BYTES = int(os.environ.get("FACTORY_MAX_TRACE_BYTES", "3000000"))
 
 
 TASK033_ADAPTERS = (
@@ -185,6 +191,7 @@ def run_live_factory_cycle(
     started_at = utc_now()
     run_root = Path(run_root)
     trace_root = Path(trace_root)
+    streaming_writer = StreamingRunWriter(run_root, run_id_hint=f"{trigger}_{started_at}")
     live_state_path = run_root / "latest_state.json"
     _write_live_state(live_state_path, stage="download", status="running", started_at=started_at, target_worlds=target_worlds or [], source_ids=source_ids or [])
 
@@ -205,11 +212,13 @@ def run_live_factory_cycle(
         store.ingest_adapter_audits(getattr(result, "audits", []))
         records.extend(result.records)
     _write_live_state(live_state_path, stage="parse", status="running", record_count=len(records), source_count=len(adapters))
+    streaming_writer.write_section("records", [record.to_dict() for record in sorted(records, key=lambda row: row.record_id)])
 
     for record in records:
         refs.append(normalize_record(record))
     store.ingest_normalized_refs(refs)
     _write_live_state(live_state_path, stage="normalize", status="running", normalized_count=len(refs))
+    streaming_writer.write_section("normalized_refs", [ref.to_dict() for ref in sorted(refs, key=lambda row: row.normalized_id)])
 
     requested_worlds = set(target_worlds or [adapter.source_definition().target_world for adapter in adapters])
     route_rejections = routing_rejections(records, requested_worlds)
@@ -225,6 +234,13 @@ def run_live_factory_cycle(
         )
     routed = route_records(records, refs, requested_worlds)
     _write_live_state(live_state_path, stage="route", status="running", routed_worlds=[bundle.world_family for bundle in routed], rejection_count=len(route_rejections))
+    streaming_writer.write_section(
+        "routing",
+        {
+            "routed_worlds": [bundle.to_dict() for bundle in routed],
+            "routing_rejections": [row.to_dict() for row in route_rejections],
+        },
+    )
 
     # CB-021 M2: per-bundle (per-world) streaming. The old loop accumulated
     # ALL trace bodies across ALL bundles into one big trace_rows list,
@@ -243,10 +259,37 @@ def run_live_factory_cycle(
     evaluations: list[dict[str, Any]] = []
     life_forms: list[dict[str, Any]] = []
     total_traces_simulated = 0
+    stop_requested_between_records = False
     for bundle in routed:
         bundle_rows: list[dict[str, Any]] = []
         for record in bundle.empirical_records:
-            bundle_rows.append(_simulate_record(record, trace_root=trace_root))
+            stop_reason = read_stop_flag()
+            if stop_reason:
+                audit_id = sha256({"stop_flag_between_records": stop_reason, "record": record.record_id})
+                store.audit_queue[audit_id] = AuditQueueItem(
+                    audit_id=audit_id,
+                    severity="info",
+                    reason="operator_stop_flag_honored_between_records",
+                    record_id=record.record_id,
+                    source_id=record.source_id,
+                    recommended_action="operator_initiated_clean_shutdown_after_current_record_boundary",
+                )
+                warnings.append(f"operator_stop_flag_honored_between_records:{stop_reason}")
+                consume_stop_flag()
+                stop_requested_between_records = True
+                break
+            row = _simulate_record(record, trace_root=trace_root)
+            for audit in row.get("audit_items", []):
+                audit_id = sha256({"trace_audit": audit, "record": record.record_id})
+                store.audit_queue[audit_id] = AuditQueueItem(
+                    audit_id=audit_id,
+                    severity=audit.get("severity", "medium"),
+                    reason=audit.get("reason", "trace_policy_audit"),
+                    record_id=record.record_id,
+                    source_id=record.source_id,
+                    recommended_action=audit.get("recommended_action", "review_trace_policy_event"),
+                )
+            bundle_rows.append(row)
             total_traces_simulated += 1
             # CB-021 M4: heartbeat every 50 traces during world_simulate so
             # a hung simulation is visible within seconds, not minutes.
@@ -278,13 +321,19 @@ def run_live_factory_cycle(
         # cycle through the lens evaluation tree.
         del bundle_traces, bundle_evidence, bundle_evals, bundle_life_forms, bundle_rows
         gc.collect()
+        if stop_requested_between_records:
+            break
 
     motif_fire_rates = _motif_fire_rates(life_forms)
     _write_live_state(live_state_path, stage="motif_evaluate", status="running", trace_count=total_traces_simulated, life_form_count=len(life_forms))
+    streaming_writer.write_section("trace_records", [_trace_row_public(row) for row in trace_rows])
+    streaming_writer.write_section("lens_evaluations", evaluations)
+    streaming_writer.write_section("life_forms", life_forms)
 
     store.rebuild_evidence_graph()
     store.ingest_world_traces(routed, run_id_seed=store.content_hash())
     snapshot = store.write()
+    streaming_writer.write_section("store_snapshot", snapshot)
     completed_at = utc_now()
     run_payload = {
         "schema": "Task033MultiWorldFactoryRun.v1",
@@ -312,6 +361,18 @@ def run_live_factory_cycle(
     run_id = sha256({key: value for key, value in run_payload.items() if key != "run_id"})
     run_payload["run_id"] = run_id
     run_payload["content_hash"] = run_id
+    streaming_manifest = streaming_writer.finish(
+        {
+            "run_id": run_id,
+            "trigger": trigger,
+            "started_at": started_at,
+            "completed_at": completed_at,
+            "section_count": len(streaming_writer.sections),
+        }
+    )
+    run_payload["streamed_payload_manifest"] = {
+        key: value for key, value in streaming_manifest.items() if key != "sections"
+    }
     run_path = run_root / f"run_{run_id.removeprefix('sha256:')[:16]}.json"
     _safe_write_json(run_path, run_payload)
     _safe_write_json(run_root / "latest_run.json", run_payload)
@@ -433,9 +494,10 @@ def _simulate_record(record: EmpiricalRecord, *, trace_root: Path) -> dict[str, 
             "claim_promotion_allowed": False,
         }
     )
+    trace, trim_audit = _apply_trace_trim_policy(trace, record=record)
     trace["manifest"]["trace_id"] = "sha256:" + trace_content_hash(trace)
     trace_path.write_text(canonical_json(trace) + "\n", encoding="utf-8")
-    return {
+    row = {
         "record_id": record.record_id,
         "canonical_name": record.canonical_name,
         "source_id": record.source_id,
@@ -445,6 +507,55 @@ def _simulate_record(record: EmpiricalRecord, *, trace_root: Path) -> dict[str, 
         "trace": trace,
         "rejections": constructed.get("rejections", []),
     }
+    if trim_audit:
+        row["audit_items"] = [trim_audit]
+    return row
+
+
+def _apply_trace_trim_policy(trace: dict[str, Any], *, record: EmpiricalRecord, max_bytes: int | None = None) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    """Summarize oversized traces and route a D17 audit item.
+
+    The policy prevents multi-megabyte origins-chemistry-style traces from
+    dominating run memory and disk while preserving enough public provenance
+    to make the decline explicit.
+    """
+
+    limit = DEFAULT_MAX_TRACE_BYTES if max_bytes is None else int(max_bytes)
+    encoded = canonical_json(trace).encode("utf-8")
+    if len(encoded) <= limit:
+        return trace, None
+    original_hash = "sha256:" + trace_content_hash(trace)
+    manifest = dict(trace.get("manifest", {}))
+    summary = {
+        "schema": "LowLevelWorldTraceTrimmed.v1",
+        "manifest": manifest,
+        "trimmed": True,
+        "original_trace_content_hash": original_hash,
+        "original_bytes": len(encoded),
+        "max_trace_bytes": limit,
+        "world_family": record.world_family,
+        "record_id": record.record_id,
+        "source_id": record.source_id,
+        "process_flags": trace.get("process_flags", {}),
+        "event_count": len(trace.get("events", [])) if isinstance(trace.get("events"), list) else None,
+        "state_count": len(trace.get("state_history", [])) if isinstance(trace.get("state_history"), list) else None,
+        "audit_notes": list(trace.get("audit_notes", [])) + [
+            {
+                "note_id": "cb022_trace_trim_policy",
+                "reason": "trace_exceeded_max_trace_bytes",
+                "mode_tag": "exploratory",
+                "claim_promotion_allowed": False,
+            }
+        ],
+    }
+    audit = {
+        "severity": "medium",
+        "reason": "trace_trimmed_oversized_trace",
+        "original_bytes": len(encoded),
+        "max_trace_bytes": limit,
+        "recommended_action": "review summarized trace before using this record as evidence",
+    }
+    return summary, audit
 
 
 def _build_evidence_rows(traces: list[dict[str, Any]]) -> list[dict[str, Any]]:

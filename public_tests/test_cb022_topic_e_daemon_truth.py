@@ -65,9 +65,9 @@ def test_force_refresh_invalidates_progress_entries(tmp_path, monkeypatch):
     atomic_write_json(state_path, state)
 
     def _fake_cycle(**kwargs):
-        return {"run_id": f"run_for_{kwargs['source_ids'][0]}"}
+        return {"status": "ok", "run_id": f"run_for_{kwargs['source_id']}"}
 
-    monkeypatch.setattr("factory_lowlevel.continuous_daemon.run_live_factory_cycle", _fake_cycle)
+    monkeypatch.setattr("factory_lowlevel.continuous_daemon.run_source_child_process", _fake_cycle)
     run_continuous_daemon(
         cycles=1,
         sleep_seconds=0,

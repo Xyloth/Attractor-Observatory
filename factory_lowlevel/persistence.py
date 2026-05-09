@@ -20,6 +20,7 @@ from .schemas import (
     canonical_json,
     sha256,
 )
+from .sharded_store import ShardedFactoryStore
 
 
 # CB-020: errno values that indicate transient Windows file-lock contention
@@ -321,6 +322,7 @@ class LowLevelFactoryStore:
                     )
 
     def write(self) -> dict[str, Any]:
+        sharded_manifest = ShardedFactoryStore(self.root).append_records(self.empirical_records.values())
         payloads = {
             "source_cache_index": {
                 "schema": "LowLevelSourceCacheIndex.v1",
@@ -355,6 +357,7 @@ class LowLevelFactoryStore:
         snapshot = {
             "schema": "LowLevelFactoryStoreSnapshot.v1",
             "paths": paths,
+            "sharded_store": sharded_manifest,
             "counts": {
                 "source_cache_entries": len(self.source_cache),
                 "empirical_records": len(self.empirical_records),

@@ -470,6 +470,13 @@ def _evidence_private_summary() -> dict[str, Any]:
         for path in sorted(base.rglob("*.json")):
             if path.as_posix() == "reports/task_032_evidence_private_markers.json":
                 continue
+            if path.as_posix().startswith("reports/project_genealogy/"):
+                continue
+            try:
+                if path.stat().st_size > 25_000_000:
+                    continue
+            except OSError:
+                continue
             try:
                 payload = json.loads(path.read_text(encoding="utf-8-sig"))
             except (OSError, json.JSONDecodeError):
