@@ -56,8 +56,8 @@ control_room/
 * **D22 — Empty rooms beat stocked rooms with mock data** (new in TASK-CB-004).
   Honest absence beats decorative completeness. `components/empty_state.py`
   is the single source of truth for "no data" rendering. Class 12
-  (Decorative Completeness) candidate is on watch.
-* **D7-D21 binding generally.** No new doctrine beyond D22.
+  (Decorative Completeness) is ratified in `docs/mistake_catalog_registry.json`.
+* **D7-D31 binding generally.** No new doctrine beyond D31 in this surface.
 
 ## Adapter contract
 

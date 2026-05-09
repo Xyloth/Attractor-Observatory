@@ -83,7 +83,7 @@ SCREENSHOT_TARGETS = [
         "scene_id": "03_ai_operations_tower",
         "room": "ai_operations_tower",
         "title": "AI Operations Tower — calibration empirics",
-        "image_alt": "AI Operations Tower: agent cards + Paper-A calibration delta chart + Class 1-12 mistake catalog + audit log + doctrine arc.",
+        "image_alt": "AI Operations Tower: agent cards + Paper-A calibration delta chart + Class 1-13 mistake catalog + audit log + doctrine arc.",
         "filename": "03_ai_operations_tower.png",
     },
     {
@@ -664,14 +664,14 @@ def _scene_thesis(snapshot: dict[str, Any]) -> None:
         'color:var(--fg3);line-height:1.5;margin-bottom:var(--space-6);">'
         'Three AI agents (Architect Claude, Codex, Claude Builder) build the project under a '
         'cross-audit triangle — each catches what the others miss. Doctrine '
-        '<code>D7-D22</code> are observed failure modes turned into binding rules. '
+        '<code>D7-D31</code> are observed failure modes turned into binding rules. '
         'The Estimation Loop measures every task and shows AI-builder calibration '
         "convergence as a publishable empirics dataset."
         '</div>'
         '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);">'
         f'<div><div class="cap">project health</div><div style="font-family:var(--font-mono);font-size:var(--fs-status-number);color:var(--verified);">{health.get("score", "—")}<span style="color:var(--fg4);font-size:var(--fs-h2);">/100</span></div></div>'
         f'<div><div class="cap">campaigns shipped</div><div style="font-family:var(--font-mono);font-size:var(--fs-status-number);color:var(--active);">{len(camp.get("rows") or [])}</div><div class="detail">002 — 016</div></div>'
-        f'<div><div class="cap">doctrine binding</div><div style="font-family:var(--font-mono);font-size:var(--fs-status-number);color:var(--motif);">{doctrine.get("registry_count", "—")}</div><div class="detail">D7 — D22</div></div>'
+        f'<div><div class="cap">doctrine binding</div><div style="font-family:var(--font-mono);font-size:var(--fs-status-number);color:var(--motif);">{doctrine.get("registry_count", "—")}</div><div class="detail">D7-D31</div></div>'
         f'<div><div class="cap">falsifiers published</div><div style="font-family:var(--font-mono);font-size:var(--fs-status-number);color:var(--failed);">{fals.get("falsifier_count", 0)}</div><div class="detail">D17 binding</div></div>'
         '</div>'
         '<div style="margin-top:var(--space-6);padding:var(--space-4);background:var(--motif-soft);'

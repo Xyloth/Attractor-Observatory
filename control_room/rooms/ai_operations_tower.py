@@ -21,6 +21,7 @@ from control_room.adapters import (
     parse_build_log,
     parse_builder_telemetry,
     parse_doctrine,
+    parse_mistake_catalog,
 )
 from control_room.components import (
     agent_chip,
@@ -42,23 +43,6 @@ ROOM_TAGLINE = "Claude Architect / Codex Builder / Claude Builder — sidecar te
 ROOM_PHASE = "Phase 1"
 
 
-# Class watch list per CLAUDE_BUILDER_INITIATION §4 (frozen as of CB-005).
-MISTAKE_CATALOG = [
-    ("1", "Static-input contamination", "ratified"),
-    ("2", "Direction inversion", "ratified"),
-    ("3", "Soft enforcement / strict display", "ratified"),
-    ("4", "Scenario-internal hardcoding", "ratified"),
-    ("5", "Surface-coverage-without-substance", "ratified"),
-    ("6", "Engineered passing", "ratified"),
-    ("7", "Surface-labels-as-primitives", "ratified"),
-    ("8", "Abstract-scalar-standing-in", "ratified"),
-    ("9", "Spec-detail mismatch", "ratified"),
-    ("10", "Test-architecture / substrate-presence mismatch", "ratified after TASK-CB-001"),
-    ("11", "Categorical confound through pooling", "ratified after CODEX_AUDIT_002"),
-    ("12", "Decorative completeness", "candidate (D22 binding)"),
-]
-
-
 def render() -> None:
     import streamlit as st
 
@@ -67,6 +51,7 @@ def render() -> None:
     telemetry = parse_builder_telemetry()
     build_log = parse_build_log()
     doctrine = parse_doctrine()
+    mistakes = parse_mistake_catalog()
 
     # Agent cards row
     cols = st.columns(3)
@@ -118,20 +103,24 @@ def render() -> None:
             _delta_summary_strip(with_actuals)
 
     # Mistake catalog
-    st.markdown('<span class="cap">mistake catalog · class 1 — 12</span>', unsafe_allow_html=True)
-    rows_html = ""
-    for cls_id, name, status in MISTAKE_CATALOG:
-        is_candidate = "candidate" in status.lower()
-        accent = "var(--warning)" if is_candidate else "var(--verified)"
-        rows_html += (
-            f'<div style="display:grid;grid-template-columns:60px 1fr 200px;align-items:center;'
-            f'gap:10px;padding:6px 0;border-bottom:1px dashed var(--border);">'
-            f'<span style="font-family:var(--font-mono);font-size:1rem;color:{accent};font-weight:600;">{cls_id}</span>'
-            f'<span style="font-family:var(--font-body);color:var(--fg2);">{name}</span>'
-            f'<span class="cap" style="color:var(--fg4);">{status}</span>'
-            f'</div>'
-        )
-    render_html(panel("mistake catalog (class 1–12)", rows_html))
+    st.markdown('<span class="cap">mistake catalog - registry-bound classes</span>', unsafe_allow_html=True)
+    if mistakes["status"] != "ok":
+        render_empty_state(reason=mistakes["rationale"], expected_artifact="docs/mistake_catalog_registry.json")
+    else:
+        rows_html = ""
+        for entry in mistakes["data"]["classes"]:
+            status = entry.get("status", "unknown")
+            is_candidate = status == "candidate"
+            accent = "var(--warning)" if is_candidate else "var(--verified)"
+            rows_html += (
+                f'<div style="display:grid;grid-template-columns:80px 1fr 160px;align-items:center;'
+                f'gap:10px;padding:6px 0;border-bottom:1px dashed var(--border);">'
+                f'<span style="font-family:var(--font-mono);font-size:1rem;color:{accent};font-weight:600;">{entry.get("id", "?")}</span>'
+                f'<span style="font-family:var(--font-body);color:var(--fg2);">{entry.get("title", "-")}</span>'
+                f'<span class="cap" style="color:var(--fg4);">{status}</span>'
+                f'</div>'
+            )
+        render_html(panel("mistake catalog (registry-bound class 1-13)", rows_html))
 
     # Defect catches via BUILD_LOG audit entries
     st.markdown('<span class="cap">recent audit catches</span>', unsafe_allow_html=True)
@@ -155,7 +144,7 @@ def render() -> None:
         render_empty_state(reason=build_log["rationale"], expected_artifact="BUILD_LOG.md")
 
     # Doctrine arc
-    st.markdown('<span class="cap">doctrine arc · D7 — D22</span>', unsafe_allow_html=True)
+    st.markdown('<span class="cap">doctrine arc - D7-D31</span>', unsafe_allow_html=True)
     if doctrine["status"] == "ok":
         items_html = ""
         for entry in doctrine["data"]["registry"]:

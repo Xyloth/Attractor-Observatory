@@ -77,3 +77,51 @@ def parse_doctrine(
             f"{len(per_rule_files)} per-rule files"
         ),
     }
+
+
+def parse_mistake_catalog(
+    registry_path: str | Path = "docs/mistake_catalog_registry.json",
+) -> dict[str, Any]:
+    """Parse the canonical mistake-catalog registry.
+
+    DX-003 found that README, Control Room, and initiation surfaces drifted
+    because each carried its own frozen class list. This adapter is the single
+    public reader for the canonical registry.
+    """
+
+    rp = Path(registry_path)
+    if not rp.exists():
+        return {
+            "status": "missing",
+            "data": None,
+            "rationale": f"mistake catalog registry not found at {rp.as_posix()}",
+        }
+    try:
+        registry = json.loads(rp.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return {
+            "status": "malformed",
+            "data": None,
+            "rationale": f"Could not parse {rp.as_posix()}: {exc!r}",
+        }
+    classes = registry.get("classes", [])
+    ratified = [c for c in classes if c.get("status") == "ratified"]
+    candidates = [c for c in classes if c.get("status") == "candidate"]
+    skipped = [c for c in classes if c.get("status") == "skipped"]
+    return {
+        "status": "ok",
+        "data": {
+            "registry_path": rp.as_posix(),
+            "schema": registry.get("schema"),
+            "class_count": len(classes),
+            "ratified_count": len(ratified),
+            "candidate_count": len(candidates),
+            "skipped_count": len(skipped),
+            "classes": classes,
+        },
+        "rationale": (
+            f"parsed {len(classes)} mistake classes; "
+            f"{len(ratified)} ratified; {len(candidates)} candidates; "
+            f"{len(skipped)} skipped"
+        ),
+    }

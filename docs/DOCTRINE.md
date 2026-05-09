@@ -166,7 +166,7 @@ See [`doctrine_d22.md`](doctrine_d22.md).
 
 **How enforced:** mechanism, not policy. A single empty-state component (`control_room/components/empty_state.py`) is the only path to "no data" rendering; every adapter returns a `status` field in `{ok, missing, malformed}` and rooms route directly. CI test verifies the component is the unique no-data path.
 
-**Class watch:** Class 12 candidate — *Decorative Completeness* — is on the mistake catalog watch list. Ratification follows observed bypass.
+**Class watch:** Class 12 — *Decorative Completeness* — is ratified in `docs/mistake_catalog_registry.json`; DX-003 found the remaining issue was cross-surface documentation drift, not an unsettled failure mode.
 
 **Authored by:** Architect Claude, TASK-CB-004 / Campaign 015 Phase 0 (Observatory Control Room Foundation). Ratified at module foundation rather than after-the-fact, in response to the structural pull of visual work.
 

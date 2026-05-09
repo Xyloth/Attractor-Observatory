@@ -3,7 +3,7 @@
 Mode: foundational
 Spec version: sha256:492dbee22a401cec8679bd325c1ba1145084b5b8848b9beaf6c9b050b3e45729
 Signed-by: Architect Claude (TASK-CB-004 / Campaign 015 Phase 0)
-Class watch: Class 12 candidate — Decorative Completeness
+Class watch: Class 12 ratified - Decorative Completeness
 
 D22 — Honest absence over decorative completeness. When a Control Room view
 (or any read-only project surface) has no real artifact to display, the
@@ -19,7 +19,7 @@ toward "make the empty room look fuller" — placeholder rows, lorem-ipsum
 narrative, plausible-looking but fabricated charts, screenshot-friendly
 mock data — creates a class of mistake the project has not yet observed
 in scientific code but is structurally invited by visual UI work. Class
-12 candidate (Decorative Completeness) is on watch: a UI surface that
+12 ratified (Decorative Completeness) is binding: a UI surface that
 appears full-of-content when the underlying artifacts are missing,
 exploratory, or contradicted, eroding D11 (truth pass), D17 (honest
 falsifiers), and D21 (densification before claim-bearing) at the
@@ -57,7 +57,7 @@ D22 is enforced by **mechanism, not policy**:
   `render_empty_state(reason=payload["rationale"], expected_artifact=...)`.
   No alternative path is permitted.
 
-## Class 12 — Decorative Completeness (candidate)
+## Class 12 - Decorative Completeness (ratified)
 
 A UI surface displays content that *looks* like real project data — populated
 tables, plotted charts, narrative text — when the underlying artifact is
@@ -80,9 +80,10 @@ look fuller," that is the trigger to stop and check D22. Add the missing
 artifact, document the absence, or render via the empty-state component —
 do not paper over the absence.
 
-Class 12 is currently a *candidate* (not ratified). Ratification follows
-observed bypass of D22, per the same evolution path Class 10 (TASK-CB-001
-→ ratified) and Class 11 (TASK-CB-002 → ratified) followed.
+Class 12 is ratified. DX-003 Decision 1 settled that the substance was
+already binding through D22 and PG-001; the defect was documentation drift
+across README, initiation, BUILD_LOG, and Control Room surfaces. The
+canonical status now lives in `docs/mistake_catalog_registry.json`.
 
 ## How D22 evolves
 
@@ -99,5 +100,6 @@ happened to any doctrine since D7.
   ("Data adapters" — graceful missing-file handling), §22 ("Builder
   expansion authority" forbidding fabricated visual completeness).
 * Ratified: TASK-CB-004 (Campaign 015 Phase 0). Architect Claude binds
-  D22 as the new doctrine for the Control Room foundation; Class 12 is
-  added to the mistake catalog watch list.
+  D22 as the new doctrine for the Control Room foundation.
+* Canonicalized: TASK-CB-022-FIXALL / DX-003 Decision 1. Class 12 status
+  is ratified in `docs/mistake_catalog_registry.json`.

@@ -77,6 +77,8 @@ What this catches that single-audit doesn't:
 
 These are the failure modes the project has actually observed during Campaigns 001–023. Each was caught by *the other AI* — not by the AI that produced it. Read them not as "don't do this" rules (those are doctrine) but as **classes of mistake that recur across builders and require active watching**.
 
+Canonical status for every class lives in `docs/mistake_catalog_registry.json`. This section is the narrative catalog; the registry is the machine-readable source of truth for status labels.
+
 When you audit Codex's work, look for these. When you build, watch for them in your own work. When you find one in your own work mid-task, append a `BUILD_LOG.md` self-flag and route to Architect — that is honest discipline, not failure.
 
 ### Class 1 — Static-input contamination
@@ -205,6 +207,14 @@ The check is mechanical and runs before threshold logic on any pool. Claim-beari
 **Lesson for future Builders:** any property the corpus has — balance, range, variance, structure — needs decomposition. "Does the corpus have property P?" is the shallow question. "Where does property P come from?" is the deeper question. When the detector can read the *source* of property P (substrate, taxon, time-stamp, license_class, etc.), the deeper question must be asked before threshold logic runs. This applies beyond pooling — any aggregation, any cross-corpus measurement, any analysis where the detector's encoding has access to a categorical feature.
 
 **Lesson for cross-audit:** the failure mode here is *not* that Architect or Builder were sloppy; it's that single-audit reads have predictable blind spots, and the triangle exists precisely because cross-audit catches these. Codex caught it because Codex was looking with a different prior. The discipline is functioning. Future Builders should expect to miss things and trust the triangle to catch them — and audit the triangle's catches, not just their own work.
+
+### Class 12 — Decorative Completeness *(ratified via D22 / PG-001 / DX-003 Decision 1)*
+
+**Pattern:** A UI, report, dashboard, or public-facing project surface presents an absence as if it were content: fabricated rows, plausible placeholder charts, screenshot-friendly mock data, or narrative panels that appear complete when the underlying artifact is missing, malformed, exploratory, or contradicted.
+
+**Example:** During the Control Room build, the pressure to make empty rooms look populated would have produced plausible but false dashboard content. D22 required honest empty-state rendering instead. DX-003 later found that the project already treated this as binding through D22 and PG-001, but governance surfaces disagreed on whether Class 12 was candidate or ratified.
+
+**Discipline:** The surface must either render real data or render honest absence. No demo fallback, stocked mock room, or decorative completeness path is allowed unless it is visibly labelled `EXAMPLE - NOT REAL` at the point of display. Class status is registry-bound in `docs/mistake_catalog_registry.json`.
 
 ### Class 13 - Predicate-detector surface coupling *(ratified after TASK-MOTIF-IMPL)*
 
