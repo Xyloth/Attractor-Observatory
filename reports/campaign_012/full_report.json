@@ -88,9 +88,13 @@
       "passed": true
     },
     "FR": {
+      "evidence_private": true,
       "gate_count": 24,
       "passed": true,
-      "reproducibility_script": "make_campaign_012.py"
+      "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "reproducibility_script": "make_campaign_012.py",
+      "reproducibility_script_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "reproducibility_script_status": "private_unshipped"
     },
     "KE1S": {
       "passed": true,

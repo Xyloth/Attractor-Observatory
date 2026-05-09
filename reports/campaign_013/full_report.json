@@ -74,9 +74,13 @@
       }
     },
     "FR": {
+      "evidence_private": true,
       "gate_count": 26,
       "passed": true,
-      "reproducibility_script": "make_campaign_013.py"
+      "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "reproducibility_script": "make_campaign_013.py",
+      "reproducibility_script_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "reproducibility_script_status": "private_unshipped"
     },
     "L3-1": {
       "claim_count": 1000,

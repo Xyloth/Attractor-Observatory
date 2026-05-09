@@ -10,7 +10,11 @@
   "gates": {
     "C14-1": {
       "description": "48 real W8/W11/W12 traces generated; locked predicate labels match audit-only mechanism expectation.",
-      "passed": true
+      "description_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "description_status": "private_unshipped",
+      "evidence_private": true,
+      "passed": true,
+      "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface"
     },
     "C14-2": {
       "description": "Each substrate has both floor labels with minority count >= 8.",

@@ -50,10 +50,14 @@
   },
   "trace": {
     "event_count": 15,
+    "evidence_private": true,
     "mode_tag": "exploratory",
+    "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
     "state_count": 10,
     "trace_id": "sha256:3fb3de3f2e9fcee7873b07fe9099355e6b296d5cafad75bd4392ff758d8d6f0d",
     "trace_path": "reports\\campaign_016\\traces\\atomic_molecular_primitives_trace.json",
+    "trace_path_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+    "trace_path_status": "private_unshipped",
     "verification": {
       "errors": [],
       "passed": true,

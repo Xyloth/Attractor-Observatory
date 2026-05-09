@@ -1878,8 +1878,12 @@
       }
     },
     "G66_regression_tests": {
+      "evidence_private": true,
       "passed": true,
-      "test_file": "tests/test_campaign006.py"
+      "private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "test_file": "tests/test_campaign006.py",
+      "test_file_private_boundary_reason": "D23/D29: referenced runtime artifact is private or unshipped on the public surface",
+      "test_file_status": "private_unshipped"
     },
     "G67_prior_campaigns_green": {
       "passed": true,

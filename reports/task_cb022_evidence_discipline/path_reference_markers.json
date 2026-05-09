@@ -1,0 +1,211 @@
+{
+  "changed_file_count": 75,
+  "changed_files": [
+    "control_room/cache/factory_runs/latest_run.json",
+    "control_room/cache/factory_runs/run_0772c1a89f5c693c.json",
+    "control_room/cache/factory_runs/run_17693e665d5d025e.json",
+    "control_room/cache/factory_runs/run_a746ca32d510ca1e.json",
+    "control_room/cache/factory_runs/run_f17c14848991da21.json",
+    "papers/prereg/bfg_v0.signed.json",
+    "papers/prereg/campaign_002.json",
+    "papers/prereg/campaign_002.signed.json",
+    "papers/prereg/phase1_closure_recurrence.json",
+    "reports/campaign_006/audit_queue.json",
+    "reports/campaign_006/beta_worlds.json",
+    "reports/campaign_006/evidence_atlas.json",
+    "reports/campaign_006/evidence_bundles/campaign_006_bundle.json",
+    "reports/campaign_006/full_report.json",
+    "reports/campaign_006/perturbation_maps.json",
+    "reports/campaign_007/stale_claims.json",
+    "reports/campaign_007/truth_pass_application.json",
+    "reports/campaign_008/cli_substrate_completion.json",
+    "reports/campaign_008/substrate_completion.json",
+    "reports/campaign_008/w10_hypergraph.json",
+    "reports/campaign_008/w11_quasispecies.json",
+    "reports/campaign_008/w12_symbiogenesis.json",
+    "reports/campaign_008/w13_multiscale.json",
+    "reports/campaign_008/w6_ecosystem.json",
+    "reports/campaign_008/w7_swarm.json",
+    "reports/campaign_008/w8_cognitive.json",
+    "reports/campaign_008/w9_origins_chemistry.json",
+    "reports/campaign_009/provenance_graph.json",
+    "reports/campaign_010/deepening_actions.json",
+    "reports/campaign_010/lens_ast_lint.json",
+    "reports/campaign_011/cli_full_report.json",
+    "reports/campaign_011/full_report.json",
+    "reports/campaign_012/cli_full_report.json",
+    "reports/campaign_012/factory_initiation_pointer_audit.json",
+    "reports/campaign_012/factory_scaffolding.json",
+    "reports/campaign_012/full_report.json",
+    "reports/campaign_013/full_report.json",
+    "reports/campaign_014/floor_corpus_foundry.json",
+    "reports/campaign_014/full_report.json",
+    "reports/campaign_016/atomic_molecular_primitives_densification.json",
+    "reports/campaign_016/daemon_store/source_cache_index.json",
+    "reports/campaign_016/factory_store/source_cache_index.json",
+    "reports/campaign_016/full_report.json",
+    "reports/campaign_016/idempotence_store_a/source_cache_index.json",
+    "reports/campaign_016/idempotence_store_b/source_cache_index.json",
+    "reports/campaign_016/math_primitives_densification.json",
+    "reports/campaign_017/factory_recovery.json",
+    "reports/campaign_017/full_report.json",
+    "reports/campaign_019/fixture_gates.json",
+    "reports/campaign_019/fixtures/audit_replay/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/detector_anomaly_route/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/duplicate_records/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/malformed_ledger/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/malformed_source_file/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/nonsensical_numeric/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/partial_response/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/refresh_due/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/required_key_contract/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/schema_mismatch/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/stale_cache/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/stop_start_replay_a/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/timeout_retry_ceiling/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/transient_backoff/store/source_cache_index.json",
+    "reports/campaign_019/fixtures/unknown_key_census/store/source_cache_index.json",
+    "reports/campaign_019/full_report.json",
+    "reports/campaign_019/hardening_fixtures.json",
+    "reports/campaign_021/factory_store/source_cache_index.json",
+    "reports/campaign_022/fair_metadata.json",
+    "reports/campaign_023/full_report.json",
+    "reports/campaign_024/full_report.json",
+    "reports/campaign_035/factory_store/source_cache_index.json",
+    "reports/task_cb015_launch/factory_store/source_cache_index.json",
+    "reports/task_w1_mass_ingest/daemon_store/source_cache_index.json",
+    "reports/task_w1_mass_ingest/daemon_store_expanded/source_cache_index.json",
+    "reports/task_w1_mass_ingest/final_store/source_cache_index.json"
+  ],
+  "examples": [
+    {
+      "container": "papers/prereg/bfg_v0.signed.json",
+      "json_path": "equivalence_basis.invariant_basis.2.description",
+      "value": "Replication/lineage function is preserved when trace-derived replication, division, or lineage signals remain within declared tolerance."
+    },
+    {
+      "container": "papers/prereg/campaign_002.json",
+      "json_path": "analysis_path",
+      "value": "python make_campaign_002.py"
+    },
+    {
+      "container": "papers/prereg/campaign_002.signed.json",
+      "json_path": "analysis_path",
+      "value": "python make_campaign_002.py"
+    },
+    {
+      "container": "papers/prereg/phase1_closure_recurrence.json",
+      "json_path": "analysis_path",
+      "value": "python observatory_cli.py run-closure-recurrence --out-dir reports/phase1/closure_recurrence"
+    },
+    {
+      "container": "reports/campaign_009/provenance_graph.json",
+      "json_path": "nodes.1.path",
+      "value": "papers/prereg/bfg_v0.signed.json#equivalence_basis"
+    },
+    {
+      "container": "reports/campaign_014/floor_corpus_foundry.json",
+      "json_path": "gates.C14-1.description",
+      "value": "48 real W8/W11/W12 traces generated; locked predicate labels match audit-only mechanism expectation."
+    },
+    {
+      "container": "reports/campaign_014/full_report.json",
+      "json_path": "gates.C14-1.description",
+      "value": "48 real W8/W11/W12 traces generated; locked predicate labels match audit-only mechanism expectation."
+    },
+    {
+      "container": "reports/campaign_017/factory_recovery.json",
+      "json_path": "recovery.results.0.path",
+      "value": "reports\\campaign_017\\recovery_fixture\\partial_artifact.json"
+    },
+    {
+      "container": "reports/campaign_017/full_report.json",
+      "json_path": "factory_recovery.recovery.results.0.path",
+      "value": "reports\\campaign_017\\recovery_fixture\\partial_artifact.json"
+    },
+    {
+      "container": "reports/campaign_019/fixture_gates.json",
+      "json_path": "gates.4.evidence.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\required_key_contract\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/fixture_gates.json",
+      "json_path": "gates.11.evidence.first.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/fixture_gates.json",
+      "json_path": "gates.11.evidence.second.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/fixture_gates.json",
+      "json_path": "gates.13.evidence.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\duplicate_records\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/fixture_gates.json",
+      "json_path": "gates.14.evidence.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixture_gates.4.evidence.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\required_key_contract\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixture_gates.11.evidence.first.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixture_gates.11.evidence.second.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\stop_start_replay_a\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixture_gates.13.evidence.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\duplicate_records\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixture_gates.14.evidence.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixtures.scenarios.audit_replay.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\audit_replay\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixtures.scenarios.detector_anomaly_route.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\detector_anomaly_route\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixtures.scenarios.duplicate_records.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\duplicate_records\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixtures.scenarios.malformed_ledger.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\malformed_ledger\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixtures.scenarios.malformed_source_file.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\malformed_source_file\\factory.lock"
+    },
+    {
+      "container": "reports/campaign_019/full_report.json",
+      "json_path": "fixtures.scenarios.nonsensical_numeric.lock.path",
+      "value": "reports\\campaign_019\\fixtures\\nonsensical_numeric\\factory.lock"
+    }
+  ],
+  "latest_pass_marked_reference_count": 180,
+  "marked_reference_count": 1154,
+  "resolution_basis": "git_tracked_public_surface_not_local_filesystem_existence",
+  "schema": "CB022EvidencePathMarkerSummary.v1"
+}
